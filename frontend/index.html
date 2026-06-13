@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GraphRAG Chatbot – Tin Học Cánh Diều</title>
+  <link rel="stylesheet" href="/static/styles.css?v=5" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>Conversations</h2>
+      <button id="new-chat-btn" title="New chat">＋</button>
+    </div>
+    <div id="conversation-list" class="conversation-list"></div>
+
+    <!-- SPARQL Editor -->
+    <div class="sparql-editor">
+      <div class="sparql-editor-header">
+        <h2>SPARQL</h2>
+      </div>
+      <textarea
+        id="sparql-input"
+        placeholder="Paste your SPARQL query here…"
+        spellcheck="false"
+      ></textarea>
+      <button id="sparql-run-btn">Execute</button>
+    </div>
+
+    <div class="sidebar-footer">
+      <span class="brand">Tin Học Cánh Diều</span>
+    </div>
+  </aside>
+
+  <!-- Main chat area -->
+  <main class="chat-area">
+    <!-- Header -->
+    <header class="chat-header">
+      <button id="sidebar-toggle" class="icon-btn" title="Toggle sidebar">☰</button>
+      <h1 id="chat-title">New Chat</h1>
+    </header>
+
+    <!-- Messages -->
+    <div id="messages" class="messages">
+      <div class="welcome">
+        <h2>GraphRAG Chatbot</h2>
+        <p>Ask anything about Tin Học Cánh Diều. Your questions are answered using a knowledge graph + ChatGPT.</p>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <form id="chat-form" class="input-form">
+        <textarea
+          id="user-input"
+          placeholder="Type a message…"
+          rows="1"
+          autocomplete="off"
+        ></textarea>
+        <button type="submit" id="send-btn" title="Send">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13"/>
+            <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+          </svg>
+        </button>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Graph visualization overlay -->
+  <div id="graph-overlay" class="graph-overlay hidden">
+    <div class="graph-panel">
+      <div class="graph-header">
+        <h2>Graph Visualization</h2>
+        <button id="graph-close-btn" class="icon-btn" title="Close">✕</button>
+      </div>
+      <div id="graph-container" class="graph-container"></div>
+      <div id="graph-error" class="graph-error hidden"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script src="/static/app.js?v=5"></script>
+</body>
+</html>
