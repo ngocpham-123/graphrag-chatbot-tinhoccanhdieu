@@ -2,12 +2,14 @@ import logging
 
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
+from langchain_core.callbacks import CallbackManagerForChainRun
 from langchain_community.graphs import OntotextGraphDBGraph
 from langchain_community.chains.graph_qa.ontotext_graphdb import (
     OntotextGraphDBQAChain,
 )
 
 from backend.app.config import OPENAI_API_KEY
+from backend.app.services.figures import figure_urls_from_rows
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +28,7 @@ SPARQL_GENERATION_PROMPT = PromptTemplate(
     input_variables=["prompt", "schema"],
     template="""\
 You write SPARQL SELECT queries for an Ontotext GraphDB graph describing the
-Vietnamese informatics textbook "Tin học 10 - Cánh Diều".
+Vietnamese informatics textbook.
 
 The ontology schema (Turtle) is between triple backticks:
 ```
@@ -118,7 +120,7 @@ SELECT ?caption ?fig WHERE {{
 # (navigate grade + topic + lesson, then list that lesson's figures)
 PREFIX ex: <http://example.org/tinhoc10-cd#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?caption WHERE {{
+SELECT ?caption ?fig WHERE {{
   ?lesson a ex:Lesson ; rdfs:label ?ll ;
           ex:belongsToGrade ?g ; ex:belongsToTopic ?t .
   ?g rdfs:label ?gl . FILTER(CONTAINS(LCASE(STR(?gl)), LCASE("lớp 11")))
@@ -142,7 +144,7 @@ Now write the SPARQL query for this question:
 QA_PROMPT = PromptTemplate(
     input_variables=["context", "prompt"],
     template="""\
-Bạn là trợ lí AI trả lời câu hỏi về sách giáo khoa "Tin học 10 - Cánh Diều".
+Bạn là trợ lí AI trả lời câu hỏi về sách giáo khoa "Tin học Cánh Diều".
 Dữ liệu dưới đây được truy xuất từ knowledge graph CHỈ để trả lời đúng câu hỏi này
 — mỗi dòng là một kết quả ĐÃ KHỚP với câu hỏi. Đây là nguồn đáng tin cậy: không
 nghi ngờ, không dùng kiến thức riêng để sửa lại.
@@ -160,6 +162,44 @@ Quy tắc trả lời (bằng tiếng Việt, rõ ràng, tự nhiên):
 
 Dữ liệu truy xuất được:
 {context}
+
+Câu hỏi: {prompt}
+Trả lời:""",
+)
+
+
+# Answer prompt for the hybrid orchestrator. Receives three labeled evidence
+# blocks: structured SPARQL rows, semantic passages, and (optional) a vision
+# description of an attached image. Same honesty rules: use evidence even if
+# partial, never contradict, say "not found" only when ALL blocks are empty.
+HYBRID_ANSWER_PROMPT = PromptTemplate(
+    input_variables=["sparql_context", "vector_context", "image_context", "prompt"],
+    template="""\
+Bạn là trợ lí AI trả lời câu hỏi về sách giáo khoa "Tin học Cánh Diều".
+Dưới đây là bằng chứng truy xuất từ knowledge graph của cuốn sách, gồm: kết quả
+truy vấn cấu trúc (SPARQL), các đoạn văn liên quan (tìm kiếm ngữ nghĩa), và mô tả
+hình ảnh người dùng gửi kèm (nếu có). Đây là nguồn đáng tin cậy: không nghi ngờ,
+không dùng kiến thức riêng để sửa lại.
+
+Quy tắc trả lời (tiếng Việt, rõ ràng, tự nhiên):
+- Nếu có một hình ảnh được mô tả, hãy dựa vào mô tả đó để hiểu người dùng đang hỏi
+  về cái gì, rồi kết hợp với bằng chứng từ sách để trả lời.
+- Nếu BẤT KỲ phần nào có dữ liệu, BẮT BUỘC dùng nó để trả lời; tổng hợp các phần
+  thành một câu trả lời mạch lạc. Nếu chỉ liên quan một phần, hãy trình bày như
+  thông tin liên quan và nói rõ là chưa có mục đúng chính xác.
+- TUYỆT ĐỐI KHÔNG nói "không tìm thấy" khi vẫn còn dữ liệu, và KHÔNG tự mâu thuẫn.
+- CHỈ khi TẤT CẢ các phần đều TRỐNG thì mới nói rằng bạn không tìm thấy thông tin
+  về câu hỏi này trong sách.
+- Không bịa thêm thông tin nằm ngoài bằng chứng.
+
+Mô tả hình ảnh (nếu có):
+{image_context}
+
+Kết quả truy vấn (SPARQL):
+{sparql_context}
+
+Đoạn văn liên quan (ngữ nghĩa):
+{vector_context}
 
 Câu hỏi: {prompt}
 Trả lời:""",
@@ -198,6 +238,29 @@ class FormattedGraphDBQAChain(OntotextGraphDBQAChain):
         except Exception:
             raise ValueError("Failed to execute the generated SPARQL query.")
         return _format_query_results(results)
+
+    def retrieve_context(self, question: str) -> tuple[str, str, list[str]]:
+        """Generate + execute SPARQL; return (formatted_rows, sparql_query, figure_urls).
+
+        Reuses the chain's SPARQL generation/fix logic, stops before answer
+        generation. figure_urls are /figures/... URLs for any result value whose
+        name matches an asset image. Returns ("", sparql, []) when no rows.
+        """
+        run_manager = CallbackManagerForChainRun.get_noop_manager()
+        callbacks = run_manager.get_child()
+        schema = self.graph.get_schema
+
+        gen = self.sparql_generation_chain.invoke(
+            {"prompt": question, "schema": schema}, callbacks=callbacks
+        )
+        sparql = gen[self.sparql_generation_chain.output_key]
+        sparql = self._get_prepared_sparql_query(
+            run_manager, callbacks, sparql, schema
+        )
+        rows = list(self.graph.query(sparql))
+        context = _format_query_results(rows)
+        figure_urls = figure_urls_from_rows(rows)
+        return context, sparql, figure_urls
 
 
 # ---------------------------------------------------------------------------

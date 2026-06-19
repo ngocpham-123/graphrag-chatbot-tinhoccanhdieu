@@ -8,7 +8,9 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 
 from backend.app.models.schemas import ChatRequest, ChatResponse
 from backend.app.services.graphdb_service import create_graph
-from backend.app.services.chatgpt_service import create_qa_chain, condense_question
+from backend.app.services.chatgpt_service import create_qa_chain
+from backend.app.services.vector_index import load_vector_store
+from backend.app.services.orchestrator import answer_question
 from backend.app.config import FIGURES_DIR, GRAPHDB_URL, GRAPHDB_REPOSITORY
 
 logger = logging.getLogger(__name__)
@@ -21,6 +23,7 @@ conversations: dict[str, list[dict]] = {}
 # Initialized on startup
 graph = None
 qa_chain = None
+vector_store = None
 
 # Regex to find image file paths in the reply text
 IMAGE_PATH_RE = re.compile(
@@ -69,13 +72,14 @@ def extract_figure_paths_from_reply(reply: str) -> list[str]:
 
 @router.on_event("startup")
 async def startup():
-    global graph, qa_chain
+    global graph, qa_chain, vector_store
     try:
         graph = create_graph()
         qa_chain = create_qa_chain(graph)
-        logger.info("GraphDB QA chain initialized successfully")
+        vector_store = load_vector_store()
+        logger.info("GraphDB QA chain + vector store initialized successfully")
     except Exception as e:
-        logger.error("Failed to initialize GraphDB QA chain: %s", e)
+        logger.error("Failed to initialize QA chain / vector store: %s", e)
         raise
 
 
@@ -89,39 +93,33 @@ async def get_schema():
 
 @router.post("/", response_model=ChatResponse)
 async def chat(request: ChatRequest):
-    if qa_chain is None:
-        raise HTTPException(status_code=503, detail="QA chain not initialized")
+    if qa_chain is None or vector_store is None:
+        raise HTTPException(status_code=503, detail="Services not initialized")
 
     try:
         conversation_id = request.conversation_id or str(uuid.uuid4())
         history = conversations.get(conversation_id, [])
 
-        # Conversation history is used ONLY to resolve follow-up references into
-        # a standalone question. It must NOT be fed into the chain directly — the
-        # chain turns its whole input into SPARQL, and a history blob breaks that.
+        # History is used only to resolve follow-ups; the orchestrator condenses
+        # it into a standalone question before any retrieval.
         history_text = ""
-        for msg in history[-6:]:  # last 3 turns is plenty for pronoun resolution
+        for msg in history[-6:]:
             history_text += f"{msg['role'].capitalize()}: {msg['content']}\n"
 
-        standalone_question = condense_question(history_text, request.message)
-        print(f"[DEBUG] Standalone question: {standalone_question}")
+        result = answer_question(
+            request.message, qa_chain, vector_store, history_text, image=request.image
+        )
+        reply = result["reply"] or "Xin lỗi, tôi chưa tạo được câu trả lời."
+        sparql_query = result["sparql_query"]
+        print(f"[DEBUG] sources={result['sources']} sparql={sparql_query}")
 
-        # Run the LangChain QA chain on the standalone question only
-        result = qa_chain.invoke({"query": standalone_question})
-
-        print(f"[DEBUG] Chain result keys: {list(result.keys())}")
-        print(f"[DEBUG] Chain result: {result}")
-
-        reply = result.get("result", "Sorry, I could not generate an answer.")
-        print(f"[DEBUG] Reply text: {reply}")
-
-        sparql_query = result.get("intermediate_steps", [{}])[0].get(
-            "sparql_query"
-        ) if result.get("intermediate_steps") else None
-
-        # Extract figure paths from the reply text
-        figure_paths = extract_figure_paths_from_reply(reply)
-        print(f"[DEBUG] Extracted figure_paths: {figure_paths}")
+        # Figures: those returned by the SPARQL results (reliable) first, then
+        # any paths mentioned in the reply text, de-duplicated, order-preserving.
+        figure_paths = list(result.get("figure_paths") or [])
+        for p in extract_figure_paths_from_reply(reply):
+            if p not in figure_paths:
+                figure_paths.append(p)
+        print(f"[DEBUG] figure_paths: {figure_paths}")
 
         # Update conversation history
         history.append({"role": "user", "content": request.message})

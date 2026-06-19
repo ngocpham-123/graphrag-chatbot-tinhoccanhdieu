@@ -558,6 +558,55 @@ body {
   text-align: center;
 }
 
+/* Image attach button + preview (Phase 2) */
+#attach-btn {
+  background: transparent;
+  border: none;
+  color: #8e8ea0;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+#attach-btn:hover { color: #ececec; }
+
+.image-preview {
+  position: relative;
+  display: inline-block;
+  margin-right: 8px;
+}
+.image-preview.hidden { display: none; }
+.image-preview img {
+  max-height: 56px;
+  max-width: 56px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  object-fit: cover;
+}
+#image-remove-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #333;
+  color: #ececec;
+  border: 1px solid #555;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 1;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+}
+.message .message-image {
+  display: block;
+  max-width: 220px;
+  max-height: 220px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .sidebar {
@@ -570,3 +619,26 @@ body {
     margin-left: calc(-1 * var(--sidebar-width));
   }
 }
+
+/* Inline graph in the SPARQL badge */
+.sparql-actions { display: inline-flex; gap: 8px; }
+.sparql-graph-toggle {
+  background: transparent;
+  border: 1px solid #555;
+  color: #ececec;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.sparql-graph-toggle:hover { background: #333; }
+.sparql-graph-toggle:disabled { opacity: 0.6; cursor: default; }
+.sparql-graph {
+  height: 300px;
+  margin-top: 8px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #0e0e0e;
+  overflow: hidden;
+}
+.sparql-graph.hidden { display: none; }

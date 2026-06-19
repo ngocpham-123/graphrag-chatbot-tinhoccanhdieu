@@ -18,6 +18,37 @@ const graphOverlay = document.getElementById("graph-overlay");
 const graphCloseBtn = document.getElementById("graph-close-btn");
 const graphContainer = document.getElementById("graph-container");
 const graphError = document.getElementById("graph-error");
+const imageInput = document.getElementById("image-input");
+const attachBtn = document.getElementById("attach-btn");
+const imagePreview = document.getElementById("image-preview");
+const imagePreviewImg = document.getElementById("image-preview-img");
+const imageRemoveBtn = document.getElementById("image-remove-btn");
+
+// Holds the currently attached image as a base64 data URL (or null)
+let selectedImage = null;
+
+attachBtn.addEventListener("click", () => imageInput.click());
+
+imageInput.addEventListener("change", () => {
+  const file = imageInput.files && imageInput.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    selectedImage = reader.result; // data URL
+    imagePreviewImg.src = selectedImage;
+    imagePreview.classList.remove("hidden");
+  };
+  reader.readAsDataURL(file);
+});
+
+imageRemoveBtn.addEventListener("click", clearSelectedImage);
+
+function clearSelectedImage() {
+  selectedImage = null;
+  imageInput.value = "";
+  imagePreviewImg.removeAttribute("src");
+  imagePreview.classList.add("hidden");
+}
 
 // ── Sidebar toggle ──
 sidebarToggle.addEventListener("click", () => {
@@ -94,7 +125,7 @@ function loadConversation(id) {
     if (msg.role === "assistant" && msg.sparql_query) {
       appendSparqlBadge(msg.sparql_query);
     }
-    appendMessage(msg.role, msg.content, msg.figure_paths);
+    appendMessage(msg.role, msg.content, msg.figure_paths, msg.image);
   }
   renderConversationList();
   scrollToBottom();
@@ -116,7 +147,7 @@ async function deleteConversation(id) {
 }
 
 // ── Append message to DOM ──
-function appendMessage(role, content, figurePaths) {
+function appendMessage(role, content, figurePaths, imageDataUrl) {
   // Remove welcome message if present
   const welcome = messagesContainer.querySelector(".welcome");
   if (welcome) welcome.remove();
@@ -127,6 +158,16 @@ function appendMessage(role, content, figurePaths) {
   const msgDiv = document.createElement("div");
   msgDiv.className = `message ${role}`;
   msgDiv.innerHTML = formatContent(content);
+
+  // Show an attached image (user-sent) above the text
+  if (imageDataUrl) {
+    const img = document.createElement("img");
+    img.className = "message-image";
+    img.src = imageDataUrl;
+    img.alt = "attached image";
+    img.addEventListener("click", () => window.open(img.src, "_blank"));
+    msgDiv.insertBefore(img, msgDiv.firstChild);
+  }
 
   // Append figure images if present
   if (figurePaths && figurePaths.length > 0) {
@@ -171,7 +212,12 @@ function appendSparqlBadge(query) {
 
   const header = document.createElement("div");
   header.className = "sparql-badge-header";
-  header.innerHTML = `<span>SPARQL Query Executed</span><button class="sparql-toggle">Show</button>`;
+  header.innerHTML =
+    `<span>SPARQL Query Executed</span>` +
+    `<span class="sparql-actions">` +
+    `<button class="sparql-toggle">Show</button>` +
+    `<button class="sparql-graph-toggle">Show graph</button>` +
+    `</span>`;
   badge.appendChild(header);
 
   const codeBlock = document.createElement("pre");
@@ -179,9 +225,52 @@ function appendSparqlBadge(query) {
   codeBlock.textContent = query;
   badge.appendChild(codeBlock);
 
+  const graphBox = document.createElement("div");
+  graphBox.className = "sparql-graph hidden";
+  badge.appendChild(graphBox);
+
   header.querySelector(".sparql-toggle").addEventListener("click", (e) => {
     const isHidden = codeBlock.classList.toggle("hidden");
     e.target.textContent = isHidden ? "Show" : "Hide";
+  });
+
+  let graphRendered = false;
+  header.querySelector(".sparql-graph-toggle").addEventListener("click", async (e) => {
+    const btn = e.target;
+    if (graphRendered) {
+      const isHidden = graphBox.classList.toggle("hidden");
+      btn.textContent = isHidden ? "Show graph" : "Hide graph";
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = "Loading…";
+    graphBox.classList.remove("hidden");
+    graphBox.textContent = "";
+    try {
+      const res = await fetch("/api/chat/sparql", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query }),
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.detail || "Query failed");
+      }
+      const data = await res.json();
+      if (!data.rows || data.rows.length === 0) {
+        graphBox.textContent = "Query returned no results.";
+      } else {
+        await renderGraphInto(graphBox, data.columns, data.rows);
+      }
+      graphRendered = true;
+      btn.textContent = "Hide graph";
+    } catch (err) {
+      graphBox.textContent = `Error: ${err.message}`;
+      graphRendered = true;
+      btn.textContent = "Hide graph";
+    } finally {
+      btn.disabled = false;
+    }
   });
 
   row.appendChild(badge);
@@ -216,10 +305,12 @@ function scrollToBottom() {
 chatForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const message = userInput.value.trim();
-  if (!message) return;
+  if (!message && !selectedImage) return;
+  const imageToSend = selectedImage;
 
   // Display user message
-  appendMessage("user", message);
+  appendMessage("user", message, null, imageToSend);
+  clearSelectedImage();
   userInput.value = "";
   userInput.style.height = "auto";
   sendBtn.disabled = true;
@@ -235,6 +326,7 @@ chatForm.addEventListener("submit", async (e) => {
       body: JSON.stringify({
         message,
         conversation_id: currentConversationId,
+        image: imageToSend || null,
       }),
     });
 
@@ -255,7 +347,7 @@ chatForm.addEventListener("submit", async (e) => {
       };
     }
     const conv = conversations[currentConversationId];
-    conv.messages.push({ role: "user", content: message });
+    conv.messages.push({ role: "user", content: message, image: imageToSend });
     conv.messages.push({
       role: "assistant",
       content: data.reply,
@@ -379,22 +471,14 @@ function isTriplePattern(columns) {
 }
 
 // Build vis-network graph from SPARQL results
-async function renderGraph(columns, rows) {
+// Build a vis-network graph from SPARQL results into the given container.
+async function renderGraphInto(container, columns, rows) {
   await loadFigureManifest();
-  graphError.classList.add("hidden");
 
-  if (!rows || rows.length === 0) {
-    graphError.textContent = "Query returned no results.";
-    graphError.classList.remove("hidden");
-    graphOverlay.classList.remove("hidden");
-    return;
-  }
-
-  const nodesMap = new Map(); // id -> { label, type }
+  const nodesMap = new Map(); // id -> { label, type, imageUrl }
   const edges = [];
 
   if (isTriplePattern(columns)) {
-    // ── Triple pattern: s, p, o columns ──
     for (const row of rows) {
       const subjectUri = row[0];
       const predicateUri = row[1];
@@ -409,7 +493,6 @@ async function renderGraph(columns, rows) {
           imageUrl: subjFigureUrl,
         });
       }
-
       const figureUrl = figureUrlForValue(objectUri);
       if (!nodesMap.has(objectUri)) {
         nodesMap.set(objectUri, {
@@ -421,16 +504,11 @@ async function renderGraph(columns, rows) {
       edges.push({ from: subjectUri, to: objectUri, label: predName });
     }
   } else {
-    // ── Tabular results: first column = subject, remaining columns = properties ──
-    // Each row creates a central node (col[0]) with property value nodes around it
-    const subjectCol = columns[0];
     const propertyCols = columns.slice(1);
-
     for (let rowIdx = 0; rowIdx < rows.length; rowIdx++) {
       const row = rows[rowIdx];
       const subjectUri = row[0];
       const subjectId = `${subjectUri}_row${rowIdx}`;
-
       if (!nodesMap.has(subjectId)) {
         const subjFigureUrl = figureUrlForValue(subjectUri);
         nodesMap.set(subjectId, {
@@ -439,23 +517,15 @@ async function renderGraph(columns, rows) {
           imageUrl: subjFigureUrl,
         });
       }
-
       for (let colIdx = 0; colIdx < propertyCols.length; colIdx++) {
         const colName = propertyCols[colIdx];
         const value = row[colIdx + 1];
         if (!value) continue;
-
-        // Use a unique key per value per row to avoid merging unrelated values
         const valueId = `${subjectId}_${colName}_${value}`;
         const valueLabel = localName(value);
-
-        // Figure/Diagram instance → make it an image node
         const figureUrl = figureUrlForValue(value);
-
-        // Truncate very long literal values for display
         const displayLabel =
           valueLabel.length > 60 ? valueLabel.substring(0, 57) + "…" : valueLabel;
-
         if (!nodesMap.has(valueId)) {
           nodesMap.set(valueId, {
             label: displayLabel,
@@ -463,13 +533,11 @@ async function renderGraph(columns, rows) {
             imageUrl: figureUrl,
           });
         }
-
         edges.push({ from: subjectId, to: valueId, label: colName });
       }
     }
   }
 
-  // Build vis datasets
   const nodeColors = {
     subject: { background: "#10a37f", border: "#0d8c6d" },
     object: { background: "#4a90d9", border: "#3a7bc8" },
@@ -478,91 +546,66 @@ async function renderGraph(columns, rows) {
 
   const nodeEntries = [];
   let nodeId = 0;
-  const idLookup = new Map(); // uri -> numeric id
+  const idLookup = new Map();
   for (const [uri, info] of nodesMap) {
     nodeId++;
     idLookup.set(uri, nodeId);
     const colors = nodeColors[info.type] || nodeColors.object;
-
     if (info.type === "image" && info.imageUrl) {
-      // Image node: show the figure as a thumbnail
       nodeEntries.push({
-        id: nodeId,
-        label: info.label,
-        shape: "image",
-        image: info.imageUrl,
-        size: 50,
-        borderWidth: 3,
+        id: nodeId, label: info.label, shape: "image", image: info.imageUrl,
+        size: 50, borderWidth: 3,
         color: { border: "#10a37f", background: "#1a1a1a" },
         shapeProperties: { useBorderWithImage: true, useImageSize: false },
         font: { color: "#ececec", size: 12, vadjust: 8 },
       });
     } else {
       nodeEntries.push({
-        id: nodeId,
-        label: info.label,
+        id: nodeId, label: info.label,
         color: { background: colors.background, border: colors.border },
         font: { color: "#ececec", size: info.type === "subject" ? 15 : 13 },
         shape: info.type === "subject" ? "dot" : "box",
-        size: info.type === "subject" ? 22 : 12,
-        borderWidth: 2,
+        size: info.type === "subject" ? 22 : 12, borderWidth: 2,
       });
     }
   }
 
   const edgeEntries = edges.map((e) => ({
-    from: idLookup.get(e.from),
-    to: idLookup.get(e.to),
-    label: e.label,
-    arrows: "to",
-    color: { color: "#666", highlight: "#aaa" },
+    from: idLookup.get(e.from), to: idLookup.get(e.to), label: e.label,
+    arrows: "to", color: { color: "#666", highlight: "#aaa" },
     font: { color: "#a0a0a0", size: 11, strokeWidth: 0 },
   }));
 
-  console.log("Graph nodes:", nodeEntries.length, "edges:", edgeEntries.length);
+  if (typeof vis === "undefined") {
+    console.error("vis-network library not loaded!");
+    return;
+  }
+  const visData = {
+    nodes: new vis.DataSet(nodeEntries),
+    edges: new vis.DataSet(edgeEntries),
+  };
+  const options = {
+    physics: {
+      solver: "forceAtlas2Based",
+      forceAtlas2Based: { gravitationalConstant: -40, centralGravity: 0.005, springLength: 150, springConstant: 0.04 },
+      stabilization: { iterations: 150 },
+    },
+    interaction: { hover: true, tooltipDelay: 200, zoomView: true, dragView: true },
+    layout: { improvedLayout: true },
+  };
+  const network = new vis.Network(container, visData, options);
+  network.on("stabilizationIterationsDone", () => network.fit());
+}
 
-  // Show overlay first so the container has dimensions
+// Overlay path: validate, show overlay, then render into the overlay container.
+async function renderGraph(columns, rows) {
+  graphError.classList.add("hidden");
+  if (!rows || rows.length === 0) {
+    graphError.textContent = "Query returned no results.";
+    graphError.classList.remove("hidden");
+    graphOverlay.classList.remove("hidden");
+    return;
+  }
   graphOverlay.classList.remove("hidden");
-
-  // Wait for layout to settle before creating vis-network
-  setTimeout(() => {
-    const rect = graphContainer.getBoundingClientRect();
-    console.log("Graph container size:", rect.width, "x", rect.height);
-
-    if (typeof vis === "undefined") {
-      console.error("vis-network library not loaded!");
-      return;
-    }
-
-    const visData = {
-      nodes: new vis.DataSet(nodeEntries),
-      edges: new vis.DataSet(edgeEntries),
-    };
-
-    const options = {
-      physics: {
-        solver: "forceAtlas2Based",
-        forceAtlas2Based: {
-          gravitationalConstant: -40,
-          centralGravity: 0.005,
-          springLength: 150,
-          springConstant: 0.04,
-        },
-        stabilization: { iterations: 150 },
-      },
-      interaction: {
-        hover: true,
-        tooltipDelay: 200,
-        zoomView: true,
-        dragView: true,
-      },
-      layout: { improvedLayout: true },
-    };
-
-    const network = new vis.Network(graphContainer, visData, options);
-    network.on("stabilizationIterationsDone", () => {
-      console.log("Graph rendering complete");
-      network.fit();
-    });
-  }, 100);
+  setTimeout(() => renderGraphInto(graphContainer, columns, rows), 100);
 }
