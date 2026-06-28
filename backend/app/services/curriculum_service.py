@@ -76,3 +76,55 @@ def grades() -> list[dict]:
         }
         for r in rows
     ]
+
+
+def topics_for_grade(grade_id: str) -> list[dict]:
+    _validate_id(grade_id)
+    rows = _run_select(f"""
+        SELECT ?t ?label ?title ?subtitle ?order
+               (COUNT(DISTINCT ?lesson) AS ?lessonCount) WHERE {{
+          ?t a ex:Topic ; ex:belongsToGrade ex:{grade_id} .
+          OPTIONAL {{ ?t rdfs:label ?label }}
+          OPTIONAL {{ ?t ex:hasTitle ?title }}
+          OPTIONAL {{ ?t ex:hasSubtitle ?subtitle }}
+          OPTIONAL {{ ?t ex:topicOrder ?order }}
+          OPTIONAL {{ ?lesson a ex:Lesson ; ex:belongsToTopic ?t }}
+        }} GROUP BY ?t ?label ?title ?subtitle ?order
+          ORDER BY ?order
+    """)
+    return [
+        {
+            "id": local_name(r["t"]),
+            "label": r.get("label", ""),
+            "title": r.get("title", ""),
+            "subtitle": r.get("subtitle", ""),
+            "topicOrder": _int(r.get("order")),
+            "lessonCount": _int(r.get("lessonCount"), 0),
+        }
+        for r in rows
+    ]
+
+
+def lessons_for_topic(topic_id: str) -> list[dict]:
+    _validate_id(topic_id)
+    rows = _run_select(f"""
+        SELECT ?l ?label ?title ?num ?start ?end WHERE {{
+          ?l a ex:Lesson ; ex:belongsToTopic ex:{topic_id} .
+          OPTIONAL {{ ?l rdfs:label ?label }}
+          OPTIONAL {{ ?l ex:hasTitle ?title }}
+          OPTIONAL {{ ?l ex:lessonNumber ?num }}
+          OPTIONAL {{ ?l ex:hasStartPage ?start }}
+          OPTIONAL {{ ?l ex:hasEndPage ?end }}
+        }} ORDER BY ?num ?label
+    """)
+    return [
+        {
+            "id": local_name(r["l"]),
+            "label": r.get("label", ""),
+            "title": r.get("title", ""),
+            "lessonNumber": _int(r.get("num")),
+            "startPage": _int(r.get("start")),
+            "endPage": _int(r.get("end")),
+        }
+        for r in rows
+    ]
