@@ -47,8 +47,10 @@ def test_lesson_detail_core_lesson1():
     first = sorted(d["sections"], key=lambda s: (s["order"] is None, s["order"]))[0]
     assert first["paragraphs"]
     assert first["paragraphs"][0]["text"]
-    # keys filled by later tasks exist as lists/None already
-    for key in ("figures", "tables", "concepts", "assessments"):
+    # figures and tables are now populated (Task 4); concepts/assessments still empty
+    assert isinstance(d["figures"], list)
+    assert isinstance(d["tables"], list)
+    for key in ("concepts", "assessments"):
         assert d[key] == []
 
 
@@ -56,3 +58,19 @@ def test_lesson_detail_unknown_raises_notfound():
     import pytest
     with pytest.raises(cs.NotFoundError):
         cs.lesson_detail("nosuchlesson")
+
+
+def test_lesson_detail_figures_lesson1():
+    d = cs.lesson_detail("lesson1")
+    assert d["figures"]                                  # lesson 1 has figures/diagrams
+    f = d["figures"][0]
+    assert set(f) == {"id", "caption", "type", "imageUrl", "concept"}
+    assert f["imageUrl"] is None or f["imageUrl"].startswith("/figures/")
+    # the data/info/knowledge pyramid diagram belongs to lesson 1
+    assert any("Tháp" in (x["caption"] or "") for x in d["figures"])
+
+
+def test_lesson_detail_tables_lesson2():
+    d = cs.lesson_detail("lesson2")
+    captions = [t["caption"] for t in d["tables"]]
+    assert any("đơn vị lưu trữ" in (c or "").lower() for c in captions)

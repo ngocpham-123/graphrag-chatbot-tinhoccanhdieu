@@ -9,7 +9,7 @@ import unicodedata
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 from backend.app.config import GRAPHDB_URL, GRAPHDB_REPOSITORY
-from backend.app.services.figures import local_name
+from backend.app.services.figures import figure_url_for_value, local_name
 
 SPARQL_ENDPOINT = f"{GRAPHDB_URL}/repositories/{GRAPHDB_REPOSITORY}"
 
@@ -219,14 +219,63 @@ def _sections(lesson_id: str) -> list[dict]:
     return sections
 
 
+def _figures(lesson_id: str) -> list[dict]:
+    rows = _run_select(f"""
+        SELECT ?f ?caption ?type ?concept ?gorder ?porder WHERE {{
+          VALUES ?type {{ ex:Figure ex:Diagram ex:Illustration }}
+          ?f a ?type ; ex:belongsToLesson ex:{lesson_id} .
+          OPTIONAL {{ ?f ex:hasCaption ?caption }}
+          OPTIONAL {{ ?f ex:globalFigureOrder ?gorder }}
+          OPTIONAL {{ ?f ex:figureOrderOnPage ?porder }}
+          OPTIONAL {{ ?f ex:illustratesConcept ?c . ?c rdfs:label ?concept }}
+        }} ORDER BY ?gorder ?porder
+    """)
+    figures = []
+    seen = set()
+    for r in rows:
+        fid = local_name(r["f"])
+        if fid in seen:
+            continue
+        seen.add(fid)
+        figures.append(
+            {
+                "id": fid,
+                "caption": r.get("caption", ""),
+                "type": local_name(r.get("type", "")),
+                "imageUrl": figure_url_for_value(r["f"]),
+                "concept": r.get("concept", ""),
+            }
+        )
+    return figures
+
+
+def _tables(lesson_id: str) -> list[dict]:
+    rows = _run_select(f"""
+        SELECT ?t ?caption ?text ?order WHERE {{
+          ?t a ex:Table ; ex:belongsToLesson ex:{lesson_id} .
+          OPTIONAL {{ ?t ex:hasCaption ?caption }}
+          OPTIONAL {{ ?t ex:hasRawText ?text }}
+          OPTIONAL {{ ?t ex:globalTableOrder ?order }}
+        }} ORDER BY ?order
+    """)
+    return [
+        {
+            "id": local_name(r["t"]),
+            "caption": r.get("caption", ""),
+            "text": r.get("text", ""),
+        }
+        for r in rows
+    ]
+
+
 def lesson_detail(lesson_id: str) -> dict:
     _validate_id(lesson_id)
     detail = _lesson_header(lesson_id)
     detail["objectives"] = _objectives(lesson_id)
     detail["summary"] = _summary(lesson_id)
     detail["sections"] = _sections(lesson_id)
-    detail["figures"] = []
-    detail["tables"] = []
+    detail["figures"] = _figures(lesson_id)
+    detail["tables"] = _tables(lesson_id)
     detail["concepts"] = []
     detail["assessments"] = []
     return detail
