@@ -47,11 +47,11 @@ def test_lesson_detail_core_lesson1():
     first = sorted(d["sections"], key=lambda s: (s["order"] is None, s["order"]))[0]
     assert first["paragraphs"]
     assert first["paragraphs"][0]["text"]
-    # figures and tables are now populated (Task 4); concepts/assessments still empty
+    # figures, tables, concepts, and assessments are all populated
     assert isinstance(d["figures"], list)
     assert isinstance(d["tables"], list)
     for key in ("concepts", "assessments"):
-        assert d[key] == []
+        assert isinstance(d[key], list)
 
 
 def test_lesson_detail_unknown_raises_notfound():
@@ -74,3 +74,20 @@ def test_lesson_detail_tables_lesson2():
     d = cs.lesson_detail("lesson2")
     captions = [t["caption"] for t in d["tables"]]
     assert any("đơn vị lưu trữ" in (c or "").lower() for c in captions)
+
+
+def test_lesson_detail_concepts_lesson1():
+    d = cs.lesson_detail("lesson1")
+    labels = [c["label"] for c in d["concepts"]]
+    assert "Thông tin" in labels
+    assert "Dữ liệu" in labels
+    for c in d["concepts"]:
+        assert set(c) == {"id", "label", "definition"}
+
+
+def test_lesson_detail_assessments_lesson1():
+    d = cs.lesson_detail("lesson1")
+    assert d["assessments"]                       # lesson 1 has exercises/activities
+    item = d["assessments"][0]
+    assert set(item) == {"id", "type", "title", "text"}
+    assert any(a["text"] for a in d["assessments"])

@@ -268,6 +268,64 @@ def _tables(lesson_id: str) -> list[dict]:
     ]
 
 
+_ASSESSMENT_TYPES = (
+    "ReviewQuestionItem", "Exercise", "PracticeExercise", "AppliedTask",
+    "PracticeTask", "PracticalInstruction", "ProjectTask", "Activity",
+)
+
+
+def _concepts(lesson_id: str) -> list[dict]:
+    rows = _run_select(f"""
+        SELECT ?c ?label ?definition WHERE {{
+          ex:{lesson_id} ex:hasConcept ?c .
+          OPTIONAL {{ ?c rdfs:label ?label }}
+          OPTIONAL {{ ?d ex:explainsConcept ?c ; ex:hasDefinitionText ?definition }}
+        }} ORDER BY ?label
+    """)
+    concepts = []
+    seen = set()
+    for r in rows:
+        cid = local_name(r["c"])
+        if cid in seen:
+            continue
+        seen.add(cid)
+        concepts.append(
+            {
+                "id": cid,
+                "label": r.get("label", ""),
+                "definition": r.get("definition") or None,
+            }
+        )
+    return concepts
+
+
+def _assessments(lesson_id: str) -> list[dict]:
+    values = " ".join(f"ex:{t}" for t in _ASSESSMENT_TYPES)
+    rows = _run_select(f"""
+        SELECT ?item ?type ?title ?text WHERE {{
+          VALUES ?type {{ {values} }}
+          ?item a ?type ; ex:belongsToLesson ex:{lesson_id} ; ex:hasRawText ?text .
+          OPTIONAL {{ ?item rdfs:label ?title }}
+        }}
+    """)
+    items = []
+    seen = set()
+    for r in rows:
+        iid = local_name(r["item"])
+        if iid in seen:
+            continue
+        seen.add(iid)
+        items.append(
+            {
+                "id": iid,
+                "type": local_name(r.get("type", "")),
+                "title": r.get("title") or None,
+                "text": r.get("text", ""),
+            }
+        )
+    return items
+
+
 def lesson_detail(lesson_id: str) -> dict:
     _validate_id(lesson_id)
     detail = _lesson_header(lesson_id)
@@ -276,6 +334,6 @@ def lesson_detail(lesson_id: str) -> dict:
     detail["sections"] = _sections(lesson_id)
     detail["figures"] = _figures(lesson_id)
     detail["tables"] = _tables(lesson_id)
-    detail["concepts"] = []
-    detail["assessments"] = []
+    detail["concepts"] = _concepts(lesson_id)
+    detail["assessments"] = _assessments(lesson_id)
     return detail
