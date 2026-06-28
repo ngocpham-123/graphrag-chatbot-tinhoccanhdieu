@@ -9,7 +9,7 @@ import unicodedata
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 from backend.app.config import GRAPHDB_URL, GRAPHDB_REPOSITORY
-from backend.app.services.figures import figure_url_for_value, local_name
+from backend.app.services.figures import local_name
 
 SPARQL_ENDPOINT = f"{GRAPHDB_URL}/repositories/{GRAPHDB_REPOSITORY}"
 
