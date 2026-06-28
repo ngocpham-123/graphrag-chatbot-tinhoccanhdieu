@@ -60,14 +60,14 @@ async function showTopics(gradeId) {
     if (!topics.length) return setError("Lớp này chưa có chủ đề nào.");
     setBreadcrumb([
       { label: "Thư viện", href: "#/" },
-      { label: topics[0] ? "Lớp " : gradeId },
+      { label: gradeId },
     ]);
     view.innerHTML = `<div class="card-grid">${topics
       .map(
         (t) => `<a class="card topic-card" href="#/topic/${encodeURIComponent(t.id)}">
             <div class="card-title">${esc(t.label || t.title)}</div>
             ${t.subtitle ? `<div class="card-sub">${esc(t.subtitle)}</div>` : ""}
-            <div class="card-meta">${t.lessonCount} bài</div>
+            <div class="card-meta">${esc(t.lessonCount)} bài</div>
           </a>`
       )
       .join("")}</div>`;
@@ -164,7 +164,7 @@ function renderFiguresTables(d) {
       (f) => `<figure class="fig">
         ${
           f.imageUrl
-            ? `<a href="${f.imageUrl}" target="_blank" rel="noopener"><img src="${f.imageUrl}" alt="${esc(f.caption)}" loading="lazy"/></a>`
+            ? `<a href="${esc(f.imageUrl)}" target="_blank" rel="noopener"><img src="${esc(f.imageUrl)}" alt="${esc(f.caption)}" loading="lazy"/></a>`
             : `<div class="fig-noimg">🖼️</div>`
         }
         <figcaption>${esc(f.caption)}</figcaption>
