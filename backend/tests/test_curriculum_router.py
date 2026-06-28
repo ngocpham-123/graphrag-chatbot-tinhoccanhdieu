@@ -1,5 +1,7 @@
 """Router tests use a minimal app that mounts ONLY the curriculum router,
 so the heavy chat-startup (OpenAI + Chroma) is not triggered."""
+from unittest.mock import patch
+
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
@@ -40,3 +42,38 @@ def test_get_lesson_detail_200():
 def test_get_lesson_detail_unknown_404():
     resp = client.get("/api/curriculum/lessons/nosuchlesson")
     assert resp.status_code == 404
+
+
+def test_get_grades_503_on_curriculum_error():
+    with patch("backend.app.routers.curriculum.cs.grades",
+               side_effect=curriculum.cs.CurriculumError("db down")):
+        resp = client.get("/api/curriculum/grades")
+    assert resp.status_code == 503
+
+
+def test_get_topics_404_on_notfound():
+    with patch("backend.app.routers.curriculum.cs.topics_for_grade",
+               side_effect=curriculum.cs.NotFoundError("bad grade")):
+        resp = client.get("/api/curriculum/grades/badgrade/topics")
+    assert resp.status_code == 404
+
+
+def test_get_topics_503_on_curriculum_error():
+    with patch("backend.app.routers.curriculum.cs.topics_for_grade",
+               side_effect=curriculum.cs.CurriculumError("db down")):
+        resp = client.get("/api/curriculum/grades/grade10/topics")
+    assert resp.status_code == 503
+
+
+def test_get_lessons_404_on_notfound():
+    with patch("backend.app.routers.curriculum.cs.lessons_for_topic",
+               side_effect=curriculum.cs.NotFoundError("bad topic")):
+        resp = client.get("/api/curriculum/topics/badtopic/lessons")
+    assert resp.status_code == 404
+
+
+def test_get_lesson_503_on_curriculum_error():
+    with patch("backend.app.routers.curriculum.cs.lesson_detail",
+               side_effect=curriculum.cs.CurriculumError("db down")):
+        resp = client.get("/api/curriculum/lessons/lesson1")
+    assert resp.status_code == 503

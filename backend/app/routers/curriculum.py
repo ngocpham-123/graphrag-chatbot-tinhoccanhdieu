@@ -14,6 +14,7 @@ async def get_grades():
     try:
         return cs.grades()
     except cs.CurriculumError as e:
+        logger.exception("Curriculum GraphDB error")
         raise HTTPException(status_code=503, detail=str(e))
 
 
@@ -24,6 +25,7 @@ async def get_topics(grade_id: str):
     except cs.NotFoundError as e:
         raise HTTPException(status_code=404, detail=str(e))
     except cs.CurriculumError as e:
+        logger.exception("Curriculum GraphDB error")
         raise HTTPException(status_code=503, detail=str(e))
 
 
@@ -34,6 +36,7 @@ async def get_lessons(topic_id: str):
     except cs.NotFoundError as e:
         raise HTTPException(status_code=404, detail=str(e))
     except cs.CurriculumError as e:
+        logger.exception("Curriculum GraphDB error")
         raise HTTPException(status_code=503, detail=str(e))
 
 
@@ -44,4 +47,5 @@ async def get_lesson(lesson_id: str):
     except cs.NotFoundError as e:
         raise HTTPException(status_code=404, detail=str(e))
     except cs.CurriculumError as e:
+        logger.exception("Curriculum GraphDB error")
         raise HTTPException(status_code=503, detail=str(e))
