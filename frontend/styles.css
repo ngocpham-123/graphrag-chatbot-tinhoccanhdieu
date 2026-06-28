@@ -667,8 +667,9 @@ body {
 .lesson-row:hover { background: #dcedc8; }
 .lesson-pages { font-size: .8rem; color: #777; white-space: nowrap; }
 .lesson-heading { margin: 8px 0 4px; }
-.objectives { background: #fffde7; border-left: 4px solid #fbc02d; padding: 10px 14px; border-radius: 6px; margin: 10px 0; }
+.objectives { background: #fffde7; border-left: 4px solid #fbc02d; padding: 10px 14px; border-radius: 6px; margin: 10px 0; color: #4e4300; }
 .objectives h3 { margin: 0 0 6px; font-size: 1rem; }
+.objectives p { margin: 4px 0; line-height: 1.5; }
 .tabbar { display: flex; gap: 4px; border-bottom: 2px solid #e0e0e0; margin: 16px 0 0; flex-wrap: wrap; }
 .tab { border: none; background: none; padding: 10px 16px; cursor: pointer; font-size: .95rem;
   color: #555; border-bottom: 3px solid transparent; }
@@ -677,15 +678,20 @@ body {
 .tabpanel.active { display: block; }
 .section { margin-bottom: 18px; }
 .section-title { font-size: 1.05rem; color: #2e7d32; margin: 0 0 6px; }
+.section p { line-height: 1.6; margin: 6px 0; }
 .fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 16px; }
 .fig { margin: 0; }
 .fig img { width: 100%; height: auto; border-radius: 8px; border: 1px solid #eee; }
 .fig-noimg { font-size: 2rem; text-align: center; padding: 24px; background: #f5f5f5; border-radius: 8px; }
 .fig figcaption { font-size: .85rem; color: #555; margin-top: 4px; }
-.tbl { background: #f9fbe7; border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; }
+.tbl { background: #f9fbe7; border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; color: #33402a; }
 .tbl-caption { font-weight: 600; margin-bottom: 4px; }
-.concept-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { background: #e1f5fe; color: #01579b; padding: 6px 12px; border-radius: 16px; font-size: .9rem; cursor: default; }
-.assessment { background: #fce4ec; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
+.tbl-text { margin: 0; line-height: 1.5; white-space: pre-line; }
+.concept-list { display: flex; flex-direction: column; gap: 10px; }
+.concept-item { background: #e1f5fe; color: #15323f; border-left: 4px solid #0288d1; border-radius: 8px; padding: 10px 14px; }
+.concept-name { font-weight: 700; color: #01579b; }
+.concept-def { margin: 6px 0 0; line-height: 1.55; }
+.assessment { background: #fce4ec; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; color: #4a2f38; }
 .assessment-type { font-weight: 600; color: #ad1457; margin-bottom: 4px; }
+.assessment p { margin: 0; line-height: 1.55; }
 .header-lib-link { margin-left: auto; text-decoration: none; color: #2e7d32; font-weight: 600; }

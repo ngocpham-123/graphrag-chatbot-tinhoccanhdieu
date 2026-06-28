@@ -185,10 +185,12 @@ function renderFiguresTables(d) {
 
 function renderConcepts(d) {
   if (!d.concepts || !d.concepts.length) return `<p class="empty">Không có khái niệm.</p>`;
-  return `<div class="concept-chips">${d.concepts
+  return `<div class="concept-list">${d.concepts
     .map(
-      (c) =>
-        `<span class="chip"${c.definition ? ` title="${esc(c.definition)}"` : ""}>${esc(c.label)}</span>`
+      (c) => `<div class="concept-item">
+        <span class="concept-name">${esc(c.label)}</span>
+        ${c.definition ? `<p class="concept-def">${esc(c.definition)}</p>` : ""}
+      </div>`
     )
     .join("")}</div>`;
 }
