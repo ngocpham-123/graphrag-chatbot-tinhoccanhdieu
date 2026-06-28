@@ -128,3 +128,105 @@ def lessons_for_topic(topic_id: str) -> list[dict]:
         }
         for r in rows
     ]
+
+
+def _lesson_header(lesson_id: str) -> dict:
+    rows = _run_select(f"""
+        SELECT ?label ?title ?num ?start ?end WHERE {{
+          ex:{lesson_id} a ex:Lesson .
+          OPTIONAL {{ ex:{lesson_id} rdfs:label ?label }}
+          OPTIONAL {{ ex:{lesson_id} ex:hasTitle ?title }}
+          OPTIONAL {{ ex:{lesson_id} ex:lessonNumber ?num }}
+          OPTIONAL {{ ex:{lesson_id} ex:hasStartPage ?start }}
+          OPTIONAL {{ ex:{lesson_id} ex:hasEndPage ?end }}
+        }} LIMIT 1
+    """)
+    if not rows:
+        raise NotFoundError(f"Lesson not found: {lesson_id}")
+    r = rows[0]
+    return {
+        "id": lesson_id,
+        "label": r.get("label", ""),
+        "title": r.get("title", ""),
+        "lessonNumber": _int(r.get("num")),
+        "startPage": _int(r.get("start")),
+        "endPage": _int(r.get("end")),
+    }
+
+
+def _objectives(lesson_id: str) -> list[str]:
+    rows = _run_select(f"""
+        SELECT ?text WHERE {{
+          ?n a ex:NoteBox ; ex:belongsToLesson ex:{lesson_id} ; ex:hasRawText ?text .
+        }}
+    """)
+    return [r["text"] for r in rows if r.get("text")]
+
+
+def _summary(lesson_id: str):
+    rows = _run_select(f"""
+        SELECT ?text WHERE {{
+          ?s ex:belongsToLesson ex:{lesson_id} ; ex:hasSummaryText ?text .
+        }} LIMIT 1
+    """)
+    return rows[0]["text"] if rows else None
+
+
+def _sections(lesson_id: str) -> list[dict]:
+    section_rows = _run_select(f"""
+        SELECT ?s ?title ?label ?order WHERE {{
+          ?s a ex:Section ; ex:belongsToLesson ex:{lesson_id} .
+          OPTIONAL {{ ?s ex:hasTitle ?title }}
+          OPTIONAL {{ ?s rdfs:label ?label }}
+          OPTIONAL {{ ?s ex:sectionOrder ?order }}
+        }} ORDER BY ?order
+    """)
+    para_rows = _run_select(f"""
+        SELECT ?p ?text ?order ?section WHERE {{
+          ?p a ex:Paragraph ; ex:belongsToLesson ex:{lesson_id} ; ex:hasRawText ?text .
+          OPTIONAL {{ ?p ex:paragraphOrder ?order }}
+          OPTIONAL {{ ?p ex:belongsToSection ?section }}
+        }} ORDER BY ?order
+    """)
+
+    paras_by_section: dict = {}
+    for r in para_rows:
+        sec = local_name(r["section"]) if r.get("section") else None
+        paras_by_section.setdefault(sec, []).append(
+            {"order": _int(r.get("order")), "text": r["text"]}
+        )
+
+    sections = []
+    seen = set()
+    for r in section_rows:
+        sid = local_name(r["s"])
+        seen.add(sid)
+        sections.append(
+            {
+                "order": _int(r.get("order")),
+                "title": r.get("title") or r.get("label", ""),
+                "paragraphs": paras_by_section.get(sid, []),
+            }
+        )
+
+    leftover = []
+    for sec, paras in paras_by_section.items():
+        if sec is None or sec not in seen:
+            leftover.extend(paras)
+    if leftover:
+        sections.append({"order": None, "title": "(Khác)", "paragraphs": leftover})
+
+    return sections
+
+
+def lesson_detail(lesson_id: str) -> dict:
+    _validate_id(lesson_id)
+    detail = _lesson_header(lesson_id)
+    detail["objectives"] = _objectives(lesson_id)
+    detail["summary"] = _summary(lesson_id)
+    detail["sections"] = _sections(lesson_id)
+    detail["figures"] = []
+    detail["tables"] = []
+    detail["concepts"] = []
+    detail["assessments"] = []
+    return detail
