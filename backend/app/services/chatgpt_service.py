@@ -66,6 +66,18 @@ KEY NAVIGATION PATTERNS for this graph:
 - Images/figures in a lesson: `?fig a ex:Figure ; ex:belongsToLesson ?lesson ;
   ex:hasCaption ?caption .`  Always include `a ex:Figure` so you exclude pages
   and sections (only nodes typed ex:Figure are real images).
+- Questions / exercises / activities of a lesson all link via `ex:belongsToLesson`,
+  carry their text in `ex:hasRawText`, and a short title in `rdfs:label`. Their TYPE
+  distinguishes them:
+      ex:ReviewQuestionItem = câu hỏi / câu hỏi ôn tập
+      ex:Exercise, ex:PracticeExercise = bài tập / luyện tập
+      ex:PracticeTask, ex:PracticalInstruction = bài thực hành / thực hành
+      ex:AppliedTask = bài tập vận dụng       ex:Activity = hoạt động
+      ex:ProjectTask = dự án
+  Pattern:  ?item ex:belongsToLesson ?lesson ; a ?kind ; ex:hasRawText ?text .
+            OPTIONAL {{ ?item rdfs:label ?title }}
+  For "câu hỏi và bài tập" (all kinds) constrain ?kind with FILTER(?kind IN (...))
+  over those classes; for one kind only (e.g. only câu hỏi) match that single class.
 
 VIETNAMESE VOCABULARY (the user often uses loose or English terms — map them to
 the actual Vietnamese rdfs:label values):
@@ -75,6 +87,15 @@ the actual Vietnamese rdfs:label values):
 - "bài N" or "lesson N"                -> Lesson label starting with "Bài N." —
   INCLUDE the trailing period in the filter (LCASE "bài 1.") so "Bài 1." does
   not also match "Bài 10."/"Bài 12.".
+- GENERIC "bài tập" / "các bài tập" / "câu hỏi và bài tập" / "bài tập về nhà" / "câu hỏi":
+  do NOT restrict to one class — different lessons use different types. Match the
+  whole family: FILTER(?kind IN (ex:ReviewQuestionItem, ex:Exercise,
+  ex:PracticeExercise, ex:AppliedTask, ex:PracticeTask, ex:PracticalInstruction,
+  ex:ProjectTask)). Always return ex:hasRawText (?text) — the actual content.
+- Narrow to ONE class ONLY when the user names a specific kind:
+  "câu hỏi" / "câu hỏi ôn tập" / "tự kiểm tra" -> ex:ReviewQuestionItem ;
+  "thực hành" / "luyện tập" / "nhiệm vụ" -> ex:PracticeTask / ex:PracticalInstruction ;
+  "vận dụng" -> ex:AppliedTask ;  "hoạt động" -> ex:Activity ;  "dự án" -> ex:ProjectTask .
 
 EXAMPLES (question -> SPARQL):
 
@@ -129,6 +150,32 @@ SELECT ?caption ?fig WHERE {{
   ?fig a ex:Figure ; ex:belongsToLesson ?lesson .
   OPTIONAL {{ ?fig ex:hasCaption ?caption }}
 }} LIMIT 30
+
+# "Các câu hỏi và bài tập trong bài 1 chủ đề F lớp 11"
+# (navigate grade + topic + lesson, then list all assessment items of that lesson)
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?kind ?title ?text WHERE {{
+  ?lesson a ex:Lesson ; rdfs:label ?ll ;
+          ex:belongsToGrade ?g ; ex:belongsToTopic ?tp .
+  ?g rdfs:label ?gl . FILTER(CONTAINS(LCASE(STR(?gl)), LCASE("lớp 11")))
+  ?tp rdfs:label ?tpl . FILTER(CONTAINS(LCASE(STR(?tpl)), LCASE("chủ đề f")))
+  FILTER(CONTAINS(LCASE(STR(?ll)), LCASE("bài 1.")))
+  ?item ex:belongsToLesson ?lesson ; a ?kind ; ex:hasRawText ?text .
+  FILTER(?kind IN (ex:ReviewQuestionItem, ex:Exercise, ex:PracticeExercise,
+                   ex:AppliedTask, ex:PracticeTask, ex:PracticalInstruction,
+                   ex:ProjectTask, ex:Activity))
+  OPTIONAL {{ ?item rdfs:label ?title }}
+}} LIMIT 30
+
+# "Câu hỏi ôn tập của bài về cơ sở dữ liệu"  (lesson by title keyword; one kind only)
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?ll ?text WHERE {{
+  ?lesson a ex:Lesson ; rdfs:label ?ll .
+  FILTER(CONTAINS(LCASE(STR(?ll)), LCASE("cơ sở dữ liệu")))
+  ?q a ex:ReviewQuestionItem ; ex:belongsToLesson ?lesson ; ex:hasRawText ?text .
+}} LIMIT 20
 
 Now write the SPARQL query for this question:
 ```
