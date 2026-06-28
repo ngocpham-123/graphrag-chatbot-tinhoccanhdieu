@@ -642,3 +642,50 @@ body {
   overflow: hidden;
 }
 .sparql-graph.hidden { display: none; }
+
+/* ===== Curriculum Library ===== */
+.lib-app { max-width: 1000px; margin: 0 auto; padding: 16px; }
+.lib-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.lib-title { font-size: 1.4rem; margin: 0; }
+.lib-nav a { margin-left: 12px; text-decoration: none; color: #2e7d32; font-weight: 600; }
+.lib-nav a.active { text-decoration: underline; }
+.breadcrumb { margin: 12px 0; font-size: 0.95rem; color: #555; }
+.breadcrumb a { color: #2e7d32; text-decoration: none; }
+.breadcrumb .sep { margin: 0 8px; color: #aaa; }
+.lib-loading, .lib-error, .empty { padding: 24px; color: #666; text-align: center; }
+.lib-error { color: #c62828; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.card { display: block; padding: 18px; border-radius: 12px; background: #e8f5e9; color: #1b5e20;
+  text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,.08); transition: transform .08s, box-shadow .08s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+.card-title { font-weight: 700; font-size: 1.05rem; }
+.card-sub { margin-top: 6px; font-size: .9rem; color: #33691e; }
+.card-meta { margin-top: 10px; font-size: .8rem; color: #558b2f; }
+.lesson-list { display: flex; flex-direction: column; gap: 8px; }
+.lesson-row { display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 14px 16px; border-radius: 10px; background: #f1f8e9; color: #1b5e20; text-decoration: none; }
+.lesson-row:hover { background: #dcedc8; }
+.lesson-pages { font-size: .8rem; color: #777; white-space: nowrap; }
+.lesson-heading { margin: 8px 0 4px; }
+.objectives { background: #fffde7; border-left: 4px solid #fbc02d; padding: 10px 14px; border-radius: 6px; margin: 10px 0; }
+.objectives h3 { margin: 0 0 6px; font-size: 1rem; }
+.tabbar { display: flex; gap: 4px; border-bottom: 2px solid #e0e0e0; margin: 16px 0 0; flex-wrap: wrap; }
+.tab { border: none; background: none; padding: 10px 16px; cursor: pointer; font-size: .95rem;
+  color: #555; border-bottom: 3px solid transparent; }
+.tab.active { color: #2e7d32; border-bottom-color: #2e7d32; font-weight: 700; }
+.tabpanel { display: none; padding: 16px 0; }
+.tabpanel.active { display: block; }
+.section { margin-bottom: 18px; }
+.section-title { font-size: 1.05rem; color: #2e7d32; margin: 0 0 6px; }
+.fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.fig { margin: 0; }
+.fig img { width: 100%; height: auto; border-radius: 8px; border: 1px solid #eee; }
+.fig-noimg { font-size: 2rem; text-align: center; padding: 24px; background: #f5f5f5; border-radius: 8px; }
+.fig figcaption { font-size: .85rem; color: #555; margin-top: 4px; }
+.tbl { background: #f9fbe7; border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; }
+.tbl-caption { font-weight: 600; margin-bottom: 4px; }
+.concept-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: #e1f5fe; color: #01579b; padding: 6px 12px; border-radius: 16px; font-size: .9rem; cursor: default; }
+.assessment { background: #fce4ec; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
+.assessment-type { font-weight: 600; color: #ad1457; margin-bottom: 4px; }
+.header-lib-link { margin-left: auto; text-decoration: none; color: #2e7d32; font-weight: 600; }
