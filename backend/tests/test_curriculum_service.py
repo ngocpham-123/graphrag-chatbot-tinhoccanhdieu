@@ -49,7 +49,7 @@ def test_lesson_detail_core_lesson1():
     assert first["paragraphs"][0]["text"]
     # keys filled by later tasks exist as lists/None already
     for key in ("figures", "tables", "concepts", "assessments"):
-        assert key in d
+        assert d[key] == []
 
 
 def test_lesson_detail_unknown_raises_notfound():

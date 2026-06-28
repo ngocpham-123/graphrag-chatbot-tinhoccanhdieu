@@ -163,10 +163,10 @@ def _objectives(lesson_id: str) -> list[str]:
     return [r["text"] for r in rows if r.get("text")]
 
 
-def _summary(lesson_id: str):
+def _summary(lesson_id: str) -> str | None:
     rows = _run_select(f"""
         SELECT ?text WHERE {{
-          ?s ex:belongsToLesson ex:{lesson_id} ; ex:hasSummaryText ?text .
+          ?s a ex:SummaryBox ; ex:belongsToLesson ex:{lesson_id} ; ex:hasSummaryText ?text .
         }} LIMIT 1
     """)
     return rows[0]["text"] if rows else None
