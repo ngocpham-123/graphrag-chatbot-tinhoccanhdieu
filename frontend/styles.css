@@ -695,3 +695,28 @@ body {
 .assessment-type { font-weight: 600; color: #ad1457; margin-bottom: 4px; }
 .assessment p { margin: 0; line-height: 1.55; }
 .header-lib-link { margin-left: auto; text-decoration: none; color: #2e7d32; font-weight: 600; }
+
+/* ===== Interactive exercise runner ===== */
+.ex-runner { background: #f3f6fb; border: 1px solid #d8e2f0; border-radius: 10px; padding: 12px 14px; margin: 8px 0; color: #1f2a37; }
+.ex-q { margin-bottom: 8px; line-height: 1.5; }
+.ex-input { width: 100%; box-sizing: border-box; border: 1px solid #c3cfe0; border-radius: 8px; padding: 8px 10px; font: inherit; resize: vertical; }
+.ex-actions { margin-top: 8px; }
+.ex-submit, .ex-retry { background: #2e7d32; color: #fff; border: none; border-radius: 8px; padding: 7px 14px; cursor: pointer; font: inherit; }
+.ex-submit:disabled { opacity: .6; cursor: default; }
+.ex-retry { background: #607d8b; }
+.ex-loading, .ex-hint { margin-top: 8px; color: #607d8b; }
+.ex-error { margin-top: 8px; color: #c62828; }
+.ex-result { margin-top: 8px; }
+.ex-verdict { display: inline-block; font-weight: 700; padding: 3px 10px; border-radius: 12px; margin-bottom: 6px; }
+.verdict-correct { background: #e8f5e9; color: #1b5e20; }
+.verdict-partial { background: #fff8e1; color: #8d6e00; }
+.verdict-incorrect { background: #ffebee; color: #b71c1c; }
+.ex-feedback { line-height: 1.55; margin-bottom: 6px; }
+.ex-model { background: #eef7ee; border-left: 4px solid #2e7d32; border-radius: 6px; padding: 8px 12px; }
+.ex-model-h { font-weight: 700; color: #2e7d32; margin-bottom: 4px; }
+/* Chat exercise offer */
+.ex-offer { background: #eef3f8; border: 1px solid #d8e2f0; border-radius: 10px; padding: 10px 14px; margin: 8px 0; }
+.ex-offer-q { margin-bottom: 8px; }
+.ex-offer-actions { display: flex; gap: 8px; }
+.ex-offer-yes { background: #2e7d32; color: #fff; border: none; border-radius: 8px; padding: 7px 14px; cursor: pointer; font: inherit; }
+.ex-offer-no { background: #cfd8dc; color: #263238; border: none; border-radius: 8px; padding: 7px 14px; cursor: pointer; font: inherit; }
