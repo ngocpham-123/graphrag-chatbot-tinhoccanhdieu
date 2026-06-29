@@ -26,6 +26,7 @@ def test_grade_empty_answer_400():
     resp = client.post("/api/exercises/grade",
                        json={"exerciseId": "l1_ex2", "userAnswer": "   "})
     assert resp.status_code == 400
+    assert "trống" in resp.json()["detail"]
 
 
 def test_grade_unknown_id_404():
@@ -39,6 +40,14 @@ def test_grade_unknown_id_404():
 def test_grade_graphdb_error_503():
     with patch("backend.app.routers.exercises.es.grade_exercise",
                side_effect=cs.CurriculumError("db down")):
+        resp = client.post("/api/exercises/grade",
+                           json={"exerciseId": "l1_ex2", "userAnswer": "abc"})
+    assert resp.status_code == 503
+
+
+def test_grade_grading_error_503():
+    with patch("backend.app.routers.exercises.es.grade_exercise",
+               side_effect=exercises.es.GradingError("llm down")):
         resp = client.post("/api/exercises/grade",
                            json={"exerciseId": "l1_ex2", "userAnswer": "abc"})
     assert resp.status_code == 503
