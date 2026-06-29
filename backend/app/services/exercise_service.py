@@ -172,8 +172,13 @@ def grade_exercise(exercise_id: str, user_answer: str) -> dict:
     ex = get_exercise(exercise_id)
     context = ""
     if ex.get("lessonId"):
-        detail = cs.lesson_detail(ex["lessonId"])
-        context = _grounding_context(detail)
+        try:
+            detail = cs.lesson_detail(ex["lessonId"])
+            context = _grounding_context(detail)
+        except cs.NotFoundError:
+            # Exercise references a lesson missing from the graph: grade
+            # without grounding rather than reporting the exercise as missing.
+            context = ""
     prompt = GRADE_PROMPT.format(
         context=context or "(không có)",
         question=ex["text"],
