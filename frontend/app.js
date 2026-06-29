@@ -126,6 +126,9 @@ function loadConversation(id) {
       appendSparqlBadge(msg.sparql_query);
     }
     appendMessage(msg.role, msg.content, msg.figure_paths, msg.image);
+    if (msg.role === "assistant" && msg.exercises) {
+      appendExerciseOffer(msg.exercises);
+    }
   }
   renderConversationList();
   scrollToBottom();
@@ -187,6 +190,36 @@ function appendMessage(role, content, figurePaths, imageDataUrl) {
   }
 
   row.appendChild(msgDiv);
+  messagesContainer.appendChild(row);
+}
+
+// ── Exercise offer (shown when an answer surfaced exercises) ──
+function appendExerciseOffer(exercises) {
+  if (!exercises || !exercises.length) return;
+  const row = document.createElement("div");
+  row.className = "message-row";
+
+  const panel = document.createElement("div");
+  panel.className = "ex-offer";
+  panel.innerHTML =
+    `<div class="ex-offer-q">Bạn có muốn thử làm các bài tập này không?</div>` +
+    `<div class="ex-offer-actions">` +
+    `<button class="ex-offer-yes">▶ Làm thử</button>` +
+    `<button class="ex-offer-no">Bỏ qua</button>` +
+    `</div><div class="ex-offer-mount"></div>`;
+
+  panel.querySelector(".ex-offer-yes").addEventListener("click", () => {
+    panel.querySelector(".ex-offer-actions").style.display = "none";
+    panel.querySelector(".ex-offer-q").textContent = "Bài tập:";
+    const mount = panel.querySelector(".ex-offer-mount");
+    window.mountExerciseRunner(
+      mount,
+      exercises.map((e) => ({ id: e.id, title: e.title, text: e.text }))
+    );
+  });
+  panel.querySelector(".ex-offer-no").addEventListener("click", () => row.remove());
+
+  row.appendChild(panel);
   messagesContainer.appendChild(row);
 }
 
@@ -353,6 +386,7 @@ chatForm.addEventListener("submit", async (e) => {
       content: data.reply,
       sparql_query: data.sparql_query,
       figure_paths: data.figure_paths,
+      exercises: data.exercises,
     });
 
     chatTitle.textContent = conv.title;
@@ -362,6 +396,7 @@ chatForm.addEventListener("submit", async (e) => {
       appendSparqlBadge(data.sparql_query);
     }
     appendMessage("assistant", data.reply, data.figure_paths);
+    appendExerciseOffer(data.exercises);
     renderConversationList();
   } catch (err) {
     removeTypingIndicator();
