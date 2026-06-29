@@ -42,8 +42,8 @@ def get_exercise(exercise_id: str) -> dict:
     return {
         "id": exercise_id,
         "type": cs.local_name(r.get("kind", "")),
-        "title": r.get("title") or None,
-        "text": r.get("text", ""),
+        "title": cs._nfc(r["title"]) if r.get("title") else None,
+        "text": cs._nfc(r.get("text", "")),
         "lessonId": cs.local_name(r["lesson"]) if r.get("lesson") else None,
     }
 
