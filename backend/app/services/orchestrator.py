@@ -40,9 +40,11 @@ def answer_question(
             sources.append("image")
     retrieval_query = f"{standalone}\n{image_context}".strip() if image_context else standalone
 
-    sparql_context, sparql, figure_paths = "", None, []
+    sparql_context, sparql, figure_paths, exercises = "", None, [], []
     try:
-        sparql_context, sparql, figure_paths = qa_chain.retrieve_context(retrieval_query)
+        sparql_context, sparql, figure_paths, exercises = qa_chain.retrieve_context(
+            retrieval_query
+        )
     except Exception:
         logger.exception("SPARQL retrieval failed; continuing without it")
 
@@ -71,4 +73,5 @@ def answer_question(
         "sparql_query": sparql,
         "sources": sources,
         "figure_paths": figure_paths,
+        "exercises": exercises,
     }

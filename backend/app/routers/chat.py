@@ -111,6 +111,7 @@ async def chat(request: ChatRequest):
         )
         reply = result["reply"] or "Xin lỗi, tôi chưa tạo được câu trả lời."
         sparql_query = result["sparql_query"]
+        exercises = result.get("exercises") or None
         print(f"[DEBUG] sources={result['sources']} sparql={sparql_query}")
 
         # Figures: those returned by the SPARQL results (reliable) first, then
@@ -135,6 +136,7 @@ async def chat(request: ChatRequest):
             conversation_id=conversation_id,
             sparql_query=sparql_query,
             figure_paths=figure_paths if figure_paths else None,
+            exercises=exercises,
         )
     except Exception as e:
         logger.exception("Chat endpoint error")

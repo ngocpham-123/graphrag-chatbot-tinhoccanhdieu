@@ -10,6 +10,7 @@ from langchain_community.chains.graph_qa.ontotext_graphdb import (
 
 from backend.app.config import OPENAI_API_KEY
 from backend.app.services.figures import figure_urls_from_rows
+from backend.app.services.exercise_service import extract_exercises_from_rows
 
 logger = logging.getLogger(__name__)
 
@@ -24,9 +25,7 @@ logger = logging.getLogger(__name__)
 # prompt teaches it the real navigation patterns and label-matching technique,
 # with few-shot examples whose SPARQL was validated against the live endpoint.
 # ---------------------------------------------------------------------------
-SPARQL_GENERATION_PROMPT = PromptTemplate(
-    input_variables=["prompt", "schema"],
-    template="""\
+SPARQL_GENERATION_PROMPT = """\
 You write SPARQL SELECT queries for an Ontotext GraphDB graph describing the
 Vietnamese informatics textbook.
 
@@ -155,7 +154,7 @@ SELECT ?caption ?fig WHERE {{
 # (navigate grade + topic + lesson, then list all assessment items of that lesson)
 PREFIX ex: <http://example.org/tinhoc10-cd#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?kind ?title ?text WHERE {{
+SELECT ?item ?kind ?title ?text WHERE {{
   ?lesson a ex:Lesson ; rdfs:label ?ll ;
           ex:belongsToGrade ?g ; ex:belongsToTopic ?tp .
   ?g rdfs:label ?gl . FILTER(CONTAINS(LCASE(STR(?gl)), LCASE("lớp 11")))
@@ -181,7 +180,11 @@ Now write the SPARQL query for this question:
 ```
 {prompt}
 ```
-""",
+"""
+
+_SPARQL_GENERATION_PROMPT_TEMPLATE = PromptTemplate(
+    input_variables=["prompt", "schema"],
+    template=SPARQL_GENERATION_PROMPT,
 )
 
 
@@ -286,7 +289,7 @@ class FormattedGraphDBQAChain(OntotextGraphDBQAChain):
             raise ValueError("Failed to execute the generated SPARQL query.")
         return _format_query_results(results)
 
-    def retrieve_context(self, question: str) -> tuple[str, str, list[str]]:
+    def retrieve_context(self, question: str) -> tuple[str, str, list[str], list[dict]]:
         """Generate + execute SPARQL; return (formatted_rows, sparql_query, figure_urls).
 
         Reuses the chain's SPARQL generation/fix logic, stops before answer
@@ -307,7 +310,8 @@ class FormattedGraphDBQAChain(OntotextGraphDBQAChain):
         rows = list(self.graph.query(sparql))
         context = _format_query_results(rows)
         figure_urls = figure_urls_from_rows(rows)
-        return context, sparql, figure_urls
+        exercises = extract_exercises_from_rows(sparql, rows)
+        return context, sparql, figure_urls, exercises
 
 
 # ---------------------------------------------------------------------------
@@ -380,7 +384,7 @@ def create_qa_chain(graph: OntotextGraphDBGraph) -> OntotextGraphDBQAChain:
     chain = FormattedGraphDBQAChain.from_llm(
         llm=llm,
         graph=graph,
-        sparql_generation_prompt=SPARQL_GENERATION_PROMPT,
+        sparql_generation_prompt=_SPARQL_GENERATION_PROMPT_TEMPLATE,
         qa_prompt=QA_PROMPT,
         verbose=True,
         allow_dangerous_requests=True,

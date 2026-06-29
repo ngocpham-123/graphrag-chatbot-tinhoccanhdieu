@@ -12,3 +12,4 @@ class ChatResponse(BaseModel):
     conversation_id: str
     sparql_query: str | None = None
     figure_paths: list[str] | None = None
+    exercises: list[dict] | None = None
