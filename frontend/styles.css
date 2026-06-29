@@ -8,15 +8,15 @@
 }
 
 :root {
-  --bg-primary: #171717;
-  --bg-secondary: #212121;
-  --bg-sidebar: #171717;
-  --bg-input: #2a2a2a;
-  --bg-user-msg: #303030;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f8;
+  --bg-sidebar: #f4f4f5;
+  --bg-input: #ffffff;
+  --bg-user-msg: #e8eef7;
   --bg-assistant-msg: transparent;
-  --text-primary: #ececec;
-  --text-secondary: #a0a0a0;
-  --border-color: #333;
+  --text-primary: #1f2430;
+  --text-secondary: #6b7280;
+  --border-color: #e3e3e6;
   --accent: #10a37f;
   --accent-hover: #0d8c6d;
   --danger: #ef4444;
@@ -43,7 +43,7 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #444;
+  background: #c4c4c8;
   border-radius: 3px;
 }
 
@@ -246,7 +246,7 @@ body {
   flex: 1;
   width: 100%;
   min-height: 500px;
-  background: #0d0d0d;
+  background: #f8fafc;
   position: relative;
 }
 
@@ -372,7 +372,7 @@ body {
 }
 
 .message pre {
-  background: #1a1a2e;
+  background: #f3f4f6;
   padding: 12px;
   border-radius: 8px;
   overflow-x: auto;
@@ -427,7 +427,7 @@ body {
   cursor: pointer;
   transition: opacity 0.15s;
   object-fit: contain;
-  background: #1a1a1a;
+  background: #f3f4f6;
 }
 
 .figure-image:hover {
@@ -438,8 +438,8 @@ body {
 .sparql-badge {
   max-width: var(--max-chat-width);
   width: 100%;
-  background: #1a2332;
-  border: 1px solid #2a3a4a;
+  background: #eef4fb;
+  border: 1px solid #cfe0f3;
   border-radius: 8px;
   padding: 8px 12px;
   font-size: 13px;
@@ -450,14 +450,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #6cb4ee;
+  color: #1565c0;
   font-weight: 500;
 }
 
 .sparql-toggle {
   background: none;
-  border: 1px solid #2a3a4a;
-  color: #6cb4ee;
+  border: 1px solid #cfe0f3;
+  color: #1565c0;
   font-size: 12px;
   padding: 2px 8px;
   border-radius: 4px;
@@ -465,18 +465,18 @@ body {
 }
 
 .sparql-toggle:hover {
-  background: #2a3a4a;
+  background: #dbeafe;
 }
 
 .sparql-code {
   margin-top: 8px;
-  background: #0d1620;
+  background: #f5f7fa;
   padding: 10px;
   border-radius: 6px;
   overflow-x: auto;
   font-family: "Fira Code", "Consolas", monospace;
   font-size: 12px;
-  color: #c0d0e0;
+  color: #24303f;
   white-space: pre-wrap;
 }
 
@@ -568,7 +568,7 @@ body {
   display: flex;
   align-items: center;
 }
-#attach-btn:hover { color: #ececec; }
+#attach-btn:hover { color: #111827; }
 
 .image-preview {
   position: relative;
@@ -580,7 +580,7 @@ body {
   max-height: 56px;
   max-width: 56px;
   border-radius: 8px;
-  border: 1px solid #444;
+  border: 1px solid #cbd5e1;
   object-fit: cover;
 }
 #image-remove-btn {
@@ -624,21 +624,21 @@ body {
 .sparql-actions { display: inline-flex; gap: 8px; }
 .sparql-graph-toggle {
   background: transparent;
-  border: 1px solid #555;
-  color: #ececec;
+  border: 1px solid #cbd5e1;
+  color: #1f2430;
   border-radius: 6px;
   padding: 2px 8px;
   font-size: 12px;
   cursor: pointer;
 }
-.sparql-graph-toggle:hover { background: #333; }
+.sparql-graph-toggle:hover { background: #eef2f7; }
 .sparql-graph-toggle:disabled { opacity: 0.6; cursor: default; }
 .sparql-graph {
   height: 300px;
   margin-top: 8px;
-  border: 1px solid #333;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  background: #0e0e0e;
+  background: #f8fafc;
   overflow: hidden;
 }
 .sparql-graph.hidden { display: none; }
