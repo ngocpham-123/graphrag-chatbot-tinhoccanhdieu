@@ -290,7 +290,7 @@ class FormattedGraphDBQAChain(OntotextGraphDBQAChain):
         return _format_query_results(results)
 
     def retrieve_context(self, question: str) -> tuple[str, str, list[str], list[dict]]:
-        """Generate + execute SPARQL; return (formatted_rows, sparql_query, figure_urls).
+        """Generate + execute SPARQL; return (formatted_rows, sparql_query, figure_urls, exercises).
 
         Reuses the chain's SPARQL generation/fix logic, stops before answer
         generation. figure_urls are /figures/... URLs for any result value whose
