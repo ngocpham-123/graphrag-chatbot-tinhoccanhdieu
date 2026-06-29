@@ -143,6 +143,24 @@ function renderTabs(d) {
       );
     });
   });
+
+  view.querySelectorAll(".ex-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".assessment");
+      const mount = card.querySelector(".ex-mount");
+      const ex = (d.assessments || []).find((a) => a.id === btn.dataset.exId);
+      if (!ex) return;
+      if (mount.dataset.open === "1") {
+        mount.innerHTML = "";
+        mount.dataset.open = "0";
+        btn.textContent = "✍️ Làm bài";
+        return;
+      }
+      window.mountExerciseRunner(mount, [{ id: ex.id, title: ex.title, text: ex.text }]);
+      mount.dataset.open = "1";
+      btn.textContent = "Ẩn";
+    });
+  });
 }
 
 function renderContent(d) {
@@ -199,9 +217,11 @@ function renderAssessments(d) {
   if (!d.assessments || !d.assessments.length) return `<p class="empty">Không có bài tập.</p>`;
   return d.assessments
     .map(
-      (a) => `<div class="assessment">
+      (a) => `<div class="assessment" data-ex-id="${esc(a.id)}">
         <div class="assessment-type">${esc(a.title || a.type)}</div>
         <p>${esc(a.text)}</p>
+        <button class="ex-toggle" data-ex-id="${esc(a.id)}">✍️ Làm bài</button>
+        <div class="ex-mount" data-open="0"></div>
       </div>`
     )
     .join("");
