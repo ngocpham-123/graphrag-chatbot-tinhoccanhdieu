@@ -53,3 +53,38 @@ def test_extract_exercises_ignores_non_assessment_query():
     rows = _rows(ttl, q)
     sparql = "SELECT ?p ?text WHERE { ?p ex:mentionsConcept ?c ; ex:hasRawText ?text }"
     assert es.extract_exercises_from_rows(sparql, rows) == []
+
+
+def test_parse_grade_json_plain():
+    d = es._parse_grade_json('{"verdict":"correct","feedback":"Tốt","modelAnswer":"Đáp án"}')
+    assert d == {"verdict": "correct", "feedback": "Tốt", "modelAnswer": "Đáp án"}
+
+
+def test_parse_grade_json_fenced_and_bad_verdict():
+    raw = '```json\n{"verdict":"perfect","feedback":"x","modelAnswer":"y"}\n```'
+    d = es._parse_grade_json(raw)
+    assert d["verdict"] == "partial"          # unknown verdict normalized
+    assert d["feedback"] == "x"
+
+
+def test_parse_grade_json_garbage_falls_back():
+    d = es._parse_grade_json("not json at all")
+    assert d["verdict"] == "partial"
+    assert isinstance(d["feedback"], str)
+    assert d["modelAnswer"] == ""
+
+
+def test_grade_correct_answer_not_incorrect():
+    # l1_ex2: "đầu vào và đầu ra của một bài toán xử lí thông tin"
+    res = es.grade_exercise(
+        "l1_ex2",
+        "Đầu vào là dữ liệu, đầu ra là thông tin hữu ích.",
+    )
+    assert res["verdict"] in {"correct", "partial", "incorrect"}
+    assert res["verdict"] != "incorrect"
+    assert res["feedback"] and res["modelAnswer"]
+
+
+def test_grade_irrelevant_answer_not_correct():
+    res = es.grade_exercise("l1_ex2", "Hôm nay trời mưa.")
+    assert res["verdict"] != "correct"
