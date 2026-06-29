@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from backend.app.routers import chat, curriculum
+from backend.app.routers import chat, curriculum, exercises
 from backend.app.config import FIGURES_DIR
 
 logger = logging.getLogger(__name__)
@@ -15,6 +15,7 @@ app = FastAPI(title="GraphRAG Chatbot - Tin Hoc Canh Dieu")
 
 app.include_router(chat.router)
 app.include_router(curriculum.router)
+app.include_router(exercises.router)
 
 # Serve figure images (URI local names of ex:Figure/ex:Diagram instances
 # match these filenames without extension)
