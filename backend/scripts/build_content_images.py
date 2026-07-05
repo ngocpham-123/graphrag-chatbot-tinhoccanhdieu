@@ -86,8 +86,15 @@ def resolve_lesson(grade: int, topic_code: str, lesson_num: int, idx: dict) -> s
     if (grade, topic_code, lesson_num) in OVERRIDES:
         return OVERRIDES[(grade, topic_code, lesson_num)]
     letter, track = topic_letter_track(topic_code)
-    return (idx.get((letter, track, lesson_num))
-            or idx.get((letter, "", lesson_num)))  # fall back to core track
+    hit = idx.get((letter, track, lesson_num)) or idx.get((letter, "", lesson_num))
+    if hit:
+        return hit
+    # last resort: any topic of this letter+lesson_num regardless of track
+    # (e.g. hoc10 codes topic 'E' bare but GraphDB labels it 'E ICT')
+    for (l, _tr, n), lid in idx.items():
+        if l == letter and n == lesson_num:
+            return lid
+    return None
 
 
 def main():
