@@ -4,8 +4,8 @@ import json
 import re
 import unicodedata
 
-_G10 = re.compile(r"^Tin10\.([A-Za-z]+)\.L(\d+)\.P(\d+)\.(.+)$")
-_G11 = re.compile(r"^SGK\.TIN11THUD\.([A-Za-z]+)\.L(\d+)\.P(\d+)\.(.+)$")
+_G10 = re.compile(r"^Tin10\.(.+?)\.L(\d+)\.P(\d+)\.(.+)$")
+_G11 = re.compile(r"^SGK\.TIN11THUD\.(.+?)\.L(\d+)\.P(\d+)\.(.+)$")
 _G12 = re.compile(r"^Tin12\.THUD\.P(\d+)\.([A-Za-z]+)(\d+)\.(.+)$")
 
 # Vietnamese characters that don't decompose with standard NFD/NFKD

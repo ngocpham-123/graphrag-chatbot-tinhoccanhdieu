@@ -70,24 +70,22 @@ def lesson_index(grade: int) -> dict:
     return idx
 
 
-def topic_letter_track(topic_code: str, grade: int) -> tuple[str, str]:
+def topic_letter_track(topic_code: str) -> tuple[str, str]:
     """Derive (letter, track) from a parsed object topic_code.
-    g10/g11 codes look like 'CA'/'CACS'/'CEICT'; g12 codes are bare letters,
-    and grade 12 is the applied (ICT) book."""
+    track is 'cs', 'ict', or '' (core). Handles codes like 'CA', 'CA - CS',
+    'CE(ICT)', and g12 bare 'A'/'AICT'."""
     code = topic_code.upper()
+    track = "cs" if "CS" in code else ("ict" if "ICT" in code else "")
     if code.startswith("C") and len(code) > 1:
-        code = code[1:]           # strip leading C for g10/g11
-    letter = code[:1]
-    track = "cs" if code.endswith("CS") else ("ict" if code.endswith("ICT") else "")
-    if grade == 12 and track == "":
-        track = "ict"
+        code = code[1:]           # strip leading C for g10/g11 (CA -> A)
+    letter = next((ch for ch in code if ch.isalpha()), "")
     return letter, track
 
 
 def resolve_lesson(grade: int, topic_code: str, lesson_num: int, idx: dict) -> str | None:
     if (grade, topic_code, lesson_num) in OVERRIDES:
         return OVERRIDES[(grade, topic_code, lesson_num)]
-    letter, track = topic_letter_track(topic_code, grade)
+    letter, track = topic_letter_track(topic_code)
     return (idx.get((letter, track, lesson_num))
             or idx.get((letter, "", lesson_num)))  # fall back to core track
 

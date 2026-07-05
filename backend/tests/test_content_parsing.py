@@ -19,6 +19,18 @@ def test_parse_g12_name():
     }
 
 
+def test_parse_g10_cs_track_name():
+    assert cp.parse_object_name("Tin10.CA - CS.L1.P132.MT") == {
+        "grade": 10, "topic_code": "CA - CS", "lesson_num": 1, "page_num": 132, "part": "MT"
+    }
+
+
+def test_parse_g11_ict_track_name():
+    assert cp.parse_object_name("SGK.TIN11THUD.CE(ICT).L1.P89.MT") == {
+        "grade": 11, "topic_code": "CE(ICT)", "lesson_num": 1, "page_num": 89, "part": "MT"
+    }
+
+
 def test_parse_unknown_returns_none():
     assert cp.parse_object_name("random.thing") is None
     assert cp.parse_object_name("") is None
