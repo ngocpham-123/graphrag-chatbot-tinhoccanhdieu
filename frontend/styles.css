@@ -720,3 +720,7 @@ body {
 .ex-offer-actions { display: flex; gap: 8px; }
 .ex-offer-yes { background: #2e7d32; color: #fff; border: none; border-radius: 8px; padding: 7px 14px; cursor: pointer; font: inherit; }
 .ex-offer-no { background: #cfd8dc; color: #263238; border: none; border-radius: 8px; padding: 7px 14px; cursor: pointer; font: inherit; }
+
+/* ===== Nội dung book part-images ===== */
+.content-pages { display: flex; flex-direction: column; gap: 12px; }
+.content-page { max-width: 100%; height: auto; border: 1px solid #e3e3e6; border-radius: 8px; background: #fff; }

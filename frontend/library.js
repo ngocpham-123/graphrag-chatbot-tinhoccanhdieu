@@ -164,6 +164,13 @@ function renderTabs(d) {
 }
 
 function renderContent(d) {
+  if (d.contentImages && d.contentImages.length) {
+    return `<div class="content-pages">${d.contentImages
+      .map(
+        (u) => `<img class="content-page" src="${esc(u)}" alt="Nội dung" loading="lazy" />`
+      )
+      .join("")}</div>`;
+  }
   const empty = `<p class="empty">Không có nội dung.</p>`;
   if (!d.sections || !d.sections.length) return empty;
   return d.sections
