@@ -21,10 +21,12 @@ def content_images_for(
             mapping = json.load(fh)
     except (ValueError, OSError):
         return []
-    files = mapping.get(lesson_id) or []
+    files = mapping.get(lesson_id) if isinstance(mapping, dict) else None
+    if not isinstance(files, list):
+        return []
     abs_dir = os.path.abspath(img_dir)
     return [
         f"/content_figure/{f}"
         for f in files
-        if os.path.isfile(os.path.join(abs_dir, f))
+        if isinstance(f, str) and os.path.isfile(os.path.join(abs_dir, f))
     ]

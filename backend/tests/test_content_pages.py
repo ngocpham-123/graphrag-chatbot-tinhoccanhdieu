@@ -25,3 +25,18 @@ def test_content_images_for_unknown_lesson(tmp_path):
 
 def test_content_images_for_missing_map():
     assert cpsvc.content_images_for("lesson1", map_path="does/not/exist.json", img_dir=".") == []
+
+
+def test_content_images_for_malformed_shapes_never_raise(tmp_path):
+    # top-level JSON array (not a dict)
+    p1 = tmp_path / "arr.json"
+    p1.write_text(json.dumps(["x"]), encoding="utf-8")
+    assert cpsvc.content_images_for("lesson1", map_path=str(p1), img_dir=str(tmp_path)) == []
+    # lesson value is not a list
+    p2 = tmp_path / "obj.json"
+    p2.write_text(json.dumps({"lesson1": "nope"}), encoding="utf-8")
+    assert cpsvc.content_images_for("lesson1", map_path=str(p2), img_dir=str(tmp_path)) == []
+    # syntactically invalid JSON
+    p3 = tmp_path / "bad.json"
+    p3.write_text("{not json", encoding="utf-8")
+    assert cpsvc.content_images_for("lesson1", map_path=str(p3), img_dir=str(tmp_path)) == []
