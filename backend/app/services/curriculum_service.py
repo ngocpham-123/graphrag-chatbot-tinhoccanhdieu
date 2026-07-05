@@ -275,9 +275,19 @@ _ASSESSMENT_TYPES = (
 
 
 def _concepts(lesson_id: str) -> list[dict]:
+    # Direct concepts of the lesson, PLUS a fallback: concepts of the lesson's
+    # topic that are not linked to ANY lesson of that topic (e.g. grade-12/11
+    # topics whose concepts were only attached at the topic level). Those
+    # "unplaced" concepts would otherwise never appear on any lesson.
     rows = _run_select(f"""
         SELECT ?c ?label ?definition WHERE {{
-          ex:{lesson_id} ex:hasConcept ?c .
+          {{
+            ex:{lesson_id} ex:hasConcept ?c .
+          }} UNION {{
+            ex:{lesson_id} ex:belongsToTopic ?t .
+            ?t ex:hasConcept ?c .
+            FILTER NOT EXISTS {{ ?al ex:belongsToTopic ?t ; ex:hasConcept ?c }}
+          }}
           OPTIONAL {{ ?c rdfs:label ?label }}
           OPTIONAL {{ ?d ex:explainsConcept ?c ; ex:hasDefinitionText ?definition }}
         }} ORDER BY ?label

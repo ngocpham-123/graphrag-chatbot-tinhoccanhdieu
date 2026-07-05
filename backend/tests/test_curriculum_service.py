@@ -85,6 +85,15 @@ def test_lesson_detail_concepts_lesson1():
         assert set(c) == {"id", "label", "definition"}
 
 
+def test_lesson_detail_concepts_topic_fallback_surfaces_unplaced():
+    # "Biểu diễn thông tin" (conceptBieuDienThongTin) is a topicAcs concept that
+    # is linked to no lesson. The topic-concept fallback must surface it on a
+    # lesson of that topic even though it is not directly linked to the lesson.
+    d = cs.lesson_detail("topicAcs_lesson1")
+    labels = [c["label"] for c in d["concepts"]]
+    assert "Biểu diễn thông tin" in labels
+
+
 def test_lesson_detail_assessments_lesson1():
     d = cs.lesson_detail("lesson1")
     assert d["assessments"]                       # lesson 1 has exercises/activities
