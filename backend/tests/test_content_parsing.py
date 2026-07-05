@@ -38,18 +38,24 @@ def test_parse_unknown_returns_none():
 
 def test_touch_vector_bbox_basic():
     tv = '[{"x":26,"y":154},{"x":555,"y":154},{"x":555,"y":262},{"x":26,"y":262}]'
-    assert cp.touch_vector_bbox(tv, 1512, 2118, pad=0) == (26, 154, 555, 262)
+    assert cp.touch_vector_bbox(tv, 1512, 2118, pad=0, ref_width=1512, ref_height=2118) == (26, 154, 555, 262)
 
 
 def test_touch_vector_bbox_pad_and_clamp():
     tv = '[{"x":0,"y":0},{"x":10,"y":10}]'
     # padded box would be (-6,-6,16,16) -> clamped to 0,0
-    assert cp.touch_vector_bbox(tv, 1512, 2118, pad=6) == (0, 0, 16, 16)
+    assert cp.touch_vector_bbox(tv, 1512, 2118, pad=6, ref_width=1512, ref_height=2118) == (0, 0, 16, 16)
 
 
 def test_touch_vector_bbox_invalid():
     assert cp.touch_vector_bbox("not json", 1512, 2118) is None
-    assert cp.touch_vector_bbox('[{"x":5,"y":5},{"x":5,"y":5}]', 1512, 2118, pad=0) is None
+    assert cp.touch_vector_bbox('[{"x":5,"y":5},{"x":5,"y":5}]', 1512, 2118, pad=0, ref_width=1512, ref_height=2118) is None
+
+
+def test_touch_vector_bbox_scales_from_a4_ref():
+    # half the A4 canvas maps to half the image
+    tv = '[{"x":0,"y":0},{"x":297.64,"y":420.945}]'
+    assert cp.touch_vector_bbox(tv, 1512, 2118, pad=0) == (0, 0, 756, 1059)
 
 
 def test_crop_filename_ascii_normalizes_diacritics():

@@ -13,6 +13,11 @@ _VIETNAMESE_MAP = {
     'Đ': 'D', 'đ': 'd',
 }
 
+# hoc10 touch_vector polygons are authored on a fixed A4-point canvas
+# (595.28 x 841.89 pt), independent of the page image's pixel size.
+A4_REF_W = 595.28
+A4_REF_H = 841.89
+
 
 def parse_object_name(name: str) -> dict | None:
     if not name:
@@ -32,7 +37,7 @@ def parse_object_name(name: str) -> dict | None:
     return None
 
 
-def touch_vector_bbox(tv: str, width: int, height: int, pad: int = 6):
+def touch_vector_bbox(tv, width, height, pad=6, ref_width=A4_REF_W, ref_height=A4_REF_H):
     try:
         pts = json.loads(tv)
         xs = [float(p["x"]) for p in pts]
@@ -41,10 +46,12 @@ def touch_vector_bbox(tv: str, width: int, height: int, pad: int = 6):
         return None
     if not xs or not ys:
         return None
-    left = max(0, int(min(xs)) - pad)
-    top = max(0, int(min(ys)) - pad)
-    right = min(width, int(max(xs)) + pad)
-    bottom = min(height, int(max(ys)) + pad)
+    sx = width / ref_width
+    sy = height / ref_height
+    left = max(0, int(min(xs) * sx) - pad)
+    top = max(0, int(min(ys) * sy) - pad)
+    right = min(width, int(max(xs) * sx) + pad)
+    bottom = min(height, int(max(ys) * sy) + pad)
     if right <= left or bottom <= top:
         return None
     return (left, top, right, bottom)
