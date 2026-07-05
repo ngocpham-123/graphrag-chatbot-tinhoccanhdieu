@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 from backend.app.routers import chat, curriculum, exercises
-from backend.app.config import FIGURES_DIR
+from backend.app.config import FIGURES_DIR, CONTENT_FIGURE_DIR
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +41,13 @@ if os.path.isdir(figures_abs):
     logger.info("Serving figures from %s at /figures", figures_abs)
 else:
     logger.warning("Figures directory not found: %s", figures_abs)
+
+content_figure_abs = os.path.abspath(CONTENT_FIGURE_DIR)
+if os.path.isdir(content_figure_abs):
+    app.mount("/content_figure", StaticFiles(directory=content_figure_abs), name="content_figure")
+    logger.info("Serving content figures from %s at /content_figure", content_figure_abs)
+else:
+    logger.warning("Content figure directory not found: %s", content_figure_abs)
 
 # Serve frontend static files
 app.mount("/static", StaticFiles(directory="frontend"), name="static")

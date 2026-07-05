@@ -100,3 +100,9 @@ def test_lesson_detail_assessments_lesson1():
     item = d["assessments"][0]
     assert set(item) == {"id", "type", "title", "text"}
     assert any(a["text"] for a in d["assessments"])
+
+
+def test_lesson_detail_has_contentImages_key():
+    d = cs.lesson_detail("lesson1")
+    assert "contentImages" in d
+    assert isinstance(d["contentImages"], list)  # empty unless crops generated

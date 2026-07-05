@@ -10,6 +10,7 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 
 from backend.app.config import GRAPHDB_URL, GRAPHDB_REPOSITORY
 from backend.app.services.figures import figure_url_for_value, local_name
+from backend.app.services.content_pages import content_images_for
 
 SPARQL_ENDPOINT = f"{GRAPHDB_URL}/repositories/{GRAPHDB_REPOSITORY}"
 
@@ -346,4 +347,5 @@ def lesson_detail(lesson_id: str) -> dict:
     detail["tables"] = _tables(lesson_id)
     detail["concepts"] = _concepts(lesson_id)
     detail["assessments"] = _assessments(lesson_id)
+    detail["contentImages"] = content_images_for(lesson_id)
     return detail

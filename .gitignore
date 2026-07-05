@@ -11,3 +11,4 @@ build/
 .venv/
 backend/data
 docs/figures
+asset/content_figure/
