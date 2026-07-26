@@ -77,8 +77,8 @@ function startNewChat() {
   chatTitle.textContent = "New Chat";
   messagesContainer.innerHTML = `
     <div class="welcome">
-      <h2>GraphRAG Chatbot</h2>
-      <p>Ask anything about Tin Học Cánh Diều SGK. Your questions are answered using a knowledge graph.</p>
+      <h2>MMKG</h2>
+      <p>Ask anything about Tin học THPT. Your questions are answered using a knowledge graph.</p>
     </div>`;
   renderConversationList();
   userInput.focus();
