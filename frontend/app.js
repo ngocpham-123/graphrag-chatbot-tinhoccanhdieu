@@ -574,8 +574,14 @@ async function renderGraphInto(container, columns, rows) {
         .filter((c) => c.rank !== -1 && c.value)
         .sort((a, b) => a.rank - b.rank);
       let parentId = subjectId;
-      for (const { col, value } of hierCols) {
-        const hierId = `hier_${col}_${value}`;
+      for (const { col, value, rank } of hierCols) {
+        // Key each level by its ancestors too: "Chủ đề B" of Lớp 10 and the
+        // identically-labeled "Chủ đề B" of Lớp 12 must stay separate nodes.
+        const ancestors = hierCols
+          .filter((h) => h.rank > rank)
+          .map((h) => h.value)
+          .join("|");
+        const hierId = `hier_${col}_${ancestors}_${value}`;
         if (!nodesMap.has(hierId)) {
           const figureUrl = figureUrlForValue(value);
           nodesMap.set(hierId, {

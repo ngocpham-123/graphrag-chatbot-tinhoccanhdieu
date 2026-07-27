@@ -112,7 +112,9 @@ async def chat(request: ChatRequest):
         reply = result["reply"] or "Xin lỗi, tôi chưa tạo được câu trả lời."
         sparql_query = result["sparql_query"]
         exercises = result.get("exercises") or None
-        print(f"[DEBUG] sources={result['sources']} sparql={sparql_query}")
+        # logger (not print): print() raises UnicodeEncodeError and 500s the
+        # request when the console codepage can't encode Vietnamese text.
+        logger.info("sources=%s sparql=%s", result["sources"], sparql_query)
 
         # Figures: those returned by the SPARQL results (reliable) first, then
         # any paths mentioned in the reply text, de-duplicated, order-preserving.
@@ -158,8 +160,9 @@ async def execute_sparql(request: dict):
 
         results = sparql.query().convert()
 
-        columns = results["results"]["bindings"][0].keys() if results["results"]["bindings"] else []
-        columns = list(columns)
+        # head.vars is the authoritative column list in SELECT order; the first
+        # binding's keys miss OPTIONAL variables that happen to be unbound there.
+        columns = list(results["head"]["vars"])
 
         rows = []
         for binding in results["results"]["bindings"]:

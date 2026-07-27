@@ -53,15 +53,24 @@ KEY NAVIGATION PATTERNS for this graph:
 - A concept is a `ex:KnowledgeConcept` with an `rdfs:label`.
 - Its DEFINITION lives on a separate node that points TO the concept:
       ?d ex:explainsConcept ?concept ; ex:hasDefinitionText ?definition .
-- The LESSON a concept belongs to points TO the concept:
-      ?lesson a ex:Lesson ; ex:hasConcept ?concept ; rdfs:label ?lessonLabel .
+- The LESSON a concept belongs to points TO the concept, through TWO routes
+  (a direct ex:hasConcept link, or a paragraph that mentions the concept —
+  many concepts only have the second):
+      {{ ?lesson a ex:Lesson ; ex:hasConcept ?concept . }}
+      UNION
+      {{ ?p ex:mentionsConcept ?concept ; ex:belongsToLesson ?lesson . ?lesson a ex:Lesson . }}
   For definition/concept questions ("X là gì", "định nghĩa của X"), ALWAYS also
   return the concept's curriculum context with exactly these variable names —
-  ?lessonLabel and ?topicLabel — via nested OPTIONAL blocks (never required
-  patterns: missing hierarchy must not drop a definition):
+  ?lessonLabel, ?topicLabel and ?gradeLabel — via nested OPTIONAL blocks (never
+  required patterns: missing hierarchy must not drop a definition), and use
+  SELECT DISTINCT so the two routes don't duplicate rows:
       OPTIONAL {{
-        ?lesson a ex:Lesson ; ex:hasConcept ?concept ; rdfs:label ?lessonLabel .
+        {{ ?lesson a ex:Lesson ; ex:hasConcept ?concept . }}
+        UNION
+        {{ ?p ex:mentionsConcept ?concept ; ex:belongsToLesson ?lesson . ?lesson a ex:Lesson . }}
+        ?lesson rdfs:label ?lessonLabel .
         OPTIONAL {{ ?lesson ex:belongsToTopic ?topic . ?topic rdfs:label ?topicLabel }}
+        OPTIONAL {{ ?lesson ex:belongsToGrade ?grade . ?grade rdfs:label ?gradeLabel }}
       }}
 - Paragraphs that discuss a concept:
       ?p ex:mentionsConcept ?concept ; ex:hasRawText ?text .
@@ -113,13 +122,17 @@ EXAMPLES (question -> SPARQL):
 #  can be drawn as a graph: concept -> lesson -> topic)
 PREFIX ex: <http://example.org/tinhoc10-cd#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?label ?definition ?lessonLabel ?topicLabel WHERE {{
+SELECT DISTINCT ?label ?definition ?lessonLabel ?topicLabel ?gradeLabel WHERE {{
   ?c a ex:KnowledgeConcept ; rdfs:label ?label .
   FILTER(CONTAINS(LCASE(STR(?label)), LCASE("tin học")))
   ?d ex:explainsConcept ?c ; ex:hasDefinitionText ?definition .
   OPTIONAL {{
-    ?lesson a ex:Lesson ; ex:hasConcept ?c ; rdfs:label ?lessonLabel .
+    {{ ?lesson a ex:Lesson ; ex:hasConcept ?c . }}
+    UNION
+    {{ ?p ex:mentionsConcept ?c ; ex:belongsToLesson ?lesson . ?lesson a ex:Lesson . }}
+    ?lesson rdfs:label ?lessonLabel .
     OPTIONAL {{ ?lesson ex:belongsToTopic ?topic . ?topic rdfs:label ?topicLabel }}
+    OPTIONAL {{ ?lesson ex:belongsToGrade ?grade . ?grade rdfs:label ?gradeLabel }}
   }}
 }} LIMIT 10
 
