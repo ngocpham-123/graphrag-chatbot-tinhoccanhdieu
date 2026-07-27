@@ -539,11 +539,26 @@ async function renderGraphInto(container, columns, rows) {
       edges.push({ from: subjectUri, to: objectUri, label: predName });
     }
   } else {
+    // Star/hierarchy mode. Subjects are keyed by VALUE (not per row) so the
+    // same concept across rows merges into one node, and columns naming a
+    // curriculum container (lesson/topic/grade) become a shared chain
+    // subject -> lesson -> topic -> grade instead of flat leaves — the result
+    // renders as one connected graph instead of per-row islands.
+    const HIERARCHY = ["lesson", "topic", "grade"];
+    const hierRank = (col) => HIERARCHY.findIndex((h) => col.toLowerCase().includes(h));
+    const truncate = (s) => (s.length > 60 ? s.substring(0, 57) + "…" : s);
+    const seenEdges = new Set();
+    const addEdge = (from, to, label) => {
+      const key = `${from}|${to}|${label}`;
+      if (seenEdges.has(key)) return;
+      seenEdges.add(key);
+      edges.push({ from, to, label });
+    };
+
     const propertyCols = columns.slice(1);
-    for (let rowIdx = 0; rowIdx < rows.length; rowIdx++) {
-      const row = rows[rowIdx];
+    for (const row of rows) {
       const subjectUri = row[0];
-      const subjectId = `${subjectUri}_row${rowIdx}`;
+      const subjectId = `subj_${subjectUri}`;
       if (!nodesMap.has(subjectId)) {
         const subjFigureUrl = figureUrlForValue(subjectUri);
         nodesMap.set(subjectId, {
@@ -552,23 +567,42 @@ async function renderGraphInto(container, columns, rows) {
           imageUrl: subjFigureUrl,
         });
       }
+
+      // Curriculum chain: child level links to the next present parent level.
+      const hierCols = propertyCols
+        .map((col, i) => ({ col, value: row[i + 1], rank: hierRank(col) }))
+        .filter((c) => c.rank !== -1 && c.value)
+        .sort((a, b) => a.rank - b.rank);
+      let parentId = subjectId;
+      for (const { col, value } of hierCols) {
+        const hierId = `hier_${col}_${value}`;
+        if (!nodesMap.has(hierId)) {
+          const figureUrl = figureUrlForValue(value);
+          nodesMap.set(hierId, {
+            label: truncate(localName(value)),
+            type: figureUrl ? "image" : "object",
+            imageUrl: figureUrl,
+          });
+        }
+        addEdge(parentId, hierId, col.replace(/_?label$/i, ""));
+        parentId = hierId;
+      }
+
+      // Remaining columns stay as leaves on the subject.
       for (let colIdx = 0; colIdx < propertyCols.length; colIdx++) {
         const colName = propertyCols[colIdx];
         const value = row[colIdx + 1];
-        if (!value) continue;
+        if (!value || hierRank(colName) !== -1) continue;
         const valueId = `${subjectId}_${colName}_${value}`;
-        const valueLabel = localName(value);
         const figureUrl = figureUrlForValue(value);
-        const displayLabel =
-          valueLabel.length > 60 ? valueLabel.substring(0, 57) + "…" : valueLabel;
         if (!nodesMap.has(valueId)) {
           nodesMap.set(valueId, {
-            label: displayLabel,
+            label: truncate(localName(value)),
             type: figureUrl ? "image" : "property",
             imageUrl: figureUrl,
           });
         }
-        edges.push({ from: subjectId, to: valueId, label: colName });
+        addEdge(subjectId, valueId, colName);
       }
     }
   }

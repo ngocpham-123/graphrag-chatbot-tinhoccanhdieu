@@ -53,6 +53,16 @@ KEY NAVIGATION PATTERNS for this graph:
 - A concept is a `ex:KnowledgeConcept` with an `rdfs:label`.
 - Its DEFINITION lives on a separate node that points TO the concept:
       ?d ex:explainsConcept ?concept ; ex:hasDefinitionText ?definition .
+- The LESSON a concept belongs to points TO the concept:
+      ?lesson a ex:Lesson ; ex:hasConcept ?concept ; rdfs:label ?lessonLabel .
+  For definition/concept questions ("X là gì", "định nghĩa của X"), ALWAYS also
+  return the concept's curriculum context with exactly these variable names —
+  ?lessonLabel and ?topicLabel — via nested OPTIONAL blocks (never required
+  patterns: missing hierarchy must not drop a definition):
+      OPTIONAL {{
+        ?lesson a ex:Lesson ; ex:hasConcept ?concept ; rdfs:label ?lessonLabel .
+        OPTIONAL {{ ?lesson ex:belongsToTopic ?topic . ?topic rdfs:label ?topicLabel }}
+      }}
 - Paragraphs that discuss a concept:
       ?p ex:mentionsConcept ?concept ; ex:hasRawText ?text .
   and a paragraph's lesson:  ?p ex:belongsToLesson ?lesson .
@@ -99,13 +109,19 @@ the actual Vietnamese rdfs:label values):
 EXAMPLES (question -> SPARQL):
 
 # "Thông tin là gì?" / "Định nghĩa của tin học"
+# (definition PLUS the lesson/topic containing the concept, so the result
+#  can be drawn as a graph: concept -> lesson -> topic)
 PREFIX ex: <http://example.org/tinhoc10-cd#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?label ?definition WHERE {{
+SELECT ?label ?definition ?lessonLabel ?topicLabel WHERE {{
   ?c a ex:KnowledgeConcept ; rdfs:label ?label .
   FILTER(CONTAINS(LCASE(STR(?label)), LCASE("tin học")))
   ?d ex:explainsConcept ?c ; ex:hasDefinitionText ?definition .
-}} LIMIT 5
+  OPTIONAL {{
+    ?lesson a ex:Lesson ; ex:hasConcept ?c ; rdfs:label ?lessonLabel .
+    OPTIONAL {{ ?lesson ex:belongsToTopic ?topic . ?topic rdfs:label ?topicLabel }}
+  }}
+}} LIMIT 10
 
 # "Bài học nào nói về thuật toán?"
 PREFIX ex: <http://example.org/tinhoc10-cd#>
