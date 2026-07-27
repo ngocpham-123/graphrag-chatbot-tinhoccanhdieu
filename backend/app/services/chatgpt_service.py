@@ -223,7 +223,7 @@ _SPARQL_GENERATION_PROMPT_TEMPLATE = PromptTemplate(
 QA_PROMPT = PromptTemplate(
     input_variables=["context", "prompt"],
     template="""\
-Bạn là trợ lí AI trả lời câu hỏi về sách giáo khoa "Tin học Cánh Diều".
+Bạn là trợ lí AI trả lời câu hỏi về sách giáo khoa "Tin học THPT".
 Dữ liệu dưới đây được truy xuất từ knowledge graph CHỈ để trả lời đúng câu hỏi này
 — mỗi dòng là một kết quả ĐÃ KHỚP với câu hỏi. Đây là nguồn đáng tin cậy: không
 nghi ngờ, không dùng kiến thức riêng để sửa lại.
@@ -254,7 +254,7 @@ Trả lời:""",
 HYBRID_ANSWER_PROMPT = PromptTemplate(
     input_variables=["sparql_context", "vector_context", "image_context", "prompt"],
     template="""\
-Bạn là trợ lí AI trả lời câu hỏi về sách giáo khoa "Tin học Cánh Diều".
+Bạn là trợ lí AI trả lời câu hỏi về sách giáo khoa "Tin học THPT".
 Dưới đây là bằng chứng truy xuất từ knowledge graph của cuốn sách, gồm: kết quả
 truy vấn cấu trúc (SPARQL), các đoạn văn liên quan (tìm kiếm ngữ nghĩa), và mô tả
 hình ảnh người dùng gửi kèm (nếu có). Đây là nguồn đáng tin cậy: không nghi ngờ,

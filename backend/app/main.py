@@ -11,7 +11,7 @@ from backend.app.config import FIGURES_DIR, CONTENT_FIGURE_DIR
 
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="GraphRAG Chatbot - Tin Hoc Canh Dieu")
+app = FastAPI(title="GraphRAG Chatbot - Tin Hoc THPT")
 
 app.include_router(chat.router)
 app.include_router(curriculum.router)
