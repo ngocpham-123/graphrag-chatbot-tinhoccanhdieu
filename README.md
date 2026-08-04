@@ -120,6 +120,13 @@ chat-request                  input = user message, output = final reply
 `conversation_id` is sent as the Langfuse **session id**, so all turns of a chat
 group into one session. Failures are recorded on the trace with level `ERROR`.
 
+> **Running in Docker:** set `LANGFUSE_HOST=http://host.docker.internal:3000`, not
+> `localhost`. Inside a container `localhost` is the container itself, so exports
+> fail with `Connection refused ... /api/public/otel/v1/traces` (chat still works —
+> tracing fails open — but no traces arrive). `docker-compose.yml` maps that
+> hostname to the Docker host. Use plain `localhost:3000` when running uvicorn
+> directly on the host.
+
 > **Server version:** the SDK (`langfuse>=4`) sends traces over OTLP, which needs a
 > **Langfuse server v3 or newer**. A v2 server (check `curl http://localhost:3000/api/public/health`)
 > returns 404 on the OTLP endpoint and no traces appear. Upgrade the image in your

@@ -7,3 +7,11 @@ services:
       - .:/app
     env_file:
       - .env
+    # Services published on the host (Langfuse on :3000, GraphDB on :7200) are
+    # NOT reachable as "localhost" from inside this container — localhost is the
+    # container itself. This alias resolves to the Docker host on both Linux and
+    # Docker Desktop, so LANGFUSE_HOST=http://host.docker.internal:3000 works in
+    # a container while plain localhost keeps working when running uvicorn
+    # directly on the host.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

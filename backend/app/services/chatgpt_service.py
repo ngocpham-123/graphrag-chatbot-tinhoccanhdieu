@@ -335,7 +335,9 @@ class FormattedGraphDBQAChain(OntotextGraphDBQAChain):
         schema = self.graph.get_schema
 
         gen = self.sparql_generation_chain.invoke(
-            {"prompt": question, "schema": schema}, callbacks=callbacks
+            # callbacks must go through `config` — as a bare kwarg Chain.invoke
+            # drops it, which silently kept SPARQL generation out of the trace.
+            {"prompt": question, "schema": schema}, config={"callbacks": callbacks}
         )
         sparql = gen[self.sparql_generation_chain.output_key]
         sparql = self._get_prepared_sparql_query(
