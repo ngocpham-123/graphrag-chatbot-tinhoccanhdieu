@@ -11,6 +11,7 @@ from langchain_community.chains.graph_qa.ontotext_graphdb import (
 from backend.app.config import OPENAI_API_KEY
 from backend.app.services.figures import figure_urls_from_rows
 from backend.app.services.exercise_service import extract_exercises_from_rows
+from backend.app.services import langfuse_service as lf
 
 logger = logging.getLogger(__name__)
 
@@ -327,6 +328,10 @@ class FormattedGraphDBQAChain(OntotextGraphDBQAChain):
         """
         run_manager = CallbackManagerForChainRun.get_noop_manager()
         callbacks = run_manager.get_child()
+        # Route the SPARQL generation/fix LLM calls into the active Langfuse span
+        # so the generated queries and retry attempts show up in the trace.
+        for handler in lf.langchain_config().get("callbacks", []):
+            callbacks.add_handler(handler, inherit=True)
         schema = self.graph.get_schema
 
         gen = self.sparql_generation_chain.invoke(
@@ -384,7 +389,7 @@ def condense_question(history_text: str, question: str) -> str:
         return question
     try:
         msg = CONDENSE_PROMPT.format(history=history_text, question=question)
-        resp = _condense_llm.invoke(msg)
+        resp = _condense_llm.invoke(msg, config=lf.langchain_config())
         rewritten = (resp.content or "").strip()
         return rewritten or question
     except Exception:

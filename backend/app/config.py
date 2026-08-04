@@ -16,6 +16,11 @@ FIGURES_DIR = os.environ.get("FIGURES_DIR", "asset")
 CONTENT_FIGURE_DIR = os.environ.get("CONTENT_FIGURE_DIR", "asset/content_figure")
 CONTENT_PAGES_JSON = os.environ.get("CONTENT_PAGES_JSON", "backend/data/content_pages.json")
 
+# Langfuse observability (optional — tracing is skipped when the keys are unset)
+LANGFUSE_PUBLIC_KEY = os.environ.get("LANGFUSE_PUBLIC_KEY", "")
+LANGFUSE_SECRET_KEY = os.environ.get("LANGFUSE_SECRET_KEY", "")
+LANGFUSE_HOST = os.environ.get("LANGFUSE_HOST", "http://localhost:3000")
+
 # LangChain's OntotextGraphDBGraph reads auth from these env vars directly:
 #   GRAPHDB_USERNAME, GRAPHDB_PASSWORD
 # They are optional — omit if GraphDB has no authentication.

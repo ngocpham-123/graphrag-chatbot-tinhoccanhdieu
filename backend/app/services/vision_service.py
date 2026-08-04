@@ -4,6 +4,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 
 from backend.app.config import OPENAI_API_KEY
+from backend.app.services import langfuse_service as lf
 
 logger = logging.getLogger(__name__)
 
@@ -33,7 +34,7 @@ def describe_image(image_data: str, question: str) -> str:
             {"type": "text", "text": _VISION_INSTRUCTION.format(question=question or "")},
             {"type": "image_url", "image_url": {"url": url}},
         ])
-        resp = _vision_llm.invoke([msg])
+        resp = _vision_llm.invoke([msg], config=lf.langchain_config())
         return (resp.content or "").strip()
     except Exception:
         logger.exception("Vision description failed")

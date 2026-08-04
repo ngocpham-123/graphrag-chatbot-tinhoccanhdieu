@@ -82,6 +82,9 @@ Edit `.env` with your credentials:
 | `GRAPHDB_REPOSITORY` | GraphDB repository name | `tinhoccanhdieu` |
 | `GRAPHDB_USERNAME` | GraphDB username (optional) | `admin` |
 | `GRAPHDB_PASSWORD` | GraphDB password (optional) | `secret` |
+| `LANGFUSE_PUBLIC_KEY` | Langfuse public key (optional — enables tracing) | `pk-lf-...` |
+| `LANGFUSE_SECRET_KEY` | Langfuse secret key (optional — enables tracing) | `sk-lf-...` |
+| `LANGFUSE_HOST` | Langfuse base URL | `http://localhost:3000` |
 
 ### 3. Install dependencies
 
@@ -96,6 +99,34 @@ uvicorn backend.app.main:app --reload
 ```
 
 Open **http://localhost:8000** in your browser.
+
+## Observability (Langfuse)
+
+Tracing is **optional and off by default** — leave `LANGFUSE_PUBLIC_KEY` /
+`LANGFUSE_SECRET_KEY` empty and the app behaves exactly as before. Set both (plus
+`LANGFUSE_HOST`) and every `POST /api/chat/` request produces one trace:
+
+```
+chat-request                  input = user message, output = final reply
+├─ condense-question          follow-up rewritten into a standalone question
+│  └─ ChatOpenAI              prompt / completion / model / token usage
+├─ describe-image             vision description (only when an image is attached)
+├─ sparql-retrieval           generated SPARQL + retrieved rows
+│  └─ ChatOpenAI              SPARQL generation, including any fix retries
+├─ vector-retrieval           top-k semantically similar passages
+└─ generate-answer            final answer LLM call
+```
+
+`conversation_id` is sent as the Langfuse **session id**, so all turns of a chat
+group into one session. Failures are recorded on the trace with level `ERROR`.
+
+> **Server version:** the SDK (`langfuse>=4`) sends traces over OTLP, which needs a
+> **Langfuse server v3 or newer**. A v2 server (check `curl http://localhost:3000/api/public/health`)
+> returns 404 on the OTLP endpoint and no traces appear. Upgrade the image in your
+> Langfuse `docker-compose.yml` to `langfuse/langfuse:3` (or newer) if so.
+
+Implementation lives in `backend/app/services/langfuse_service.py`; it fails open —
+if Langfuse is unreachable or misconfigured, requests are still served normally.
 
 ## Ontology Setup
 
