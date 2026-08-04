@@ -11,6 +11,7 @@ from backend.app.services.chatgpt_service import (
 )
 from backend.app.services.vector_index import vector_retrieve
 from backend.app.services.vision_service import describe_image
+from backend.app.services import langfuse_service as lf
 
 logger = logging.getLogger(__name__)
 
@@ -28,31 +29,54 @@ def answer_question(
 
     Returns {"reply": str, "sparql_query": str | None, "sources": list[str]}.
     """
-    standalone = condense_question(history_text, question)
+    # Each retrieval/reasoning step below opens its own Langfuse span, so the
+    # trace in the UI reads as the pipeline's internal thinking: how the question
+    # was rewritten, what was retrieved from each source, then the final answer.
+    with lf.span(
+        "condense-question",
+        input={"question": question, "history": history_text},
+    ) as s:
+        standalone = condense_question(history_text, question)
+        s.update(output=standalone, metadata={"rewritten": standalone != question})
+
     sources = []
 
     # Image: describe it, then fold the description into the retrieval query so
     # SPARQL and vector search find related textbook content.
     image_context = ""
     if image:
-        image_context = describe_image(image, standalone)
+        with lf.span("describe-image", input={"question": standalone}) as s:
+            image_context = describe_image(image, standalone)
+            s.update(output=image_context)
         if image_context:
             sources.append("image")
     retrieval_query = f"{standalone}\n{image_context}".strip() if image_context else standalone
 
     sparql_context, sparql, figure_paths, exercises = "", None, [], []
-    try:
-        sparql_context, sparql, figure_paths, exercises = qa_chain.retrieve_context(
-            retrieval_query
+    with lf.span("sparql-retrieval", input=retrieval_query, as_type="retriever") as s:
+        try:
+            sparql_context, sparql, figure_paths, exercises = qa_chain.retrieve_context(
+                retrieval_query
+            )
+        except Exception:
+            logger.exception("SPARQL retrieval failed; continuing without it")
+        s.update(
+            output={"sparql_query": sparql, "rows": sparql_context},
+            metadata={
+                "figure_count": len(figure_paths),
+                "exercise_count": len(exercises),
+            },
         )
-    except Exception:
-        logger.exception("SPARQL retrieval failed; continuing without it")
 
     vector_context = ""
-    try:
-        vector_context = vector_retrieve(vector_store, retrieval_query, k=6)
-    except Exception:
-        logger.exception("Vector retrieval failed; continuing without it")
+    with lf.span(
+        "vector-retrieval", input=retrieval_query, metadata={"k": 6}, as_type="retriever"
+    ) as s:
+        try:
+            vector_context = vector_retrieve(vector_store, retrieval_query, k=6)
+        except Exception:
+            logger.exception("Vector retrieval failed; continuing without it")
+        s.update(output=vector_context)
 
     if sparql_context:
         sources.append("sparql")
@@ -65,7 +89,9 @@ def answer_question(
         vector_context=vector_context or "(trống)",
         prompt=standalone,
     )
-    reply = (_answer_llm.invoke(msg).content or "").strip()
+    with lf.span("generate-answer", input=msg, metadata={"sources": sources}) as s:
+        reply = (_answer_llm.invoke(msg, config=lf.langchain_config()).content or "").strip()
+        s.update(output=reply)
     logger.info("Hybrid answer sources=%s standalone=%r", sources, standalone)
 
     return {

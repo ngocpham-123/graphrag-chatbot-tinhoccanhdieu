@@ -8,6 +8,7 @@ from fastapi.responses import FileResponse
 
 from backend.app.routers import chat, curriculum, exercises
 from backend.app.config import FIGURES_DIR, CONTENT_FIGURE_DIR
+from backend.app.services import langfuse_service
 
 logger = logging.getLogger(__name__)
 
@@ -16,6 +17,12 @@ app = FastAPI(title="GraphRAG Chatbot - Tin Hoc THPT")
 app.include_router(chat.router)
 app.include_router(curriculum.router)
 app.include_router(exercises.router)
+
+
+@app.on_event("shutdown")
+async def flush_langfuse():
+    """Langfuse batches events in a background thread — push the tail on exit."""
+    langfuse_service.flush()
 
 # Serve figure images (URI local names of ex:Figure/ex:Diagram instances
 # match these filenames without extension)

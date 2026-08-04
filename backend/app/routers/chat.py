@@ -11,6 +11,7 @@ from backend.app.services.graphdb_service import create_graph
 from backend.app.services.chatgpt_service import create_qa_chain
 from backend.app.services.vector_index import load_vector_store
 from backend.app.services.orchestrator import answer_question
+from backend.app.services import langfuse_service as lf
 from backend.app.config import FIGURES_DIR, GRAPHDB_URL, GRAPHDB_REPOSITORY
 
 logger = logging.getLogger(__name__)
@@ -96,8 +97,24 @@ async def chat(request: ChatRequest):
     if qa_chain is None or vector_store is None:
         raise HTTPException(status_code=503, detail="Services not initialized")
 
+    conversation_id = request.conversation_id or str(uuid.uuid4())
+
+    # One Langfuse trace per request: the user's message is the trace input, the
+    # final reply its output, and the orchestrator's steps are nested spans.
+    # conversation_id doubles as the Langfuse session id, so a multi-turn chat
+    # groups into one session in the UI.
+    with lf.trace(
+        "chat-request",
+        input=request.message,
+        session_id=conversation_id,
+        tags=["chat"],
+        metadata={"has_image": bool(request.image)},
+    ) as root:
+        return _handle_chat(request, conversation_id, root)
+
+
+def _handle_chat(request: ChatRequest, conversation_id: str, root) -> ChatResponse:
     try:
-        conversation_id = request.conversation_id or str(uuid.uuid4())
         history = conversations.get(conversation_id, [])
 
         # History is used only to resolve follow-ups; the orchestrator condenses
@@ -133,6 +150,17 @@ async def chat(request: ChatRequest):
         })
         conversations[conversation_id] = history
 
+        root.update(
+            output=reply,
+            metadata={
+                "sources": result["sources"],
+                "sparql_query": sparql_query,
+                "figure_paths": figure_paths,
+                "exercise_count": len(exercises or []),
+            },
+        )
+        lf.set_trace_io(output=reply)
+
         return ChatResponse(
             reply=reply,
             conversation_id=conversation_id,
@@ -142,6 +170,8 @@ async def chat(request: ChatRequest):
         )
     except Exception as e:
         logger.exception("Chat endpoint error")
+        root.update(level="ERROR", status_message=str(e))
+        lf.set_trace_io(output={"error": str(e)})
         raise HTTPException(status_code=500, detail=str(e))
 
 
