@@ -51,6 +51,7 @@ def _int(value, default=None):
 def _run_select(query: str) -> list[dict]:
     wrapper = SPARQLWrapper(SPARQL_ENDPOINT)
     wrapper.setReturnFormat(JSON)
+    wrapper.setTimeout(30)
     wrapper.setQuery(PREFIXES + query)
     try:
         data = wrapper.query().convert()

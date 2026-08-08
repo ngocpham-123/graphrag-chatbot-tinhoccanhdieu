@@ -92,7 +92,7 @@ def extract_exercises_from_rows(sparql: str, rows) -> list[dict]:
     return out
 
 
-_grade_llm = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=OPENAI_API_KEY)
+_grade_llm = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=OPENAI_API_KEY, timeout=60)
 
 _ALLOWED_VERDICTS = {"correct", "partial", "incorrect"}
 

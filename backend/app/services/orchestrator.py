@@ -15,7 +15,7 @@ from backend.app.services import langfuse_service as lf
 
 logger = logging.getLogger(__name__)
 
-_answer_llm = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=OPENAI_API_KEY)
+_answer_llm = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=OPENAI_API_KEY, timeout=60)
 
 
 def answer_question(

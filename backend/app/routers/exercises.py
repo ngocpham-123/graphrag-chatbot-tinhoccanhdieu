@@ -17,7 +17,7 @@ class GradeRequest(BaseModel):
 
 
 @router.post("/grade")
-async def grade(req: GradeRequest):
+def grade(req: GradeRequest):
     if not req.userAnswer or not req.userAnswer.strip():
         raise HTTPException(status_code=400, detail="Câu trả lời trống")
     try:
