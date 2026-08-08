@@ -379,6 +379,7 @@ _condense_llm = ChatOpenAI(
     model="gpt-4.1-mini",
     temperature=0,
     api_key=OPENAI_API_KEY,
+    timeout=60,
 )
 
 
@@ -415,6 +416,7 @@ def create_qa_chain(graph: OntotextGraphDBGraph) -> OntotextGraphDBQAChain:
         model="gpt-4.1-mini",
         temperature=0,
         api_key=OPENAI_API_KEY,
+        timeout=60,
     )
 
     chain = FormattedGraphDBQAChain.from_llm(

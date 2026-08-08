@@ -10,7 +10,7 @@ router = APIRouter(prefix="/api/curriculum", tags=["curriculum"])
 
 
 @router.get("/grades")
-async def get_grades():
+def get_grades():
     try:
         return cs.grades()
     except cs.CurriculumError as e:
@@ -19,7 +19,7 @@ async def get_grades():
 
 
 @router.get("/grades/{grade_id}/topics")
-async def get_topics(grade_id: str):
+def get_topics(grade_id: str):
     try:
         return cs.topics_for_grade(grade_id)
     except cs.NotFoundError as e:
@@ -30,7 +30,7 @@ async def get_topics(grade_id: str):
 
 
 @router.get("/topics/{topic_id}/lessons")
-async def get_lessons(topic_id: str):
+def get_lessons(topic_id: str):
     try:
         return cs.lessons_for_topic(topic_id)
     except cs.NotFoundError as e:
@@ -41,7 +41,7 @@ async def get_lessons(topic_id: str):
 
 
 @router.get("/lessons/{lesson_id}")
-async def get_lesson(lesson_id: str):
+def get_lesson(lesson_id: str):
     try:
         return cs.lesson_detail(lesson_id)
     except cs.NotFoundError as e:

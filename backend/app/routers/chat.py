@@ -92,8 +92,12 @@ async def get_schema():
     return {"schema": graph.get_schema}
 
 
+# Sync (not async) on purpose: this handler runs blocking I/O — OpenAI calls,
+# SPARQL queries, Langfuse — and a sync route runs in FastAPI's threadpool.
+# As `async def` one wedged outbound call froze the event loop and the whole
+# server stopped answering (nginx 504 on every route) until a restart.
 @router.post("/", response_model=ChatResponse)
-async def chat(request: ChatRequest):
+def chat(request: ChatRequest):
     if qa_chain is None or vector_store is None:
         raise HTTPException(status_code=503, detail="Services not initialized")
 
@@ -176,7 +180,7 @@ def _handle_chat(request: ChatRequest, conversation_id: str, root) -> ChatRespon
 
 
 @router.post("/sparql")
-async def execute_sparql(request: dict):
+def execute_sparql(request: dict):
     """Execute a raw SPARQL query and return results."""
     sparql_query = request.get("query", "").strip()
     if not sparql_query:
@@ -186,6 +190,7 @@ async def execute_sparql(request: dict):
         endpoint = f"{GRAPHDB_URL}/repositories/{GRAPHDB_REPOSITORY}"
         sparql = SPARQLWrapper(endpoint)
         sparql.setReturnFormat(JSON)
+        sparql.setTimeout(30)
         sparql.setQuery(sparql_query)
 
         results = sparql.query().convert()

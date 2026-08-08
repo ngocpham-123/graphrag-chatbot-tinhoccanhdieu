@@ -8,7 +8,7 @@ from backend.app.services import langfuse_service as lf
 
 logger = logging.getLogger(__name__)
 
-_vision_llm = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=OPENAI_API_KEY)
+_vision_llm = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=OPENAI_API_KEY, timeout=60)
 
 _VISION_INSTRUCTION = (
     "Bạn là trợ lí cho sách giáo khoa Tin học. Hãy quan sát hình ảnh và mô tả NỘI DUNG "
