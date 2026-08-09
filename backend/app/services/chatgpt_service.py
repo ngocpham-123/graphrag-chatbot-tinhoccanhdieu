@@ -85,6 +85,15 @@ KEY NAVIGATION PATTERNS for this graph:
 - Images/figures in a lesson: `?fig a ex:Figure ; ex:belongsToLesson ?lesson ;
   ex:hasCaption ?caption .`  Always include `a ex:Figure` so you exclude pages
   and sections (only nodes typed ex:Figure are real images).
+  For image/figure questions, ALWAYS also return the figure's curriculum
+  context with exactly these variable names — ?lessonLabel, ?topicLabel and
+  ?gradeLabel — via OPTIONAL blocks on the figure's lesson (every Figure has
+  ex:belongsToLesson):
+      OPTIONAL {{
+        ?fig ex:belongsToLesson ?lesson . ?lesson rdfs:label ?lessonLabel .
+        OPTIONAL {{ ?lesson ex:belongsToTopic ?topic . ?topic rdfs:label ?topicLabel }}
+        OPTIONAL {{ ?lesson ex:belongsToGrade ?grade . ?grade rdfs:label ?gradeLabel }}
+      }}
 - Questions / exercises / activities of a lesson all link via `ex:belongsToLesson`,
   carry their text in `ex:hasRawText`, and a short title in `rdfs:label`. Their TYPE
   distinguishes them:
@@ -157,25 +166,33 @@ SELECT ?text WHERE {{
 }} LIMIT 20
 
 # "Có hình minh hoạ nào về IoT không?"
+# (figures PLUS the lesson/topic/grade containing them, so the result graph
+#  connects: figure -> lesson -> topic -> grade)
 PREFIX ex: <http://example.org/tinhoc10-cd#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?caption ?fig WHERE {{
+SELECT ?caption ?fig ?lessonLabel ?topicLabel ?gradeLabel WHERE {{
   ?c a ex:KnowledgeConcept ; rdfs:label ?cl .
   FILTER(CONTAINS(LCASE(STR(?cl)), LCASE("iot")))
   ?fig ex:illustratesConcept ?c .
   OPTIONAL {{ ?fig ex:hasCaption ?caption }}
+  OPTIONAL {{
+    ?fig ex:belongsToLesson ?lesson . ?lesson rdfs:label ?lessonLabel .
+    OPTIONAL {{ ?lesson ex:belongsToTopic ?topic . ?topic rdfs:label ?topicLabel }}
+    OPTIONAL {{ ?lesson ex:belongsToGrade ?grade . ?grade rdfs:label ?gradeLabel }}
+  }}
 }} LIMIT 20
 
 # "Cho tôi các hình ảnh trong bài 1 topic A lớp 11"
-# (navigate grade + topic + lesson, then list that lesson's figures)
+# (navigate grade + topic + lesson, then list that lesson's figures; the
+#  hierarchy labels are already bound — SELECT them so the graph connects)
 PREFIX ex: <http://example.org/tinhoc10-cd#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?caption ?fig WHERE {{
-  ?lesson a ex:Lesson ; rdfs:label ?ll ;
+SELECT ?caption ?fig ?lessonLabel ?topicLabel ?gradeLabel WHERE {{
+  ?lesson a ex:Lesson ; rdfs:label ?lessonLabel ;
           ex:belongsToGrade ?g ; ex:belongsToTopic ?t .
-  ?g rdfs:label ?gl . FILTER(CONTAINS(LCASE(STR(?gl)), LCASE("lớp 11")))
-  ?t rdfs:label ?tl . FILTER(CONTAINS(LCASE(STR(?tl)), LCASE("chủ đề a")))
-  FILTER(CONTAINS(LCASE(STR(?ll)), LCASE("bài 1.")))
+  ?g rdfs:label ?gradeLabel . FILTER(CONTAINS(LCASE(STR(?gradeLabel)), LCASE("lớp 11")))
+  ?t rdfs:label ?topicLabel . FILTER(CONTAINS(LCASE(STR(?topicLabel)), LCASE("chủ đề a")))
+  FILTER(CONTAINS(LCASE(STR(?lessonLabel)), LCASE("bài 1.")))
   ?fig a ex:Figure ; ex:belongsToLesson ?lesson .
   OPTIONAL {{ ?fig ex:hasCaption ?caption }}
 }} LIMIT 30
