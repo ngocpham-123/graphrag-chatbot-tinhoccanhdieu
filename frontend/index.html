@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,8 +10,8 @@
   <!-- Sidebar -->
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-header">
-      <h2>Conversations</h2>
-      <button id="new-chat-btn" title="New chat">＋</button>
+      <h2>Cuộc trò chuyện</h2>
+      <button id="new-chat-btn" title="Cuộc trò chuyện mới">＋</button>
     </div>
     <div id="conversation-list" class="conversation-list"></div>
 
@@ -22,10 +22,10 @@
       </div>
       <textarea
         id="sparql-input"
-        placeholder="Paste your SPARQL query here…"
+        placeholder="Dán truy vấn SPARQL vào đây…"
         spellcheck="false"
       ></textarea>
-      <button id="sparql-run-btn">Execute</button>
+      <button id="sparql-run-btn">Chạy truy vấn</button>
     </div>
 
     <div class="sidebar-footer">
@@ -37,8 +37,8 @@
   <main class="chat-area">
     <!-- Header -->
     <header class="chat-header">
-      <button id="sidebar-toggle" class="icon-btn" title="Toggle sidebar">☰</button>
-      <h1 id="chat-title">New Chat</h1>
+      <button id="sidebar-toggle" class="icon-btn" title="Ẩn/hiện thanh bên">☰</button>
+      <h1 id="chat-title">Cuộc trò chuyện mới</h1>
       <a href="/library" class="header-lib-link" title="Thư viện học liệu">📚 Thư viện</a>
     </header>
 
@@ -46,7 +46,7 @@
     <div id="messages" class="messages">
       <div class="welcome">
         <h2>MMKG</h2>
-        <p>Ask anything about Tin học THPT. Your questions are answered using a knowledge graph.</p>
+        <p>Hãy hỏi bất cứ điều gì về Tin học THPT. Câu hỏi của bạn được trả lời dựa trên đồ thị tri thức.</p>
       </div>
     </div>
 
@@ -54,22 +54,22 @@
     <div class="input-area">
       <form id="chat-form" class="input-form">
         <div id="image-preview" class="image-preview hidden">
-          <img id="image-preview-img" alt="attachment preview" />
-          <button type="button" id="image-remove-btn" title="Remove image">✕</button>
+          <img id="image-preview-img" alt="xem trước ảnh đính kèm" />
+          <button type="button" id="image-remove-btn" title="Xoá ảnh">✕</button>
         </div>
         <input type="file" id="image-input" accept="image/*" hidden />
-        <button type="button" id="attach-btn" title="Attach image">
+        <button type="button" id="attach-btn" title="Đính kèm ảnh">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
           </svg>
         </button>
         <textarea
           id="user-input"
-          placeholder="Type a message…"
+          placeholder="Nhập tin nhắn…"
           rows="1"
           autocomplete="off"
         ></textarea>
-        <button type="submit" id="send-btn" title="Send">
+        <button type="submit" id="send-btn" title="Gửi">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 2L11 13"/>
             <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
@@ -84,8 +84,8 @@
   <div id="graph-overlay" class="graph-overlay hidden">
     <div class="graph-panel">
       <div class="graph-header">
-        <h2>Graph Visualization</h2>
-        <button id="graph-close-btn" class="icon-btn" title="Close">✕</button>
+        <h2>Trực quan hoá đồ thị</h2>
+        <button id="graph-close-btn" class="icon-btn" title="Đóng">✕</button>
       </div>
       <div id="graph-container" class="graph-container"></div>
       <div id="graph-error" class="graph-error hidden"></div>
@@ -94,6 +94,6 @@
 
   <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
   <script src="/static/exercise.js?v=1"></script>
-  <script src="/static/app.js?v=9"></script>
+  <script src="/static/app.js?v=10"></script>
 </body>
 </html>

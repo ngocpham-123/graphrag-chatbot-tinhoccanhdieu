@@ -74,11 +74,11 @@ newChatBtn.addEventListener("click", () => startNewChat());
 
 function startNewChat() {
   currentConversationId = null;
-  chatTitle.textContent = "New Chat";
+  chatTitle.textContent = "Cuộc trò chuyện mới";
   messagesContainer.innerHTML = `
     <div class="welcome">
       <h2>MMKG</h2>
-      <p>Ask anything about Tin học THPT. Your questions are answered using a knowledge graph.</p>
+      <p>Hãy hỏi bất cứ điều gì về Tin học THPT. Câu hỏi của bạn được trả lời dựa trên đồ thị tri thức.</p>
     </div>`;
   renderConversationList();
   userInput.focus();
@@ -95,7 +95,7 @@ function renderConversationList() {
       "conversation-item" + (id === currentConversationId ? " active" : "");
 
     const titleSpan = document.createElement("span");
-    titleSpan.textContent = conv.title || "New Chat";
+    titleSpan.textContent = conv.title || "Cuộc trò chuyện mới";
     titleSpan.style.overflow = "hidden";
     titleSpan.style.textOverflow = "ellipsis";
     titleSpan.style.flex = "1";
@@ -119,7 +119,7 @@ function renderConversationList() {
 function loadConversation(id) {
   currentConversationId = id;
   const conv = conversations[id];
-  chatTitle.textContent = conv.title || "New Chat";
+  chatTitle.textContent = conv.title || "Cuộc trò chuyện mới";
   messagesContainer.innerHTML = "";
   for (const msg of conv.messages) {
     if (msg.role === "assistant" && msg.sparql_query) {
@@ -167,7 +167,7 @@ function appendMessage(role, content, figurePaths, imageDataUrl) {
     const img = document.createElement("img");
     img.className = "message-image";
     img.src = imageDataUrl;
-    img.alt = "attached image";
+    img.alt = "ảnh đã đính kèm";
     img.addEventListener("click", () => window.open(img.src, "_blank"));
     msgDiv.insertBefore(img, msgDiv.firstChild);
   }
@@ -246,10 +246,10 @@ function appendSparqlBadge(query) {
   const header = document.createElement("div");
   header.className = "sparql-badge-header";
   header.innerHTML =
-    `<span>SPARQL Query Executed</span>` +
+    `<span>Đã thực thi truy vấn SPARQL</span>` +
     `<span class="sparql-actions">` +
-    `<button class="sparql-toggle">Show</button>` +
-    `<button class="sparql-graph-toggle">Show graph</button>` +
+    `<button class="sparql-toggle">Hiện</button>` +
+    `<button class="sparql-graph-toggle">Hiện đồ thị</button>` +
     `</span>`;
   badge.appendChild(header);
 
@@ -264,7 +264,7 @@ function appendSparqlBadge(query) {
 
   header.querySelector(".sparql-toggle").addEventListener("click", (e) => {
     const isHidden = codeBlock.classList.toggle("hidden");
-    e.target.textContent = isHidden ? "Show" : "Hide";
+    e.target.textContent = isHidden ? "Hiện" : "Ẩn";
   });
 
   let graphRendered = false;
@@ -272,11 +272,11 @@ function appendSparqlBadge(query) {
     const btn = e.target;
     if (graphRendered) {
       const isHidden = graphBox.classList.toggle("hidden");
-      btn.textContent = isHidden ? "Show graph" : "Hide graph";
+      btn.textContent = isHidden ? "Hiện đồ thị" : "Ẩn đồ thị";
       return;
     }
     btn.disabled = true;
-    btn.textContent = "Loading…";
+    btn.textContent = "Đang tải…";
     graphBox.classList.remove("hidden");
     graphBox.textContent = "";
     try {
@@ -287,20 +287,20 @@ function appendSparqlBadge(query) {
       });
       if (!res.ok) {
         const err = await res.json();
-        throw new Error(err.detail || "Query failed");
+        throw new Error(err.detail || "Truy vấn thất bại");
       }
       const data = await res.json();
       if (!data.rows || data.rows.length === 0) {
-        graphBox.textContent = "Query returned no results.";
+        graphBox.textContent = "Truy vấn không trả về kết quả nào.";
       } else {
         await renderGraphInto(graphBox, data.columns, data.rows);
       }
       graphRendered = true;
-      btn.textContent = "Hide graph";
+      btn.textContent = "Ẩn đồ thị";
     } catch (err) {
-      graphBox.textContent = `Error: ${err.message}`;
+      graphBox.textContent = `Lỗi: ${err.message}`;
       graphRendered = true;
-      btn.textContent = "Hide graph";
+      btn.textContent = "Ẩn đồ thị";
     } finally {
       btn.disabled = false;
     }
@@ -365,7 +365,7 @@ chatForm.addEventListener("submit", async (e) => {
 
     if (!res.ok) {
       const err = await res.json();
-      throw new Error(err.detail || "Server error");
+      throw new Error(err.detail || "Lỗi máy chủ");
     }
 
     const data = await res.json();
@@ -400,7 +400,7 @@ chatForm.addEventListener("submit", async (e) => {
     renderConversationList();
   } catch (err) {
     removeTypingIndicator();
-    appendMessage("assistant", `⚠️ Error: ${err.message}`);
+    appendMessage("assistant", `⚠️ Lỗi: ${err.message}`);
   } finally {
     sendBtn.disabled = false;
     scrollToBottom();
@@ -462,7 +462,7 @@ sparqlRunBtn.addEventListener("click", async () => {
   if (!query) return;
 
   sparqlRunBtn.disabled = true;
-  sparqlRunBtn.textContent = "Running…";
+  sparqlRunBtn.textContent = "Đang chạy…";
   graphError.classList.add("hidden");
 
   try {
@@ -474,7 +474,7 @@ sparqlRunBtn.addEventListener("click", async () => {
 
     if (!res.ok) {
       const err = await res.json();
-      throw new Error(err.detail || "Query failed");
+      throw new Error(err.detail || "Truy vấn thất bại");
     }
 
     const data = await res.json();
@@ -487,7 +487,7 @@ sparqlRunBtn.addEventListener("click", async () => {
     graphOverlay.classList.remove("hidden");
   } finally {
     sparqlRunBtn.disabled = false;
-    sparqlRunBtn.textContent = "Execute";
+    sparqlRunBtn.textContent = "Chạy truy vấn";
   }
 });
 
@@ -676,7 +676,7 @@ async function renderGraphInto(container, columns, rows) {
 async function renderGraph(columns, rows) {
   graphError.classList.add("hidden");
   if (!rows || rows.length === 0) {
-    graphError.textContent = "Query returned no results.";
+    graphError.textContent = "Truy vấn không trả về kết quả nào.";
     graphError.classList.remove("hidden");
     graphOverlay.classList.remove("hidden");
     return;
