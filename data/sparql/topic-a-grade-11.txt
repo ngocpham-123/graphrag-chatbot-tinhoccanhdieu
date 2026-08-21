@@ -1,0 +1,1762 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 11 TOPIC A
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 resources.
+# Source file: Tin học (tin học ứng dụng) 11 CD-pages-2.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g11_grade11 a ex:GradeLevel ;
+    rdfs:label "Lớp 11"@vi ;
+    ex:gradeNumber 11 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g11_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 11 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 11 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g11_grade11 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicA_shared a ex:Topic ;
+    rdfs:label "Chủ đề A (dùng chung các khối)"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi .
+
+  ex:g11_topicA a ex:Topic ;
+    rdfs:label "Chủ đề A - Máy tính và xã hội tri thức"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi ;
+    ex:hasSubtitle "Thế giới thiết bị số - Hệ điều hành và phần mềm ứng dụng"@vi ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicA_shared ;
+    ex:topicOrder 1 ;
+    ex:hasStartPage 5 ;
+    ex:hasEndPage 27 ;
+    ex:sourceFileName "Tin học (tin học ứng dụng) 11 CD-pages-2.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g11_topicA_lesson1, ex:g11_topicA_lesson2,
+                 ex:g11_topicA_lesson3, ex:g11_topicA_lesson4,
+                 ex:g11_topicA_lesson5 ;
+    ex:hasPage ex:g11_page005, ex:g11_page006, ex:g11_page007, ex:g11_page008,
+               ex:g11_page009, ex:g11_page010, ex:g11_page011, ex:g11_page012,
+               ex:g11_page013, ex:g11_page014, ex:g11_page015, ex:g11_page016,
+               ex:g11_page017, ex:g11_page018, ex:g11_page019, ex:g11_page020,
+               ex:g11_page021, ex:g11_page022, ex:g11_page023, ex:g11_page024,
+               ex:g11_page025, ex:g11_page026, ex:g11_page027 .
+
+  ex:g11_tinhoc_ungdung_canhdieu ex:hasTopic ex:g11_topicA .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g11_topicA_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Bên trong máy tính"@vi ;
+    ex:hasTitle "Bên trong máy tính"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g11_topicA ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 5 ;
+    ex:hasEndPage 9 ;
+    ex:hasSection ex:g11_topicA_l1s1, ex:g11_topicA_l1s2, ex:g11_topicA_l1s3 .
+
+  ex:g11_topicA_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Khám phá thế giới thiết bị số thông minh"@vi ;
+    ex:hasTitle "Khám phá thế giới thiết bị số thông minh"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g11_topicA ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 10 ;
+    ex:hasEndPage 12 ;
+    ex:hasSection ex:g11_topicA_l2s1, ex:g11_topicA_l2s2 .
+
+  ex:g11_topicA_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Khái quát về hệ điều hành"@vi ;
+    ex:hasTitle "Khái quát về hệ điều hành"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g11_topicA ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 13 ;
+    ex:hasEndPage 18 ;
+    ex:hasSection ex:g11_topicA_l3s1, ex:g11_topicA_l3s2, ex:g11_topicA_l3s3,
+                  ex:g11_topicA_l3s4, ex:g11_topicA_l3s5 .
+
+  ex:g11_topicA_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Thực hành với các thiết bị số"@vi ;
+    ex:hasTitle "Thực hành với các thiết bị số"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:g11_topicA ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 19 ;
+    ex:hasEndPage 23 ;
+    ex:hasSection ex:g11_topicA_l4s1, ex:g11_topicA_l4s2, ex:g11_topicA_l4s3 .
+
+  ex:g11_topicA_lesson5 a ex:Lesson ;
+    rdfs:label "Bài 5. Phần mềm ứng dụng và dịch vụ phần mềm"@vi ;
+    ex:hasTitle "Phần mềm ứng dụng và dịch vụ phần mềm"@vi ;
+    ex:lessonNumber 5 ;
+    ex:belongsToTopic ex:g11_topicA ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 24 ;
+    ex:hasEndPage 27 ;
+    ex:hasSection ex:g11_topicA_l5s1, ex:g11_topicA_l5s2 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g11_topicA_l1s1 a ex:Section ;
+    rdfs:label "Các cổng logic và tính toán nhị phân"@vi ;
+    ex:hasTitle "Các cổng logic và tính toán nhị phân"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 .
+
+  ex:g11_topicA_l1s2 a ex:Section ;
+    rdfs:label "Những bộ phận chính bên trong máy tính"@vi ;
+    ex:hasTitle "Những bộ phận chính bên trong máy tính"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 .
+
+  ex:g11_topicA_l1s3 a ex:Section ;
+    rdfs:label "Hiệu năng của máy tính"@vi ;
+    ex:hasTitle "Hiệu năng của máy tính"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 .
+
+  ex:g11_topicA_l2s1 a ex:Section ;
+    rdfs:label "Sử dụng đúng cách các thiết bị số"@vi ;
+    ex:hasTitle "Sử dụng đúng cách các thiết bị số"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 .
+
+  ex:g11_topicA_l2s2 a ex:Section ;
+    rdfs:label "Thông số kĩ thuật của thiết bị số"@vi ;
+    ex:hasTitle "Thông số kĩ thuật của thiết bị số"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 .
+
+  ex:g11_topicA_l3s1 a ex:Section ;
+    rdfs:label "Hệ điều hành, vai trò và chức năng của hệ điều hành"@vi ;
+    ex:hasTitle "Hệ điều hành, vai trò và chức năng của hệ điều hành"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 .
+
+  ex:g11_topicA_l3s2 a ex:Section ;
+    rdfs:label "Sơ lược lịch sử phát triển của hệ điều hành qua các thế hệ máy tính"@vi ;
+    ex:hasTitle "Sơ lược lịch sử phát triển của hệ điều hành qua các thế hệ máy tính"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 .
+
+  ex:g11_topicA_l3s3 a ex:Section ;
+    rdfs:label "Một số hệ điều hành tiêu biểu"@vi ;
+    ex:hasTitle "Một số hệ điều hành tiêu biểu"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 .
+
+  ex:g11_topicA_l3s4 a ex:Section ;
+    rdfs:label "Hệ điều hành nguồn mở"@vi ;
+    ex:hasTitle "Hệ điều hành nguồn mở"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 .
+
+  ex:g11_topicA_l3s5 a ex:Section ;
+    rdfs:label "Thực hành tìm hiểu về hệ điều hành"@vi ;
+    ex:hasTitle "Thực hành tìm hiểu về hệ điều hành"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 .
+
+  ex:g11_topicA_l4s1 a ex:Section ;
+    rdfs:label "Lắp ráp các bộ phận của máy tính"@vi ;
+    ex:hasTitle "Lắp ráp các bộ phận của máy tính"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 .
+
+  ex:g11_topicA_l4s2 a ex:Section ;
+    rdfs:label "Kết nối máy tính với các thiết bị số thông dụng"@vi ;
+    ex:hasTitle "Kết nối máy tính với các thiết bị số thông dụng"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 .
+
+  ex:g11_topicA_l4s3 a ex:Section ;
+    rdfs:label "Cá nhân hoá máy tính"@vi ;
+    ex:hasTitle "Cá nhân hoá máy tính"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 .
+
+  ex:g11_topicA_l5s1 a ex:Section ;
+    rdfs:label "Một số loại phần mềm"@vi ;
+    ex:hasTitle "Một số loại phần mềm"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 .
+
+  ex:g11_topicA_l5s2 a ex:Section ;
+    rdfs:label "Thực hành với phần mềm khai thác trực tuyến miễn phí"@vi ;
+    ex:hasTitle "Thực hành với phần mềm khai thác trực tuyến miễn phí"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g11_page005 a ex:Page ; ex:hasPageNumber 5 ; ex:hasPrintedPageNumber 5 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g11_topicA_lesson1 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page006 a ex:Page ; ex:hasPageNumber 6 ; ex:hasPrintedPageNumber 6 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g11_topicA_lesson1 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page007 a ex:Page ; ex:hasPageNumber 7 ; ex:hasPrintedPageNumber 7 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g11_topicA_lesson1 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page008 a ex:Page ; ex:hasPageNumber 8 ; ex:hasPrintedPageNumber 8 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g11_topicA_lesson1 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page009 a ex:Page ; ex:hasPageNumber 9 ; ex:hasPrintedPageNumber 9 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g11_topicA_lesson1 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page010 a ex:Page ; ex:hasPageNumber 10 ; ex:hasPrintedPageNumber 10 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g11_topicA_lesson2 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page011 a ex:Page ; ex:hasPageNumber 11 ; ex:hasPrintedPageNumber 11 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g11_topicA_lesson2 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page012 a ex:Page ; ex:hasPageNumber 12 ; ex:hasPrintedPageNumber 12 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g11_topicA_lesson2 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page013 a ex:Page ; ex:hasPageNumber 13 ; ex:hasPrintedPageNumber 13 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g11_topicA_lesson3 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page014 a ex:Page ; ex:hasPageNumber 14 ; ex:hasPrintedPageNumber 14 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g11_topicA_lesson3 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page015 a ex:Page ; ex:hasPageNumber 15 ; ex:hasPrintedPageNumber 15 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g11_topicA_lesson3 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page016 a ex:Page ; ex:hasPageNumber 16 ; ex:hasPrintedPageNumber 16 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g11_topicA_lesson3 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page017 a ex:Page ; ex:hasPageNumber 17 ; ex:hasPrintedPageNumber 17 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g11_topicA_lesson3 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page018 a ex:Page ; ex:hasPageNumber 18 ; ex:hasPrintedPageNumber 18 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g11_topicA_lesson3 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page019 a ex:Page ; ex:hasPageNumber 19 ; ex:hasPrintedPageNumber 19 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g11_topicA_lesson4 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page020 a ex:Page ; ex:hasPageNumber 20 ; ex:hasPrintedPageNumber 20 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:g11_topicA_lesson4 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page021 a ex:Page ; ex:hasPageNumber 21 ; ex:hasPrintedPageNumber 21 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:g11_topicA_lesson4 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page022 a ex:Page ; ex:hasPageNumber 22 ; ex:hasPrintedPageNumber 22 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:g11_topicA_lesson4 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page023 a ex:Page ; ex:hasPageNumber 23 ; ex:hasPrintedPageNumber 23 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:g11_topicA_lesson4 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page024 a ex:Page ; ex:hasPageNumber 24 ; ex:hasPrintedPageNumber 24 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:g11_topicA_lesson5 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page025 a ex:Page ; ex:hasPageNumber 25 ; ex:hasPrintedPageNumber 25 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:g11_topicA_lesson5 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page026 a ex:Page ; ex:hasPageNumber 26 ; ex:hasPrintedPageNumber 26 ; ex:pdfPageIndex 22 ; ex:belongsToLesson ex:g11_topicA_lesson5 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page027 a ex:Page ; ex:hasPageNumber 27 ; ex:hasPrintedPageNumber 27 ; ex:pdfPageIndex 23 ; ex:belongsToLesson ex:g11_topicA_lesson5 ; ex:belongsToTopic ex:g11_topicA ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g11_page005 ex:nextPage ex:g11_page006 .
+  ex:g11_page006 ex:previousPage ex:g11_page005 ; ex:nextPage ex:g11_page007 .
+  ex:g11_page007 ex:previousPage ex:g11_page006 ; ex:nextPage ex:g11_page008 .
+  ex:g11_page008 ex:previousPage ex:g11_page007 ; ex:nextPage ex:g11_page009 .
+  ex:g11_page009 ex:previousPage ex:g11_page008 ; ex:nextPage ex:g11_page010 .
+  ex:g11_page010 ex:previousPage ex:g11_page009 ; ex:nextPage ex:g11_page011 .
+  ex:g11_page011 ex:previousPage ex:g11_page010 ; ex:nextPage ex:g11_page012 .
+  ex:g11_page012 ex:previousPage ex:g11_page011 ; ex:nextPage ex:g11_page013 .
+  ex:g11_page013 ex:previousPage ex:g11_page012 ; ex:nextPage ex:g11_page014 .
+  ex:g11_page014 ex:previousPage ex:g11_page013 ; ex:nextPage ex:g11_page015 .
+  ex:g11_page015 ex:previousPage ex:g11_page014 ; ex:nextPage ex:g11_page016 .
+  ex:g11_page016 ex:previousPage ex:g11_page015 ; ex:nextPage ex:g11_page017 .
+  ex:g11_page017 ex:previousPage ex:g11_page016 ; ex:nextPage ex:g11_page018 .
+  ex:g11_page018 ex:previousPage ex:g11_page017 ; ex:nextPage ex:g11_page019 .
+  ex:g11_page019 ex:previousPage ex:g11_page018 ; ex:nextPage ex:g11_page020 .
+  ex:g11_page020 ex:previousPage ex:g11_page019 ; ex:nextPage ex:g11_page021 .
+  ex:g11_page021 ex:previousPage ex:g11_page020 ; ex:nextPage ex:g11_page022 .
+  ex:g11_page022 ex:previousPage ex:g11_page021 ; ex:nextPage ex:g11_page023 .
+  ex:g11_page023 ex:previousPage ex:g11_page022 ; ex:nextPage ex:g11_page024 .
+  ex:g11_page024 ex:previousPage ex:g11_page023 ; ex:nextPage ex:g11_page025 .
+  ex:g11_page025 ex:previousPage ex:g11_page024 ; ex:nextPage ex:g11_page026 .
+  ex:g11_page026 ex:previousPage ex:g11_page025 ; ex:nextPage ex:g11_page027 .
+  ex:g11_page027 ex:previousPage ex:g11_page026 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g11_conceptMayTinhXaHoiTriThuc a ex:KnowledgeConcept ; rdfs:label "Máy tính và xã hội tri thức"@vi .
+  ex:g11_conceptTheGioiThietBiSo a ex:KnowledgeConcept ; rdfs:label "Thế giới thiết bị số"@vi .
+  ex:g11_conceptThietBiSoThongMinh a ex:KnowledgeConcept ; rdfs:label "Thiết bị số thông minh"@vi .
+  ex:g11_conceptCongLogic a ex:KnowledgeConcept ; rdfs:label "Cổng logic"@vi .
+  ex:g11_conceptCongAND a ex:KnowledgeConcept ; rdfs:label "Cổng AND"@vi .
+  ex:g11_conceptCongOR a ex:KnowledgeConcept ; rdfs:label "Cổng OR"@vi .
+  ex:g11_conceptCongNOT a ex:KnowledgeConcept ; rdfs:label "Cổng NOT"@vi .
+  ex:g11_conceptCongXOR a ex:KnowledgeConcept ; rdfs:label "Cổng XOR"@vi .
+  ex:g11_conceptPhepToanNhiPhan a ex:KnowledgeConcept ; rdfs:label "Tính toán nhị phân"@vi .
+  ex:g11_conceptMachCong1Bit a ex:KnowledgeConcept ; rdfs:label "Mạch cộng 1 bit"@vi .
+  ex:g11_conceptMachCongDayDu a ex:KnowledgeConcept ; rdfs:label "Mạch cộng đầy đủ"@vi .
+  ex:g11_conceptBangMachChinh a ex:KnowledgeConcept ; rdfs:label "Bảng mạch chính"@vi .
+  ex:g11_conceptCPU a ex:KnowledgeConcept ; rdfs:label "CPU"@vi .
+  ex:g11_conceptRAM a ex:KnowledgeConcept ; rdfs:label "RAM"@vi .
+  ex:g11_conceptROM a ex:KnowledgeConcept ; rdfs:label "ROM"@vi .
+  ex:g11_conceptThietBiLuuTru a ex:KnowledgeConcept ; rdfs:label "Thiết bị lưu trữ"@vi .
+  ex:g11_conceptHDD a ex:KnowledgeConcept ; rdfs:label "Ổ cứng HDD"@vi .
+  ex:g11_conceptSSD a ex:KnowledgeConcept ; rdfs:label "Ổ cứng SSD"@vi .
+  ex:g11_conceptHieuNangMayTinh a ex:KnowledgeConcept ; rdfs:label "Hiệu năng máy tính"@vi .
+  ex:g11_conceptTocDoCPU a ex:KnowledgeConcept ; rdfs:label "Tốc độ CPU"@vi .
+  ex:g11_conceptNhanCPU a ex:KnowledgeConcept ; rdfs:label "Nhân CPU"@vi .
+  ex:g11_conceptDungLuongRAM a ex:KnowledgeConcept ; rdfs:label "Dung lượng RAM"@vi .
+  ex:g11_conceptTaiLieuHuongDanSuDung a ex:KnowledgeConcept ; rdfs:label "Tài liệu hướng dẫn sử dụng thiết bị số"@vi .
+  ex:g11_conceptHuongDanAnToan a ex:KnowledgeConcept ; rdfs:label "Hướng dẫn an toàn"@vi .
+  ex:g11_conceptLapDatThietDat a ex:KnowledgeConcept ; rdfs:label "Lắp đặt và thiết đặt"@vi .
+  ex:g11_conceptVanHanhThietBi a ex:KnowledgeConcept ; rdfs:label "Vận hành thiết bị"@vi .
+  ex:g11_conceptBaoTriThietBi a ex:KnowledgeConcept ; rdfs:label "Bảo trì thiết bị"@vi .
+  ex:g11_conceptXuLiSuCo a ex:KnowledgeConcept ; rdfs:label "Xử lí sự cố"@vi .
+  ex:g11_conceptThongSoKiThuat a ex:KnowledgeConcept ; rdfs:label "Thông số kĩ thuật"@vi .
+  ex:g11_conceptKichThuocManHinh a ex:KnowledgeConcept ; rdfs:label "Kích thước màn hình"@vi .
+  ex:g11_conceptDoPhanGiaiHinhAnh a ex:KnowledgeConcept ; rdfs:label "Độ phân giải hình ảnh"@vi .
+  ex:g11_conceptMegapixel a ex:KnowledgeConcept ; rdfs:label "Megapixel"@vi .
+  ex:g11_conceptHeDieuHanh a ex:KnowledgeConcept ; rdfs:label "Hệ điều hành"@vi .
+  ex:g11_conceptPhanCung a ex:KnowledgeConcept ; rdfs:label "Phần cứng"@vi .
+  ex:g11_conceptPhanMemHeThong a ex:KnowledgeConcept ; rdfs:label "Phần mềm hệ thống"@vi .
+  ex:g11_conceptPhanMemUngDung a ex:KnowledgeConcept ; rdfs:label "Phần mềm ứng dụng"@vi .
+  ex:g11_conceptTrinhDieuKhienThietBi a ex:KnowledgeConcept ; rdfs:label "Trình điều khiển thiết bị"@vi .
+  ex:g11_conceptQuanLiTep a ex:KnowledgeConcept ; rdfs:label "Quản lí tệp"@vi .
+  ex:g11_conceptQuanLiThietBi a ex:KnowledgeConcept ; rdfs:label "Quản lí thiết bị"@vi .
+  ex:g11_conceptQuanLiTienTrinh a ex:KnowledgeConcept ; rdfs:label "Quản lí tiến trình"@vi .
+  ex:g11_conceptBaoVeHeThong a ex:KnowledgeConcept ; rdfs:label "Bảo vệ hệ thống"@vi .
+  ex:g11_conceptMSDOS a ex:KnowledgeConcept ; rdfs:label "MS DOS"@vi .
+  ex:g11_conceptWindows a ex:KnowledgeConcept ; rdfs:label "Windows"@vi .
+  ex:g11_conceptMacOS a ex:KnowledgeConcept ; rdfs:label "macOS"@vi .
+  ex:g11_conceptUNIX a ex:KnowledgeConcept ; rdfs:label "UNIX"@vi .
+  ex:g11_conceptLinux a ex:KnowledgeConcept ; rdfs:label "LINUX"@vi .
+  ex:g11_conceptAndroid a ex:KnowledgeConcept ; rdfs:label "Android"@vi .
+  ex:g11_conceptHeDieuHanhNguonMo a ex:KnowledgeConcept ; rdfs:label "Hệ điều hành nguồn mở"@vi .
+  ex:g11_conceptCongGiaoTiep a ex:KnowledgeConcept ; rdfs:label "Cổng giao tiếp"@vi .
+  ex:g11_conceptUSB a ex:KnowledgeConcept ; rdfs:label "USB"@vi .
+  ex:g11_conceptVGA a ex:KnowledgeConcept ; rdfs:label "VGA"@vi .
+  ex:g11_conceptHDMI a ex:KnowledgeConcept ; rdfs:label "HDMI"@vi .
+  ex:g11_conceptCongTron35mm a ex:KnowledgeConcept ; rdfs:label "Cổng tròn 3.5 mm"@vi .
+  ex:g11_conceptBluetooth a ex:KnowledgeConcept ; rdfs:label "Bluetooth"@vi .
+  ex:g11_conceptWiFi a ex:KnowledgeConcept ; rdfs:label "Wi-Fi"@vi .
+  ex:g11_conceptMayIn a ex:KnowledgeConcept ; rdfs:label "Máy in"@vi .
+  ex:g11_conceptDienThoaiThongMinh a ex:KnowledgeConcept ; rdfs:label "Điện thoại thông minh"@vi .
+  ex:g11_conceptCaNhanHoaMayTinh a ex:KnowledgeConcept ; rdfs:label "Cá nhân hoá máy tính"@vi .
+  ex:g11_conceptControlPanel a ex:KnowledgeConcept ; rdfs:label "Control Panel"@vi .
+  ex:g11_conceptPhanMemThuongMai a ex:KnowledgeConcept ; rdfs:label "Phần mềm thương mại"@vi .
+  ex:g11_conceptPhanMemMienPhi a ex:KnowledgeConcept ; rdfs:label "Phần mềm miễn phí"@vi .
+  ex:g11_conceptPhanMemNguonMo a ex:KnowledgeConcept ; rdfs:label "Phần mềm nguồn mở"@vi .
+  ex:g11_conceptPhanMemNguonDong a ex:KnowledgeConcept ; rdfs:label "Phần mềm nguồn đóng"@vi .
+  ex:g11_conceptPhanMemKhaiThacTrucTuyen a ex:KnowledgeConcept ; rdfs:label "Phần mềm khai thác trực tuyến"@vi .
+  ex:g11_conceptPhanMemCaiDatTrenMayTinh a ex:KnowledgeConcept ; rdfs:label "Phần mềm cài trên máy tính cá nhân"@vi .
+  ex:g11_conceptGiayPhepGPL a ex:KnowledgeConcept ; rdfs:label "Giấy phép phần mềm công cộng GPL"@vi .
+  ex:g11_conceptOpenOffice a ex:KnowledgeConcept ; rdfs:label "OpenOffice"@vi .
+  ex:g11_conceptGoogleDocs a ex:KnowledgeConcept ; rdfs:label "Google Docs"@vi .
+  ex:g11_conceptGoogleSheets a ex:KnowledgeConcept ; rdfs:label "Google Sheets"@vi .
+  ex:g11_conceptGoogleSlides a ex:KnowledgeConcept ; rdfs:label "Google Slides"@vi .
+
+  ###########################################################################
+  # Topic / lesson / section concept links
+  ###########################################################################
+
+  ex:g11_topicA ex:hasConcept ex:g11_conceptMayTinhXaHoiTriThuc, ex:g11_conceptTheGioiThietBiSo,
+    ex:g11_conceptThietBiSoThongMinh, ex:g11_conceptCongLogic, ex:g11_conceptCPU,
+    ex:g11_conceptRAM, ex:g11_conceptThietBiLuuTru, ex:g11_conceptHeDieuHanh,
+    ex:g11_conceptPhanMemUngDung, ex:g11_conceptPhanMemNguonMo, ex:g11_conceptCongGiaoTiep .
+
+  ex:g11_topicA_lesson1 ex:hasConcept ex:g11_conceptCongLogic, ex:g11_conceptCongAND,
+    ex:g11_conceptCongOR, ex:g11_conceptCongNOT, ex:g11_conceptCongXOR,
+    ex:g11_conceptPhepToanNhiPhan, ex:g11_conceptMachCong1Bit, ex:g11_conceptMachCongDayDu,
+    ex:g11_conceptBangMachChinh, ex:g11_conceptCPU, ex:g11_conceptRAM,
+    ex:g11_conceptROM, ex:g11_conceptThietBiLuuTru, ex:g11_conceptHDD,
+    ex:g11_conceptSSD, ex:g11_conceptHieuNangMayTinh, ex:g11_conceptTocDoCPU,
+    ex:g11_conceptNhanCPU, ex:g11_conceptDungLuongRAM .
+
+  ex:g11_topicA_lesson2 ex:hasConcept ex:g11_conceptThietBiSoThongMinh,
+    ex:g11_conceptTaiLieuHuongDanSuDung, ex:g11_conceptHuongDanAnToan,
+    ex:g11_conceptLapDatThietDat, ex:g11_conceptVanHanhThietBi,
+    ex:g11_conceptBaoTriThietBi, ex:g11_conceptXuLiSuCo, ex:g11_conceptThongSoKiThuat,
+    ex:g11_conceptTocDoCPU, ex:g11_conceptDungLuongRAM, ex:g11_conceptThietBiLuuTru,
+    ex:g11_conceptKichThuocManHinh, ex:g11_conceptDoPhanGiaiHinhAnh,
+    ex:g11_conceptMegapixel .
+
+  ex:g11_topicA_lesson3 ex:hasConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptPhanCung,
+    ex:g11_conceptPhanMemHeThong, ex:g11_conceptPhanMemUngDung,
+    ex:g11_conceptTrinhDieuKhienThietBi, ex:g11_conceptQuanLiTep,
+    ex:g11_conceptQuanLiThietBi, ex:g11_conceptQuanLiTienTrinh,
+    ex:g11_conceptBaoVeHeThong, ex:g11_conceptMSDOS, ex:g11_conceptWindows,
+    ex:g11_conceptMacOS, ex:g11_conceptUNIX, ex:g11_conceptLinux,
+    ex:g11_conceptAndroid, ex:g11_conceptHeDieuHanhNguonMo .
+
+  ex:g11_topicA_lesson4 ex:hasConcept ex:g11_conceptCongGiaoTiep, ex:g11_conceptUSB,
+    ex:g11_conceptVGA, ex:g11_conceptHDMI, ex:g11_conceptCongTron35mm,
+    ex:g11_conceptMayIn, ex:g11_conceptDienThoaiThongMinh, ex:g11_conceptBluetooth,
+    ex:g11_conceptWiFi, ex:g11_conceptCaNhanHoaMayTinh, ex:g11_conceptControlPanel .
+
+  ex:g11_topicA_lesson5 ex:hasConcept ex:g11_conceptPhanMemUngDung,
+    ex:g11_conceptPhanMemThuongMai, ex:g11_conceptPhanMemMienPhi,
+    ex:g11_conceptPhanMemNguonMo, ex:g11_conceptPhanMemNguonDong,
+    ex:g11_conceptPhanMemKhaiThacTrucTuyen, ex:g11_conceptPhanMemCaiDatTrenMayTinh,
+    ex:g11_conceptGiayPhepGPL, ex:g11_conceptOpenOffice,
+    ex:g11_conceptGoogleDocs, ex:g11_conceptGoogleSheets, ex:g11_conceptGoogleSlides .
+
+  ex:g11_topicA_l1s1 ex:hasConcept ex:g11_conceptCongLogic, ex:g11_conceptCongAND,
+    ex:g11_conceptCongOR, ex:g11_conceptCongNOT, ex:g11_conceptCongXOR,
+    ex:g11_conceptPhepToanNhiPhan, ex:g11_conceptMachCong1Bit, ex:g11_conceptMachCongDayDu .
+  ex:g11_topicA_l1s2 ex:hasConcept ex:g11_conceptBangMachChinh, ex:g11_conceptCPU,
+    ex:g11_conceptRAM, ex:g11_conceptROM, ex:g11_conceptThietBiLuuTru,
+    ex:g11_conceptHDD, ex:g11_conceptSSD .
+  ex:g11_topicA_l1s3 ex:hasConcept ex:g11_conceptHieuNangMayTinh,
+    ex:g11_conceptTocDoCPU, ex:g11_conceptNhanCPU, ex:g11_conceptDungLuongRAM .
+
+  ex:g11_topicA_l2s1 ex:hasConcept ex:g11_conceptTaiLieuHuongDanSuDung,
+    ex:g11_conceptHuongDanAnToan, ex:g11_conceptLapDatThietDat,
+    ex:g11_conceptVanHanhThietBi, ex:g11_conceptBaoTriThietBi, ex:g11_conceptXuLiSuCo .
+  ex:g11_topicA_l2s2 ex:hasConcept ex:g11_conceptThongSoKiThuat, ex:g11_conceptTocDoCPU,
+    ex:g11_conceptDungLuongRAM, ex:g11_conceptThietBiLuuTru,
+    ex:g11_conceptKichThuocManHinh, ex:g11_conceptDoPhanGiaiHinhAnh, ex:g11_conceptMegapixel .
+
+  ex:g11_topicA_l3s1 ex:hasConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptPhanCung,
+    ex:g11_conceptPhanMemHeThong, ex:g11_conceptPhanMemUngDung,
+    ex:g11_conceptTrinhDieuKhienThietBi, ex:g11_conceptQuanLiTep,
+    ex:g11_conceptQuanLiThietBi, ex:g11_conceptQuanLiTienTrinh, ex:g11_conceptBaoVeHeThong .
+  ex:g11_topicA_l3s2 ex:hasConcept ex:g11_conceptHeDieuHanh .
+  ex:g11_topicA_l3s3 ex:hasConcept ex:g11_conceptMSDOS, ex:g11_conceptWindows,
+    ex:g11_conceptMacOS, ex:g11_conceptUNIX .
+  ex:g11_topicA_l3s4 ex:hasConcept ex:g11_conceptHeDieuHanhNguonMo, ex:g11_conceptLinux,
+    ex:g11_conceptAndroid .
+  ex:g11_topicA_l3s5 ex:hasConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptWindows,
+    ex:g11_conceptAndroid .
+
+  ex:g11_topicA_l4s1 ex:hasConcept ex:g11_conceptCongGiaoTiep, ex:g11_conceptUSB,
+    ex:g11_conceptVGA, ex:g11_conceptHDMI, ex:g11_conceptCongTron35mm .
+  ex:g11_topicA_l4s2 ex:hasConcept ex:g11_conceptMayIn, ex:g11_conceptDienThoaiThongMinh,
+    ex:g11_conceptUSB, ex:g11_conceptBluetooth, ex:g11_conceptWiFi .
+  ex:g11_topicA_l4s3 ex:hasConcept ex:g11_conceptCaNhanHoaMayTinh, ex:g11_conceptControlPanel .
+
+  ex:g11_topicA_l5s1 ex:hasConcept ex:g11_conceptPhanMemUngDung,
+    ex:g11_conceptPhanMemThuongMai, ex:g11_conceptPhanMemMienPhi,
+    ex:g11_conceptPhanMemNguonMo, ex:g11_conceptPhanMemNguonDong,
+    ex:g11_conceptPhanMemKhaiThacTrucTuyen, ex:g11_conceptPhanMemCaiDatTrenMayTinh,
+    ex:g11_conceptGiayPhepGPL, ex:g11_conceptOpenOffice .
+  ex:g11_topicA_l5s2 ex:hasConcept ex:g11_conceptPhanMemKhaiThacTrucTuyen,
+    ex:g11_conceptGoogleDocs, ex:g11_conceptGoogleSheets, ex:g11_conceptGoogleSlides .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g11_topicA_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Nhận biết được sơ đồ của các mạch logic AND, OR, NOT; giải thích được vai trò của các mạch logic trong thực hiện các tính toán nhị phân. Nêu được tên, nhận diện được hình dạng, mô tả được chức năng và giải thích được đơn vị đo hiệu năng của các bộ phận chính bên trong máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page005 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 .
+
+  ex:g11_topicA_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề A lớp 11"@vi ;
+    ex:hasSummaryText "Bằng cách kết hợp các cổng logic cơ bản để tạo thành các mạch logic, máy tính có thể thực hiện các tính toán nhị phân. Các bộ phận chính bên trong thân máy tính gồm bảng mạch chính, CPU, RAM, ROM, thiết bị lưu trữ. Hiệu năng máy tính phụ thuộc vào hiệu năng từng thành phần; CPU và RAM có vai trò quan trọng nhất."@vi ;
+    ex:appearsOnPage ex:g11_page009 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 .
+
+  ex:g11_topicA_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Đọc hiểu được một số điểm chính trong tài liệu hướng dẫn về thiết bị số thông dụng. Thực hiện được một số chỉ dẫn trong tài liệu đó. Đọc hiểu và giải thích được một vài thông số cơ bản của các thiết bị số thông dụng."@vi ;
+    ex:appearsOnPage ex:g11_page010 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 .
+
+  ex:g11_topicA_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề A lớp 11"@vi ;
+    ex:hasSummaryText "Tài liệu hướng dẫn sử dụng thiết bị số giúp sử dụng an toàn và đúng cách, thường gồm các mục hướng dẫn an toàn, lắp đặt hoặc thiết đặt, vận hành, bảo trì, xử lí sự cố, thông tin hỗ trợ khách hàng. Các thông số kĩ thuật quan trọng về xử lí dữ liệu số là tốc độ CPU, dung lượng RAM và dung lượng lưu trữ; các thông số quan trọng về hình ảnh kĩ thuật số là độ dài đường chéo màn hình và độ phân giải hình ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page012 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 .
+
+  ex:g11_topicA_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Trình bày được một cách khái quát mối quan hệ giữa phần cứng, hệ điều hành và phần mềm ứng dụng. Nêu được sơ lược lịch sử phát triển, vai trò và chức năng cơ bản của hai hệ điều hành thông dụng. Trình bày được sơ lược về một số hệ điều hành tiêu biểu. Sử dụng được một số tiện ích có sẵn của hệ điều hành để nâng cao hiệu suất sử dụng máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page013 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 .
+
+  ex:g11_topicA_l3_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 3 chủ đề A lớp 11"@vi ;
+    ex:hasSummaryText "Hệ điều hành tạo môi trường để người dùng khai thác máy tính và các thiết bị ngoại vi thuận lợi, cung cấp dịch vụ tổ chức và quản lí tệp, thực hiện các chương trình ứng dụng. Hệ điều hành có nhiều loại thương mại và nguồn mở, dành cho máy tính và điện thoại thông minh. Hệ điều hành có lịch sử phát triển gắn với các thế hệ máy tính và ngày càng tiện lợi hơn."@vi ;
+    ex:appearsOnPage ex:g11_page018 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 .
+
+  ex:g11_topicA_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Kết nối được các bộ phận thân máy, bàn phím, chuột, màn hình của máy tính với nhau. Kết nối được PC với các thiết bị số thông dụng như máy in, điện thoại thông minh, máy ảnh số. Tùy chỉnh được một vài chức năng cơ bản của máy tính và các thiết bị vào - ra thông dụng để phù hợp với nhu cầu sử dụng và đạt hiệu quả tốt hơn."@vi ;
+    ex:appearsOnPage ex:g11_page019 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 .
+
+  ex:g11_topicA_l5_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 5 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Biết vấn đề bản quyền trong sử dụng phần mềm nguồn mở. Biết cách khai thác các mặt mạnh của phần mềm khai thác trực tuyến, sử dụng các phần mềm này trong học tập và công việc. Hiểu được vai trò của phần mềm nguồn mở và phần mềm thương mại đối với sự phát triển của ICT. Nêu được tên một số phần mềm soạn thảo văn bản, phần mềm trình chiếu và phần mềm bảng tính nguồn mở trong bộ OpenOffice."@vi ;
+    ex:appearsOnPage ex:g11_page024 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 .
+
+  ex:g11_topicA_l5_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 5 chủ đề A lớp 11"@vi ;
+    ex:hasSummaryText "Tùy thuộc vào nhu cầu sử dụng, người dùng cài đặt thêm vào hệ thống các phần mềm ứng dụng khác nhau. Có các loại phần mềm như nguồn đóng và nguồn mở, khai thác trực tuyến và cài trên máy tính cá nhân, thương mại và miễn phí. Không phải mọi phần mềm nguồn mở đều miễn phí. Việc sử dụng phần mềm nguồn mở giúp người dùng dễ dàng cải tiến, nâng cấp khi giải quyết vấn đề của mình."@vi ;
+    ex:appearsOnPage ex:g11_page027 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 .
+
+  ex:g11_topicA_lesson1 ex:hasSummary ex:g11_topicA_l1_summary .
+  ex:g11_topicA_lesson2 ex:hasSummary ex:g11_topicA_l2_summary .
+  ex:g11_topicA_lesson3 ex:hasSummary ex:g11_topicA_l3_summary .
+  ex:g11_topicA_lesson5 ex:hasSummary ex:g11_topicA_l5_summary .
+
+  ###########################################################################
+  # Figures and tables
+  ###########################################################################
+
+  ex:g11_topicA_fig_l1_logicCircuit a ex:Diagram ;
+    rdfs:label "Hình 1. Mạch điều khiển đèn và bảng hoạt động tương ứng"@vi ;
+    ex:hasCaption "Hình 1. Mạch điều khiển đèn và bảng hoạt động tương ứng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g11_page005 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCongAND, ex:g11_conceptCongLogic .
+
+  ex:g11_topicA_fig_l1_binaryAddBits a ex:Diagram ;
+    rdfs:label "Hình 2. Phép cộng hai bit trong hệ nhị phân"@vi ;
+    ex:hasCaption "Hình 2. Phép cộng hai bit trong hệ nhị phân"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g11_page006 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhepToanNhiPhan .
+
+  ex:g11_topicA_fig_l1_halfAdder a ex:Diagram ;
+    rdfs:label "Hình 3. Mạch cộng 1 bit"@vi ;
+    ex:hasCaption "Hình 3. Mạch cộng 1 bit"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g11_page007 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptMachCong1Bit .
+
+  ex:g11_topicA_fig_l1_mainboard a ex:Figure ;
+    rdfs:label "Hình 4. Bảng mạch chính"@vi ;
+    ex:hasCaption "Hình 4. Bảng mạch chính"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:g11_page007 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBangMachChinh .
+
+  ex:g11_topicA_fig_l1_cpu a ex:Figure ;
+    rdfs:label "Hình 5. CPU"@vi ;
+    ex:hasCaption "Hình 5. CPU"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCPU .
+
+  ex:g11_topicA_fig_l1_ram a ex:Figure ;
+    rdfs:label "Hình 6. RAM"@vi ;
+    ex:hasCaption "Hình 6. RAM"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptRAM .
+
+  ex:g11_topicA_fig_l1_ssdInternal a ex:Figure ;
+    rdfs:label "Hình 7. Cấu tạo bên trong ổ cứng SSD của máy tính"@vi ;
+    ex:hasCaption "Hình 7. Cấu tạo bên trong ổ cứng SSD của máy tính"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSSD, ex:g11_conceptThietBiLuuTru .
+
+  ex:g11_topicA_fig_l2_manualContent a ex:Figure ;
+    rdfs:label "Hình 1. Một nội dung trong hướng dẫn sử dụng máy tính"@vi ;
+    ex:hasCaption "Hình 1. Một nội dung trong hướng dẫn sử dụng máy tính"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:g11_page010 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTaiLieuHuongDanSuDung .
+
+  ex:g11_topicA_fig_l2_commonDevices a ex:Figure ;
+    rdfs:label "Hình 2. Một số thiết bị số thông dụng"@vi ;
+    ex:hasCaption "Hình 2. Một số thiết bị số thông dụng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:g11_page011 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptThietBiSoThongMinh .
+
+  ex:g11_topicA_fig_l2_screenSize a ex:Diagram ;
+    rdfs:label "Hình 3. Minh hoạ kích thước màn hình"@vi ;
+    ex:hasCaption "Hình 3. Minh hoạ kích thước màn hình"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:g11_page012 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKichThuocManHinh .
+
+  ex:g11_topicA_fig_l3_osRelation a ex:Diagram ;
+    rdfs:label "Hình 1. Mối quan hệ giữa hệ điều hành, phần cứng và phần mềm của máy tính"@vi ;
+    ex:hasCaption "Hình 1. Mối quan hệ giữa hệ điều hành, phần cứng và phần mềm của máy tính"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:g11_page013 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptPhanCung, ex:g11_conceptPhanMemUngDung .
+
+  ex:g11_topicA_fig_l3_linusTorvalds a ex:Figure ;
+    rdfs:label "Hình 2. Linus Torvalds - tác giả của nhân LINUX"@vi ;
+    ex:hasCaption "Hình 2. Linus Torvalds - tác giả của nhân LINUX"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:g11_page016 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptLinux .
+
+  ex:g11_topicA_fig_l3_androidIcons a ex:Figure ;
+    rdfs:label "Hình 3. Một số icon các phiên bản Android trước năm 2019"@vi ;
+    ex:hasCaption "Hình 3. Một số icon các phiên bản Android trước năm 2019"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:g11_page017 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAndroid .
+
+  ex:g11_topicA_fig_l4_connectComputerParts a ex:Figure ;
+    rdfs:label "Hình 1. Kết nối thân máy, bàn phím, chuột, màn hình của máy tính với nhau"@vi ;
+    ex:hasCaption "Hình 1. Kết nối thân máy, bàn phím, chuột, màn hình của máy tính với nhau"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:g11_page020 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCongGiaoTiep .
+
+  ex:g11_topicA_fig_l4_printerInstall a ex:Figure ;
+    rdfs:label "Hình 2. Các bước cài đặt máy in mới kết nối"@vi ;
+    ex:hasCaption "Hình 2. Các bước cài đặt máy in mới kết nối"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:g11_page021 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptMayIn .
+
+  ex:g11_topicA_fig_l4_phoneUsb a ex:Figure ;
+    rdfs:label "Hình 3. Kết nối máy tính với điện thoại thông qua cáp USB"@vi ;
+    ex:hasCaption "Hình 3. Kết nối máy tính với điện thoại thông qua cáp USB"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:g11_page021 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptUSB, ex:g11_conceptDienThoaiThongMinh .
+
+  ex:g11_topicA_fig_l4_phoneBluetooth a ex:Figure ;
+    rdfs:label "Hình 4. Kết nối máy tính với điện thoại thông qua Bluetooth"@vi ;
+    ex:hasCaption "Hình 4. Kết nối máy tính với điện thoại thông qua Bluetooth"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:g11_page022 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBluetooth, ex:g11_conceptDienThoaiThongMinh .
+
+  ex:g11_topicA_fig_l4_sendReceiveFile a ex:Figure ;
+    rdfs:label "Hình 5. Gửi/nhận file"@vi ;
+    ex:hasCaption "Hình 5. Gửi/nhận file"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 18 ;
+    ex:appearsOnPage ex:g11_page022 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBluetooth .
+
+  ex:g11_topicA_fig_l4_controlPanel a ex:Figure ;
+    rdfs:label "Hình 6. Mở bảng điều khiển Control Panel để thực hiện tuỳ chỉnh cho máy tính"@vi ;
+    ex:hasCaption "Hình 6. Mở bảng điều khiển Control Panel để thực hiện tuỳ chỉnh cho máy tính"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 19 ;
+    ex:appearsOnPage ex:g11_page023 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptControlPanel, ex:g11_conceptCaNhanHoaMayTinh .
+
+  ex:g11_topicA_fig_l5_googleDocsVoice a ex:Figure ;
+    rdfs:label "Hình 1. Soạn thảo văn bản với Google Docs"@vi ;
+    ex:hasCaption "Hình 1. Soạn thảo văn bản với Google Docs"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 20 ;
+    ex:appearsOnPage ex:g11_page026 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptGoogleDocs .
+
+  ex:g11_topicA_fig_l5_googleSheets a ex:Figure ;
+    rdfs:label "Hình 2. Một mẫu soạn thảo bảng tính với Google Sheets"@vi ;
+    ex:hasCaption "Hình 2. Một mẫu soạn thảo bảng tính với Google Sheets"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 21 ;
+    ex:appearsOnPage ex:g11_page026 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptGoogleSheets .
+
+  ex:g11_topicA_fig_l5_googleSlides a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ mẫu soạn thảo slide với Google Slides"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ mẫu soạn thảo slide với Google Slides"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 22 ;
+    ex:appearsOnPage ex:g11_page027 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptGoogleSlides .
+
+  ex:g11_page005 ex:hasFigure ex:g11_topicA_fig_l1_logicCircuit .
+  ex:g11_page006 ex:hasFigure ex:g11_topicA_fig_l1_binaryAddBits .
+  ex:g11_page007 ex:hasFigure ex:g11_topicA_fig_l1_halfAdder, ex:g11_topicA_fig_l1_mainboard .
+  ex:g11_page008 ex:hasFigure ex:g11_topicA_fig_l1_cpu, ex:g11_topicA_fig_l1_ram, ex:g11_topicA_fig_l1_ssdInternal .
+  ex:g11_page010 ex:hasFigure ex:g11_topicA_fig_l2_manualContent .
+  ex:g11_page011 ex:hasFigure ex:g11_topicA_fig_l2_commonDevices .
+  ex:g11_page012 ex:hasFigure ex:g11_topicA_fig_l2_screenSize .
+  ex:g11_page013 ex:hasFigure ex:g11_topicA_fig_l3_osRelation .
+  ex:g11_page016 ex:hasFigure ex:g11_topicA_fig_l3_linusTorvalds .
+  ex:g11_page017 ex:hasFigure ex:g11_topicA_fig_l3_androidIcons .
+  ex:g11_page020 ex:hasFigure ex:g11_topicA_fig_l4_connectComputerParts .
+  ex:g11_page021 ex:hasFigure ex:g11_topicA_fig_l4_printerInstall, ex:g11_topicA_fig_l4_phoneUsb .
+  ex:g11_page022 ex:hasFigure ex:g11_topicA_fig_l4_phoneBluetooth, ex:g11_topicA_fig_l4_sendReceiveFile .
+  ex:g11_page023 ex:hasFigure ex:g11_topicA_fig_l4_controlPanel .
+  ex:g11_page026 ex:hasFigure ex:g11_topicA_fig_l5_googleDocsVoice, ex:g11_topicA_fig_l5_googleSheets .
+  ex:g11_page027 ex:hasFigure ex:g11_topicA_fig_l5_googleSlides .
+
+  ex:g11_topicA_table_logicGates a ex:Table ;
+    rdfs:label "Bảng 1. Một số cổng logic thông dụng"@vi ;
+    ex:hasCaption "Bảng 1. Một số cổng logic thông dụng"@vi ;
+    ex:hasRawText "Các cổng logic thông dụng gồm AND, OR, NOT, XOR; bảng nêu kí hiệu, biểu thức logic, bảng chân lí và đặc điểm của từng cổng."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:g11_page006 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCongLogic .
+
+  ex:g11_topicA_table_halfAdderTruth a ex:Table ;
+    rdfs:label "Bảng 2. Bảng chân lí mạch cộng hai số nhị phân 1 bit"@vi ;
+    ex:hasCaption "Bảng 2. Bảng chân lí mạch cộng hai số nhị phân 1 bit"@vi ;
+    ex:hasRawText "Đầu vào A, B và đầu ra S, C của mạch cộng hai số nhị phân 1 bit: 0+0 cho S=0 C=0; 0+1 cho S=1 C=0; 1+0 cho S=1 C=0; 1+1 cho S=0 C=1."@vi ;
+    ex:tableOrderOnPage 2 ;
+    ex:globalTableOrder 2 ;
+    ex:appearsOnPage ex:g11_page006 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptMachCong1Bit .
+
+  ex:g11_topicA_table_binaryAdditionExample a ex:Table ;
+    rdfs:label "Bảng 3. Minh hoạ phép cộng hai số nhị phân dài hơn 1 bit"@vi ;
+    ex:hasCaption "Bảng 3. Minh hoạ phép cộng hai số nhị phân dài hơn 1 bit"@vi ;
+    ex:hasRawText "Bảng minh hoạ phép cộng x = 101 có giá trị thập phân 5 với y = 1101 có giá trị thập phân 13, kết quả x + y = 10010 có giá trị thập phân 18, có dòng bit nhớ C_in."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 3 ;
+    ex:appearsOnPage ex:g11_page007 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhepToanNhiPhan .
+
+  ex:g11_topicA_table_fullAdderTruth a ex:Table ;
+    rdfs:label "Bảng 4. Bảng chân lí mạch cộng đầy đủ"@vi ;
+    ex:hasCaption "Bảng 4. Bảng chân lí mạch cộng đầy đủ"@vi ;
+    ex:hasRawText "Bảng chân lí mạch cộng đầy đủ có đầu vào A, B, C_in và đầu ra S, C_out; học sinh điền các giá trị còn thiếu để hoàn thành bảng."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 4 ;
+    ex:appearsOnPage ex:g11_page009 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptMachCongDayDu .
+
+  ex:g11_topicA_table_deviceSpecs a ex:Table ;
+    rdfs:label "Bảng 1. Một số thông số kĩ thuật quan trọng của các thiết bị số điển hình"@vi ;
+    ex:hasCaption "Bảng 1. Một số thông số kĩ thuật quan trọng của các thiết bị số điển hình"@vi ;
+    ex:hasRawText "Bảng so sánh máy tính, điện thoại, ti vi theo tốc độ CPU, dung lượng RAM và dung lượng lưu trữ. Máy tính có CPU khoảng 2 GHz - 5 GHz, RAM 1 GB - 64 GB, lưu trữ hàng TB; điện thoại có CPU khoảng 1,8 GHz - 2,8 GHz, RAM 1 GB - 18 GB, lưu trữ hàng trăm GB; ti vi có CPU khoảng 1,5 GHz - 1,9 GHz, RAM 1 GB - 2,5 GB, lưu trữ hàng GB."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 5 ;
+    ex:appearsOnPage ex:g11_page011 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptThongSoKiThuat .
+
+  ex:g11_topicA_table_ports a ex:Table ;
+    rdfs:label "Bảng 1. Một số cổng giao tiếp của máy tính và cáp kết nối tương ứng"@vi ;
+    ex:hasCaption "Bảng 1. Một số cổng giao tiếp của máy tính và cáp kết nối tương ứng"@vi ;
+    ex:hasRawText "Bảng nêu các cổng USB, VGA, HDMI, cổng tròn 3.5 mm; hình ảnh cổng, cáp kết nối và sử dụng tương ứng. USB dùng kết nối chuột, bàn phím, điện thoại; VGA và HDMI dùng kết nối màn hình, máy chiếu; cổng tròn 3.5 mm dùng kết nối thiết bị âm thanh."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 6 ;
+    ex:appearsOnPage ex:g11_page019 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCongGiaoTiep .
+
+  ex:g11_page006 ex:hasTable ex:g11_topicA_table_logicGates, ex:g11_topicA_table_halfAdderTruth .
+  ex:g11_page007 ex:hasTable ex:g11_topicA_table_binaryAdditionExample .
+  ex:g11_page009 ex:hasTable ex:g11_topicA_table_fullAdderTruth .
+  ex:g11_page011 ex:hasTable ex:g11_topicA_table_deviceSpecs .
+  ex:g11_page019 ex:hasTable ex:g11_topicA_table_ports .
+
+  ###########################################################################
+  # Figure and table ordering
+  ###########################################################################
+
+  ex:g11_topicA_fig_l1_logicCircuit ex:nextFigure ex:g11_topicA_fig_l1_binaryAddBits .
+  ex:g11_topicA_fig_l1_binaryAddBits ex:previousFigure ex:g11_topicA_fig_l1_logicCircuit ; ex:nextFigure ex:g11_topicA_fig_l1_halfAdder .
+  ex:g11_topicA_fig_l1_halfAdder ex:previousFigure ex:g11_topicA_fig_l1_binaryAddBits ; ex:nextFigure ex:g11_topicA_fig_l1_mainboard .
+  ex:g11_topicA_fig_l1_mainboard ex:previousFigure ex:g11_topicA_fig_l1_halfAdder ; ex:nextFigure ex:g11_topicA_fig_l1_cpu .
+  ex:g11_topicA_fig_l1_cpu ex:previousFigure ex:g11_topicA_fig_l1_mainboard ; ex:nextFigure ex:g11_topicA_fig_l1_ram .
+  ex:g11_topicA_fig_l1_ram ex:previousFigure ex:g11_topicA_fig_l1_cpu ; ex:nextFigure ex:g11_topicA_fig_l1_ssdInternal .
+  ex:g11_topicA_fig_l1_ssdInternal ex:previousFigure ex:g11_topicA_fig_l1_ram ; ex:nextFigure ex:g11_topicA_fig_l2_manualContent .
+  ex:g11_topicA_fig_l2_manualContent ex:previousFigure ex:g11_topicA_fig_l1_ssdInternal ; ex:nextFigure ex:g11_topicA_fig_l2_commonDevices .
+  ex:g11_topicA_fig_l2_commonDevices ex:previousFigure ex:g11_topicA_fig_l2_manualContent ; ex:nextFigure ex:g11_topicA_fig_l2_screenSize .
+  ex:g11_topicA_fig_l2_screenSize ex:previousFigure ex:g11_topicA_fig_l2_commonDevices ; ex:nextFigure ex:g11_topicA_fig_l3_osRelation .
+  ex:g11_topicA_fig_l3_osRelation ex:previousFigure ex:g11_topicA_fig_l2_screenSize ; ex:nextFigure ex:g11_topicA_fig_l3_linusTorvalds .
+  ex:g11_topicA_fig_l3_linusTorvalds ex:previousFigure ex:g11_topicA_fig_l3_osRelation ; ex:nextFigure ex:g11_topicA_fig_l3_androidIcons .
+  ex:g11_topicA_fig_l3_androidIcons ex:previousFigure ex:g11_topicA_fig_l3_linusTorvalds ; ex:nextFigure ex:g11_topicA_fig_l4_connectComputerParts .
+  ex:g11_topicA_fig_l4_connectComputerParts ex:previousFigure ex:g11_topicA_fig_l3_androidIcons ; ex:nextFigure ex:g11_topicA_fig_l4_printerInstall .
+  ex:g11_topicA_fig_l4_printerInstall ex:previousFigure ex:g11_topicA_fig_l4_connectComputerParts ; ex:nextFigure ex:g11_topicA_fig_l4_phoneUsb .
+  ex:g11_topicA_fig_l4_phoneUsb ex:previousFigure ex:g11_topicA_fig_l4_printerInstall ; ex:nextFigure ex:g11_topicA_fig_l4_phoneBluetooth .
+  ex:g11_topicA_fig_l4_phoneBluetooth ex:previousFigure ex:g11_topicA_fig_l4_phoneUsb ; ex:nextFigure ex:g11_topicA_fig_l4_sendReceiveFile .
+  ex:g11_topicA_fig_l4_sendReceiveFile ex:previousFigure ex:g11_topicA_fig_l4_phoneBluetooth ; ex:nextFigure ex:g11_topicA_fig_l4_controlPanel .
+  ex:g11_topicA_fig_l4_controlPanel ex:previousFigure ex:g11_topicA_fig_l4_sendReceiveFile ; ex:nextFigure ex:g11_topicA_fig_l5_googleDocsVoice .
+  ex:g11_topicA_fig_l5_googleDocsVoice ex:previousFigure ex:g11_topicA_fig_l4_controlPanel ; ex:nextFigure ex:g11_topicA_fig_l5_googleSheets .
+  ex:g11_topicA_fig_l5_googleSheets ex:previousFigure ex:g11_topicA_fig_l5_googleDocsVoice ; ex:nextFigure ex:g11_topicA_fig_l5_googleSlides .
+  ex:g11_topicA_fig_l5_googleSlides ex:previousFigure ex:g11_topicA_fig_l5_googleSheets .
+
+  ex:g11_topicA_table_logicGates ex:nextTable ex:g11_topicA_table_halfAdderTruth .
+  ex:g11_topicA_table_halfAdderTruth ex:previousTable ex:g11_topicA_table_logicGates ; ex:nextTable ex:g11_topicA_table_binaryAdditionExample .
+  ex:g11_topicA_table_binaryAdditionExample ex:previousTable ex:g11_topicA_table_halfAdderTruth ; ex:nextTable ex:g11_topicA_table_fullAdderTruth .
+  ex:g11_topicA_table_fullAdderTruth ex:previousTable ex:g11_topicA_table_binaryAdditionExample ; ex:nextTable ex:g11_topicA_table_deviceSpecs .
+  ex:g11_topicA_table_deviceSpecs ex:previousTable ex:g11_topicA_table_fullAdderTruth ; ex:nextTable ex:g11_topicA_table_ports .
+  ex:g11_topicA_table_ports ex:previousTable ex:g11_topicA_table_deviceSpecs .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g11_topicA_def_logicGate a ex:DefinitionText ;
+    rdfs:label "Định nghĩa cổng logic"@vi ;
+    ex:hasDefinitionText "Mỗi cách kết hợp các bóng bán dẫn tạo ra một cổng logic. Các cổng logic là thành phần cơ bản thực hiện mọi tính toán trong máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page005 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCongLogic .
+
+  ex:g11_topicA_def_cpu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa CPU"@vi ;
+    ex:hasDefinitionText "CPU là bộ xử lí trung tâm, đóng vai trò bộ não của máy tính, đảm nhiệm công việc tìm nạp lệnh, giải mã lệnh và thực thi lệnh cho máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCPU .
+
+  ex:g11_topicA_def_ram a ex:DefinitionText ;
+    rdfs:label "Định nghĩa RAM"@vi ;
+    ex:hasDefinitionText "RAM là bộ nhớ truy cập ngẫu nhiên, lưu trữ dữ liệu tạm thời trong quá trình tính toán của máy tính; dữ liệu trong RAM sẽ mất khi máy tính bị mất điện hoặc khởi động lại."@vi ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptRAM .
+
+  ex:g11_topicA_def_rom a ex:DefinitionText ;
+    rdfs:label "Định nghĩa ROM"@vi ;
+    ex:hasDefinitionText "ROM là bộ nhớ chỉ đọc, lưu trữ chương trình giúp khởi động các chức năng cơ bản của máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptROM .
+
+  ex:g11_topicA_def_os a ex:DefinitionText ;
+    rdfs:label "Định nghĩa hệ điều hành"@vi ;
+    ex:hasDefinitionText "Hệ điều hành là tập các chương trình điều khiển và xử lí, tạo giao diện trung gian giữa các thiết bị của hệ thống với phần mềm ứng dụng, đồng thời quản lí các thiết bị, phân phối tài nguyên và điều khiển các quá trình xử lí trong hệ thống."@vi ;
+    ex:appearsOnPage ex:g11_page013 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptHeDieuHanh .
+
+  ex:g11_topicA_def_unix a ex:DefinitionText ;
+    rdfs:label "Định nghĩa UNIX"@vi ;
+    ex:hasDefinitionText "UNIX là hệ điều hành đa nhiệm, nhiều người dùng, dùng cho máy tính lớn và siêu máy tính; UNIX hỗ trợ công cụ giao tiếp, thao tác với file, thư mục, phương tiện lập trình, quản trị hệ thống và giao thức mạng TCP/IP."@vi ;
+    ex:appearsOnPage ex:g11_page016 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptUNIX .
+
+  ex:g11_topicA_def_linux a ex:DefinitionText ;
+    rdfs:label "Định nghĩa LINUX"@vi ;
+    ex:hasDefinitionText "LINUX là hệ điều hành nguồn mở theo kiểu UNIX, viết bằng ngôn ngữ C và được cung cấp miễn phí mã nguồn các chương trình hệ thống."@vi ;
+    ex:appearsOnPage ex:g11_page016 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptLinux .
+
+  ex:g11_topicA_def_android a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Android"@vi ;
+    ex:hasDefinitionText "Android là hệ điều hành nguồn mở, dựa trên nền tảng LINUX, dành cho các thiết bị di động có màn hình cảm ứng như điện thoại thông minh và máy tính bảng."@vi ;
+    ex:appearsOnPage ex:g11_page017 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptAndroid .
+
+  ex:g11_topicA_def_openSourceSoftware a ex:DefinitionText ;
+    rdfs:label "Định nghĩa phần mềm nguồn mở"@vi ;
+    ex:hasDefinitionText "Phần mềm nguồn mở được cung cấp dưới dạng các mô đun chương trình viết trên một ngôn ngữ lập trình bậc cao. Người dùng có thể tự do khai thác, nghiên cứu, sửa đổi và chia sẻ phần mềm theo giấy phép tương ứng."@vi ;
+    ex:appearsOnPage ex:g11_page025 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptPhanMemNguonMo .
+
+  ex:g11_topicA_def_gpl a ex:DefinitionText ;
+    rdfs:label "Định nghĩa GPL"@vi ;
+    ex:hasDefinitionText "GPL là giấy phép phần mềm phổ biến nhất trong lĩnh vực phần mềm tự do nguồn mở, bảo đảm cho người dùng được tự do khai thác, nghiên cứu, sửa đổi và chia sẻ phần mềm."@vi ;
+    ex:appearsOnPage ex:g11_page025 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptGiayPhepGPL .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g11_topicA_p005_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1. Bên trong máy tính. Bài học đặt vấn đề: Em hãy cho biết CPU là gì và làm nhiệm vụ gì trong máy tính?"@vi ;
+    ex:appearsOnPage ex:g11_page005 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s1 .
+
+  ex:g11_topicA_p005_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Trong máy tính, bóng bán dẫn chỉ thực hiện được chức năng bật hoặc tắt mạch điện, tương ứng với hai giá trị 0 và 1. Mỗi cách kết hợp các bóng bán dẫn tạo ra một cổng logic. Các cổng logic là thành phần cơ bản thực hiện mọi tính toán trong máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page005 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s1 .
+
+  ex:g11_topicA_p006_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để đèn F sáng thì cả công tắc A và B đồng thời phải đóng; hoạt động của mạch điện minh hoạ chức năng của cổng logic AND và bảng hoạt động tương ứng được gọi là bảng chân lí. Dựa trên quan hệ giữa đầu vào và đầu ra, các cổng logic được đặt tên tương ứng là AND, OR, NOT, XOR."@vi ;
+    ex:appearsOnPage ex:g11_page006 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s1 .
+
+  ex:g11_topicA_p006_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Các phép toán trên hệ nhị phân cũng có nguyên tắc thực hiện giống như trên hệ thập phân. Cộng hai số nhị phân một bit cần tạo bảng chân lí với đầu vào A, B và đầu ra là tổng S cùng nhớ C."@vi ;
+    ex:appearsOnPage ex:g11_page006 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s1 .
+
+  ex:g11_topicA_p007_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "So sánh bảng chân lí mạch cộng hai số nhị phân 1 bit với các cổng logic cho thấy tổng S là A XOR B và nhớ C là A AND B. Từ đó có thể dùng sơ đồ mạch logic để thực hiện phép cộng hai số nhị phân 1 bit. Mạch cộng đầy đủ có ba đầu vào A, B, C_in và hai đầu ra S, C_out."@vi ;
+    ex:appearsOnPage ex:g11_page007 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s1 .
+
+  ex:g11_topicA_p007_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bằng cách kết hợp các cổng logic AND, XOR, máy tính có thể thực hiện được phép tính cộng nhị phân. Tương tự, các cổng logic cơ bản cũng có thể kết hợp để tạo thành các mạch logic thực hiện tất cả các tính toán nhị phân khác."@vi ;
+    ex:appearsOnPage ex:g11_page007 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s1 .
+
+  ex:g11_topicA_p007_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Bên trong thân máy tính được cấu thành từ các bộ phận chính gồm bảng mạch chính, CPU, RAM, ROM, thiết bị lưu trữ. Tốc độ và dung lượng của chúng ảnh hưởng lớn tới hiệu năng của máy."@vi ;
+    ex:appearsOnPage ex:g11_page007 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s2 .
+
+  ex:g11_topicA_p007_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Bảng mạch chính có đế cắm CPU, ROM, khe cắm RAM, khe cắm ổ cứng và một số khe cắm khác. Bảng mạch chính đóng vai trò làm nền giao tiếp giữa CPU, RAM và các linh kiện điện tử khác phục vụ việc kết nối với thiết bị ngoại vi."@vi ;
+    ex:appearsOnPage ex:g11_page007 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s2 .
+
+  ex:g11_topicA_p008_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "CPU là bộ xử lí trung tâm, đóng vai trò bộ não của máy tính, đảm nhiệm công việc tìm nạp lệnh, giải mã lệnh và thực thi lệnh. RAM lưu trữ dữ liệu tạm thời trong quá trình tính toán; dữ liệu sẽ mất khi máy tính mất điện hoặc khởi động lại. ROM lưu trữ chương trình giúp khởi động các chức năng cơ bản của máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s2 .
+
+  ex:g11_topicA_p008_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Thiết bị lưu trữ dùng để lưu trữ dữ liệu lâu dài và không bị mất khi máy tính tắt nguồn. Dung lượng lưu trữ dữ liệu của máy tính là tổng dung lượng của ổ cứng HDD, ổ cứng SSD gắn sẵn bên trong máy tính, không bao gồm dung lượng RAM."@vi ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s2 .
+
+  ex:g11_topicA_p008_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Hiệu năng máy tính phụ thuộc vào thông số kĩ thuật của từng bộ phận và sự đồng bộ giữa chúng. Có thể đánh giá nhanh hiệu năng máy thông qua tốc độ CPU và dung lượng bộ nhớ RAM."@vi ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s3 .
+
+  ex:g11_topicA_p008_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Thông số kĩ thuật cần quan tâm của CPU gồm tốc độ CPU đo bằng Hz và số lượng nhân hay lõi. CPU có nhiều nhân hơn thì hiệu năng và tốc độ xử lí tốt hơn nếu cùng công nghệ sản xuất. Dung lượng RAM được đo bằng Byte; RAM dung lượng lớn hơn giúp hiệu năng cao hơn."@vi ;
+    ex:appearsOnPage ex:g11_page008 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s3 .
+
+  ex:g11_topicA_p009_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài luyện tập yêu cầu điền giá trị thích hợp tại dấu hỏi cho hai cột S và C_out để hoàn thành bảng chân lí mạch cộng đầy đủ, nêu tên một số thành phần chính bên trong máy tính và cho biết chức năng của chúng."@vi ;
+    ex:appearsOnPage ex:g11_page009 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:belongsToSection ex:g11_topicA_l1s3 .
+
+  ex:g11_topicA_p010_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 2. Khám phá thế giới thiết bị số thông minh. Bài học đặt vấn đề: Em đã sử dụng các thiết bị số của mình như thế nào? Theo em, sử dụng như thế đã đúng cách chưa?"@vi ;
+    ex:appearsOnPage ex:g11_page010 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToSection ex:g11_topicA_l2s1 .
+
+  ex:g11_topicA_p010_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Các thiết bị kĩ thuật số mới xuất hiện và đổi mới liên tục. Để biết sử dụng thiết bị số kiểu mới, thế hệ mới đúng cách, không làm hỏng và khai thác tốt nhất tính năng thiết bị, cần đọc kĩ và thực hiện đúng hướng dẫn sử dụng ngay từ bước lắp đặt, thiết lập ban đầu và trong quá trình sử dụng."@vi ;
+    ex:appearsOnPage ex:g11_page010 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToSection ex:g11_topicA_l2s1 .
+
+  ex:g11_topicA_p011_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Tài liệu hướng dẫn sử dụng thiết bị số thường có các mục hướng dẫn an toàn, lắp đặt hoặc thiết đặt, vận hành, bảo trì, xử lí sự cố và thông tin hỗ trợ. Các thiết bị số rất đa dạng nhưng các bộ phận xử lí dữ liệu số của chúng tương tự như máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page011 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToSection ex:g11_topicA_l2s1 .
+
+  ex:g11_topicA_p011_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Các thông số kĩ thuật quan trọng của thiết bị số là tốc độ bộ xử lí CPU, dung lượng RAM, dung lượng lưu trữ. Các thông số kĩ thuật khác nhau tuỳ vào chức năng của thiết bị."@vi ;
+    ex:appearsOnPage ex:g11_page011 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToSection ex:g11_topicA_l2s2 .
+
+  ex:g11_topicA_p012_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Kích thước màn hình thường được quy định tiêu chuẩn hoá tỉ lệ giữa chiều dài và chiều rộng như 4:3, 16:9, 21:9. Kích thước màn hình thường được thể hiện bằng độ dài đường chéo, đơn vị inch."@vi ;
+    ex:appearsOnPage ex:g11_page012 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToSection ex:g11_topicA_l2s2 .
+
+  ex:g11_topicA_p012_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hình ảnh số hoá được tạo nên từ các điểm ảnh rất nhỏ gọi là pixel. Độ phân giải điểm ảnh thể hiện bằng cặp hai số đếm điểm ảnh theo chiều ngang và theo chiều cao. Hình ảnh càng nhiều điểm ảnh thì càng rõ nét. Một triệu điểm ảnh là một megapixel."@vi ;
+    ex:appearsOnPage ex:g11_page012 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:belongsToSection ex:g11_topicA_l2s2 .
+
+  ex:g11_topicA_p013_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 3. Khái quát về hệ điều hành. Bài học đặt vấn đề: Khi mua mới máy tính, máy tính bảng hay điện thoại thông minh, trước khi bắt đầu sử dụng cần kích hoạt chế độ cài đặt. Tại sao cần làm việc này và những gì sẽ được cài đặt vào máy?"@vi ;
+    ex:appearsOnPage ex:g11_page013 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s1 .
+
+  ex:g11_topicA_p013_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hệ điều hành là tập các chương trình điều khiển và xử lí, tạo giao diện trung gian giữa các thiết bị của hệ thống với phần mềm ứng dụng, đồng thời quản lí các thiết bị, phân phối tài nguyên và điều khiển các quá trình xử lí trong hệ thống."@vi ;
+    ex:appearsOnPage ex:g11_page013 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s1 .
+
+  ex:g11_topicA_p014_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phần mềm ứng dụng chạy trên nền tảng hệ điều hành nào cần phù hợp với hệ điều hành đó. Phần mềm hệ thống thiết kế cho việc vận hành và điều khiển phần cứng máy tính, ví dụ các trình điều khiển thiết bị."@vi ;
+    ex:appearsOnPage ex:g11_page014 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s1 .
+
+  ex:g11_topicA_p014_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hệ điều hành điều phối tất cả các thiết bị, làm trung gian giữa phần mềm ứng dụng và phần cứng, đồng thời cũng là trung gian giữa người dùng và thiết bị phần cứng, giúp dễ dàng sử dụng thiết bị mà không cần biết sâu về kĩ thuật công nghệ."@vi ;
+    ex:appearsOnPage ex:g11_page014 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s1 .
+
+  ex:g11_topicA_p014_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Các chức năng cơ bản của hệ điều hành gồm quản lí tệp, quản lí và khai thác các thiết bị vào hệ thống, quản lí tiến trình, cung cấp phương thức giao tiếp cho người dùng và bảo vệ hệ thống."@vi ;
+    ex:appearsOnPage ex:g11_page014 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s1 .
+
+  ex:g11_topicA_p014_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Máy tính thế hệ thứ nhất chưa có hệ điều hành. Sang thế hệ thứ hai, máy tính bắt đầu có hệ điều hành, tại mỗi thời điểm chỉ cho phép thực hiện một chương trình của người dùng."@vi ;
+    ex:appearsOnPage ex:g11_page014 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s2 .
+
+  ex:g11_topicA_p015_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Hệ điều hành của máy tính thế hệ thứ ba theo chế độ đa nhiệm, cho phép tại mỗi thời điểm có nhiều chương trình được thực hiện. Đó là cơ chế phân chia thời gian. Vào những năm 70 của thế kỉ XX, hệ điều hành bắt đầu có khả năng điều hành mạng."@vi ;
+    ex:appearsOnPage ex:g11_page015 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s2 .
+
+  ex:g11_topicA_p015_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Ở giai đoạn hiện nay có hai khuynh hướng phát triển máy tính là máy tính cá nhân và siêu máy tính, mỗi loại máy tính có loại hệ điều hành tương ứng. Một số hệ điều hành thương mại tiêu biểu là MS DOS, Windows và macOS."@vi ;
+    ex:appearsOnPage ex:g11_page015 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s3 .
+
+  ex:g11_topicA_p015_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "MS DOS là hệ điều hành đơn chương trình, tổ chức thông tin theo đơn vị quản lí là file, theo cấu trúc thư mục phân cấp dạng cây. Windows phát triển từ nền tảng MS DOS, dùng giao diện đồ hoạ thân thiện; macOS dùng cho máy Apple."@vi ;
+    ex:appearsOnPage ex:g11_page015 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s3 .
+
+  ex:g11_topicA_p016_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Windows 95 là cột mốc phát triển hệ điều hành với giao diện đẹp, công cụ tiện ích như menu Start, thanh tác vụ Taskbar và biểu tượng lối tắt Shortcut. Windows 11 là thế hệ mới dần thay thế các phiên bản Windows trước đó."@vi ;
+    ex:appearsOnPage ex:g11_page016 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s3 .
+
+  ex:g11_topicA_p016_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "UNIX xuất hiện từ thế hệ máy tính thứ ba, được dùng chủ đạo cho máy tính lớn, siêu máy tính. UNIX là hệ điều hành đa nhiệm, nhiều người dùng, kiểm soát người dùng nghiêm ngặt, bảo đảm an toàn cho các chương trình thực hiện đồng thời."@vi ;
+    ex:appearsOnPage ex:g11_page016 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s3 .
+
+  ex:g11_topicA_p016_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Năm 1991, Linus Torvalds bắt đầu một dự án mà kết quả sau đó là hạt nhân của hệ điều hành LINUX. LINUX là hệ điều hành nguồn mở theo kiểu UNIX, viết bằng ngôn ngữ C và được cung cấp miễn phí toàn bộ mã nguồn các chương trình hệ thống."@vi ;
+    ex:appearsOnPage ex:g11_page016 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s4 .
+
+  ex:g11_topicA_p017_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhờ mã nguồn mở, mọi người đều có thể sửa đổi, nâng cấp mà không vi phạm bản quyền, tạo thuận lợi cho việc bản địa hoá LINUX. Các mốc phát triển của LINUX gồm phiên bản 1.0 năm 1994, phiên bản 2.0 năm 1996, có mặt trong Top 500 siêu máy tính nhanh nhất năm 1998 và các phiên bản nhân 3.0, 4.0, 5.0 lần lượt về sau."@vi ;
+    ex:appearsOnPage ex:g11_page017 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s4 .
+
+  ex:g11_topicA_p017_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Android là hệ điều hành nguồn mở, dựa trên nền tảng LINUX dành cho các thiết bị di động có màn hình cảm ứng. Android 1.0 ra đời cuối năm 2008; Android 10 phát hành năm 2019, Android 11 ra mắt năm 2020, Android 12 được công bố lần đầu năm 2021 và Android 13 phát hành năm 2022."@vi ;
+    ex:appearsOnPage ex:g11_page017 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s4 .
+
+  ex:g11_topicA_p018_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Thực hành tìm hiểu các khả năng của máy tính hay điện thoại, ưu tiên tìm hiểu hệ điều hành Android hay iOS; khám phá một số tổ hợp phím tắt của Windows như Ctrl + Win + O, Alt + Tab, Win + D, Win + H, Win + . hoặc ;."@vi ;
+    ex:appearsOnPage ex:g11_page018 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:belongsToSection ex:g11_topicA_l3s5 .
+
+  ex:g11_topicA_p019_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 4. Thực hành với các thiết bị số. Nhiệm vụ 1 yêu cầu lắp ráp các bộ phận của máy tính, kết nối thân máy, bàn phím, chuột, màn hình. Bảng nêu một số cổng giao tiếp như USB, VGA, HDMI, cổng tròn 3.5 mm và cáp kết nối tương ứng."@vi ;
+    ex:appearsOnPage ex:g11_page019 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToSection ex:g11_topicA_l4s1 .
+
+  ex:g11_topicA_p020_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Khi lắp ráp, cần chọn vị trí đặt thiết bị để có thể cắm nguồn điện, đặt bàn phím chuột và màn hình phù hợp, đặt thân máy để dễ kết nối với thiết bị ngoại vi. Sau đó kết nối màn hình, chuột, bàn phím, cáp VGA và dây nguồn, bật nguồn để kiểm tra kết quả."@vi ;
+    ex:appearsOnPage ex:g11_page020 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToSection ex:g11_topicA_l4s1 .
+
+  ex:g11_topicA_p020_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu kết nối máy tính với các thiết bị số thông dụng. Nhiều thiết bị số có thể kết nối với máy tính bằng cáp nối có dây hoặc qua Bluetooth, Wi-Fi."@vi ;
+    ex:appearsOnPage ex:g11_page020 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToSection ex:g11_topicA_l4s2 .
+
+  ex:g11_topicA_p021_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Kết nối máy tính với máy in qua cổng USB gồm bật nguồn máy tính và máy in, kết nối bằng USB, tìm cài đặt máy in trên máy tính, chọn Add a printer để cài đặt, sau đó mở tài liệu và chọn máy in để in thử."@vi ;
+    ex:appearsOnPage ex:g11_page021 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToSection ex:g11_topicA_l4s2 .
+
+  ex:g11_topicA_p021_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Kết nối máy tính với điện thoại thông minh bằng cáp USB để sao chép dữ liệu giữa điện thoại và máy tính; chọn chế độ kết nối như sạc pin, truyền tệp hoặc truyền ảnh, rồi truy cập ổ đĩa bộ nhớ điện thoại để chuyển hoặc sao chép dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page021 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToSection ex:g11_topicA_l4s2 .
+
+  ex:g11_topicA_p022_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Kết nối máy tính Windows 10 với điện thoại Android qua Bluetooth gồm bật Bluetooth trên điện thoại, bật Bluetooth trên máy tính, dò tìm và kết nối hai thiết bị, sau đó gửi hoặc nhận file qua biểu tượng Bluetooth."@vi ;
+    ex:appearsOnPage ex:g11_page022 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToSection ex:g11_topicA_l4s2 .
+
+  ex:g11_topicA_p023_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhiệm vụ 3 yêu cầu cá nhân hoá máy tính. Có thể tuỳ chỉnh máy tính theo nhu cầu sử dụng hoặc sở thích cá nhân, ví dụ lựa chọn ảnh nền, chỉnh độ sáng và độ phân giải màn hình, thay đổi kích thước màu sắc con trỏ chuột và chỉnh thời gian cho đồng hồ."@vi ;
+    ex:appearsOnPage ex:g11_page023 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:belongsToSection ex:g11_topicA_l4s3 .
+
+  ex:g11_topicA_p024_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 5. Phần mềm ứng dụng và dịch vụ phần mềm. Có thể phân loại phần mềm ứng dụng theo nhiều góc độ: thương mại và miễn phí; nguồn mở và nguồn đóng; khai thác trực tuyến và cài trên máy tính cá nhân."@vi ;
+    ex:appearsOnPage ex:g11_page024 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToSection ex:g11_topicA_l5s1 .
+
+  ex:g11_topicA_p024_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phần mềm thương mại là phần mềm phải trả tiền mua để sử dụng. Phần lớn phần mềm ứng dụng là phần mềm thương mại. Đối lập với phần mềm thương mại là phần mềm miễn phí; người dùng không phải trả chi phí và có thể cài đặt trên máy để sử dụng."@vi ;
+    ex:appearsOnPage ex:g11_page024 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToSection ex:g11_topicA_l5s1 .
+
+  ex:g11_topicA_p025_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phần mềm nguồn đóng được cung cấp dưới dạng các mô đun chương trình viết trên ngôn ngữ máy. Phần mềm nguồn mở được cung cấp dưới dạng các mô đun chương trình viết trên ngôn ngữ lập trình bậc cao. OpenOffice là phần mềm nguồn mở, gồm Writer, Calc, Impress."@vi ;
+    ex:appearsOnPage ex:g11_page025 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToSection ex:g11_topicA_l5s1 .
+
+  ex:g11_topicA_p025_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phần mềm khai thác trực tuyến chỉ có thể sử dụng trên môi trường web, có thể miễn phí hoặc phải trả tiền cho từng phiên sử dụng. Các phần mềm tra cứu bản đồ, dịch văn bản, hệ thống dạy và học trực tuyến ngày càng quen thuộc với người dùng."@vi ;
+    ex:appearsOnPage ex:g11_page025 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToSection ex:g11_topicA_l5s1 .
+
+  ex:g11_topicA_p025_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "GPL là giấy phép phần mềm phổ biến trong phần mềm tự do nguồn mở, bảo đảm cho người dùng được tự do khai thác, nghiên cứu, sửa đổi và chia sẻ phần mềm. Tính mở và tính tự do gắn liền với nhau."@vi ;
+    ex:appearsOnPage ex:g11_page025 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToSection ex:g11_topicA_l5s1 .
+
+  ex:g11_topicA_p026_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Thực hành với phần mềm khai thác trực tuyến miễn phí yêu cầu làm quen với soạn thảo văn bản, làm bài trình chiếu và sử dụng bảng tính qua các phần mềm trực tuyến của Google; mở trang google.com và chọn ứng dụng muốn dùng thử."@vi ;
+    ex:appearsOnPage ex:g11_page026 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToSection ex:g11_topicA_l5s2 .
+
+  ex:g11_topicA_p026_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Học sinh thử nghiệm nhập nội dung soạn thảo vào Google Docs bằng giọng nói, mở Google Sheets và tạo một bảng tính ghi thông tin các bạn trong tổ theo mẫu."@vi ;
+    ex:appearsOnPage ex:g11_page026 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToSection ex:g11_topicA_l5s2 .
+
+  ex:g11_topicA_p027_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Học sinh thử nghiệm mở Google Slides và thiết kế một trang trình chiếu theo mẫu, sử dụng công cụ dịch trực tuyến để dịch đoạn văn bản tiếng Anh và tìm phần mềm chuyển định dạng, chạy trực tuyến miễn phí."@vi ;
+    ex:appearsOnPage ex:g11_page027 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:belongsToSection ex:g11_topicA_l5s2 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g11_page005 ex:hasParagraph ex:g11_topicA_p005_01, ex:g11_topicA_p005_02 .
+  ex:g11_page006 ex:hasParagraph ex:g11_topicA_p006_01, ex:g11_topicA_p006_02 .
+  ex:g11_page007 ex:hasParagraph ex:g11_topicA_p007_01, ex:g11_topicA_p007_02, ex:g11_topicA_p007_03, ex:g11_topicA_p007_04 .
+  ex:g11_page008 ex:hasParagraph ex:g11_topicA_p008_01, ex:g11_topicA_p008_02, ex:g11_topicA_p008_03, ex:g11_topicA_p008_04 .
+  ex:g11_page009 ex:hasParagraph ex:g11_topicA_p009_01 .
+  ex:g11_page010 ex:hasParagraph ex:g11_topicA_p010_01, ex:g11_topicA_p010_02 .
+  ex:g11_page011 ex:hasParagraph ex:g11_topicA_p011_01, ex:g11_topicA_p011_02 .
+  ex:g11_page012 ex:hasParagraph ex:g11_topicA_p012_01, ex:g11_topicA_p012_02 .
+  ex:g11_page013 ex:hasParagraph ex:g11_topicA_p013_01, ex:g11_topicA_p013_02 .
+  ex:g11_page014 ex:hasParagraph ex:g11_topicA_p014_01, ex:g11_topicA_p014_02, ex:g11_topicA_p014_03, ex:g11_topicA_p014_04 .
+  ex:g11_page015 ex:hasParagraph ex:g11_topicA_p015_01, ex:g11_topicA_p015_02, ex:g11_topicA_p015_03 .
+  ex:g11_page016 ex:hasParagraph ex:g11_topicA_p016_01, ex:g11_topicA_p016_02, ex:g11_topicA_p016_03 .
+  ex:g11_page017 ex:hasParagraph ex:g11_topicA_p017_01, ex:g11_topicA_p017_02 .
+  ex:g11_page018 ex:hasParagraph ex:g11_topicA_p018_01 .
+  ex:g11_page019 ex:hasParagraph ex:g11_topicA_p019_01 .
+  ex:g11_page020 ex:hasParagraph ex:g11_topicA_p020_01, ex:g11_topicA_p020_02 .
+  ex:g11_page021 ex:hasParagraph ex:g11_topicA_p021_01, ex:g11_topicA_p021_02 .
+  ex:g11_page022 ex:hasParagraph ex:g11_topicA_p022_01 .
+  ex:g11_page023 ex:hasParagraph ex:g11_topicA_p023_01 .
+  ex:g11_page024 ex:hasParagraph ex:g11_topicA_p024_01, ex:g11_topicA_p024_02 .
+  ex:g11_page025 ex:hasParagraph ex:g11_topicA_p025_01, ex:g11_topicA_p025_02, ex:g11_topicA_p025_03 .
+  ex:g11_page026 ex:hasParagraph ex:g11_topicA_p026_01, ex:g11_topicA_p026_02 .
+  ex:g11_page027 ex:hasParagraph ex:g11_topicA_p027_01 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g11_topicA_l1s1 ex:hasParagraph ex:g11_topicA_p005_01, ex:g11_topicA_p005_02,
+    ex:g11_topicA_p006_01, ex:g11_topicA_p006_02, ex:g11_topicA_p007_01, ex:g11_topicA_p007_02 .
+  ex:g11_topicA_l1s2 ex:hasParagraph ex:g11_topicA_p007_03, ex:g11_topicA_p007_04,
+    ex:g11_topicA_p008_01, ex:g11_topicA_p008_02 .
+  ex:g11_topicA_l1s3 ex:hasParagraph ex:g11_topicA_p008_03, ex:g11_topicA_p008_04, ex:g11_topicA_p009_01 .
+
+  ex:g11_topicA_l2s1 ex:hasParagraph ex:g11_topicA_p010_01, ex:g11_topicA_p010_02, ex:g11_topicA_p011_01 .
+  ex:g11_topicA_l2s2 ex:hasParagraph ex:g11_topicA_p011_02, ex:g11_topicA_p012_01, ex:g11_topicA_p012_02 .
+
+  ex:g11_topicA_l3s1 ex:hasParagraph ex:g11_topicA_p013_01, ex:g11_topicA_p013_02,
+    ex:g11_topicA_p014_01, ex:g11_topicA_p014_02, ex:g11_topicA_p014_03 .
+  ex:g11_topicA_l3s2 ex:hasParagraph ex:g11_topicA_p014_04, ex:g11_topicA_p015_01 .
+  ex:g11_topicA_l3s3 ex:hasParagraph ex:g11_topicA_p015_02, ex:g11_topicA_p015_03,
+    ex:g11_topicA_p016_01, ex:g11_topicA_p016_02 .
+  ex:g11_topicA_l3s4 ex:hasParagraph ex:g11_topicA_p016_03, ex:g11_topicA_p017_01, ex:g11_topicA_p017_02 .
+  ex:g11_topicA_l3s5 ex:hasParagraph ex:g11_topicA_p018_01 .
+
+  ex:g11_topicA_l4s1 ex:hasParagraph ex:g11_topicA_p019_01, ex:g11_topicA_p020_01 .
+  ex:g11_topicA_l4s2 ex:hasParagraph ex:g11_topicA_p020_02, ex:g11_topicA_p021_01,
+    ex:g11_topicA_p021_02, ex:g11_topicA_p022_01 .
+  ex:g11_topicA_l4s3 ex:hasParagraph ex:g11_topicA_p023_01 .
+
+  ex:g11_topicA_l5s1 ex:hasParagraph ex:g11_topicA_p024_01, ex:g11_topicA_p024_02,
+    ex:g11_topicA_p025_01, ex:g11_topicA_p025_02, ex:g11_topicA_p025_03 .
+  ex:g11_topicA_l5s2 ex:hasParagraph ex:g11_topicA_p026_01, ex:g11_topicA_p026_02, ex:g11_topicA_p027_01 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g11_topicA_p005_01 ex:nextParagraph ex:g11_topicA_p005_02 .
+  ex:g11_topicA_p005_02 ex:previousParagraph ex:g11_topicA_p005_01 ; ex:nextParagraph ex:g11_topicA_p006_01 .
+  ex:g11_topicA_p006_01 ex:previousParagraph ex:g11_topicA_p005_02 ; ex:nextParagraph ex:g11_topicA_p006_02 .
+  ex:g11_topicA_p006_02 ex:previousParagraph ex:g11_topicA_p006_01 ; ex:nextParagraph ex:g11_topicA_p007_01 .
+  ex:g11_topicA_p007_01 ex:previousParagraph ex:g11_topicA_p006_02 ; ex:nextParagraph ex:g11_topicA_p007_02 .
+  ex:g11_topicA_p007_02 ex:previousParagraph ex:g11_topicA_p007_01 ; ex:nextParagraph ex:g11_topicA_p007_03 .
+  ex:g11_topicA_p007_03 ex:previousParagraph ex:g11_topicA_p007_02 ; ex:nextParagraph ex:g11_topicA_p007_04 .
+  ex:g11_topicA_p007_04 ex:previousParagraph ex:g11_topicA_p007_03 ; ex:nextParagraph ex:g11_topicA_p008_01 .
+  ex:g11_topicA_p008_01 ex:previousParagraph ex:g11_topicA_p007_04 ; ex:nextParagraph ex:g11_topicA_p008_02 .
+  ex:g11_topicA_p008_02 ex:previousParagraph ex:g11_topicA_p008_01 ; ex:nextParagraph ex:g11_topicA_p008_03 .
+  ex:g11_topicA_p008_03 ex:previousParagraph ex:g11_topicA_p008_02 ; ex:nextParagraph ex:g11_topicA_p008_04 .
+  ex:g11_topicA_p008_04 ex:previousParagraph ex:g11_topicA_p008_03 ; ex:nextParagraph ex:g11_topicA_p009_01 .
+  ex:g11_topicA_p009_01 ex:previousParagraph ex:g11_topicA_p008_04 ; ex:nextParagraph ex:g11_topicA_p010_01 .
+  ex:g11_topicA_p010_01 ex:previousParagraph ex:g11_topicA_p009_01 ; ex:nextParagraph ex:g11_topicA_p010_02 .
+  ex:g11_topicA_p010_02 ex:previousParagraph ex:g11_topicA_p010_01 ; ex:nextParagraph ex:g11_topicA_p011_01 .
+  ex:g11_topicA_p011_01 ex:previousParagraph ex:g11_topicA_p010_02 ; ex:nextParagraph ex:g11_topicA_p011_02 .
+  ex:g11_topicA_p011_02 ex:previousParagraph ex:g11_topicA_p011_01 ; ex:nextParagraph ex:g11_topicA_p012_01 .
+  ex:g11_topicA_p012_01 ex:previousParagraph ex:g11_topicA_p011_02 ; ex:nextParagraph ex:g11_topicA_p012_02 .
+  ex:g11_topicA_p012_02 ex:previousParagraph ex:g11_topicA_p012_01 ; ex:nextParagraph ex:g11_topicA_p013_01 .
+  ex:g11_topicA_p013_01 ex:previousParagraph ex:g11_topicA_p012_02 ; ex:nextParagraph ex:g11_topicA_p013_02 .
+  ex:g11_topicA_p013_02 ex:previousParagraph ex:g11_topicA_p013_01 ; ex:nextParagraph ex:g11_topicA_p014_01 .
+  ex:g11_topicA_p014_01 ex:previousParagraph ex:g11_topicA_p013_02 ; ex:nextParagraph ex:g11_topicA_p014_02 .
+  ex:g11_topicA_p014_02 ex:previousParagraph ex:g11_topicA_p014_01 ; ex:nextParagraph ex:g11_topicA_p014_03 .
+  ex:g11_topicA_p014_03 ex:previousParagraph ex:g11_topicA_p014_02 ; ex:nextParagraph ex:g11_topicA_p014_04 .
+  ex:g11_topicA_p014_04 ex:previousParagraph ex:g11_topicA_p014_03 ; ex:nextParagraph ex:g11_topicA_p015_01 .
+  ex:g11_topicA_p015_01 ex:previousParagraph ex:g11_topicA_p014_04 ; ex:nextParagraph ex:g11_topicA_p015_02 .
+  ex:g11_topicA_p015_02 ex:previousParagraph ex:g11_topicA_p015_01 ; ex:nextParagraph ex:g11_topicA_p015_03 .
+  ex:g11_topicA_p015_03 ex:previousParagraph ex:g11_topicA_p015_02 ; ex:nextParagraph ex:g11_topicA_p016_01 .
+  ex:g11_topicA_p016_01 ex:previousParagraph ex:g11_topicA_p015_03 ; ex:nextParagraph ex:g11_topicA_p016_02 .
+  ex:g11_topicA_p016_02 ex:previousParagraph ex:g11_topicA_p016_01 ; ex:nextParagraph ex:g11_topicA_p016_03 .
+  ex:g11_topicA_p016_03 ex:previousParagraph ex:g11_topicA_p016_02 ; ex:nextParagraph ex:g11_topicA_p017_01 .
+  ex:g11_topicA_p017_01 ex:previousParagraph ex:g11_topicA_p016_03 ; ex:nextParagraph ex:g11_topicA_p017_02 .
+  ex:g11_topicA_p017_02 ex:previousParagraph ex:g11_topicA_p017_01 ; ex:nextParagraph ex:g11_topicA_p018_01 .
+  ex:g11_topicA_p018_01 ex:previousParagraph ex:g11_topicA_p017_02 ; ex:nextParagraph ex:g11_topicA_p019_01 .
+  ex:g11_topicA_p019_01 ex:previousParagraph ex:g11_topicA_p018_01 ; ex:nextParagraph ex:g11_topicA_p020_01 .
+  ex:g11_topicA_p020_01 ex:previousParagraph ex:g11_topicA_p019_01 ; ex:nextParagraph ex:g11_topicA_p020_02 .
+  ex:g11_topicA_p020_02 ex:previousParagraph ex:g11_topicA_p020_01 ; ex:nextParagraph ex:g11_topicA_p021_01 .
+  ex:g11_topicA_p021_01 ex:previousParagraph ex:g11_topicA_p020_02 ; ex:nextParagraph ex:g11_topicA_p021_02 .
+  ex:g11_topicA_p021_02 ex:previousParagraph ex:g11_topicA_p021_01 ; ex:nextParagraph ex:g11_topicA_p022_01 .
+  ex:g11_topicA_p022_01 ex:previousParagraph ex:g11_topicA_p021_02 ; ex:nextParagraph ex:g11_topicA_p023_01 .
+  ex:g11_topicA_p023_01 ex:previousParagraph ex:g11_topicA_p022_01 ; ex:nextParagraph ex:g11_topicA_p024_01 .
+  ex:g11_topicA_p024_01 ex:previousParagraph ex:g11_topicA_p023_01 ; ex:nextParagraph ex:g11_topicA_p024_02 .
+  ex:g11_topicA_p024_02 ex:previousParagraph ex:g11_topicA_p024_01 ; ex:nextParagraph ex:g11_topicA_p025_01 .
+  ex:g11_topicA_p025_01 ex:previousParagraph ex:g11_topicA_p024_02 ; ex:nextParagraph ex:g11_topicA_p025_02 .
+  ex:g11_topicA_p025_02 ex:previousParagraph ex:g11_topicA_p025_01 ; ex:nextParagraph ex:g11_topicA_p025_03 .
+  ex:g11_topicA_p025_03 ex:previousParagraph ex:g11_topicA_p025_02 ; ex:nextParagraph ex:g11_topicA_p026_01 .
+  ex:g11_topicA_p026_01 ex:previousParagraph ex:g11_topicA_p025_03 ; ex:nextParagraph ex:g11_topicA_p026_02 .
+  ex:g11_topicA_p026_02 ex:previousParagraph ex:g11_topicA_p026_01 ; ex:nextParagraph ex:g11_topicA_p027_01 .
+  ex:g11_topicA_p027_01 ex:previousParagraph ex:g11_topicA_p026_02 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g11_topicA_p005_01 ex:mentionsConcept ex:g11_conceptCPU .
+  ex:g11_topicA_p005_02 ex:mentionsConcept ex:g11_conceptCongLogic .
+  ex:g11_topicA_p006_01 ex:mentionsConcept ex:g11_conceptCongAND, ex:g11_conceptCongOR, ex:g11_conceptCongNOT, ex:g11_conceptCongXOR .
+  ex:g11_topicA_p006_02 ex:mentionsConcept ex:g11_conceptPhepToanNhiPhan, ex:g11_conceptMachCong1Bit .
+  ex:g11_topicA_p007_01 ex:mentionsConcept ex:g11_conceptMachCong1Bit, ex:g11_conceptMachCongDayDu, ex:g11_conceptCongAND, ex:g11_conceptCongXOR .
+  ex:g11_topicA_p007_02 ex:mentionsConcept ex:g11_conceptCongLogic, ex:g11_conceptPhepToanNhiPhan .
+  ex:g11_topicA_p007_03 ex:mentionsConcept ex:g11_conceptBangMachChinh, ex:g11_conceptCPU, ex:g11_conceptRAM, ex:g11_conceptROM, ex:g11_conceptThietBiLuuTru .
+  ex:g11_topicA_p007_04 ex:mentionsConcept ex:g11_conceptBangMachChinh, ex:g11_conceptCPU, ex:g11_conceptRAM, ex:g11_conceptROM .
+  ex:g11_topicA_p008_01 ex:mentionsConcept ex:g11_conceptCPU, ex:g11_conceptRAM, ex:g11_conceptROM .
+  ex:g11_topicA_p008_02 ex:mentionsConcept ex:g11_conceptThietBiLuuTru, ex:g11_conceptHDD, ex:g11_conceptSSD .
+  ex:g11_topicA_p008_03 ex:mentionsConcept ex:g11_conceptHieuNangMayTinh, ex:g11_conceptTocDoCPU, ex:g11_conceptDungLuongRAM .
+  ex:g11_topicA_p008_04 ex:mentionsConcept ex:g11_conceptTocDoCPU, ex:g11_conceptNhanCPU, ex:g11_conceptDungLuongRAM .
+  ex:g11_topicA_p009_01 ex:mentionsConcept ex:g11_conceptMachCongDayDu, ex:g11_conceptHieuNangMayTinh .
+  ex:g11_topicA_p010_01 ex:mentionsConcept ex:g11_conceptThietBiSoThongMinh .
+  ex:g11_topicA_p010_02 ex:mentionsConcept ex:g11_conceptTaiLieuHuongDanSuDung, ex:g11_conceptThietBiSoThongMinh .
+  ex:g11_topicA_p011_01 ex:mentionsConcept ex:g11_conceptTaiLieuHuongDanSuDung, ex:g11_conceptHuongDanAnToan, ex:g11_conceptLapDatThietDat, ex:g11_conceptVanHanhThietBi, ex:g11_conceptBaoTriThietBi, ex:g11_conceptXuLiSuCo .
+  ex:g11_topicA_p011_02 ex:mentionsConcept ex:g11_conceptThongSoKiThuat, ex:g11_conceptTocDoCPU, ex:g11_conceptDungLuongRAM, ex:g11_conceptThietBiLuuTru .
+  ex:g11_topicA_p012_01 ex:mentionsConcept ex:g11_conceptKichThuocManHinh .
+  ex:g11_topicA_p012_02 ex:mentionsConcept ex:g11_conceptDoPhanGiaiHinhAnh, ex:g11_conceptMegapixel .
+  ex:g11_topicA_p013_01 ex:mentionsConcept ex:g11_conceptHeDieuHanh .
+  ex:g11_topicA_p013_02 ex:mentionsConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptPhanCung, ex:g11_conceptPhanMemUngDung .
+  ex:g11_topicA_p014_01 ex:mentionsConcept ex:g11_conceptPhanMemUngDung, ex:g11_conceptPhanMemHeThong, ex:g11_conceptTrinhDieuKhienThietBi .
+  ex:g11_topicA_p014_02 ex:mentionsConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptPhanCung, ex:g11_conceptPhanMemUngDung .
+  ex:g11_topicA_p014_03 ex:mentionsConcept ex:g11_conceptQuanLiTep, ex:g11_conceptQuanLiThietBi, ex:g11_conceptQuanLiTienTrinh, ex:g11_conceptBaoVeHeThong .
+  ex:g11_topicA_p014_04 ex:mentionsConcept ex:g11_conceptHeDieuHanh .
+  ex:g11_topicA_p015_01 ex:mentionsConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptQuanLiTienTrinh .
+  ex:g11_topicA_p015_02 ex:mentionsConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptMSDOS, ex:g11_conceptWindows, ex:g11_conceptMacOS .
+  ex:g11_topicA_p015_03 ex:mentionsConcept ex:g11_conceptMSDOS, ex:g11_conceptWindows, ex:g11_conceptMacOS .
+  ex:g11_topicA_p016_01 ex:mentionsConcept ex:g11_conceptWindows .
+  ex:g11_topicA_p016_02 ex:mentionsConcept ex:g11_conceptUNIX .
+  ex:g11_topicA_p016_03 ex:mentionsConcept ex:g11_conceptLinux, ex:g11_conceptHeDieuHanhNguonMo .
+  ex:g11_topicA_p017_01 ex:mentionsConcept ex:g11_conceptLinux, ex:g11_conceptHeDieuHanhNguonMo .
+  ex:g11_topicA_p017_02 ex:mentionsConcept ex:g11_conceptAndroid, ex:g11_conceptLinux, ex:g11_conceptHeDieuHanhNguonMo .
+  ex:g11_topicA_p018_01 ex:mentionsConcept ex:g11_conceptHeDieuHanh, ex:g11_conceptWindows, ex:g11_conceptAndroid .
+  ex:g11_topicA_p019_01 ex:mentionsConcept ex:g11_conceptCongGiaoTiep, ex:g11_conceptUSB, ex:g11_conceptVGA, ex:g11_conceptHDMI, ex:g11_conceptCongTron35mm .
+  ex:g11_topicA_p020_01 ex:mentionsConcept ex:g11_conceptCongGiaoTiep .
+  ex:g11_topicA_p020_02 ex:mentionsConcept ex:g11_conceptMayIn, ex:g11_conceptDienThoaiThongMinh, ex:g11_conceptBluetooth, ex:g11_conceptWiFi .
+  ex:g11_topicA_p021_01 ex:mentionsConcept ex:g11_conceptMayIn, ex:g11_conceptUSB .
+  ex:g11_topicA_p021_02 ex:mentionsConcept ex:g11_conceptDienThoaiThongMinh, ex:g11_conceptUSB .
+  ex:g11_topicA_p022_01 ex:mentionsConcept ex:g11_conceptDienThoaiThongMinh, ex:g11_conceptBluetooth, ex:g11_conceptWindows, ex:g11_conceptAndroid .
+  ex:g11_topicA_p023_01 ex:mentionsConcept ex:g11_conceptCaNhanHoaMayTinh, ex:g11_conceptControlPanel .
+  ex:g11_topicA_p024_01 ex:mentionsConcept ex:g11_conceptPhanMemUngDung, ex:g11_conceptPhanMemThuongMai, ex:g11_conceptPhanMemMienPhi, ex:g11_conceptPhanMemNguonMo, ex:g11_conceptPhanMemNguonDong, ex:g11_conceptPhanMemKhaiThacTrucTuyen, ex:g11_conceptPhanMemCaiDatTrenMayTinh .
+  ex:g11_topicA_p024_02 ex:mentionsConcept ex:g11_conceptPhanMemThuongMai, ex:g11_conceptPhanMemMienPhi .
+  ex:g11_topicA_p025_01 ex:mentionsConcept ex:g11_conceptPhanMemNguonDong, ex:g11_conceptPhanMemNguonMo, ex:g11_conceptOpenOffice .
+  ex:g11_topicA_p025_02 ex:mentionsConcept ex:g11_conceptPhanMemKhaiThacTrucTuyen .
+  ex:g11_topicA_p025_03 ex:mentionsConcept ex:g11_conceptGiayPhepGPL, ex:g11_conceptPhanMemNguonMo .
+  ex:g11_topicA_p026_01 ex:mentionsConcept ex:g11_conceptPhanMemKhaiThacTrucTuyen, ex:g11_conceptGoogleDocs, ex:g11_conceptGoogleSheets, ex:g11_conceptGoogleSlides .
+  ex:g11_topicA_p026_02 ex:mentionsConcept ex:g11_conceptGoogleDocs, ex:g11_conceptGoogleSheets .
+  ex:g11_topicA_p027_01 ex:mentionsConcept ex:g11_conceptGoogleSlides, ex:g11_conceptPhanMemKhaiThacTrucTuyen .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g11_conceptTheGioiThietBiSo ex:relatedTo ex:g11_conceptMayTinhXaHoiTriThuc .
+  ex:g11_conceptThietBiSoThongMinh ex:subConceptOf ex:g11_conceptTheGioiThietBiSo .
+  ex:g11_conceptCongLogic ex:relatedTo ex:g11_conceptPhepToanNhiPhan .
+  ex:g11_conceptCongAND ex:subConceptOf ex:g11_conceptCongLogic .
+  ex:g11_conceptCongOR ex:subConceptOf ex:g11_conceptCongLogic .
+  ex:g11_conceptCongNOT ex:subConceptOf ex:g11_conceptCongLogic .
+  ex:g11_conceptCongXOR ex:subConceptOf ex:g11_conceptCongLogic .
+  ex:g11_conceptMachCong1Bit ex:relatedTo ex:g11_conceptCongAND, ex:g11_conceptCongXOR .
+  ex:g11_conceptMachCongDayDu ex:relatedTo ex:g11_conceptMachCong1Bit .
+  ex:g11_conceptBangMachChinh ex:relatedTo ex:g11_conceptCPU, ex:g11_conceptRAM, ex:g11_conceptROM .
+  ex:g11_conceptCPU ex:partOf ex:g11_conceptBangMachChinh .
+  ex:g11_conceptRAM ex:partOf ex:g11_conceptBangMachChinh .
+  ex:g11_conceptROM ex:partOf ex:g11_conceptBangMachChinh .
+  ex:g11_conceptHDD ex:subConceptOf ex:g11_conceptThietBiLuuTru .
+  ex:g11_conceptSSD ex:subConceptOf ex:g11_conceptThietBiLuuTru .
+  ex:g11_conceptHieuNangMayTinh ex:relatedTo ex:g11_conceptCPU, ex:g11_conceptRAM .
+  ex:g11_conceptTocDoCPU ex:relatedTo ex:g11_conceptCPU .
+  ex:g11_conceptNhanCPU ex:relatedTo ex:g11_conceptCPU .
+  ex:g11_conceptDungLuongRAM ex:relatedTo ex:g11_conceptRAM .
+  ex:g11_conceptTaiLieuHuongDanSuDung ex:relatedTo ex:g11_conceptThietBiSoThongMinh .
+  ex:g11_conceptHuongDanAnToan ex:partOf ex:g11_conceptTaiLieuHuongDanSuDung .
+  ex:g11_conceptLapDatThietDat ex:partOf ex:g11_conceptTaiLieuHuongDanSuDung .
+  ex:g11_conceptVanHanhThietBi ex:partOf ex:g11_conceptTaiLieuHuongDanSuDung .
+  ex:g11_conceptBaoTriThietBi ex:partOf ex:g11_conceptTaiLieuHuongDanSuDung .
+  ex:g11_conceptXuLiSuCo ex:partOf ex:g11_conceptTaiLieuHuongDanSuDung .
+  ex:g11_conceptThongSoKiThuat ex:relatedTo ex:g11_conceptThietBiSoThongMinh .
+  ex:g11_conceptKichThuocManHinh ex:subConceptOf ex:g11_conceptThongSoKiThuat .
+  ex:g11_conceptDoPhanGiaiHinhAnh ex:subConceptOf ex:g11_conceptThongSoKiThuat .
+  ex:g11_conceptMegapixel ex:relatedTo ex:g11_conceptDoPhanGiaiHinhAnh .
+  ex:g11_conceptHeDieuHanh ex:relatedTo ex:g11_conceptPhanCung, ex:g11_conceptPhanMemUngDung, ex:g11_conceptPhanMemHeThong .
+  ex:g11_conceptTrinhDieuKhienThietBi ex:subConceptOf ex:g11_conceptPhanMemHeThong .
+  ex:g11_conceptQuanLiTep ex:partOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptQuanLiThietBi ex:partOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptQuanLiTienTrinh ex:partOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptBaoVeHeThong ex:partOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptMSDOS ex:subConceptOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptWindows ex:subConceptOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptMacOS ex:subConceptOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptUNIX ex:subConceptOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptLinux ex:subConceptOf ex:g11_conceptHeDieuHanhNguonMo .
+  ex:g11_conceptAndroid ex:subConceptOf ex:g11_conceptHeDieuHanhNguonMo .
+  ex:g11_conceptHeDieuHanhNguonMo ex:subConceptOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptCongGiaoTiep ex:relatedTo ex:g11_conceptUSB, ex:g11_conceptVGA, ex:g11_conceptHDMI, ex:g11_conceptCongTron35mm .
+  ex:g11_conceptUSB ex:subConceptOf ex:g11_conceptCongGiaoTiep .
+  ex:g11_conceptVGA ex:subConceptOf ex:g11_conceptCongGiaoTiep .
+  ex:g11_conceptHDMI ex:subConceptOf ex:g11_conceptCongGiaoTiep .
+  ex:g11_conceptCongTron35mm ex:subConceptOf ex:g11_conceptCongGiaoTiep .
+  ex:g11_conceptBluetooth ex:relatedTo ex:g11_conceptDienThoaiThongMinh .
+  ex:g11_conceptWiFi ex:relatedTo ex:g11_conceptDienThoaiThongMinh .
+  ex:g11_conceptMayIn ex:relatedTo ex:g11_conceptUSB .
+  ex:g11_conceptCaNhanHoaMayTinh ex:relatedTo ex:g11_conceptControlPanel .
+  ex:g11_conceptPhanMemUngDung ex:relatedTo ex:g11_conceptPhanMemThuongMai, ex:g11_conceptPhanMemMienPhi, ex:g11_conceptPhanMemNguonMo, ex:g11_conceptPhanMemNguonDong .
+  ex:g11_conceptPhanMemNguonMo ex:relatedTo ex:g11_conceptGiayPhepGPL .
+  ex:g11_conceptOpenOffice ex:subConceptOf ex:g11_conceptPhanMemNguonMo .
+  ex:g11_conceptPhanMemKhaiThacTrucTuyen ex:subConceptOf ex:g11_conceptPhanMemUngDung .
+  ex:g11_conceptGoogleDocs ex:subConceptOf ex:g11_conceptPhanMemKhaiThacTrucTuyen .
+  ex:g11_conceptGoogleSheets ex:subConceptOf ex:g11_conceptPhanMemKhaiThacTrucTuyen .
+  ex:g11_conceptGoogleSlides ex:subConceptOf ex:g11_conceptPhanMemKhaiThacTrucTuyen .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g11_topicA_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Em hãy cho biết CPU là gì và làm nhiệm vụ gì trong máy tính?"@vi ;
+    ex:appearsOnPage ex:g11_page005 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:relatedTo ex:g11_conceptCPU .
+
+  ex:g11_topicA_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Quan sát mạch điều khiển đèn"@vi ;
+    ex:hasRawText "Quan sát mạch điện ở Hình 1. Mạch có hai công tắc A và B phối hợp để điều khiển đèn F. Hãy nêu giá trị đúng tại dấu hỏi cho mỗi hàng của đầu ra F và nhận xét về hoạt động của mạch điện."@vi ;
+    ex:appearsOnPage ex:g11_page005 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:relatedTo ex:g11_conceptCongAND, ex:g11_conceptCongLogic .
+
+  ex:g11_topicA_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Kể tên bộ phận bên trong máy tính"@vi ;
+    ex:hasRawText "Em hãy kể tên những bộ phận bên trong máy tính mà em biết và cho biết bộ phận nào của máy tính là quan trọng nhất."@vi ;
+    ex:appearsOnPage ex:g11_page007 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:relatedTo ex:g11_conceptCPU, ex:g11_conceptRAM, ex:g11_conceptBangMachChinh .
+
+  ex:g11_topicA_l1_ex1 a ex:Exercise ;
+    rdfs:label "Câu 1 bài 1 chủ đề A lớp 11 - Bảng chân lí mạch cộng đầy đủ"@vi ;
+    ex:hasRawText "Em hãy nêu giá trị thích hợp tại dấu ? cho hai cột S và C_out để hoàn thành bảng chân lí cho mạch cộng đầy đủ."@vi ;
+    ex:appearsOnPage ex:g11_page009 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:relatedTo ex:g11_conceptMachCongDayDu .
+
+  ex:g11_topicA_l1_ex2 a ex:Exercise ;
+    rdfs:label "Câu 2 bài 1 chủ đề A lớp 11 - Thành phần chính bên trong máy tính"@vi ;
+    ex:hasRawText "Hãy nêu tên một số thành phần chính bên trong máy tính và cho biết chức năng của nó."@vi ;
+    ex:appearsOnPage ex:g11_page009 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:relatedTo ex:g11_conceptCPU, ex:g11_conceptRAM, ex:g11_conceptROM, ex:g11_conceptThietBiLuuTru .
+
+  ex:g11_topicA_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 1 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Sắp xếp thứ tự ưu tiên khi chọn mua máy tính: ổ cứng dung lượng lớn, RAM dung lượng lớn, CPU tốc độ cao. Trong các câu sau câu nào đúng: CPU tốc độ càng cao thì máy tính hiệu năng càng cao; dung lượng ổ cứng đo bằng GHz; RAM ngày nay có dung lượng hàng TB; dung lượng RAM ảnh hưởng tới hiệu năng máy tính."@vi ;
+    ex:appearsOnPage ex:g11_page009 ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:relatedTo ex:g11_conceptHieuNangMayTinh, ex:g11_conceptCPU, ex:g11_conceptRAM, ex:g11_conceptThietBiLuuTru .
+
+  ex:g11_topicA_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Em đã sử dụng các thiết bị số của mình như thế nào? Theo em, sử dụng như thế đã đúng cách chưa?"@vi ;
+    ex:appearsOnPage ex:g11_page010 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:relatedTo ex:g11_conceptThietBiSoThongMinh .
+
+  ex:g11_topicA_l2_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Phân biệt CẢNH BÁO và THẬN TRỌNG"@vi ;
+    ex:hasRawText "Quan sát Hình 1, em hãy phân biệt mục đích của thông điệp CẢNH BÁO và THẬN TRỌNG, sau đó thực hiện theo các bước của hướng dẫn."@vi ;
+    ex:appearsOnPage ex:g11_page010 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:relatedTo ex:g11_conceptTaiLieuHuongDanSuDung, ex:g11_conceptHuongDanAnToan .
+
+  ex:g11_topicA_l2_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Quan sát thiết bị số thông dụng"@vi ;
+    ex:hasRawText "Quan sát các thiết bị trong Hình 2, em thấy chúng có các bộ phận nào giống nhau?"@vi ;
+    ex:appearsOnPage ex:g11_page011 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:relatedTo ex:g11_conceptThietBiSoThongMinh, ex:g11_conceptThongSoKiThuat .
+
+  ex:g11_topicA_l2_appliedScreen a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 - Tính kích thước màn hình"@vi ;
+    ex:hasRawText "Em hãy tính số đo bằng centimet theo chiều dài và chiều rộng của màn hình máy tính có kích thước 24 inch, 27 inch, 32 inch tương ứng với tỉ lệ 16:9 và 21:9."@vi ;
+    ex:appearsOnPage ex:g11_page012 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:relatedTo ex:g11_conceptKichThuocManHinh .
+
+  ex:g11_topicA_l2_appliedPhoneSpec a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 - Tìm hiểu cấu hình điện thoại thông minh"@vi ;
+    ex:hasRawText "Tìm hiểu cấu hình của một điện thoại thông minh. Hãy cho biết kích thước màn hình, tốc độ CPU, dung lượng RAM, dung lượng lưu trữ, độ phân giải camera của điện thoại đó."@vi ;
+    ex:appearsOnPage ex:g11_page012 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:relatedTo ex:g11_conceptDienThoaiThongMinh, ex:g11_conceptThongSoKiThuat .
+
+  ex:g11_topicA_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 2 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Trong tài liệu hướng dẫn sử dụng thiết bị số, mục Hướng dẫn an toàn nhằm mục đích gì? Mục Xử lí sự cố thường hướng dẫn những gì? Tại sao kích thước màn hình của thiết bị điện tử thường được thể hiện bằng số đo độ dài đường chéo? Nói Camera có độ phân giải 12 megapixel nghĩa là gì?"@vi ;
+    ex:appearsOnPage ex:g11_page012 ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:relatedTo ex:g11_conceptHuongDanAnToan, ex:g11_conceptXuLiSuCo, ex:g11_conceptKichThuocManHinh, ex:g11_conceptMegapixel .
+
+  ex:g11_topicA_l3_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 3 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Khi mua mới máy tính, máy tính bảng hay điện thoại thông minh, trước khi bắt đầu sử dụng cần kích hoạt chế độ cài đặt. Tại sao cần làm việc này và những gì sẽ được cài đặt vào máy?"@vi ;
+    ex:appearsOnPage ex:g11_page013 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:relatedTo ex:g11_conceptHeDieuHanh .
+
+  ex:g11_topicA_l3_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - So sánh khởi động máy tính và điện thoại thông minh"@vi ;
+    ex:hasRawText "Khi bật máy tính, ta phải chờ một lúc rồi mới có thể bắt đầu công việc. Với điện thoại thông minh có khác biệt gì không? Hãy trả lời và giải thích rõ thêm."@vi ;
+    ex:appearsOnPage ex:g11_page013 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:relatedTo ex:g11_conceptHeDieuHanh, ex:g11_conceptDienThoaiThongMinh .
+
+  ex:g11_topicA_l3_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Kể tên hệ điều hành khác Windows"@vi ;
+    ex:hasRawText "Ngoài hệ điều hành Windows, em có biết hệ điều hành nào khác không?"@vi ;
+    ex:appearsOnPage ex:g11_page015 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:relatedTo ex:g11_conceptHeDieuHanh, ex:g11_conceptWindows, ex:g11_conceptMacOS, ex:g11_conceptLinux, ex:g11_conceptAndroid .
+
+  ex:g11_topicA_l3_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 3 - Tìm hiểu khả năng của máy tính hoặc điện thoại"@vi ;
+    ex:hasRawText "Tìm hiểu các khả năng của máy tính hay điện thoại, ưu tiên tìm hiểu hệ điều hành Android hay iOS; khám phá phần mềm thành ảnh và video, thử nghiệm chụp ảnh toàn cảnh, ghi ảnh, xem lại và chia sẻ."@vi ;
+    ex:appearsOnPage ex:g11_page018 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:relatedTo ex:g11_conceptHeDieuHanh, ex:g11_conceptAndroid .
+
+  ex:g11_topicA_l3_practice2 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 3 - Tổ hợp phím tắt Windows"@vi ;
+    ex:hasRawText "Khám phá tác dụng của một số phím tắt Windows: Ctrl + Win + O bật/tắt bàn phím ảo, Alt + Tab chuyển cửa sổ đang hoạt động, Win + D chuyển sang màn hình nền, Win + H bật/tắt micro, Win + . hoặc ; bật/tắt cửa sổ biểu tượng cảm xúc."@vi ;
+    ex:appearsOnPage ex:g11_page018 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:relatedTo ex:g11_conceptWindows, ex:g11_conceptHeDieuHanh .
+
+  ex:g11_topicA_l3_appliedPhoneOS a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 3 - Tìm hiểu hệ điều hành điện thoại thông minh"@vi ;
+    ex:hasRawText "Tìm hiểu xem điện thoại thông minh của em dùng hệ điều hành gì? Nó có phải là hệ điều hành nguồn mở hay không?"@vi ;
+    ex:appearsOnPage ex:g11_page018 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:relatedTo ex:g11_conceptDienThoaiThongMinh, ex:g11_conceptHeDieuHanhNguonMo .
+
+  ex:g11_topicA_l3_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 3 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Hệ điều hành có phải là phần mềm duy nhất trong máy tính, máy tính bảng hoặc điện thoại thông minh hay không? Vì sao? Nêu tên một số hệ điều hành thương mại thường gặp. Nêu tên một số hệ điều hành nguồn mở thường gặp."@vi ;
+    ex:appearsOnPage ex:g11_page018 ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:relatedTo ex:g11_conceptHeDieuHanh, ex:g11_conceptPhanMemUngDung, ex:g11_conceptHeDieuHanhNguonMo .
+
+  ex:g11_topicA_l4_task1 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 1 bài 4 - Lắp ráp các bộ phận của máy tính"@vi ;
+    ex:hasRawText "Kết nối thân máy, bàn phím, chuột, màn hình; xác định các cổng kết nối trên máy tính và các thiết bị; xếp đặt vị trí thiết bị; kết nối các bộ phận với nhau và kiểm tra kết quả."@vi ;
+    ex:appearsOnPage ex:g11_page019 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:relatedTo ex:g11_conceptCongGiaoTiep, ex:g11_conceptUSB, ex:g11_conceptVGA .
+
+  ex:g11_topicA_l4_task2_printer a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2a bài 4 - Kết nối máy tính với máy in"@vi ;
+    ex:hasRawText "Kết nối máy tính với máy in thông qua cổng USB, sau đó in thử một tài liệu; bật nguồn máy tính và máy in, kết nối USB, cài đặt máy in, mở tài liệu và lựa chọn máy in vừa cài đặt để in thử."@vi ;
+    ex:appearsOnPage ex:g11_page021 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:relatedTo ex:g11_conceptMayIn, ex:g11_conceptUSB .
+
+  ex:g11_topicA_l4_task2_phoneUsb a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2b bài 4 - Kết nối máy tính với điện thoại thông minh qua USB"@vi ;
+    ex:hasRawText "Sử dụng cáp USB kết nối máy tính với điện thoại thông minh và sao chép dữ liệu giữa điện thoại và máy tính; chọn chế độ truyền tệp trao đổi dữ liệu giữa máy tính và điện thoại."@vi ;
+    ex:appearsOnPage ex:g11_page021 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:relatedTo ex:g11_conceptDienThoaiThongMinh, ex:g11_conceptUSB .
+
+  ex:g11_topicA_l4_task2_phoneBluetooth a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2c bài 4 - Kết nối máy tính với điện thoại thông minh qua Bluetooth"@vi ;
+    ex:hasRawText "Kết nối máy tính dùng Windows 10 với điện thoại thông minh dùng Android thông qua Bluetooth và sao chép một số dữ liệu từ điện thoại sang máy tính và ngược lại."@vi ;
+    ex:appearsOnPage ex:g11_page022 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:relatedTo ex:g11_conceptBluetooth, ex:g11_conceptDienThoaiThongMinh .
+
+  ex:g11_topicA_l4_task3_personalize a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 3 bài 4 - Cá nhân hoá máy tính"@vi ;
+    ex:hasRawText "Thực hiện các tuỳ chỉnh: lựa chọn ảnh nền, chỉnh độ sáng và độ phân giải màn hình; thay đổi kích thước, màu sắc, lựa chọn nút nhấn chính của chuột; chỉnh sửa thời gian cho đồng hồ đúng thời gian hiện tại."@vi ;
+    ex:appearsOnPage ex:g11_page023 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:relatedTo ex:g11_conceptCaNhanHoaMayTinh, ex:g11_conceptControlPanel .
+
+  ex:g11_topicA_l4_appliedPhoneTransfer a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 4 - Kết nối điện thoại với máy tính bằng phần mềm"@vi ;
+    ex:hasRawText "Kết nối điện thoại với máy tính bằng phần mềm để gửi tệp tin từ điện thoại tới máy tính và ngược lại. Gợi ý: sử dụng AirDroid cho điện thoại Android và AirDrop cho điện thoại iPhone."@vi ;
+    ex:appearsOnPage ex:g11_page023 ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:relatedTo ex:g11_conceptDienThoaiThongMinh, ex:g11_conceptWiFi .
+
+  ex:g11_topicA_l5_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 5 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Những phần mềm đang có trong máy tính đã đáp ứng đầy đủ mọi nhu cầu làm việc của em hay chưa?"@vi ;
+    ex:appearsOnPage ex:g11_page024 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:relatedTo ex:g11_conceptPhanMemUngDung .
+
+  ex:g11_topicA_l5_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Tải và cài đặt phần mềm mới"@vi ;
+    ex:hasRawText "Lần gần đây nhất, em đã tải về và cài thêm phần mềm mới nào trên điện thoại thông minh của em? Tại sao em cần thêm phần mềm đó?"@vi ;
+    ex:appearsOnPage ex:g11_page024 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:relatedTo ex:g11_conceptPhanMemUngDung, ex:g11_conceptDienThoaiThongMinh .
+
+  ex:g11_topicA_l5_practiceOnlineSoftware a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 5 - Phần mềm khai thác trực tuyến miễn phí"@vi ;
+    ex:hasRawText "Làm quen với soạn thảo văn bản, làm bài trình chiếu và sử dụng bảng tính qua các phần mềm trực tuyến của Google; thử Google Docs, Google Sheets và Google Slides."@vi ;
+    ex:appearsOnPage ex:g11_page025 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:relatedTo ex:g11_conceptPhanMemKhaiThacTrucTuyen, ex:g11_conceptGoogleDocs, ex:g11_conceptGoogleSheets, ex:g11_conceptGoogleSlides .
+
+  ex:g11_topicA_l5_appliedTranslate a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 5 - Dịch trực tuyến và chuyển định dạng"@vi ;
+    ex:hasRawText "Sử dụng công cụ dịch trực tuyến để dịch một đoạn văn bản tiếng Anh và nghe lại. Tìm phần mềm chuyển định dạng chạy trực tuyến miễn phí để chuyển file .docx sang .pdf và ghép nối các file kết quả thành một file .pdf."@vi ;
+    ex:appearsOnPage ex:g11_page027 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:relatedTo ex:g11_conceptPhanMemKhaiThacTrucTuyen .
+
+  ex:g11_topicA_l5_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 5 chủ đề A lớp 11"@vi ;
+    ex:hasRawText "Trong các câu sau, câu nào đúng: trong hệ thống luôn cần có các chương trình ứng dụng; phần mềm nguồn mở được cung cấp dưới dạng các mô đun phần mềm viết bằng ngôn ngữ máy; phần mềm là một sản phẩm thương mại nên luôn phải có bản quyền mới sử dụng được; không phải tất cả các phần mềm nguồn mở đều miễn phí."@vi ;
+    ex:appearsOnPage ex:g11_page027 ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:relatedTo ex:g11_conceptPhanMemUngDung, ex:g11_conceptPhanMemNguonMo, ex:g11_conceptPhanMemThuongMai .
+
+  ex:g11_topicA_lesson1 ex:hasActivity ex:g11_topicA_l1_openingActivity,
+    ex:g11_topicA_l1_activity1, ex:g11_topicA_l1_activity2 ;
+    ex:hasReviewQuestion ex:g11_topicA_l1_review1 .
+
+  ex:g11_topicA_lesson2 ex:hasActivity ex:g11_topicA_l2_openingActivity,
+    ex:g11_topicA_l2_activity1, ex:g11_topicA_l2_activity2,
+    ex:g11_topicA_l2_appliedScreen, ex:g11_topicA_l2_appliedPhoneSpec ;
+    ex:hasReviewQuestion ex:g11_topicA_l2_review1 .
+
+  ex:g11_topicA_lesson3 ex:hasActivity ex:g11_topicA_l3_openingActivity,
+    ex:g11_topicA_l3_activity1, ex:g11_topicA_l3_activity2,
+    ex:g11_topicA_l3_practice1, ex:g11_topicA_l3_practice2,
+    ex:g11_topicA_l3_appliedPhoneOS ;
+    ex:hasReviewQuestion ex:g11_topicA_l3_review1 .
+
+  ex:g11_topicA_lesson4 ex:hasActivity ex:g11_topicA_l4_task1,
+    ex:g11_topicA_l4_task2_printer, ex:g11_topicA_l4_task2_phoneUsb,
+    ex:g11_topicA_l4_task2_phoneBluetooth, ex:g11_topicA_l4_task3_personalize,
+    ex:g11_topicA_l4_appliedPhoneTransfer .
+
+  ex:g11_topicA_lesson5 ex:hasActivity ex:g11_topicA_l5_openingActivity,
+    ex:g11_topicA_l5_activity1, ex:g11_topicA_l5_practiceOnlineSoftware,
+    ex:g11_topicA_l5_appliedTranslate ;
+    ex:hasReviewQuestion ex:g11_topicA_l5_review1 .
+}

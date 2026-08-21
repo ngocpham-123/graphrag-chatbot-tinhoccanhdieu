@@ -1,0 +1,1480 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 10 TOPIC A^CS
+# Assumes ontology/classes/properties have already been inserted.
+# Source file: Tin-hoc-10-Canh-dieu-pages-7.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:grade10 a ex:GradeLevel ;
+    rdfs:label "Lớp 10"@vi ;
+    ex:gradeNumber 10 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:tinhoc10_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 10 - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 10"@vi ;
+    ex:hasGradeLevel ex:grade10 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicAcs_shared a ex:Topic ;
+    rdfs:label "Chủ đề A^CS (dùng chung các khối)"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi .
+
+  ex:topicAcs a ex:Topic ;
+    rdfs:label "Chủ đề A^CS - Máy tính và xã hội tri thức"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi ;
+    ex:hasSubtitle "CS - Biểu diễn thông tin"@vi ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:sameTopicAs ex:topicAcs_shared ;
+    ex:topicOrder 8 ;
+    ex:hasStartPage 132 ;
+    ex:hasEndPage 146 ;
+    ex:sourceFileName "Tin-hoc-10-Canh-dieu-pages-7.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:topicAcs_lesson1, ex:topicAcs_lesson2,
+                 ex:topicAcs_extra_octHex, ex:topicAcs_lesson3,
+                 ex:topicAcs_lesson4, ex:topicAcs_extra_colorSystem ;
+    ex:hasPage ex:page132, ex:page133, ex:page134, ex:page135, ex:page136,
+               ex:page137, ex:page138, ex:page139, ex:page140, ex:page141,
+               ex:page142, ex:page143, ex:page144, ex:page145, ex:page146 .
+
+  ex:tinhoc10_canhdieu ex:hasTopic ex:topicAcs .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:topicAcs_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Hệ nhị phân và ứng dụng"@vi ;
+    ex:hasTitle "Hệ nhị phân và ứng dụng"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:topicAcs ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 132 ;
+    ex:hasEndPage 136 ;
+    ex:hasSection ex:topicAcs_l1s1, ex:topicAcs_l1s2 .
+
+  ex:topicAcs_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Thực hành về các phép toán bit và hệ nhị phân"@vi ;
+    ex:hasTitle "Thực hành về các phép toán bit và hệ nhị phân"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:topicAcs ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 137 ;
+    ex:hasEndPage 138 ;
+    ex:hasSection ex:topicAcs_l2s1, ex:topicAcs_l2s2, ex:topicAcs_l2s3, ex:topicAcs_l2s4 .
+
+  ex:topicAcs_extra_octHex a ex:Lesson ;
+    rdfs:label "Bài tìm hiểu thêm. Hệ đếm cơ số 8 và hệ đếm cơ số 16"@vi ;
+    ex:hasTitle "Hệ đếm cơ số 8 và hệ đếm cơ số 16"@vi ;
+    ex:belongsToTopic ex:topicAcs ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 138 ;
+    ex:hasEndPage 138 .
+
+  ex:topicAcs_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Số hoá văn bản"@vi ;
+    ex:hasTitle "Số hoá văn bản"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:topicAcs ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 139 ;
+    ex:hasEndPage 142 ;
+    ex:hasSection ex:topicAcs_l3s1, ex:topicAcs_l3s2, ex:topicAcs_l3s3,
+                  ex:topicAcs_l3s4, ex:topicAcs_l3s5 .
+
+  ex:topicAcs_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Số hoá hình ảnh và số hoá âm thanh"@vi ;
+    ex:hasTitle "Số hoá hình ảnh và số hoá âm thanh"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:topicAcs ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 143 ;
+    ex:hasEndPage 146 ;
+    ex:hasSection ex:topicAcs_l4s1, ex:topicAcs_l4s2 .
+
+  ex:topicAcs_extra_colorSystem a ex:Lesson ;
+    rdfs:label "Bài tìm hiểu thêm. Hệ màu"@vi ;
+    ex:hasTitle "Hệ màu"@vi ;
+    ex:belongsToTopic ex:topicAcs ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 146 ;
+    ex:hasEndPage 146 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:topicAcs_l1s1 a ex:Section ;
+    rdfs:label "Các phép toán bit"@vi ;
+    ex:hasTitle "Các phép toán bit"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 .
+
+  ex:topicAcs_l1s2 a ex:Section ;
+    rdfs:label "Hệ nhị phân và ứng dụng"@vi ;
+    ex:hasTitle "Hệ nhị phân và ứng dụng"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 .
+
+  ex:topicAcs_l2s1 a ex:Section ;
+    rdfs:label "Chuyển đổi biểu diễn số ở hệ thập phân sang hệ nhị phân"@vi ;
+    ex:hasTitle "Chuyển đổi biểu diễn số ở hệ thập phân sang hệ nhị phân"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 .
+
+  ex:topicAcs_l2s2 a ex:Section ;
+    rdfs:label "Cộng và nhân hai số nhị phân"@vi ;
+    ex:hasTitle "Cộng và nhân hai số nhị phân"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 .
+
+  ex:topicAcs_l2s3 a ex:Section ;
+    rdfs:label "Tính số bù của một số nhị phân"@vi ;
+    ex:hasTitle "Tính số bù của một số nhị phân"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 .
+
+  ex:topicAcs_l2s4 a ex:Section ;
+    rdfs:label "Khám phá ý nghĩa của số bù của một số nhị phân"@vi ;
+    ex:hasTitle "Khám phá ý nghĩa của số bù của một số nhị phân"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 .
+
+  ex:topicAcs_l3s1 a ex:Section ;
+    rdfs:label "Bảng mã ASCII"@vi ;
+    ex:hasTitle "Bảng mã ASCII"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 .
+
+  ex:topicAcs_l3s2 a ex:Section ;
+    rdfs:label "Bảng mã Unicode"@vi ;
+    ex:hasTitle "Bảng mã Unicode"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 .
+
+  ex:topicAcs_l3s3 a ex:Section ;
+    rdfs:label "Mã kí tự, bộ kí tự và mã nhị phân"@vi ;
+    ex:hasTitle "Mã kí tự, bộ kí tự và mã nhị phân"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 .
+
+  ex:topicAcs_l3s4 a ex:Section ;
+    rdfs:label "Dữ liệu văn bản và số hoá văn bản"@vi ;
+    ex:hasTitle "Dữ liệu văn bản và số hoá văn bản"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 .
+
+  ex:topicAcs_l3s5 a ex:Section ;
+    rdfs:label "Kí tự tiếng Việt trong dữ liệu văn bản"@vi ;
+    ex:hasTitle "Kí tự tiếng Việt trong dữ liệu văn bản"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 .
+
+  ex:topicAcs_l4s1 a ex:Section ;
+    rdfs:label "Số hoá hình ảnh"@vi ;
+    ex:hasTitle "Số hoá hình ảnh"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 .
+
+  ex:topicAcs_l4s2 a ex:Section ;
+    rdfs:label "Số hoá âm thanh"@vi ;
+    ex:hasTitle "Số hoá âm thanh"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:page132 a ex:Page ; ex:hasPageNumber 132 ; ex:hasPrintedPageNumber 132 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:topicAcs_lesson1 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page133 a ex:Page ; ex:hasPageNumber 133 ; ex:hasPrintedPageNumber 133 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:topicAcs_lesson1 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page134 a ex:Page ; ex:hasPageNumber 134 ; ex:hasPrintedPageNumber 134 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:topicAcs_lesson1 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page135 a ex:Page ; ex:hasPageNumber 135 ; ex:hasPrintedPageNumber 135 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:topicAcs_lesson1 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page136 a ex:Page ; ex:hasPageNumber 136 ; ex:hasPrintedPageNumber 136 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:topicAcs_lesson1 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page137 a ex:Page ; ex:hasPageNumber 137 ; ex:hasPrintedPageNumber 137 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:topicAcs_lesson2 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page138 a ex:Page ; ex:hasPageNumber 138 ; ex:hasPrintedPageNumber 138 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:topicAcs_lesson2 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page139 a ex:Page ; ex:hasPageNumber 139 ; ex:hasPrintedPageNumber 139 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:topicAcs_lesson3 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page140 a ex:Page ; ex:hasPageNumber 140 ; ex:hasPrintedPageNumber 140 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:topicAcs_lesson3 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page141 a ex:Page ; ex:hasPageNumber 141 ; ex:hasPrintedPageNumber 141 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:topicAcs_lesson3 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page142 a ex:Page ; ex:hasPageNumber 142 ; ex:hasPrintedPageNumber 142 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:topicAcs_lesson3 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page143 a ex:Page ; ex:hasPageNumber 143 ; ex:hasPrintedPageNumber 143 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:topicAcs_lesson4 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page144 a ex:Page ; ex:hasPageNumber 144 ; ex:hasPrintedPageNumber 144 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:topicAcs_lesson4 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page145 a ex:Page ; ex:hasPageNumber 145 ; ex:hasPrintedPageNumber 145 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:topicAcs_lesson4 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page146 a ex:Page ; ex:hasPageNumber 146 ; ex:hasPrintedPageNumber 146 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:topicAcs_lesson4 ; ex:belongsToTopic ex:topicAcs ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:page131 ex:nextPage ex:page132 .
+  ex:page132 ex:previousPage ex:page131 ; ex:nextPage ex:page133 .
+  ex:page133 ex:previousPage ex:page132 ; ex:nextPage ex:page134 .
+  ex:page134 ex:previousPage ex:page133 ; ex:nextPage ex:page135 .
+  ex:page135 ex:previousPage ex:page134 ; ex:nextPage ex:page136 .
+  ex:page136 ex:previousPage ex:page135 ; ex:nextPage ex:page137 .
+  ex:page137 ex:previousPage ex:page136 ; ex:nextPage ex:page138 .
+  ex:page138 ex:previousPage ex:page137 ; ex:nextPage ex:page139 .
+  ex:page139 ex:previousPage ex:page138 ; ex:nextPage ex:page140 .
+  ex:page140 ex:previousPage ex:page139 ; ex:nextPage ex:page141 .
+  ex:page141 ex:previousPage ex:page140 ; ex:nextPage ex:page142 .
+  ex:page142 ex:previousPage ex:page141 ; ex:nextPage ex:page143 .
+  ex:page143 ex:previousPage ex:page142 ; ex:nextPage ex:page144 .
+  ex:page144 ex:previousPage ex:page143 ; ex:nextPage ex:page145 .
+  ex:page145 ex:previousPage ex:page144 ; ex:nextPage ex:page146 .
+  ex:page146 ex:previousPage ex:page145 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:conceptBieuDienThongTin a ex:KnowledgeConcept ; rdfs:label "Biểu diễn thông tin"@vi .
+  ex:conceptBit a ex:KnowledgeConcept ; rdfs:label "Bit"@vi .
+  ex:conceptDayBit a ex:KnowledgeConcept ; rdfs:label "Dãy bit"@vi .
+  ex:conceptPhepToanBit a ex:KnowledgeConcept ; rdfs:label "Phép toán bit"@vi .
+  ex:conceptPhepToanNOT a ex:KnowledgeConcept ; rdfs:label "Phép toán NOT"@vi .
+  ex:conceptPhepToanAND a ex:KnowledgeConcept ; rdfs:label "Phép toán AND"@vi .
+  ex:conceptPhepToanOR a ex:KnowledgeConcept ; rdfs:label "Phép toán OR"@vi .
+  ex:conceptPhepToanXOR a ex:KnowledgeConcept ; rdfs:label "Phép toán XOR"@vi .
+  ex:conceptPhepBu a ex:KnowledgeConcept ; rdfs:label "Phép bù"@vi .
+  ex:conceptPhepNhanLogic a ex:KnowledgeConcept ; rdfs:label "Phép nhân logic"@vi .
+  ex:conceptPhepCongLogic a ex:KnowledgeConcept ; rdfs:label "Phép cộng logic"@vi .
+  ex:conceptHeNhiPhan a ex:KnowledgeConcept ; rdfs:label "Hệ nhị phân"@vi .
+  ex:conceptHeThapPhan a ex:KnowledgeConcept ; rdfs:label "Hệ thập phân"@vi .
+  ex:conceptHeDemCoSo8 a ex:KnowledgeConcept ; rdfs:label "Hệ đếm cơ số 8"@vi .
+  ex:conceptHeDemCoSo16 a ex:KnowledgeConcept ; rdfs:label "Hệ đếm cơ số 16"@vi .
+  ex:conceptChuyenDoiHeDem a ex:KnowledgeConcept ; rdfs:label "Chuyển đổi hệ đếm"@vi .
+  ex:conceptPhepCongNhiPhan a ex:KnowledgeConcept ; rdfs:label "Phép cộng nhị phân"@vi .
+  ex:conceptPhepNhanNhiPhan a ex:KnowledgeConcept ; rdfs:label "Phép nhân nhị phân"@vi .
+  ex:conceptSoBu1 a ex:KnowledgeConcept ; rdfs:label "Số bù 1"@vi .
+  ex:conceptSoBu2 a ex:KnowledgeConcept ; rdfs:label "Số bù 2"@vi .
+  ex:conceptDiaChiIP a ex:KnowledgeConcept ; rdfs:label "Địa chỉ IP"@vi .
+  ex:conceptIPv4 a ex:KnowledgeConcept ; rdfs:label "IPv4"@vi .
+  ex:conceptIPv6 a ex:KnowledgeConcept ; rdfs:label "IPv6"@vi .
+  ex:conceptSoHoaVanBan a ex:KnowledgeConcept ; rdfs:label "Số hoá văn bản"@vi .
+  ex:conceptMaKiTu a ex:KnowledgeConcept ; rdfs:label "Mã kí tự"@vi .
+  ex:conceptBoKiTu a ex:KnowledgeConcept ; rdfs:label "Bộ kí tự"@vi .
+  ex:conceptMaNhiPhan a ex:KnowledgeConcept ; rdfs:label "Mã nhị phân"@vi .
+  ex:conceptBangMaASCII a ex:KnowledgeConcept ; rdfs:label "Bảng mã ASCII"@vi .
+  ex:conceptASCIIExtended a ex:KnowledgeConcept ; rdfs:label "Bảng mã ASCII mở rộng"@vi .
+  ex:conceptBangMaUnicode a ex:KnowledgeConcept ; rdfs:label "Bảng mã Unicode"@vi .
+  ex:conceptDiemMaUnicode a ex:KnowledgeConcept ; rdfs:label "Điểm mã Unicode"@vi .
+  ex:conceptUTF8 a ex:KnowledgeConcept ; rdfs:label "UTF-8"@vi .
+  ex:conceptUTF16 a ex:KnowledgeConcept ; rdfs:label "UTF-16"@vi .
+  ex:conceptUTF32 a ex:KnowledgeConcept ; rdfs:label "UTF-32"@vi .
+  ex:conceptVanBanThuanChu a ex:KnowledgeConcept ; rdfs:label "Văn bản thuần chữ"@vi .
+  ex:conceptDuLieuVanBan a ex:KnowledgeConcept ; rdfs:label "Dữ liệu văn bản"@vi .
+  ex:conceptKiTuTiengViet a ex:KnowledgeConcept ; rdfs:label "Kí tự tiếng Việt"@vi .
+  ex:conceptUnikey a ex:KnowledgeConcept ; rdfs:label "UniKey"@vi .
+  ex:conceptChuyenMaKiTu a ex:KnowledgeConcept ; rdfs:label "Chuyển mã kí tự"@vi .
+  ex:conceptTCVN3 a ex:KnowledgeConcept ; rdfs:label "TCVN3"@vi .
+  ex:conceptSoHoaHinhAnh a ex:KnowledgeConcept ; rdfs:label "Số hoá hình ảnh"@vi .
+  ex:conceptDiemAnh a ex:KnowledgeConcept ; rdfs:label "Điểm ảnh"@vi .
+  ex:conceptPixel a ex:KnowledgeConcept ; rdfs:label "Pixel"@vi .
+  ex:conceptDoPhanGiai a ex:KnowledgeConcept ; rdfs:label "Độ phân giải"@vi .
+  ex:conceptHeMauRGB a ex:KnowledgeConcept ; rdfs:label "Hệ màu RGB"@vi .
+  ex:conceptRoiRacHoaMau a ex:KnowledgeConcept ; rdfs:label "Rời rạc hoá màu"@vi .
+  ex:conceptDoSauMau a ex:KnowledgeConcept ; rdfs:label "Độ sâu màu"@vi .
+  ex:conceptSoHoaAmThanh a ex:KnowledgeConcept ; rdfs:label "Số hoá âm thanh"@vi .
+  ex:conceptTinHieuAmThanh a ex:KnowledgeConcept ; rdfs:label "Tín hiệu âm thanh"@vi .
+  ex:conceptDuLieuAnalog a ex:KnowledgeConcept ; rdfs:label "Dữ liệu tương tự"@vi .
+  ex:conceptLayMauAmThanh a ex:KnowledgeConcept ; rdfs:label "Lấy mẫu âm thanh"@vi .
+  ex:conceptTocDoLayMau a ex:KnowledgeConcept ; rdfs:label "Tốc độ lấy mẫu"@vi .
+  ex:conceptLuongTuHoa a ex:KnowledgeConcept ; rdfs:label "Lượng tử hoá"@vi .
+  ex:conceptBieuDienNhiPhanAmThanh a ex:KnowledgeConcept ; rdfs:label "Biểu diễn nhị phân âm thanh"@vi .
+  ex:conceptHeMau a ex:KnowledgeConcept ; rdfs:label "Hệ màu"@vi .
+
+  ###########################################################################
+  # Topic / lesson / section concept links
+  ###########################################################################
+
+  ex:topicAcs ex:hasConcept ex:conceptBieuDienThongTin, ex:conceptBit, ex:conceptDayBit,
+    ex:conceptPhepToanBit, ex:conceptHeNhiPhan, ex:conceptChuyenDoiHeDem,
+    ex:conceptSoHoaVanBan, ex:conceptBangMaASCII, ex:conceptBangMaUnicode,
+    ex:conceptSoHoaHinhAnh, ex:conceptHeMauRGB, ex:conceptSoHoaAmThanh .
+
+  ex:topicAcs_lesson1 ex:hasConcept ex:conceptBit, ex:conceptDayBit, ex:conceptPhepToanBit,
+    ex:conceptPhepToanNOT, ex:conceptPhepToanAND, ex:conceptPhepToanOR,
+    ex:conceptPhepToanXOR, ex:conceptPhepBu, ex:conceptPhepNhanLogic,
+    ex:conceptPhepCongLogic, ex:conceptHeNhiPhan, ex:conceptHeThapPhan,
+    ex:conceptChuyenDoiHeDem, ex:conceptPhepCongNhiPhan, ex:conceptPhepNhanNhiPhan,
+    ex:conceptDiaChiIP, ex:conceptIPv4, ex:conceptIPv6 .
+
+  ex:topicAcs_lesson2 ex:hasConcept ex:conceptPhepToanBit, ex:conceptPhepToanNOT,
+    ex:conceptPhepToanAND, ex:conceptPhepToanOR, ex:conceptPhepToanXOR,
+    ex:conceptHeNhiPhan, ex:conceptChuyenDoiHeDem, ex:conceptPhepCongNhiPhan,
+    ex:conceptPhepNhanNhiPhan, ex:conceptSoBu1, ex:conceptSoBu2,
+    ex:conceptHeDemCoSo8, ex:conceptHeDemCoSo16 .
+
+  ex:topicAcs_lesson3 ex:hasConcept ex:conceptSoHoaVanBan, ex:conceptMaKiTu,
+    ex:conceptBoKiTu, ex:conceptMaNhiPhan, ex:conceptBangMaASCII,
+    ex:conceptASCIIExtended, ex:conceptBangMaUnicode, ex:conceptDiemMaUnicode,
+    ex:conceptUTF8, ex:conceptUTF16, ex:conceptUTF32, ex:conceptVanBanThuanChu,
+    ex:conceptDuLieuVanBan, ex:conceptKiTuTiengViet, ex:conceptUnikey,
+    ex:conceptChuyenMaKiTu, ex:conceptTCVN3 .
+
+  ex:topicAcs_lesson4 ex:hasConcept ex:conceptSoHoaHinhAnh, ex:conceptDiemAnh,
+    ex:conceptPixel, ex:conceptDoPhanGiai, ex:conceptHeMauRGB, ex:conceptRoiRacHoaMau,
+    ex:conceptDoSauMau, ex:conceptSoHoaAmThanh, ex:conceptTinHieuAmThanh,
+    ex:conceptDuLieuAnalog, ex:conceptLayMauAmThanh, ex:conceptTocDoLayMau,
+    ex:conceptLuongTuHoa, ex:conceptBieuDienNhiPhanAmThanh, ex:conceptHeMau .
+
+  ex:topicAcs_l1s1 ex:hasConcept ex:conceptPhepToanBit, ex:conceptPhepToanNOT,
+    ex:conceptPhepToanAND, ex:conceptPhepToanOR, ex:conceptPhepToanXOR, ex:conceptDayBit .
+
+  ex:topicAcs_l1s2 ex:hasConcept ex:conceptHeNhiPhan, ex:conceptHeThapPhan,
+    ex:conceptChuyenDoiHeDem, ex:conceptPhepCongNhiPhan, ex:conceptPhepNhanNhiPhan,
+    ex:conceptDiaChiIP .
+
+  ex:topicAcs_l2s1 ex:hasConcept ex:conceptChuyenDoiHeDem, ex:conceptHeNhiPhan, ex:conceptHeThapPhan .
+  ex:topicAcs_l2s2 ex:hasConcept ex:conceptPhepCongNhiPhan, ex:conceptPhepNhanNhiPhan .
+  ex:topicAcs_l2s3 ex:hasConcept ex:conceptSoBu1, ex:conceptSoBu2, ex:conceptPhepToanNOT .
+  ex:topicAcs_l2s4 ex:hasConcept ex:conceptSoBu2, ex:conceptHeNhiPhan .
+
+  ex:topicAcs_l3s1 ex:hasConcept ex:conceptBangMaASCII, ex:conceptASCIIExtended, ex:conceptMaKiTu .
+  ex:topicAcs_l3s2 ex:hasConcept ex:conceptBangMaUnicode, ex:conceptKiTuTiengViet .
+  ex:topicAcs_l3s3 ex:hasConcept ex:conceptMaKiTu, ex:conceptBoKiTu, ex:conceptMaNhiPhan,
+    ex:conceptDiemMaUnicode, ex:conceptUTF8, ex:conceptUTF16, ex:conceptUTF32 .
+  ex:topicAcs_l3s4 ex:hasConcept ex:conceptVanBanThuanChu, ex:conceptDuLieuVanBan, ex:conceptSoHoaVanBan .
+  ex:topicAcs_l3s5 ex:hasConcept ex:conceptKiTuTiengViet, ex:conceptUnikey, ex:conceptChuyenMaKiTu,
+    ex:conceptTCVN3, ex:conceptBangMaUnicode .
+
+  ex:topicAcs_l4s1 ex:hasConcept ex:conceptSoHoaHinhAnh, ex:conceptDiemAnh, ex:conceptPixel,
+    ex:conceptDoPhanGiai, ex:conceptHeMauRGB, ex:conceptRoiRacHoaMau, ex:conceptDoSauMau .
+  ex:topicAcs_l4s2 ex:hasConcept ex:conceptSoHoaAmThanh, ex:conceptTinHieuAmThanh,
+    ex:conceptDuLieuAnalog, ex:conceptLayMauAmThanh, ex:conceptTocDoLayMau,
+    ex:conceptLuongTuHoa, ex:conceptBieuDienNhiPhanAmThanh .
+
+  ###########################################################################
+  # Learning objectives and summary boxes
+  ###########################################################################
+
+  ex:topicAcs_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề A^CS"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Hiểu và thực hiện được các phép toán cơ bản NOT, AND, OR và XOR theo từng bit và cho các dãy bit. Biết hệ nhị phân là gì. Chuyển đổi được số đếm hệ nhị phân sang giá trị thập phân và ngược lại. Biết được các phép toán bit là cơ sở để thực hiện các tính toán số học nhị phân. Giải thích được ứng dụng của hệ nhị phân trong tin học."@vi ;
+    ex:appearsOnPage ex:page132 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 .
+
+  ex:topicAcs_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề A^CS"@vi ;
+    ex:hasSummaryText "Các tên gọi phép toán bit NOT, AND, OR và XOR nói lên kết quả thực hiện phép toán. Hệ nhị phân biểu diễn các số bằng dãy bit và tính toán bằng các phép toán bit. Hệ nhị phân là cơ sở để máy tính thực hiện tính toán."@vi ;
+    ex:appearsOnPage ex:page136 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 .
+
+  ex:topicAcs_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề A^CS"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Thực hiện được các phép toán bit NOT, AND, OR và XOR theo từng bit và cho dãy bit. Thực hiện được các phép toán cộng và nhân hai số nhị phân. Viết được số bù 1, số bù 2 của một số nguyên nhị phân và biết được số bù 2 là số đối của số nguyên nhị phân."@vi ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 .
+
+  ex:topicAcs_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề A^CS"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Biết một số bảng mã kí tự như ASCII, ASCII mở rộng, bảng mã chuẩn quốc tế Unicode là gì và chức năng của chúng. Biết được dữ liệu văn bản chứa thông tin về các kí tự kèm màu sắc, kiểu dáng, định dạng. Biết vài khía cạnh lịch sử liên quan đến văn bản tiếng Việt trong máy tính."@vi ;
+    ex:appearsOnPage ex:page139 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 .
+
+  ex:topicAcs_l3_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 3 chủ đề A^CS"@vi ;
+    ex:hasSummaryText "Bảng mã kí tự ASCII mở rộng gồm 256 kí tự; mã kí tự ASCII chính là số thứ tự của kí tự trong bảng. Bảng mã chuẩn quốc tế Unicode được thiết kế với mục đích thống nhất mã kí tự để máy tính có thể viết chữ của rất nhiều ngôn ngữ khác nhau trên thế giới. Dữ liệu văn bản trong máy tính là dãy bit biểu diễn các kí tự cùng các thông tin định dạng."@vi ;
+    ex:appearsOnPage ex:page142 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 .
+
+  ex:topicAcs_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề A^CS"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Giải thích được sơ lược cách số hoá hình ảnh. Giải thích được sơ lược cách số hoá âm thanh."@vi ;
+    ex:appearsOnPage ex:page143 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 .
+
+  ex:topicAcs_l4_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 4 chủ đề A^CS"@vi ;
+    ex:hasSummaryText "Số hoá hình ảnh bằng cách chia hình ảnh thành nhiều ô vuông rất nhỏ và cho tương ứng mỗi ô với mã nhị phân của màu trong ô đó. Số hoá tín hiệu âm thanh bằng cách chia thành nhiều mẫu thời gian rất ngắn và cho tương ứng mỗi mẫu với dãy bit biểu diễn biên độ."@vi ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 .
+
+  ex:topicAcs_lesson1 ex:hasSummary ex:topicAcs_l1_summary .
+  ex:topicAcs_lesson3 ex:hasSummary ex:topicAcs_l3_summary .
+  ex:topicAcs_lesson4 ex:hasSummary ex:topicAcs_l4_summary .
+
+  ###########################################################################
+  # Figures and tables
+  ###########################################################################
+
+  ex:topicAcs_fig_decimalToBinary13 a ex:Diagram ;
+    rdfs:label "Minh hoạ chuyển số 13 hệ thập phân sang hệ nhị phân"@vi ;
+    ex:hasCaption "Minh hoạ chuyển số 13 hệ thập phân sang hệ nhị phân"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:page134 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptChuyenDoiHeDem .
+
+  ex:topicAcs_fig_unicodeVietNam a ex:Figure ;
+    rdfs:label "Hình 1. Các điểm mã Unicode trong từ Việt Nam"@vi ;
+    ex:hasCaption "Hình 1. Các điểm mã Unicode trong từ “Việt Nam”"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:page140 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDiemMaUnicode .
+
+  ex:topicAcs_fig_unikeyConverter a ex:Figure ;
+    rdfs:label "Hình 2. Công cụ chuyển đổi mã kí tự tiếng Việt trong bộ gõ UniKey"@vi ;
+    ex:hasCaption "Hình 2. Công cụ chuyển đổi mã kí tự tiếng Việt trong bộ gõ UniKey"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:page142 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptUnikey, ex:conceptChuyenMaKiTu .
+
+  ex:topicAcs_fig_pixelsImage a ex:Figure ;
+    rdfs:label "Hình 1. Các pixel tạo thành một bức ảnh"@vi ;
+    ex:hasCaption "Hình 1. Các pixel tạo thành một bức ảnh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:page143 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPixel, ex:conceptDiemAnh .
+
+  ex:topicAcs_fig_soundWave a ex:Figure ;
+    rdfs:label "Hình 2. Sóng âm thanh"@vi ;
+    ex:hasCaption "Hình 2. Sóng âm thanh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:page144 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTinHieuAmThanh .
+
+  ex:topicAcs_fig_soundSampling a ex:Diagram ;
+    rdfs:label "Hình 3. Sóng âm thanh và lấy mẫu theo thời gian"@vi ;
+    ex:hasCaption "Hình 3. Sóng âm thanh và lấy mẫu theo thời gian"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:page145 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLayMauAmThanh .
+
+  ex:page134 ex:hasFigure ex:topicAcs_fig_decimalToBinary13 .
+  ex:page140 ex:hasFigure ex:topicAcs_fig_unicodeVietNam .
+  ex:page142 ex:hasFigure ex:topicAcs_fig_unikeyConverter .
+  ex:page143 ex:hasFigure ex:topicAcs_fig_pixelsImage .
+  ex:page144 ex:hasFigure ex:topicAcs_fig_soundWave .
+  ex:page145 ex:hasFigure ex:topicAcs_fig_soundSampling .
+
+  ex:topicAcs_fig_decimalToBinary13 ex:nextFigure ex:topicAcs_fig_unicodeVietNam .
+  ex:topicAcs_fig_unicodeVietNam ex:previousFigure ex:topicAcs_fig_decimalToBinary13 ;
+    ex:nextFigure ex:topicAcs_fig_unikeyConverter .
+  ex:topicAcs_fig_unikeyConverter ex:previousFigure ex:topicAcs_fig_unicodeVietNam ;
+    ex:nextFigure ex:topicAcs_fig_pixelsImage .
+  ex:topicAcs_fig_pixelsImage ex:previousFigure ex:topicAcs_fig_unikeyConverter ;
+    ex:nextFigure ex:topicAcs_fig_soundWave .
+  ex:topicAcs_fig_soundWave ex:previousFigure ex:topicAcs_fig_pixelsImage ;
+    ex:nextFigure ex:topicAcs_fig_soundSampling .
+  ex:topicAcs_fig_soundSampling ex:previousFigure ex:topicAcs_fig_soundWave .
+
+  ex:topicAcs_table_not a ex:Table ;
+    rdfs:label "Bảng phép toán NOT"@vi ;
+    ex:hasCaption "Bảng phép toán NOT"@vi ;
+    ex:hasRawText "x = 0 thì NOT x = 1; x = 1 thì NOT x = 0."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:page132 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhepToanNOT .
+
+  ex:topicAcs_table_and a ex:Table ;
+    rdfs:label "Bảng phép toán AND"@vi ;
+    ex:hasCaption "Bảng phép toán AND"@vi ;
+    ex:hasRawText "0 AND 0 = 0; 0 AND 1 = 0; 1 AND 0 = 0; 1 AND 1 = 1."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 2 ;
+    ex:appearsOnPage ex:page133 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhepToanAND .
+
+  ex:topicAcs_table_orXor a ex:Table ;
+    rdfs:label "Bảng phép toán OR và XOR"@vi ;
+    ex:hasCaption "Bảng phép toán OR và XOR"@vi ;
+    ex:hasRawText "0 OR 0 = 0; 0 OR 1 = 1; 1 OR 0 = 1; 1 OR 1 = 1. 0 XOR 0 = 0; 0 XOR 1 = 1; 1 XOR 0 = 1; 1 XOR 1 = 0."@vi ;
+    ex:tableOrderOnPage 2 ;
+    ex:globalTableOrder 3 ;
+    ex:appearsOnPage ex:page133 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhepToanOR, ex:conceptPhepToanXOR .
+
+  ex:topicAcs_table_bitOperationExamples a ex:Table ;
+    rdfs:label "Ví dụ phép toán bit với dãy bit"@vi ;
+    ex:hasCaption "Các ví dụ minh hoạ phép toán NOT, AND, OR, XOR với dãy bit"@vi ;
+    ex:hasRawText "Với x = 10101011, NOT x = 01010100. Với x = 10101011 và y = 10011001, x AND y = 10001001, x OR y = 10111011, x XOR y = 00110010."@vi ;
+    ex:tableOrderOnPage 3 ;
+    ex:globalTableOrder 4 ;
+    ex:appearsOnPage ex:page133 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDayBit, ex:conceptPhepToanBit .
+
+  ex:topicAcs_table_binaryAdditionBase a ex:Table ;
+    rdfs:label "Bảng cộng cơ sở"@vi ;
+    ex:hasCaption "Bảng cộng cơ sở"@vi ;
+    ex:hasRawText "0 + 0 = 0; 0 + 1 = 1; 1 + 0 = 1; 1 + 1 = 10."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 5 ;
+    ex:appearsOnPage ex:page135 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhepCongNhiPhan .
+
+  ex:topicAcs_table_binaryMultiplicationBase a ex:Table ;
+    rdfs:label "Bảng nhân cơ sở"@vi ;
+    ex:hasCaption "Bảng nhân cơ sở"@vi ;
+    ex:hasRawText "0 * 0 = 0; 0 * 1 = 0; 1 * 0 = 0; 1 * 1 = 1."@vi ;
+    ex:tableOrderOnPage 2 ;
+    ex:globalTableOrder 6 ;
+    ex:appearsOnPage ex:page135 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhepNhanNhiPhan .
+
+  ex:topicAcs_table_practiceDecimalToBinary a ex:Table ;
+    rdfs:label "Bảng thực hành chuyển đổi số thập phân sang nhị phân"@vi ;
+    ex:hasCaption "Bảng hướng dẫn chuyển số 44 ở hệ thập phân thành số ở hệ nhị phân"@vi ;
+    ex:hasRawText "Bước 1 chuyển số 4 sang dạng nhị phân, gợi ý 4 = 2^2. Bước 2 chuyển số 8 sang dạng nhị phân, gợi ý 8 = 2^3. Bước 3 chuyển số 32 sang dạng nhị phân, gợi ý 32 = 2^5. Bước 4 cộng ba số cùng cột ở hệ nhị phân."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 7 ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptChuyenDoiHeDem .
+
+  ex:topicAcs_table_practiceBinaryOperations a ex:Table ;
+    rdfs:label "Mẫu bảng cộng và nhân hai số nhị phân"@vi ;
+    ex:hasCaption "Mẫu bảng cộng và nhân hai số nhị phân"@vi ;
+    ex:hasRawText "Mẫu bảng gồm các hàng x, y, x + y, x * y để học sinh điền hai số nhị phân và kết quả phép cộng, phép nhân."@vi ;
+    ex:tableOrderOnPage 2 ;
+    ex:globalTableOrder 8 ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhepCongNhiPhan, ex:conceptPhepNhanNhiPhan .
+
+  ex:topicAcs_table_colorExamples a ex:Table ;
+    rdfs:label "Bảng ví dụ hệ màu RGB"@vi ;
+    ex:hasCaption "Ví dụ hệ màu RGB"@vi ;
+    ex:hasRawText "Một số màu trong hệ RGB: (255,0,0) đỏ; (0,255,0) xanh lục; (0,0,255) xanh lam; (255,255,0) vàng; (0,255,255) xanh trà; (255,0,255) cánh sen; (0,0,0) đen; (255,255,255) trắng; (100,100,100) xám; (128,0,0) hạt dẻ; (128,128,0) ô liu; (128,0,128) tím."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 9 ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_extra_colorSystem ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptHeMauRGB, ex:conceptHeMau .
+
+  ex:page132 ex:hasTable ex:topicAcs_table_not .
+  ex:page133 ex:hasTable ex:topicAcs_table_and, ex:topicAcs_table_orXor, ex:topicAcs_table_bitOperationExamples .
+  ex:page135 ex:hasTable ex:topicAcs_table_binaryAdditionBase, ex:topicAcs_table_binaryMultiplicationBase .
+  ex:page137 ex:hasTable ex:topicAcs_table_practiceDecimalToBinary, ex:topicAcs_table_practiceBinaryOperations .
+  ex:page146 ex:hasTable ex:topicAcs_table_colorExamples .
+
+  ex:topicAcs_table_not ex:nextTable ex:topicAcs_table_and .
+  ex:topicAcs_table_and ex:previousTable ex:topicAcs_table_not ; ex:nextTable ex:topicAcs_table_orXor .
+  ex:topicAcs_table_orXor ex:previousTable ex:topicAcs_table_and ; ex:nextTable ex:topicAcs_table_bitOperationExamples .
+  ex:topicAcs_table_bitOperationExamples ex:previousTable ex:topicAcs_table_orXor ; ex:nextTable ex:topicAcs_table_binaryAdditionBase .
+  ex:topicAcs_table_binaryAdditionBase ex:previousTable ex:topicAcs_table_bitOperationExamples ; ex:nextTable ex:topicAcs_table_binaryMultiplicationBase .
+  ex:topicAcs_table_binaryMultiplicationBase ex:previousTable ex:topicAcs_table_binaryAdditionBase ; ex:nextTable ex:topicAcs_table_practiceDecimalToBinary .
+  ex:topicAcs_table_practiceDecimalToBinary ex:previousTable ex:topicAcs_table_binaryMultiplicationBase ; ex:nextTable ex:topicAcs_table_practiceBinaryOperations .
+  ex:topicAcs_table_practiceBinaryOperations ex:previousTable ex:topicAcs_table_practiceDecimalToBinary ; ex:nextTable ex:topicAcs_table_colorExamples .
+  ex:topicAcs_table_colorExamples ex:previousTable ex:topicAcs_table_practiceBinaryOperations .
+
+  ###########################################################################
+  # Definitions / glossary / note boxes
+  ###########################################################################
+
+  ex:topicAcs_def_bitOperation a ex:DefinitionText ;
+    rdfs:label "Định nghĩa phép toán bit"@vi ;
+    ex:hasDefinitionText "Mọi dữ liệu trong máy tính đều đã số hoá tức là có dạng dãy các bit. Mọi thao tác xử lí dữ liệu cuối cùng đều dẫn đến xử lí các bit. Các phép toán bit là nền tảng hoạt động của máy tính."@vi ;
+    ex:appearsOnPage ex:page132 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepToanBit .
+
+  ex:topicAcs_def_binarySystem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa hệ nhị phân"@vi ;
+    ex:hasDefinitionText "Số nhị phân là cách biểu diễn số trong hệ nhị phân, hệ đếm cơ số 2. Hệ nhị phân chỉ dùng hai kí số 0 và 1. Mỗi số nhị phân đều là một dãy bit."@vi ;
+    ex:appearsOnPage ex:page134 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptHeNhiPhan .
+
+  ex:topicAcs_note_binaryBase2 a ex:NoteBox ;
+    rdfs:label "Ghi nhớ hệ nhị phân"@vi ;
+    ex:hasRawText "Hệ nhị phân hay hệ đếm cơ số 2 chỉ dùng hai kí số 0 và 1, giá trị của kí số tăng gấp 2 lần khi dịch sang trái một vị trí cột."@vi ;
+    ex:appearsOnPage ex:page134 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 .
+
+  ex:topicAcs_def_ascii a ex:DefinitionText ;
+    rdfs:label "Định nghĩa bảng mã ASCII"@vi ;
+    ex:hasDefinitionText "ASCII là bộ mã chuẩn của Mỹ để trao đổi thông tin. Bảng mã ASCII chứa mã nhị phân của bộ chữ cái dùng trong tiếng Anh và một số kí hiệu khác. Mã ASCII của một kí tự là dãy 7 bit, có thể biểu diễn 128 kí tự khác nhau."@vi ;
+    ex:appearsOnPage ex:page139 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptBangMaASCII .
+
+  ex:topicAcs_def_unicode a ex:DefinitionText ;
+    rdfs:label "Định nghĩa bảng mã Unicode"@vi ;
+    ex:hasDefinitionText "Bảng mã Unicode được thiết kế với mục đích thống nhất chung việc mã hoá các kí tự cho tất cả các ngôn ngữ khác nhau trên thế giới. Unicode được sử dụng ngày càng phổ biến."@vi ;
+    ex:appearsOnPage ex:page140 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptBangMaUnicode .
+
+  ex:topicAcs_def_utf8 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa UTF-8"@vi ;
+    ex:hasDefinitionText "UTF-8 là cách mã hoá có khả năng mã hoá tất cả các điểm mã kí tự hợp lệ trong Unicode bằng cách sử dụng từ một đến bốn đơn vị mã một byte. UTF-8 được thiết kế tương thích lùi với ASCII."@vi ;
+    ex:appearsOnPage ex:page140 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptUTF8 .
+
+  ex:topicAcs_def_plainText a ex:DefinitionText ;
+    rdfs:label "Định nghĩa văn bản thuần chữ"@vi ;
+    ex:hasDefinitionText "Văn bản thuần chữ chỉ gồm các kí tự gõ nhập từ bàn phím khi soạn thảo văn bản. Văn bản thuần chữ lưu trữ các kí tự xếp liên tiếp từ trái sang phải, từ trên xuống dưới. Mỗi kí tự là một dãy bit."@vi ;
+    ex:appearsOnPage ex:page141 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptVanBanThuanChu .
+
+  ex:topicAcs_def_textData a ex:DefinitionText ;
+    rdfs:label "Định nghĩa dữ liệu văn bản"@vi ;
+    ex:hasDefinitionText "Dữ liệu văn bản trong máy tính là một dãy bit biểu diễn các kí tự có kiểu dáng, màu sắc và các thông tin định dạng khác."@vi ;
+    ex:appearsOnPage ex:page141 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptDuLieuVanBan .
+
+  ex:topicAcs_def_pixel a ex:DefinitionText ;
+    rdfs:label "Định nghĩa pixel"@vi ;
+    ex:hasDefinitionText "Có thể coi một phần tử ảnh là một ô vuông đồng màu duy nhất; thuật ngữ tin học là pixel, cũng là điểm ảnh theo cách nói thông dụng hằng ngày."@vi ;
+    ex:appearsOnPage ex:page143 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptPixel .
+
+  ex:topicAcs_def_rgb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa hệ màu RGB"@vi ;
+    ex:hasDefinitionText "Hệ màu RGB gồm ba màu cơ sở đỏ, xanh lục, xanh lam. Mỗi màu cơ sở được biểu diễn bằng một byte, giá trị từ 0 đến 255. Một bộ ba byte thể hiện một màu sắc cụ thể."@vi ;
+    ex:appearsOnPage ex:page144 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptHeMauRGB .
+
+  ex:topicAcs_note_colorDiscretization a ex:NoteBox ;
+    rdfs:label "Ghi nhớ rời rạc hoá màu và độ sâu màu"@vi ;
+    ex:hasRawText "Rời rạc hoá màu là cho tương ứng mỗi màu với một dãy bit nhất định gọi là mã nhị phân của màu. Độ sâu màu là độ dài dãy bit để rời rạc hoá màu."@vi ;
+    ex:appearsOnPage ex:page144 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 .
+
+  ex:topicAcs_def_samplingRate a ex:DefinitionText ;
+    rdfs:label "Định nghĩa tốc độ lấy mẫu"@vi ;
+    ex:hasDefinitionText "Số mẫu lấy được trong một giây gọi là tốc độ lấy mẫu, đo bằng hertz hoặc số mẫu trên giây."@vi ;
+    ex:appearsOnPage ex:page145 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptTocDoLayMau .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:topicAcs_p132_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1. Hệ nhị phân và ứng dụng. Bài học đặt vấn đề: máy tính tính toán với các bit, các toán hạng là bit và kết quả cũng là bit; học sinh lựa chọn kết quả phép cộng hai bit 1 + 1 và phép nhân hai bit 1 * 1."@vi ;
+    ex:appearsOnPage ex:page132 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s1 .
+
+  ex:topicAcs_p132_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Mọi dữ liệu trong máy tính đều đã số hoá tức là có dạng dãy các bit. Mọi thao tác xử lí dữ liệu cuối cùng đều dẫn đến xử lí các bit. Các phép toán bit là nền tảng hoạt động của máy tính. Bốn phép toán bit cơ sở là NOT, AND, OR và XOR."@vi ;
+    ex:appearsOnPage ex:page132 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s1 .
+
+  ex:topicAcs_p132_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Phép toán NOT là phép toán có một toán hạng. NOT cho kết quả trái ngược với đầu vào. Ba phép toán còn lại AND, OR và XOR có hai toán hạng."@vi ;
+    ex:appearsOnPage ex:page132 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s1 .
+
+  ex:topicAcs_p133_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phép toán AND còn gọi là phép nhân logic. AND cho kết quả là 1 khi và chỉ khi cả hai bit toán hạng đều là 1; bằng 0 trong những trường hợp còn lại."@vi ;
+    ex:appearsOnPage ex:page133 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s1 .
+
+  ex:topicAcs_p133_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phép toán OR còn gọi là phép cộng logic. Phép toán XOR là viết tắt của eXclusive OR, nghĩa là phép OR loại trừ. OR cho kết quả là 0 khi và chỉ khi cả hai bit toán hạng đều là 0. XOR cho kết quả là 1 khi và chỉ khi hai bit toán hạng trái ngược nhau."@vi ;
+    ex:appearsOnPage ex:page133 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s1 .
+
+  ex:topicAcs_p133_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Với các phép toán bit cho dãy bit, phép toán một toán hạng NOT được thực hiện với từng bit trong dãy. Các phép toán hai toán hạng AND, OR và XOR được thực hiện với từng cặp bit từ hai toán hạng đóng cột tương ứng với nhau; các dãy bit có cùng độ dài."@vi ;
+    ex:appearsOnPage ex:page133 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s1 .
+
+  ex:topicAcs_p134_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Số tự nhiên quen thuộc là cách biểu diễn số trong hệ thập phân. Số nhị phân là cách biểu diễn số trong hệ nhị phân, hệ đếm cơ số 2. Hệ nhị phân chỉ dùng hai kí số 0 và 1; giá trị của kí số tăng gấp 2 lần khi dịch sang trái một vị trí cột."@vi ;
+    ex:appearsOnPage ex:page134 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s2 .
+
+  ex:topicAcs_p134_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Ví dụ 101101 cơ số 2 được chuyển sang hệ thập phân bằng tổng 1 * 2^5 + 0 * 2^4 + 1 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 45 cơ số 10."@vi ;
+    ex:appearsOnPage ex:page134 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s2 .
+
+  ex:topicAcs_p134_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Để chuyển một số nguyên dương ở hệ thập phân sang hệ nhị phân, có thể chia liên tiếp cho 2, ghi lại các phần dư 0 hoặc 1 cho đến khi phần nguyên của kết quả bằng 0; dãy phần dư tạo thành số nhị phân cần tìm."@vi ;
+    ex:appearsOnPage ex:page134 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s2 .
+
+  ex:topicAcs_p135_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Các phép toán số học với các số trong hệ nhị phân được thực hiện theo quy tắc tương tự trong hệ thập phân. Phép cộng hai số trong hệ nhị phân dùng bảng cộng cơ sở; khi cộng 1 và 1 thì viết 0, nhớ 1 sang cột bên trái."@vi ;
+    ex:appearsOnPage ex:page135 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s2 .
+
+  ex:topicAcs_p135_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bảng cộng cơ sở giống với phép toán XOR, nhưng trường hợp cả hai toán hạng đều bằng 1 thì kết quả là viết 0 nhớ 1. Bảng nhân cơ sở giống với phép toán AND."@vi ;
+    ex:appearsOnPage ex:page135 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s2 .
+
+  ex:topicAcs_p135_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Hệ nhị phân chỉ dùng hai kí số là 0 và 1. Các số trong hệ nhị phân đều biểu diễn được bằng dãy bit. Ban đầu máy tính điện tử ra đời là để tính toán số học với tốc độ rất nhanh. Máy tính biểu diễn các số trong hệ nhị phân và thực hiện các phép tính số học nhị phân dựa trên cơ sở các phép toán bit."@vi ;
+    ex:appearsOnPage ex:page135 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s2 .
+
+  ex:topicAcs_p136_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhờ có hệ nhị phân mà máy tính có thể tính toán, xử lí thông tin định lượng tương tự như con người dùng hệ thập phân. Việc dễ dàng thể hiện một dãy bit về mặt vật lí làm nên sức mạnh của hệ nhị phân."@vi ;
+    ex:appearsOnPage ex:page136 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s2 .
+
+  ex:topicAcs_p136_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài học luyện tập gồm chuyển đổi số nhị phân sang hệ thập phân, chuyển đổi và tính toán cộng hoặc nhân trong hệ nhị phân, kiểm tra địa chỉ IPv4 viết dạng bốn số thập phân, và câu hỏi về phép toán AND, OR, XOR, NOT."@vi ;
+    ex:appearsOnPage ex:page136 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:belongsToSection ex:topicAcs_l1s2 .
+
+  ex:topicAcs_p137_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 2. Thực hành về các phép toán bit và hệ nhị phân. Bài 1 yêu cầu chuyển đổi biểu diễn số ở hệ thập phân sang hệ nhị phân, cụ thể chuyển số 44 thành số ở hệ nhị phân theo từng bước gợi ý."@vi ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:belongsToSection ex:topicAcs_l2s1 .
+
+  ex:topicAcs_p137_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài 2 yêu cầu thực hiện phép cộng và phép nhân hai số nhị phân, tạo ít nhất ba bảng theo mẫu gồm x, y, x + y và x * y; các số nhị phân tự chọn có độ dài không ít hơn 3 bit."@vi ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:belongsToSection ex:topicAcs_l2s2 .
+
+  ex:topicAcs_p137_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Bài 3 yêu cầu tính số bù của một số nhị phân. Với số nhị phân x, kết quả của phép toán NOT x kí hiệu là x gạch trên, gọi là số bù 1 của x. Kết quả của x gạch trên cộng 1 gọi là số bù 2 của x."@vi ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:belongsToSection ex:topicAcs_l2s3 .
+
+  ex:topicAcs_p138_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 4 yêu cầu khám phá ý nghĩa của số bù của một số nhị phân bằng cách cộng số nhị phân x có giá trị thập phân là 44 với số bù 2 của x, với quy ước độ dài dãy bit biểu diễn số nguyên trong máy là 1 byte."@vi ;
+    ex:appearsOnPage ex:page138 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:belongsToSection ex:topicAcs_l2s4 .
+
+  ex:topicAcs_p138_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài vận dụng nêu tình huống một bài kiểm tra môn Tin học gồm 10 câu hỏi trắc nghiệm đúng - sai. Đáp án được biểu diễn bằng dãy 10 bit và trả lời của thí sinh được biểu diễn bằng dãy 10 bit; học sinh dùng phép toán bit để tạo dãy 10 bit kết quả và tính điểm."@vi ;
+    ex:appearsOnPage ex:page138 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:belongsToSection ex:topicAcs_l2s4 .
+
+  ex:topicAcs_p138_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Bài tìm hiểu thêm giới thiệu hệ đếm cơ số 8 và hệ đếm cơ số 16. Hệ đếm cơ số 8 dùng các kí số 0 đến 7; hệ đếm cơ số 16 dùng các kí số 0 đến 9 và các chữ A, B, C, D, E, F tương ứng với 10 đến 15."@vi ;
+    ex:appearsOnPage ex:page138 ;
+    ex:belongsToLesson ex:topicAcs_extra_octHex .
+
+  ex:topicAcs_p139_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 3. Số hoá văn bản. Bài học đặt vấn đề: trang văn bản có thể có nhiều chữ số, học sinh cho biết các kí tự là chữ số thập phân từ 0 đến 9 được số hoá, chuyển thành dãy bit như thế nào."@vi ;
+    ex:appearsOnPage ex:page139 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s1 .
+
+  ex:topicAcs_p139_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Trong máy tính mỗi kí tự được biểu diễn bằng một dãy bit. Dãy bit này được gọi là mã nhị phân của kí tự. Để thống nhất cần có quy định chung. Một trong số các quy định đầu tiên còn dùng đến ngày nay là bảng mã ASCII."@vi ;
+    ex:appearsOnPage ex:page139 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s1 .
+
+  ex:topicAcs_p139_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "ASCII là bộ mã chuẩn của Mỹ để trao đổi thông tin, chứa mã nhị phân của bộ chữ cái dùng trong tiếng Anh và một số kí hiệu khác. Mã ASCII của một kí tự là dãy 7 bit, có thể biểu diễn 128 kí tự khác nhau; người ta gọi những kí tự in ra màn hình là kí tự in và những kí tự không in ra màn hình là kí tự điều khiển."@vi ;
+    ex:appearsOnPage ex:page139 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s1 .
+
+  ex:topicAcs_p139_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Sự phát triển của máy tính và Internet vượt ra ngoài nước Mỹ làm xuất hiện nhu cầu mã hoá các kí tự trong nhiều ngôn ngữ khác chưa có trong bảng mã ASCII. Người ta mở rộng ASCII bằng cách dùng mã nhị phân dài 8 bit để biểu diễn thêm 128 kí tự nữa."@vi ;
+    ex:appearsOnPage ex:page139 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s1 .
+
+  ex:topicAcs_p140_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bảng mã ASCII dù đã mở rộng vẫn chưa có các kí tự của nhiều ngôn ngữ khác như Ả Rập, Hindi, Thái hoặc các kí tự tượng hình như chữ Hán, chữ Nhật hoặc chữ Nôm cổ của nước ta."@vi ;
+    ex:appearsOnPage ex:page140 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s2 .
+
+  ex:topicAcs_p140_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bảng mã Unicode được thiết kế để thống nhất chung việc mã hoá các kí tự cho tất cả các ngôn ngữ khác nhau trên thế giới. Chữ Nôm cổ của nước ta cũng có trong bảng mã này."@vi ;
+    ex:appearsOnPage ex:page140 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s2 .
+
+  ex:topicAcs_p140_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Con đường đi từ các kí tự đến mã nhị phân của nó được chia làm hai bước. Bước thứ nhất cho tương ứng mỗi kí tự với một mã kí tự duy nhất, là một dãy kí số. Ý tưởng của Unicode là gán một điểm mã duy nhất cho mỗi kí tự, kí hiệu, biểu tượng được dùng trong các ngôn ngữ khác nhau trên thế giới."@vi ;
+    ex:appearsOnPage ex:page140 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s3 .
+
+  ex:topicAcs_p140_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Bước thứ hai chuyển từ mã kí tự thành dãy bit để máy tính xử lí được, gọi là mã hoá. Các bộ kí tự UTF-8, UTF-16, UTF-32 là các thực thi khác nhau chuyển mã kí tự Unicode thành mã nhị phân. UTF-8 được thiết kế tương thích lùi với ASCII."@vi ;
+    ex:appearsOnPage ex:page140 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s3 .
+
+  ex:topicAcs_p141_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Dữ liệu văn bản được hiểu là văn bản chữ, không chứa hình ảnh, âm thanh. Khi muốn thêm hình ảnh vào một văn bản đang soạn thảo, phải thực hiện thao tác chèn, lấy một tệp hình ảnh đã có trước ở nơi khác."@vi ;
+    ex:appearsOnPage ex:page141 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s4 .
+
+  ex:topicAcs_p141_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Văn bản thuần chữ chỉ gồm các kí tự gõ nhập từ bàn phím khi soạn thảo văn bản. Văn bản thuần chữ lưu trữ các kí tự xếp liên tiếp từ trái sang phải, từ trên xuống dưới; mỗi kí tự là một dãy bit."@vi ;
+    ex:appearsOnPage ex:page141 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s4 .
+
+  ex:topicAcs_p141_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Khi mở một văn bản trong trình soạn thảo không phải Notepad, ví dụ trong Word, ta thấy các kí tự có thể có nhiều kiểu dáng, màu chữ; các đoạn trong văn bản có thể được định dạng khác nhau. Ngoài mã nhị phân của các kí tự, trình soạn thảo văn bản phải ghi lưu các thông tin kiểu dáng, màu sắc, định dạng."@vi ;
+    ex:appearsOnPage ex:page141 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s4 .
+
+  ex:topicAcs_p141_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Bộ kí tự tiếng Việt dựa trên các chữ cái Latin, phần lớn đã có trong bộ kí tự ASCII. Tuy nhiên, một số kí tự biến thể cộng thêm dấu thanh không có trong đó, nên thời kì trước đây có nhiều cách làm mã kí tự khác nhau, không nhất quán, gây lộn xộn và không tương thích. Hiện nay tiêu chuẩn Việt Nam đã thống nhất dùng bảng mã kí tự Unicode."@vi ;
+    ex:appearsOnPage ex:page141 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s5 .
+
+  ex:topicAcs_p142_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "TCVN3 là bảng mã tiêu chuẩn cũ của Việt Nam. Nhiều văn bản cũ theo tiêu chuẩn này vẫn còn được lưu trữ và sử dụng. Để nhận thấy phải dùng các phông chữ có .Vn đứng đầu mới đọc được. Thậm chí có những văn bản gồm lẫn lộn cả các đoạn dùng phông chữ của bảng mã tiêu chuẩn cũ và các đoạn dùng phông chữ Unicode."@vi ;
+    ex:appearsOnPage ex:page142 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s5 .
+
+  ex:topicAcs_p142_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bộ gõ tiếng Việt UniKey phổ biến hiện nay có công cụ để chuyển đổi các văn bản theo tiêu chuẩn cũ sang đúng mã Unicode để phù hợp với tiêu chuẩn mới. Bài học yêu cầu tìm hiểu công cụ chuyển mã trong UniKey và trả lời các câu hỏi về ASCII, Unicode và văn bản tiếng Việt."@vi ;
+    ex:appearsOnPage ex:page142 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:belongsToSection ex:topicAcs_l3s5 .
+
+  ex:topicAcs_p143_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 4. Số hoá hình ảnh và số hoá âm thanh. Bài học đặt vấn đề: học sinh tìm trên Internet các hình minh hoạ ảnh độ phân giải thấp bằng từ khoá low resolution images và dự đoán điều xảy ra nếu mở ảnh và phóng to lên mãi."@vi ;
+    ex:appearsOnPage ex:page143 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s1 .
+
+  ex:topicAcs_p143_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Người ta dùng lưới ô vuông để chia một hình ảnh thành nhiều ô vuông rất nhỏ, mỗi ô vuông gọi là một phần tử ảnh. Hình ảnh gồm nhiều phần tử ảnh là các ô vuông rất nhỏ xếp lần lượt từ trái sang phải, từ trên xuống dưới. Có thể coi một phần tử ảnh là một ô vuông đồng màu duy nhất, gọi là pixel hay điểm ảnh."@vi ;
+    ex:appearsOnPage ex:page143 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s1 .
+
+  ex:topicAcs_p143_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Một bức ảnh kĩ thuật số có thể được tạo nên từ hàng triệu điểm ảnh. Độ phân giải điểm ảnh thể hiện bằng cặp hai số đếm điểm ảnh theo chiều ngang và theo chiều cao; tích hai số này là tổng số điểm ảnh làm nên hình ảnh. Khi phóng to ảnh quá mức so với kích thước ban đầu, nhất là ảnh độ phân giải thấp, có thể xảy ra hiện tượng vỡ ảnh."@vi ;
+    ex:appearsOnPage ex:page143 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s1 .
+
+  ex:topicAcs_p144_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Hệ màu RGB dựa trên ba màu cơ sở đỏ, xanh lục, xanh lam. R là Red, G là Green, B là Blue. Hệ màu RGB dành một byte để thể hiện cường độ của mỗi màu trong tổ hợp, với giá trị từ 0 đến 255. Một bộ ba byte thể hiện một màu sắc cụ thể."@vi ;
+    ex:appearsOnPage ex:page144 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s1 .
+
+  ex:topicAcs_p144_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Theo định nghĩa, mỗi điểm ảnh có diện tích rất nhỏ, có thể coi mỗi điểm ảnh là một ô vuông đồng màu. Sau khi rời rạc hoá hình ảnh, sắp xếp mã nhị phân màu của các điểm ảnh nối tiếp nhau từ trái sang phải, từ trên xuống dưới, ta nhận được dãy bit biểu diễn ảnh số."@vi ;
+    ex:appearsOnPage ex:page144 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s1 .
+
+  ex:topicAcs_p144_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Tai người nghe được âm thanh là do sóng âm truyền qua môi trường làm rung màng nhĩ. Đồ thị biểu diễn của sóng âm có dạng một đường cong liên tục, lên xuống nhấp nhô. Đồ thị này là dữ liệu dạng tương tự mang thông tin âm thanh."@vi ;
+    ex:appearsOnPage ex:page144 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s2 .
+
+  ex:topicAcs_p145_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Một đoạn âm thanh biến đổi cao độ và cường độ theo thời gian. Đồ thị liên tục dạng hình sóng thể hiện những biến đổi này theo thời gian. Người ta rời rạc hoá đồ thị liên tục dạng hình sóng thành nhiều mẫu rất ngắn nối tiếp nhau theo trục thời gian. Vì mỗi mẫu rất ngắn nên có thể coi biên độ không đổi trong một mẫu."@vi ;
+    ex:appearsOnPage ex:page145 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s2 .
+
+  ex:topicAcs_p145_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Việc lấy mẫu được thực hiện theo những khoảng thời gian cách đều. Số mẫu lấy được trong một giây gọi là tốc độ lấy mẫu, đo bằng hertz hoặc số mẫu trên giây. Giá trị biên độ tại thời điểm lấy mẫu áp dụng cho cả khoảng thời gian."@vi ;
+    ex:appearsOnPage ex:page145 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s2 .
+
+  ex:topicAcs_p145_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Quá trình chuyển đổi giá trị mẫu liên tục thành các giá trị rời rạc được gọi là lượng tử hoá. Có nhiều kĩ thuật lượng tử hoá, trong đó có thể chia giải biên độ tín hiệu thành khoảng cố định bằng nhau và gán mỗi mẫu vào một số hiệu khoảng."@vi ;
+    ex:appearsOnPage ex:page145 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s2 .
+
+  ex:topicAcs_p145_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Biểu diễn số hiệu khoảng thành số nhị phân, xếp các dãy bit liên tục theo thời gian, ta sẽ nhận được dãy bit là dữ liệu âm thanh số."@vi ;
+    ex:appearsOnPage ex:page145 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s2 .
+
+  ex:topicAcs_p146_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài học luyện tập về số hoá hình ảnh và âm thanh gồm câu hỏi về ảnh số là dãy bit rất dài, đơn vị đo tốc độ lấy mẫu, ý nghĩa của hình ảnh HD liên quan đến lưới chia để rời rạc hoá hình ảnh và độ dài dãy bit để rời rạc hoá màu."@vi ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:belongsToSection ex:topicAcs_l4s2 .
+
+  ex:topicAcs_p146_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài tìm hiểu thêm về hệ màu nêu rằng hệ màu được tạo ra để số hoá các màu sắc, cho tương ứng mỗi màu với một mẫu bit. Hệ màu RGB định nghĩa mã màu RGB với các ví dụ như đỏ, xanh lục, xanh lam, vàng, xanh trà, cánh sen, đen, trắng, xám, hạt dẻ, ô liu và tím."@vi ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_extra_colorSystem .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:page132 ex:hasParagraph ex:topicAcs_p132_01, ex:topicAcs_p132_02, ex:topicAcs_p132_03 .
+  ex:page133 ex:hasParagraph ex:topicAcs_p133_01, ex:topicAcs_p133_02, ex:topicAcs_p133_03 .
+  ex:page134 ex:hasParagraph ex:topicAcs_p134_01, ex:topicAcs_p134_02, ex:topicAcs_p134_03 .
+  ex:page135 ex:hasParagraph ex:topicAcs_p135_01, ex:topicAcs_p135_02, ex:topicAcs_p135_03 .
+  ex:page136 ex:hasParagraph ex:topicAcs_p136_01, ex:topicAcs_p136_02 .
+  ex:page137 ex:hasParagraph ex:topicAcs_p137_01, ex:topicAcs_p137_02, ex:topicAcs_p137_03 .
+  ex:page138 ex:hasParagraph ex:topicAcs_p138_01, ex:topicAcs_p138_02, ex:topicAcs_p138_03 .
+  ex:page139 ex:hasParagraph ex:topicAcs_p139_01, ex:topicAcs_p139_02, ex:topicAcs_p139_03, ex:topicAcs_p139_04 .
+  ex:page140 ex:hasParagraph ex:topicAcs_p140_01, ex:topicAcs_p140_02, ex:topicAcs_p140_03, ex:topicAcs_p140_04 .
+  ex:page141 ex:hasParagraph ex:topicAcs_p141_01, ex:topicAcs_p141_02, ex:topicAcs_p141_03, ex:topicAcs_p141_04 .
+  ex:page142 ex:hasParagraph ex:topicAcs_p142_01, ex:topicAcs_p142_02 .
+  ex:page143 ex:hasParagraph ex:topicAcs_p143_01, ex:topicAcs_p143_02, ex:topicAcs_p143_03 .
+  ex:page144 ex:hasParagraph ex:topicAcs_p144_01, ex:topicAcs_p144_02, ex:topicAcs_p144_03 .
+  ex:page145 ex:hasParagraph ex:topicAcs_p145_01, ex:topicAcs_p145_02, ex:topicAcs_p145_03, ex:topicAcs_p145_04 .
+  ex:page146 ex:hasParagraph ex:topicAcs_p146_01, ex:topicAcs_p146_02 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:topicAcs_l1s1 ex:hasParagraph ex:topicAcs_p132_01, ex:topicAcs_p132_02,
+    ex:topicAcs_p132_03, ex:topicAcs_p133_01, ex:topicAcs_p133_02, ex:topicAcs_p133_03 .
+
+  ex:topicAcs_l1s2 ex:hasParagraph ex:topicAcs_p134_01, ex:topicAcs_p134_02,
+    ex:topicAcs_p134_03, ex:topicAcs_p135_01, ex:topicAcs_p135_02,
+    ex:topicAcs_p135_03, ex:topicAcs_p136_01, ex:topicAcs_p136_02 .
+
+  ex:topicAcs_l2s1 ex:hasParagraph ex:topicAcs_p137_01 .
+  ex:topicAcs_l2s2 ex:hasParagraph ex:topicAcs_p137_02 .
+  ex:topicAcs_l2s3 ex:hasParagraph ex:topicAcs_p137_03 .
+  ex:topicAcs_l2s4 ex:hasParagraph ex:topicAcs_p138_01, ex:topicAcs_p138_02 .
+
+  ex:topicAcs_l3s1 ex:hasParagraph ex:topicAcs_p139_01, ex:topicAcs_p139_02,
+    ex:topicAcs_p139_03, ex:topicAcs_p139_04 .
+
+  ex:topicAcs_l3s2 ex:hasParagraph ex:topicAcs_p140_01, ex:topicAcs_p140_02 .
+  ex:topicAcs_l3s3 ex:hasParagraph ex:topicAcs_p140_03, ex:topicAcs_p140_04 .
+  ex:topicAcs_l3s4 ex:hasParagraph ex:topicAcs_p141_01, ex:topicAcs_p141_02, ex:topicAcs_p141_03 .
+  ex:topicAcs_l3s5 ex:hasParagraph ex:topicAcs_p141_04, ex:topicAcs_p142_01, ex:topicAcs_p142_02 .
+
+  ex:topicAcs_l4s1 ex:hasParagraph ex:topicAcs_p143_01, ex:topicAcs_p143_02,
+    ex:topicAcs_p143_03, ex:topicAcs_p144_01, ex:topicAcs_p144_02 .
+
+  ex:topicAcs_l4s2 ex:hasParagraph ex:topicAcs_p144_03, ex:topicAcs_p145_01,
+    ex:topicAcs_p145_02, ex:topicAcs_p145_03, ex:topicAcs_p145_04, ex:topicAcs_p146_01 .
+
+  ###########################################################################
+  # Paragraph order links
+  ###########################################################################
+
+  ex:topicAcs_p132_01 ex:nextParagraph ex:topicAcs_p132_02 .
+  ex:topicAcs_p132_02 ex:previousParagraph ex:topicAcs_p132_01 ; ex:nextParagraph ex:topicAcs_p132_03 .
+  ex:topicAcs_p132_03 ex:previousParagraph ex:topicAcs_p132_02 ; ex:nextParagraph ex:topicAcs_p133_01 .
+  ex:topicAcs_p133_01 ex:previousParagraph ex:topicAcs_p132_03 ; ex:nextParagraph ex:topicAcs_p133_02 .
+  ex:topicAcs_p133_02 ex:previousParagraph ex:topicAcs_p133_01 ; ex:nextParagraph ex:topicAcs_p133_03 .
+  ex:topicAcs_p133_03 ex:previousParagraph ex:topicAcs_p133_02 ; ex:nextParagraph ex:topicAcs_p134_01 .
+  ex:topicAcs_p134_01 ex:previousParagraph ex:topicAcs_p133_03 ; ex:nextParagraph ex:topicAcs_p134_02 .
+  ex:topicAcs_p134_02 ex:previousParagraph ex:topicAcs_p134_01 ; ex:nextParagraph ex:topicAcs_p134_03 .
+  ex:topicAcs_p134_03 ex:previousParagraph ex:topicAcs_p134_02 ; ex:nextParagraph ex:topicAcs_p135_01 .
+  ex:topicAcs_p135_01 ex:previousParagraph ex:topicAcs_p134_03 ; ex:nextParagraph ex:topicAcs_p135_02 .
+  ex:topicAcs_p135_02 ex:previousParagraph ex:topicAcs_p135_01 ; ex:nextParagraph ex:topicAcs_p135_03 .
+  ex:topicAcs_p135_03 ex:previousParagraph ex:topicAcs_p135_02 ; ex:nextParagraph ex:topicAcs_p136_01 .
+  ex:topicAcs_p136_01 ex:previousParagraph ex:topicAcs_p135_03 ; ex:nextParagraph ex:topicAcs_p136_02 .
+  ex:topicAcs_p136_02 ex:previousParagraph ex:topicAcs_p136_01 ; ex:nextParagraph ex:topicAcs_p137_01 .
+  ex:topicAcs_p137_01 ex:previousParagraph ex:topicAcs_p136_02 ; ex:nextParagraph ex:topicAcs_p137_02 .
+  ex:topicAcs_p137_02 ex:previousParagraph ex:topicAcs_p137_01 ; ex:nextParagraph ex:topicAcs_p137_03 .
+  ex:topicAcs_p137_03 ex:previousParagraph ex:topicAcs_p137_02 ; ex:nextParagraph ex:topicAcs_p138_01 .
+  ex:topicAcs_p138_01 ex:previousParagraph ex:topicAcs_p137_03 ; ex:nextParagraph ex:topicAcs_p138_02 .
+  ex:topicAcs_p138_02 ex:previousParagraph ex:topicAcs_p138_01 ; ex:nextParagraph ex:topicAcs_p138_03 .
+  ex:topicAcs_p138_03 ex:previousParagraph ex:topicAcs_p138_02 ; ex:nextParagraph ex:topicAcs_p139_01 .
+  ex:topicAcs_p139_01 ex:previousParagraph ex:topicAcs_p138_03 ; ex:nextParagraph ex:topicAcs_p139_02 .
+  ex:topicAcs_p139_02 ex:previousParagraph ex:topicAcs_p139_01 ; ex:nextParagraph ex:topicAcs_p139_03 .
+  ex:topicAcs_p139_03 ex:previousParagraph ex:topicAcs_p139_02 ; ex:nextParagraph ex:topicAcs_p139_04 .
+  ex:topicAcs_p139_04 ex:previousParagraph ex:topicAcs_p139_03 ; ex:nextParagraph ex:topicAcs_p140_01 .
+  ex:topicAcs_p140_01 ex:previousParagraph ex:topicAcs_p139_04 ; ex:nextParagraph ex:topicAcs_p140_02 .
+  ex:topicAcs_p140_02 ex:previousParagraph ex:topicAcs_p140_01 ; ex:nextParagraph ex:topicAcs_p140_03 .
+  ex:topicAcs_p140_03 ex:previousParagraph ex:topicAcs_p140_02 ; ex:nextParagraph ex:topicAcs_p140_04 .
+  ex:topicAcs_p140_04 ex:previousParagraph ex:topicAcs_p140_03 ; ex:nextParagraph ex:topicAcs_p141_01 .
+  ex:topicAcs_p141_01 ex:previousParagraph ex:topicAcs_p140_04 ; ex:nextParagraph ex:topicAcs_p141_02 .
+  ex:topicAcs_p141_02 ex:previousParagraph ex:topicAcs_p141_01 ; ex:nextParagraph ex:topicAcs_p141_03 .
+  ex:topicAcs_p141_03 ex:previousParagraph ex:topicAcs_p141_02 ; ex:nextParagraph ex:topicAcs_p141_04 .
+  ex:topicAcs_p141_04 ex:previousParagraph ex:topicAcs_p141_03 ; ex:nextParagraph ex:topicAcs_p142_01 .
+  ex:topicAcs_p142_01 ex:previousParagraph ex:topicAcs_p141_04 ; ex:nextParagraph ex:topicAcs_p142_02 .
+  ex:topicAcs_p142_02 ex:previousParagraph ex:topicAcs_p142_01 ; ex:nextParagraph ex:topicAcs_p143_01 .
+  ex:topicAcs_p143_01 ex:previousParagraph ex:topicAcs_p142_02 ; ex:nextParagraph ex:topicAcs_p143_02 .
+  ex:topicAcs_p143_02 ex:previousParagraph ex:topicAcs_p143_01 ; ex:nextParagraph ex:topicAcs_p143_03 .
+  ex:topicAcs_p143_03 ex:previousParagraph ex:topicAcs_p143_02 ; ex:nextParagraph ex:topicAcs_p144_01 .
+  ex:topicAcs_p144_01 ex:previousParagraph ex:topicAcs_p143_03 ; ex:nextParagraph ex:topicAcs_p144_02 .
+  ex:topicAcs_p144_02 ex:previousParagraph ex:topicAcs_p144_01 ; ex:nextParagraph ex:topicAcs_p144_03 .
+  ex:topicAcs_p144_03 ex:previousParagraph ex:topicAcs_p144_02 ; ex:nextParagraph ex:topicAcs_p145_01 .
+  ex:topicAcs_p145_01 ex:previousParagraph ex:topicAcs_p144_03 ; ex:nextParagraph ex:topicAcs_p145_02 .
+  ex:topicAcs_p145_02 ex:previousParagraph ex:topicAcs_p145_01 ; ex:nextParagraph ex:topicAcs_p145_03 .
+  ex:topicAcs_p145_03 ex:previousParagraph ex:topicAcs_p145_02 ; ex:nextParagraph ex:topicAcs_p145_04 .
+  ex:topicAcs_p145_04 ex:previousParagraph ex:topicAcs_p145_03 ; ex:nextParagraph ex:topicAcs_p146_01 .
+  ex:topicAcs_p146_01 ex:previousParagraph ex:topicAcs_p145_04 ; ex:nextParagraph ex:topicAcs_p146_02 .
+  ex:topicAcs_p146_02 ex:previousParagraph ex:topicAcs_p146_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:topicAcs_p132_01 ex:mentionsConcept ex:conceptBit, ex:conceptPhepToanBit .
+  ex:topicAcs_p132_02 ex:mentionsConcept ex:conceptBit, ex:conceptDayBit, ex:conceptPhepToanBit,
+    ex:conceptPhepToanNOT, ex:conceptPhepToanAND, ex:conceptPhepToanOR, ex:conceptPhepToanXOR .
+  ex:topicAcs_p132_03 ex:mentionsConcept ex:conceptPhepToanNOT, ex:conceptPhepToanAND,
+    ex:conceptPhepToanOR, ex:conceptPhepToanXOR .
+  ex:topicAcs_p133_01 ex:mentionsConcept ex:conceptPhepToanAND, ex:conceptPhepNhanLogic .
+  ex:topicAcs_p133_02 ex:mentionsConcept ex:conceptPhepToanOR, ex:conceptPhepToanXOR, ex:conceptPhepCongLogic .
+  ex:topicAcs_p133_03 ex:mentionsConcept ex:conceptDayBit, ex:conceptPhepToanNOT,
+    ex:conceptPhepToanAND, ex:conceptPhepToanOR, ex:conceptPhepToanXOR .
+  ex:topicAcs_p134_01 ex:mentionsConcept ex:conceptHeThapPhan, ex:conceptHeNhiPhan, ex:conceptBit .
+  ex:topicAcs_p134_02 ex:mentionsConcept ex:conceptHeNhiPhan, ex:conceptChuyenDoiHeDem .
+  ex:topicAcs_p134_03 ex:mentionsConcept ex:conceptChuyenDoiHeDem, ex:conceptHeThapPhan, ex:conceptHeNhiPhan .
+  ex:topicAcs_p135_01 ex:mentionsConcept ex:conceptPhepCongNhiPhan, ex:conceptHeNhiPhan .
+  ex:topicAcs_p135_02 ex:mentionsConcept ex:conceptPhepCongNhiPhan, ex:conceptPhepNhanNhiPhan,
+    ex:conceptPhepToanXOR, ex:conceptPhepToanAND .
+  ex:topicAcs_p135_03 ex:mentionsConcept ex:conceptHeNhiPhan, ex:conceptBit, ex:conceptPhepToanBit .
+  ex:topicAcs_p136_01 ex:mentionsConcept ex:conceptHeNhiPhan .
+  ex:topicAcs_p136_02 ex:mentionsConcept ex:conceptHeNhiPhan, ex:conceptHeThapPhan,
+    ex:conceptDiaChiIP, ex:conceptIPv4, ex:conceptPhepToanAND, ex:conceptPhepToanOR,
+    ex:conceptPhepToanXOR, ex:conceptPhepToanNOT .
+  ex:topicAcs_p137_01 ex:mentionsConcept ex:conceptChuyenDoiHeDem, ex:conceptHeThapPhan, ex:conceptHeNhiPhan .
+  ex:topicAcs_p137_02 ex:mentionsConcept ex:conceptPhepCongNhiPhan, ex:conceptPhepNhanNhiPhan .
+  ex:topicAcs_p137_03 ex:mentionsConcept ex:conceptSoBu1, ex:conceptSoBu2, ex:conceptPhepToanNOT .
+  ex:topicAcs_p138_01 ex:mentionsConcept ex:conceptSoBu2, ex:conceptHeNhiPhan .
+  ex:topicAcs_p138_02 ex:mentionsConcept ex:conceptDayBit, ex:conceptPhepToanBit .
+  ex:topicAcs_p138_03 ex:mentionsConcept ex:conceptHeDemCoSo8, ex:conceptHeDemCoSo16 .
+  ex:topicAcs_p139_01 ex:mentionsConcept ex:conceptSoHoaVanBan, ex:conceptDayBit .
+  ex:topicAcs_p139_02 ex:mentionsConcept ex:conceptMaNhiPhan, ex:conceptMaKiTu, ex:conceptBangMaASCII .
+  ex:topicAcs_p139_03 ex:mentionsConcept ex:conceptBangMaASCII, ex:conceptMaNhiPhan .
+  ex:topicAcs_p139_04 ex:mentionsConcept ex:conceptASCIIExtended, ex:conceptBangMaASCII .
+  ex:topicAcs_p140_01 ex:mentionsConcept ex:conceptASCIIExtended, ex:conceptKiTuTiengViet .
+  ex:topicAcs_p140_02 ex:mentionsConcept ex:conceptBangMaUnicode, ex:conceptKiTuTiengViet .
+  ex:topicAcs_p140_03 ex:mentionsConcept ex:conceptMaKiTu, ex:conceptDiemMaUnicode, ex:conceptBangMaUnicode .
+  ex:topicAcs_p140_04 ex:mentionsConcept ex:conceptMaNhiPhan, ex:conceptUTF8, ex:conceptUTF16, ex:conceptUTF32,
+    ex:conceptBangMaUnicode, ex:conceptBangMaASCII .
+  ex:topicAcs_p141_01 ex:mentionsConcept ex:conceptDuLieuVanBan, ex:conceptSoHoaVanBan .
+  ex:topicAcs_p141_02 ex:mentionsConcept ex:conceptVanBanThuanChu, ex:conceptDayBit .
+  ex:topicAcs_p141_03 ex:mentionsConcept ex:conceptDuLieuVanBan, ex:conceptMaNhiPhan .
+  ex:topicAcs_p141_04 ex:mentionsConcept ex:conceptKiTuTiengViet, ex:conceptBangMaASCII, ex:conceptBangMaUnicode .
+  ex:topicAcs_p142_01 ex:mentionsConcept ex:conceptTCVN3, ex:conceptBangMaUnicode, ex:conceptKiTuTiengViet .
+  ex:topicAcs_p142_02 ex:mentionsConcept ex:conceptUnikey, ex:conceptChuyenMaKiTu, ex:conceptBangMaUnicode .
+  ex:topicAcs_p143_01 ex:mentionsConcept ex:conceptDoPhanGiai, ex:conceptSoHoaHinhAnh .
+  ex:topicAcs_p143_02 ex:mentionsConcept ex:conceptDiemAnh, ex:conceptPixel, ex:conceptSoHoaHinhAnh .
+  ex:topicAcs_p143_03 ex:mentionsConcept ex:conceptDoPhanGiai, ex:conceptPixel .
+  ex:topicAcs_p144_01 ex:mentionsConcept ex:conceptHeMauRGB, ex:conceptDoSauMau .
+  ex:topicAcs_p144_02 ex:mentionsConcept ex:conceptRoiRacHoaMau, ex:conceptDiemAnh, ex:conceptSoHoaHinhAnh .
+  ex:topicAcs_p144_03 ex:mentionsConcept ex:conceptTinHieuAmThanh, ex:conceptDuLieuAnalog, ex:conceptSoHoaAmThanh .
+  ex:topicAcs_p145_01 ex:mentionsConcept ex:conceptLayMauAmThanh, ex:conceptTinHieuAmThanh .
+  ex:topicAcs_p145_02 ex:mentionsConcept ex:conceptTocDoLayMau, ex:conceptLayMauAmThanh .
+  ex:topicAcs_p145_03 ex:mentionsConcept ex:conceptLuongTuHoa .
+  ex:topicAcs_p145_04 ex:mentionsConcept ex:conceptBieuDienNhiPhanAmThanh, ex:conceptSoHoaAmThanh, ex:conceptHeNhiPhan .
+  ex:topicAcs_p146_01 ex:mentionsConcept ex:conceptSoHoaHinhAnh, ex:conceptSoHoaAmThanh,
+    ex:conceptTocDoLayMau, ex:conceptDoSauMau .
+  ex:topicAcs_p146_02 ex:mentionsConcept ex:conceptHeMau, ex:conceptHeMauRGB .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:conceptBit ex:relatedTo ex:conceptBieuDienThongTin .
+  ex:conceptDayBit ex:relatedTo ex:conceptBit .
+  ex:conceptPhepToanBit ex:relatedTo ex:conceptBit .
+  ex:conceptPhepToanNOT ex:subConceptOf ex:conceptPhepToanBit .
+  ex:conceptPhepToanAND ex:subConceptOf ex:conceptPhepToanBit .
+  ex:conceptPhepToanOR ex:subConceptOf ex:conceptPhepToanBit .
+  ex:conceptPhepToanXOR ex:subConceptOf ex:conceptPhepToanBit .
+  ex:conceptPhepBu ex:relatedTo ex:conceptPhepToanNOT .
+  ex:conceptPhepNhanLogic ex:relatedTo ex:conceptPhepToanAND .
+  ex:conceptPhepCongLogic ex:relatedTo ex:conceptPhepToanOR .
+  ex:conceptHeNhiPhan ex:relatedTo ex:conceptBit .
+  ex:conceptHeNhiPhan ex:relatedTo ex:conceptPhepToanBit .
+  ex:conceptHeThapPhan ex:relatedTo ex:conceptChuyenDoiHeDem .
+  ex:conceptHeNhiPhan ex:relatedTo ex:conceptChuyenDoiHeDem .
+  ex:conceptHeDemCoSo8 ex:relatedTo ex:conceptChuyenDoiHeDem .
+  ex:conceptHeDemCoSo16 ex:relatedTo ex:conceptChuyenDoiHeDem .
+  ex:conceptPhepCongNhiPhan ex:relatedTo ex:conceptHeNhiPhan .
+  ex:conceptPhepNhanNhiPhan ex:relatedTo ex:conceptHeNhiPhan .
+  ex:conceptPhepCongNhiPhan ex:relatedTo ex:conceptPhepToanXOR .
+  ex:conceptPhepNhanNhiPhan ex:relatedTo ex:conceptPhepToanAND .
+  ex:conceptSoBu1 ex:relatedTo ex:conceptPhepToanNOT .
+  ex:conceptSoBu2 ex:relatedTo ex:conceptSoBu1 .
+  ex:conceptDiaChiIP ex:relatedTo ex:conceptHeNhiPhan .
+  ex:conceptIPv4 ex:subConceptOf ex:conceptDiaChiIP .
+  ex:conceptIPv6 ex:subConceptOf ex:conceptDiaChiIP .
+  ex:conceptSoHoaVanBan ex:subConceptOf ex:conceptBieuDienThongTin .
+  ex:conceptMaKiTu ex:relatedTo ex:conceptSoHoaVanBan .
+  ex:conceptBoKiTu ex:relatedTo ex:conceptMaKiTu .
+  ex:conceptMaNhiPhan ex:relatedTo ex:conceptMaKiTu .
+  ex:conceptBangMaASCII ex:subConceptOf ex:conceptBoKiTu .
+  ex:conceptASCIIExtended ex:relatedTo ex:conceptBangMaASCII .
+  ex:conceptBangMaUnicode ex:subConceptOf ex:conceptBoKiTu .
+  ex:conceptDiemMaUnicode ex:relatedTo ex:conceptBangMaUnicode .
+  ex:conceptUTF8 ex:relatedTo ex:conceptBangMaUnicode .
+  ex:conceptUTF16 ex:relatedTo ex:conceptBangMaUnicode .
+  ex:conceptUTF32 ex:relatedTo ex:conceptBangMaUnicode .
+  ex:conceptVanBanThuanChu ex:subConceptOf ex:conceptDuLieuVanBan .
+  ex:conceptDuLieuVanBan ex:relatedTo ex:conceptSoHoaVanBan .
+  ex:conceptKiTuTiengViet ex:relatedTo ex:conceptBangMaUnicode .
+  ex:conceptUnikey ex:relatedTo ex:conceptKiTuTiengViet .
+  ex:conceptChuyenMaKiTu ex:relatedTo ex:conceptUnikey .
+  ex:conceptTCVN3 ex:relatedTo ex:conceptKiTuTiengViet .
+  ex:conceptSoHoaHinhAnh ex:subConceptOf ex:conceptBieuDienThongTin .
+  ex:conceptDiemAnh ex:partOf ex:conceptSoHoaHinhAnh .
+  ex:conceptPixel ex:relatedTo ex:conceptDiemAnh .
+  ex:conceptDoPhanGiai ex:relatedTo ex:conceptPixel .
+  ex:conceptHeMauRGB ex:relatedTo ex:conceptSoHoaHinhAnh .
+  ex:conceptRoiRacHoaMau ex:relatedTo ex:conceptHeMauRGB .
+  ex:conceptDoSauMau ex:relatedTo ex:conceptRoiRacHoaMau .
+  ex:conceptSoHoaAmThanh ex:subConceptOf ex:conceptBieuDienThongTin .
+  ex:conceptTinHieuAmThanh ex:relatedTo ex:conceptSoHoaAmThanh .
+  ex:conceptDuLieuAnalog ex:relatedTo ex:conceptTinHieuAmThanh .
+  ex:conceptLayMauAmThanh ex:partOf ex:conceptSoHoaAmThanh .
+  ex:conceptTocDoLayMau ex:relatedTo ex:conceptLayMauAmThanh .
+  ex:conceptLuongTuHoa ex:partOf ex:conceptSoHoaAmThanh .
+  ex:conceptBieuDienNhiPhanAmThanh ex:partOf ex:conceptSoHoaAmThanh .
+  ex:conceptHeMau ex:relatedTo ex:conceptHeMauRGB .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:topicAcs_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề A^CS"@vi ;
+    ex:hasRawText "Máy tính tính toán với các bit, các toán hạng là bit và kết quả cũng là bit. Em sẽ chọn kết quả phép cộng hai bit 1 + 1 là 0, 1 hay 10? Em sẽ chọn kết quả phép nhân hai bit 1 * 1 là 0, 1 hay 10? Tại sao?"@vi ;
+    ex:appearsOnPage ex:page132 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:relatedTo ex:conceptBit, ex:conceptPhepToanBit .
+
+  ex:topicAcs_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Phân biệt ngon, rẻ theo phép toán logic"@vi ;
+    ex:hasRawText "Để đánh giá một món ăn, ta có thể đưa vào các tiêu chí ngon hay không rẻ hay không. Em hãy phân biệt ngon và rẻ với ngon hoặc rẻ với hoặc ngon hoặc rẻ."@vi ;
+    ex:appearsOnPage ex:page132 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:relatedTo ex:conceptPhepToanAND, ex:conceptPhepToanOR, ex:conceptPhepToanXOR .
+
+  ex:topicAcs_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Quan sát dãy bit 1101"@vi ;
+    ex:hasRawText "Dãy bit 1101 biểu diễn số nào ở hệ thập phân? Em hãy quan sát hình chuyển đổi và nêu nhận xét."@vi ;
+    ex:appearsOnPage ex:page134 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:relatedTo ex:conceptHeNhiPhan, ex:conceptChuyenDoiHeDem .
+
+  ex:topicAcs_l1_ex1 a ex:Exercise ;
+    rdfs:label "Bài 1 chủ đề A^CS - Giá trị thập phân của số nhị phân"@vi ;
+    ex:hasRawText "Số 11111111 trong hệ nhị phân có giá trị là bao nhiêu trong hệ thập phân?"@vi ;
+    ex:appearsOnPage ex:page136 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:relatedTo ex:conceptHeNhiPhan, ex:conceptHeThapPhan .
+
+  ex:topicAcs_l1_ex2 a ex:Exercise ;
+    rdfs:label "Bài 1 chủ đề A^CS - Cộng và nhân số nhị phân"@vi ;
+    ex:hasRawText "Chuyển hai số sau sang hệ nhị phân rồi thực hiện phép toán cộng hoặc nhân số nhị phân, kiểm tra lại kết quả qua số trong hệ thập phân: 125 + 12; 125 * 6."@vi ;
+    ex:appearsOnPage ex:page136 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:relatedTo ex:conceptChuyenDoiHeDem, ex:conceptPhepCongNhiPhan, ex:conceptPhepNhanNhiPhan .
+
+  ex:topicAcs_l1_appliedIP a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 1 chủ đề A^CS - Kiểm tra địa chỉ IP"@vi ;
+    ex:hasRawText "Một máy tính kết nối Internet phải được gắn một địa chỉ IP. Địa chỉ IP là một số nhị phân dài 32 bit gọi là IPv4. Người ta viết địa chỉ IP dưới dạng 4 số trong hệ thập phân, cách nhau bởi dấu chấm, mỗi số tương ứng với 1 byte. Các dãy 345.123.011.201 và 123.110.256.101 có thể là địa chỉ IP không? Tại sao?"@vi ;
+    ex:appearsOnPage ex:page136 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:relatedTo ex:conceptDiaChiIP, ex:conceptIPv4, ex:conceptHeNhiPhan .
+
+  ex:topicAcs_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 1 chủ đề A^CS"@vi ;
+    ex:hasRawText "Trong hệ nhị phân khi nào phép toán AND có kết quả là 1? Khi nào phép toán OR có kết quả là 0? Điểm khác nhau giữa hai phép toán OR và XOR là gì? Tại sao phép toán NOT cũng được gọi là phép bù?"@vi ;
+    ex:appearsOnPage ex:page136 ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:relatedTo ex:conceptPhepToanAND, ex:conceptPhepToanOR, ex:conceptPhepToanXOR, ex:conceptPhepToanNOT .
+
+  ex:topicAcs_l2_task1 a ex:PracticeTask ;
+    rdfs:label "Bài 2 chủ đề A^CS - Chuyển số 44 sang hệ nhị phân"@vi ;
+    ex:hasRawText "Chuyển số 44 ở hệ thập phân thành số ở hệ nhị phân bằng cách thực hiện theo hướng dẫn từng bước trong bảng: chuyển 4, 8, 32 sang dạng nhị phân rồi cộng ba số cùng cột ở trong hệ nhị phân."@vi ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:relatedTo ex:conceptChuyenDoiHeDem, ex:conceptHeNhiPhan .
+
+  ex:topicAcs_l2_task2 a ex:PracticeTask ;
+    rdfs:label "Bài 2 chủ đề A^CS - Cộng và nhân hai số nhị phân"@vi ;
+    ex:hasRawText "Thực hiện phép cộng và phép nhân hai số nhị phân. Tạo ít nhất ba bảng theo mẫu gồm x, y, x + y, x * y, trong đó x và y là các số nhị phân tuỳ chọn có độ dài không ít hơn 3 bit."@vi ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:relatedTo ex:conceptPhepCongNhiPhan, ex:conceptPhepNhanNhiPhan .
+
+  ex:topicAcs_l2_task3 a ex:PracticeTask ;
+    rdfs:label "Bài 2 chủ đề A^CS - Tính số bù của một số nhị phân"@vi ;
+    ex:hasRawText "Cho số nhị phân x. Kết quả của phép toán NOT x gọi là số bù 1 của x. Kết quả của số bù 1 cộng 1 gọi là số bù 2 của x. Hãy viết số bù 1 và số bù 2 của số 44 ở hệ nhị phân."@vi ;
+    ex:appearsOnPage ex:page137 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:relatedTo ex:conceptSoBu1, ex:conceptSoBu2, ex:conceptPhepToanNOT .
+
+  ex:topicAcs_l2_task4 a ex:PracticeTask ;
+    rdfs:label "Bài 2 chủ đề A^CS - Khám phá số bù 2"@vi ;
+    ex:hasRawText "Thực hiện phép cộng số nhị phân x có giá trị thập phân là 44 với số bù 2 của x và cho biết kết quả nếu quy ước độ dài dãy bit biểu diễn số nguyên trong máy là 1 byte."@vi ;
+    ex:appearsOnPage ex:page138 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:relatedTo ex:conceptSoBu2, ex:conceptHeNhiPhan .
+
+  ex:topicAcs_l2_appliedTestScore a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 chủ đề A^CS - Chấm bài trắc nghiệm bằng phép toán bit"@vi ;
+    ex:hasRawText "Một bài kiểm tra môn Tin học gồm 10 câu hỏi trắc nghiệm đúng - sai. Đáp án được biểu diễn bằng dãy 10 bit, kí hiệu là DapAn. Trả lời của thí sinh được biểu diễn bằng dãy 10 bit, kí hiệu là TraLoi. Hãy dùng phép toán bit để tạo ra KetQua là dãy 10 bit biểu diễn kết quả chấm từng câu hỏi và tính điểm cho thí sinh theo thang điểm 10."@vi ;
+    ex:appearsOnPage ex:page138 ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:relatedTo ex:conceptDayBit, ex:conceptPhepToanBit .
+
+  ex:topicAcs_extra_octHexNote a ex:NoteBox ;
+    rdfs:label "Bài tìm hiểu thêm - Hệ đếm cơ số 8 và cơ số 16"@vi ;
+    ex:hasRawText "Hệ đếm cơ số 8 quy ước từ phải sang trái, cứ dịch thêm một vị trí sang trái thì giá trị của kí số tăng thêm 8 lần; dùng tám kí số 0 đến 7. Hệ đếm cơ số 16 quy ước tương tự với cơ số 16; dùng các kí số 0 đến 9 và các chữ A, B, C, D, E, F tương ứng với 10 đến 15."@vi ;
+    ex:appearsOnPage ex:page138 ;
+    ex:belongsToLesson ex:topicAcs_extra_octHex ;
+    ex:relatedTo ex:conceptHeDemCoSo8, ex:conceptHeDemCoSo16 .
+
+  ex:topicAcs_l3_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 3 chủ đề A^CS"@vi ;
+    ex:hasRawText "Trang văn bản có thể có nhiều chữ số. Em hãy cho biết các kí tự là chữ số thập phân 0, 1, ..., 9 được số hoá, chuyển thành dãy bit như thế nào."@vi ;
+    ex:appearsOnPage ex:page139 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:relatedTo ex:conceptSoHoaVanBan, ex:conceptMaKiTu .
+
+  ex:topicAcs_l3_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Tìm kí tự tiếng Việt trong ASCII mở rộng"@vi ;
+    ex:hasRawText "Em hãy tìm trong bảng mã ASCII mở rộng và cho biết các kí tự ấ, ầ, ể, ệ, ... có trong bảng mã này không."@vi ;
+    ex:appearsOnPage ex:page139 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:relatedTo ex:conceptASCIIExtended, ex:conceptKiTuTiengViet .
+
+  ex:topicAcs_l3_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Văn bản thuần chữ và văn bản có định dạng"@vi ;
+    ex:hasRawText "Làm theo hướng dẫn: dùng Notepad nhập đúng 30 kí tự Latin đơn giản và lưu tệp thuan chu.txt để xem kích thước; dùng WordPad đổi màu chữ, lưu tệp dạng .rtf và nhận xét tại sao kích thước tăng lên."@vi ;
+    ex:appearsOnPage ex:page141 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:relatedTo ex:conceptVanBanThuanChu, ex:conceptDuLieuVanBan .
+
+  ex:topicAcs_l3_activity3 a ex:Activity ;
+    rdfs:label "Hoạt động 3 - Bảng mã trong UniKey"@vi ;
+    ex:hasRawText "Nhấn Ctrl + Shift + F6 để hiển thị bảng điều khiển của bộ gõ tiếng Việt UniKey; trong hộp Bảng mã nháy chuột vào mũi tên đầu trỏ xuống để mở danh sách các bảng mã có trong bộ gõ UniKey. Hãy kể tên những bảng mã xuất hiện."@vi ;
+    ex:appearsOnPage ex:page142 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:relatedTo ex:conceptUnikey, ex:conceptChuyenMaKiTu .
+
+  ex:topicAcs_l3_practice1 a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 3 - Lí do ra đời Unicode"@vi ;
+    ex:hasRawText "Lí do ra đời bảng mã chuẩn quốc tế Unicode là gì?"@vi ;
+    ex:appearsOnPage ex:page142 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:relatedTo ex:conceptBangMaUnicode .
+
+  ex:topicAcs_l3_practice2 a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 3 - Tìm hiểu công cụ chuyển mã UniKey"@vi ;
+    ex:hasRawText "Em hãy tìm hiểu công cụ chuyển mã có trong bộ gõ tiếng Việt UniKey và viết hướng dẫn để người khác biết cách sử dụng."@vi ;
+    ex:appearsOnPage ex:page142 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:relatedTo ex:conceptUnikey, ex:conceptChuyenMaKiTu .
+
+  ex:topicAcs_l3_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 3 chủ đề A^CS"@vi ;
+    ex:hasRawText "Bảng mã ASCII là gì? Việc chuyển một kí tự thành mã nhị phân thường ứng gồm mấy bước? Bảng mã Unicode thực hiện bước nào? Văn bản tiếng Việt hiện nay dùng bảng mã kí tự nào là đúng chuẩn quy định?"@vi ;
+    ex:appearsOnPage ex:page142 ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:relatedTo ex:conceptBangMaASCII, ex:conceptMaNhiPhan, ex:conceptBangMaUnicode, ex:conceptKiTuTiengViet .
+
+  ex:topicAcs_l4_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 4 chủ đề A^CS"@vi ;
+    ex:hasRawText "Em hãy tìm trên Internet các hình minh hoạ ảnh độ phân giải thấp bằng cách sử dụng từ khoá tìm kiếm low resolution images, rồi đoán xem điều gì xảy ra nếu mở xem một hình ảnh và cứ phóng to lên mãi."@vi ;
+    ex:appearsOnPage ex:page143 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:relatedTo ex:conceptDoPhanGiai, ex:conceptSoHoaHinhAnh .
+
+  ex:topicAcs_l4_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Khám phá màu trong phần mềm soạn thảo văn bản"@vi ;
+    ex:hasRawText "Em hãy khám phá những màu sắc có thể dùng trong một văn bản được tạo ra bởi một phần mềm soạn thảo văn bản và trả lời: bảng Theme Colors hay hộp thoại Colors xuất hiện khi chọn More Colors hiển thị nhiều màu cho người dùng chọn? Mã màu RGB của một màu đã chọn được tìm như thế nào?"@vi ;
+    ex:appearsOnPage ex:page144 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:relatedTo ex:conceptHeMauRGB, ex:conceptRoiRacHoaMau .
+
+  ex:topicAcs_l4_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Quan sát sóng âm thanh"@vi ;
+    ex:hasRawText "Quan sát Hình 2 và cho biết hình đó muốn minh hoạ điều gì."@vi ;
+    ex:appearsOnPage ex:page144 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:relatedTo ex:conceptTinHieuAmThanh, ex:conceptSoHoaAmThanh .
+
+  ex:topicAcs_l4_ex1 a ex:Exercise ;
+    rdfs:label "Bài 1 bài 4 chủ đề A^CS - Độ dài dãy bit của ảnh số"@vi ;
+    ex:hasRawText "Ảnh số là một dãy bit rất dài trong máy tính. Hãy cho biết sẽ nhận được hình ảnh như thế nào nếu cắt đi đúng một nửa cuối dãy, chỉ giữ lại nửa đầu dãy; hoặc nối thêm một bản sao của dãy bit vào cuối thành dãy bit dài gấp đôi."@vi ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:relatedTo ex:conceptSoHoaHinhAnh, ex:conceptDayBit .
+
+  ex:topicAcs_l4_ex2 a ex:Exercise ;
+    rdfs:label "Bài 2 bài 4 chủ đề A^CS - Tốc độ lấy mẫu âm thanh"@vi ;
+    ex:hasRawText "Đơn vị đo tốc độ lấy mẫu để rời rạc hoá tín hiệu âm thanh theo thời gian là gì? Tại sao có thể coi biên độ tín hiệu âm thanh không đổi trong một mẫu?"@vi ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:relatedTo ex:conceptTocDoLayMau, ex:conceptLayMauAmThanh .
+
+  ex:topicAcs_l4_appliedHD a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 4 chủ đề A^CS - Hình ảnh HD"@vi ;
+    ex:hasRawText "Em hãy cho biết hình ảnh HD có liên quan gì đến lưới chia để rời rạc hoá hình ảnh và độ dài dãy bit để rời rạc hoá màu."@vi ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:relatedTo ex:conceptDoPhanGiai, ex:conceptDoSauMau, ex:conceptSoHoaHinhAnh .
+
+  ex:topicAcs_l4_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 4 chủ đề A^CS"@vi ;
+    ex:hasRawText "Làm thế nào để chia hình ảnh thành nhiều điểm ảnh? Tại sao có thể coi một điểm ảnh hình vuông là đồng màu? Trong hệ màu RGB, một điểm ảnh dài bao nhiêu bit? Tỉ lệ trộn ba màu cơ sở thể hiện bằng cách nào? Rời rạc hoá biên độ tín hiệu âm thanh là gì?"@vi ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:relatedTo ex:conceptDiemAnh, ex:conceptHeMauRGB, ex:conceptRoiRacHoaMau, ex:conceptLuongTuHoa .
+
+  ex:topicAcs_extra_colorSystemNote a ex:NoteBox ;
+    rdfs:label "Bài tìm hiểu thêm - Hệ màu"@vi ;
+    ex:hasRawText "Hệ màu được tạo ra để số hoá các màu sắc, cho tương ứng mỗi màu với một mẫu bit. Hệ màu RGB định nghĩa mã màu RGB với các ví dụ về các màu cơ bản và một số màu thường dùng."@vi ;
+    ex:appearsOnPage ex:page146 ;
+    ex:belongsToLesson ex:topicAcs_extra_colorSystem ;
+    ex:relatedTo ex:conceptHeMau, ex:conceptHeMauRGB .
+
+  ex:topicAcs_lesson1 ex:hasActivity ex:topicAcs_l1_openingActivity,
+    ex:topicAcs_l1_activity1, ex:topicAcs_l1_activity2 ;
+    ex:hasReviewQuestion ex:topicAcs_l1_review1 .
+
+  ex:topicAcs_lesson2 ex:hasActivity ex:topicAcs_l2_task1, ex:topicAcs_l2_task2,
+    ex:topicAcs_l2_task3, ex:topicAcs_l2_task4, ex:topicAcs_l2_appliedTestScore .
+
+  ex:topicAcs_lesson3 ex:hasActivity ex:topicAcs_l3_openingActivity,
+    ex:topicAcs_l3_activity1, ex:topicAcs_l3_activity2, ex:topicAcs_l3_activity3 ;
+    ex:hasReviewQuestion ex:topicAcs_l3_review1 .
+
+  ex:topicAcs_lesson4 ex:hasActivity ex:topicAcs_l4_openingActivity,
+    ex:topicAcs_l4_activity1, ex:topicAcs_l4_activity2 ;
+    ex:hasReviewQuestion ex:topicAcs_l4_review1 .
+}

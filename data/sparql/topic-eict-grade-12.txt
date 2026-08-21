@@ -1,0 +1,2121 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 12 TOPIC EICT
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 and Grade 11.
+# Source file: sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-8.pdf
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g12_grade12 a ex:GradeLevel ;
+    rdfs:label "Lớp 12"@vi ;
+    ex:gradeNumber 12 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g12_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 12 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 12 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g12_grade12 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicEICT_shared a ex:Topic ;
+    rdfs:label "Chủ đề E ICT (dùng chung các khối)"@vi ;
+    ex:hasTitle "Ứng dụng tin học"@vi .
+
+  ex:g12_topicEICT a ex:Topic ;
+    rdfs:label "Chủ đề E ICT - Ứng dụng tin học: Thực hành sử dụng phần mềm tạo trang web"@vi ;
+    ex:hasTitle "Ứng dụng tin học"@vi ;
+    ex:hasSubtitle "Thực hành sử dụng phần mềm tạo trang web"@vi ;
+    ex:topicCode "EICT" ;
+    ex:topicOrder 8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicEICT_shared ;
+    ex:hasStartPage 123 ;
+    ex:hasEndPage 161 ;
+    ex:sourceFileName "sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-8.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g12_topicEICT_lesson1, ex:g12_topicEICT_lesson2,
+                 ex:g12_topicEICT_lesson3, ex:g12_topicEICT_lesson4,
+                 ex:g12_topicEICT_lesson5, ex:g12_topicEICT_lesson6,
+                 ex:g12_topicEICT_lesson7 ;
+    ex:hasPage ex:g12_page123, ex:g12_page124, ex:g12_page125, ex:g12_page126,
+               ex:g12_page127, ex:g12_page128, ex:g12_page129, ex:g12_page130,
+               ex:g12_page131, ex:g12_page132, ex:g12_page133, ex:g12_page134,
+               ex:g12_page135, ex:g12_page136, ex:g12_page137, ex:g12_page138,
+               ex:g12_page139, ex:g12_page140, ex:g12_page141, ex:g12_page142,
+               ex:g12_page143, ex:g12_page144, ex:g12_page145, ex:g12_page146,
+               ex:g12_page147, ex:g12_page148, ex:g12_page149, ex:g12_page150,
+               ex:g12_page151, ex:g12_page152, ex:g12_page153, ex:g12_page154,
+               ex:g12_page155, ex:g12_page156, ex:g12_page157, ex:g12_page158,
+               ex:g12_page159, ex:g12_page160, ex:g12_page161 .
+
+  ex:g12_tinhoc_ungdung_canhdieu ex:hasTopic ex:g12_topicEICT .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g12_topicEICT_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Giới thiệu phần mềm tạo website"@vi ;
+    ex:hasTitle "Giới thiệu phần mềm tạo website"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g12_topicEICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 123 ;
+    ex:hasEndPage 128 ;
+    ex:hasSection ex:g12_topicEICT_l1s1, ex:g12_topicEICT_l1s2,
+                  ex:g12_topicEICT_l1s3, ex:g12_topicEICT_l1s4 .
+
+  ex:g12_topicEICT_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Tạo website bằng phần mềm"@vi ;
+    ex:hasTitle "Tạo website bằng phần mềm"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g12_topicEICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 129 ;
+    ex:hasEndPage 133 ;
+    ex:hasSection ex:g12_topicEICT_l2s1, ex:g12_topicEICT_l2s2,
+                  ex:g12_topicEICT_l2s3, ex:g12_topicEICT_l2s4 .
+
+  ex:g12_topicEICT_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Tạo thanh điều hướng cho trang web"@vi ;
+    ex:hasTitle "Tạo thanh điều hướng cho trang web"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g12_topicEICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 134 ;
+    ex:hasEndPage 139 ;
+    ex:hasSection ex:g12_topicEICT_l3s1, ex:g12_topicEICT_l3s2,
+                  ex:g12_topicEICT_l3s3, ex:g12_topicEICT_l3s4 .
+
+  ex:g12_topicEICT_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Tạo nội dung văn bản cho trang web"@vi ;
+    ex:hasTitle "Tạo nội dung văn bản cho trang web"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:g12_topicEICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 140 ;
+    ex:hasEndPage 144 ;
+    ex:hasSection ex:g12_topicEICT_l4s1, ex:g12_topicEICT_l4s2,
+                  ex:g12_topicEICT_l4s3, ex:g12_topicEICT_l4s4 .
+
+  ex:g12_topicEICT_lesson5 a ex:Lesson ;
+    rdfs:label "Bài 5. Tạo nội dung hình ảnh cho trang web"@vi ;
+    ex:hasTitle "Tạo nội dung hình ảnh cho trang web"@vi ;
+    ex:lessonNumber 5 ;
+    ex:belongsToTopic ex:g12_topicEICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 145 ;
+    ex:hasEndPage 151 ;
+    ex:hasSection ex:g12_topicEICT_l5s1, ex:g12_topicEICT_l5s2,
+                  ex:g12_topicEICT_l5s3, ex:g12_topicEICT_l5s4 .
+
+  ex:g12_topicEICT_lesson6 a ex:Lesson ;
+    rdfs:label "Bài 6. Tạo biểu mẫu cho trang web và xuất bản website"@vi ;
+    ex:hasTitle "Tạo biểu mẫu cho trang web và xuất bản website"@vi ;
+    ex:lessonNumber 6 ;
+    ex:belongsToTopic ex:g12_topicEICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 152 ;
+    ex:hasEndPage 158 ;
+    ex:hasSection ex:g12_topicEICT_l6s1, ex:g12_topicEICT_l6s2,
+                  ex:g12_topicEICT_l6s3, ex:g12_topicEICT_l6s4,
+                  ex:g12_topicEICT_l6s5 .
+
+  ex:g12_topicEICT_lesson7 a ex:Lesson ;
+    rdfs:label "Bài 7. Tạo sản phẩm theo nhóm"@vi ;
+    ex:hasTitle "Tạo sản phẩm theo nhóm"@vi ;
+    ex:lessonNumber 7 ;
+    ex:belongsToTopic ex:g12_topicEICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 159 ;
+    ex:hasEndPage 161 ;
+    ex:hasSection ex:g12_topicEICT_l7s1, ex:g12_topicEICT_l7s2,
+                  ex:g12_topicEICT_l7s3, ex:g12_topicEICT_l7s4,
+                  ex:g12_topicEICT_l7s5 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g12_topicEICT_l1s1 a ex:Section ; rdfs:label "Phần mềm tạo website"@vi ; ex:hasTitle "Phần mềm tạo website"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 .
+  ex:g12_topicEICT_l1s2 a ex:Section ; rdfs:label "Giới thiệu phần mềm Mobirise"@vi ; ex:hasTitle "Giới thiệu phần mềm Mobirise"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 .
+  ex:g12_topicEICT_l1s3 a ex:Section ; rdfs:label "Thực hành mở mẫu trang web và chỉnh sửa nội dung"@vi ; ex:hasTitle "Thực hành"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 .
+  ex:g12_topicEICT_l1s4 a ex:Section ; rdfs:label "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:hasTitle "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 .
+
+  ex:g12_topicEICT_l2s1 a ex:Section ; rdfs:label "Cấu trúc cơ bản của một website"@vi ; ex:hasTitle "Cấu trúc cơ bản của một website"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 .
+  ex:g12_topicEICT_l2s2 a ex:Section ; rdfs:label "Các bước tạo website bằng phần mềm"@vi ; ex:hasTitle "Các bước tạo website bằng phần mềm"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 .
+  ex:g12_topicEICT_l2s3 a ex:Section ; rdfs:label "Thực hành tạo dự án website và tạo trang web"@vi ; ex:hasTitle "Thực hành"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 .
+  ex:g12_topicEICT_l2s4 a ex:Section ; rdfs:label "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:hasTitle "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 .
+
+  ex:g12_topicEICT_l3s1 a ex:Section ; rdfs:label "Giới thiệu thanh điều hướng"@vi ; ex:hasTitle "Giới thiệu thanh điều hướng"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 .
+  ex:g12_topicEICT_l3s2 a ex:Section ; rdfs:label "Thực hành tạo thanh điều hướng"@vi ; ex:hasTitle "Thực hành"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 .
+  ex:g12_topicEICT_l3s3 a ex:Section ; rdfs:label "Chỉnh sửa, tạo liên kết, biểu tượng và danh mục con"@vi ; ex:hasTitle "Chỉnh sửa thanh điều hướng"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 .
+  ex:g12_topicEICT_l3s4 a ex:Section ; rdfs:label "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:hasTitle "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 .
+
+  ex:g12_topicEICT_l4s1 a ex:Section ; rdfs:label "Giới thiệu bài viết trên trang web"@vi ; ex:hasTitle "Giới thiệu bài viết trên trang web"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 .
+  ex:g12_topicEICT_l4s2 a ex:Section ; rdfs:label "Giới thiệu chân trang"@vi ; ex:hasTitle "Giới thiệu chân trang"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 .
+  ex:g12_topicEICT_l4s3 a ex:Section ; rdfs:label "Thực hành thêm bài viết và phần chân trang"@vi ; ex:hasTitle "Thực hành"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 .
+  ex:g12_topicEICT_l4s4 a ex:Section ; rdfs:label "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:hasTitle "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 .
+
+  ex:g12_topicEICT_l5s1 a ex:Section ; rdfs:label "Hình ảnh, video trên trang web"@vi ; ex:hasTitle "Hình ảnh, video trên trang web"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 .
+  ex:g12_topicEICT_l5s2 a ex:Section ; rdfs:label "Bộ sưu tập và thanh trượt"@vi ; ex:hasTitle "Bộ sưu tập và thanh trượt"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 .
+  ex:g12_topicEICT_l5s3 a ex:Section ; rdfs:label "Thực hành thêm hình ảnh, video, bộ sưu tập và thanh trượt"@vi ; ex:hasTitle "Thực hành"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 .
+  ex:g12_topicEICT_l5s4 a ex:Section ; rdfs:label "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:hasTitle "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 .
+
+  ex:g12_topicEICT_l6s1 a ex:Section ; rdfs:label "Biểu mẫu trên trang web"@vi ; ex:hasTitle "Biểu mẫu trên trang web"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 .
+  ex:g12_topicEICT_l6s2 a ex:Section ; rdfs:label "Chế độ xem trước"@vi ; ex:hasTitle "Chế độ xem trước"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 .
+  ex:g12_topicEICT_l6s3 a ex:Section ; rdfs:label "Xuất bản website"@vi ; ex:hasTitle "Xuất bản website"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 .
+  ex:g12_topicEICT_l6s4 a ex:Section ; rdfs:label "Thực hành thêm biểu mẫu và xuất bản website"@vi ; ex:hasTitle "Thực hành"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 .
+  ex:g12_topicEICT_l6s5 a ex:Section ; rdfs:label "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:hasTitle "Vận dụng, tự kiểm tra và tóm tắt bài học"@vi ; ex:sectionOrder 5 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 .
+
+  ex:g12_topicEICT_l7s1 a ex:Section ; rdfs:label "Yêu cầu chung"@vi ; ex:hasTitle "Yêu cầu chung"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicEICT_lesson7 .
+  ex:g12_topicEICT_l7s2 a ex:Section ; rdfs:label "Gợi ý một số chủ đề"@vi ; ex:hasTitle "Gợi ý một số chủ đề"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicEICT_lesson7 .
+  ex:g12_topicEICT_l7s3 a ex:Section ; rdfs:label "Tiêu chí đánh giá sản phẩm"@vi ; ex:hasTitle "Tiêu chí đánh giá sản phẩm"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicEICT_lesson7 .
+  ex:g12_topicEICT_l7s4 a ex:Section ; rdfs:label "Hướng dẫn tạo website và chỉnh sửa trang web"@vi ; ex:hasTitle "Hướng dẫn"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicEICT_lesson7 .
+  ex:g12_topicEICT_l7s5 a ex:Section ; rdfs:label "Bài tập nhóm tạo website hướng nghiệp"@vi ; ex:hasTitle "Bài tập nhóm tạo website hướng nghiệp"@vi ; ex:sectionOrder 5 ; ex:belongsToLesson ex:g12_topicEICT_lesson7 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g12_page123 a ex:Page ; ex:hasPageNumber 123 ; ex:hasPrintedPageNumber 123 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page124 a ex:Page ; ex:hasPageNumber 124 ; ex:hasPrintedPageNumber 124 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page125 a ex:Page ; ex:hasPageNumber 125 ; ex:hasPrintedPageNumber 125 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page126 a ex:Page ; ex:hasPageNumber 126 ; ex:hasPrintedPageNumber 126 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page127 a ex:Page ; ex:hasPageNumber 127 ; ex:hasPrintedPageNumber 127 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page128 a ex:Page ; ex:hasPageNumber 128 ; ex:hasPrintedPageNumber 128 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g12_topicEICT_lesson1 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page129 a ex:Page ; ex:hasPageNumber 129 ; ex:hasPrintedPageNumber 129 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page130 a ex:Page ; ex:hasPageNumber 130 ; ex:hasPrintedPageNumber 130 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page131 a ex:Page ; ex:hasPageNumber 131 ; ex:hasPrintedPageNumber 131 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page132 a ex:Page ; ex:hasPageNumber 132 ; ex:hasPrintedPageNumber 132 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page133 a ex:Page ; ex:hasPageNumber 133 ; ex:hasPrintedPageNumber 133 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g12_topicEICT_lesson2 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page134 a ex:Page ; ex:hasPageNumber 134 ; ex:hasPrintedPageNumber 134 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page135 a ex:Page ; ex:hasPageNumber 135 ; ex:hasPrintedPageNumber 135 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page136 a ex:Page ; ex:hasPageNumber 136 ; ex:hasPrintedPageNumber 136 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page137 a ex:Page ; ex:hasPageNumber 137 ; ex:hasPrintedPageNumber 137 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page138 a ex:Page ; ex:hasPageNumber 138 ; ex:hasPrintedPageNumber 138 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page139 a ex:Page ; ex:hasPageNumber 139 ; ex:hasPrintedPageNumber 139 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:g12_topicEICT_lesson3 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page140 a ex:Page ; ex:hasPageNumber 140 ; ex:hasPrintedPageNumber 140 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page141 a ex:Page ; ex:hasPageNumber 141 ; ex:hasPrintedPageNumber 141 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page142 a ex:Page ; ex:hasPageNumber 142 ; ex:hasPrintedPageNumber 142 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page143 a ex:Page ; ex:hasPageNumber 143 ; ex:hasPrintedPageNumber 143 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page144 a ex:Page ; ex:hasPageNumber 144 ; ex:hasPrintedPageNumber 144 ; ex:pdfPageIndex 22 ; ex:belongsToLesson ex:g12_topicEICT_lesson4 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page145 a ex:Page ; ex:hasPageNumber 145 ; ex:hasPrintedPageNumber 145 ; ex:pdfPageIndex 23 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page146 a ex:Page ; ex:hasPageNumber 146 ; ex:hasPrintedPageNumber 146 ; ex:pdfPageIndex 24 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page147 a ex:Page ; ex:hasPageNumber 147 ; ex:hasPrintedPageNumber 147 ; ex:pdfPageIndex 25 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page148 a ex:Page ; ex:hasPageNumber 148 ; ex:hasPrintedPageNumber 148 ; ex:pdfPageIndex 26 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page149 a ex:Page ; ex:hasPageNumber 149 ; ex:hasPrintedPageNumber 149 ; ex:pdfPageIndex 27 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page150 a ex:Page ; ex:hasPageNumber 150 ; ex:hasPrintedPageNumber 150 ; ex:pdfPageIndex 28 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page151 a ex:Page ; ex:hasPageNumber 151 ; ex:hasPrintedPageNumber 151 ; ex:pdfPageIndex 29 ; ex:belongsToLesson ex:g12_topicEICT_lesson5 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page152 a ex:Page ; ex:hasPageNumber 152 ; ex:hasPrintedPageNumber 152 ; ex:pdfPageIndex 30 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page153 a ex:Page ; ex:hasPageNumber 153 ; ex:hasPrintedPageNumber 153 ; ex:pdfPageIndex 31 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page154 a ex:Page ; ex:hasPageNumber 154 ; ex:hasPrintedPageNumber 154 ; ex:pdfPageIndex 32 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page155 a ex:Page ; ex:hasPageNumber 155 ; ex:hasPrintedPageNumber 155 ; ex:pdfPageIndex 33 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page156 a ex:Page ; ex:hasPageNumber 156 ; ex:hasPrintedPageNumber 156 ; ex:pdfPageIndex 34 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page157 a ex:Page ; ex:hasPageNumber 157 ; ex:hasPrintedPageNumber 157 ; ex:pdfPageIndex 35 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page158 a ex:Page ; ex:hasPageNumber 158 ; ex:hasPrintedPageNumber 158 ; ex:pdfPageIndex 36 ; ex:belongsToLesson ex:g12_topicEICT_lesson6 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page159 a ex:Page ; ex:hasPageNumber 159 ; ex:hasPrintedPageNumber 159 ; ex:pdfPageIndex 37 ; ex:belongsToLesson ex:g12_topicEICT_lesson7 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page160 a ex:Page ; ex:hasPageNumber 160 ; ex:hasPrintedPageNumber 160 ; ex:pdfPageIndex 38 ; ex:belongsToLesson ex:g12_topicEICT_lesson7 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page161 a ex:Page ; ex:hasPageNumber 161 ; ex:hasPrintedPageNumber 161 ; ex:pdfPageIndex 39 ; ex:belongsToLesson ex:g12_topicEICT_lesson7 ; ex:belongsToTopic ex:g12_topicEICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g12_page122 ex:nextPage ex:g12_page123 .
+  ex:g12_page123 ex:previousPage ex:g12_page122 ; ex:nextPage ex:g12_page124 .
+  ex:g12_page124 ex:previousPage ex:g12_page123 ; ex:nextPage ex:g12_page125 .
+  ex:g12_page125 ex:previousPage ex:g12_page124 ; ex:nextPage ex:g12_page126 .
+  ex:g12_page126 ex:previousPage ex:g12_page125 ; ex:nextPage ex:g12_page127 .
+  ex:g12_page127 ex:previousPage ex:g12_page126 ; ex:nextPage ex:g12_page128 .
+  ex:g12_page128 ex:previousPage ex:g12_page127 ; ex:nextPage ex:g12_page129 .
+  ex:g12_page129 ex:previousPage ex:g12_page128 ; ex:nextPage ex:g12_page130 .
+  ex:g12_page130 ex:previousPage ex:g12_page129 ; ex:nextPage ex:g12_page131 .
+  ex:g12_page131 ex:previousPage ex:g12_page130 ; ex:nextPage ex:g12_page132 .
+  ex:g12_page132 ex:previousPage ex:g12_page131 ; ex:nextPage ex:g12_page133 .
+  ex:g12_page133 ex:previousPage ex:g12_page132 ; ex:nextPage ex:g12_page134 .
+  ex:g12_page134 ex:previousPage ex:g12_page133 ; ex:nextPage ex:g12_page135 .
+  ex:g12_page135 ex:previousPage ex:g12_page134 ; ex:nextPage ex:g12_page136 .
+  ex:g12_page136 ex:previousPage ex:g12_page135 ; ex:nextPage ex:g12_page137 .
+  ex:g12_page137 ex:previousPage ex:g12_page136 ; ex:nextPage ex:g12_page138 .
+  ex:g12_page138 ex:previousPage ex:g12_page137 ; ex:nextPage ex:g12_page139 .
+  ex:g12_page139 ex:previousPage ex:g12_page138 ; ex:nextPage ex:g12_page140 .
+  ex:g12_page140 ex:previousPage ex:g12_page139 ; ex:nextPage ex:g12_page141 .
+  ex:g12_page141 ex:previousPage ex:g12_page140 ; ex:nextPage ex:g12_page142 .
+  ex:g12_page142 ex:previousPage ex:g12_page141 ; ex:nextPage ex:g12_page143 .
+  ex:g12_page143 ex:previousPage ex:g12_page142 ; ex:nextPage ex:g12_page144 .
+  ex:g12_page144 ex:previousPage ex:g12_page143 ; ex:nextPage ex:g12_page145 .
+  ex:g12_page145 ex:previousPage ex:g12_page144 ; ex:nextPage ex:g12_page146 .
+  ex:g12_page146 ex:previousPage ex:g12_page145 ; ex:nextPage ex:g12_page147 .
+  ex:g12_page147 ex:previousPage ex:g12_page146 ; ex:nextPage ex:g12_page148 .
+  ex:g12_page148 ex:previousPage ex:g12_page147 ; ex:nextPage ex:g12_page149 .
+  ex:g12_page149 ex:previousPage ex:g12_page148 ; ex:nextPage ex:g12_page150 .
+  ex:g12_page150 ex:previousPage ex:g12_page149 ; ex:nextPage ex:g12_page151 .
+  ex:g12_page151 ex:previousPage ex:g12_page150 ; ex:nextPage ex:g12_page152 .
+  ex:g12_page152 ex:previousPage ex:g12_page151 ; ex:nextPage ex:g12_page153 .
+  ex:g12_page153 ex:previousPage ex:g12_page152 ; ex:nextPage ex:g12_page154 .
+  ex:g12_page154 ex:previousPage ex:g12_page153 ; ex:nextPage ex:g12_page155 .
+  ex:g12_page155 ex:previousPage ex:g12_page154 ; ex:nextPage ex:g12_page156 .
+  ex:g12_page156 ex:previousPage ex:g12_page155 ; ex:nextPage ex:g12_page157 .
+  ex:g12_page157 ex:previousPage ex:g12_page156 ; ex:nextPage ex:g12_page158 .
+  ex:g12_page158 ex:previousPage ex:g12_page157 ; ex:nextPage ex:g12_page159 .
+  ex:g12_page159 ex:previousPage ex:g12_page158 ; ex:nextPage ex:g12_page160 .
+  ex:g12_page160 ex:previousPage ex:g12_page159 ; ex:nextPage ex:g12_page161 .
+  ex:g12_page161 ex:previousPage ex:g12_page160 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g12_conceptUngDungTinHoc a ex:KnowledgeConcept ; rdfs:label "Ứng dụng tin học"@vi .
+  ex:g12_conceptTaoTrangWebBangPhanMem a ex:KnowledgeConcept ; rdfs:label "Tạo trang web bằng phần mềm"@vi .
+  ex:g12_conceptWebsite a ex:KnowledgeConcept ; rdfs:label "Website"@vi .
+  ex:g12_conceptTrangWeb a ex:KnowledgeConcept ; rdfs:label "Trang web"@vi .
+  ex:g12_conceptPhanMemTaoWebsite a ex:KnowledgeConcept ; rdfs:label "Phần mềm tạo website"@vi .
+  ex:g12_conceptMobirise a ex:KnowledgeConcept ; rdfs:label "Mobirise"@vi .
+  ex:g12_conceptWebsiteTrucTuyen a ex:KnowledgeConcept ; rdfs:label "Phần mềm tạo website trực tuyến"@vi .
+  ex:g12_conceptWebsiteNgoaiTuyen a ex:KnowledgeConcept ; rdfs:label "Phần mềm tạo website ngoại tuyến"@vi .
+  ex:g12_conceptMauTrangWeb a ex:KnowledgeConcept ; rdfs:label "Mẫu trang web"@vi .
+  ex:g12_conceptThemeWebsite a ex:KnowledgeConcept ; rdfs:label "Theme của trang web"@vi .
+  ex:g12_conceptWebPage a ex:KnowledgeConcept ; rdfs:label "Web page"@vi .
+  ex:g12_conceptTextblock a ex:KnowledgeConcept ; rdfs:label "Textblock"@vi .
+  ex:g12_conceptHyperlink a ex:KnowledgeConcept ; rdfs:label "Hyperlink"@vi .
+  ex:g12_conceptFormWeb a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu trên trang web"@vi .
+  ex:g12_conceptResponsive a ex:KnowledgeConcept ; rdfs:label "Responsive"@vi .
+  ex:g12_conceptPublishWebsite a ex:KnowledgeConcept ; rdfs:label "Xuất bản website"@vi .
+  ex:g12_conceptVungLamViecChinh a ex:KnowledgeConcept ; rdfs:label "Vùng làm việc chính"@vi .
+  ex:g12_conceptAddBlockToPage a ex:KnowledgeConcept ; rdfs:label "Add Block to Page"@vi .
+  ex:g12_conceptKhoiMau a ex:KnowledgeConcept ; rdfs:label "Khối mẫu"@vi .
+  ex:g12_conceptMediaImage a ex:KnowledgeConcept ; rdfs:label "Media Image"@vi .
+  ex:g12_conceptPreviewInBrowser a ex:KnowledgeConcept ; rdfs:label "Preview in Browser"@vi .
+
+  ex:g12_conceptCauTrucWebsite a ex:KnowledgeConcept ; rdfs:label "Cấu trúc website"@vi .
+  ex:g12_conceptTrangChu a ex:KnowledgeConcept ; rdfs:label "Trang chủ"@vi .
+  ex:g12_conceptTrangChuyenMuc a ex:KnowledgeConcept ; rdfs:label "Trang chuyên mục"@vi .
+  ex:g12_conceptTrangChiTiet a ex:KnowledgeConcept ; rdfs:label "Trang chi tiết"@vi .
+  ex:g12_conceptPhanDauTrang a ex:KnowledgeConcept ; rdfs:label "Phần đầu trang"@vi .
+  ex:g12_conceptThanhDieuHuong a ex:KnowledgeConcept ; rdfs:label "Thanh điều hướng"@vi .
+  ex:g12_conceptPhanNoiDung a ex:KnowledgeConcept ; rdfs:label "Phần nội dung"@vi .
+  ex:g12_conceptChanTrang a ex:KnowledgeConcept ; rdfs:label "Chân trang"@vi .
+  ex:g12_conceptCreateNewSite a ex:KnowledgeConcept ; rdfs:label "Create New Site"@vi .
+  ex:g12_conceptCreateNewPage a ex:KnowledgeConcept ; rdfs:label "Create New Page"@vi .
+  ex:g12_conceptAddBlankPage a ex:KnowledgeConcept ; rdfs:label "Add Blank Page"@vi .
+  ex:g12_conceptEditTitle a ex:KnowledgeConcept ; rdfs:label "Edit Title"@vi .
+
+  ex:g12_conceptNavigationMenu a ex:KnowledgeConcept ; rdfs:label "Navigation menu"@vi .
+  ex:g12_conceptThanhDieuHuongNhieuCap a ex:KnowledgeConcept ; rdfs:label "Thanh điều hướng nhiều cấp"@vi .
+  ex:g12_conceptMenuItems a ex:KnowledgeConcept ; rdfs:label "Menu Items"@vi .
+  ex:g12_conceptBlockParameters a ex:KnowledgeConcept ; rdfs:label "Block Parameters"@vi .
+  ex:g12_conceptLienKetTrangWeb a ex:KnowledgeConcept ; rdfs:label "Liên kết trang web"@vi .
+  ex:g12_conceptWebAddress a ex:KnowledgeConcept ; rdfs:label "Web Address"@vi .
+  ex:g12_conceptSitePages a ex:KnowledgeConcept ; rdfs:label "Site Pages"@vi .
+  ex:g12_conceptIcon a ex:KnowledgeConcept ; rdfs:label "Biểu tượng"@vi .
+  ex:g12_conceptSubmenu a ex:KnowledgeConcept ; rdfs:label "Danh mục con"@vi .
+  ex:g12_conceptRemoveBlock a ex:KnowledgeConcept ; rdfs:label "Remove Block"@vi .
+
+  ex:g12_conceptBaiVietTrangWeb a ex:KnowledgeConcept ; rdfs:label "Bài viết trên trang web"@vi .
+  ex:g12_conceptArticleBlock a ex:KnowledgeConcept ; rdfs:label "Article block"@vi .
+  ex:g12_conceptPeopleBlock a ex:KnowledgeConcept ; rdfs:label "People block"@vi .
+  ex:g12_conceptContactBlock a ex:KnowledgeConcept ; rdfs:label "Contact block"@vi .
+  ex:g12_conceptListBlock a ex:KnowledgeConcept ; rdfs:label "List block"@vi .
+  ex:g12_conceptFooterBlock a ex:KnowledgeConcept ; rdfs:label "Footer block"@vi .
+
+  ex:g12_conceptHinhAnhTrangWeb a ex:KnowledgeConcept ; rdfs:label "Hình ảnh trên trang web"@vi .
+  ex:g12_conceptVideoTrangWeb a ex:KnowledgeConcept ; rdfs:label "Video trên trang web"@vi .
+  ex:g12_conceptAnhDaiDien a ex:KnowledgeConcept ; rdfs:label "Ảnh đại diện"@vi .
+  ex:g12_conceptAnhMinhHoa a ex:KnowledgeConcept ; rdfs:label "Ảnh minh họa"@vi .
+  ex:g12_conceptHinhAnhNoiBat a ex:KnowledgeConcept ; rdfs:label "Hình ảnh nổi bật"@vi .
+  ex:g12_conceptGallery a ex:KnowledgeConcept ; rdfs:label "Bộ sưu tập ảnh/video"@vi .
+  ex:g12_conceptSlider a ex:KnowledgeConcept ; rdfs:label "Thanh trượt"@vi .
+  ex:g12_conceptImageVideoBlock a ex:KnowledgeConcept ; rdfs:label "Image & Video block"@vi .
+  ex:g12_conceptGallerySliderBlock a ex:KnowledgeConcept ; rdfs:label "Gallery & Slider block"@vi .
+  ex:g12_conceptBrowseComputer a ex:KnowledgeConcept ; rdfs:label "Browse Computer"@vi .
+  ex:g12_conceptFreeOnlineLibrary a ex:KnowledgeConcept ; rdfs:label "Free Online Library"@vi .
+  ex:g12_conceptSiteLibrary a ex:KnowledgeConcept ; rdfs:label "Site Library"@vi .
+  ex:g12_conceptAltText a ex:KnowledgeConcept ; rdfs:label "Alt text"@vi .
+  ex:g12_conceptVideoURL a ex:KnowledgeConcept ; rdfs:label "Video URL"@vi .
+  ex:g12_conceptAspectRatio a ex:KnowledgeConcept ; rdfs:label "Aspect Ratio"@vi .
+  ex:g12_conceptAutoplay a ex:KnowledgeConcept ; rdfs:label "Autoplay"@vi .
+  ex:g12_conceptLoopVideo a ex:KnowledgeConcept ; rdfs:label "Loop video"@vi .
+
+  ex:g12_conceptBieuMau a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu"@vi .
+  ex:g12_conceptOThongTin a ex:KnowledgeConcept ; rdfs:label "Ô nhập thông tin"@vi .
+  ex:g12_conceptMobileView a ex:KnowledgeConcept ; rdfs:label "Mobile View"@vi .
+  ex:g12_conceptDesktopView a ex:KnowledgeConcept ; rdfs:label "Desktop View"@vi .
+  ex:g12_conceptMobirisesite a ex:KnowledgeConcept ; rdfs:label "*.mobirisesite.com"@vi .
+  ex:g12_conceptLocalDriveFolder a ex:KnowledgeConcept ; rdfs:label "Local drive folder"@vi .
+  ex:g12_conceptFTP a ex:KnowledgeConcept ; rdfs:label "FTP"@vi .
+  ex:g12_conceptHTMLFile a ex:KnowledgeConcept ; rdfs:label "Tệp HTML"@vi .
+  ex:g12_conceptAssetsFolder a ex:KnowledgeConcept ; rdfs:label "Thư mục assets"@vi .
+  ex:g12_conceptFTPServerParameters a ex:KnowledgeConcept ; rdfs:label "Thông số máy chủ FTP"@vi .
+
+  ex:g12_conceptSanPhamNhom a ex:KnowledgeConcept ; rdfs:label "Sản phẩm theo nhóm"@vi .
+  ex:g12_conceptHopTacNhom a ex:KnowledgeConcept ; rdfs:label "Hợp tác nhóm"@vi .
+  ex:g12_conceptTieuChiDanhGiaWebsite a ex:KnowledgeConcept ; rdfs:label "Tiêu chí đánh giá website"@vi .
+  ex:g12_conceptChinhSuaHTML a ex:KnowledgeConcept ; rdfs:label "Chỉnh sửa HTML"@vi .
+  ex:g12_conceptSectionHTML a ex:KnowledgeConcept ; rdfs:label "Thẻ section trong HTML"@vi .
+
+  ex:g12_topicEICT ex:hasConcept ex:g12_conceptUngDungTinHoc,
+    ex:g12_conceptTaoTrangWebBangPhanMem, ex:g12_conceptWebsite,
+    ex:g12_conceptTrangWeb, ex:g12_conceptPhanMemTaoWebsite, ex:g12_conceptMobirise,
+    ex:g12_conceptMauTrangWeb, ex:g12_conceptThemeWebsite, ex:g12_conceptResponsive,
+    ex:g12_conceptPublishWebsite, ex:g12_conceptCauTrucWebsite,
+    ex:g12_conceptTrangChu, ex:g12_conceptTrangChuyenMuc, ex:g12_conceptTrangChiTiet,
+    ex:g12_conceptPhanDauTrang, ex:g12_conceptThanhDieuHuong, ex:g12_conceptPhanNoiDung,
+    ex:g12_conceptChanTrang, ex:g12_conceptBaiVietTrangWeb, ex:g12_conceptHinhAnhTrangWeb,
+    ex:g12_conceptVideoTrangWeb, ex:g12_conceptGallery, ex:g12_conceptSlider,
+    ex:g12_conceptBieuMau, ex:g12_conceptMobileView, ex:g12_conceptDesktopView,
+    ex:g12_conceptMobirisesite, ex:g12_conceptLocalDriveFolder, ex:g12_conceptFTP,
+    ex:g12_conceptSanPhamNhom, ex:g12_conceptHopTacNhom, ex:g12_conceptTieuChiDanhGiaWebsite .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g12_topicEICT_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ chỉ ra được một số chức năng cơ bản của phần mềm tạo website và nhận biết được các thành phần của giao diện phần mềm tạo website Mobirise."@vi ;
+    ex:appearsOnPage ex:g12_page123 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 .
+
+  ex:g12_topicEICT_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ nhận diện được cấu trúc cơ bản của một website và bước đầu sử dụng được một số chức năng chính của phần mềm tạo website."@vi ;
+    ex:appearsOnPage ex:g12_page129 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 .
+
+  ex:g12_topicEICT_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ nêu được ý nghĩa và cách sử dụng thanh điều hướng trong website; tạo được thanh điều hướng cho trang web."@vi ;
+    ex:appearsOnPage ex:g12_page134 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 .
+
+  ex:g12_topicEICT_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tạo được nội dung văn bản cho trang web: nội dung bài viết, chân trang."@vi ;
+    ex:appearsOnPage ex:g12_page140 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 .
+
+  ex:g12_topicEICT_l5_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 5 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tạo được các nội dung dạng hình ảnh trên trang web: ảnh đại diện, video, thư viện ảnh dưới dạng thanh trượt và bộ sưu tập."@vi ;
+    ex:appearsOnPage ex:g12_page145 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 .
+
+  ex:g12_topicEICT_l6_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 6 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tạo được biểu mẫu cho trang web và xuất bản được website dưới dạng các tệp tin HTML, tải website lên trên Internet."@vi ;
+    ex:appearsOnPage ex:g12_page152 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 .
+
+  ex:g12_topicEICT_l7_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 7 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tạo được một website bằng phần mềm Mobirise và thể hiện được tính hợp tác, tinh thần trách nhiệm trong hoạt động nhóm."@vi ;
+    ex:appearsOnPage ex:g12_page159 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 .
+
+  ex:g12_topicEICT_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề E ICT lớp 12"@vi ;
+    ex:hasSummaryText "Phần mềm tạo website cung cấp các mẫu trang web và mẫu trình bày cho các thành phần trang web; người dùng có thể sử dụng thao tác kéo thả để tạo, chỉnh sửa và xuất bản website. Mobirise là phần mềm tạo website đơn giản trên Windows, MacOS và Linux."@vi ;
+    ex:appearsOnPage ex:g12_page128 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 .
+
+  ex:g12_topicEICT_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề E ICT lớp 12"@vi ;
+    ex:hasSummaryText "Mỗi website thường gồm trang chủ, các trang chuyên mục và các trang chi tiết. Mỗi trang web có phần đầu trang, thanh điều hướng, phần nội dung và phần chân trang."@vi ;
+    ex:appearsOnPage ex:g12_page133 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 .
+
+  ex:g12_topicEICT_l3_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 3 chủ đề E ICT lớp 12"@vi ;
+    ex:hasSummaryText "Thanh điều hướng liệt kê các mục nội dung liên kết đến các trang web của website và thường được đặt ở phần đầu trang web. Thanh điều hướng nhiều cấp thường dùng khi có nhiều liên kết cần hiển thị."@vi ;
+    ex:appearsOnPage ex:g12_page139 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 .
+
+  ex:g12_topicEICT_l4_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 4 chủ đề E ICT lớp 12"@vi ;
+    ex:hasSummaryText "Bài viết trên trang web là phần nội dung giới thiệu chi tiết về sản phẩm, dịch vụ hay các tin tức. Chân trang nằm ở vị trí cuối trang web, chứa thông tin như địa chỉ liên hệ, bản đồ chỉ đường, thông tin bản quyền và các liên kết nhanh."@vi ;
+    ex:appearsOnPage ex:g12_page144 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 .
+
+  ex:g12_topicEICT_l5_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 5 chủ đề E ICT lớp 12"@vi ;
+    ex:hasSummaryText "Nội dung trang web có thể được thể hiện dưới nhiều dạng đối tượng đồ họa khác nhau như hình ảnh, video riêng lẻ hoặc tổ chức thành bộ sưu tập, thanh trượt. Hình ảnh và video có thể kết hợp với văn bản ngắn để làm rõ chủ đề."@vi ;
+    ex:appearsOnPage ex:g12_page151 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 .
+
+  ex:g12_topicEICT_l6_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 6 chủ đề E ICT lớp 12"@vi ;
+    ex:hasSummaryText "Biểu mẫu cho phép thu nhận thông tin người dùng thông qua các ô nhập văn bản. Trước khi xuất bản cần xem trước website ở các chế độ hiển thị khác nhau. Website có thể xuất bản dưới dạng tệp HTML hoặc tải lên Internet."@vi ;
+    ex:appearsOnPage ex:g12_page158 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 .
+
+  ex:g12_topicEICT_lesson1 ex:hasSummary ex:g12_topicEICT_l1_summary .
+  ex:g12_topicEICT_lesson2 ex:hasSummary ex:g12_topicEICT_l2_summary .
+  ex:g12_topicEICT_lesson3 ex:hasSummary ex:g12_topicEICT_l3_summary .
+  ex:g12_topicEICT_lesson4 ex:hasSummary ex:g12_topicEICT_l4_summary .
+  ex:g12_topicEICT_lesson5 ex:hasSummary ex:g12_topicEICT_l5_summary .
+  ex:g12_topicEICT_lesson6 ex:hasSummary ex:g12_topicEICT_l6_summary .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g12_topicEICT_def_websiteCreator a ex:DefinitionText ;
+    rdfs:label "Phần mềm tạo website"@vi ;
+    ex:hasDefinitionText "Phần mềm tạo website là công cụ cho phép người dùng tạo, chỉnh sửa và xuất bản website một cách trực quan, thường bằng các mẫu trang web, khối mẫu và thao tác kéo thả."@vi ;
+    ex:appearsOnPage ex:g12_page123 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:explainsConcept ex:g12_conceptPhanMemTaoWebsite .
+
+  ex:g12_topicEICT_def_mobirise a ex:DefinitionText ;
+    rdfs:label "Mobirise"@vi ;
+    ex:hasDefinitionText "Mobirise là phần mềm tạo website ngoại tuyến miễn phí cho Windows, MacOS và Linux, cung cấp các mẫu trình bày và khối thành phần giúp tạo website bằng thao tác kéo thả."@vi ;
+    ex:appearsOnPage ex:g12_page124 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:explainsConcept ex:g12_conceptMobirise .
+
+  ex:g12_topicEICT_def_websiteStructure a ex:DefinitionText ;
+    rdfs:label "Cấu trúc cơ bản của website"@vi ;
+    ex:hasDefinitionText "Một website thường có trang chủ, trang chuyên mục và trang chi tiết; mỗi trang web thường có phần đầu trang, thanh điều hướng, phần nội dung và phần chân trang."@vi ;
+    ex:appearsOnPage ex:g12_page129 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:explainsConcept ex:g12_conceptCauTrucWebsite .
+
+  ex:g12_topicEICT_def_navigationBar a ex:DefinitionText ;
+    rdfs:label "Thanh điều hướng"@vi ;
+    ex:hasDefinitionText "Thanh điều hướng liệt kê các mục nội dung chính của website; mỗi mục nội dung liên kết đến một hoặc nhiều trang web, giúp người dùng di chuyển giữa các trang."@vi ;
+    ex:appearsOnPage ex:g12_page134 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:explainsConcept ex:g12_conceptThanhDieuHuong .
+
+  ex:g12_topicEICT_def_article a ex:DefinitionText ;
+    rdfs:label "Bài viết trên trang web"@vi ;
+    ex:hasDefinitionText "Bài viết là phần cung cấp thông tin chính của trang web, thường giới thiệu sản phẩm, dịch vụ hoặc tin tức và có thể trình bày bằng văn bản kết hợp hình ảnh, video minh họa."@vi ;
+    ex:appearsOnPage ex:g12_page140 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:explainsConcept ex:g12_conceptBaiVietTrangWeb .
+
+  ex:g12_topicEICT_def_footer a ex:DefinitionText ;
+    rdfs:label "Chân trang"@vi ;
+    ex:hasDefinitionText "Chân trang là phần ở vị trí dưới cùng của trang web, thường chứa địa chỉ liên hệ, bản đồ chỉ đường, thông tin bản quyền, liên kết nhanh, liên kết mạng xã hội và các mục lục khác."@vi ;
+    ex:appearsOnPage ex:g12_page141 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:explainsConcept ex:g12_conceptChanTrang .
+
+  ex:g12_topicEICT_def_gallerySlider a ex:DefinitionText ;
+    rdfs:label "Bộ sưu tập và thanh trượt"@vi ;
+    ex:hasDefinitionText "Bộ sưu tập hiển thị nhiều hình ảnh hoặc video cùng lúc dưới dạng lưới hoặc danh sách; thanh trượt lần lượt hiển thị các hình ảnh hoặc video trên cùng một vùng trang web, có thể tự động hoặc thông qua nút điều hướng."@vi ;
+    ex:appearsOnPage ex:g12_page146 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:explainsConcept ex:g12_conceptGallery, ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_def_form a ex:DefinitionText ;
+    rdfs:label "Biểu mẫu trên trang web"@vi ;
+    ex:hasDefinitionText "Biểu mẫu trên trang web là thành phần giúp thu nhận thông tin từ người dùng, có thể gồm trường chọn lựa, ô nhập văn bản, vùng nhập văn bản và các nút lệnh như Nhập lại, Gửi đi."@vi ;
+    ex:appearsOnPage ex:g12_page152 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:explainsConcept ex:g12_conceptBieuMau .
+
+  ###########################################################################
+  # Figures - semantic IRIs and subfigures where applicable
+  ###########################################################################
+  ex:g12_topicEICT_fig_l1_mobiriseInterface a ex:Figure ; 
+    rdfs:label "Hình 1. Giao diện làm việc của phần mềm Mobirise"@vi ; 
+    ex:hasCaption "Hình 1. Giao diện làm việc của phần mềm Mobirise"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 1 ; 
+    ex:appearsOnPage ex:g12_page125 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptMobirise, ex:g12_conceptVungLamViecChinh, ex:g12_conceptAddBlockToPage .
+    
+  ex:g12_topicEICT_fig_l1_templateExamples a ex:Figure ; 
+    rdfs:label "Hình 2. Một số mẫu trang web được cung cấp sẵn trong phần mềm Mobirise"@vi ; 
+    ex:hasCaption "Hình 2. Một số mẫu trang web được cung cấp sẵn trong phần mềm Mobirise"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 2 ; 
+    ex:appearsOnPage ex:g12_page126 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptMauTrangWeb, ex:g12_conceptMobirise .
+    
+  ex:g12_topicEICT_fig_l1_featuresBlock a ex:Figure ; 
+    rdfs:label "Hình 3. Khối mẫu Features được cung cấp trong phần mềm Mobirise"@vi ; 
+    ex:hasCaption "Hình 3. Khối mẫu Features được cung cấp trong phần mềm Mobirise"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 3 ; 
+    ex:appearsOnPage ex:g12_page126 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptKhoiMau, ex:g12_conceptAddBlockToPage .
+    
+  ex:g12_topicEICT_fig_l1_mobiriseIcon a ex:Figure ; 
+    rdfs:label "Hình 4. Biểu tượng phần mềm Mobirise"@vi ; 
+    ex:hasCaption "Hình 4. Biểu tượng phần mềm Mobirise"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 4 ; 
+    ex:appearsOnPage ex:g12_page127 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptMobirise .
+    
+  ex:g12_topicEICT_fig_l1_mediaImageDialog a ex:Figure ; 
+    rdfs:label "Hình 5. Thay đổi nội dung hình ảnh trên trang web"@vi ; 
+    ex:hasCaption "Hình 5. Thay đổi nội dung hình ảnh trên trang web"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 5 ; 
+    ex:appearsOnPage ex:g12_page127 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptMediaImage, ex:g12_conceptBrowseComputer .
+
+  ex:g12_topicEICT_fig_l2_websiteInterfaceExamples a ex:Figure ; 
+    rdfs:label "Hình 1. Ví dụ về giao diện của hai trang web"@vi ; 
+    ex:hasCaption "Hình 1. Ví dụ về giao diện của hai trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 6 ; 
+    ex:appearsOnPage ex:g12_page130 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptPhanDauTrang, ex:g12_conceptThanhDieuHuong, ex:g12_conceptPhanNoiDung, ex:g12_conceptChanTrang .
+    
+  ex:g12_topicEICT_fig_l2_createNewSite a ex:Figure ; 
+    rdfs:label "Hình 2. Giao diện nút Create New Site để tạo dự án mới"@vi ; 
+    ex:hasCaption "Hình 2. Giao diện nút Create New Site để tạo dự án mới"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 7 ; 
+    ex:appearsOnPage ex:g12_page131 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptCreateNewSite, ex:g12_conceptMobirise .
+    
+  ex:g12_topicEICT_fig_l2_newWebsiteWithThemes a ex:Figure ; 
+    rdfs:label "Hình 3. Giao diện tạo một website mới với các chủ đề có sẵn"@vi ; 
+    ex:hasCaption "Hình 3. Giao diện tạo một website mới với các chủ đề có sẵn"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 8 ; 
+    ex:appearsOnPage ex:g12_page132 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptThemeWebsite, ex:g12_conceptMauTrangWeb .
+    
+  ex:g12_topicEICT_fig_l2_createNewPageButton a ex:Figure ; 
+    rdfs:label "Hình 4. Giao diện nút Create New Page để tạo một trang web mới"@vi ; 
+    ex:hasCaption "Hình 4. Giao diện nút Create New Page để tạo một trang web mới"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 9 ; 
+    ex:appearsOnPage ex:g12_page132 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptCreateNewPage .
+    
+  ex:g12_topicEICT_fig_l2_newPageTemplates a ex:Figure ; 
+    rdfs:label "Hình 5. Giao diện tạo một trang web mới với các chủ đề có sẵn"@vi ; 
+    ex:hasCaption "Hình 5. Giao diện tạo một trang web mới với các chủ đề có sẵn"@vi ; 
+    ex:figureOrderOnPage 3 ; 
+    ex:globalFigureOrder 10 ; 
+    ex:appearsOnPage ex:g12_page132 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptAddBlankPage, ex:g12_conceptMauTrangWeb .
+    
+  ex:g12_topicEICT_fig_l2_pageNameEdit a ex:Figure ; 
+    rdfs:label "Hình 6. Giao diện đặt tên cho trang web"@vi ; 
+    ex:hasCaption "Hình 6. Giao diện đặt tên cho trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 11 ; 
+    ex:appearsOnPage ex:g12_page133 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptEditTitle, ex:g12_conceptTrangWeb .
+
+  ex:g12_topicEICT_fig_l3_headerNavigation a ex:Figure ; 
+    rdfs:label "Hình 1. Ví dụ về phần đầu trang web và thanh điều hướng của trang web"@vi ; 
+    ex:hasCaption "Hình 1. Ví dụ về phần đầu trang web và thanh điều hướng của trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 12 ; 
+    ex:appearsOnPage ex:g12_page134 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptPhanDauTrang, ex:g12_conceptThanhDieuHuong .
+    
+  ex:g12_topicEICT_fig_l3_sharedHeaderNavigation a ex:Figure ; 
+    rdfs:label "Hình 2. Ví dụ gộp chung thanh điều hướng và phần đầu của trang web"@vi ; 
+    ex:hasCaption "Hình 2. Ví dụ gộp chung thanh điều hướng và phần đầu của trang web"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 13 ; 
+    ex:appearsOnPage ex:g12_page134 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptPhanDauTrang, ex:g12_conceptThanhDieuHuong .
+    
+  ex:g12_topicEICT_fig_l3_navigationColorConsistency a ex:Figure ; 
+    rdfs:label "Hình 3. Một số ví dụ về sự đồng nhất màu sắc của thanh điều hướng"@vi ; 
+    ex:hasCaption "Hình 3. Một số ví dụ về sự đồng nhất màu sắc của thanh điều hướng"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 14 ; 
+    ex:appearsOnPage ex:g12_page135 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptThanhDieuHuong .
+    
+  ex:g12_topicEICT_fig_l3_multilevelNavigation a ex:Figure ; 
+    rdfs:label "Hình 4. Ví dụ về thanh điều hướng nhiều cấp"@vi ; 
+    ex:hasCaption "Hình 4. Ví dụ về thanh điều hướng nhiều cấp"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 15 ; 
+    ex:appearsOnPage ex:g12_page135 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptThanhDieuHuongNhieuCap, ex:g12_conceptSubmenu .
+    
+  ex:g12_topicEICT_fig_l3_menuBlocks a ex:Figure ; 
+    rdfs:label "Hình 5. Các khối mẫu thanh điều hướng được cung cấp sẵn"@vi ; 
+    ex:hasCaption "Hình 5. Các khối mẫu thanh điều hướng được cung cấp sẵn"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 16 ; 
+    ex:appearsOnPage ex:g12_page136 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptNavigationMenu, ex:g12_conceptKhoiMau .
+    
+  ex:g12_topicEICT_fig_l3_globalNavConfirm a ex:Figure ; 
+    rdfs:label "Hình 6. Hộp thoại xác nhận thêm thanh điều hướng cho tất cả các trang web"@vi ; 
+    ex:hasCaption "Hình 6. Hộp thoại xác nhận thêm thanh điều hướng cho tất cả các trang web"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 17 ; 
+    ex:appearsOnPage ex:g12_page136 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptThanhDieuHuong .
+    
+  ex:g12_topicEICT_fig_l3_navParameters a ex:Figure ; 
+    rdfs:label "Hình 7. Bảng chọn chỉnh sửa thanh điều hướng"@vi ; 
+    ex:hasCaption "Hình 7. Bảng chọn chỉnh sửa thanh điều hướng"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 18 ; 
+    ex:appearsOnPage ex:g12_page137 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptBlockParameters, ex:g12_conceptThanhDieuHuong .
+    
+  ex:g12_topicEICT_fig_l3_navEditItems a ex:Figure ; 
+    rdfs:label "Hình 8. Bảng chọn thay đổi tên mục nội dung trên thanh điều hướng"@vi ; 
+    ex:hasCaption "Hình 8. Bảng chọn thay đổi tên mục nội dung trên thanh điều hướng"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 19 ; 
+    ex:appearsOnPage ex:g12_page137 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptMenuItems .
+  
+  ex:g12_topicEICT_fig_l3_webAddressLink a ex:Figure ; 
+    rdfs:label "Hình 9. Giao diện nhập đường dẫn của trang web muốn tạo liên kết đến"@vi ; 
+    ex:hasCaption "Hình 9. Giao diện nhập đường dẫn của trang web muốn tạo liên kết đến"@vi ; 
+    ex:figureOrderOnPage 3 ; 
+    ex:globalFigureOrder 20 ; 
+    ex:appearsOnPage ex:g12_page137 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptWebAddress, ex:g12_conceptLienKetTrangWeb .
+    
+  ex:g12_topicEICT_fig_l3_internalPageLink a ex:Figure ; 
+    rdfs:label "Hình 10. Giao diện chọn trang web trong dự án để tạo liên kết"@vi ; 
+    ex:hasCaption "Hình 10. Giao diện chọn trang web trong dự án để tạo liên kết"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 21 ; 
+    ex:appearsOnPage ex:g12_page138 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptSitePages, ex:g12_conceptLienKetTrangWeb .
+  
+  ex:g12_topicEICT_fig_l3_iconCustomize a ex:Figure ; 
+    rdfs:label "Hình 11. Giao diện tuỳ chỉnh biểu tượng"@vi ; 
+    ex:hasCaption "Hình 11. Giao diện tuỳ chỉnh biểu tượng"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 22 ; 
+    ex:appearsOnPage ex:g12_page138 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptIcon .
+  
+  ex:g12_topicEICT_fig_l3_removeNavConfirm a ex:Figure ; 
+    rdfs:label "Hình 12. Hộp thoại xác nhận xoá thành phần đang chọn trên tất cả các trang web"@vi ; 
+    ex:hasCaption "Hình 12. Hộp thoại xác nhận xoá thành phần đang chọn trên tất cả các trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 23 ; 
+    ex:appearsOnPage ex:g12_page139 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptRemoveBlock, ex:g12_conceptThanhDieuHuong .
+    
+  ex:g12_topicEICT_fig_l3_schoolWebsiteNavigation a ex:Figure ; 
+    rdfs:label "Hình 13. Thanh điều hướng của website Phần mềm học tập"@vi ; 
+    ex:hasCaption "Hình 13. Thanh điều hướng của website Phần mềm học tập"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 24 ; 
+    ex:appearsOnPage ex:g12_page139 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptThanhDieuHuong, ex:g12_conceptThanhDieuHuongNhieuCap .
+
+  ex:g12_topicEICT_fig_l4_articleExamples a ex:Figure ; 
+    rdfs:label "Hình 1. Một số ví dụ về bài viết trên trang web"@vi ; 
+    ex:hasCaption "Hình 1. Một số ví dụ về bài viết trên trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 25 ; 
+    ex:appearsOnPage ex:g12_page140 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptBaiVietTrangWeb .
+    
+  ex:g12_topicEICT_fig_l4_footerExamples a ex:Figure ; 
+    rdfs:label "Hình 2. Một số ví dụ về phần chân trang web"@vi ; 
+    ex:hasCaption "Hình 2. Một số ví dụ về phần chân trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 26 ; 
+    ex:appearsOnPage ex:g12_page141 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptChanTrang .
+  
+  ex:g12_topicEICT_fig_l4_articleBlocks a ex:Figure ; 
+    rdfs:label "Hình 3. Các khối mẫu bài viết được cung cấp sẵn"@vi ; 
+    ex:hasCaption "Hình 3. Các khối mẫu bài viết được cung cấp sẵn"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 27 ; 
+    ex:appearsOnPage ex:g12_page142 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptArticleBlock, ex:g12_conceptPeopleBlock, ex:g12_conceptContactBlock, ex:g12_conceptListBlock .
+  
+  ex:g12_topicEICT_fig_l4_footerBlocks a ex:Figure ; 
+    rdfs:label "Hình 4. Các khối mẫu chân trang được cung cấp sẵn"@vi ; 
+    ex:hasCaption "Hình 4. Các khối mẫu chân trang được cung cấp sẵn"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 28 ; 
+    ex:appearsOnPage ex:g12_page143 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptFooterBlock, ex:g12_conceptChanTrang .
+  
+  ex:g12_topicEICT_fig_l4_learningSoftwareFooter a ex:Figure ; 
+    rdfs:label "Hình 5. Phần chân trang của website Phần mềm học tập"@vi ; 
+    ex:hasCaption "Hình 5. Phần chân trang của website \"Phần mềm học tập\""@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 29 ; 
+    ex:appearsOnPage ex:g12_page144 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptChanTrang .
+
+  ex:g12_topicEICT_fig_l5_imageVideoExamples a ex:Figure ; 
+    rdfs:label "Hình 1. Một số ví dụ về sử dụng hình ảnh, video trên trang web"@vi ; 
+    ex:hasCaption "Hình 1. Một số ví dụ về sử dụng hình ảnh, video trên trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 30 ; 
+    ex:appearsOnPage ex:g12_page145 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb, ex:g12_conceptAnhMinhHoa, ex:g12_conceptHinhAnhNoiBat .
+    
+  ex:g12_topicEICT_fig_l5_galleryGridList a ex:Figure ; 
+    rdfs:label "Hình 2a. Bộ sưu tập hình ảnh/video được sắp xếp dưới dạng lưới và dạng danh sách"@vi ; 
+    ex:hasCaption "Hình 2a. Bộ sưu tập hình ảnh/video được sắp xếp dưới dạng lưới và dạng danh sách"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 31 ; 
+    ex:appearsOnPage ex:g12_page146 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptGallery .
+
+  ex:g12_topicEICT_fig_l5_sliderImages a ex:Figure ; 
+    rdfs:label "Hình 2b. Các hình ảnh được hiển thị dưới dạng thanh trượt"@vi ; 
+    ex:hasCaption "Hình 2b. Các hình ảnh được hiển thị dưới dạng thanh trượt"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 32 ; 
+    ex:appearsOnPage ex:g12_page146 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_fig_l5_imageVideoBlocks a ex:Figure ; 
+    rdfs:label "Hình 3. Các khối mẫu cho hình ảnh/video được cung cấp sẵn"@vi ; 
+    ex:hasCaption "Hình 3. Các khối mẫu cho hình ảnh/video được cung cấp sẵn"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 33 ; 
+    ex:appearsOnPage ex:g12_page147 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptImageVideoBlock .
+
+  ex:g12_topicEICT_fig_l5_changeImageDialog a ex:Figure ; 
+    rdfs:label "Hình 4. Thay đổi nội dung hình ảnh trên trang web"@vi ; 
+    ex:hasCaption "Hình 4. Thay đổi nội dung hình ảnh trên trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 34 ; 
+    ex:appearsOnPage ex:g12_page148 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptBrowseComputer, ex:g12_conceptFreeOnlineLibrary, ex:g12_conceptSiteLibrary, ex:g12_conceptAltText .
+
+  ex:g12_topicEICT_fig_l5_changeVideoDialog a ex:Figure ; 
+    rdfs:label "Hình 5. Thay đổi video trên trang web"@vi ; 
+    ex:hasCaption "Hình 5. Thay đổi video trên trang web"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 35 ; 
+    ex:appearsOnPage ex:g12_page148 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptVideoURL, ex:g12_conceptAspectRatio, ex:g12_conceptAutoplay, ex:g12_conceptLoopVideo .
+
+  ex:g12_topicEICT_fig_l5_gallerySliderBlocks a ex:Figure ; 
+    rdfs:label "Hình 6. Các khối mẫu cho bộ sưu tập và thanh trượt được cung cấp sẵn"@vi ; 
+    ex:hasCaption "Hình 6. Các khối mẫu cho bộ sưu tập và thanh trượt được cung cấp sẵn"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 36 ; 
+    ex:appearsOnPage ex:g12_page149 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptGallerySliderBlock, ex:g12_conceptGallery, ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_fig_l5_wordIntroContent a ex:Figure ; 
+    rdfs:label "Hình 7. Nội dung giới thiệu ngắn về phần mềm soạn thảo Microsoft Word kèm theo hình ảnh minh họa"@vi ; 
+    ex:hasCaption "Hình 7. Nội dung giới thiệu ngắn về phần mềm soạn thảo Microsoft Word kèm theo hình ảnh minh họa"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 37 ; 
+    ex:appearsOnPage ex:g12_page150 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptAnhMinhHoa .
+
+  ex:g12_topicEICT_fig_l5_graphicSoftwareGallery a ex:Figure ; 
+    rdfs:label "Hình 8. Hình ảnh minh họa và giới thiệu ngắn về một số phần mềm đồ họa được tổ chức dưới dạng bộ sưu tập"@vi ; 
+    ex:hasCaption "Hình 8. Hình ảnh minh họa và giới thiệu ngắn về một số phần mềm đồ họa được tổ chức dưới dạng bộ sưu tập"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 38 ; 
+    ex:appearsOnPage ex:g12_page150 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptGallery .
+
+  ex:g12_topicEICT_fig_l5_programmingLanguageSlider a ex:Figure ; 
+    rdfs:label "Hình 9. Hình ảnh minh họa và giới thiệu ngắn về các ngôn ngữ lập trình được tổ chức dưới dạng thanh trượt"@vi ; 
+    ex:hasCaption "Hình 9. Hình ảnh minh họa và giới thiệu ngắn về các ngôn ngữ lập trình được tổ chức dưới dạng thanh trượt"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 39 ; 
+    ex:appearsOnPage ex:g12_page151 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_fig_l6_feedbackFormExample a ex:Figure ; 
+    rdfs:label "Hình 1. Ví dụ về một biểu mẫu thu nhận lời nhắn trên trang web"@vi ; 
+    ex:hasCaption "Hình 1. Ví dụ về một biểu mẫu thu nhận lời nhắn trên trang web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 40 ; 
+    ex:appearsOnPage ex:g12_page152 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptBieuMau, ex:g12_conceptOThongTin .
+
+  ex:g12_topicEICT_fig_l6_desktopToolbar a ex:Figure ; 
+    rdfs:label "Hình 2. Thanh công cụ của màn hình làm việc khi đang xem dự án ở chế độ desktop"@vi ; 
+    ex:hasCaption "Hình 2. Thanh công cụ của màn hình làm việc khi đang xem dự án ở chế độ desktop"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 41 ; 
+    ex:appearsOnPage ex:g12_page153 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptDesktopView, ex:g12_conceptMobileView .
+  
+  ex:g12_topicEICT_fig_l6_mobileToolbar a ex:Figure ; 
+    rdfs:label "Hình 3. Thanh công cụ của màn hình làm việc khi đang xem dự án ở chế độ mobile"@vi ; 
+    ex:hasCaption "Hình 3. Thanh công cụ của màn hình làm việc khi đang xem dự án ở chế độ mobile"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 42 ; 
+    ex:appearsOnPage ex:g12_page153 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptMobileView, ex:g12_conceptDesktopView .
+    
+  ex:g12_topicEICT_fig_l6_publishOptions a ex:Figure ; 
+    rdfs:label "Hình 4. Giao diện lựa chọn các chế độ xuất bản"@vi ; 
+    ex:hasCaption "Hình 4. Giao diện lựa chọn các chế độ xuất bản"@vi ; 
+    ex:figureOrderOnPage 3 ; 
+    ex:globalFigureOrder 43 ; 
+    ex:appearsOnPage ex:g12_page153 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptPublishWebsite, ex:g12_conceptMobirisesite, ex:g12_conceptLocalDriveFolder, ex:g12_conceptFTP .
+    
+  ex:g12_topicEICT_fig_l6_formBlocks a ex:Figure ; 
+    rdfs:label "Hình 5. Các khối biểu mẫu được cung cấp sẵn"@vi ; 
+    ex:hasCaption "Hình 5. Các khối biểu mẫu được cung cấp sẵn"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 44 ; 
+    ex:appearsOnPage ex:g12_page154 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptFormWeb, ex:g12_conceptBieuMau .
+    
+  ex:g12_topicEICT_fig_l6_formFieldsEdit a ex:Figure ; 
+    rdfs:label "Hình 6. Giao diện chỉnh sửa các trường thông tin trong biểu mẫu"@vi ; 
+    ex:hasCaption "Hình 6. Giao diện chỉnh sửa các trường thông tin trong biểu mẫu"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 45 ; 
+    ex:appearsOnPage ex:g12_page155 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptBieuMau, ex:g12_conceptOThongTin .
+    
+  ex:g12_topicEICT_fig_l6_publishSuccess a ex:Figure ; 
+    rdfs:label "Hình 7. Giao diện thông báo website được xuất bản thành công trên Internet"@vi ; 
+    ex:hasCaption "Hình 7. Giao diện thông báo website được xuất bản thành công trên Internet"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 46 ; 
+    ex:appearsOnPage ex:g12_page156 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptMobirisesite, ex:g12_conceptPublishWebsite .
+    
+  ex:g12_topicEICT_fig_l6_localFolderBrowser a ex:Figure ; 
+    rdfs:label "Hình 8. Cửa sổ duyệt thư mục lưu dự án trong máy tính khi xuất bản với chế độ Local drive folder"@vi ; 
+    ex:hasCaption "Hình 8. Cửa sổ duyệt thư mục lưu dự án trong máy tính khi xuất bản với chế độ Local drive folder"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 47 ; 
+    ex:appearsOnPage ex:g12_page156 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptLocalDriveFolder, ex:g12_conceptHTMLFile .
+    
+  ex:g12_topicEICT_fig_l6_ftpPublishOptions a ex:Figure ; 
+    rdfs:label "Hình 9. Giao diện lựa chọn chế độ xuất bản và tải lên máy chủ web"@vi ; 
+    ex:hasCaption "Hình 9. Giao diện lựa chọn chế độ xuất bản và tải lên máy chủ web"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 48 ; 
+    ex:appearsOnPage ex:g12_page157 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptFTP, ex:g12_conceptPublishWebsite .
+    
+  ex:g12_topicEICT_fig_l6_ftpSiteManager a ex:Figure ; 
+    rdfs:label "Hình 10. Giao diện thiết lập các thông số máy chủ web"@vi ; 
+    ex:hasCaption "Hình 10. Giao diện thiết lập các thông số máy chủ web"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 49 ; 
+    ex:appearsOnPage ex:g12_page157 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptFTPServerParameters, ex:g12_conceptFTP .
+    
+  ex:g12_topicEICT_fig_l6_messageForm a ex:Figure ; 
+    rdfs:label "Hình 11. Biểu mẫu cho phép người duyệt web để lại lời nhắn"@vi ; 
+    ex:hasCaption "Hình 11. Biểu mẫu cho phép người duyệt web để lại lời nhắn"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 50 ; 
+    ex:appearsOnPage ex:g12_page158 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptBieuMau, ex:g12_conceptOThongTin .
+
+  ex:g12_topicEICT_fig_l7_defaultSectionHtml a ex:Figure ; 
+    rdfs:label "Hình 1. Mã HTML của thẻ section được tạo mặc định bởi phần mềm Mobirise"@vi ; 
+    ex:hasCaption "Hình 1. Mã HTML của thẻ <section> được tạo mặc định bởi phần mềm Mobirise"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 51 ; 
+    ex:appearsOnPage ex:g12_page160 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptChinhSuaHTML, ex:g12_conceptSectionHTML .
+
+  ex:g12_topicEICT_fig_l7_editedSectionHtml a ex:Figure ; 
+    rdfs:label "Hình 2. Mã HTML của thẻ section sau khi chỉnh sửa nội dung thẻ p và thẻ a"@vi ; 
+    ex:hasCaption "Hình 2. Mã HTML của thẻ <section> sau khi chỉnh sửa nội dung thẻ <p> và thẻ <a>"@vi ; 
+    ex:figureOrderOnPage 1 ; 
+    ex:globalFigureOrder 52 ; 
+    ex:appearsOnPage ex:g12_page161 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptChinhSuaHTML, ex:g12_conceptSectionHTML .
+
+  ex:g12_topicEICT_fig_l7_footerResult a ex:Figure ; 
+    rdfs:label "Hình 3. Kết quả hiển thị phần nội dung dưới cùng của trang web sau khi chỉnh sửa"@vi ; 
+    ex:hasCaption "Hình 3. Kết quả hiển thị phần nội dung dưới cùng của trang web sau khi chỉnh sửa"@vi ; 
+    ex:figureOrderOnPage 2 ; 
+    ex:globalFigureOrder 53 ; 
+    ex:appearsOnPage ex:g12_page161 ; 
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ; 
+    ex:belongsToGrade ex:g12_grade12 ; 
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ; 
+    ex:illustratesConcept ex:g12_conceptChinhSuaHTML, ex:g12_conceptChanTrang .
+
+  ###########################################################################
+  # Page-to-figure links
+  ###########################################################################
+
+  ex:g12_page125 ex:hasFigure ex:g12_topicEICT_fig_l1_mobiriseInterface .
+  ex:g12_page126 ex:hasFigure ex:g12_topicEICT_fig_l1_templateExamples, ex:g12_topicEICT_fig_l1_featuresBlock .
+  ex:g12_page127 ex:hasFigure ex:g12_topicEICT_fig_l1_mobiriseIcon, ex:g12_topicEICT_fig_l1_mediaImageDialog .
+
+  ex:g12_page130 ex:hasFigure ex:g12_topicEICT_fig_l2_websiteInterfaceExamples .
+  ex:g12_page131 ex:hasFigure ex:g12_topicEICT_fig_l2_createNewSite .
+  ex:g12_page132 ex:hasFigure ex:g12_topicEICT_fig_l2_newWebsiteWithThemes, ex:g12_topicEICT_fig_l2_createNewPageButton, ex:g12_topicEICT_fig_l2_newPageTemplates .
+  ex:g12_page133 ex:hasFigure ex:g12_topicEICT_fig_l2_pageNameEdit .
+
+  ex:g12_page134 ex:hasFigure ex:g12_topicEICT_fig_l3_headerNavigation, ex:g12_topicEICT_fig_l3_sharedHeaderNavigation .
+  ex:g12_page135 ex:hasFigure ex:g12_topicEICT_fig_l3_navigationColorConsistency, ex:g12_topicEICT_fig_l3_multilevelNavigation .
+  ex:g12_page136 ex:hasFigure ex:g12_topicEICT_fig_l3_menuBlocks, ex:g12_topicEICT_fig_l3_globalNavConfirm .
+  ex:g12_page137 ex:hasFigure ex:g12_topicEICT_fig_l3_navParameters, ex:g12_topicEICT_fig_l3_navEditItems, ex:g12_topicEICT_fig_l3_webAddressLink .
+  ex:g12_page138 ex:hasFigure ex:g12_topicEICT_fig_l3_internalPageLink, ex:g12_topicEICT_fig_l3_iconCustomize .
+  ex:g12_page139 ex:hasFigure ex:g12_topicEICT_fig_l3_removeNavConfirm, ex:g12_topicEICT_fig_l3_schoolWebsiteNavigation .
+
+  ex:g12_page140 ex:hasFigure ex:g12_topicEICT_fig_l4_articleExamples .
+  ex:g12_page141 ex:hasFigure ex:g12_topicEICT_fig_l4_footerExamples .
+  ex:g12_page142 ex:hasFigure ex:g12_topicEICT_fig_l4_articleBlocks .
+  ex:g12_page143 ex:hasFigure ex:g12_topicEICT_fig_l4_footerBlocks .
+  ex:g12_page144 ex:hasFigure ex:g12_topicEICT_fig_l4_learningSoftwareFooter .
+
+  ex:g12_page145 ex:hasFigure ex:g12_topicEICT_fig_l5_imageVideoExamples .
+  ex:g12_page146 ex:hasFigure ex:g12_topicEICT_fig_l5_galleryGridList, ex:g12_topicEICT_fig_l5_sliderImages .
+  ex:g12_page147 ex:hasFigure ex:g12_topicEICT_fig_l5_imageVideoBlocks .
+  ex:g12_page148 ex:hasFigure ex:g12_topicEICT_fig_l5_changeImageDialog, ex:g12_topicEICT_fig_l5_changeVideoDialog .
+  ex:g12_page149 ex:hasFigure ex:g12_topicEICT_fig_l5_gallerySliderBlocks .
+  ex:g12_page150 ex:hasFigure ex:g12_topicEICT_fig_l5_wordIntroContent, ex:g12_topicEICT_fig_l5_graphicSoftwareGallery .
+  ex:g12_page151 ex:hasFigure ex:g12_topicEICT_fig_l5_programmingLanguageSlider .
+
+  ex:g12_page152 ex:hasFigure ex:g12_topicEICT_fig_l6_feedbackFormExample .
+  ex:g12_page153 ex:hasFigure ex:g12_topicEICT_fig_l6_desktopToolbar, ex:g12_topicEICT_fig_l6_mobileToolbar, ex:g12_topicEICT_fig_l6_publishOptions .
+  ex:g12_page154 ex:hasFigure ex:g12_topicEICT_fig_l6_formBlocks .
+  ex:g12_page155 ex:hasFigure ex:g12_topicEICT_fig_l6_formFieldsEdit .
+  ex:g12_page156 ex:hasFigure ex:g12_topicEICT_fig_l6_publishSuccess, ex:g12_topicEICT_fig_l6_localFolderBrowser .
+  ex:g12_page157 ex:hasFigure ex:g12_topicEICT_fig_l6_ftpPublishOptions, ex:g12_topicEICT_fig_l6_ftpSiteManager .
+  ex:g12_page158 ex:hasFigure ex:g12_topicEICT_fig_l6_messageForm .
+
+  ex:g12_page160 ex:hasFigure ex:g12_topicEICT_fig_l7_defaultSectionHtml .
+  ex:g12_page161 ex:hasFigure ex:g12_topicEICT_fig_l7_editedSectionHtml, ex:g12_topicEICT_fig_l7_footerResult .
+
+  ###########################################################################
+  # Figure ordering
+  ###########################################################################
+
+  ex:g12_topicEICT_fig_l1_mobiriseInterface ex:nextFigure ex:g12_topicEICT_fig_l1_templateExamples .
+  ex:g12_topicEICT_fig_l1_templateExamples ex:previousFigure ex:g12_topicEICT_fig_l1_mobiriseInterface ; ex:nextFigure ex:g12_topicEICT_fig_l1_featuresBlock .
+  ex:g12_topicEICT_fig_l1_featuresBlock ex:previousFigure ex:g12_topicEICT_fig_l1_templateExamples ; ex:nextFigure ex:g12_topicEICT_fig_l1_mobiriseIcon .
+  ex:g12_topicEICT_fig_l1_mobiriseIcon ex:previousFigure ex:g12_topicEICT_fig_l1_featuresBlock ; ex:nextFigure ex:g12_topicEICT_fig_l1_mediaImageDialog .
+  ex:g12_topicEICT_fig_l1_mediaImageDialog ex:previousFigure ex:g12_topicEICT_fig_l1_mobiriseIcon ; ex:nextFigure ex:g12_topicEICT_fig_l2_websiteInterfaceExamples .
+
+  ex:g12_topicEICT_fig_l2_websiteInterfaceExamples ex:previousFigure ex:g12_topicEICT_fig_l1_mediaImageDialog ; ex:nextFigure ex:g12_topicEICT_fig_l2_createNewSite .
+  ex:g12_topicEICT_fig_l2_createNewSite ex:previousFigure ex:g12_topicEICT_fig_l2_websiteInterfaceExamples ; ex:nextFigure ex:g12_topicEICT_fig_l2_newWebsiteWithThemes .
+  ex:g12_topicEICT_fig_l2_newWebsiteWithThemes ex:previousFigure ex:g12_topicEICT_fig_l2_createNewSite ; ex:nextFigure ex:g12_topicEICT_fig_l2_createNewPageButton .
+  ex:g12_topicEICT_fig_l2_createNewPageButton ex:previousFigure ex:g12_topicEICT_fig_l2_newWebsiteWithThemes ; ex:nextFigure ex:g12_topicEICT_fig_l2_newPageTemplates .
+  ex:g12_topicEICT_fig_l2_newPageTemplates ex:previousFigure ex:g12_topicEICT_fig_l2_createNewPageButton ; ex:nextFigure ex:g12_topicEICT_fig_l2_pageNameEdit .
+  ex:g12_topicEICT_fig_l2_pageNameEdit ex:previousFigure ex:g12_topicEICT_fig_l2_newPageTemplates ; ex:nextFigure ex:g12_topicEICT_fig_l3_headerNavigation .
+
+  ex:g12_topicEICT_fig_l3_headerNavigation ex:previousFigure ex:g12_topicEICT_fig_l2_pageNameEdit ; ex:nextFigure ex:g12_topicEICT_fig_l3_sharedHeaderNavigation .
+  ex:g12_topicEICT_fig_l3_sharedHeaderNavigation ex:previousFigure ex:g12_topicEICT_fig_l3_headerNavigation ; ex:nextFigure ex:g12_topicEICT_fig_l3_navigationColorConsistency .
+  ex:g12_topicEICT_fig_l3_navigationColorConsistency ex:previousFigure ex:g12_topicEICT_fig_l3_sharedHeaderNavigation ; ex:nextFigure ex:g12_topicEICT_fig_l3_multilevelNavigation .
+  ex:g12_topicEICT_fig_l3_multilevelNavigation ex:previousFigure ex:g12_topicEICT_fig_l3_navigationColorConsistency ; ex:nextFigure ex:g12_topicEICT_fig_l3_menuBlocks .
+  ex:g12_topicEICT_fig_l3_menuBlocks ex:previousFigure ex:g12_topicEICT_fig_l3_multilevelNavigation ; ex:nextFigure ex:g12_topicEICT_fig_l3_globalNavConfirm .
+  ex:g12_topicEICT_fig_l3_globalNavConfirm ex:previousFigure ex:g12_topicEICT_fig_l3_menuBlocks ; ex:nextFigure ex:g12_topicEICT_fig_l3_navParameters .
+  ex:g12_topicEICT_fig_l3_navParameters ex:previousFigure ex:g12_topicEICT_fig_l3_globalNavConfirm ; ex:nextFigure ex:g12_topicEICT_fig_l3_navEditItems .
+  ex:g12_topicEICT_fig_l3_navEditItems ex:previousFigure ex:g12_topicEICT_fig_l3_navParameters ; ex:nextFigure ex:g12_topicEICT_fig_l3_webAddressLink .
+  ex:g12_topicEICT_fig_l3_webAddressLink ex:previousFigure ex:g12_topicEICT_fig_l3_navEditItems ; ex:nextFigure ex:g12_topicEICT_fig_l3_internalPageLink .
+  ex:g12_topicEICT_fig_l3_internalPageLink ex:previousFigure ex:g12_topicEICT_fig_l3_webAddressLink ; ex:nextFigure ex:g12_topicEICT_fig_l3_iconCustomize .
+  ex:g12_topicEICT_fig_l3_iconCustomize ex:previousFigure ex:g12_topicEICT_fig_l3_internalPageLink ; ex:nextFigure ex:g12_topicEICT_fig_l3_removeNavConfirm .
+  ex:g12_topicEICT_fig_l3_removeNavConfirm ex:previousFigure ex:g12_topicEICT_fig_l3_iconCustomize ; ex:nextFigure ex:g12_topicEICT_fig_l3_schoolWebsiteNavigation .
+  ex:g12_topicEICT_fig_l3_schoolWebsiteNavigation ex:previousFigure ex:g12_topicEICT_fig_l3_removeNavConfirm ; ex:nextFigure ex:g12_topicEICT_fig_l4_articleExamples .
+
+  ex:g12_topicEICT_fig_l4_articleExamples ex:previousFigure ex:g12_topicEICT_fig_l3_schoolWebsiteNavigation ; ex:nextFigure ex:g12_topicEICT_fig_l4_footerExamples .
+  ex:g12_topicEICT_fig_l4_footerExamples ex:previousFigure ex:g12_topicEICT_fig_l4_articleExamples ; ex:nextFigure ex:g12_topicEICT_fig_l4_articleBlocks .
+  ex:g12_topicEICT_fig_l4_articleBlocks ex:previousFigure ex:g12_topicEICT_fig_l4_footerExamples ; ex:nextFigure ex:g12_topicEICT_fig_l4_footerBlocks .
+  ex:g12_topicEICT_fig_l4_footerBlocks ex:previousFigure ex:g12_topicEICT_fig_l4_articleBlocks ; ex:nextFigure ex:g12_topicEICT_fig_l4_learningSoftwareFooter .
+  ex:g12_topicEICT_fig_l4_learningSoftwareFooter ex:previousFigure ex:g12_topicEICT_fig_l4_footerBlocks ; ex:nextFigure ex:g12_topicEICT_fig_l5_imageVideoExamples .
+
+  ex:g12_topicEICT_fig_l5_imageVideoExamples ex:previousFigure ex:g12_topicEICT_fig_l4_learningSoftwareFooter ; ex:nextFigure ex:g12_topicEICT_fig_l5_galleryGridList .
+  ex:g12_topicEICT_fig_l5_galleryGridList ex:previousFigure ex:g12_topicEICT_fig_l5_imageVideoExamples ; ex:nextFigure ex:g12_topicEICT_fig_l5_sliderImages .
+  ex:g12_topicEICT_fig_l5_sliderImages ex:previousFigure ex:g12_topicEICT_fig_l5_galleryGridList ; ex:nextFigure ex:g12_topicEICT_fig_l5_imageVideoBlocks .
+  ex:g12_topicEICT_fig_l5_imageVideoBlocks ex:previousFigure ex:g12_topicEICT_fig_l5_sliderImages ; ex:nextFigure ex:g12_topicEICT_fig_l5_changeImageDialog .
+  ex:g12_topicEICT_fig_l5_changeImageDialog ex:previousFigure ex:g12_topicEICT_fig_l5_imageVideoBlocks ; ex:nextFigure ex:g12_topicEICT_fig_l5_changeVideoDialog .
+  ex:g12_topicEICT_fig_l5_changeVideoDialog ex:previousFigure ex:g12_topicEICT_fig_l5_changeImageDialog ; ex:nextFigure ex:g12_topicEICT_fig_l5_gallerySliderBlocks .
+  ex:g12_topicEICT_fig_l5_gallerySliderBlocks ex:previousFigure ex:g12_topicEICT_fig_l5_changeVideoDialog ; ex:nextFigure ex:g12_topicEICT_fig_l5_wordIntroContent .
+  ex:g12_topicEICT_fig_l5_wordIntroContent ex:previousFigure ex:g12_topicEICT_fig_l5_gallerySliderBlocks ; ex:nextFigure ex:g12_topicEICT_fig_l5_graphicSoftwareGallery .
+  ex:g12_topicEICT_fig_l5_graphicSoftwareGallery ex:previousFigure ex:g12_topicEICT_fig_l5_wordIntroContent ; ex:nextFigure ex:g12_topicEICT_fig_l5_programmingLanguageSlider .
+  ex:g12_topicEICT_fig_l5_programmingLanguageSlider ex:previousFigure ex:g12_topicEICT_fig_l5_graphicSoftwareGallery ; ex:nextFigure ex:g12_topicEICT_fig_l6_feedbackFormExample .
+
+  ex:g12_topicEICT_fig_l6_feedbackFormExample ex:previousFigure ex:g12_topicEICT_fig_l5_programmingLanguageSlider ; ex:nextFigure ex:g12_topicEICT_fig_l6_desktopToolbar .
+  ex:g12_topicEICT_fig_l6_desktopToolbar ex:previousFigure ex:g12_topicEICT_fig_l6_feedbackFormExample ; ex:nextFigure ex:g12_topicEICT_fig_l6_mobileToolbar .
+  ex:g12_topicEICT_fig_l6_mobileToolbar ex:previousFigure ex:g12_topicEICT_fig_l6_desktopToolbar ; ex:nextFigure ex:g12_topicEICT_fig_l6_publishOptions .
+  ex:g12_topicEICT_fig_l6_publishOptions ex:previousFigure ex:g12_topicEICT_fig_l6_mobileToolbar ; ex:nextFigure ex:g12_topicEICT_fig_l6_formBlocks .
+  ex:g12_topicEICT_fig_l6_formBlocks ex:previousFigure ex:g12_topicEICT_fig_l6_publishOptions ; ex:nextFigure ex:g12_topicEICT_fig_l6_formFieldsEdit .
+  ex:g12_topicEICT_fig_l6_formFieldsEdit ex:previousFigure ex:g12_topicEICT_fig_l6_formBlocks ; ex:nextFigure ex:g12_topicEICT_fig_l6_publishSuccess .
+  ex:g12_topicEICT_fig_l6_publishSuccess ex:previousFigure ex:g12_topicEICT_fig_l6_formFieldsEdit ; ex:nextFigure ex:g12_topicEICT_fig_l6_localFolderBrowser .
+  ex:g12_topicEICT_fig_l6_localFolderBrowser ex:previousFigure ex:g12_topicEICT_fig_l6_publishSuccess ; ex:nextFigure ex:g12_topicEICT_fig_l6_ftpPublishOptions .
+  ex:g12_topicEICT_fig_l6_ftpPublishOptions ex:previousFigure ex:g12_topicEICT_fig_l6_localFolderBrowser ; ex:nextFigure ex:g12_topicEICT_fig_l6_ftpSiteManager .
+  ex:g12_topicEICT_fig_l6_ftpSiteManager ex:previousFigure ex:g12_topicEICT_fig_l6_ftpPublishOptions ; ex:nextFigure ex:g12_topicEICT_fig_l6_messageForm .
+  ex:g12_topicEICT_fig_l6_messageForm ex:previousFigure ex:g12_topicEICT_fig_l6_ftpSiteManager ; ex:nextFigure ex:g12_topicEICT_fig_l7_defaultSectionHtml .
+
+  ex:g12_topicEICT_fig_l7_defaultSectionHtml ex:previousFigure ex:g12_topicEICT_fig_l6_messageForm ; ex:nextFigure ex:g12_topicEICT_fig_l7_editedSectionHtml .
+  ex:g12_topicEICT_fig_l7_editedSectionHtml ex:previousFigure ex:g12_topicEICT_fig_l7_defaultSectionHtml ; ex:nextFigure ex:g12_topicEICT_fig_l7_footerResult .
+  ex:g12_topicEICT_fig_l7_footerResult ex:previousFigure ex:g12_topicEICT_fig_l7_editedSectionHtml .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g12_topicEICT_p123_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1 giới thiệu phần mềm tạo website. Bài học nêu mục tiêu nhận biết chức năng cơ bản của phần mềm tạo website và các thành phần giao diện Mobirise."@vi ;
+    ex:appearsOnPage ex:g12_page123 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicEICT_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptPhanMemTaoWebsite, ex:g12_conceptMobirise .
+
+  ex:g12_topicEICT_p123_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phần mềm tạo website giúp người dùng tạo trang web mà không cần kĩ năng lập trình chuyên nghiệp, bằng cách sử dụng công cụ trực quan và các thao tác kéo thả đơn giản."@vi ;
+    ex:appearsOnPage ex:g12_page123 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicEICT_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptPhanMemTaoWebsite, ex:g12_conceptTaoTrangWebBangPhanMem .
+
+  ex:g12_topicEICT_p124_01 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Các chức năng cơ bản của phần mềm tạo website gồm tạo trang web, cung cấp mẫu trang web, chèn nội dung văn bản, hình ảnh, video, liên kết, biểu mẫu, tuỳ chỉnh giao diện responsive và xuất bản website."@vi ;
+    ex:appearsOnPage ex:g12_page124 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicEICT_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptWebPage, ex:g12_conceptMauTrangWeb, ex:g12_conceptTextblock,
+                       ex:g12_conceptHyperlink, ex:g12_conceptFormWeb, ex:g12_conceptResponsive,
+                       ex:g12_conceptPublishWebsite .
+
+  ex:g12_topicEICT_p124_02 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Mobirise là phần mềm tạo website ngoại tuyến miễn phí, cho phép tạo website vừa và nhỏ trên các hệ điều hành Windows, MacOS, Linux, có nhiều mẫu trình bày phong phú."@vi ;
+    ex:appearsOnPage ex:g12_page124 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicEICT_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptMobirise, ex:g12_conceptWebsiteNgoaiTuyen, ex:g12_conceptMauTrangWeb .
+
+  ex:g12_topicEICT_p125_01 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Giao diện làm việc của Mobirise gồm thanh công cụ, vùng làm việc chính và nút lệnh Add Block to Page để thêm khối nội dung vào trang web."@vi ;
+    ex:appearsOnPage ex:g12_page125 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicEICT_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptMobirise, ex:g12_conceptVungLamViecChinh, ex:g12_conceptAddBlockToPage .
+
+  ex:g12_topicEICT_p126_01 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Mobirise cung cấp nhiều mẫu trang web và khối mẫu như Features, giúp người dùng tạo các thành phần trang web bằng cách chọn và kéo thả vào vị trí thích hợp."@vi ;
+    ex:appearsOnPage ex:g12_page126 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicEICT_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptMauTrangWeb, ex:g12_conceptKhoiMau, ex:g12_conceptAddBlockToPage .
+
+  ex:g12_topicEICT_p127_01 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "Thực hành bài 1 yêu cầu mở một mẫu trang web trên Mobirise, chỉnh sửa nội dung văn bản, thay hình ảnh trên trang web và xem trước trang web bằng Preview in Browser."@vi ;
+    ex:appearsOnPage ex:g12_page127 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicEICT_l1s3 ;
+    ex:mentionsConcept ex:g12_conceptMobirise, ex:g12_conceptMediaImage, ex:g12_conceptPreviewInBrowser .
+
+  ex:g12_topicEICT_p128_01 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "Bài luyện tập yêu cầu thêm vào trang web một số nội dung mới, sau đó chỉnh sửa phần văn bản và hình ảnh của các nội dung này."@vi ;
+    ex:appearsOnPage ex:g12_page128 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicEICT_l1s4 ;
+    ex:mentionsConcept ex:g12_conceptAddBlockToPage, ex:g12_conceptKhoiMau .
+
+  ex:g12_topicEICT_p129_01 a ex:Paragraph ;
+    ex:paragraphOrder 9 ;
+    ex:hasRawText "Bài 2 trình bày cách tạo website bằng phần mềm. Các trang web là tệp tin được xây dựng bằng HTML, thường thuộc một website gồm trang chủ, trang chuyên mục và trang chi tiết."@vi ;
+    ex:appearsOnPage ex:g12_page129 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicEICT_l2s1 ;
+    ex:mentionsConcept ex:g12_conceptWebsite, ex:g12_conceptTrangChu, ex:g12_conceptTrangChuyenMuc, ex:g12_conceptTrangChiTiet .
+
+  ex:g12_topicEICT_p130_01 a ex:Paragraph ;
+    ex:paragraphOrder 10 ;
+    ex:hasRawText "Mỗi trang web thường có phần đầu trang, thanh điều hướng, phần nội dung và phần chân trang; giao diện và cách sắp xếp phụ thuộc mục đích của cá nhân hoặc tổ chức tạo website."@vi ;
+    ex:appearsOnPage ex:g12_page130 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicEICT_l2s1 ;
+    ex:mentionsConcept ex:g12_conceptPhanDauTrang, ex:g12_conceptThanhDieuHuong, ex:g12_conceptPhanNoiDung, ex:g12_conceptChanTrang .
+
+  ex:g12_topicEICT_p131_01 a ex:Paragraph ;
+    ex:paragraphOrder 11 ;
+    ex:hasRawText "Các bước tạo website bằng phần mềm gồm phác thảo cấu trúc, chuẩn bị nội dung và tư liệu, tạo dự án website, tạo và chỉnh sửa thành phần trên các trang web, xem trước và xuất bản website."@vi ;
+    ex:appearsOnPage ex:g12_page131 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicEICT_l2s2 ;
+    ex:mentionsConcept ex:g12_conceptCauTrucWebsite, ex:g12_conceptPublishWebsite .
+
+  ex:g12_topicEICT_p132_01 a ex:Paragraph ;
+    ex:paragraphOrder 12 ;
+    ex:hasRawText "Thực hành bài 2 hướng dẫn tạo dự án website Giới thiệu trường em, đặt tên dự án, tạo trang web mới bằng Add Blank Page hoặc chọn mẫu trang web theo chủ đề có sẵn."@vi ;
+    ex:appearsOnPage ex:g12_page132 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicEICT_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptCreateNewSite, ex:g12_conceptCreateNewPage, ex:g12_conceptAddBlankPage, ex:g12_conceptMauTrangWeb .
+
+  ex:g12_topicEICT_p133_01 a ex:Paragraph ;
+    ex:paragraphOrder 13 ;
+    ex:hasRawText "Sau khi tạo trang web, người dùng đặt tên trang bằng Edit Title. Tên trang nên gợi nhớ vai trò, vị trí hoặc nội dung như Trang chủ, Giới thiệu, Hoạt động."@vi ;
+    ex:appearsOnPage ex:g12_page133 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicEICT_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptEditTitle, ex:g12_conceptTrangWeb .
+
+  ex:g12_topicEICT_p134_01 a ex:Paragraph ;
+    ex:paragraphOrder 14 ;
+    ex:hasRawText "Bài 3 giới thiệu thanh điều hướng. Thanh điều hướng liệt kê các mục nội dung chính của website, mỗi mục liên kết đến một hoặc nhiều trang web và thường đặt ngay dưới phần đầu trang."@vi ;
+    ex:appearsOnPage ex:g12_page134 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:belongsToSection ex:g12_topicEICT_l3s1 ;
+    ex:mentionsConcept ex:g12_conceptThanhDieuHuong, ex:g12_conceptLienKetTrangWeb, ex:g12_conceptPhanDauTrang .
+
+  ex:g12_topicEICT_p135_01 a ex:Paragraph ;
+    ex:paragraphOrder 15 ;
+    ex:hasRawText "Thanh điều hướng có thể dùng màu sắc đồng nhất với màu chủ đạo của website và có thể là thanh điều hướng nhiều cấp khi số liên kết quá nhiều để hiển thị cùng lúc."@vi ;
+    ex:appearsOnPage ex:g12_page135 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:belongsToSection ex:g12_topicEICT_l3s1 ;
+    ex:mentionsConcept ex:g12_conceptThanhDieuHuong, ex:g12_conceptThanhDieuHuongNhieuCap .
+
+  ex:g12_topicEICT_p136_01 a ex:Paragraph ;
+    ex:paragraphOrder 16 ;
+    ex:hasRawText "Thực hành bài 3 yêu cầu thêm khối thanh điều hướng bằng Add Block to Page, chọn Menu và xác nhận thêm thanh điều hướng cho tất cả trang web trong website."@vi ;
+    ex:appearsOnPage ex:g12_page136 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:belongsToSection ex:g12_topicEICT_l3s2 ;
+    ex:mentionsConcept ex:g12_conceptAddBlockToPage, ex:g12_conceptNavigationMenu, ex:g12_conceptThanhDieuHuong .
+
+  ex:g12_topicEICT_p137_01 a ex:Paragraph ;
+    ex:paragraphOrder 17 ;
+    ex:hasRawText "Bảng chọn chỉnh sửa thanh điều hướng cho phép điều chỉnh Full Width, Logo, Logo Size, Brand Name, Menu Items, Icons, Button, Sticky, Collapsed, Transparent, Color và Hamburger."@vi ;
+    ex:appearsOnPage ex:g12_page137 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:belongsToSection ex:g12_topicEICT_l3s3 ;
+    ex:mentionsConcept ex:g12_conceptBlockParameters, ex:g12_conceptMenuItems, ex:g12_conceptIcon .
+
+  ex:g12_topicEICT_p138_01 a ex:Paragraph ;
+    ex:paragraphOrder 18 ;
+    ex:hasRawText "Người dùng có thể tạo liên kết đến trang web khác bằng Web Address, liên kết đến trang trong dự án bằng Site Pages, chèn biểu tượng, chỉnh sửa màu sắc và tạo danh mục con cho thanh điều hướng."@vi ;
+    ex:appearsOnPage ex:g12_page138 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:belongsToSection ex:g12_topicEICT_l3s3 ;
+    ex:mentionsConcept ex:g12_conceptWebAddress, ex:g12_conceptSitePages, ex:g12_conceptIcon, ex:g12_conceptSubmenu .
+
+  ex:g12_topicEICT_p139_01 a ex:Paragraph ;
+    ex:paragraphOrder 19 ;
+    ex:hasRawText "Bài vận dụng yêu cầu tạo và chỉnh sửa thanh điều hướng chứa liên kết tới các trang web trong website Phần mềm học tập. Câu hỏi tự kiểm tra tập trung vào đặc điểm thanh điều hướng và thanh điều hướng nhiều cấp."@vi ;
+    ex:appearsOnPage ex:g12_page139 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:belongsToSection ex:g12_topicEICT_l3s4 ;
+    ex:mentionsConcept ex:g12_conceptThanhDieuHuong, ex:g12_conceptThanhDieuHuongNhieuCap .
+
+  ex:g12_topicEICT_p140_01 a ex:Paragraph ;
+    ex:paragraphOrder 20 ;
+    ex:hasRawText "Bài 4 giới thiệu tạo nội dung văn bản cho trang web. Bài viết là phần cung cấp thông tin chính, thường giới thiệu sản phẩm, dịch vụ hoặc tin tức, có thể kết hợp văn bản với hình ảnh, video minh họa."@vi ;
+    ex:appearsOnPage ex:g12_page140 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:belongsToSection ex:g12_topicEICT_l4s1 ;
+    ex:mentionsConcept ex:g12_conceptBaiVietTrangWeb, ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb .
+
+  ex:g12_topicEICT_p141_01 a ex:Paragraph ;
+    ex:paragraphOrder 21 ;
+    ex:hasRawText "Chân trang là phần ở vị trí cuối trang web, thường chứa thông tin liên hệ, bản đồ chỉ đường, thông tin bản quyền, liên kết nhanh và liên kết mạng xã hội."@vi ;
+    ex:appearsOnPage ex:g12_page141 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:belongsToSection ex:g12_topicEICT_l4s2 ;
+    ex:mentionsConcept ex:g12_conceptChanTrang, ex:g12_conceptLienKetTrangWeb .
+
+  ex:g12_topicEICT_p142_01 a ex:Paragraph ;
+    ex:paragraphOrder 22 ;
+    ex:hasRawText "Thực hành bài 4 nhiệm vụ 1 yêu cầu thêm bài viết vào trang web, chọn khối mẫu trong các trình đơn Article, People, Contact, List và chỉnh sửa thông số định dạng bài viết."@vi ;
+    ex:appearsOnPage ex:g12_page142 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:belongsToSection ex:g12_topicEICT_l4s3 ;
+    ex:mentionsConcept ex:g12_conceptArticleBlock, ex:g12_conceptPeopleBlock, ex:g12_conceptContactBlock, ex:g12_conceptListBlock .
+
+  ex:g12_topicEICT_p143_01 a ex:Paragraph ;
+    ex:paragraphOrder 23 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu thêm phần chân trang cho website Giới thiệu trường em, chọn khối Footer và chỉnh sửa nội dung phần chân trang tương tự thao tác với thanh điều hướng."@vi ;
+    ex:appearsOnPage ex:g12_page143 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:belongsToSection ex:g12_topicEICT_l4s3 ;
+    ex:mentionsConcept ex:g12_conceptFooterBlock, ex:g12_conceptChanTrang .
+
+  ex:g12_topicEICT_p144_01 a ex:Paragraph ;
+    ex:paragraphOrder 24 ;
+    ex:hasRawText "Bài vận dụng yêu cầu tạo phần nội dung giới thiệu người sáng lập HTML và tạo chân trang cho website Phần mềm học tập. Tự kiểm tra tập trung vào bài viết và chân trang trong website."@vi ;
+    ex:appearsOnPage ex:g12_page144 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:belongsToSection ex:g12_topicEICT_l4s4 ;
+    ex:mentionsConcept ex:g12_conceptBaiVietTrangWeb, ex:g12_conceptChanTrang .
+
+  ex:g12_topicEICT_p145_01 a ex:Paragraph ;
+    ex:paragraphOrder 25 ;
+    ex:hasRawText "Bài 5 trình bày tạo nội dung hình ảnh cho trang web. Hình ảnh và video giúp trang web thu hút hơn, thường gồm ảnh đại diện, ảnh minh họa, hình ảnh/video nổi bật."@vi ;
+    ex:appearsOnPage ex:g12_page145 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:belongsToSection ex:g12_topicEICT_l5s1 ;
+    ex:mentionsConcept ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb, ex:g12_conceptAnhDaiDien, ex:g12_conceptAnhMinhHoa, ex:g12_conceptHinhAnhNoiBat .
+
+  ex:g12_topicEICT_p146_01 a ex:Paragraph ;
+    ex:paragraphOrder 26 ;
+    ex:hasRawText "Bộ sưu tập hiển thị cùng lúc nhiều hình ảnh hoặc video dưới dạng lưới hay danh sách; thanh trượt hiển thị lần lượt nhiều hình ảnh hoặc video trên cùng một vùng trang web."@vi ;
+    ex:appearsOnPage ex:g12_page146 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:belongsToSection ex:g12_topicEICT_l5s2 ;
+    ex:mentionsConcept ex:g12_conceptGallery, ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_p147_01 a ex:Paragraph ;
+    ex:paragraphOrder 27 ;
+    ex:hasRawText "Thực hành nhiệm vụ 1 yêu cầu thêm hình ảnh, video vào trang web bằng Add Block to Page, chọn Image & Video, kéo khối mẫu vào vị trí thích hợp và chỉnh sửa thông số bố cục, định dạng."@vi ;
+    ex:appearsOnPage ex:g12_page147 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:belongsToSection ex:g12_topicEICT_l5s3 ;
+    ex:mentionsConcept ex:g12_conceptImageVideoBlock, ex:g12_conceptAddBlockToPage .
+
+  ex:g12_topicEICT_p148_01 a ex:Paragraph ;
+    ex:paragraphOrder 28 ;
+    ex:hasRawText "Người dùng có thể thay đổi hình ảnh bằng Browse Computer, Free Online Library, Site Library, Link Image to và Alt; thay đổi video bằng Video URL, Aspect Ratio, Autoplay và Loop."@vi ;
+    ex:appearsOnPage ex:g12_page148 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:belongsToSection ex:g12_topicEICT_l5s3 ;
+    ex:mentionsConcept ex:g12_conceptBrowseComputer, ex:g12_conceptFreeOnlineLibrary, ex:g12_conceptSiteLibrary, ex:g12_conceptAltText, ex:g12_conceptVideoURL, ex:g12_conceptAspectRatio, ex:g12_conceptAutoplay, ex:g12_conceptLoopVideo .
+
+  ex:g12_topicEICT_p149_01 a ex:Paragraph ;
+    ex:paragraphOrder 29 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu thêm bộ sưu tập và thanh trượt vào trang web bằng Gallery & Slider, chỉnh sửa bố cục, định dạng và thay hình ảnh phù hợp."@vi ;
+    ex:appearsOnPage ex:g12_page149 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:belongsToSection ex:g12_topicEICT_l5s3 ;
+    ex:mentionsConcept ex:g12_conceptGallerySliderBlock, ex:g12_conceptGallery, ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_p150_01 a ex:Paragraph ;
+    ex:paragraphOrder 30 ;
+    ex:hasRawText "Bài tập vận dụng yêu cầu tạo nội dung dạng hình ảnh kèm mô tả và tạo bộ sưu tập giới thiệu một số phần mềm đồ họa như Adobe Photoshop, Adobe Illustrator, Adobe Indesign và Canva."@vi ;
+    ex:appearsOnPage ex:g12_page150 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:belongsToSection ex:g12_topicEICT_l5s4 ;
+    ex:mentionsConcept ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptGallery .
+
+  ex:g12_topicEICT_p151_01 a ex:Paragraph ;
+    ex:paragraphOrder 31 ;
+    ex:hasRawText "Bài tập vận dụng yêu cầu tạo nội dung dạng thanh trượt giới thiệu các ngôn ngữ lập trình. Tự kiểm tra tập trung vào khả năng trình bày hình ảnh, bộ sưu tập và thanh trượt trên trang web."@vi ;
+    ex:appearsOnPage ex:g12_page151 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:belongsToSection ex:g12_topicEICT_l5s4 ;
+    ex:mentionsConcept ex:g12_conceptSlider, ex:g12_conceptHinhAnhTrangWeb .
+
+  ex:g12_topicEICT_p152_01 a ex:Paragraph ;
+    ex:paragraphOrder 32 ;
+    ex:hasRawText "Bài 6 trình bày biểu mẫu trên trang web và xuất bản website. Biểu mẫu cho phép thu nhận và xử lí thông tin người dùng như chủ đề, tiêu đề, họ tên, email, điện thoại, địa chỉ và nội dung lời nhắn."@vi ;
+    ex:appearsOnPage ex:g12_page152 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:belongsToSection ex:g12_topicEICT_l6s1 ;
+    ex:mentionsConcept ex:g12_conceptBieuMau, ex:g12_conceptOThongTin .
+
+  ex:g12_topicEICT_p153_01 a ex:Paragraph ;
+    ex:paragraphOrder 33 ;
+    ex:hasRawText "Mobirise hỗ trợ xem trước trang web ở chế độ mobile, desktop và xem trực tiếp trên trình duyệt; đồng thời cung cấp các chế độ xuất bản như mobirisesite.com, Local drive folder và FTP."@vi ;
+    ex:appearsOnPage ex:g12_page153 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:belongsToSection ex:g12_topicEICT_l6s2 ;
+    ex:mentionsConcept ex:g12_conceptMobileView, ex:g12_conceptDesktopView, ex:g12_conceptPreviewInBrowser, ex:g12_conceptPublishWebsite .
+
+  ex:g12_topicEICT_p154_01 a ex:Paragraph ;
+    ex:paragraphOrder 34 ;
+    ex:hasRawText "Thực hành nhiệm vụ 1 yêu cầu thêm biểu mẫu vào cuối trang web, chọn Form, chỉnh sửa thông số bố cục, định dạng và các đối tượng nhận dữ liệu trong biểu mẫu."@vi ;
+    ex:appearsOnPage ex:g12_page154 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:belongsToSection ex:g12_topicEICT_l6s4 ;
+    ex:mentionsConcept ex:g12_conceptFormWeb, ex:g12_conceptBieuMau, ex:g12_conceptOThongTin .
+
+  ex:g12_topicEICT_p155_01 a ex:Paragraph ;
+    ex:paragraphOrder 35 ;
+    ex:hasRawText "Người dùng chỉnh sửa trường thông tin trong biểu mẫu, nhập địa chỉ email nhận dữ liệu hoặc Action URL, xác nhận email và chọn Save để hoàn tất thiết lập biểu mẫu."@vi ;
+    ex:appearsOnPage ex:g12_page155 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:belongsToSection ex:g12_topicEICT_l6s4 ;
+    ex:mentionsConcept ex:g12_conceptBieuMau, ex:g12_conceptOThongTin .
+
+  ex:g12_topicEICT_p156_01 a ex:Paragraph ;
+    ex:paragraphOrder 36 ;
+    ex:hasRawText "Nhiệm vụ xuất bản website hướng dẫn xuất bản bằng tên miền con của mobirisesite.com hoặc xuất bản dưới dạng các tệp HTML vào thư mục trên máy tính bằng Local drive folder."@vi ;
+    ex:appearsOnPage ex:g12_page156 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:belongsToSection ex:g12_topicEICT_l6s4 ;
+    ex:mentionsConcept ex:g12_conceptPublishWebsite, ex:g12_conceptMobirisesite, ex:g12_conceptLocalDriveFolder, ex:g12_conceptHTMLFile .
+
+  ex:g12_topicEICT_p157_01 a ex:Paragraph ;
+    ex:paragraphOrder 37 ;
+    ex:hasRawText "Xuất bản bằng FTP yêu cầu chọn FTP trong giao diện xuất bản, thiết lập thông số máy chủ web như protocol, host, port, username, password, thư mục gốc và chọn Publish để tải website lên máy chủ."@vi ;
+    ex:appearsOnPage ex:g12_page157 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:belongsToSection ex:g12_topicEICT_l6s4 ;
+    ex:mentionsConcept ex:g12_conceptFTP, ex:g12_conceptFTPServerParameters, ex:g12_conceptPublishWebsite .
+
+  ex:g12_topicEICT_p158_01 a ex:Paragraph ;
+    ex:paragraphOrder 38 ;
+    ex:hasRawText "Bài vận dụng yêu cầu tạo biểu mẫu gồm họ và tên, email, lời nhắn và xuất bản website Giới thiệu trường em lên Internet với tên miền con của mobirisesite.com."@vi ;
+    ex:appearsOnPage ex:g12_page158 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:belongsToSection ex:g12_topicEICT_l6s5 ;
+    ex:mentionsConcept ex:g12_conceptBieuMau, ex:g12_conceptMobirisesite, ex:g12_conceptPublishWebsite .
+
+  ex:g12_topicEICT_p159_01 a ex:Paragraph ;
+    ex:paragraphOrder 39 ;
+    ex:hasRawText "Bài 7 là bài tập nhóm tạo sản phẩm theo nhóm. Mỗi nhóm tạo một website bằng Mobirise theo chủ đề tự chọn hoặc chủ đề gợi ý, giới thiệu và thuyết minh sản phẩm trước lớp."@vi ;
+    ex:appearsOnPage ex:g12_page159 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:belongsToSection ex:g12_topicEICT_l7s1 ;
+    ex:mentionsConcept ex:g12_conceptSanPhamNhom, ex:g12_conceptMobirise, ex:g12_conceptHopTacNhom .
+
+  ex:g12_topicEICT_p159_02 a ex:Paragraph ;
+    ex:paragraphOrder 40 ;
+    ex:hasRawText "Tiêu chí đánh giá sản phẩm gồm cấu trúc website và bố cục phù hợp, thanh điều hướng và chân trang có liên kết, biểu mẫu liên hệ, nội dung phù hợp, trình bày đa dạng và màu sắc hài hòa."@vi ;
+    ex:appearsOnPage ex:g12_page159 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:belongsToSection ex:g12_topicEICT_l7s3 ;
+    ex:mentionsConcept ex:g12_conceptTieuChiDanhGiaWebsite, ex:g12_conceptThanhDieuHuong, ex:g12_conceptChanTrang, ex:g12_conceptBieuMau .
+
+  ex:g12_topicEICT_p160_01 a ex:Paragraph ;
+    ex:paragraphOrder 41 ;
+    ex:hasRawText "Hướng dẫn tạo website theo nhóm gồm phác thảo cấu trúc website, chuẩn bị tư liệu hình ảnh và nội dung, tạo dự án website, tạo và chỉnh sửa thành phần trang web, xem trước và xuất bản website."@vi ;
+    ex:appearsOnPage ex:g12_page160 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:belongsToSection ex:g12_topicEICT_l7s4 ;
+    ex:mentionsConcept ex:g12_conceptCauTrucWebsite, ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptPublishWebsite .
+
+  ex:g12_topicEICT_p160_02 a ex:Paragraph ;
+    ex:paragraphOrder 42 ;
+    ex:hasRawText "Phần chỉnh sửa trang web hướng dẫn xuất bản website dưới dạng tệp .html, sau đó chỉnh sửa mã HTML để thay đổi nội dung mặc định do Mobirise tạo, tìm thẻ section có thuộc tính class=\"display-7\"."@vi ;
+    ex:appearsOnPage ex:g12_page160 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:belongsToSection ex:g12_topicEICT_l7s4 ;
+    ex:mentionsConcept ex:g12_conceptHTMLFile, ex:g12_conceptChinhSuaHTML, ex:g12_conceptSectionHTML .
+
+  ex:g12_topicEICT_p161_01 a ex:Paragraph ;
+    ex:paragraphOrder 43 ;
+    ex:hasRawText "Chỉnh sửa nội dung bằng cách thay thế nội dung thẻ p trong thẻ section vừa tìm với đoạn mã mới, thay thế nội dung của thẻ a thành Mobirise, lưu lại thay đổi và mở lại trang web để xem kết quả."@vi ;
+    ex:appearsOnPage ex:g12_page161 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:belongsToSection ex:g12_topicEICT_l7s4 ;
+    ex:mentionsConcept ex:g12_conceptChinhSuaHTML, ex:g12_conceptSectionHTML, ex:g12_conceptMobirise .
+
+  ex:g12_topicEICT_p161_02 a ex:Paragraph ;
+    ex:paragraphOrder 44 ;
+    ex:hasRawText "Bài tập nhóm cuối bài yêu cầu tạo một website phục vụ cho việc tìm hiểu một số nghề có ứng dụng tin học."@vi ;
+    ex:appearsOnPage ex:g12_page161 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:belongsToSection ex:g12_topicEICT_l7s5 ;
+    ex:mentionsConcept ex:g12_conceptSanPhamNhom, ex:g12_conceptUngDungTinHoc .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g12_page123 ex:hasParagraph ex:g12_topicEICT_p123_01, ex:g12_topicEICT_p123_02 .
+  ex:g12_page124 ex:hasParagraph ex:g12_topicEICT_p124_01, ex:g12_topicEICT_p124_02 .
+  ex:g12_page125 ex:hasParagraph ex:g12_topicEICT_p125_01 .
+  ex:g12_page126 ex:hasParagraph ex:g12_topicEICT_p126_01 .
+  ex:g12_page127 ex:hasParagraph ex:g12_topicEICT_p127_01 .
+  ex:g12_page128 ex:hasParagraph ex:g12_topicEICT_p128_01 .
+  ex:g12_page129 ex:hasParagraph ex:g12_topicEICT_p129_01 .
+  ex:g12_page130 ex:hasParagraph ex:g12_topicEICT_p130_01 .
+  ex:g12_page131 ex:hasParagraph ex:g12_topicEICT_p131_01 .
+  ex:g12_page132 ex:hasParagraph ex:g12_topicEICT_p132_01 .
+  ex:g12_page133 ex:hasParagraph ex:g12_topicEICT_p133_01 .
+  ex:g12_page134 ex:hasParagraph ex:g12_topicEICT_p134_01 .
+  ex:g12_page135 ex:hasParagraph ex:g12_topicEICT_p135_01 .
+  ex:g12_page136 ex:hasParagraph ex:g12_topicEICT_p136_01 .
+  ex:g12_page137 ex:hasParagraph ex:g12_topicEICT_p137_01 .
+  ex:g12_page138 ex:hasParagraph ex:g12_topicEICT_p138_01 .
+  ex:g12_page139 ex:hasParagraph ex:g12_topicEICT_p139_01 .
+  ex:g12_page140 ex:hasParagraph ex:g12_topicEICT_p140_01 .
+  ex:g12_page141 ex:hasParagraph ex:g12_topicEICT_p141_01 .
+  ex:g12_page142 ex:hasParagraph ex:g12_topicEICT_p142_01 .
+  ex:g12_page143 ex:hasParagraph ex:g12_topicEICT_p143_01 .
+  ex:g12_page144 ex:hasParagraph ex:g12_topicEICT_p144_01 .
+  ex:g12_page145 ex:hasParagraph ex:g12_topicEICT_p145_01 .
+  ex:g12_page146 ex:hasParagraph ex:g12_topicEICT_p146_01 .
+  ex:g12_page147 ex:hasParagraph ex:g12_topicEICT_p147_01 .
+  ex:g12_page148 ex:hasParagraph ex:g12_topicEICT_p148_01 .
+  ex:g12_page149 ex:hasParagraph ex:g12_topicEICT_p149_01 .
+  ex:g12_page150 ex:hasParagraph ex:g12_topicEICT_p150_01 .
+  ex:g12_page151 ex:hasParagraph ex:g12_topicEICT_p151_01 .
+  ex:g12_page152 ex:hasParagraph ex:g12_topicEICT_p152_01 .
+  ex:g12_page153 ex:hasParagraph ex:g12_topicEICT_p153_01 .
+  ex:g12_page154 ex:hasParagraph ex:g12_topicEICT_p154_01 .
+  ex:g12_page155 ex:hasParagraph ex:g12_topicEICT_p155_01 .
+  ex:g12_page156 ex:hasParagraph ex:g12_topicEICT_p156_01 .
+  ex:g12_page157 ex:hasParagraph ex:g12_topicEICT_p157_01 .
+  ex:g12_page158 ex:hasParagraph ex:g12_topicEICT_p158_01 .
+  ex:g12_page159 ex:hasParagraph ex:g12_topicEICT_p159_01, ex:g12_topicEICT_p159_02 .
+  ex:g12_page160 ex:hasParagraph ex:g12_topicEICT_p160_01, ex:g12_topicEICT_p160_02 .
+  ex:g12_page161 ex:hasParagraph ex:g12_topicEICT_p161_01, ex:g12_topicEICT_p161_02 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g12_topicEICT_l1s1 ex:hasParagraph ex:g12_topicEICT_p123_01, ex:g12_topicEICT_p123_02, ex:g12_topicEICT_p124_01 .
+  ex:g12_topicEICT_l1s2 ex:hasParagraph ex:g12_topicEICT_p124_02, ex:g12_topicEICT_p125_01, ex:g12_topicEICT_p126_01 .
+  ex:g12_topicEICT_l1s3 ex:hasParagraph ex:g12_topicEICT_p127_01 .
+  ex:g12_topicEICT_l1s4 ex:hasParagraph ex:g12_topicEICT_p128_01 .
+
+  ex:g12_topicEICT_l2s1 ex:hasParagraph ex:g12_topicEICT_p129_01, ex:g12_topicEICT_p130_01 .
+  ex:g12_topicEICT_l2s2 ex:hasParagraph ex:g12_topicEICT_p131_01 .
+  ex:g12_topicEICT_l2s3 ex:hasParagraph ex:g12_topicEICT_p132_01, ex:g12_topicEICT_p133_01 .
+
+  ex:g12_topicEICT_l3s1 ex:hasParagraph ex:g12_topicEICT_p134_01, ex:g12_topicEICT_p135_01 .
+  ex:g12_topicEICT_l3s2 ex:hasParagraph ex:g12_topicEICT_p136_01 .
+  ex:g12_topicEICT_l3s3 ex:hasParagraph ex:g12_topicEICT_p137_01, ex:g12_topicEICT_p138_01 .
+  ex:g12_topicEICT_l3s4 ex:hasParagraph ex:g12_topicEICT_p139_01 .
+
+  ex:g12_topicEICT_l4s1 ex:hasParagraph ex:g12_topicEICT_p140_01 .
+  ex:g12_topicEICT_l4s2 ex:hasParagraph ex:g12_topicEICT_p141_01 .
+  ex:g12_topicEICT_l4s3 ex:hasParagraph ex:g12_topicEICT_p142_01, ex:g12_topicEICT_p143_01 .
+  ex:g12_topicEICT_l4s4 ex:hasParagraph ex:g12_topicEICT_p144_01 .
+
+  ex:g12_topicEICT_l5s1 ex:hasParagraph ex:g12_topicEICT_p145_01 .
+  ex:g12_topicEICT_l5s2 ex:hasParagraph ex:g12_topicEICT_p146_01 .
+  ex:g12_topicEICT_l5s3 ex:hasParagraph ex:g12_topicEICT_p147_01, ex:g12_topicEICT_p148_01, ex:g12_topicEICT_p149_01 .
+  ex:g12_topicEICT_l5s4 ex:hasParagraph ex:g12_topicEICT_p150_01, ex:g12_topicEICT_p151_01 .
+
+  ex:g12_topicEICT_l6s1 ex:hasParagraph ex:g12_topicEICT_p152_01 .
+  ex:g12_topicEICT_l6s2 ex:hasParagraph ex:g12_topicEICT_p153_01 .
+  ex:g12_topicEICT_l6s3 ex:hasParagraph ex:g12_topicEICT_p153_01 .
+  ex:g12_topicEICT_l6s4 ex:hasParagraph ex:g12_topicEICT_p154_01, ex:g12_topicEICT_p155_01, ex:g12_topicEICT_p156_01, ex:g12_topicEICT_p157_01 .
+  ex:g12_topicEICT_l6s5 ex:hasParagraph ex:g12_topicEICT_p158_01 .
+
+  ex:g12_topicEICT_l7s1 ex:hasParagraph ex:g12_topicEICT_p159_01 .
+  ex:g12_topicEICT_l7s3 ex:hasParagraph ex:g12_topicEICT_p159_02 .
+  ex:g12_topicEICT_l7s4 ex:hasParagraph ex:g12_topicEICT_p160_01, ex:g12_topicEICT_p160_02, ex:g12_topicEICT_p161_01 .
+  ex:g12_topicEICT_l7s5 ex:hasParagraph ex:g12_topicEICT_p161_02 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g12_topicEICT_p123_01 ex:nextParagraph ex:g12_topicEICT_p123_02 .
+  ex:g12_topicEICT_p123_02 ex:previousParagraph ex:g12_topicEICT_p123_01 ; ex:nextParagraph ex:g12_topicEICT_p124_01 .
+  ex:g12_topicEICT_p124_01 ex:previousParagraph ex:g12_topicEICT_p123_02 ; ex:nextParagraph ex:g12_topicEICT_p124_02 .
+  ex:g12_topicEICT_p124_02 ex:previousParagraph ex:g12_topicEICT_p124_01 ; ex:nextParagraph ex:g12_topicEICT_p125_01 .
+  ex:g12_topicEICT_p125_01 ex:previousParagraph ex:g12_topicEICT_p124_02 ; ex:nextParagraph ex:g12_topicEICT_p126_01 .
+  ex:g12_topicEICT_p126_01 ex:previousParagraph ex:g12_topicEICT_p125_01 ; ex:nextParagraph ex:g12_topicEICT_p127_01 .
+  ex:g12_topicEICT_p127_01 ex:previousParagraph ex:g12_topicEICT_p126_01 ; ex:nextParagraph ex:g12_topicEICT_p128_01 .
+  ex:g12_topicEICT_p128_01 ex:previousParagraph ex:g12_topicEICT_p127_01 ; ex:nextParagraph ex:g12_topicEICT_p129_01 .
+  ex:g12_topicEICT_p129_01 ex:previousParagraph ex:g12_topicEICT_p128_01 ; ex:nextParagraph ex:g12_topicEICT_p130_01 .
+  ex:g12_topicEICT_p130_01 ex:previousParagraph ex:g12_topicEICT_p129_01 ; ex:nextParagraph ex:g12_topicEICT_p131_01 .
+  ex:g12_topicEICT_p131_01 ex:previousParagraph ex:g12_topicEICT_p130_01 ; ex:nextParagraph ex:g12_topicEICT_p132_01 .
+  ex:g12_topicEICT_p132_01 ex:previousParagraph ex:g12_topicEICT_p131_01 ; ex:nextParagraph ex:g12_topicEICT_p133_01 .
+  ex:g12_topicEICT_p133_01 ex:previousParagraph ex:g12_topicEICT_p132_01 ; ex:nextParagraph ex:g12_topicEICT_p134_01 .
+  ex:g12_topicEICT_p134_01 ex:previousParagraph ex:g12_topicEICT_p133_01 ; ex:nextParagraph ex:g12_topicEICT_p135_01 .
+  ex:g12_topicEICT_p135_01 ex:previousParagraph ex:g12_topicEICT_p134_01 ; ex:nextParagraph ex:g12_topicEICT_p136_01 .
+  ex:g12_topicEICT_p136_01 ex:previousParagraph ex:g12_topicEICT_p135_01 ; ex:nextParagraph ex:g12_topicEICT_p137_01 .
+  ex:g12_topicEICT_p137_01 ex:previousParagraph ex:g12_topicEICT_p136_01 ; ex:nextParagraph ex:g12_topicEICT_p138_01 .
+  ex:g12_topicEICT_p138_01 ex:previousParagraph ex:g12_topicEICT_p137_01 ; ex:nextParagraph ex:g12_topicEICT_p139_01 .
+  ex:g12_topicEICT_p139_01 ex:previousParagraph ex:g12_topicEICT_p138_01 ; ex:nextParagraph ex:g12_topicEICT_p140_01 .
+  ex:g12_topicEICT_p140_01 ex:previousParagraph ex:g12_topicEICT_p139_01 ; ex:nextParagraph ex:g12_topicEICT_p141_01 .
+  ex:g12_topicEICT_p141_01 ex:previousParagraph ex:g12_topicEICT_p140_01 ; ex:nextParagraph ex:g12_topicEICT_p142_01 .
+  ex:g12_topicEICT_p142_01 ex:previousParagraph ex:g12_topicEICT_p141_01 ; ex:nextParagraph ex:g12_topicEICT_p143_01 .
+  ex:g12_topicEICT_p143_01 ex:previousParagraph ex:g12_topicEICT_p142_01 ; ex:nextParagraph ex:g12_topicEICT_p144_01 .
+  ex:g12_topicEICT_p144_01 ex:previousParagraph ex:g12_topicEICT_p143_01 ; ex:nextParagraph ex:g12_topicEICT_p145_01 .
+  ex:g12_topicEICT_p145_01 ex:previousParagraph ex:g12_topicEICT_p144_01 ; ex:nextParagraph ex:g12_topicEICT_p146_01 .
+  ex:g12_topicEICT_p146_01 ex:previousParagraph ex:g12_topicEICT_p145_01 ; ex:nextParagraph ex:g12_topicEICT_p147_01 .
+  ex:g12_topicEICT_p147_01 ex:previousParagraph ex:g12_topicEICT_p146_01 ; ex:nextParagraph ex:g12_topicEICT_p148_01 .
+  ex:g12_topicEICT_p148_01 ex:previousParagraph ex:g12_topicEICT_p147_01 ; ex:nextParagraph ex:g12_topicEICT_p149_01 .
+  ex:g12_topicEICT_p149_01 ex:previousParagraph ex:g12_topicEICT_p148_01 ; ex:nextParagraph ex:g12_topicEICT_p150_01 .
+  ex:g12_topicEICT_p150_01 ex:previousParagraph ex:g12_topicEICT_p149_01 ; ex:nextParagraph ex:g12_topicEICT_p151_01 .
+  ex:g12_topicEICT_p151_01 ex:previousParagraph ex:g12_topicEICT_p150_01 ; ex:nextParagraph ex:g12_topicEICT_p152_01 .
+  ex:g12_topicEICT_p152_01 ex:previousParagraph ex:g12_topicEICT_p151_01 ; ex:nextParagraph ex:g12_topicEICT_p153_01 .
+  ex:g12_topicEICT_p153_01 ex:previousParagraph ex:g12_topicEICT_p152_01 ; ex:nextParagraph ex:g12_topicEICT_p154_01 .
+  ex:g12_topicEICT_p154_01 ex:previousParagraph ex:g12_topicEICT_p153_01 ; ex:nextParagraph ex:g12_topicEICT_p155_01 .
+  ex:g12_topicEICT_p155_01 ex:previousParagraph ex:g12_topicEICT_p154_01 ; ex:nextParagraph ex:g12_topicEICT_p156_01 .
+  ex:g12_topicEICT_p156_01 ex:previousParagraph ex:g12_topicEICT_p155_01 ; ex:nextParagraph ex:g12_topicEICT_p157_01 .
+  ex:g12_topicEICT_p157_01 ex:previousParagraph ex:g12_topicEICT_p156_01 ; ex:nextParagraph ex:g12_topicEICT_p158_01 .
+  ex:g12_topicEICT_p158_01 ex:previousParagraph ex:g12_topicEICT_p157_01 ; ex:nextParagraph ex:g12_topicEICT_p159_01 .
+  ex:g12_topicEICT_p159_01 ex:previousParagraph ex:g12_topicEICT_p158_01 ; ex:nextParagraph ex:g12_topicEICT_p159_02 .
+  ex:g12_topicEICT_p159_02 ex:previousParagraph ex:g12_topicEICT_p159_01 ; ex:nextParagraph ex:g12_topicEICT_p160_01 .
+  ex:g12_topicEICT_p160_01 ex:previousParagraph ex:g12_topicEICT_p159_02 ; ex:nextParagraph ex:g12_topicEICT_p160_02 .
+  ex:g12_topicEICT_p160_02 ex:previousParagraph ex:g12_topicEICT_p160_01 ; ex:nextParagraph ex:g12_topicEICT_p161_01 .
+  ex:g12_topicEICT_p161_01 ex:previousParagraph ex:g12_topicEICT_p160_02 ; ex:nextParagraph ex:g12_topicEICT_p161_02 .
+  ex:g12_topicEICT_p161_02 ex:previousParagraph ex:g12_topicEICT_p161_01 .
+
+  ###########################################################################
+  # Activities, practical instructions, exercises, and review questions
+  ###########################################################################
+
+  ex:g12_topicEICT_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Em có biết các trang web được tạo ra bằng cách nào không?"@vi ;
+    ex:appearsOnPage ex:g12_page123 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptWebsite, ex:g12_conceptPhanMemTaoWebsite .
+
+  ex:g12_topicEICT_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 bài 1 - Chức năng cơ bản của phần mềm tạo website"@vi ;
+    ex:hasRawText "Theo em, phần mềm tạo website cần có những chức năng cơ bản nào?"@vi ;
+    ex:appearsOnPage ex:g12_page123 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptPhanMemTaoWebsite .
+
+  ex:g12_topicEICT_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 bài 1 - Khám phá giao diện Mobirise"@vi ;
+    ex:hasRawText "Hãy khám phá giao diện làm việc của phần mềm Mobirise và cho biết cách phần mềm này cung cấp các chức năng cơ bản để tạo website."@vi ;
+    ex:appearsOnPage ex:g12_page125 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptMobirise, ex:g12_conceptPhanMemTaoWebsite .
+
+  ex:g12_topicEICT_l1_practiceOpenTemplate a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 1 - Mở mẫu trang web và chỉnh sửa văn bản, hình ảnh"@vi ;
+    ex:hasRawText "Mở một mẫu trang web trên Mobirise, chỉnh sửa nội dung văn bản, thay hình ảnh và xem trước trang web bằng trình duyệt."@vi ;
+    ex:appearsOnPage ex:g12_page127 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptMobirise, ex:g12_conceptMediaImage, ex:g12_conceptPreviewInBrowser .
+
+  ex:g12_topicEICT_l1_practiceAddContent a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 1 - Thêm nội dung mới vào trang web"@vi ;
+    ex:hasRawText "Thêm vào trang web một số nội dung mới, sau đó chỉnh sửa phần văn bản và hình ảnh của các nội dung này."@vi ;
+    ex:appearsOnPage ex:g12_page128 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptAddBlockToPage, ex:g12_conceptKhoiMau .
+
+  ex:g12_topicEICT_l1_review a ex:ReviewQuestionItem ;
+    rdfs:label "Tự kiểm tra bài 1 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Xác định các phát biểu đúng về phần mềm tạo website, Mobirise, các mẫu thiết kế, thao tác kéo thả và cách tạo trang web."@vi ;
+    ex:appearsOnPage ex:g12_page128 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptPhanMemTaoWebsite, ex:g12_conceptMobirise .
+
+  ex:g12_topicEICT_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Em đã từng truy cập vào các website khác nhau, hãy cho biết các website thường có những thành phần cơ bản nào."@vi ;
+    ex:appearsOnPage ex:g12_page129 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptCauTrucWebsite .
+
+  ex:g12_topicEICT_l2_activitySketchSchoolWebsite a ex:Activity ;
+    rdfs:label "Hoạt động bài 2 - Phác thảo website giới thiệu trường em"@vi ;
+    ex:hasRawText "Phác thảo thiết kế cấu trúc của một website giới thiệu về trường em, gồm những trang web dự kiến, cách sắp xếp nội dung và tư liệu cần thiết."@vi ;
+    ex:appearsOnPage ex:g12_page131 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptCauTrucWebsite, ex:g12_conceptWebsite .
+
+  ex:g12_topicEICT_l2_practiceCreateWebsite a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 2 - Tạo dự án website Giới thiệu trường em"@vi ;
+    ex:hasRawText "Tạo dự án website Giới thiệu trường em, tạo các trang web theo phác thảo hoặc hoạt động trước, đặt tên dự án, thêm trang trắng hoặc trang theo mẫu."@vi ;
+    ex:appearsOnPage ex:g12_page131 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptCreateNewSite, ex:g12_conceptCreateNewPage, ex:g12_conceptAddBlankPage .
+
+  ex:g12_topicEICT_l2_practiceLearningSoftwareWebsite a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 2 - Tạo website Phần mềm học tập"@vi ;
+    ex:hasRawText "Phác thảo cấu trúc website giới thiệu các phần mềm học tập, sau đó tạo dự án website với chủ đề giới thiệu các phần mềm học tập."@vi ;
+    ex:appearsOnPage ex:g12_page133 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptWebsite, ex:g12_conceptCauTrucWebsite .
+
+  ex:g12_topicEICT_l2_review a ex:ReviewQuestionItem ;
+    rdfs:label "Tự kiểm tra bài 2 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Xác định các phát biểu đúng về trang chủ, trang chuyên mục, trang chi tiết, giao diện các trang web và phác thảo cấu trúc website."@vi ;
+    ex:appearsOnPage ex:g12_page133 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptTrangChu, ex:g12_conceptTrangChuyenMuc, ex:g12_conceptTrangChiTiet, ex:g12_conceptCauTrucWebsite .
+
+  ex:g12_topicEICT_l3_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 3 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Truy cập một số website và khám phá xem phần đầu của các trang web thường có thông tin gì."@vi ;
+    ex:appearsOnPage ex:g12_page134 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:relatedTo ex:g12_conceptPhanDauTrang, ex:g12_conceptThanhDieuHuong .
+
+  ex:g12_topicEICT_l3_activityNavigationPurpose a ex:Activity ;
+    rdfs:label "Hoạt động bài 3 - Chức năng và vị trí thanh điều hướng"@vi ;
+    ex:hasRawText "Tìm hiểu thanh điều hướng có chức năng gì và thường được đặt ở vị trí nào."@vi ;
+    ex:appearsOnPage ex:g12_page134 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:relatedTo ex:g12_conceptThanhDieuHuong .
+
+  ex:g12_topicEICT_l3_practiceCreateNavigation a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 3 - Tạo thanh điều hướng cho website Giới thiệu trường em"@vi ;
+    ex:hasRawText "Tạo thanh điều hướng chứa các đường liên kết tới tất cả các trang web trong website Giới thiệu trường em đã thực hiện ở Bài 2."@vi ;
+    ex:appearsOnPage ex:g12_page135 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:relatedTo ex:g12_conceptThanhDieuHuong, ex:g12_conceptLienKetTrangWeb .
+
+  ex:g12_topicEICT_l3_practiceLearningSoftwareNav a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 3 - Tạo thanh điều hướng cho website Phần mềm học tập"@vi ;
+    ex:hasRawText "Tạo và chỉnh sửa thanh điều hướng chứa liên kết tới các trang web trong website Phần mềm học tập như mẫu minh họa."@vi ;
+    ex:appearsOnPage ex:g12_page139 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:relatedTo ex:g12_conceptThanhDieuHuong, ex:g12_conceptThanhDieuHuongNhieuCap .
+
+  ex:g12_topicEICT_l3_review a ex:ReviewQuestionItem ;
+    rdfs:label "Tự kiểm tra bài 3 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Xác định các phát biểu đúng về thanh điều hướng, số lượng thanh điều hướng, thanh điều hướng nhiều cấp và liên kết từ thanh điều hướng đến các trang web."@vi ;
+    ex:appearsOnPage ex:g12_page139 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson3 ;
+    ex:relatedTo ex:g12_conceptThanhDieuHuong, ex:g12_conceptThanhDieuHuongNhieuCap .
+
+  ex:g12_topicEICT_l4_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 4 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Theo em, thông tin trên các trang web được truyền tải tới người xem phổ biến nhất là dưới những dạng nào?"@vi ;
+    ex:appearsOnPage ex:g12_page140 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:relatedTo ex:g12_conceptBaiVietTrangWeb .
+
+  ex:g12_topicEICT_l4_activityFounderArticle a ex:Activity ;
+    rdfs:label "Hoạt động bài 4 - Thông tin nổi bật về người sáng lập HTML"@vi ;
+    ex:hasRawText "Chuẩn bị tạo trang web giới thiệu thông tin người sáng lập ngôn ngữ HTML và cho biết cần lấy chọn những thông tin nổi bật như họ tên, năm sinh, tóm lược tiểu sử và thành tựu."@vi ;
+    ex:appearsOnPage ex:g12_page141 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:relatedTo ex:g12_conceptBaiVietTrangWeb .
+
+  ex:g12_topicEICT_l4_practiceAddArticle a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 4 - Thêm bài viết vào trang web"@vi ;
+    ex:hasRawText "Trong website Giới thiệu trường em, tạo bài viết giới thiệu thông tin chi tiết về trường như địa chỉ, lịch sử thành lập và các thành tích nổi bật."@vi ;
+    ex:appearsOnPage ex:g12_page141 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:relatedTo ex:g12_conceptBaiVietTrangWeb, ex:g12_conceptArticleBlock .
+
+  ex:g12_topicEICT_l4_practiceAddFooter a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 4 - Thêm phần chân trang cho trang web"@vi ;
+    ex:hasRawText "Trong website Giới thiệu trường em, tạo phần chân trang chứa các thông tin ngắn gọn về địa chỉ và thông tin liên lạc của nhà trường."@vi ;
+    ex:appearsOnPage ex:g12_page143 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:relatedTo ex:g12_conceptChanTrang, ex:g12_conceptFooterBlock .
+
+  ex:g12_topicEICT_l4_practiceFounderFooter a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 4 - Tạo bài viết và chân trang"@vi ;
+    ex:hasRawText "Tạo phần nội dung giới thiệu người sáng lập HTML và tạo phần chân trang cho website Phần mềm học tập gồm bản quyền, liên kết nhanh và kết nối mạng xã hội."@vi ;
+    ex:appearsOnPage ex:g12_page144 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:relatedTo ex:g12_conceptBaiVietTrangWeb, ex:g12_conceptChanTrang .
+
+  ex:g12_topicEICT_l4_review a ex:ReviewQuestionItem ;
+    rdfs:label "Tự kiểm tra bài 4 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Xác định các phát biểu đúng về phần chân trang, bài viết trên trang web và cách dùng khối mẫu để tạo bài viết."@vi ;
+    ex:appearsOnPage ex:g12_page144 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson4 ;
+    ex:relatedTo ex:g12_conceptBaiVietTrangWeb, ex:g12_conceptChanTrang .
+
+  ex:g12_topicEICT_l5_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 5 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Bên cạnh bài viết dạng văn bản, thông tin trên trang web còn có thể được truyền tải dưới dạng hình ảnh, video. Theo em, việc sử dụng hình ảnh, video trên trang web có những ưu điểm gì?"@vi ;
+    ex:appearsOnPage ex:g12_page145 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:relatedTo ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb .
+
+  ex:g12_topicEICT_l5_activityGallerySlider a ex:Activity ;
+    rdfs:label "Hoạt động bài 5 - Phân biệt bộ sưu tập và thanh trượt"@vi ;
+    ex:hasRawText "Tìm hiểu bộ sưu tập và thanh trượt khác nhau như thế nào."@vi ;
+    ex:appearsOnPage ex:g12_page146 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:relatedTo ex:g12_conceptGallery, ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_l5_practiceAddImageVideo a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 5 - Thêm hình ảnh, video cho trang web"@vi ;
+    ex:hasRawText "Thêm một hình ảnh về cảnh quan trường em vào phía dưới bài viết giới thiệu về trường, sử dụng khối Image & Video và chỉnh sửa bố cục, định dạng."@vi ;
+    ex:appearsOnPage ex:g12_page147 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:relatedTo ex:g12_conceptImageVideoBlock, ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb .
+
+  ex:g12_topicEICT_l5_practiceAddGallerySlider a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 5 - Thêm bộ sưu tập và thanh trượt vào trang web"@vi ;
+    ex:hasRawText "Thêm một số hình ảnh hoạt động của học sinh dưới dạng thanh trượt vào phía trên bài viết giới thiệu về trường."@vi ;
+    ex:appearsOnPage ex:g12_page149 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:relatedTo ex:g12_conceptGallerySliderBlock, ex:g12_conceptGallery, ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_l5_practiceGraphicContent a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 5 - Nội dung hình ảnh, bộ sưu tập và thanh trượt"@vi ;
+    ex:hasRawText "Tạo nội dung dạng hình ảnh có kèm mô tả, tạo nội dung dạng bộ sưu tập và tạo nội dung dạng thanh trượt theo mẫu."@vi ;
+    ex:appearsOnPage ex:g12_page150 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:relatedTo ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptGallery, ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_l5_review a ex:ReviewQuestionItem ;
+    rdfs:label "Tự kiểm tra bài 5 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Xác định các phát biểu đúng về cách trình bày nội dung hình ảnh, nguồn hình ảnh, bộ sưu tập và thanh trượt trên trang web."@vi ;
+    ex:appearsOnPage ex:g12_page151 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson5 ;
+    ex:relatedTo ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptGallery, ex:g12_conceptSlider .
+
+  ex:g12_topicEICT_l6_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 6 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Em hãy nêu một ví dụ về một trang web có thu nhận thông tin từ người truy cập."@vi ;
+    ex:appearsOnPage ex:g12_page152 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:relatedTo ex:g12_conceptBieuMau .
+
+  ex:g12_topicEICT_l6_practiceAddForm a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 6 - Thêm biểu mẫu trên trang web"@vi ;
+    ex:hasRawText "Thêm biểu mẫu vào phía cuối một trang web trong website Giới thiệu trường em để người dùng ghi thêm tên và lời nhắn."@vi ;
+    ex:appearsOnPage ex:g12_page154 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:relatedTo ex:g12_conceptBieuMau, ex:g12_conceptFormWeb .
+
+  ex:g12_topicEICT_l6_practicePublishWebsite a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 6 - Xuất bản website"@vi ;
+    ex:hasRawText "Chọn hai trong ba cách xuất bản website mà Mobirise cung cấp để xuất bản website Phần mềm học tập: mobirisesite.com, Local drive folder hoặc FTP."@vi ;
+    ex:appearsOnPage ex:g12_page155 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:relatedTo ex:g12_conceptPublishWebsite, ex:g12_conceptMobirisesite, ex:g12_conceptLocalDriveFolder, ex:g12_conceptFTP .
+
+  ex:g12_topicEICT_l6_practiceMessageFormPublish a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 6 - Tạo biểu mẫu và xuất bản website"@vi ;
+    ex:hasRawText "Tạo một biểu mẫu gồm Họ và tên, Email, Lời nhắn cho phép người duyệt web để lại lời nhắn; xuất bản website Giới thiệu trường em trên Internet với tên miền con của mobirisesite.com."@vi ;
+    ex:appearsOnPage ex:g12_page158 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:relatedTo ex:g12_conceptBieuMau, ex:g12_conceptPublishWebsite, ex:g12_conceptMobirisesite .
+
+  ex:g12_topicEICT_l6_review a ex:ReviewQuestionItem ;
+    rdfs:label "Tự kiểm tra bài 6 chủ đề E ICT lớp 12"@vi ;
+    ex:hasRawText "Xác định các phát biểu đúng về biểu mẫu, khả năng xuất bản HTML, xuất bản dưới tên miền con mobirisesite.com và giao diện tùy chỉnh tự động đáp ứng."@vi ;
+    ex:appearsOnPage ex:g12_page158 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson6 ;
+    ex:relatedTo ex:g12_conceptBieuMau, ex:g12_conceptPublishWebsite, ex:g12_conceptResponsive .
+
+  ex:g12_topicEICT_l7_projectTask a ex:ProjectTask ;
+    rdfs:label "Dự án nhóm bài 7 - Tạo website bằng Mobirise"@vi ;
+    ex:hasRawText "Mỗi nhóm tạo một website bằng Mobirise giới thiệu về một chủ đề tự chọn hoặc chủ đề gợi ý, thuyết minh sản phẩm trước lớp và nộp báo cáo đánh giá sản phẩm cho giáo viên."@vi ;
+    ex:appearsOnPage ex:g12_page159 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:relatedTo ex:g12_conceptSanPhamNhom, ex:g12_conceptMobirise, ex:g12_conceptHopTacNhom .
+
+  ex:g12_topicEICT_l7_assessmentCriteria a ex:PracticalInstruction ;
+    rdfs:label "Tiêu chí đánh giá sản phẩm website nhóm"@vi ;
+    ex:hasRawText "Đánh giá cấu trúc website, bố cục trang web, thanh điều hướng, chân trang, biểu mẫu liên hệ, nội dung phù hợp, cách trình bày đa dạng, màu sắc hài hòa và hình ảnh minh họa rõ nét."@vi ;
+    ex:appearsOnPage ex:g12_page159 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:relatedTo ex:g12_conceptTieuChiDanhGiaWebsite, ex:g12_conceptCauTrucWebsite,
+                 ex:g12_conceptThanhDieuHuong, ex:g12_conceptChanTrang,
+                 ex:g12_conceptBieuMau, ex:g12_conceptHinhAnhTrangWeb .
+
+  ex:g12_topicEICT_l7_htmlEditTask a ex:PracticalInstruction ;
+    rdfs:label "Hướng dẫn bài 7 - Chỉnh sửa HTML sau khi xuất bản"@vi ;
+    ex:hasRawText "Xuất bản website dưới dạng tệp .html, mở tệp HTML, tìm thẻ section có class display-7, thay đổi nội dung thẻ p và thẻ a, lưu lại và mở trang web để xem kết quả."@vi ;
+    ex:appearsOnPage ex:g12_page160 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:relatedTo ex:g12_conceptChinhSuaHTML, ex:g12_conceptHTMLFile, ex:g12_conceptSectionHTML .
+
+  ex:g12_topicEICT_l7_appliedTask a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 7 - Tạo website tìm hiểu nghề ứng dụng tin học"@vi ;
+    ex:hasRawText "Nhóm em hãy tạo một website phục vụ cho việc tìm hiểu một số nghề có ứng dụng tin học."@vi ;
+    ex:appearsOnPage ex:g12_page161 ;
+    ex:belongsToLesson ex:g12_topicEICT_lesson7 ;
+    ex:relatedTo ex:g12_conceptSanPhamNhom, ex:g12_conceptUngDungTinHoc .
+
+  ex:g12_topicEICT_lesson1 ex:hasActivity ex:g12_topicEICT_l1_openingActivity,
+    ex:g12_topicEICT_l1_activity1, ex:g12_topicEICT_l1_activity2,
+    ex:g12_topicEICT_l1_practiceOpenTemplate, ex:g12_topicEICT_l1_practiceAddContent ;
+    ex:hasReviewQuestion ex:g12_topicEICT_l1_review .
+
+  ex:g12_topicEICT_lesson2 ex:hasActivity ex:g12_topicEICT_l2_openingActivity,
+    ex:g12_topicEICT_l2_activitySketchSchoolWebsite,
+    ex:g12_topicEICT_l2_practiceCreateWebsite,
+    ex:g12_topicEICT_l2_practiceLearningSoftwareWebsite ;
+    ex:hasReviewQuestion ex:g12_topicEICT_l2_review .
+
+  ex:g12_topicEICT_lesson3 ex:hasActivity ex:g12_topicEICT_l3_openingActivity,
+    ex:g12_topicEICT_l3_activityNavigationPurpose,
+    ex:g12_topicEICT_l3_practiceCreateNavigation,
+    ex:g12_topicEICT_l3_practiceLearningSoftwareNav ;
+    ex:hasReviewQuestion ex:g12_topicEICT_l3_review .
+
+  ex:g12_topicEICT_lesson4 ex:hasActivity ex:g12_topicEICT_l4_openingActivity,
+    ex:g12_topicEICT_l4_activityFounderArticle,
+    ex:g12_topicEICT_l4_practiceAddArticle,
+    ex:g12_topicEICT_l4_practiceAddFooter,
+    ex:g12_topicEICT_l4_practiceFounderFooter ;
+    ex:hasReviewQuestion ex:g12_topicEICT_l4_review .
+
+  ex:g12_topicEICT_lesson5 ex:hasActivity ex:g12_topicEICT_l5_openingActivity,
+    ex:g12_topicEICT_l5_activityGallerySlider,
+    ex:g12_topicEICT_l5_practiceAddImageVideo,
+    ex:g12_topicEICT_l5_practiceAddGallerySlider,
+    ex:g12_topicEICT_l5_practiceGraphicContent ;
+    ex:hasReviewQuestion ex:g12_topicEICT_l5_review .
+
+  ex:g12_topicEICT_lesson6 ex:hasActivity ex:g12_topicEICT_l6_openingActivity,
+    ex:g12_topicEICT_l6_practiceAddForm,
+    ex:g12_topicEICT_l6_practicePublishWebsite,
+    ex:g12_topicEICT_l6_practiceMessageFormPublish ;
+    ex:hasReviewQuestion ex:g12_topicEICT_l6_review .
+
+  ex:g12_topicEICT_lesson7 ex:hasActivity ex:g12_topicEICT_l7_projectTask,
+    ex:g12_topicEICT_l7_assessmentCriteria, ex:g12_topicEICT_l7_htmlEditTask ;
+    ex:hasReviewQuestion ex:g12_topicEICT_l7_appliedTask .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g12_conceptTaoTrangWebBangPhanMem ex:subConceptOf ex:g12_conceptUngDungTinHoc .
+  ex:g12_conceptWebsite ex:relatedTo ex:g12_conceptTaoTrangWebBangPhanMem .
+  ex:g12_conceptTrangWeb ex:partOf ex:g12_conceptWebsite .
+  ex:g12_conceptPhanMemTaoWebsite ex:relatedTo ex:g12_conceptTaoTrangWebBangPhanMem .
+  ex:g12_conceptMobirise ex:subConceptOf ex:g12_conceptPhanMemTaoWebsite .
+  ex:g12_conceptWebsiteTrucTuyen ex:subConceptOf ex:g12_conceptPhanMemTaoWebsite .
+  ex:g12_conceptWebsiteNgoaiTuyen ex:subConceptOf ex:g12_conceptPhanMemTaoWebsite .
+  ex:g12_conceptMauTrangWeb ex:partOf ex:g12_conceptPhanMemTaoWebsite .
+  ex:g12_conceptThemeWebsite ex:relatedTo ex:g12_conceptMauTrangWeb .
+  ex:g12_conceptKhoiMau ex:partOf ex:g12_conceptMobirise .
+  ex:g12_conceptAddBlockToPage ex:partOf ex:g12_conceptMobirise .
+  ex:g12_conceptVungLamViecChinh ex:partOf ex:g12_conceptMobirise .
+  ex:g12_conceptPreviewInBrowser ex:relatedTo ex:g12_conceptPublishWebsite .
+
+  ex:g12_conceptCauTrucWebsite ex:relatedTo ex:g12_conceptWebsite .
+  ex:g12_conceptTrangChu ex:partOf ex:g12_conceptWebsite .
+  ex:g12_conceptTrangChuyenMuc ex:partOf ex:g12_conceptWebsite .
+  ex:g12_conceptTrangChiTiet ex:partOf ex:g12_conceptWebsite .
+  ex:g12_conceptPhanDauTrang ex:partOf ex:g12_conceptTrangWeb .
+  ex:g12_conceptThanhDieuHuong ex:partOf ex:g12_conceptTrangWeb .
+  ex:g12_conceptPhanNoiDung ex:partOf ex:g12_conceptTrangWeb .
+  ex:g12_conceptChanTrang ex:partOf ex:g12_conceptTrangWeb .
+
+  ex:g12_conceptNavigationMenu ex:relatedTo ex:g12_conceptThanhDieuHuong .
+  ex:g12_conceptThanhDieuHuongNhieuCap ex:subConceptOf ex:g12_conceptThanhDieuHuong .
+  ex:g12_conceptMenuItems ex:partOf ex:g12_conceptThanhDieuHuong .
+  ex:g12_conceptLienKetTrangWeb ex:relatedTo ex:g12_conceptThanhDieuHuong .
+  ex:g12_conceptWebAddress ex:subConceptOf ex:g12_conceptLienKetTrangWeb .
+  ex:g12_conceptSitePages ex:subConceptOf ex:g12_conceptLienKetTrangWeb .
+  ex:g12_conceptIcon ex:partOf ex:g12_conceptThanhDieuHuong .
+  ex:g12_conceptSubmenu ex:partOf ex:g12_conceptThanhDieuHuongNhieuCap .
+  ex:g12_conceptRemoveBlock ex:relatedTo ex:g12_conceptKhoiMau .
+
+  ex:g12_conceptBaiVietTrangWeb ex:partOf ex:g12_conceptPhanNoiDung .
+  ex:g12_conceptArticleBlock ex:relatedTo ex:g12_conceptBaiVietTrangWeb .
+  ex:g12_conceptPeopleBlock ex:relatedTo ex:g12_conceptBaiVietTrangWeb .
+  ex:g12_conceptContactBlock ex:relatedTo ex:g12_conceptBaiVietTrangWeb .
+  ex:g12_conceptListBlock ex:relatedTo ex:g12_conceptBaiVietTrangWeb .
+  ex:g12_conceptFooterBlock ex:relatedTo ex:g12_conceptChanTrang .
+
+  ex:g12_conceptHinhAnhTrangWeb ex:partOf ex:g12_conceptPhanNoiDung .
+  ex:g12_conceptVideoTrangWeb ex:partOf ex:g12_conceptPhanNoiDung .
+  ex:g12_conceptAnhDaiDien ex:subConceptOf ex:g12_conceptHinhAnhTrangWeb .
+  ex:g12_conceptAnhMinhHoa ex:subConceptOf ex:g12_conceptHinhAnhTrangWeb .
+  ex:g12_conceptHinhAnhNoiBat ex:subConceptOf ex:g12_conceptHinhAnhTrangWeb .
+  ex:g12_conceptGallery ex:relatedTo ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb .
+  ex:g12_conceptSlider ex:relatedTo ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb .
+  ex:g12_conceptImageVideoBlock ex:relatedTo ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb .
+  ex:g12_conceptGallerySliderBlock ex:relatedTo ex:g12_conceptGallery, ex:g12_conceptSlider .
+  ex:g12_conceptBrowseComputer ex:relatedTo ex:g12_conceptHinhAnhTrangWeb .
+  ex:g12_conceptFreeOnlineLibrary ex:relatedTo ex:g12_conceptHinhAnhTrangWeb .
+  ex:g12_conceptSiteLibrary ex:relatedTo ex:g12_conceptHinhAnhTrangWeb .
+  ex:g12_conceptAltText ex:relatedTo ex:g12_conceptHinhAnhTrangWeb .
+  ex:g12_conceptVideoURL ex:relatedTo ex:g12_conceptVideoTrangWeb .
+  ex:g12_conceptAspectRatio ex:relatedTo ex:g12_conceptVideoTrangWeb .
+  ex:g12_conceptAutoplay ex:relatedTo ex:g12_conceptVideoTrangWeb .
+  ex:g12_conceptLoopVideo ex:relatedTo ex:g12_conceptVideoTrangWeb .
+
+  ex:g12_conceptBieuMau ex:partOf ex:g12_conceptTrangWeb .
+  ex:g12_conceptOThongTin ex:partOf ex:g12_conceptBieuMau .
+  ex:g12_conceptFormWeb ex:relatedTo ex:g12_conceptBieuMau .
+  ex:g12_conceptMobileView ex:relatedTo ex:g12_conceptResponsive .
+  ex:g12_conceptDesktopView ex:relatedTo ex:g12_conceptResponsive .
+  ex:g12_conceptPublishWebsite ex:relatedTo ex:g12_conceptWebsite .
+  ex:g12_conceptMobirisesite ex:subConceptOf ex:g12_conceptPublishWebsite .
+  ex:g12_conceptLocalDriveFolder ex:subConceptOf ex:g12_conceptPublishWebsite .
+  ex:g12_conceptFTP ex:subConceptOf ex:g12_conceptPublishWebsite .
+  ex:g12_conceptHTMLFile ex:relatedTo ex:g12_conceptLocalDriveFolder .
+  ex:g12_conceptAssetsFolder ex:relatedTo ex:g12_conceptHTMLFile .
+  ex:g12_conceptFTPServerParameters ex:relatedTo ex:g12_conceptFTP .
+
+  ex:g12_conceptSanPhamNhom ex:relatedTo ex:g12_conceptTaoTrangWebBangPhanMem .
+  ex:g12_conceptHopTacNhom ex:relatedTo ex:g12_conceptSanPhamNhom .
+  ex:g12_conceptTieuChiDanhGiaWebsite ex:relatedTo ex:g12_conceptSanPhamNhom .
+  ex:g12_conceptChinhSuaHTML ex:relatedTo ex:g12_conceptHTMLFile .
+  ex:g12_conceptSectionHTML ex:relatedTo ex:g12_conceptChinhSuaHTML .
+}

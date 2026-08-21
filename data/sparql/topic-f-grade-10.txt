@@ -1,0 +1,1254 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 10 TOPIC F
+# Assumes ontology/classes/properties have already been inserted.
+# Source file: Tin-hoc-10-Canh-dieu-pages-5.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:grade10 a ex:GradeLevel ;
+    rdfs:label "Lớp 10"@vi ;
+    ex:gradeNumber 10 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:tinhoc10_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 10 - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 10"@vi ;
+    ex:hasGradeLevel ex:grade10 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicF_shared a ex:Topic ;
+    rdfs:label "Chủ đề F (dùng chung các khối)"@vi ;
+    ex:hasTitle "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi .
+
+  ex:topicF a ex:Topic ;
+    rdfs:label "Chủ đề F - Giải quyết vấn đề với sự trợ giúp của máy tính"@vi ;
+    ex:hasTitle "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi ;
+    ex:hasSubtitle "Lập trình cơ bản"@vi ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:sameTopicAs ex:topicF_shared ;
+    ex:topicOrder 6 ;
+    ex:hasStartPage 50 ;
+    ex:hasEndPage 123 ;
+    ex:sourceFileName "Tin-hoc-10-Canh-dieu-pages-5.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:topicF_lesson1, ex:topicF_extra_installPython,
+                 ex:topicF_lesson2, ex:topicF_lesson3, ex:topicF_lesson4,
+                 ex:topicF_lesson5, ex:topicF_lesson6, ex:topicF_lesson7,
+                 ex:topicF_extra_multiBranchIf, ex:topicF_lesson8,
+                 ex:topicF_lesson9, ex:topicF_extra_breakContinue,
+                 ex:topicF_lesson10, ex:topicF_lesson11, ex:topicF_lesson12,
+                 ex:topicF_extra_standardIO, ex:topicF_lesson13,
+                 ex:topicF_lesson14, ex:topicF_lesson15, ex:topicF_lesson16,
+                 ex:topicF_lesson17, ex:topicF_lesson18 ;
+    ex:hasPage ex:page050, ex:page051, ex:page052, ex:page053, ex:page054,
+               ex:page055, ex:page056, ex:page057, ex:page058, ex:page059,
+               ex:page060, ex:page061, ex:page062, ex:page063, ex:page064,
+               ex:page065, ex:page066, ex:page067, ex:page068, ex:page069,
+               ex:page070, ex:page071, ex:page072, ex:page073, ex:page074,
+               ex:page075, ex:page076, ex:page077, ex:page078, ex:page079,
+               ex:page080, ex:page081, ex:page082, ex:page083, ex:page084,
+               ex:page085, ex:page086, ex:page087, ex:page088, ex:page089,
+               ex:page090, ex:page091, ex:page092, ex:page093, ex:page094,
+               ex:page095, ex:page096, ex:page097, ex:page098, ex:page099,
+               ex:page100, ex:page101, ex:page102, ex:page103, ex:page104,
+               ex:page105, ex:page106, ex:page107, ex:page108, ex:page109,
+               ex:page110, ex:page111, ex:page112, ex:page113, ex:page114,
+               ex:page115, ex:page116, ex:page117, ex:page118, ex:page119,
+               ex:page120, ex:page121, ex:page122, ex:page123 .
+
+  ex:tinhoc10_canhdieu ex:hasTopic ex:topicF .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:topicF_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Làm quen với ngôn ngữ lập trình bậc cao"@vi ;
+    ex:hasTitle "Làm quen với ngôn ngữ lập trình bậc cao"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 50 ;
+    ex:hasEndPage 53 ;
+    ex:hasSection ex:topicF_l1s1, ex:topicF_l1s2 .
+
+  ex:topicF_extra_installPython a ex:Lesson ;
+    rdfs:label "Bài tìm hiểu thêm. Cài đặt hệ thống công cụ lập trình Python"@vi ;
+    ex:hasTitle "Cài đặt hệ thống công cụ lập trình Python"@vi ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 54 ;
+    ex:hasEndPage 54 .
+
+  ex:topicF_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Biến, phép gán và biểu thức số học"@vi ;
+    ex:hasTitle "Biến, phép gán và biểu thức số học"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 55 ;
+    ex:hasEndPage 59 ;
+    ex:hasSection ex:topicF_l2s1, ex:topicF_l2s2 .
+
+  ex:topicF_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Thực hành làm quen và khám phá Python"@vi ;
+    ex:hasTitle "Thực hành làm quen và khám phá Python"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 60 ;
+    ex:hasEndPage 63 ;
+    ex:hasSection ex:topicF_l3s1, ex:topicF_l3s2, ex:topicF_l3s3, ex:topicF_l3s4, ex:topicF_l3s5 .
+
+  ex:topicF_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Các kiểu dữ liệu số và câu lệnh vào - ra đơn giản"@vi ;
+    ex:hasTitle "Các kiểu dữ liệu số và câu lệnh vào - ra đơn giản"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 64 ;
+    ex:hasEndPage 68 ;
+    ex:hasSection ex:topicF_l4s1, ex:topicF_l4s2, ex:topicF_l4s3 .
+
+  ex:topicF_lesson5 a ex:Lesson ;
+    rdfs:label "Bài 5. Thực hành viết chương trình đơn giản"@vi ;
+    ex:hasTitle "Thực hành viết chương trình đơn giản"@vi ;
+    ex:lessonNumber 5 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 69 ;
+    ex:hasEndPage 71 ;
+    ex:hasSection ex:topicF_l5s1, ex:topicF_l5s2, ex:topicF_l5s3, ex:topicF_l5s4 .
+
+  ex:topicF_lesson6 a ex:Lesson ;
+    rdfs:label "Bài 6. Câu lệnh rẽ nhánh"@vi ;
+    ex:hasTitle "Câu lệnh rẽ nhánh"@vi ;
+    ex:lessonNumber 6 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 72 ;
+    ex:hasEndPage 76 ;
+    ex:hasSection ex:topicF_l6s1, ex:topicF_l6s2, ex:topicF_l6s3 .
+
+  ex:topicF_lesson7 a ex:Lesson ;
+    rdfs:label "Bài 7. Thực hành câu lệnh rẽ nhánh"@vi ;
+    ex:hasTitle "Thực hành câu lệnh rẽ nhánh"@vi ;
+    ex:lessonNumber 7 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 77 ;
+    ex:hasEndPage 79 ;
+    ex:hasSection ex:topicF_l7s1, ex:topicF_l7s2, ex:topicF_l7s3, ex:topicF_l7s4 .
+
+  ex:topicF_extra_multiBranchIf a ex:Lesson ;
+    rdfs:label "Bài tìm hiểu thêm. Câu lệnh if và nhiều nhánh rẽ"@vi ;
+    ex:hasTitle "Câu lệnh if và nhiều nhánh rẽ"@vi ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 79 ;
+    ex:hasEndPage 79 .
+
+  ex:topicF_lesson8 a ex:Lesson ;
+    rdfs:label "Bài 8. Câu lệnh lặp"@vi ;
+    ex:hasTitle "Câu lệnh lặp"@vi ;
+    ex:lessonNumber 8 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 80 ;
+    ex:hasEndPage 83 ;
+    ex:hasSection ex:topicF_l8s1, ex:topicF_l8s2, ex:topicF_l8s3 .
+
+  ex:topicF_lesson9 a ex:Lesson ;
+    rdfs:label "Bài 9. Thực hành câu lệnh lặp"@vi ;
+    ex:hasTitle "Thực hành câu lệnh lặp"@vi ;
+    ex:lessonNumber 9 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 84 ;
+    ex:hasEndPage 85 ;
+    ex:hasSection ex:topicF_l9s1, ex:topicF_l9s2, ex:topicF_l9s3 .
+
+  ex:topicF_extra_breakContinue a ex:Lesson ;
+    rdfs:label "Bài tìm hiểu thêm. Các câu lệnh break và continue"@vi ;
+    ex:hasTitle "Các câu lệnh break và continue"@vi ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 85 ;
+    ex:hasEndPage 85 .
+
+  ex:topicF_lesson10 a ex:Lesson ;
+    rdfs:label "Bài 10. Chương trình con và thư viện các chương trình con có sẵn"@vi ;
+    ex:hasTitle "Chương trình con và thư viện các chương trình con có sẵn"@vi ;
+    ex:lessonNumber 10 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 86 ;
+    ex:hasEndPage 91 ;
+    ex:hasSection ex:topicF_l10s1, ex:topicF_l10s2, ex:topicF_l10s3, ex:topicF_l10s4, ex:topicF_l10s5 .
+
+  ex:topicF_lesson11 a ex:Lesson ;
+    rdfs:label "Bài 11. Thực hành lập trình với hàm và thư viện"@vi ;
+    ex:hasTitle "Thực hành lập trình với hàm và thư viện"@vi ;
+    ex:lessonNumber 11 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 92 ;
+    ex:hasEndPage 93 ;
+    ex:hasSection ex:topicF_l11s1, ex:topicF_l11s2, ex:topicF_l11s3 .
+
+  ex:topicF_lesson12 a ex:Lesson ;
+    rdfs:label "Bài 12. Kiểu dữ liệu xâu kí tự - Xử lí xâu kí tự"@vi ;
+    ex:hasTitle "Kiểu dữ liệu xâu kí tự - Xử lí xâu kí tự"@vi ;
+    ex:lessonNumber 12 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 94 ;
+    ex:hasEndPage 98 ;
+    ex:hasSection ex:topicF_l12s1, ex:topicF_l12s2 .
+
+  ex:topicF_extra_standardIO a ex:Lesson ;
+    rdfs:label "Bài tìm hiểu thêm. Thay thế thiết bị vào - ra chuẩn"@vi ;
+    ex:hasTitle "Thay thế thiết bị vào - ra chuẩn"@vi ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 98 ;
+    ex:hasEndPage 98 .
+
+  ex:topicF_lesson13 a ex:Lesson ;
+    rdfs:label "Bài 13. Thực hành dữ liệu kiểu xâu"@vi ;
+    ex:hasTitle "Thực hành dữ liệu kiểu xâu"@vi ;
+    ex:lessonNumber 13 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 99 ;
+    ex:hasEndPage 101 ;
+    ex:hasSection ex:topicF_l13s1, ex:topicF_l13s2, ex:topicF_l13s3 .
+
+  ex:topicF_lesson14 a ex:Lesson ;
+    rdfs:label "Bài 14. Kiểu dữ liệu danh sách - Xử lí danh sách"@vi ;
+    ex:hasTitle "Kiểu dữ liệu danh sách - Xử lí danh sách"@vi ;
+    ex:lessonNumber 14 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 102 ;
+    ex:hasEndPage 106 ;
+    ex:hasSection ex:topicF_l14s1, ex:topicF_l14s2, ex:topicF_l14s3, ex:topicF_l14s4 .
+
+  ex:topicF_lesson15 a ex:Lesson ;
+    rdfs:label "Bài 15. Thực hành với kiểu dữ liệu danh sách"@vi ;
+    ex:hasTitle "Thực hành với kiểu dữ liệu danh sách"@vi ;
+    ex:lessonNumber 15 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 107 ;
+    ex:hasEndPage 110 ;
+    ex:hasSection ex:topicF_l15s1, ex:topicF_l15s2, ex:topicF_l15s3, ex:topicF_l15s4 .
+
+  ex:topicF_lesson16 a ex:Lesson ;
+    rdfs:label "Bài 16. Kiểm thử và gỡ lỗi chương trình"@vi ;
+    ex:hasTitle "Kiểm thử và gỡ lỗi chương trình"@vi ;
+    ex:lessonNumber 16 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 111 ;
+    ex:hasEndPage 117 ;
+    ex:hasSection ex:topicF_l16s1, ex:topicF_l16s2, ex:topicF_l16s3 .
+
+  ex:topicF_lesson17 a ex:Lesson ;
+    rdfs:label "Bài 17. Thực hành lập trình giải bài toán trên máy tính"@vi ;
+    ex:hasTitle "Thực hành lập trình giải bài toán trên máy tính"@vi ;
+    ex:lessonNumber 17 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 117 ;
+    ex:hasEndPage 119 ;
+    ex:hasSection ex:topicF_l17s1, ex:topicF_l17s2, ex:topicF_l17s3 .
+
+  ex:topicF_lesson18 a ex:Lesson ;
+    rdfs:label "Bài 18. Lập trình giải quyết bài toán trên máy tính"@vi ;
+    ex:hasTitle "Lập trình giải quyết bài toán trên máy tính"@vi ;
+    ex:lessonNumber 18 ;
+    ex:belongsToTopic ex:topicF ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 119 ;
+    ex:hasEndPage 123 ;
+    ex:hasSection ex:topicF_l18s1, ex:topicF_l18s2, ex:topicF_l18s3, ex:topicF_l18s4 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:topicF_l1s1 a ex:Section ; rdfs:label "Ngôn ngữ lập trình bậc cao"@vi ; ex:hasTitle "Ngôn ngữ lập trình bậc cao"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson1 .
+  ex:topicF_l1s2 a ex:Section ; rdfs:label "Làm quen với Python"@vi ; ex:hasTitle "Làm quen với Python"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson1 .
+
+  ex:topicF_l2s1 a ex:Section ; rdfs:label "Biến và phép gán"@vi ; ex:hasTitle "Biến và phép gán"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson2 .
+  ex:topicF_l2s2 a ex:Section ; rdfs:label "Soạn thảo chương trình"@vi ; ex:hasTitle "Soạn thảo chương trình"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson2 .
+
+  ex:topicF_l3s1 a ex:Section ; rdfs:label "Tổng bình phương ba số"@vi ; ex:hasTitle "Tổng bình phương ba số"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson3 .
+  ex:topicF_l3s2 a ex:Section ; rdfs:label "Làm quen với hai cửa sổ lập trình của Python"@vi ; ex:hasTitle "Làm quen với hai cửa sổ lập trình của Python"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson3 .
+  ex:topicF_l3s3 a ex:Section ; rdfs:label "Làm quen với thông báo lỗi của Python"@vi ; ex:hasTitle "Làm quen với thông báo lỗi của Python"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson3 .
+  ex:topicF_l3s4 a ex:Section ; rdfs:label "Tìm hiểu Python sử dụng màu sắc trong chương trình"@vi ; ex:hasTitle "Tìm hiểu Python sử dụng màu sắc trong chương trình"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:topicF_lesson3 .
+  ex:topicF_l3s5 a ex:Section ; rdfs:label "Làm quen với nhập dữ liệu là một dòng chữ"@vi ; ex:hasTitle "Làm quen với nhập dữ liệu là một dòng chữ"@vi ; ex:sectionOrder 5 ; ex:belongsToLesson ex:topicF_lesson3 .
+
+  ex:topicF_l4s1 a ex:Section ; rdfs:label "Kiểu dữ liệu số nguyên và số thực"@vi ; ex:hasTitle "Kiểu dữ liệu số nguyên và số thực"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson4 .
+  ex:topicF_l4s2 a ex:Section ; rdfs:label "Các câu lệnh vào - ra đơn giản"@vi ; ex:hasTitle "Các câu lệnh vào - ra đơn giản"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson4 .
+  ex:topicF_l4s3 a ex:Section ; rdfs:label "Hằng trong Python"@vi ; ex:hasTitle "Hằng trong Python"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson4 .
+
+  ex:topicF_l5s1 a ex:Section ; rdfs:label "Giải phương trình bậc nhất"@vi ; ex:hasTitle "Giải phương trình bậc nhất"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson5 .
+  ex:topicF_l5s2 a ex:Section ; rdfs:label "An ninh lương thực"@vi ; ex:hasTitle "An ninh lương thực"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson5 .
+  ex:topicF_l5s3 a ex:Section ; rdfs:label "Tìm ước chung lớn nhất"@vi ; ex:hasTitle "Tìm ước chung lớn nhất"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson5 .
+  ex:topicF_l5s4 a ex:Section ; rdfs:label "Làm quen với ghi chú thích trong chương trình"@vi ; ex:hasTitle "Làm quen với ghi chú thích trong chương trình"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:topicF_lesson5 .
+
+  ex:topicF_l6s1 a ex:Section ; rdfs:label "Cấu trúc rẽ nhánh trong mô tả thuật toán"@vi ; ex:hasTitle "Cấu trúc rẽ nhánh trong mô tả thuật toán"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson6 .
+  ex:topicF_l6s2 a ex:Section ; rdfs:label "Điều kiện rẽ nhánh"@vi ; ex:hasTitle "Điều kiện rẽ nhánh"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson6 .
+  ex:topicF_l6s3 a ex:Section ; rdfs:label "Câu lệnh rẽ nhánh trong chương trình Python"@vi ; ex:hasTitle "Câu lệnh rẽ nhánh trong chương trình Python"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson6 .
+
+  ex:topicF_l7s1 a ex:Section ; rdfs:label "Lấy ví dụ về câu lệnh if"@vi ; ex:hasTitle "Lấy ví dụ về câu lệnh if"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson7 .
+  ex:topicF_l7s2 a ex:Section ; rdfs:label "Chia kẹo"@vi ; ex:hasTitle "Chia kẹo"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson7 .
+  ex:topicF_l7s3 a ex:Section ; rdfs:label "Tìm lỗi sai"@vi ; ex:hasTitle "Tìm lỗi sai"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson7 .
+  ex:topicF_l7s4 a ex:Section ; rdfs:label "Tìm số lớn nhất"@vi ; ex:hasTitle "Tìm số lớn nhất"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:topicF_lesson7 .
+
+  ex:topicF_l8s1 a ex:Section ; rdfs:label "Cấu trúc lặp trong mô tả thuật toán"@vi ; ex:hasTitle "Cấu trúc lặp trong mô tả thuật toán"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson8 .
+  ex:topicF_l8s2 a ex:Section ; rdfs:label "Câu lệnh lặp với số lần lặp biết trước trong Python"@vi ; ex:hasTitle "Câu lệnh lặp với số lần lặp biết trước trong Python"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson8 .
+  ex:topicF_l8s3 a ex:Section ; rdfs:label "Câu lệnh lặp với số lần không biết trước trong Python"@vi ; ex:hasTitle "Câu lệnh lặp với số lần không biết trước trong Python"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson8 .
+
+  ex:topicF_l9s1 a ex:Section ; rdfs:label "Làm quen với câu lệnh lặp trong Python"@vi ; ex:hasTitle "Làm quen với câu lệnh lặp trong Python"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson9 .
+  ex:topicF_l9s2 a ex:Section ; rdfs:label "Đếm các ước thực sự của một số nguyên"@vi ; ex:hasTitle "Đếm các ước thực sự của một số nguyên"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson9 .
+  ex:topicF_l9s3 a ex:Section ; rdfs:label "Nhập dữ liệu có kiểm tra"@vi ; ex:hasTitle "Nhập dữ liệu có kiểm tra"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson9 .
+
+  ex:topicF_l10s1 a ex:Section ; rdfs:label "Khái niệm chương trình con"@vi ; ex:hasTitle "Khái niệm chương trình con"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson10 .
+  ex:topicF_l10s2 a ex:Section ; rdfs:label "Khai báo và gọi thực hiện một hàm trong Python"@vi ; ex:hasTitle "Khai báo và gọi thực hiện một hàm trong Python"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson10 .
+  ex:topicF_l10s3 a ex:Section ; rdfs:label "Chuyển dữ liệu cho hàm thực hiện"@vi ; ex:hasTitle "Chuyển dữ liệu cho hàm thực hiện"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson10 .
+  ex:topicF_l10s4 a ex:Section ; rdfs:label "Lời gọi hàm"@vi ; ex:hasTitle "Lời gọi hàm"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:topicF_lesson10 .
+  ex:topicF_l10s5 a ex:Section ; rdfs:label "Các hàm được xây dựng sẵn"@vi ; ex:hasTitle "Các hàm được xây dựng sẵn"@vi ; ex:sectionOrder 5 ; ex:belongsToLesson ex:topicF_lesson10 .
+
+  ex:topicF_l11s1 a ex:Section ; rdfs:label "Giải phương trình"@vi ; ex:hasTitle "Giải phương trình"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson11 .
+  ex:topicF_l11s2 a ex:Section ; rdfs:label "Thời gian gặp nhau"@vi ; ex:hasTitle "Thời gian gặp nhau"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson11 .
+  ex:topicF_l11s3 a ex:Section ; rdfs:label "Thời gian thực hiện chương trình"@vi ; ex:hasTitle "Thời gian thực hiện chương trình"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson11 .
+
+  ex:topicF_l12s1 a ex:Section ; rdfs:label "Kiểu dữ liệu xâu kí tự"@vi ; ex:hasTitle "Kiểu dữ liệu xâu kí tự"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson12 .
+  ex:topicF_l12s2 a ex:Section ; rdfs:label "Một số hàm xử lí xâu kí tự"@vi ; ex:hasTitle "Một số hàm xử lí xâu kí tự"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson12 .
+
+  ex:topicF_l13s1 a ex:Section ; rdfs:label "Xử lí tự động xâu"@vi ; ex:hasTitle "Xử lí tự động xâu"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson13 .
+  ex:topicF_l13s2 a ex:Section ; rdfs:label "Tổng tiền vé vào cổng"@vi ; ex:hasTitle "Tổng tiền vé vào cổng"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson13 .
+  ex:topicF_l13s3 a ex:Section ; rdfs:label "Xử lí và thống kê dữ liệu xâu"@vi ; ex:hasTitle "Xử lí và thống kê dữ liệu xâu"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson13 .
+
+  ex:topicF_l14s1 a ex:Section ; rdfs:label "Kiểu dữ liệu danh sách"@vi ; ex:hasTitle "Kiểu dữ liệu danh sách"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson14 .
+  ex:topicF_l14s2 a ex:Section ; rdfs:label "Cách khởi tạo danh sách"@vi ; ex:hasTitle "Cách khởi tạo danh sách"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson14 .
+  ex:topicF_l14s3 a ex:Section ; rdfs:label "Truy cập phần tử trong danh sách"@vi ; ex:hasTitle "Truy cập phần tử trong danh sách"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson14 .
+  ex:topicF_l14s4 a ex:Section ; rdfs:label "Một số thao tác với danh sách"@vi ; ex:hasTitle "Một số thao tác với danh sách"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:topicF_lesson14 .
+
+  ex:topicF_l15s1 a ex:Section ; rdfs:label "Tìm điểm trung bình"@vi ; ex:hasTitle "Tìm điểm trung bình"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson15 .
+  ex:topicF_l15s2 a ex:Section ; rdfs:label "Tìm giá trị lớn nhất, nhỏ nhất"@vi ; ex:hasTitle "Tìm giá trị lớn nhất, nhỏ nhất"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson15 .
+  ex:topicF_l15s3 a ex:Section ; rdfs:label "Sắp xếp và lọc dữ liệu danh sách"@vi ; ex:hasTitle "Sắp xếp và lọc dữ liệu danh sách"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson15 .
+  ex:topicF_l15s4 a ex:Section ; rdfs:label "Ứng dụng danh sách trong bài toán thực tế"@vi ; ex:hasTitle "Ứng dụng danh sách trong bài toán thực tế"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:topicF_lesson15 .
+
+  ex:topicF_l16s1 a ex:Section ; rdfs:label "Kiểm thử chương trình"@vi ; ex:hasTitle "Kiểm thử chương trình"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson16 .
+  ex:topicF_l16s2 a ex:Section ; rdfs:label "Một vài loại lỗi trong chương trình"@vi ; ex:hasTitle "Một vài loại lỗi trong chương trình"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson16 .
+  ex:topicF_l16s3 a ex:Section ; rdfs:label "Gỡ lỗi chương trình"@vi ; ex:hasTitle "Gỡ lỗi chương trình"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson16 .
+
+  ex:topicF_l17s1 a ex:Section ; rdfs:label "Lập trình giải bài toán thực tế"@vi ; ex:hasTitle "Lập trình giải bài toán thực tế"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson17 .
+  ex:topicF_l17s2 a ex:Section ; rdfs:label "Xác định bài toán và dữ liệu"@vi ; ex:hasTitle "Xác định bài toán và dữ liệu"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson17 .
+  ex:topicF_l17s3 a ex:Section ; rdfs:label "Viết, chạy và kiểm thử chương trình"@vi ; ex:hasTitle "Viết, chạy và kiểm thử chương trình"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson17 .
+
+  ex:topicF_l18s1 a ex:Section ; rdfs:label "Quy trình lập trình giải quyết bài toán"@vi ; ex:hasTitle "Quy trình lập trình giải quyết bài toán"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:topicF_lesson18 .
+  ex:topicF_l18s2 a ex:Section ; rdfs:label "Phân tích bài toán"@vi ; ex:hasTitle "Phân tích bài toán"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:topicF_lesson18 .
+  ex:topicF_l18s3 a ex:Section ; rdfs:label "Thiết kế thuật toán và chương trình"@vi ; ex:hasTitle "Thiết kế thuật toán và chương trình"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:topicF_lesson18 .
+  ex:topicF_l18s4 a ex:Section ; rdfs:label "Hoàn thiện, kiểm thử và đánh giá chương trình"@vi ; ex:hasTitle "Hoàn thiện, kiểm thử và đánh giá chương trình"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:topicF_lesson18 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:page050 a ex:Page ; ex:hasPageNumber 50 ; ex:hasPrintedPageNumber 50 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:topicF_lesson1 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page051 a ex:Page ; ex:hasPageNumber 51 ; ex:hasPrintedPageNumber 51 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:topicF_lesson1 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page052 a ex:Page ; ex:hasPageNumber 52 ; ex:hasPrintedPageNumber 52 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:topicF_lesson1 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page053 a ex:Page ; ex:hasPageNumber 53 ; ex:hasPrintedPageNumber 53 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:topicF_lesson1 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page054 a ex:Page ; ex:hasPageNumber 54 ; ex:hasPrintedPageNumber 54 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:topicF_extra_installPython ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page055 a ex:Page ; ex:hasPageNumber 55 ; ex:hasPrintedPageNumber 55 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:topicF_lesson2 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page056 a ex:Page ; ex:hasPageNumber 56 ; ex:hasPrintedPageNumber 56 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:topicF_lesson2 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page057 a ex:Page ; ex:hasPageNumber 57 ; ex:hasPrintedPageNumber 57 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:topicF_lesson2 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page058 a ex:Page ; ex:hasPageNumber 58 ; ex:hasPrintedPageNumber 58 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:topicF_lesson2 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page059 a ex:Page ; ex:hasPageNumber 59 ; ex:hasPrintedPageNumber 59 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:topicF_lesson2 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page060 a ex:Page ; ex:hasPageNumber 60 ; ex:hasPrintedPageNumber 60 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:topicF_lesson3 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page061 a ex:Page ; ex:hasPageNumber 61 ; ex:hasPrintedPageNumber 61 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:topicF_lesson3 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page062 a ex:Page ; ex:hasPageNumber 62 ; ex:hasPrintedPageNumber 62 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:topicF_lesson3 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page063 a ex:Page ; ex:hasPageNumber 63 ; ex:hasPrintedPageNumber 63 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:topicF_lesson3 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page064 a ex:Page ; ex:hasPageNumber 64 ; ex:hasPrintedPageNumber 64 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:topicF_lesson4 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page065 a ex:Page ; ex:hasPageNumber 65 ; ex:hasPrintedPageNumber 65 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:topicF_lesson4 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page066 a ex:Page ; ex:hasPageNumber 66 ; ex:hasPrintedPageNumber 66 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:topicF_lesson4 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page067 a ex:Page ; ex:hasPageNumber 67 ; ex:hasPrintedPageNumber 67 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:topicF_lesson4 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page068 a ex:Page ; ex:hasPageNumber 68 ; ex:hasPrintedPageNumber 68 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:topicF_lesson4 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page069 a ex:Page ; ex:hasPageNumber 69 ; ex:hasPrintedPageNumber 69 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:topicF_lesson5 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page070 a ex:Page ; ex:hasPageNumber 70 ; ex:hasPrintedPageNumber 70 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:topicF_lesson5 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page071 a ex:Page ; ex:hasPageNumber 71 ; ex:hasPrintedPageNumber 71 ; ex:pdfPageIndex 22 ; ex:belongsToLesson ex:topicF_lesson5 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page072 a ex:Page ; ex:hasPageNumber 72 ; ex:hasPrintedPageNumber 72 ; ex:pdfPageIndex 23 ; ex:belongsToLesson ex:topicF_lesson6 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page073 a ex:Page ; ex:hasPageNumber 73 ; ex:hasPrintedPageNumber 73 ; ex:pdfPageIndex 24 ; ex:belongsToLesson ex:topicF_lesson6 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page074 a ex:Page ; ex:hasPageNumber 74 ; ex:hasPrintedPageNumber 74 ; ex:pdfPageIndex 25 ; ex:belongsToLesson ex:topicF_lesson6 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page075 a ex:Page ; ex:hasPageNumber 75 ; ex:hasPrintedPageNumber 75 ; ex:pdfPageIndex 26 ; ex:belongsToLesson ex:topicF_lesson6 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page076 a ex:Page ; ex:hasPageNumber 76 ; ex:hasPrintedPageNumber 76 ; ex:pdfPageIndex 27 ; ex:belongsToLesson ex:topicF_lesson6 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page077 a ex:Page ; ex:hasPageNumber 77 ; ex:hasPrintedPageNumber 77 ; ex:pdfPageIndex 28 ; ex:belongsToLesson ex:topicF_lesson7 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page078 a ex:Page ; ex:hasPageNumber 78 ; ex:hasPrintedPageNumber 78 ; ex:pdfPageIndex 29 ; ex:belongsToLesson ex:topicF_lesson7 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page079 a ex:Page ; ex:hasPageNumber 79 ; ex:hasPrintedPageNumber 79 ; ex:pdfPageIndex 30 ; ex:belongsToLesson ex:topicF_lesson7 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page080 a ex:Page ; ex:hasPageNumber 80 ; ex:hasPrintedPageNumber 80 ; ex:pdfPageIndex 31 ; ex:belongsToLesson ex:topicF_lesson8 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page081 a ex:Page ; ex:hasPageNumber 81 ; ex:hasPrintedPageNumber 81 ; ex:pdfPageIndex 32 ; ex:belongsToLesson ex:topicF_lesson8 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page082 a ex:Page ; ex:hasPageNumber 82 ; ex:hasPrintedPageNumber 82 ; ex:pdfPageIndex 33 ; ex:belongsToLesson ex:topicF_lesson8 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page083 a ex:Page ; ex:hasPageNumber 83 ; ex:hasPrintedPageNumber 83 ; ex:pdfPageIndex 34 ; ex:belongsToLesson ex:topicF_lesson8 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page084 a ex:Page ; ex:hasPageNumber 84 ; ex:hasPrintedPageNumber 84 ; ex:pdfPageIndex 35 ; ex:belongsToLesson ex:topicF_lesson9 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page085 a ex:Page ; ex:hasPageNumber 85 ; ex:hasPrintedPageNumber 85 ; ex:pdfPageIndex 36 ; ex:belongsToLesson ex:topicF_lesson9 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page086 a ex:Page ; ex:hasPageNumber 86 ; ex:hasPrintedPageNumber 86 ; ex:pdfPageIndex 37 ; ex:belongsToLesson ex:topicF_lesson10 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page087 a ex:Page ; ex:hasPageNumber 87 ; ex:hasPrintedPageNumber 87 ; ex:pdfPageIndex 38 ; ex:belongsToLesson ex:topicF_lesson10 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page088 a ex:Page ; ex:hasPageNumber 88 ; ex:hasPrintedPageNumber 88 ; ex:pdfPageIndex 39 ; ex:belongsToLesson ex:topicF_lesson10 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page089 a ex:Page ; ex:hasPageNumber 89 ; ex:hasPrintedPageNumber 89 ; ex:pdfPageIndex 40 ; ex:belongsToLesson ex:topicF_lesson10 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page090 a ex:Page ; ex:hasPageNumber 90 ; ex:hasPrintedPageNumber 90 ; ex:pdfPageIndex 41 ; ex:belongsToLesson ex:topicF_lesson10 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page091 a ex:Page ; ex:hasPageNumber 91 ; ex:hasPrintedPageNumber 91 ; ex:pdfPageIndex 42 ; ex:belongsToLesson ex:topicF_lesson10 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page092 a ex:Page ; ex:hasPageNumber 92 ; ex:hasPrintedPageNumber 92 ; ex:pdfPageIndex 43 ; ex:belongsToLesson ex:topicF_lesson11 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page093 a ex:Page ; ex:hasPageNumber 93 ; ex:hasPrintedPageNumber 93 ; ex:pdfPageIndex 44 ; ex:belongsToLesson ex:topicF_lesson11 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page094 a ex:Page ; ex:hasPageNumber 94 ; ex:hasPrintedPageNumber 94 ; ex:pdfPageIndex 45 ; ex:belongsToLesson ex:topicF_lesson12 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page095 a ex:Page ; ex:hasPageNumber 95 ; ex:hasPrintedPageNumber 95 ; ex:pdfPageIndex 46 ; ex:belongsToLesson ex:topicF_lesson12 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page096 a ex:Page ; ex:hasPageNumber 96 ; ex:hasPrintedPageNumber 96 ; ex:pdfPageIndex 47 ; ex:belongsToLesson ex:topicF_lesson12 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page097 a ex:Page ; ex:hasPageNumber 97 ; ex:hasPrintedPageNumber 97 ; ex:pdfPageIndex 48 ; ex:belongsToLesson ex:topicF_lesson12 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page098 a ex:Page ; ex:hasPageNumber 98 ; ex:hasPrintedPageNumber 98 ; ex:pdfPageIndex 49 ; ex:belongsToLesson ex:topicF_lesson12 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page099 a ex:Page ; ex:hasPageNumber 99 ; ex:hasPrintedPageNumber 99 ; ex:pdfPageIndex 50 ; ex:belongsToLesson ex:topicF_lesson13 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page100 a ex:Page ; ex:hasPageNumber 100 ; ex:hasPrintedPageNumber 100 ; ex:pdfPageIndex 51 ; ex:belongsToLesson ex:topicF_lesson13 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page101 a ex:Page ; ex:hasPageNumber 101 ; ex:hasPrintedPageNumber 101 ; ex:pdfPageIndex 52 ; ex:belongsToLesson ex:topicF_lesson13 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page102 a ex:Page ; ex:hasPageNumber 102 ; ex:hasPrintedPageNumber 102 ; ex:pdfPageIndex 53 ; ex:belongsToLesson ex:topicF_lesson14 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page103 a ex:Page ; ex:hasPageNumber 103 ; ex:hasPrintedPageNumber 103 ; ex:pdfPageIndex 54 ; ex:belongsToLesson ex:topicF_lesson14 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page104 a ex:Page ; ex:hasPageNumber 104 ; ex:hasPrintedPageNumber 104 ; ex:pdfPageIndex 55 ; ex:belongsToLesson ex:topicF_lesson14 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page105 a ex:Page ; ex:hasPageNumber 105 ; ex:hasPrintedPageNumber 105 ; ex:pdfPageIndex 56 ; ex:belongsToLesson ex:topicF_lesson14 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page106 a ex:Page ; ex:hasPageNumber 106 ; ex:hasPrintedPageNumber 106 ; ex:pdfPageIndex 57 ; ex:belongsToLesson ex:topicF_lesson14 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page107 a ex:Page ; ex:hasPageNumber 107 ; ex:hasPrintedPageNumber 107 ; ex:pdfPageIndex 58 ; ex:belongsToLesson ex:topicF_lesson15 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page108 a ex:Page ; ex:hasPageNumber 108 ; ex:hasPrintedPageNumber 108 ; ex:pdfPageIndex 59 ; ex:belongsToLesson ex:topicF_lesson15 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page109 a ex:Page ; ex:hasPageNumber 109 ; ex:hasPrintedPageNumber 109 ; ex:pdfPageIndex 60 ; ex:belongsToLesson ex:topicF_lesson15 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page110 a ex:Page ; ex:hasPageNumber 110 ; ex:hasPrintedPageNumber 110 ; ex:pdfPageIndex 61 ; ex:belongsToLesson ex:topicF_lesson15 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page111 a ex:Page ; ex:hasPageNumber 111 ; ex:hasPrintedPageNumber 111 ; ex:pdfPageIndex 62 ; ex:belongsToLesson ex:topicF_lesson16 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page112 a ex:Page ; ex:hasPageNumber 112 ; ex:hasPrintedPageNumber 112 ; ex:pdfPageIndex 63 ; ex:belongsToLesson ex:topicF_lesson16 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page113 a ex:Page ; ex:hasPageNumber 113 ; ex:hasPrintedPageNumber 113 ; ex:pdfPageIndex 64 ; ex:belongsToLesson ex:topicF_lesson16 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page114 a ex:Page ; ex:hasPageNumber 114 ; ex:hasPrintedPageNumber 114 ; ex:pdfPageIndex 65 ; ex:belongsToLesson ex:topicF_lesson16 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page115 a ex:Page ; ex:hasPageNumber 115 ; ex:hasPrintedPageNumber 115 ; ex:pdfPageIndex 66 ; ex:belongsToLesson ex:topicF_lesson16 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page116 a ex:Page ; ex:hasPageNumber 116 ; ex:hasPrintedPageNumber 116 ; ex:pdfPageIndex 67 ; ex:belongsToLesson ex:topicF_lesson16 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page117 a ex:Page ; ex:hasPageNumber 117 ; ex:hasPrintedPageNumber 117 ; ex:pdfPageIndex 68 ; ex:belongsToLesson ex:topicF_lesson17 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page118 a ex:Page ; ex:hasPageNumber 118 ; ex:hasPrintedPageNumber 118 ; ex:pdfPageIndex 69 ; ex:belongsToLesson ex:topicF_lesson17 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page119 a ex:Page ; ex:hasPageNumber 119 ; ex:hasPrintedPageNumber 119 ; ex:pdfPageIndex 70 ; ex:belongsToLesson ex:topicF_lesson18 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page120 a ex:Page ; ex:hasPageNumber 120 ; ex:hasPrintedPageNumber 120 ; ex:pdfPageIndex 71 ; ex:belongsToLesson ex:topicF_lesson18 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page121 a ex:Page ; ex:hasPageNumber 121 ; ex:hasPrintedPageNumber 121 ; ex:pdfPageIndex 72 ; ex:belongsToLesson ex:topicF_lesson18 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page122 a ex:Page ; ex:hasPageNumber 122 ; ex:hasPrintedPageNumber 122 ; ex:pdfPageIndex 73 ; ex:belongsToLesson ex:topicF_lesson18 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page123 a ex:Page ; ex:hasPageNumber 123 ; ex:hasPrintedPageNumber 123 ; ex:pdfPageIndex 74 ; ex:belongsToLesson ex:topicF_lesson18 ; ex:belongsToTopic ex:topicF ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:page049 ex:nextPage ex:page050 .
+  ex:page050 ex:previousPage ex:page049 ; ex:nextPage ex:page051 .
+  ex:page051 ex:previousPage ex:page050 ; ex:nextPage ex:page052 .
+  ex:page052 ex:previousPage ex:page051 ; ex:nextPage ex:page053 .
+  ex:page053 ex:previousPage ex:page052 ; ex:nextPage ex:page054 .
+  ex:page054 ex:previousPage ex:page053 ; ex:nextPage ex:page055 .
+  ex:page055 ex:previousPage ex:page054 ; ex:nextPage ex:page056 .
+  ex:page056 ex:previousPage ex:page055 ; ex:nextPage ex:page057 .
+  ex:page057 ex:previousPage ex:page056 ; ex:nextPage ex:page058 .
+  ex:page058 ex:previousPage ex:page057 ; ex:nextPage ex:page059 .
+  ex:page059 ex:previousPage ex:page058 ; ex:nextPage ex:page060 .
+  ex:page060 ex:previousPage ex:page059 ; ex:nextPage ex:page061 .
+  ex:page061 ex:previousPage ex:page060 ; ex:nextPage ex:page062 .
+  ex:page062 ex:previousPage ex:page061 ; ex:nextPage ex:page063 .
+  ex:page063 ex:previousPage ex:page062 ; ex:nextPage ex:page064 .
+  ex:page064 ex:previousPage ex:page063 ; ex:nextPage ex:page065 .
+  ex:page065 ex:previousPage ex:page064 ; ex:nextPage ex:page066 .
+  ex:page066 ex:previousPage ex:page065 ; ex:nextPage ex:page067 .
+  ex:page067 ex:previousPage ex:page066 ; ex:nextPage ex:page068 .
+  ex:page068 ex:previousPage ex:page067 ; ex:nextPage ex:page069 .
+  ex:page069 ex:previousPage ex:page068 ; ex:nextPage ex:page070 .
+  ex:page070 ex:previousPage ex:page069 ; ex:nextPage ex:page071 .
+  ex:page071 ex:previousPage ex:page070 ; ex:nextPage ex:page072 .
+  ex:page072 ex:previousPage ex:page071 ; ex:nextPage ex:page073 .
+  ex:page073 ex:previousPage ex:page072 ; ex:nextPage ex:page074 .
+  ex:page074 ex:previousPage ex:page073 ; ex:nextPage ex:page075 .
+  ex:page075 ex:previousPage ex:page074 ; ex:nextPage ex:page076 .
+  ex:page076 ex:previousPage ex:page075 ; ex:nextPage ex:page077 .
+  ex:page077 ex:previousPage ex:page076 ; ex:nextPage ex:page078 .
+  ex:page078 ex:previousPage ex:page077 ; ex:nextPage ex:page079 .
+  ex:page079 ex:previousPage ex:page078 ; ex:nextPage ex:page080 .
+  ex:page080 ex:previousPage ex:page079 ; ex:nextPage ex:page081 .
+  ex:page081 ex:previousPage ex:page080 ; ex:nextPage ex:page082 .
+  ex:page082 ex:previousPage ex:page081 ; ex:nextPage ex:page083 .
+  ex:page083 ex:previousPage ex:page082 ; ex:nextPage ex:page084 .
+  ex:page084 ex:previousPage ex:page083 ; ex:nextPage ex:page085 .
+  ex:page085 ex:previousPage ex:page084 ; ex:nextPage ex:page086 .
+  ex:page086 ex:previousPage ex:page085 ; ex:nextPage ex:page087 .
+  ex:page087 ex:previousPage ex:page086 ; ex:nextPage ex:page088 .
+  ex:page088 ex:previousPage ex:page087 ; ex:nextPage ex:page089 .
+  ex:page089 ex:previousPage ex:page088 ; ex:nextPage ex:page090 .
+  ex:page090 ex:previousPage ex:page089 ; ex:nextPage ex:page091 .
+  ex:page091 ex:previousPage ex:page090 ; ex:nextPage ex:page092 .
+  ex:page092 ex:previousPage ex:page091 ; ex:nextPage ex:page093 .
+  ex:page093 ex:previousPage ex:page092 ; ex:nextPage ex:page094 .
+  ex:page094 ex:previousPage ex:page093 ; ex:nextPage ex:page095 .
+  ex:page095 ex:previousPage ex:page094 ; ex:nextPage ex:page096 .
+  ex:page096 ex:previousPage ex:page095 ; ex:nextPage ex:page097 .
+  ex:page097 ex:previousPage ex:page096 ; ex:nextPage ex:page098 .
+  ex:page098 ex:previousPage ex:page097 ; ex:nextPage ex:page099 .
+  ex:page099 ex:previousPage ex:page098 ; ex:nextPage ex:page100 .
+  ex:page100 ex:previousPage ex:page099 ; ex:nextPage ex:page101 .
+  ex:page101 ex:previousPage ex:page100 ; ex:nextPage ex:page102 .
+  ex:page102 ex:previousPage ex:page101 ; ex:nextPage ex:page103 .
+  ex:page103 ex:previousPage ex:page102 ; ex:nextPage ex:page104 .
+  ex:page104 ex:previousPage ex:page103 ; ex:nextPage ex:page105 .
+  ex:page105 ex:previousPage ex:page104 ; ex:nextPage ex:page106 .
+  ex:page106 ex:previousPage ex:page105 ; ex:nextPage ex:page107 .
+  ex:page107 ex:previousPage ex:page106 ; ex:nextPage ex:page108 .
+  ex:page108 ex:previousPage ex:page107 ; ex:nextPage ex:page109 .
+  ex:page109 ex:previousPage ex:page108 ; ex:nextPage ex:page110 .
+  ex:page110 ex:previousPage ex:page109 ; ex:nextPage ex:page111 .
+  ex:page111 ex:previousPage ex:page110 ; ex:nextPage ex:page112 .
+  ex:page112 ex:previousPage ex:page111 ; ex:nextPage ex:page113 .
+  ex:page113 ex:previousPage ex:page112 ; ex:nextPage ex:page114 .
+  ex:page114 ex:previousPage ex:page113 ; ex:nextPage ex:page115 .
+  ex:page115 ex:previousPage ex:page114 ; ex:nextPage ex:page116 .
+  ex:page116 ex:previousPage ex:page115 ; ex:nextPage ex:page117 .
+  ex:page117 ex:previousPage ex:page116 ; ex:nextPage ex:page118 .
+  ex:page118 ex:previousPage ex:page117 ; ex:nextPage ex:page119 .
+  ex:page119 ex:previousPage ex:page118 ; ex:nextPage ex:page120 .
+  ex:page120 ex:previousPage ex:page119 ; ex:nextPage ex:page121 .
+  ex:page121 ex:previousPage ex:page120 ; ex:nextPage ex:page122 .
+  ex:page122 ex:previousPage ex:page121 ; ex:nextPage ex:page123 .
+  ex:page123 ex:previousPage ex:page122 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:conceptLapTrinh a ex:KnowledgeConcept ; rdfs:label "Lập trình"@vi .
+  ex:conceptNgonNguLapTrinh a ex:KnowledgeConcept ; rdfs:label "Ngôn ngữ lập trình"@vi .
+  ex:conceptNgonNguLapTrinhBacCao a ex:KnowledgeConcept ; rdfs:label "Ngôn ngữ lập trình bậc cao"@vi .
+  ex:conceptPython a ex:KnowledgeConcept ; rdfs:label "Python"@vi .
+  ex:conceptMoiTruongLapTrinh a ex:KnowledgeConcept ; rdfs:label "Môi trường lập trình"@vi .
+  ex:conceptIDLE a ex:KnowledgeConcept ; rdfs:label "IDLE"@vi .
+  ex:conceptShellPython a ex:KnowledgeConcept ; rdfs:label "Cửa sổ Shell của Python"@vi .
+  ex:conceptCodePython a ex:KnowledgeConcept ; rdfs:label "Cửa sổ Code của Python"@vi .
+  ex:conceptChuongTrinhMayTinh a ex:KnowledgeConcept ; rdfs:label "Chương trình máy tính"@vi .
+  ex:conceptBien a ex:KnowledgeConcept ; rdfs:label "Biến"@vi .
+  ex:conceptPhepGan a ex:KnowledgeConcept ; rdfs:label "Phép gán"@vi .
+  ex:conceptBieuThucSoHoc a ex:KnowledgeConcept ; rdfs:label "Biểu thức số học"@vi .
+  ex:conceptToanTuSoHoc a ex:KnowledgeConcept ; rdfs:label "Toán tử số học"@vi .
+  ex:conceptKieuDuLieuSo a ex:KnowledgeConcept ; rdfs:label "Kiểu dữ liệu số"@vi .
+  ex:conceptSoNguyen a ex:KnowledgeConcept ; rdfs:label "Số nguyên"@vi .
+  ex:conceptSoThuc a ex:KnowledgeConcept ; rdfs:label "Số thực"@vi .
+  ex:conceptLenhInput a ex:KnowledgeConcept ; rdfs:label "Câu lệnh input()"@vi .
+  ex:conceptLenhPrint a ex:KnowledgeConcept ; rdfs:label "Câu lệnh print()"@vi .
+  ex:conceptHang a ex:KnowledgeConcept ; rdfs:label "Hằng"@vi .
+  ex:conceptHamToanHoc a ex:KnowledgeConcept ; rdfs:label "Hàm toán học"@vi .
+  ex:conceptThuVienMath a ex:KnowledgeConcept ; rdfs:label "Thư viện math"@vi .
+  ex:conceptGhiChuThich a ex:KnowledgeConcept ; rdfs:label "Ghi chú thích trong chương trình"@vi .
+  ex:conceptCauLenhReNhanh a ex:KnowledgeConcept ; rdfs:label "Câu lệnh rẽ nhánh"@vi .
+  ex:conceptLenhIf a ex:KnowledgeConcept ; rdfs:label "Câu lệnh if"@vi .
+  ex:conceptLenhIfElse a ex:KnowledgeConcept ; rdfs:label "Câu lệnh if-else"@vi .
+  ex:conceptLenhElif a ex:KnowledgeConcept ; rdfs:label "Câu lệnh elif"@vi .
+  ex:conceptBieuThucLogic a ex:KnowledgeConcept ; rdfs:label "Biểu thức logic"@vi .
+  ex:conceptPhepSoSanh a ex:KnowledgeConcept ; rdfs:label "Phép so sánh"@vi .
+  ex:conceptPhepTinhLogic a ex:KnowledgeConcept ; rdfs:label "Phép tính logic"@vi .
+  ex:conceptCauLenhLap a ex:KnowledgeConcept ; rdfs:label "Câu lệnh lặp"@vi .
+  ex:conceptLenhFor a ex:KnowledgeConcept ; rdfs:label "Câu lệnh for"@vi .
+  ex:conceptHamRange a ex:KnowledgeConcept ; rdfs:label "Hàm range()"@vi .
+  ex:conceptLenhWhile a ex:KnowledgeConcept ; rdfs:label "Câu lệnh while"@vi .
+  ex:conceptLenhBreak a ex:KnowledgeConcept ; rdfs:label "Câu lệnh break"@vi .
+  ex:conceptLenhContinue a ex:KnowledgeConcept ; rdfs:label "Câu lệnh continue"@vi .
+  ex:conceptChuongTrinhCon a ex:KnowledgeConcept ; rdfs:label "Chương trình con"@vi .
+  ex:conceptHamPython a ex:KnowledgeConcept ; rdfs:label "Hàm trong Python"@vi .
+  ex:conceptThamSo a ex:KnowledgeConcept ; rdfs:label "Tham số"@vi .
+  ex:conceptLoiGoiHam a ex:KnowledgeConcept ; rdfs:label "Lời gọi hàm"@vi .
+  ex:conceptLenhReturn a ex:KnowledgeConcept ; rdfs:label "Câu lệnh return"@vi .
+  ex:conceptThuVienLapTrinh a ex:KnowledgeConcept ; rdfs:label "Thư viện lập trình"@vi .
+  ex:conceptKieuXauKiTu a ex:KnowledgeConcept ; rdfs:label "Kiểu dữ liệu xâu kí tự"@vi .
+  ex:conceptHamLen a ex:KnowledgeConcept ; rdfs:label "Hàm len()"@vi .
+  ex:conceptGhepXau a ex:KnowledgeConcept ; rdfs:label "Ghép xâu"@vi .
+  ex:conceptXauCon a ex:KnowledgeConcept ; rdfs:label "Xâu con"@vi .
+  ex:conceptHamCount a ex:KnowledgeConcept ; rdfs:label "Hàm count()"@vi .
+  ex:conceptHamFind a ex:KnowledgeConcept ; rdfs:label "Hàm find()"@vi .
+  ex:conceptHamReplace a ex:KnowledgeConcept ; rdfs:label "Hàm replace()"@vi .
+  ex:conceptThietBiVaoRaChuan a ex:KnowledgeConcept ; rdfs:label "Thiết bị vào - ra chuẩn"@vi .
+  ex:conceptKieuDanhSach a ex:KnowledgeConcept ; rdfs:label "Kiểu dữ liệu danh sách"@vi .
+  ex:conceptPhanTuDanhSach a ex:KnowledgeConcept ; rdfs:label "Phần tử danh sách"@vi .
+  ex:conceptChiSoDanhSach a ex:KnowledgeConcept ; rdfs:label "Chỉ số danh sách"@vi .
+  ex:conceptDuyetDanhSach a ex:KnowledgeConcept ; rdfs:label "Duyệt danh sách"@vi .
+  ex:conceptSapXepDanhSach a ex:KnowledgeConcept ; rdfs:label "Sắp xếp danh sách"@vi .
+  ex:conceptKiemThu a ex:KnowledgeConcept ; rdfs:label "Kiểm thử chương trình"@vi .
+  ex:conceptGoLoi a ex:KnowledgeConcept ; rdfs:label "Gỡ lỗi chương trình"@vi .
+  ex:conceptLoiCuPhap a ex:KnowledgeConcept ; rdfs:label "Lỗi cú pháp"@vi .
+  ex:conceptLoiThucThi a ex:KnowledgeConcept ; rdfs:label "Lỗi thực thi"@vi .
+  ex:conceptLoiLogic a ex:KnowledgeConcept ; rdfs:label "Lỗi logic"@vi .
+  ex:conceptBaiToanTinHoc a ex:KnowledgeConcept ; rdfs:label "Bài toán tin học"@vi .
+  ex:conceptThuatToan a ex:KnowledgeConcept ; rdfs:label "Thuật toán"@vi .
+  ex:conceptDuLieuDauVao a ex:KnowledgeConcept ; rdfs:label "Dữ liệu đầu vào"@vi .
+  ex:conceptDuLieuDauRa a ex:KnowledgeConcept ; rdfs:label "Dữ liệu đầu ra"@vi .
+  ex:conceptQuyTrinhLapTrinh a ex:KnowledgeConcept ; rdfs:label "Quy trình lập trình"@vi .
+
+  ###########################################################################
+  # Concept links
+  ###########################################################################
+
+  ex:topicF ex:hasConcept ex:conceptLapTrinh, ex:conceptNgonNguLapTrinh,
+    ex:conceptPython, ex:conceptBien, ex:conceptPhepGan, ex:conceptBieuThucSoHoc,
+    ex:conceptKieuDuLieuSo, ex:conceptLenhInput, ex:conceptLenhPrint,
+    ex:conceptCauLenhReNhanh, ex:conceptCauLenhLap, ex:conceptChuongTrinhCon,
+    ex:conceptKieuXauKiTu, ex:conceptKieuDanhSach, ex:conceptKiemThu,
+    ex:conceptGoLoi, ex:conceptBaiToanTinHoc, ex:conceptThuatToan .
+
+  ex:topicF_lesson1 ex:hasConcept ex:conceptLapTrinh, ex:conceptNgonNguLapTrinh,
+    ex:conceptNgonNguLapTrinhBacCao, ex:conceptPython, ex:conceptMoiTruongLapTrinh,
+    ex:conceptIDLE, ex:conceptShellPython, ex:conceptChuongTrinhMayTinh, ex:conceptLenhPrint .
+
+  ex:topicF_lesson2 ex:hasConcept ex:conceptBien, ex:conceptPhepGan,
+    ex:conceptBieuThucSoHoc, ex:conceptToanTuSoHoc, ex:conceptShellPython, ex:conceptCodePython .
+
+  ex:topicF_lesson3 ex:hasConcept ex:conceptPython, ex:conceptShellPython,
+    ex:conceptCodePython, ex:conceptBieuThucSoHoc, ex:conceptLenhInput, ex:conceptLenhPrint .
+
+  ex:topicF_lesson4 ex:hasConcept ex:conceptKieuDuLieuSo, ex:conceptSoNguyen,
+    ex:conceptSoThuc, ex:conceptLenhInput, ex:conceptLenhPrint, ex:conceptHang .
+
+  ex:topicF_lesson5 ex:hasConcept ex:conceptPython, ex:conceptLenhInput,
+    ex:conceptLenhPrint, ex:conceptHamToanHoc, ex:conceptThuVienMath, ex:conceptGhiChuThich .
+
+  ex:topicF_lesson6 ex:hasConcept ex:conceptCauLenhReNhanh, ex:conceptLenhIf,
+    ex:conceptLenhIfElse, ex:conceptBieuThucLogic, ex:conceptPhepSoSanh, ex:conceptPhepTinhLogic .
+
+  ex:topicF_lesson7 ex:hasConcept ex:conceptLenhIf, ex:conceptLenhIfElse,
+    ex:conceptBieuThucLogic, ex:conceptLoiCuPhap .
+
+  ex:topicF_lesson8 ex:hasConcept ex:conceptCauLenhLap, ex:conceptLenhFor,
+    ex:conceptHamRange, ex:conceptLenhWhile .
+
+  ex:topicF_lesson9 ex:hasConcept ex:conceptCauLenhLap, ex:conceptLenhFor,
+    ex:conceptLenhWhile, ex:conceptLenhBreak, ex:conceptLenhContinue .
+
+  ex:topicF_lesson10 ex:hasConcept ex:conceptChuongTrinhCon, ex:conceptHamPython,
+    ex:conceptThamSo, ex:conceptLoiGoiHam, ex:conceptLenhReturn, ex:conceptThuVienLapTrinh,
+    ex:conceptThuVienMath .
+
+  ex:topicF_lesson11 ex:hasConcept ex:conceptHamPython, ex:conceptThuVienLapTrinh,
+    ex:conceptLoiGoiHam, ex:conceptLenhReturn .
+
+  ex:topicF_lesson12 ex:hasConcept ex:conceptKieuXauKiTu, ex:conceptHamLen,
+    ex:conceptGhepXau, ex:conceptXauCon, ex:conceptHamCount, ex:conceptHamFind,
+    ex:conceptHamReplace, ex:conceptThietBiVaoRaChuan .
+
+  ex:topicF_lesson13 ex:hasConcept ex:conceptKieuXauKiTu, ex:conceptXauCon,
+    ex:conceptHamCount, ex:conceptHamFind, ex:conceptHamReplace .
+
+  ex:topicF_lesson14 ex:hasConcept ex:conceptKieuDanhSach, ex:conceptPhanTuDanhSach,
+    ex:conceptChiSoDanhSach, ex:conceptDuyetDanhSach .
+
+  ex:topicF_lesson15 ex:hasConcept ex:conceptKieuDanhSach, ex:conceptDuyetDanhSach,
+    ex:conceptSapXepDanhSach, ex:conceptLenhFor .
+
+  ex:topicF_lesson16 ex:hasConcept ex:conceptKiemThu, ex:conceptGoLoi,
+    ex:conceptLoiCuPhap, ex:conceptLoiThucThi, ex:conceptLoiLogic .
+
+  ex:topicF_lesson17 ex:hasConcept ex:conceptBaiToanTinHoc, ex:conceptThuatToan,
+    ex:conceptDuLieuDauVao, ex:conceptDuLieuDauRa, ex:conceptKiemThu .
+
+  ex:topicF_lesson18 ex:hasConcept ex:conceptQuyTrinhLapTrinh, ex:conceptBaiToanTinHoc,
+    ex:conceptThuatToan, ex:conceptDuLieuDauVao, ex:conceptDuLieuDauRa, ex:conceptKiemThu .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:topicF_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề F"@vi ;
+    ex:hasRawText "Giải thích được vì sao cần lập trình và cần có ngôn ngữ lập trình bậc cao. Giới thiệu được sơ lược về Python. Bắt đầu chạy được một vài chương trình tính toán đơn giản trong môi trường Python."@vi ;
+    ex:appearsOnPage ex:page050 ;
+    ex:belongsToLesson ex:topicF_lesson1 .
+
+  ex:topicF_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề F"@vi ;
+    ex:hasSummaryText "Chương trình máy tính là một dãy các câu lệnh mà máy tính có thể hiểu và thực hiện. Ngôn ngữ lập trình dùng để viết chương trình máy tính. Python là một ngôn ngữ lập trình bậc cao thông dụng. Trong cửa sổ Shell của Python có thể thực hiện ngay từng câu lệnh và thấy kết quả."@vi ;
+    ex:appearsOnPage ex:page053 ;
+    ex:belongsToLesson ex:topicF_lesson1 .
+
+  ex:topicF_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề F"@vi ;
+    ex:hasSummaryText "Giá trị lưu trữ trong biến có thể thay đổi. Cần đặt tên biến theo quy tắc của ngôn ngữ lập trình. Trong Python, câu lệnh gán có dạng Biến = Biểu thức. Ở cửa sổ Shell máy tính thực hiện ngay từng câu lệnh. Ở cửa sổ Code, có thể soạn thảo, lưu, chạy và chỉnh sửa chương trình."@vi ;
+    ex:appearsOnPage ex:page059 ;
+    ex:belongsToLesson ex:topicF_lesson2 .
+
+  ex:topicF_l4_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 4 chủ đề F"@vi ;
+    ex:hasSummaryText "Trong các ngôn ngữ lập trình bậc cao có kiểu dữ liệu số nguyên và số thực. Trong Python, type() cho biết kiểu dữ liệu hiện thời, input() nhập dữ liệu từ bàn phím, int() và float() chuyển dữ liệu sang kiểu số, print() đưa giá trị các biểu thức ra màn hình."@vi ;
+    ex:appearsOnPage ex:page068 ;
+    ex:belongsToLesson ex:topicF_lesson4 .
+
+  ex:topicF_l6_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 6 chủ đề F"@vi ;
+    ex:hasSummaryText "Các ngôn ngữ lập trình bậc cao đều có câu lệnh thể hiện cấu trúc rẽ nhánh. Điều kiện trong câu lệnh rẽ nhánh là một biểu thức logic nhận giá trị True hoặc False. Câu lệnh rẽ nhánh trong Python có hai dạng cơ bản là if và if-else."@vi ;
+    ex:appearsOnPage ex:page076 ;
+    ex:belongsToLesson ex:topicF_lesson6 .
+
+  ex:topicF_l8_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 8 chủ đề F"@vi ;
+    ex:hasSummaryText "Các ngôn ngữ lập trình bậc cao đều có câu lệnh thể hiện cấu trúc lặp. Câu lệnh lặp với số lần biết trước cần dùng một biến để kiểm soát số lần lặp. Câu lệnh lặp với số lần không biết trước dùng một biểu thức logic làm điều kiện lặp. Python có hai dạng câu lệnh lặp cơ bản là for và while."@vi ;
+    ex:appearsOnPage ex:page083 ;
+    ex:belongsToLesson ex:topicF_lesson8 .
+
+  ex:topicF_l10_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 10 chủ đề F"@vi ;
+    ex:hasSummaryText "Chương trình con là một đoạn câu lệnh thực hiện một việc nào đó được đặt tên. Với hàm trả về giá trị, tên hàm được dùng như một biến trong chương trình gọi. Mỗi hệ thống lập trình của một ngôn ngữ bậc cao đều cung cấp thư viện các chương trình con dựng sẵn. Trong Python, khai báo hàm dùng def và hàm trả về giá trị dùng return."@vi ;
+    ex:appearsOnPage ex:page091 ;
+    ex:belongsToLesson ex:topicF_lesson10 .
+
+  ex:topicF_l12_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 12 chủ đề F"@vi ;
+    ex:hasSummaryText "Trong các ngôn ngữ lập trình bậc cao có kiểu dữ liệu xâu kí tự và các chương trình con cung cấp thao tác xử lí xâu kí tự. Trong Python, phép + dùng để ghép nối xâu; các hàm xử lí xâu thường dùng gồm xác định độ dài xâu, đếm số lần xuất hiện xâu con, tìm vị trí xuất hiện đầu tiên của một xâu trong xâu khác, thay thế xâu con và xác định xâu con."@vi ;
+    ex:appearsOnPage ex:page098 ;
+    ex:belongsToLesson ex:topicF_lesson12 .
+
+  ex:topicF_lesson1 ex:hasSummary ex:topicF_l1_summary .
+  ex:topicF_lesson2 ex:hasSummary ex:topicF_l2_summary .
+  ex:topicF_lesson4 ex:hasSummary ex:topicF_l4_summary .
+  ex:topicF_lesson6 ex:hasSummary ex:topicF_l6_summary .
+  ex:topicF_lesson8 ex:hasSummary ex:topicF_l8_summary .
+  ex:topicF_lesson10 ex:hasSummary ex:topicF_l10_summary .
+  ex:topicF_lesson12 ex:hasSummary ex:topicF_l12_summary .
+
+  ###########################################################################
+  # Paragraph / compact content units
+  ###########################################################################
+
+  ex:topicF_p050_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 1 giới thiệu nhu cầu lập trình, ngôn ngữ lập trình bậc cao và Python. Máy tính không hiểu trực tiếp ngôn ngữ tự nhiên của con người nên con người cần dùng ngôn ngữ lập trình để viết chỉ dẫn cho máy tính."@vi ; ex:appearsOnPage ex:page050 ; ex:belongsToLesson ex:topicF_lesson1 ; ex:belongsToSection ex:topicF_l1s1 .
+  ex:topicF_p051_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Python được dùng để minh hoạ lập trình bậc cao. Sách sử dụng Python phiên bản 3.9.0, làm quen với IDLE, cửa sổ Shell và cách chạy các câu lệnh đơn giản."@vi ; ex:appearsOnPage ex:page051 ; ex:belongsToLesson ex:topicF_lesson1 ; ex:belongsToSection ex:topicF_l1s2 .
+  ex:topicF_p055_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 2 trình bày vai trò của biến, phép gán, cách đặt tên biến trong Python, biểu thức số học và cách soạn thảo, lưu, chạy chương trình trong cửa sổ Code."@vi ; ex:appearsOnPage ex:page055 ; ex:belongsToLesson ex:topicF_lesson2 ; ex:belongsToSection ex:topicF_l2s1 .
+  ex:topicF_p060_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 3 thực hành viết và chạy một số chương trình Python đơn giản, sử dụng biểu thức số học, nhận biết thông báo lỗi, màu sắc trong Python và câu lệnh nhập dữ liệu dạng dòng chữ."@vi ; ex:appearsOnPage ex:page060 ; ex:belongsToLesson ex:topicF_lesson3 ; ex:belongsToSection ex:topicF_l3s1 .
+  ex:topicF_p064_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 4 giới thiệu kiểu dữ liệu số nguyên, số thực, câu lệnh type(), input(), int(), float(), print() và khái niệm hằng trong Python."@vi ; ex:appearsOnPage ex:page064 ; ex:belongsToLesson ex:topicF_lesson4 ; ex:belongsToSection ex:topicF_l4s1 .
+  ex:topicF_p069_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 5 yêu cầu thực hành viết các chương trình đơn giản với dữ liệu nhập từ bàn phím, sử dụng một vài hàm toán học do Python cung cấp và nhận biết chú thích trong chương trình."@vi ; ex:appearsOnPage ex:page069 ; ex:belongsToLesson ex:topicF_lesson5 ; ex:belongsToSection ex:topicF_l5s1 .
+  ex:topicF_p072_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 6 trình bày cấu trúc rẽ nhánh, điều kiện rẽ nhánh, các phép so sánh, phép logic và cách viết câu lệnh if, if-else trong Python."@vi ; ex:appearsOnPage ex:page072 ; ex:belongsToLesson ex:topicF_lesson6 ; ex:belongsToSection ex:topicF_l6s1 .
+  ex:topicF_p077_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 7 thực hành câu lệnh rẽ nhánh qua các bài tập lấy ví dụ về if, chia kẹo, tìm lỗi sai, tìm số lớn nhất và bài toán tiền điện."@vi ; ex:appearsOnPage ex:page077 ; ex:belongsToLesson ex:topicF_lesson7 ; ex:belongsToSection ex:topicF_l7s1 .
+  ex:topicF_p080_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 8 giới thiệu cấu trúc lặp trong mô tả thuật toán, câu lệnh for với số lần lặp biết trước, hàm range() và câu lệnh while với số lần lặp không biết trước."@vi ; ex:appearsOnPage ex:page080 ; ex:belongsToLesson ex:topicF_lesson8 ; ex:belongsToSection ex:topicF_l8s1 .
+  ex:topicF_p084_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 9 thực hành câu lệnh lặp trong Python, đếm các ước thực sự của một số nguyên, nhập dữ liệu có kiểm tra và vận dụng lặp để giải bài toán cổ vừa gà vừa chó."@vi ; ex:appearsOnPage ex:page084 ; ex:belongsToLesson ex:topicF_lesson9 ; ex:belongsToSection ex:topicF_l9s1 .
+  ex:topicF_p086_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 10 giới thiệu chương trình con, hàm trong Python, khai báo hàm bằng def, truyền tham số, lời gọi hàm, câu lệnh return và các hàm có sẵn trong thư viện."@vi ; ex:appearsOnPage ex:page086 ; ex:belongsToLesson ex:topicF_lesson10 ; ex:belongsToSection ex:topicF_l10s1 .
+  ex:topicF_p092_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 11 thực hành lập trình với hàm và thư viện qua các bài toán giải phương trình, thời gian gặp nhau và đo thời gian thực hiện chương trình bằng hàm time."@vi ; ex:appearsOnPage ex:page092 ; ex:belongsToLesson ex:topicF_lesson11 ; ex:belongsToSection ex:topicF_l11s1 .
+  ex:topicF_p094_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 12 giới thiệu kiểu dữ liệu xâu kí tự, các thao tác xử lí xâu thường dùng như len(), ghép xâu bằng phép +, count(), xác định xâu con, find() và replace()."@vi ; ex:appearsOnPage ex:page094 ; ex:belongsToLesson ex:topicF_lesson12 ; ex:belongsToSection ex:topicF_l12s1 .
+  ex:topicF_p099_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 13 thực hành dữ liệu kiểu xâu, bao gồm xử lí tự động xâu, tính tổng tiền vé vào cổng, tìm kiếm vị trí xâu con, đếm kí tự và xử lí thông tin dạng văn bản."@vi ; ex:appearsOnPage ex:page099 ; ex:belongsToLesson ex:topicF_lesson13 ; ex:belongsToSection ex:topicF_l13s1 .
+  ex:topicF_p102_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 14 giới thiệu kiểu dữ liệu danh sách, cách khởi tạo danh sách, chỉ số phần tử, truy cập phần tử, duyệt danh sách và các thao tác cơ bản trên danh sách."@vi ; ex:appearsOnPage ex:page102 ; ex:belongsToLesson ex:topicF_lesson14 ; ex:belongsToSection ex:topicF_l14s1 .
+  ex:topicF_p107_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 15 thực hành với kiểu dữ liệu danh sách qua các bài toán tìm điểm trung bình, tìm giá trị lớn nhất, nhỏ nhất, sắp xếp, lọc và xử lí dữ liệu danh sách."@vi ; ex:appearsOnPage ex:page107 ; ex:belongsToLesson ex:topicF_lesson15 ; ex:belongsToSection ex:topicF_l15s1 .
+  ex:topicF_p111_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 16 trình bày kiểm thử và gỡ lỗi chương trình, các loại lỗi thường gặp như lỗi cú pháp, lỗi thực thi, lỗi logic và cách phát hiện, sửa lỗi."@vi ; ex:appearsOnPage ex:page111 ; ex:belongsToLesson ex:topicF_lesson16 ; ex:belongsToSection ex:topicF_l16s1 .
+  ex:topicF_p117_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 17 thực hành lập trình giải bài toán trên máy tính, từ việc xác định yêu cầu, dữ liệu vào, dữ liệu ra đến viết, chạy và kiểm thử chương trình."@vi ; ex:appearsOnPage ex:page117 ; ex:belongsToLesson ex:topicF_lesson17 ; ex:belongsToSection ex:topicF_l17s1 .
+  ex:topicF_p119_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 18 hệ thống hoá quy trình lập trình giải quyết bài toán trên máy tính: xác định bài toán, phân tích, thiết kế thuật toán, viết chương trình, chạy thử, kiểm thử và đánh giá."@vi ; ex:appearsOnPage ex:page119 ; ex:belongsToLesson ex:topicF_lesson18 ; ex:belongsToSection ex:topicF_l18s1 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:page050 ex:hasParagraph ex:topicF_p050_01 .
+  ex:page051 ex:hasParagraph ex:topicF_p051_01 .
+  ex:page055 ex:hasParagraph ex:topicF_p055_01 .
+  ex:page060 ex:hasParagraph ex:topicF_p060_01 .
+  ex:page064 ex:hasParagraph ex:topicF_p064_01 .
+  ex:page069 ex:hasParagraph ex:topicF_p069_01 .
+  ex:page072 ex:hasParagraph ex:topicF_p072_01 .
+  ex:page077 ex:hasParagraph ex:topicF_p077_01 .
+  ex:page080 ex:hasParagraph ex:topicF_p080_01 .
+  ex:page084 ex:hasParagraph ex:topicF_p084_01 .
+  ex:page086 ex:hasParagraph ex:topicF_p086_01 .
+  ex:page092 ex:hasParagraph ex:topicF_p092_01 .
+  ex:page094 ex:hasParagraph ex:topicF_p094_01 .
+  ex:page099 ex:hasParagraph ex:topicF_p099_01 .
+  ex:page102 ex:hasParagraph ex:topicF_p102_01 .
+  ex:page107 ex:hasParagraph ex:topicF_p107_01 .
+  ex:page111 ex:hasParagraph ex:topicF_p111_01 .
+  ex:page117 ex:hasParagraph ex:topicF_p117_01 .
+  ex:page119 ex:hasParagraph ex:topicF_p119_01 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:topicF_l1s1 ex:hasParagraph ex:topicF_p050_01 .
+  ex:topicF_l1s2 ex:hasParagraph ex:topicF_p051_01 .
+  ex:topicF_l2s1 ex:hasParagraph ex:topicF_p055_01 .
+  ex:topicF_l3s1 ex:hasParagraph ex:topicF_p060_01 .
+  ex:topicF_l4s1 ex:hasParagraph ex:topicF_p064_01 .
+  ex:topicF_l5s1 ex:hasParagraph ex:topicF_p069_01 .
+  ex:topicF_l6s1 ex:hasParagraph ex:topicF_p072_01 .
+  ex:topicF_l7s1 ex:hasParagraph ex:topicF_p077_01 .
+  ex:topicF_l8s1 ex:hasParagraph ex:topicF_p080_01 .
+  ex:topicF_l9s1 ex:hasParagraph ex:topicF_p084_01 .
+  ex:topicF_l10s1 ex:hasParagraph ex:topicF_p086_01 .
+  ex:topicF_l11s1 ex:hasParagraph ex:topicF_p092_01 .
+  ex:topicF_l12s1 ex:hasParagraph ex:topicF_p094_01 .
+  ex:topicF_l13s1 ex:hasParagraph ex:topicF_p099_01 .
+  ex:topicF_l14s1 ex:hasParagraph ex:topicF_p102_01 .
+  ex:topicF_l15s1 ex:hasParagraph ex:topicF_p107_01 .
+  ex:topicF_l16s1 ex:hasParagraph ex:topicF_p111_01 .
+  ex:topicF_l17s1 ex:hasParagraph ex:topicF_p117_01 .
+  ex:topicF_l18s1 ex:hasParagraph ex:topicF_p119_01 .
+
+  ###########################################################################
+  # Paragraph order links
+  ###########################################################################
+
+  ex:topicF_p050_01 ex:nextParagraph ex:topicF_p051_01 .
+  ex:topicF_p051_01 ex:previousParagraph ex:topicF_p050_01 ; ex:nextParagraph ex:topicF_p055_01 .
+  ex:topicF_p055_01 ex:previousParagraph ex:topicF_p051_01 ; ex:nextParagraph ex:topicF_p060_01 .
+  ex:topicF_p060_01 ex:previousParagraph ex:topicF_p055_01 ; ex:nextParagraph ex:topicF_p064_01 .
+  ex:topicF_p064_01 ex:previousParagraph ex:topicF_p060_01 ; ex:nextParagraph ex:topicF_p069_01 .
+  ex:topicF_p069_01 ex:previousParagraph ex:topicF_p064_01 ; ex:nextParagraph ex:topicF_p072_01 .
+  ex:topicF_p072_01 ex:previousParagraph ex:topicF_p069_01 ; ex:nextParagraph ex:topicF_p077_01 .
+  ex:topicF_p077_01 ex:previousParagraph ex:topicF_p072_01 ; ex:nextParagraph ex:topicF_p080_01 .
+  ex:topicF_p080_01 ex:previousParagraph ex:topicF_p077_01 ; ex:nextParagraph ex:topicF_p084_01 .
+  ex:topicF_p084_01 ex:previousParagraph ex:topicF_p080_01 ; ex:nextParagraph ex:topicF_p086_01 .
+  ex:topicF_p086_01 ex:previousParagraph ex:topicF_p084_01 ; ex:nextParagraph ex:topicF_p092_01 .
+  ex:topicF_p092_01 ex:previousParagraph ex:topicF_p086_01 ; ex:nextParagraph ex:topicF_p094_01 .
+  ex:topicF_p094_01 ex:previousParagraph ex:topicF_p092_01 ; ex:nextParagraph ex:topicF_p099_01 .
+  ex:topicF_p099_01 ex:previousParagraph ex:topicF_p094_01 ; ex:nextParagraph ex:topicF_p102_01 .
+  ex:topicF_p102_01 ex:previousParagraph ex:topicF_p099_01 ; ex:nextParagraph ex:topicF_p107_01 .
+  ex:topicF_p107_01 ex:previousParagraph ex:topicF_p102_01 ; ex:nextParagraph ex:topicF_p111_01 .
+  ex:topicF_p111_01 ex:previousParagraph ex:topicF_p107_01 ; ex:nextParagraph ex:topicF_p117_01 .
+  ex:topicF_p117_01 ex:previousParagraph ex:topicF_p111_01 ; ex:nextParagraph ex:topicF_p119_01 .
+  ex:topicF_p119_01 ex:previousParagraph ex:topicF_p117_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:topicF_p050_01 ex:mentionsConcept ex:conceptLapTrinh, ex:conceptNgonNguLapTrinh, ex:conceptNgonNguLapTrinhBacCao .
+  ex:topicF_p051_01 ex:mentionsConcept ex:conceptPython, ex:conceptIDLE, ex:conceptShellPython, ex:conceptLenhPrint .
+  ex:topicF_p055_01 ex:mentionsConcept ex:conceptBien, ex:conceptPhepGan, ex:conceptBieuThucSoHoc, ex:conceptCodePython .
+  ex:topicF_p060_01 ex:mentionsConcept ex:conceptPython, ex:conceptShellPython, ex:conceptCodePython, ex:conceptLenhInput, ex:conceptLenhPrint .
+  ex:topicF_p064_01 ex:mentionsConcept ex:conceptKieuDuLieuSo, ex:conceptSoNguyen, ex:conceptSoThuc, ex:conceptLenhInput, ex:conceptLenhPrint .
+  ex:topicF_p069_01 ex:mentionsConcept ex:conceptPython, ex:conceptHamToanHoc, ex:conceptThuVienMath, ex:conceptGhiChuThich .
+  ex:topicF_p072_01 ex:mentionsConcept ex:conceptCauLenhReNhanh, ex:conceptLenhIf, ex:conceptLenhIfElse, ex:conceptBieuThucLogic .
+  ex:topicF_p077_01 ex:mentionsConcept ex:conceptLenhIf, ex:conceptLenhIfElse, ex:conceptLoiCuPhap .
+  ex:topicF_p080_01 ex:mentionsConcept ex:conceptCauLenhLap, ex:conceptLenhFor, ex:conceptHamRange, ex:conceptLenhWhile .
+  ex:topicF_p084_01 ex:mentionsConcept ex:conceptCauLenhLap, ex:conceptLenhFor, ex:conceptLenhWhile, ex:conceptLenhBreak, ex:conceptLenhContinue .
+  ex:topicF_p086_01 ex:mentionsConcept ex:conceptChuongTrinhCon, ex:conceptHamPython, ex:conceptThamSo, ex:conceptLenhReturn .
+  ex:topicF_p092_01 ex:mentionsConcept ex:conceptHamPython, ex:conceptThuVienLapTrinh, ex:conceptLoiGoiHam .
+  ex:topicF_p094_01 ex:mentionsConcept ex:conceptKieuXauKiTu, ex:conceptHamLen, ex:conceptGhepXau, ex:conceptHamCount, ex:conceptHamFind, ex:conceptHamReplace .
+  ex:topicF_p099_01 ex:mentionsConcept ex:conceptKieuXauKiTu, ex:conceptXauCon, ex:conceptHamCount, ex:conceptHamFind, ex:conceptHamReplace .
+  ex:topicF_p102_01 ex:mentionsConcept ex:conceptKieuDanhSach, ex:conceptPhanTuDanhSach, ex:conceptChiSoDanhSach, ex:conceptDuyetDanhSach .
+  ex:topicF_p107_01 ex:mentionsConcept ex:conceptKieuDanhSach, ex:conceptDuyetDanhSach, ex:conceptSapXepDanhSach .
+  ex:topicF_p111_01 ex:mentionsConcept ex:conceptKiemThu, ex:conceptGoLoi, ex:conceptLoiCuPhap, ex:conceptLoiThucThi, ex:conceptLoiLogic .
+  ex:topicF_p117_01 ex:mentionsConcept ex:conceptBaiToanTinHoc, ex:conceptThuatToan, ex:conceptDuLieuDauVao, ex:conceptDuLieuDauRa, ex:conceptKiemThu .
+  ex:topicF_p119_01 ex:mentionsConcept ex:conceptQuyTrinhLapTrinh, ex:conceptBaiToanTinHoc, ex:conceptThuatToan, ex:conceptKiemThu .
+
+  ###########################################################################
+  # Semantic relations among concepts
+  ###########################################################################
+
+  ex:conceptNgonNguLapTrinhBacCao ex:subConceptOf ex:conceptNgonNguLapTrinh .
+  ex:conceptPython ex:subConceptOf ex:conceptNgonNguLapTrinhBacCao .
+  ex:conceptMoiTruongLapTrinh ex:relatedTo ex:conceptPython .
+  ex:conceptIDLE ex:relatedTo ex:conceptMoiTruongLapTrinh .
+  ex:conceptShellPython ex:relatedTo ex:conceptIDLE .
+  ex:conceptCodePython ex:relatedTo ex:conceptIDLE .
+  ex:conceptChuongTrinhMayTinh ex:relatedTo ex:conceptLapTrinh .
+  ex:conceptBien ex:relatedTo ex:conceptPhepGan .
+  ex:conceptPhepGan ex:relatedTo ex:conceptBieuThucSoHoc .
+  ex:conceptBieuThucSoHoc ex:relatedTo ex:conceptToanTuSoHoc .
+  ex:conceptSoNguyen ex:subConceptOf ex:conceptKieuDuLieuSo .
+  ex:conceptSoThuc ex:subConceptOf ex:conceptKieuDuLieuSo .
+  ex:conceptLenhInput ex:relatedTo ex:conceptDuLieuDauVao .
+  ex:conceptLenhPrint ex:relatedTo ex:conceptDuLieuDauRa .
+  ex:conceptThuVienMath ex:relatedTo ex:conceptHamToanHoc .
+  ex:conceptLenhIf ex:subConceptOf ex:conceptCauLenhReNhanh .
+  ex:conceptLenhIfElse ex:subConceptOf ex:conceptCauLenhReNhanh .
+  ex:conceptLenhElif ex:subConceptOf ex:conceptCauLenhReNhanh .
+  ex:conceptPhepSoSanh ex:relatedTo ex:conceptBieuThucLogic .
+  ex:conceptPhepTinhLogic ex:relatedTo ex:conceptBieuThucLogic .
+  ex:conceptLenhFor ex:subConceptOf ex:conceptCauLenhLap .
+  ex:conceptLenhWhile ex:subConceptOf ex:conceptCauLenhLap .
+  ex:conceptHamRange ex:relatedTo ex:conceptLenhFor .
+  ex:conceptLenhBreak ex:relatedTo ex:conceptCauLenhLap .
+  ex:conceptLenhContinue ex:relatedTo ex:conceptCauLenhLap .
+  ex:conceptHamPython ex:subConceptOf ex:conceptChuongTrinhCon .
+  ex:conceptThamSo ex:relatedTo ex:conceptHamPython .
+  ex:conceptLoiGoiHam ex:relatedTo ex:conceptHamPython .
+  ex:conceptLenhReturn ex:relatedTo ex:conceptHamPython .
+  ex:conceptThuVienLapTrinh ex:relatedTo ex:conceptChuongTrinhCon .
+  ex:conceptHamLen ex:relatedTo ex:conceptKieuXauKiTu .
+  ex:conceptGhepXau ex:relatedTo ex:conceptKieuXauKiTu .
+  ex:conceptXauCon ex:relatedTo ex:conceptKieuXauKiTu .
+  ex:conceptHamCount ex:relatedTo ex:conceptKieuXauKiTu .
+  ex:conceptHamFind ex:relatedTo ex:conceptKieuXauKiTu .
+  ex:conceptHamReplace ex:relatedTo ex:conceptKieuXauKiTu .
+  ex:conceptPhanTuDanhSach ex:partOf ex:conceptKieuDanhSach .
+  ex:conceptChiSoDanhSach ex:relatedTo ex:conceptPhanTuDanhSach .
+  ex:conceptDuyetDanhSach ex:relatedTo ex:conceptKieuDanhSach .
+  ex:conceptSapXepDanhSach ex:relatedTo ex:conceptKieuDanhSach .
+  ex:conceptGoLoi ex:relatedTo ex:conceptKiemThu .
+  ex:conceptLoiCuPhap ex:subConceptOf ex:conceptGoLoi .
+  ex:conceptLoiThucThi ex:subConceptOf ex:conceptGoLoi .
+  ex:conceptLoiLogic ex:subConceptOf ex:conceptGoLoi .
+  ex:conceptThuatToan ex:relatedTo ex:conceptBaiToanTinHoc .
+  ex:conceptQuyTrinhLapTrinh ex:relatedTo ex:conceptBaiToanTinHoc .
+
+  ###########################################################################
+  # Figures, tables, code resources, and examples
+  ###########################################################################
+
+  ex:topicF_fig_scratchPythonCalc a ex:Figure ;
+    rdfs:label "Hình 1. Tính toán trên hai ngôn ngữ lập trình"@vi ;
+    ex:hasCaption "Hình 1. Tính toán trên hai ngôn ngữ lập trình"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:page050 ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptNgonNguLapTrinhBacCao .
+
+  ex:topicF_fig_pythonShell a ex:Figure ;
+    rdfs:label "Hình 3. Cửa sổ Shell"@vi ;
+    ex:hasCaption "Hình 3. Cửa sổ Shell"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:page051 ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptShellPython .
+
+  ex:topicF_fig_codeWindow a ex:Figure ;
+    rdfs:label "Hình 3. Các bước soạn thảo và thực hiện chương trình Python"@vi ;
+    ex:hasCaption "Hình 3. Các bước soạn thảo và thực hiện chương trình Python"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:page058 ;
+    ex:belongsToLesson ex:topicF_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptCodePython .
+
+  ex:topicF_fig_ifFlowchart a ex:Diagram ;
+    rdfs:label "Hình 3. Cách viết và sơ đồ khối của câu lệnh if"@vi ;
+    ex:hasCaption "Hình 3. Cách viết và sơ đồ khối của câu lệnh if"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:page074 ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLenhIf .
+
+  ex:topicF_fig_forLoop a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ một câu lệnh for"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ một câu lệnh for"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:page081 ;
+    ex:belongsToLesson ex:topicF_lesson8 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLenhFor .
+
+  ex:topicF_fig_whileLoop a ex:Figure ;
+    rdfs:label "Hình 6. Chương trình sử dụng câu lệnh while"@vi ;
+    ex:hasCaption "Hình 6. Chương trình sử dụng câu lệnh while"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:page082 ;
+    ex:belongsToLesson ex:topicF_lesson8 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLenhWhile .
+
+  ex:topicF_fig_functionExample a ex:Figure ;
+    rdfs:label "Hình 2. Một chương trình Python có sử dụng hàm"@vi ;
+    ex:hasCaption "Hình 2. Một chương trình Python có sử dụng hàm"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:page087 ;
+    ex:belongsToLesson ex:topicF_lesson10 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptHamPython .
+
+  ex:topicF_fig_stringProcessing a ex:Figure ;
+    rdfs:label "Hình 5. Xác định một xâu con"@vi ;
+    ex:hasCaption "Hình 5. Xác định một xâu con"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:page096 ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptXauCon .
+
+  ex:topicF_fig_listExamples a ex:Figure ;
+    rdfs:label "Ví dụ về kiểu dữ liệu danh sách trong Python"@vi ;
+    ex:hasCaption "Ví dụ về kiểu dữ liệu danh sách trong Python"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:page102 ;
+    ex:belongsToLesson ex:topicF_lesson14 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptKieuDanhSach .
+
+  ex:page050 ex:hasFigure ex:topicF_fig_scratchPythonCalc .
+  ex:page051 ex:hasFigure ex:topicF_fig_pythonShell .
+  ex:page058 ex:hasFigure ex:topicF_fig_codeWindow .
+  ex:page074 ex:hasFigure ex:topicF_fig_ifFlowchart .
+  ex:page081 ex:hasFigure ex:topicF_fig_forLoop .
+  ex:page082 ex:hasFigure ex:topicF_fig_whileLoop .
+  ex:page087 ex:hasFigure ex:topicF_fig_functionExample .
+  ex:page096 ex:hasFigure ex:topicF_fig_stringProcessing .
+  ex:page102 ex:hasFigure ex:topicF_fig_listExamples .
+
+  ex:topicF_fig_scratchPythonCalc ex:nextFigure ex:topicF_fig_pythonShell .
+  ex:topicF_fig_pythonShell ex:previousFigure ex:topicF_fig_scratchPythonCalc ; ex:nextFigure ex:topicF_fig_codeWindow .
+  ex:topicF_fig_codeWindow ex:previousFigure ex:topicF_fig_pythonShell ; ex:nextFigure ex:topicF_fig_ifFlowchart .
+  ex:topicF_fig_ifFlowchart ex:previousFigure ex:topicF_fig_codeWindow ; ex:nextFigure ex:topicF_fig_forLoop .
+  ex:topicF_fig_forLoop ex:previousFigure ex:topicF_fig_ifFlowchart ; ex:nextFigure ex:topicF_fig_whileLoop .
+  ex:topicF_fig_whileLoop ex:previousFigure ex:topicF_fig_forLoop ; ex:nextFigure ex:topicF_fig_functionExample .
+  ex:topicF_fig_functionExample ex:previousFigure ex:topicF_fig_whileLoop ; ex:nextFigure ex:topicF_fig_stringProcessing .
+  ex:topicF_fig_stringProcessing ex:previousFigure ex:topicF_fig_functionExample ; ex:nextFigure ex:topicF_fig_listExamples .
+  ex:topicF_fig_listExamples ex:previousFigure ex:topicF_fig_stringProcessing .
+
+  ex:topicF_table_arithmeticOperators a ex:Table ;
+    rdfs:label "Bảng 1. Kí hiệu các phép toán số học trong Python"@vi ;
+    ex:hasCaption "Bảng 1. Kí hiệu các phép toán số học trong Python"@vi ;
+    ex:hasRawText "Cộng: +; Trừ: -; Nhân: *; Chia: /; Chia lấy phần nguyên: //; Chia lấy phần dư: %; Luỹ thừa: **."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:page057 ;
+    ex:belongsToLesson ex:topicF_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptToanTuSoHoc .
+
+  ex:topicF_table_comparisonOperators a ex:Table ;
+    rdfs:label "Bảng 1. Kí hiệu phép so sánh trong Python"@vi ;
+    ex:hasCaption "Bảng 1. Kí hiệu phép so sánh trong Python"@vi ;
+    ex:hasRawText "Lớn hơn: >; Lớn hơn hoặc bằng: >=; Nhỏ hơn: <; Nhỏ hơn hoặc bằng: <=; Bằng: ==; Khác: !=."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 2 ;
+    ex:appearsOnPage ex:page073 ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhepSoSanh .
+
+  ex:topicF_table_logicOperators a ex:Table ;
+    rdfs:label "Hình 2. Một số phép toán logic"@vi ;
+    ex:hasCaption "Hình 2. Một số phép toán logic"@vi ;
+    ex:hasRawText "and: cho kết quả True khi cả x và y đều True; or: cho kết quả False khi cả x và y đều False; not: đảo giá trị logic."@vi ;
+    ex:tableOrderOnPage 2 ;
+    ex:globalTableOrder 3 ;
+    ex:appearsOnPage ex:page073 ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhepTinhLogic .
+
+  ex:topicF_table_mathFunctions a ex:Table ;
+    rdfs:label "Bảng 1. Các hàm toán học thường dùng"@vi ;
+    ex:hasCaption "Bảng 1. Các hàm toán học thường dùng"@vi ;
+    ex:hasRawText "abs(x): tính |x|; ceil(x): trả về số nguyên nhỏ nhất lớn hơn hoặc bằng x; gcd(x,y): tính ước chung lớn nhất của x và y; sqrt(x): tính căn bậc hai của x; log(x): tính ln x; exp(x): tính e^x."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 4 ;
+    ex:appearsOnPage ex:page070 ;
+    ex:belongsToLesson ex:topicF_lesson5 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptHamToanHoc .
+
+  ex:page057 ex:hasTable ex:topicF_table_arithmeticOperators .
+  ex:page073 ex:hasTable ex:topicF_table_comparisonOperators, ex:topicF_table_logicOperators .
+  ex:page070 ex:hasTable ex:topicF_table_mathFunctions .
+
+  ex:topicF_table_arithmeticOperators ex:nextTable ex:topicF_table_mathFunctions .
+  ex:topicF_table_mathFunctions ex:previousTable ex:topicF_table_arithmeticOperators ; ex:nextTable ex:topicF_table_comparisonOperators .
+  ex:topicF_table_comparisonOperators ex:previousTable ex:topicF_table_mathFunctions ; ex:nextTable ex:topicF_table_logicOperators .
+  ex:topicF_table_logicOperators ex:previousTable ex:topicF_table_comparisonOperators .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:topicF_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề F"@vi ;
+    ex:hasRawText "Máy tính không hiểu được ngôn ngữ tự nhiên của con người. Vậy làm thế nào để chỉ dẫn cho máy tính thực hiện một việc nào đó?"@vi ;
+    ex:appearsOnPage ex:page050 ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:relatedTo ex:conceptNgonNguLapTrinh .
+
+  ex:topicF_l2_activityVariables a ex:Activity ;
+    rdfs:label "Hoạt động biến trong chương trình"@vi ;
+    ex:hasRawText "Em hãy chỉ ra các biến được sử dụng trong chương trình ở hình bên."@vi ;
+    ex:appearsOnPage ex:page055 ;
+    ex:belongsToLesson ex:topicF_lesson2 ;
+    ex:relatedTo ex:conceptBien .
+
+  ex:topicF_l3_taskSquareSum a ex:PracticeTask ;
+    rdfs:label "Bài 3 chủ đề F - Tổng bình phương ba số"@vi ;
+    ex:hasRawText "Gán giá trị số nguyên cho ba biến a, b, c và viết chương trình đưa ra màn hình tổng ba số và tổng bình phương ba số đó."@vi ;
+    ex:appearsOnPage ex:page060 ;
+    ex:belongsToLesson ex:topicF_lesson3 ;
+    ex:relatedTo ex:conceptBieuThucSoHoc .
+
+  ex:topicF_l4_activityType a ex:Activity ;
+    rdfs:label "Hoạt động kiểu dữ liệu số"@vi ;
+    ex:hasRawText "Viết chương trình Python hoặc làm việc với Python ở cửa sổ Shell, dùng câu lệnh type() để biết kiểu dữ liệu liên quan đến các phép toán chia, chia lấy phần nguyên và chia lấy phần dư."@vi ;
+    ex:appearsOnPage ex:page065 ;
+    ex:belongsToLesson ex:topicF_lesson4 ;
+    ex:relatedTo ex:conceptKieuDuLieuSo .
+
+  ex:topicF_l5_taskLinearEquation a ex:PracticeTask ;
+    rdfs:label "Bài 5 chủ đề F - Giải phương trình bậc nhất"@vi ;
+    ex:hasRawText "Hoàn thiện chương trình giải phương trình bậc nhất ax + b = 0 với dữ liệu nhập từ bàn phím và đưa nghiệm ra màn hình."@vi ;
+    ex:appearsOnPage ex:page069 ;
+    ex:belongsToLesson ex:topicF_lesson5 ;
+    ex:relatedTo ex:conceptLenhInput, ex:conceptLenhPrint .
+
+  ex:topicF_l6_activityBranchFlowchart a ex:Activity ;
+    rdfs:label "Hoạt động sơ đồ khối câu lệnh rẽ nhánh"@vi ;
+    ex:hasRawText "Vẽ sơ đồ khối thể hiện cấu trúc rẽ nhánh trong ví dụ kiểm tra số chẵn, số lẻ."@vi ;
+    ex:appearsOnPage ex:page072 ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:relatedTo ex:conceptCauLenhReNhanh .
+
+  ex:topicF_l7_taskCandy a ex:PracticeTask ;
+    rdfs:label "Bài 7 chủ đề F - Chia kẹo"@vi ;
+    ex:hasRawText "Nhập hai số nguyên dương n, m và kiểm tra n chiếc kẹo có chia đều được cho m em bé hay không."@vi ;
+    ex:appearsOnPage ex:page077 ;
+    ex:belongsToLesson ex:topicF_lesson7 ;
+    ex:relatedTo ex:conceptLenhIf .
+
+  ex:topicF_l8_activityLoopTypes a ex:Activity ;
+    rdfs:label "Hoạt động phân biệt hai loại cấu trúc lặp"@vi ;
+    ex:hasRawText "Mô tả hai thuật toán thuộc cấu trúc lặp với số lần biết trước và lặp với số lần không biết trước."@vi ;
+    ex:appearsOnPage ex:page080 ;
+    ex:belongsToLesson ex:topicF_lesson8 ;
+    ex:relatedTo ex:conceptCauLenhLap .
+
+  ex:topicF_l9_taskDivisors a ex:PracticeTask ;
+    rdfs:label "Bài 9 chủ đề F - Đếm các ước thực sự của một số nguyên"@vi ;
+    ex:hasRawText "Viết chương trình đếm xem số nguyên n nhập từ bàn phím có bao nhiêu ước số thực sự, sửa lỗi chương trình chạy sai."@vi ;
+    ex:appearsOnPage ex:page084 ;
+    ex:belongsToLesson ex:topicF_lesson9 ;
+    ex:relatedTo ex:conceptLenhWhile, ex:conceptLenhFor .
+
+  ex:topicF_l10_activitySubprogram a ex:Activity ;
+    rdfs:label "Hoạt động chia bài toán thành bài toán con"@vi ;
+    ex:hasRawText "Với bài toán ba tam giác có độ dài các cạnh, hãy chia bài toán thành các bài toán con và dùng công thức Heron để tính diện tích."@vi ;
+    ex:appearsOnPage ex:page086 ;
+    ex:belongsToLesson ex:topicF_lesson10 ;
+    ex:relatedTo ex:conceptChuongTrinhCon .
+
+  ex:topicF_l11_taskMeetingTime a ex:PracticeTask ;
+    rdfs:label "Bài 11 chủ đề F - Thời gian gặp nhau"@vi ;
+    ex:hasRawText "Viết hàm mtime với tham số d, v1, v2 để xác định thời gian hai ô tô gặp nhau, rồi gọi hàm với dữ liệu nhập từ bàn phím."@vi ;
+    ex:appearsOnPage ex:page092 ;
+    ex:belongsToLesson ex:topicF_lesson11 ;
+    ex:relatedTo ex:conceptHamPython, ex:conceptThamSo .
+
+  ex:topicF_l12_activityStringType a ex:Activity ;
+    rdfs:label "Hoạt động kiểu dữ liệu xâu kí tự"@vi ;
+    ex:hasRawText "Đọc chương trình và cho biết các biến so_hop, khoi_luong_hop, don_vi_kl chứa dữ liệu thuộc kiểu nào."@vi ;
+    ex:appearsOnPage ex:page094 ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:relatedTo ex:conceptKieuXauKiTu .
+
+  ex:topicF_l13_taskTicketString a ex:PracticeTask ;
+    rdfs:label "Bài 13 chủ đề F - Thực hành xử lí xâu"@vi ;
+    ex:hasRawText "Thực hành xử lí xâu trong các bài toán về dòng nhập, tổng tiền vé và thống kê dữ liệu văn bản."@vi ;
+    ex:appearsOnPage ex:page099 ;
+    ex:belongsToLesson ex:topicF_lesson13 ;
+    ex:relatedTo ex:conceptKieuXauKiTu .
+
+  ex:topicF_l14_activityListType a ex:Activity ;
+    rdfs:label "Hoạt động kiểu dữ liệu danh sách"@vi ;
+    ex:hasRawText "Tìm hiểu cách khởi tạo, truy cập và xử lí danh sách trong Python."@vi ;
+    ex:appearsOnPage ex:page102 ;
+    ex:belongsToLesson ex:topicF_lesson14 ;
+    ex:relatedTo ex:conceptKieuDanhSach .
+
+  ex:topicF_l15_taskListPractice a ex:PracticeTask ;
+    rdfs:label "Bài 15 chủ đề F - Thực hành với danh sách"@vi ;
+    ex:hasRawText "Thực hành các bài toán với danh sách như tính trung bình, tìm lớn nhất, nhỏ nhất, lọc và sắp xếp dữ liệu."@vi ;
+    ex:appearsOnPage ex:page107 ;
+    ex:belongsToLesson ex:topicF_lesson15 ;
+    ex:relatedTo ex:conceptKieuDanhSach .
+
+  ex:topicF_l16_activityTesting a ex:Activity ;
+    rdfs:label "Hoạt động kiểm thử và gỡ lỗi"@vi ;
+    ex:hasRawText "Tìm hiểu vai trò của kiểm thử, phát hiện lỗi cú pháp, lỗi thực thi, lỗi logic và sửa lỗi chương trình."@vi ;
+    ex:appearsOnPage ex:page111 ;
+    ex:belongsToLesson ex:topicF_lesson16 ;
+    ex:relatedTo ex:conceptKiemThu, ex:conceptGoLoi .
+
+  ex:topicF_l17_taskProgrammingPractice a ex:PracticeTask ;
+    rdfs:label "Bài 17 chủ đề F - Thực hành lập trình giải bài toán"@vi ;
+    ex:hasRawText "Thực hành giải bài toán trên máy tính bằng cách xác định dữ liệu vào, dữ liệu ra, viết thuật toán, lập trình và kiểm thử."@vi ;
+    ex:appearsOnPage ex:page117 ;
+    ex:belongsToLesson ex:topicF_lesson17 ;
+    ex:relatedTo ex:conceptBaiToanTinHoc, ex:conceptThuatToan .
+
+  ex:topicF_l18_activityProgrammingProcess a ex:Activity ;
+    rdfs:label "Hoạt động quy trình lập trình giải quyết bài toán"@vi ;
+    ex:hasRawText "Tìm hiểu quy trình lập trình giải quyết bài toán: xác định bài toán, phân tích, thiết kế thuật toán, viết chương trình, kiểm thử và đánh giá."@vi ;
+    ex:appearsOnPage ex:page119 ;
+    ex:belongsToLesson ex:topicF_lesson18 ;
+    ex:relatedTo ex:conceptQuyTrinhLapTrinh .
+
+  ex:topicF_lesson1 ex:hasActivity ex:topicF_l1_openingActivity .
+  ex:topicF_lesson2 ex:hasActivity ex:topicF_l2_activityVariables .
+  ex:topicF_lesson3 ex:hasActivity ex:topicF_l3_taskSquareSum .
+  ex:topicF_lesson4 ex:hasActivity ex:topicF_l4_activityType .
+  ex:topicF_lesson5 ex:hasActivity ex:topicF_l5_taskLinearEquation .
+  ex:topicF_lesson6 ex:hasActivity ex:topicF_l6_activityBranchFlowchart .
+  ex:topicF_lesson7 ex:hasActivity ex:topicF_l7_taskCandy .
+  ex:topicF_lesson8 ex:hasActivity ex:topicF_l8_activityLoopTypes .
+  ex:topicF_lesson9 ex:hasActivity ex:topicF_l9_taskDivisors .
+  ex:topicF_lesson10 ex:hasActivity ex:topicF_l10_activitySubprogram .
+  ex:topicF_lesson11 ex:hasActivity ex:topicF_l11_taskMeetingTime .
+  ex:topicF_lesson12 ex:hasActivity ex:topicF_l12_activityStringType .
+  ex:topicF_lesson13 ex:hasActivity ex:topicF_l13_taskTicketString .
+  ex:topicF_lesson14 ex:hasActivity ex:topicF_l14_activityListType .
+  ex:topicF_lesson15 ex:hasActivity ex:topicF_l15_taskListPractice .
+  ex:topicF_lesson16 ex:hasActivity ex:topicF_l16_activityTesting .
+  ex:topicF_lesson17 ex:hasActivity ex:topicF_l17_taskProgrammingPractice .
+  ex:topicF_lesson18 ex:hasActivity ex:topicF_l18_activityProgrammingProcess .
+}

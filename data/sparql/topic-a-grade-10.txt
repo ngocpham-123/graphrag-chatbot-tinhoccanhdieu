@@ -1,0 +1,813 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 10 TOPIC A
+# Assumes ontology/classes/properties have already been inserted.
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook / publisher metadata
+  ###########################################################################
+
+  ex:grade10 a ex:GradeLevel ;
+    rdfs:label "Lớp 10"@vi ;
+    ex:gradeNumber 10 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:tinhoc10_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 10 - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 10"@vi ;
+    ex:hasGradeLevel ex:grade10 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" ;
+    ex:sourceFileName "Tin-hoc-10-Canh-dieu-pages-2.pdf" ;
+    ex:sourceFileType "application/pdf" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicA_shared a ex:Topic ;
+    rdfs:label "Chủ đề A (dùng chung các khối)"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi .
+
+  ex:topicA a ex:Topic ;
+    rdfs:label "Chủ đề A - Máy tính và xã hội tri thức"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi ;
+    ex:hasSubtitle "Tin học và xử lí thông tin"@vi ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:sameTopicAs ex:topicA_shared ;
+    ex:topicOrder 1 ;
+    ex:hasStartPage 5 ;
+    ex:hasEndPage 25 ;
+    ex:hasLesson ex:lesson1, ex:lesson2, ex:extra_publicKeyBlockchain,
+                 ex:lesson3, ex:lesson4, ex:extra_qrApplications ;
+    ex:hasPage ex:page005, ex:page006, ex:page007, ex:page008, ex:page009,
+               ex:page010, ex:page011, ex:page012, ex:page013, ex:page014,
+               ex:page015, ex:page016, ex:page017, ex:page018, ex:page019,
+               ex:page020, ex:page021, ex:page022, ex:page023, ex:page024,
+               ex:page025 .
+
+  ex:tinhoc10_canhdieu ex:hasTopic ex:topicA .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Dữ liệu, thông tin và xử lí thông tin"@vi ;
+    ex:hasTitle "Dữ liệu, thông tin và xử lí thông tin"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:topicA ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 5 ;
+    ex:hasEndPage 9 ;
+    ex:hasSection ex:l1s1, ex:l1s2, ex:l1s3, ex:l1s4, ex:l1s5, ex:l1s6 .
+
+  ex:lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Sự ưu việt của máy tính và những thành tựu của tin học"@vi ;
+    ex:hasTitle "Sự ưu việt của máy tính và những thành tựu của tin học"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:topicA ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 10 ;
+    ex:hasEndPage 14 ;
+    ex:hasSection ex:l2s1, ex:l2s2 .
+
+  ex:extra_publicKeyBlockchain a ex:Lesson ;
+    rdfs:label "Bài tìm hiểu thêm. Mật mã khoá công khai và chuỗi khối"@vi ;
+    ex:hasTitle "Mật mã khoá công khai và chuỗi khối"@vi ;
+    ex:belongsToTopic ex:topicA ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 15 ;
+    ex:hasEndPage 15 .
+
+  ex:lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Thực hành sử dụng thiết bị số"@vi ;
+    ex:hasTitle "Thực hành sử dụng thiết bị số"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:topicA ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 16 ;
+    ex:hasEndPage 19 ;
+    ex:hasSection ex:l3s1, ex:l3s2 .
+
+  ex:lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Tin học trong phát triển kinh tế - xã hội"@vi ;
+    ex:hasTitle "Tin học trong phát triển kinh tế - xã hội"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:topicA ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 20 ;
+    ex:hasEndPage 25 ;
+    ex:hasSection ex:l4s1, ex:l4s2, ex:l4s3, ex:l4s4, ex:l4s5, ex:l4s6 .
+
+  ex:extra_qrApplications a ex:Lesson ;
+    rdfs:label "Bài tìm hiểu thêm. Mã QR và ứng dụng"@vi ;
+    ex:hasTitle "Mã QR và ứng dụng"@vi ;
+    ex:belongsToTopic ex:topicA ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 25 ;
+    ex:hasEndPage 25 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:l1s1 a ex:Section ;
+    rdfs:label "Nguồn thông tin và dữ liệu"@vi ;
+    ex:hasTitle "Nguồn thông tin và dữ liệu"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l1s2 a ex:Section ;
+    rdfs:label "Quan hệ giữa thông tin và dữ liệu"@vi ;
+    ex:hasTitle "Quan hệ giữa thông tin và dữ liệu"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l1s3 a ex:Section ;
+    rdfs:label "Phân biệt dữ liệu với thông tin"@vi ;
+    ex:hasTitle "Phân biệt dữ liệu với thông tin"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l1s4 a ex:Section ;
+    rdfs:label "Tin học và xử lí thông tin trong tin học"@vi ;
+    ex:hasTitle "Tin học và xử lí thông tin trong tin học"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l1s5 a ex:Section ;
+    rdfs:label "Các bước xử lí thông tin của máy tính"@vi ;
+    ex:hasTitle "Các bước xử lí thông tin của máy tính"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l1s6 a ex:Section ;
+    rdfs:label "Tháp dữ liệu - thông tin - tri thức"@vi ;
+    ex:hasTitle "Tháp dữ liệu - thông tin - tri thức"@vi ;
+    ex:sectionOrder 6 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l2s1 a ex:Section ;
+    rdfs:label "Sự ưu việt của máy tính"@vi ;
+    ex:hasTitle "Sự ưu việt của máy tính"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:lesson2 .
+
+  ex:l2s2 a ex:Section ;
+    rdfs:label "Những thành tựu của tin học"@vi ;
+    ex:hasTitle "Những thành tựu của tin học"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:lesson2 .
+
+  ex:l3s1 a ex:Section ;
+    rdfs:label "Thực hành sử dụng máy tính đúng cách"@vi ;
+    ex:hasTitle "Thực hành sử dụng máy tính đúng cách"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:lesson3 .
+
+  ex:l3s2 a ex:Section ;
+    rdfs:label "Thực hành khai thác tính năng mở rộng của điện thoại thông minh"@vi ;
+    ex:hasTitle "Thực hành khai thác tính năng mở rộng của điện thoại thông minh"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:lesson3 .
+
+  ex:l4s1 a ex:Section ;
+    rdfs:label "Các ứng dụng công nghệ thông tin"@vi ;
+    ex:hasTitle "Các ứng dụng công nghệ thông tin"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4s2 a ex:Section ;
+    rdfs:label "Xã hội tri thức và kinh tế tri thức"@vi ;
+    ex:hasTitle "Xã hội tri thức và kinh tế tri thức"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4s3 a ex:Section ;
+    rdfs:label "Khai thác tri thức từ dữ liệu"@vi ;
+    ex:hasTitle "Khai thác tri thức từ dữ liệu"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4s4 a ex:Section ;
+    rdfs:label "Đồ dùng và thiết bị thông minh"@vi ;
+    ex:hasTitle "Đồ dùng và thiết bị thông minh"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4s5 a ex:Section ;
+    rdfs:label "Các cuộc cách mạng công nghiệp"@vi ;
+    ex:hasTitle "Các cuộc cách mạng công nghiệp"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4s6 a ex:Section ;
+    rdfs:label "Internet vạn vật và máy móc thông minh trong Cách mạng công nghiệp lần thứ tư"@vi ;
+    ex:hasTitle "Internet vạn vật và máy móc thông minh trong Cách mạng công nghiệp lần thứ tư"@vi ;
+    ex:sectionOrder 6 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:page005 a ex:Page ; ex:hasPageNumber 5 ; ex:hasPrintedPageNumber 5 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page006 a ex:Page ; ex:hasPageNumber 6 ; ex:hasPrintedPageNumber 6 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page007 a ex:Page ; ex:hasPageNumber 7 ; ex:hasPrintedPageNumber 7 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page008 a ex:Page ; ex:hasPageNumber 8 ; ex:hasPrintedPageNumber 8 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page009 a ex:Page ; ex:hasPageNumber 9 ; ex:hasPrintedPageNumber 9 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page010 a ex:Page ; ex:hasPageNumber 10 ; ex:hasPrintedPageNumber 10 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page011 a ex:Page ; ex:hasPageNumber 11 ; ex:hasPrintedPageNumber 11 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page012 a ex:Page ; ex:hasPageNumber 12 ; ex:hasPrintedPageNumber 12 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page013 a ex:Page ; ex:hasPageNumber 13 ; ex:hasPrintedPageNumber 13 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page014 a ex:Page ; ex:hasPageNumber 14 ; ex:hasPrintedPageNumber 14 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page015 a ex:Page ; ex:hasPageNumber 15 ; ex:hasPrintedPageNumber 15 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:extra_publicKeyBlockchain ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page016 a ex:Page ; ex:hasPageNumber 16 ; ex:hasPrintedPageNumber 16 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:lesson3 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page017 a ex:Page ; ex:hasPageNumber 17 ; ex:hasPrintedPageNumber 17 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:lesson3 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page018 a ex:Page ; ex:hasPageNumber 18 ; ex:hasPrintedPageNumber 18 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:lesson3 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page019 a ex:Page ; ex:hasPageNumber 19 ; ex:hasPrintedPageNumber 19 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:lesson3 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page020 a ex:Page ; ex:hasPageNumber 20 ; ex:hasPrintedPageNumber 20 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page021 a ex:Page ; ex:hasPageNumber 21 ; ex:hasPrintedPageNumber 21 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page022 a ex:Page ; ex:hasPageNumber 22 ; ex:hasPrintedPageNumber 22 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page023 a ex:Page ; ex:hasPageNumber 23 ; ex:hasPrintedPageNumber 23 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page024 a ex:Page ; ex:hasPageNumber 24 ; ex:hasPrintedPageNumber 24 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page025 a ex:Page ; ex:hasPageNumber 25 ; ex:hasPrintedPageNumber 25 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToTopic ex:topicA ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:page005 ex:nextPage ex:page006 .
+  ex:page006 ex:previousPage ex:page005 ; ex:nextPage ex:page007 .
+  ex:page007 ex:previousPage ex:page006 ; ex:nextPage ex:page008 .
+  ex:page008 ex:previousPage ex:page007 ; ex:nextPage ex:page009 .
+  ex:page009 ex:previousPage ex:page008 ; ex:nextPage ex:page010 .
+  ex:page010 ex:previousPage ex:page009 ; ex:nextPage ex:page011 .
+  ex:page011 ex:previousPage ex:page010 ; ex:nextPage ex:page012 .
+  ex:page012 ex:previousPage ex:page011 ; ex:nextPage ex:page013 .
+  ex:page013 ex:previousPage ex:page012 ; ex:nextPage ex:page014 .
+  ex:page014 ex:previousPage ex:page013 ; ex:nextPage ex:page015 .
+  ex:page015 ex:previousPage ex:page014 ; ex:nextPage ex:page016 .
+  ex:page016 ex:previousPage ex:page015 ; ex:nextPage ex:page017 .
+  ex:page017 ex:previousPage ex:page016 ; ex:nextPage ex:page018 .
+  ex:page018 ex:previousPage ex:page017 ; ex:nextPage ex:page019 .
+  ex:page019 ex:previousPage ex:page018 ; ex:nextPage ex:page020 .
+  ex:page020 ex:previousPage ex:page019 ; ex:nextPage ex:page021 .
+  ex:page021 ex:previousPage ex:page020 ; ex:nextPage ex:page022 .
+  ex:page022 ex:previousPage ex:page021 ; ex:nextPage ex:page023 .
+  ex:page023 ex:previousPage ex:page022 ; ex:nextPage ex:page024 .
+  ex:page024 ex:previousPage ex:page023 ; ex:nextPage ex:page025 .
+  ex:page025 ex:previousPage ex:page024 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:conceptThongTin a ex:KnowledgeConcept ; rdfs:label "Thông tin"@vi .
+  ex:conceptDuLieu a ex:KnowledgeConcept ; rdfs:label "Dữ liệu"@vi .
+  ex:conceptXuLiThongTin a ex:KnowledgeConcept ; rdfs:label "Xử lí thông tin"@vi .
+  ex:conceptDuLieuSo a ex:KnowledgeConcept ; rdfs:label "Dữ liệu số"@vi .
+  ex:conceptTinHoc a ex:KnowledgeConcept ; rdfs:label "Tin học"@vi .
+  ex:conceptCongNgheThongTin a ex:KnowledgeConcept ; rdfs:label "Công nghệ thông tin"@vi .
+  ex:conceptTriThuc a ex:KnowledgeConcept ; rdfs:label "Tri thức"@vi .
+  ex:conceptThapDuLieuThongTinTriThuc a ex:KnowledgeConcept ; rdfs:label "Tháp dữ liệu - thông tin - tri thức"@vi .
+  ex:conceptTocDoTinhToan a ex:KnowledgeConcept ; rdfs:label "Tốc độ tính toán"@vi .
+  ex:conceptDonViLuuTru a ex:KnowledgeConcept ; rdfs:label "Đơn vị lưu trữ dữ liệu"@vi .
+  ex:conceptInternet a ex:KnowledgeConcept ; rdfs:label "Internet"@vi .
+  ex:conceptWWW a ex:KnowledgeConcept ; rdfs:label "World Wide Web"@vi .
+  ex:conceptMayTimKiem a ex:KnowledgeConcept ; rdfs:label "Máy tìm kiếm"@vi .
+  ex:conceptMangXaHoi a ex:KnowledgeConcept ; rdfs:label "Mạng xã hội"@vi .
+  ex:conceptTriTueNhanTao a ex:KnowledgeConcept ; rdfs:label "Trí tuệ nhân tạo"@vi .
+  ex:conceptMatMaKhoaCongKhai a ex:KnowledgeConcept ; rdfs:label "Mật mã khoá công khai"@vi .
+  ex:conceptChuoiKhoi a ex:KnowledgeConcept ; rdfs:label "Chuỗi khối"@vi .
+  ex:conceptThietBiSo a ex:KnowledgeConcept ; rdfs:label "Thiết bị số"@vi .
+  ex:conceptMayTinh a ex:KnowledgeConcept ; rdfs:label "Máy tính"@vi .
+  ex:conceptDienThoaiThongMinh a ex:KnowledgeConcept ; rdfs:label "Điện thoại thông minh"@vi .
+  ex:conceptChuyenDoiSo a ex:KnowledgeConcept ; rdfs:label "Chuyển đổi số"@vi .
+  ex:conceptChinhPhuDienTu a ex:KnowledgeConcept ; rdfs:label "Chính phủ điện tử"@vi .
+  ex:conceptDoanhNghiepSo a ex:KnowledgeConcept ; rdfs:label "Doanh nghiệp số"@vi .
+  ex:conceptNganHangSo a ex:KnowledgeConcept ; rdfs:label "Ngân hàng số"@vi .
+  ex:conceptYTeSo a ex:KnowledgeConcept ; rdfs:label "Y tế số"@vi .
+  ex:conceptELearning a ex:KnowledgeConcept ; rdfs:label "E-Learning"@vi .
+  ex:conceptXaHoiTriThuc a ex:KnowledgeConcept ; rdfs:label "Xã hội tri thức"@vi .
+  ex:conceptKinhTeTriThuc a ex:KnowledgeConcept ; rdfs:label "Kinh tế tri thức"@vi .
+  ex:conceptDuLieuLon a ex:KnowledgeConcept ; rdfs:label "Dữ liệu lớn"@vi .
+  ex:conceptThietBiThongMinh a ex:KnowledgeConcept ; rdfs:label "Thiết bị thông minh"@vi .
+  ex:conceptCachMangCongNghiep40 a ex:KnowledgeConcept ; rdfs:label "Cách mạng công nghiệp lần thứ tư"@vi .
+  ex:conceptInternetVanVat a ex:KnowledgeConcept ; rdfs:label "Internet vạn vật"@vi .
+  ex:conceptMaQR a ex:KnowledgeConcept ; rdfs:label "Mã QR"@vi .
+
+  ###########################################################################
+  # Topic / lesson concept links
+  ###########################################################################
+
+  ex:topicA ex:hasConcept ex:conceptThongTin, ex:conceptDuLieu, ex:conceptXuLiThongTin,
+    ex:conceptTinHoc, ex:conceptCongNgheThongTin, ex:conceptTriThuc, ex:conceptInternet,
+    ex:conceptTriTueNhanTao, ex:conceptChuyenDoiSo, ex:conceptXaHoiTriThuc,
+    ex:conceptKinhTeTriThuc, ex:conceptCachMangCongNghiep40, ex:conceptInternetVanVat .
+
+  ex:lesson1 ex:hasConcept ex:conceptThongTin, ex:conceptDuLieu, ex:conceptXuLiThongTin,
+    ex:conceptDuLieuSo, ex:conceptTinHoc, ex:conceptCongNgheThongTin, ex:conceptTriThuc,
+    ex:conceptThapDuLieuThongTinTriThuc .
+
+  ex:lesson2 ex:hasConcept ex:conceptMayTinh, ex:conceptTocDoTinhToan, ex:conceptDonViLuuTru,
+    ex:conceptInternet, ex:conceptWWW, ex:conceptMayTimKiem, ex:conceptMangXaHoi,
+    ex:conceptTriTueNhanTao .
+
+  ex:extra_publicKeyBlockchain ex:hasConcept ex:conceptMatMaKhoaCongKhai, ex:conceptChuoiKhoi .
+
+  ex:lesson3 ex:hasConcept ex:conceptThietBiSo, ex:conceptMayTinh, ex:conceptDienThoaiThongMinh .
+
+  ex:lesson4 ex:hasConcept ex:conceptTinHoc, ex:conceptCongNgheThongTin, ex:conceptChuyenDoiSo,
+    ex:conceptChinhPhuDienTu, ex:conceptDoanhNghiepSo, ex:conceptNganHangSo,
+    ex:conceptYTeSo, ex:conceptELearning, ex:conceptXaHoiTriThuc, ex:conceptKinhTeTriThuc,
+    ex:conceptDuLieuLon, ex:conceptThietBiThongMinh, ex:conceptCachMangCongNghiep40,
+    ex:conceptInternetVanVat, ex:conceptMaQR .
+
+  ###########################################################################
+  # Summary and objective resources
+  ###########################################################################
+
+  ex:l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Biết được thông tin là gì, dữ liệu là gì. Phân biệt được thông tin và dữ liệu, nêu được ví dụ minh hoạ. Biết được xử lí thông tin là gì."@vi ;
+    ex:appearsOnPage ex:page005 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1"@vi ;
+    ex:hasSummaryText "Thông tin có thể biểu diễn dưới các dạng khác nhau. Dữ liệu được thu thập và sử dụng để từ đó rút ra thông tin, từ dữ liệu đầu vào có thể rút ra nhiều thông tin khác nhau. Bài toán xử lí thông tin có đầu vào là dữ liệu, đầu ra là thông tin hữu ích. Các bước xử lí thông tin của máy tính gồm: nhận dữ liệu vào, xử lí dữ liệu, đưa ra kết quả."@vi ;
+    ex:appearsOnPage ex:page009 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Nêu được sự ưu việt của việc lưu trữ, xử lí và truyền thông tin bằng thiết bị số. Chuyển đổi được giữa các đơn vị lưu trữ dữ liệu. Giới thiệu được các thành tựu nổi bật ở một số mốc thời gian để minh hoạ sự phát triển của ngành tin học."@vi ;
+    ex:appearsOnPage ex:page010 ;
+    ex:belongsToLesson ex:lesson2 .
+
+  ex:l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2"@vi ;
+    ex:hasSummaryText "Đơn vị đo lượng dữ liệu là byte (B) và các bội số 2^10 (1 024) lần của byte, tuần tự là KB, MB, GB, TB, PB, EB, ZB, YB. Máy tính có tốc độ rất nhanh, lưu trữ lượng dữ liệu rất lớn, có thể tự động bắt đầu làm việc và làm việc liên tục trong thời gian dài, không nhầm lẫn. Internet, máy tìm kiếm, mạng xã hội, trí tuệ nhân tạo làm thay đổi xã hội loài người."@vi ;
+    ex:appearsOnPage ex:page014 ;
+    ex:belongsToLesson ex:lesson2 .
+
+  ex:l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Biết được các thao tác sử dụng máy tính đúng cách và thực hiện được các thao tác đó. Sử dụng được các chức năng cơ bản của điện thoại thông minh."@vi ;
+    ex:appearsOnPage ex:page016 ;
+    ex:belongsToLesson ex:lesson3 .
+
+  ex:l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Trình bày được những đóng góp cơ bản của tin học đối với xã hội, nêu được ví dụ minh hoạ. Nhận biết được một vài thiết bị số thông dụng khác ngoài máy tính để bàn và máy tính xách tay, giải thích được các thiết bị đó cũng là những hệ thống xử lí thông tin. Nêu được đặc trưng của Cách mạng công nghiệp lần thứ tư. Giải thích được vai trò của những thiết bị thông minh đối với sự phát triển của xã hội và cuộc Cách mạng công nghiệp lần thứ tư."@vi ;
+    ex:appearsOnPage ex:page020 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 4"@vi ;
+    ex:hasSummaryText "Chuyển đổi số là ứng dụng công nghệ thông tin ở mức cao, tạo ra thay đổi về chất. Công nghệ thông tin và truyền thông là một trụ cột để phát triển kinh tế tri thức. Công nghiệp 4.0 là sản xuất thông minh trong các nhà máy thông minh."@vi ;
+    ex:appearsOnPage ex:page025 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:lesson1 ex:hasSummary ex:l1_summary .
+  ex:lesson2 ex:hasSummary ex:l2_summary .
+  ex:lesson4 ex:hasSummary ex:l4_summary .
+
+  ###########################################################################
+  # Figures and tables
+  ###########################################################################
+
+  ex:fig_l1_extractInformation a ex:Diagram ;
+    rdfs:label "Hình 1. Rút ra thông tin từ dữ liệu"@vi ;
+    ex:hasCaption "Hình 1. Rút ra thông tin từ dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:page006 ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptXuLiThongTin .
+
+  ex:table_l1_studentInfo a ex:Table ;
+    rdfs:label "Hình 2. Ví dụ thông tin dạng bảng"@vi ;
+    ex:hasCaption "Hình 2. Ví dụ thông tin dạng bảng"@vi ;
+    ex:hasRawText "Họ và tên: Nguyễn Văn An; Lớp: 10A; Điểm môn Tin học: 10."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:page007 ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDuLieu .
+
+  ex:fig_l1_dataInfoKnowledgePyramid a ex:Diagram ;
+    rdfs:label "Hình 3. Tháp dữ liệu - thông tin - tri thức"@vi ;
+    ex:hasCaption "Hình 3. Tháp dữ liệu - thông tin - tri thức"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:page009 ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptThapDuLieuThongTinTriThuc .
+
+  ex:fig_fugaku a ex:Figure ;
+    rdfs:label "Hình 1. Siêu máy tính Fugaku của Nhật Bản"@vi ;
+    ex:hasCaption "Hình 1. Siêu máy tính Fugaku của Nhật Bản"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:page010 ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTocDoTinhToan .
+
+  ex:table_l2_storageUnits a ex:Table ;
+    rdfs:label "Bảng 1. Các đơn vị lưu trữ dữ liệu"@vi ;
+    ex:hasCaption "Bảng 1. Các đơn vị lưu trữ dữ liệu"@vi ;
+    ex:hasRawText "B (Byte): 1 B = 8 bit. KB (Kilobyte): 1 024 B = 2^10 B. MB (Megabyte): 1 024 KB = 2^20 B. GB (Gigabyte): 1 024 MB = 2^30 B. TB (Terabyte): 1 024 GB = 2^40 B. PB (Petabyte): 1 024 TB = 2^50 B. EB (Exabyte): 1 024 PB = 2^60 B. ZB (Zettabyte): 1 024 EB = 2^70 B. YB (Yottabyte): 1 024 ZB = 2^80 B."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 2 ;
+    ex:appearsOnPage ex:page011 ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDonViLuuTru .
+
+  ex:fig_graceRobot a ex:Figure ;
+    rdfs:label "Hình 3. Người máy Grace"@vi ;
+    ex:hasCaption "Hình 3. Người máy Grace"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:page013 ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTriTueNhanTao .
+
+  ex:fig_windows10Desktop a ex:Figure ;
+    rdfs:label "Hình 1. Màn hình nền Windows 10"@vi ;
+    ex:hasCaption "Hình 1. Màn hình nền Windows 10"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:page016 ;
+    ex:belongsToLesson ex:lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptMayTinh .
+
+  ex:fig_smartphone a ex:Figure ;
+    rdfs:label "Hình 2. Điện thoại thông minh"@vi ;
+    ex:hasCaption "Hình 2. Điện thoại thông minh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:page018 ;
+    ex:belongsToLesson ex:lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDienThoaiThongMinh .
+
+  ex:fig_smartVacuumRobot a ex:Figure ;
+    rdfs:label "Hình 1. Robot lau nhà, hút bụi thông minh"@vi ;
+    ex:hasCaption "Hình 1. Robot lau nhà, hút bụi thông minh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:page023 ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptThietBiThongMinh .
+
+  ex:fig_industry40 a ex:Figure ;
+    rdfs:label "Hình 2. Công nghiệp 4.0"@vi ;
+    ex:hasCaption "Hình 2. Công nghiệp 4.0"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:page024 ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptCachMangCongNghiep40 .
+
+  ex:fig_qrCode a ex:Figure ;
+    rdfs:label "Hình ảnh một mã QR"@vi ;
+    ex:hasCaption "Hình ảnh một mã QR"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:page025 ;
+    ex:belongsToLesson ex:extra_qrApplications ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptMaQR .
+
+  ex:page006 ex:hasFigure ex:fig_l1_extractInformation .
+  ex:page007 ex:hasTable ex:table_l1_studentInfo .
+  ex:page009 ex:hasFigure ex:fig_l1_dataInfoKnowledgePyramid .
+  ex:page010 ex:hasFigure ex:fig_fugaku .
+  ex:page011 ex:hasTable ex:table_l2_storageUnits .
+  ex:page013 ex:hasFigure ex:fig_graceRobot .
+  ex:page016 ex:hasFigure ex:fig_windows10Desktop .
+  ex:page018 ex:hasFigure ex:fig_smartphone .
+  ex:page023 ex:hasFigure ex:fig_smartVacuumRobot .
+  ex:page024 ex:hasFigure ex:fig_industry40 .
+  ex:page025 ex:hasFigure ex:fig_qrCode .
+
+  ex:fig_l1_extractInformation ex:nextFigure ex:fig_l1_dataInfoKnowledgePyramid .
+  ex:fig_l1_dataInfoKnowledgePyramid ex:previousFigure ex:fig_l1_extractInformation ; ex:nextFigure ex:fig_fugaku .
+  ex:fig_fugaku ex:previousFigure ex:fig_l1_dataInfoKnowledgePyramid ; ex:nextFigure ex:fig_graceRobot .
+  ex:fig_graceRobot ex:previousFigure ex:fig_fugaku ; ex:nextFigure ex:fig_windows10Desktop .
+  ex:fig_windows10Desktop ex:previousFigure ex:fig_graceRobot ; ex:nextFigure ex:fig_smartphone .
+  ex:fig_smartphone ex:previousFigure ex:fig_windows10Desktop ; ex:nextFigure ex:fig_smartVacuumRobot .
+  ex:fig_smartVacuumRobot ex:previousFigure ex:fig_smartphone ; ex:nextFigure ex:fig_industry40 .
+  ex:fig_industry40 ex:previousFigure ex:fig_smartVacuumRobot ; ex:nextFigure ex:fig_qrCode .
+  ex:fig_qrCode ex:previousFigure ex:fig_industry40 .
+
+  ex:table_l1_studentInfo ex:nextTable ex:table_l2_storageUnits .
+  ex:table_l2_storageUnits ex:previousTable ex:table_l1_studentInfo .
+
+  ###########################################################################
+  # Definitions / notes
+  ###########################################################################
+
+  ex:def_tinHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tin học"@vi ;
+    ex:hasDefinitionText "Tin học: ngành khoa học nghiên cứu các phương pháp và quá trình tổ chức, lưu trữ, xử lí và truyền dẫn thông tin tự động bằng các phương tiện kĩ thuật, chủ yếu bằng máy tính."@vi ;
+    ex:appearsOnPage ex:page007 ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:explainsConcept ex:conceptTinHoc .
+
+  ex:def_congNgheThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công nghệ thông tin"@vi ;
+    ex:hasDefinitionText "Công nghệ thông tin: tập hợp các phương pháp khoa học, các phương tiện và công cụ kĩ thuật hiện đại nhằm tổ chức khai thác và sử dụng có hiệu quả các nguồn tài nguyên thông tin phong phú và tiềm năng trong mọi lĩnh vực hoạt động của con người và xã hội."@vi ;
+    ex:appearsOnPage ex:page008 ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:explainsConcept ex:conceptCongNgheThongTin .
+
+  ex:def_chuyenDoiSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chuyển đổi số"@vi ;
+    ex:hasDefinitionText "Chuyển đổi số là việc sử dụng dữ liệu và công nghệ số để thay đổi một cách tổng thể và toàn diện tất cả các khía cạnh của đời sống kinh tế - xã hội, tái định hình cách chúng ta sống, làm việc và liên hệ với nhau."@vi ;
+    ex:appearsOnPage ex:page021 ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptChuyenDoiSo .
+
+  ###########################################################################
+  # Compact paragraph units
+  ###########################################################################
+
+  ex:p005_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 1. Dữ liệu, thông tin và xử lí thông tin. Bài học đặt vấn đề: thông tin và dữ liệu từ đâu mà có."@vi ; ex:appearsOnPage ex:page005 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s1 .
+  ex:p005_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Thế giới rộng lớn quanh ta với con người, sự vật, sự việc là nguồn thông tin vô tận. Nhờ các giác quan, con người nhận tín hiệu từ thế giới xung quanh và chuyển thành thông tin trong bộ não."@vi ; ex:appearsOnPage ex:page005 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s1 .
+  ex:p005_03 a ex:Paragraph ; ex:paragraphOrder 3 ; ex:hasRawText "Các thiết bị được tạo ra để nhận biết nhiều tín hiệu hơn; từ đầu ra của các thiết bị này, ta có dữ liệu."@vi ; ex:appearsOnPage ex:page005 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s1 .
+
+  ex:p006_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Thông tin có thể được biểu diễn dưới các dạng khác nhau."@vi ; ex:appearsOnPage ex:page006 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s2 .
+  ex:p006_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Văn bản chữ và số, hình vẽ, hình ảnh, âm thanh, đoạn video là dữ liệu. Dữ liệu là nguồn thông tin; từ dữ liệu có thể rút ra nhiều thông tin khác nhau."@vi ; ex:appearsOnPage ex:page006 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s2 .
+  ex:p006_03 a ex:Paragraph ; ex:paragraphOrder 3 ; ex:hasRawText "Bài toán xử lí thông tin có đầu vào là thông tin hay dữ liệu thể hiện thông tin, và đầu ra là thông tin hữu ích hay dữ liệu thể hiện thông tin hữu ích."@vi ; ex:appearsOnPage ex:page006 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s2 .
+
+  ex:p007_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Trong lưu trữ và trao đổi thông tin, thông tin là nội dung, dữ liệu là hình thức thể hiện."@vi ; ex:appearsOnPage ex:page007 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s3 .
+  ex:p007_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Dữ liệu là đầu vào cho bài toán xử lí thông tin. Thông tin là kết quả đầu ra của bài toán này."@vi ; ex:appearsOnPage ex:page007 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s3 .
+  ex:p007_03 a ex:Paragraph ; ex:paragraphOrder 3 ; ex:hasRawText "Trong tin học, dữ liệu là chữ, số hay dấu hiệu nói chung có thể xử lí được bằng máy tính."@vi ; ex:appearsOnPage ex:page007 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s4 .
+
+  ex:p008_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Máy tính thực hiện ba bước xử lí thông tin: nhận dữ liệu vào, xử lí dữ liệu, đưa kết quả xử lí ra cho con người."@vi ; ex:appearsOnPage ex:page008 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s5 .
+  ex:p009_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Tháp dữ liệu - thông tin - tri thức minh hoạ quá trình trích xuất, tinh lọc dần từ dữ liệu thành thông tin, từ thông tin thành tri thức."@vi ; ex:appearsOnPage ex:page009 ; ex:belongsToLesson ex:lesson1 ; ex:belongsToSection ex:l1s6 .
+
+  ex:p010_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Trong tin học, tốc độ tính toán của máy tính là số phép tính thực hiện được trong một giây, gọi tắt là flops."@vi ; ex:appearsOnPage ex:page010 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToSection ex:l2s1 .
+  ex:p011_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Các thiết bị số có thể lưu trữ lượng dữ liệu khổng lồ mà nhỏ gọn, dễ mang theo. Các đơn vị lưu trữ dữ liệu lớn gồm byte và các bội số KB, MB, GB, TB, PB, EB, ZB, YB."@vi ; ex:appearsOnPage ex:page011 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToSection ex:l2s1 .
+  ex:p012_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Năm 1969, Bộ Quốc phòng Hoa Kỳ lập dự án mạng ARPANET, được coi là tiền thân của Internet ngày nay. Ở Việt Nam, ngày 19/11/1997, dịch vụ Internet chính thức được cung cấp cho người dân cả nước."@vi ; ex:appearsOnPage ex:page012 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToSection ex:l2s2 .
+  ex:p013_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "World Wide Web, máy tìm kiếm, mạng xã hội và trí tuệ nhân tạo là những thành tựu nổi bật làm thay đổi xã hội loài người."@vi ; ex:appearsOnPage ex:page013 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToSection ex:l2s2 .
+  ex:p014_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Trí tuệ nhân tạo có thể tạo ra những kết quả ngoài dự kiến, vì vậy con người cần kiểm soát sự phát triển của AI."@vi ; ex:appearsOnPage ex:page014 ; ex:belongsToLesson ex:lesson2 ; ex:belongsToSection ex:l2s2 .
+
+  ex:p015_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Mật mã khoá công khai dùng một cặp khoá bí mật - khoá công khai. Người gửi dùng khoá công khai của người nhận để mã hoá dữ liệu; người nhận dùng khoá bí mật của riêng mình để giải mã."@vi ; ex:appearsOnPage ex:page015 ; ex:belongsToLesson ex:extra_publicKeyBlockchain .
+  ex:p015_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Chuỗi khối là công nghệ xích khối dữ liệu, bảo đảm tính minh bạch thông tin bằng cách nối các khối dữ liệu và phân tán bản sao trong cộng đồng."@vi ; ex:appearsOnPage ex:page015 ; ex:belongsToLesson ex:extra_publicKeyBlockchain .
+
+  ex:p016_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 3. Thực hành sử dụng thiết bị số. Nội dung thực hành gồm thao tác với màn hình nền Windows 10, nút Start, thanh nhiệm vụ Taskbar và sử dụng máy tính đúng cách."@vi ; ex:appearsOnPage ex:page016 ; ex:belongsToLesson ex:lesson3 ; ex:belongsToSection ex:l3s1 .
+  ex:p017_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Các bài thực hành trên máy tính gồm tạo và xoá lối tắt, ghim và gỡ biểu tượng trình ứng dụng, tắt một ứng dụng bị treo, khám phá thông tin trong hộp thoại Properties."@vi ; ex:appearsOnPage ex:page017 ; ex:belongsToLesson ex:lesson3 ; ex:belongsToSection ex:l3s1 .
+  ex:p018_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Các thao tác với điện thoại thông minh gồm quan sát pin, sạc pin, tắt màn hình rồi bật lại, đặt chế độ rung, chế độ máy bay, thiết lập và đặt lại mật khẩu."@vi ; ex:appearsOnPage ex:page018 ; ex:belongsToLesson ex:lesson3 ; ex:belongsToSection ex:l3s2 .
+  ex:p019_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Thực hành danh bạ gồm thêm mục mới, thêm mục mới sau cuộc gọi đến hoặc đi, cập nhật liên hệ đã có, xoá mục trong danh bạ."@vi ; ex:appearsOnPage ex:page019 ; ex:belongsToLesson ex:lesson3 ; ex:belongsToSection ex:l3s2 .
+
+  ex:p020_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Tin học nghiên cứu phương pháp và quá trình xử lí thông tin tự động bằng máy tính; công nghệ thông tin tạo ra công cụ hỗ trợ hoạt động thu thập, xử lí, lưu trữ và truyền tải thông tin."@vi ; ex:appearsOnPage ex:page020 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToSection ex:l4s1 .
+  ex:p021_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Chuyển đổi số thúc đẩy thương mại điện tử, ngân hàng số, y tế số và dạy học trực tuyến."@vi ; ex:appearsOnPage ex:page021 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToSection ex:l4s1 .
+  ex:p022_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Xã hội tri thức là xã hội dựa trên việc không ngừng tạo ra và sử dụng hàng loạt tri thức trong mọi lĩnh vực với sự trợ giúp của công nghệ thông tin và truyền thông hiện đại."@vi ; ex:appearsOnPage ex:page022 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToSection ex:l4s2 .
+  ex:p023_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Đồ dùng, thiết bị được gọi là thông minh khi có khả năng xử lí thông tin, kết nối với người dùng hoặc kết nối với các thiết bị khác, có thể hoạt động tương tác và tự chủ ở một mức độ nào đó."@vi ; ex:appearsOnPage ex:page023 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToSection ex:l4s4 .
+  ex:p024_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Cách mạng công nghiệp lần thứ tư đặc trưng bởi các công nghệ giúp xoá mờ ranh giới giữa các yếu tố vật chất, kĩ thuật số và sinh học."@vi ; ex:appearsOnPage ex:page024 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToSection ex:l4s5 .
+  ex:p025_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Nhờ Internet vạn vật, các máy móc, thiết bị giao tiếp và cộng tác với nhau và với con người trong thời gian thực."@vi ; ex:appearsOnPage ex:page025 ; ex:belongsToLesson ex:lesson4 ; ex:belongsToSection ex:l4s6 .
+  ex:p025_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "QR là viết tắt của Quick Response. Mã QR đang được ứng dụng rộng rãi để trao đổi thông tin, thanh toán tiêu dùng và nhiều tiện ích khác."@vi ; ex:appearsOnPage ex:page025 ; ex:belongsToLesson ex:extra_qrApplications .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:page005 ex:hasParagraph ex:p005_01, ex:p005_02, ex:p005_03 .
+  ex:page006 ex:hasParagraph ex:p006_01, ex:p006_02, ex:p006_03 .
+  ex:page007 ex:hasParagraph ex:p007_01, ex:p007_02, ex:p007_03 .
+  ex:page008 ex:hasParagraph ex:p008_01 .
+  ex:page009 ex:hasParagraph ex:p009_01 .
+  ex:page010 ex:hasParagraph ex:p010_01 .
+  ex:page011 ex:hasParagraph ex:p011_01 .
+  ex:page012 ex:hasParagraph ex:p012_01 .
+  ex:page013 ex:hasParagraph ex:p013_01 .
+  ex:page014 ex:hasParagraph ex:p014_01 .
+  ex:page015 ex:hasParagraph ex:p015_01, ex:p015_02 .
+  ex:page016 ex:hasParagraph ex:p016_01 .
+  ex:page017 ex:hasParagraph ex:p017_01 .
+  ex:page018 ex:hasParagraph ex:p018_01 .
+  ex:page019 ex:hasParagraph ex:p019_01 .
+  ex:page020 ex:hasParagraph ex:p020_01 .
+  ex:page021 ex:hasParagraph ex:p021_01 .
+  ex:page022 ex:hasParagraph ex:p022_01 .
+  ex:page023 ex:hasParagraph ex:p023_01 .
+  ex:page024 ex:hasParagraph ex:p024_01 .
+  ex:page025 ex:hasParagraph ex:p025_01, ex:p025_02 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:p005_02 ex:mentionsConcept ex:conceptThongTin .
+  ex:p005_03 ex:mentionsConcept ex:conceptDuLieu .
+  ex:p006_02 ex:mentionsConcept ex:conceptDuLieu, ex:conceptThongTin .
+  ex:p006_03 ex:mentionsConcept ex:conceptXuLiThongTin, ex:conceptDuLieu, ex:conceptThongTin .
+  ex:p007_01 ex:mentionsConcept ex:conceptDuLieu, ex:conceptThongTin .
+  ex:p007_02 ex:mentionsConcept ex:conceptDuLieu, ex:conceptThongTin, ex:conceptXuLiThongTin .
+  ex:p007_03 ex:mentionsConcept ex:conceptTinHoc, ex:conceptDuLieuSo, ex:conceptMayTinh .
+  ex:p008_01 ex:mentionsConcept ex:conceptMayTinh, ex:conceptXuLiThongTin, ex:conceptDuLieu .
+  ex:p009_01 ex:mentionsConcept ex:conceptThapDuLieuThongTinTriThuc, ex:conceptDuLieu, ex:conceptThongTin, ex:conceptTriThuc .
+  ex:p010_01 ex:mentionsConcept ex:conceptTocDoTinhToan, ex:conceptMayTinh .
+  ex:p011_01 ex:mentionsConcept ex:conceptDonViLuuTru, ex:conceptDuLieu .
+  ex:p012_01 ex:mentionsConcept ex:conceptInternet .
+  ex:p013_01 ex:mentionsConcept ex:conceptWWW, ex:conceptMayTimKiem, ex:conceptMangXaHoi, ex:conceptTriTueNhanTao .
+  ex:p014_01 ex:mentionsConcept ex:conceptTriTueNhanTao .
+  ex:p015_01 ex:mentionsConcept ex:conceptMatMaKhoaCongKhai .
+  ex:p015_02 ex:mentionsConcept ex:conceptChuoiKhoi .
+  ex:p016_01 ex:mentionsConcept ex:conceptMayTinh, ex:conceptThietBiSo .
+  ex:p018_01 ex:mentionsConcept ex:conceptDienThoaiThongMinh .
+  ex:p020_01 ex:mentionsConcept ex:conceptTinHoc, ex:conceptCongNgheThongTin .
+  ex:p021_01 ex:mentionsConcept ex:conceptChuyenDoiSo, ex:conceptNganHangSo, ex:conceptYTeSo, ex:conceptELearning .
+  ex:p022_01 ex:mentionsConcept ex:conceptXaHoiTriThuc, ex:conceptCongNgheThongTin .
+  ex:p023_01 ex:mentionsConcept ex:conceptThietBiThongMinh .
+  ex:p024_01 ex:mentionsConcept ex:conceptCachMangCongNghiep40 .
+  ex:p025_01 ex:mentionsConcept ex:conceptInternetVanVat, ex:conceptThietBiThongMinh, ex:conceptCachMangCongNghiep40 .
+  ex:p025_02 ex:mentionsConcept ex:conceptMaQR .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:conceptDuLieu ex:relatedTo ex:conceptThongTin .
+  ex:conceptDuLieuSo ex:subConceptOf ex:conceptDuLieu .
+  ex:conceptXuLiThongTin ex:relatedTo ex:conceptDuLieu, ex:conceptThongTin .
+  ex:conceptTinHoc ex:relatedTo ex:conceptXuLiThongTin .
+  ex:conceptCongNgheThongTin ex:relatedTo ex:conceptTinHoc .
+  ex:conceptTriThuc ex:relatedTo ex:conceptThongTin .
+  ex:conceptWWW ex:subConceptOf ex:conceptInternet .
+  ex:conceptMayTimKiem ex:relatedTo ex:conceptInternet .
+  ex:conceptMangXaHoi ex:relatedTo ex:conceptInternet .
+  ex:conceptTriTueNhanTao ex:relatedTo ex:conceptTinHoc .
+  ex:conceptChuoiKhoi ex:relatedTo ex:conceptMatMaKhoaCongKhai .
+  ex:conceptDienThoaiThongMinh ex:subConceptOf ex:conceptThietBiSo .
+  ex:conceptThietBiThongMinh ex:relatedTo ex:conceptThietBiSo .
+  ex:conceptDoanhNghiepSo ex:subConceptOf ex:conceptChuyenDoiSo .
+  ex:conceptChinhPhuDienTu ex:subConceptOf ex:conceptChuyenDoiSo .
+  ex:conceptNganHangSo ex:subConceptOf ex:conceptChuyenDoiSo .
+  ex:conceptYTeSo ex:subConceptOf ex:conceptChuyenDoiSo .
+  ex:conceptELearning ex:subConceptOf ex:conceptChuyenDoiSo .
+  ex:conceptKinhTeTriThuc ex:relatedTo ex:conceptXaHoiTriThuc .
+  ex:conceptDuLieuLon ex:relatedTo ex:conceptTriThuc .
+  ex:conceptInternetVanVat ex:relatedTo ex:conceptCachMangCongNghiep40 .
+  ex:conceptThietBiThongMinh ex:relatedTo ex:conceptCachMangCongNghiep40 .
+  ex:conceptMaQR ex:relatedTo ex:conceptChuyenDoiSo .
+
+  ###########################################################################
+  # Activities / exercises / questions
+  ###########################################################################
+
+  ex:l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1"@vi ;
+    ex:hasRawText "Em hãy cho biết, thông tin và dữ liệu từ đâu mà có."@vi ;
+    ex:appearsOnPage ex:page005 ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:relatedTo ex:conceptThongTin, ex:conceptDuLieu .
+
+  ex:l1_activity_scoreTable a ex:Activity ;
+    rdfs:label "Hoạt động xử lí bảng điểm"@vi ;
+    ex:hasRawText "Xét bài toán: Từ bảng điểm tổng kết các môn học của học sinh cả lớp, cần tìm ra những học sinh có 3 môn học đạt điểm trung bình môn cao nhất lớp để làm danh sách đề nghị nhà trường tuyên dương, khen thưởng."@vi ;
+    ex:appearsOnPage ex:page006 ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:relatedTo ex:conceptXuLiThongTin, ex:conceptDuLieu .
+
+  ex:l1_ex1 a ex:Exercise ;
+    rdfs:label "Bài 1 - Bài tập 1"@vi ;
+    ex:hasRawText "Em hãy nêu một ví dụ minh hoạ việc người gửi không dùng máy tính chuyển thông tin thành dữ liệu ở các dạng khác nhau để gửi cho người nhận."@vi ;
+    ex:appearsOnPage ex:page009 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l1_ex2 a ex:Exercise ;
+    rdfs:label "Bài 1 - Bài tập 2"@vi ;
+    ex:hasRawText "Em hãy cho biết đầu vào và đầu ra của một bài toán xử lí thông tin là gì."@vi ;
+    ex:appearsOnPage ex:page009 ;
+    ex:belongsToLesson ex:lesson1 .
+
+  ex:l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2"@vi ;
+    ex:hasRawText "Theo em, thành tựu nổi bật nhất của ngành tin học là gì?"@vi ;
+    ex:appearsOnPage ex:page010 ;
+    ex:belongsToLesson ex:lesson2 .
+
+  ex:l2_ex1 a ex:Exercise ;
+    rdfs:label "Bài 2 - Bài tập 1"@vi ;
+    ex:hasRawText "Em hãy nêu tên một thiết bị số lưu trữ dữ liệu có dung lượng từ một Terabyte trở lên."@vi ;
+    ex:appearsOnPage ex:page014 ;
+    ex:belongsToLesson ex:lesson2 .
+
+  ex:l2_ex2 a ex:Exercise ;
+    rdfs:label "Bài 2 - Bài tập 2"@vi ;
+    ex:hasRawText "Em hãy cho biết máy tính có thể làm việc nhiều ngày không nghỉ hay không."@vi ;
+    ex:appearsOnPage ex:page014 ;
+    ex:belongsToLesson ex:lesson2 .
+
+  ex:l2_ex3 a ex:Exercise ;
+    rdfs:label "Bài 2 - Bài tập 3"@vi ;
+    ex:hasRawText "Em hãy nêu 4 tên viết tắt của đơn vị lưu trữ dữ liệu, theo thứ tự tăng dần."@vi ;
+    ex:appearsOnPage ex:page014 ;
+    ex:belongsToLesson ex:lesson2 .
+
+  ex:l3_task1 a ex:PracticeTask ;
+    rdfs:label "Bài 3 - Tạo và xoá lối tắt"@vi ;
+    ex:hasRawText "Tạo lối tắt đến một trình ứng dụng chưa có biểu tượng trên màn hình nền; tạo lối tắt đến thư mục Music; xoá lối tắt vừa tạo."@vi ;
+    ex:appearsOnPage ex:page017 ;
+    ex:belongsToLesson ex:lesson3 .
+
+  ex:l3_task2 a ex:PracticeTask ;
+    rdfs:label "Bài 3 - Ghim và gỡ biểu tượng trình ứng dụng"@vi ;
+    ex:hasRawText "Ghim một biểu tượng trình ứng dụng từ danh sách Start vào thanh nhiệm vụ; gỡ biểu tượng nói trên khỏi thanh nhiệm vụ."@vi ;
+    ex:appearsOnPage ex:page017 ;
+    ex:belongsToLesson ex:lesson3 .
+
+  ex:l3_task3 a ex:PracticeTask ;
+    rdfs:label "Bài 3 - Tắt một ứng dụng bị treo"@vi ;
+    ex:hasRawText "Nhấn Ctrl + Alt + Delete, chọn Task Manager, chọn trình ứng dụng bị treo và nháy chuột vào End task."@vi ;
+    ex:appearsOnPage ex:page017 ;
+    ex:belongsToLesson ex:lesson3 .
+
+  ex:l4_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 4"@vi ;
+    ex:hasRawText "Em hãy nêu một ví dụ minh hoạ về đóng góp của tin học đối với xã hội."@vi ;
+    ex:appearsOnPage ex:page020 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động E-Government, E-Banking, E-Learning"@vi ;
+    ex:hasRawText "Em hiểu E-Government, E-Banking, E-Learning là những gì?"@vi ;
+    ex:appearsOnPage ex:page020 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động xã hội nông nghiệp, công nghiệp và thông tin"@vi ;
+    ex:hasRawText "Em hiểu thế nào là xã hội nông nghiệp, xã hội công nghiệp và xã hội thông tin?"@vi ;
+    ex:appearsOnPage ex:page021 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4_activity3 a ex:Activity ;
+    rdfs:label "Hoạt động đồ dùng thông minh"@vi ;
+    ex:hasRawText "Em hãy kể một loại đồ dùng thông minh mà em biết. Theo em, đồ dùng như thế nào thì được gọi là thông minh?"@vi ;
+    ex:appearsOnPage ex:page023 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4_activity4 a ex:Activity ;
+    rdfs:label "Hoạt động các cuộc cách mạng công nghiệp"@vi ;
+    ex:hasRawText "Em hãy cho biết đã có những cuộc cách mạng công nghiệp nào."@vi ;
+    ex:appearsOnPage ex:page024 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4_ex1 a ex:Exercise ;
+    rdfs:label "Bài 4 - Bài tập 1"@vi ;
+    ex:hasRawText "Em hãy nêu một vài ví dụ minh hoạ về những đóng góp cơ bản của tin học đối với xã hội."@vi ;
+    ex:appearsOnPage ex:page025 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:l4_ex2 a ex:Exercise ;
+    rdfs:label "Bài 4 - Bài tập 2"@vi ;
+    ex:hasRawText "Em hãy nêu tên một vài thiết bị số thông dụng khác ngoài máy tính để bàn và máy tính xách tay và giải thích tại sao các thiết bị đó cũng là những hệ thống xử lí thông tin."@vi ;
+    ex:appearsOnPage ex:page025 ;
+    ex:belongsToLesson ex:lesson4 .
+
+  ex:lesson1 ex:hasActivity ex:l1_openingActivity, ex:l1_activity_scoreTable .
+  ex:lesson2 ex:hasActivity ex:l2_openingActivity .
+  ex:lesson4 ex:hasActivity ex:l4_openingActivity, ex:l4_activity1, ex:l4_activity2, ex:l4_activity3, ex:l4_activity4 .
+}

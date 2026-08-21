@@ -1,0 +1,767 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 10 TOPIC D
+# Assumes ontology/classes/properties have already been inserted.
+# Source file: Tin-hoc-10-Canh-dieu-pages-4.pdf
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:grade10 a ex:GradeLevel ;
+    rdfs:label "Lớp 10"@vi ;
+    ex:gradeNumber 10 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:tinhoc10_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 10 - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 10"@vi ;
+    ex:hasGradeLevel ex:grade10 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicD_shared a ex:Topic ;
+    rdfs:label "Chủ đề D (dùng chung các khối)"@vi ;
+    ex:hasTitle "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi .
+
+  ex:topicD a ex:Topic ;
+    rdfs:label "Chủ đề D - Đạo đức, pháp luật và văn hoá trong môi trường số"@vi ;
+    ex:hasTitle "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi ;
+    ex:hasSubtitle "Nghĩa vụ tuân thủ pháp lí trong môi trường số"@vi ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:sameTopicAs ex:topicD_shared ;
+    ex:hasStartPage 40 ;
+    ex:hasEndPage 49 ;
+    ex:sourceFileName "Tin-hoc-10-Canh-dieu-pages-4.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:topicD_lesson1, ex:topicD_lesson2 ;
+    ex:hasPage ex:page040, ex:page041, ex:page042, ex:page043, ex:page044,
+               ex:page045, ex:page046, ex:page047, ex:page048, ex:page049 .
+
+  ex:tinhoc10_canhdieu ex:hasTopic ex:topicD .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:topicD_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Tuân thủ pháp luật trong môi trường số"@vi ;
+    ex:hasTitle "Tuân thủ pháp luật trong môi trường số"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:topicD ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 40 ;
+    ex:hasEndPage 47 ;
+    ex:hasSection ex:topicD_l1s1, ex:topicD_l1s2, ex:topicD_l1s3 .
+
+  ex:topicD_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Thực hành vận dụng một số điều luật về chia sẻ thông tin trong môi trường số"@vi ;
+    ex:hasTitle "Thực hành vận dụng một số điều luật về chia sẻ thông tin trong môi trường số"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:topicD ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 48 ;
+    ex:hasEndPage 49 ;
+    ex:hasSection ex:topicD_l2s1, ex:topicD_l2s2, ex:topicD_l2s3, ex:topicD_l2s4 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:topicD_l1s1 a ex:Section ;
+    rdfs:label "Bản quyền thông tin và sản phẩm số"@vi ;
+    ex:hasTitle "Bản quyền thông tin và sản phẩm số"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicD_lesson1 .
+
+  ex:topicD_l1s2 a ex:Section ;
+    rdfs:label "Tác hại của sự bất cẩn khi chia sẻ thông tin qua Internet"@vi ;
+    ex:hasTitle "Tác hại của sự bất cẩn khi chia sẻ thông tin qua Internet"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicD_lesson1 .
+
+  ex:topicD_l1s3 a ex:Section ;
+    rdfs:label "Phụ lục một số điều luật và nghị định"@vi ;
+    ex:hasTitle "Phụ lục một số điều luật và nghị định"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicD_lesson1 .
+
+  ex:topicD_l2s1 a ex:Section ;
+    rdfs:label "Xác định tính hợp pháp trong cung cấp sản phẩm số"@vi ;
+    ex:hasTitle "Xác định tính hợp pháp trong cung cấp sản phẩm số"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicD_lesson2 .
+
+  ex:topicD_l2s2 a ex:Section ;
+    rdfs:label "Nhận biết sự vi phạm Luật Sở hữu trí tuệ"@vi ;
+    ex:hasTitle "Nhận biết sự vi phạm Luật Sở hữu trí tuệ"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicD_lesson2 .
+
+  ex:topicD_l2s3 a ex:Section ;
+    rdfs:label "Nhận biết tính hợp pháp trong chia sẻ thông tin số"@vi ;
+    ex:hasTitle "Nhận biết tính hợp pháp trong chia sẻ thông tin số"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicD_lesson2 .
+
+  ex:topicD_l2s4 a ex:Section ;
+    rdfs:label "Nhận biết tính an toàn trong chia sẻ thông tin số"@vi ;
+    ex:hasTitle "Nhận biết tính an toàn trong chia sẻ thông tin số"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:topicD_lesson2 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:page040 a ex:Page ; ex:hasPageNumber 40 ; ex:hasPrintedPageNumber 40 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:topicD_lesson1 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page041 a ex:Page ; ex:hasPageNumber 41 ; ex:hasPrintedPageNumber 41 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:topicD_lesson1 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page042 a ex:Page ; ex:hasPageNumber 42 ; ex:hasPrintedPageNumber 42 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:topicD_lesson1 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page043 a ex:Page ; ex:hasPageNumber 43 ; ex:hasPrintedPageNumber 43 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:topicD_lesson1 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page044 a ex:Page ; ex:hasPageNumber 44 ; ex:hasPrintedPageNumber 44 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:topicD_lesson1 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page045 a ex:Page ; ex:hasPageNumber 45 ; ex:hasPrintedPageNumber 45 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:topicD_lesson1 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page046 a ex:Page ; ex:hasPageNumber 46 ; ex:hasPrintedPageNumber 46 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:topicD_lesson1 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page047 a ex:Page ; ex:hasPageNumber 47 ; ex:hasPrintedPageNumber 47 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:topicD_lesson1 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page048 a ex:Page ; ex:hasPageNumber 48 ; ex:hasPrintedPageNumber 48 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:topicD_lesson2 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page049 a ex:Page ; ex:hasPageNumber 49 ; ex:hasPrintedPageNumber 49 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:topicD_lesson2 ; ex:belongsToTopic ex:topicD ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:page039 ex:nextPage ex:page040 .
+  ex:page040 ex:previousPage ex:page039 ; ex:nextPage ex:page041 .
+  ex:page041 ex:previousPage ex:page040 ; ex:nextPage ex:page042 .
+  ex:page042 ex:previousPage ex:page041 ; ex:nextPage ex:page043 .
+  ex:page043 ex:previousPage ex:page042 ; ex:nextPage ex:page044 .
+  ex:page044 ex:previousPage ex:page043 ; ex:nextPage ex:page045 .
+  ex:page045 ex:previousPage ex:page044 ; ex:nextPage ex:page046 .
+  ex:page046 ex:previousPage ex:page045 ; ex:nextPage ex:page047 .
+  ex:page047 ex:previousPage ex:page046 ; ex:nextPage ex:page048 .
+  ex:page048 ex:previousPage ex:page047 ; ex:nextPage ex:page049 .
+  ex:page049 ex:previousPage ex:page048 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:conceptMoiTruongSo a ex:KnowledgeConcept ; rdfs:label "Môi trường số"@vi .
+  ex:conceptPhapLuatMoiTruongSo a ex:KnowledgeConcept ; rdfs:label "Pháp luật trong môi trường số"@vi .
+  ex:conceptDaoDucMoiTruongSo a ex:KnowledgeConcept ; rdfs:label "Đạo đức trong môi trường số"@vi .
+  ex:conceptVanHoaMoiTruongSo a ex:KnowledgeConcept ; rdfs:label "Văn hoá trong môi trường số"@vi .
+  ex:conceptBanQuyen a ex:KnowledgeConcept ; rdfs:label "Bản quyền"@vi .
+  ex:conceptQuyenTacGia a ex:KnowledgeConcept ; rdfs:label "Quyền tác giả"@vi .
+  ex:conceptSoHuuTriTue a ex:KnowledgeConcept ; rdfs:label "Sở hữu trí tuệ"@vi .
+  ex:conceptSanPhamSo a ex:KnowledgeConcept ; rdfs:label "Sản phẩm số"@vi .
+  ex:conceptThongTinSo a ex:KnowledgeConcept ; rdfs:label "Thông tin số"@vi .
+  ex:conceptChiaSeThongTin a ex:KnowledgeConcept ; rdfs:label "Chia sẻ thông tin"@vi .
+  ex:conceptThongTinCaNhan a ex:KnowledgeConcept ; rdfs:label "Thông tin cá nhân"@vi .
+  ex:conceptDuLieuCaNhan a ex:KnowledgeConcept ; rdfs:label "Dữ liệu cá nhân"@vi .
+  ex:conceptAnToanThongTinMang a ex:KnowledgeConcept ; rdfs:label "An toàn thông tin mạng"@vi .
+  ex:conceptAnNinhMang a ex:KnowledgeConcept ; rdfs:label "An ninh mạng"@vi .
+  ex:conceptTinGia a ex:KnowledgeConcept ; rdfs:label "Thông tin giả mạo"@vi .
+  ex:conceptThongTinSaiSuThat a ex:KnowledgeConcept ; rdfs:label "Thông tin sai sự thật"@vi .
+  ex:conceptLuaDaoTrucTuyen a ex:KnowledgeConcept ; rdfs:label "Lừa đảo trực tuyến"@vi .
+  ex:conceptMatKhauManh a ex:KnowledgeConcept ; rdfs:label "Mật khẩu mạnh"@vi .
+  ex:conceptPhanMemDietVirus a ex:KnowledgeConcept ; rdfs:label "Phần mềm diệt virus"@vi .
+  ex:conceptChuanTrichDan a ex:KnowledgeConcept ; rdfs:label "Trích dẫn nguồn thông tin"@vi .
+  ex:conceptLuậtSoHuuTriTue a ex:KnowledgeConcept ; rdfs:label "Luật Sở hữu trí tuệ"@vi .
+  ex:conceptNghiDinh131 a ex:KnowledgeConcept ; rdfs:label "Nghị định 131/2013/NĐ-CP"@vi .
+  ex:conceptNghiDinh15 a ex:KnowledgeConcept ; rdfs:label "Nghị định 15/2020/NĐ-CP"@vi .
+  ex:conceptLuatAnToanThongTinMang a ex:KnowledgeConcept ; rdfs:label "Luật An toàn thông tin mạng"@vi .
+  ex:conceptLuatAnNinhMang a ex:KnowledgeConcept ; rdfs:label "Luật An ninh mạng"@vi .
+  ex:conceptLikeShareComment a ex:KnowledgeConcept ; rdfs:label "Like, Share, Comment"@vi .
+  ex:conceptQuyTacUngXuMangXaHoi a ex:KnowledgeConcept ; rdfs:label "Quy tắc ứng xử trên mạng xã hội"@vi .
+
+  ###########################################################################
+  # Topic / lesson / section concept links
+  ###########################################################################
+
+  ex:topicD ex:hasConcept ex:conceptMoiTruongSo, ex:conceptPhapLuatMoiTruongSo,
+    ex:conceptDaoDucMoiTruongSo, ex:conceptVanHoaMoiTruongSo, ex:conceptBanQuyen,
+    ex:conceptQuyenTacGia, ex:conceptSoHuuTriTue, ex:conceptSanPhamSo,
+    ex:conceptThongTinSo, ex:conceptChiaSeThongTin, ex:conceptThongTinCaNhan,
+    ex:conceptAnToanThongTinMang, ex:conceptAnNinhMang, ex:conceptThongTinSaiSuThat,
+    ex:conceptLuaDaoTrucTuyen .
+
+  ex:topicD_lesson1 ex:hasConcept ex:conceptBanQuyen, ex:conceptQuyenTacGia,
+    ex:conceptSoHuuTriTue, ex:conceptSanPhamSo, ex:conceptThongTinSo,
+    ex:conceptChiaSeThongTin, ex:conceptThongTinCaNhan, ex:conceptDuLieuCaNhan,
+    ex:conceptAnToanThongTinMang, ex:conceptAnNinhMang, ex:conceptTinGia,
+    ex:conceptThongTinSaiSuThat, ex:conceptLuaDaoTrucTuyen, ex:conceptMatKhauManh,
+    ex:conceptPhanMemDietVirus, ex:conceptChuanTrichDan, ex:conceptLuậtSoHuuTriTue,
+    ex:conceptNghiDinh131, ex:conceptNghiDinh15, ex:conceptLuatAnToanThongTinMang,
+    ex:conceptLuatAnNinhMang, ex:conceptLikeShareComment, ex:conceptQuyTacUngXuMangXaHoi .
+
+  ex:topicD_lesson2 ex:hasConcept ex:conceptLuậtSoHuuTriTue, ex:conceptNghiDinh15,
+    ex:conceptSoHuuTriTue, ex:conceptBanQuyen, ex:conceptThongTinSo,
+    ex:conceptChiaSeThongTin, ex:conceptThongTinCaNhan, ex:conceptAnToanThongTinMang,
+    ex:conceptLuaDaoTrucTuyen, ex:conceptMatKhauManh .
+
+  ex:topicD_l1s1 ex:hasConcept ex:conceptBanQuyen, ex:conceptQuyenTacGia,
+    ex:conceptSoHuuTriTue, ex:conceptSanPhamSo, ex:conceptChuanTrichDan,
+    ex:conceptLuậtSoHuuTriTue, ex:conceptNghiDinh131 .
+
+  ex:topicD_l1s2 ex:hasConcept ex:conceptChiaSeThongTin, ex:conceptThongTinCaNhan,
+    ex:conceptDuLieuCaNhan, ex:conceptAnToanThongTinMang, ex:conceptAnNinhMang,
+    ex:conceptThongTinSaiSuThat, ex:conceptLuaDaoTrucTuyen, ex:conceptLikeShareComment,
+    ex:conceptQuyTacUngXuMangXaHoi .
+
+  ex:topicD_l1s3 ex:hasConcept ex:conceptLuậtSoHuuTriTue, ex:conceptNghiDinh131,
+    ex:conceptNghiDinh15, ex:conceptLuatAnToanThongTinMang, ex:conceptLuatAnNinhMang .
+
+  ex:topicD_l2s1 ex:hasConcept ex:conceptSanPhamSo, ex:conceptSoHuuTriTue, ex:conceptBanQuyen .
+  ex:topicD_l2s2 ex:hasConcept ex:conceptSoHuuTriTue, ex:conceptBanQuyen, ex:conceptQuyenTacGia .
+  ex:topicD_l2s3 ex:hasConcept ex:conceptThongTinSo, ex:conceptChiaSeThongTin, ex:conceptNghiDinh15 .
+  ex:topicD_l2s4 ex:hasConcept ex:conceptThongTinCaNhan, ex:conceptAnToanThongTinMang,
+    ex:conceptLuaDaoTrucTuyen, ex:conceptMatKhauManh .
+
+  ###########################################################################
+  # Learning objectives and summary boxes
+  ###########################################################################
+
+  ex:topicD_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề D"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Nêu được một số vấn đề nảy sinh về pháp luật, đạo đức, văn hoá khi việc giao tiếp qua mạng trở nên phổ biến. Nêu được ví dụ minh hoạ sự vi phạm bản quyền thông tin và sản phẩm số. Qua ví dụ đó giải thích được sự vi phạm đã diễn ra thế nào và có thể dẫn tới hậu quả gì. Trình bày và giải thích được một số nội dung cơ bản của Luật Công nghệ thông tin, Nghị định về quản lí, cung cấp, sử dụng các sản phẩm và dịch vụ công nghệ thông tin, Luật An ninh mạng. Nêu được ví dụ minh hoạ. Giải thích được một số khía cạnh pháp lí của vấn đề bản quyền, của việc sở hữu, sử dụng và trao đổi thông tin trong môi trường số. Nêu được ví dụ minh hoạ. Nêu được ví dụ về những tác hại của việc chia sẻ và phổ biến thông tin một cách bất cẩn."@vi ;
+    ex:appearsOnPage ex:page040 ;
+    ex:belongsToLesson ex:topicD_lesson1 .
+
+  ex:topicD_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề D"@vi ;
+    ex:hasSummaryText "Cần có ý thức và hành động đảm bảo tính an toàn và hợp pháp khi chia sẻ thông tin trong môi trường số. Có những hiểu biết cơ bản về các quy định của pháp luật liên quan tới bản quyền, thông tin cá nhân và việc chia sẻ thông tin trong môi trường số. Tôn trọng bản quyền sản phẩm thông tin của người khác. Tôn trọng thông tin cá nhân của người khác. Thực hiện những biện pháp an ninh như sử dụng mật khẩu mạnh, phần mềm diệt virus. Không tuỳ tiện tiết lộ thông tin cá nhân của bản thân hay của người khác. Hạn chế đăng nhập trên máy tính lạ hoặc thông qua mạng không đáng tin cậy."@vi ;
+    ex:appearsOnPage ex:page044 ;
+    ex:belongsToLesson ex:topicD_lesson1 .
+
+  ex:topicD_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề D"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Vận dụng được Luật và Nghị định về quản lí, cung cấp, sử dụng các sản phẩm và dịch vụ công nghệ thông tin, Luật An ninh mạng để xác định được tính hợp pháp của một hành vi nào đó trong lĩnh vực quản lí, cung cấp, sử dụng các sản phẩm và dịch vụ công nghệ thông tin. Nêu được một vài biện pháp đơn giản và thông dụng để nâng cao tính an toàn và hợp pháp của việc chia sẻ thông tin trong môi trường số."@vi ;
+    ex:appearsOnPage ex:page048 ;
+    ex:belongsToLesson ex:topicD_lesson2 .
+
+  ex:topicD_lesson1 ex:hasSummary ex:topicD_l1_summary .
+
+  ###########################################################################
+  # Figures / resources with PDF order
+  ###########################################################################
+
+  ex:topicD_fig_governmentWarning a ex:Figure ;
+    rdfs:label "Hình 1. Cảnh báo trên Cổng thông tin điện tử của Chính phủ"@vi ;
+    ex:hasCaption "Hình 1. Cảnh báo trên Cổng thông tin điện tử của Chính phủ"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:page042 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLuaDaoTrucTuyen .
+
+  ex:page042 ex:hasFigure ex:topicD_fig_governmentWarning .
+
+  ###########################################################################
+  # Definitions / glossary / legal appendix resources
+  ###########################################################################
+
+  ex:topicD_def_copyright a ex:DefinitionText ;
+    rdfs:label "Giải thích quyền tác giả và sản phẩm số"@vi ;
+    ex:hasDefinitionText "Quyền tác giả là quyền của tác giả đối với những sáng tạo tinh thần và văn hoá của mình. Các sản phẩm số cũng được bảo vệ bởi quyền tác giả."@vi ;
+    ex:appearsOnPage ex:page040 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptQuyenTacGia .
+
+  ex:topicD_legal_article25_ipLaw a ex:TextResource ;
+    rdfs:label "Điều 25 Luật Sở hữu trí tuệ số 50/2005/QH11 sửa đổi, bổ sung bởi Luật số 42/2019/QH14"@vi ;
+    ex:hasRawText "Điều 25 quy định các trường hợp sử dụng tác phẩm đã công bố không phải xin phép, không phải trả tiền nhuận bút, thù lao, bao gồm một số trường hợp như tự sao chép một bản nhằm mục đích nghiên cứu khoa học, giảng dạy cá nhân; trích dẫn hợp lí tác phẩm mà không làm sai ý tác giả; trích dẫn để viết báo, dùng trong ấn phẩm định kì, chương trình phát thanh, truyền hình, phim tài liệu; trích dẫn để giảng dạy trong nhà trường mà không nhằm mục đích thương mại; sao chép để lưu trữ trong thư viện với mục đích nghiên cứu. Tổ chức, cá nhân sử dụng tác phẩm phải thông tin về tên tác giả và nguồn gốc, xuất xứ của tác phẩm."@vi ;
+    ex:appearsOnPage ex:page044 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLuậtSoHuuTriTue .
+
+  ex:topicD_legal_article28_ipLaw a ex:TextResource ;
+    rdfs:label "Điều 28 Luật Sở hữu trí tuệ về hành vi xâm phạm quyền tác giả"@vi ;
+    ex:hasRawText "Điều 28 Luật Sở hữu trí tuệ quy định các hành vi xâm phạm quyền tác giả như chiếm đoạt quyền tác giả, mạo danh tác giả, công bố hoặc phân phối tác phẩm không được phép, sửa chữa hoặc xuyên tạc tác phẩm gây phương hại đến danh dự và uy tín của tác giả, sao chép tác phẩm không được phép, làm tác phẩm phái sinh không được phép, sử dụng tác phẩm không trả tiền theo quy định, cho thuê tác phẩm không trả tiền, truyền đạt tác phẩm đến công chúng qua mạng truyền thông mà không được phép, xuất bản tác phẩm không được phép, vô hiệu hoá biện pháp kĩ thuật bảo vệ quyền tác giả, xoá hoặc thay đổi thông tin quản lí quyền dưới hình thức điện tử, sản xuất hoặc phân phối thiết bị làm vô hiệu biện pháp kĩ thuật, làm và bán tác phẩm có chữ kí giả mạo, xuất nhập khẩu hoặc phân phối bản sao không được phép."@vi ;
+    ex:appearsOnPage ex:page045 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLuậtSoHuuTriTue .
+
+  ex:topicD_legal_decree131 a ex:TextResource ;
+    rdfs:label "Nghị định 131/2013/NĐ-CP về xử phạt vi phạm hành chính về quyền tác giả, quyền liên quan"@vi ;
+    ex:hasRawText "Nghị định 131/2013/NĐ-CP quy định xử phạt vi phạm hành chính về quyền tác giả, quyền liên quan. Các điều được trích gồm Điều 10 về hành vi xâm phạm quyền bảo vệ sự toàn vẹn của tác phẩm, Điều 11 về hành vi xâm phạm quyền công bố tác phẩm, Điều 12 về hành vi xâm phạm quyền làm tác phẩm phái sinh và Điều 18 về hành vi xâm phạm quyền sao chép tác phẩm."@vi ;
+    ex:appearsOnPage ex:page046 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptNghiDinh131 .
+
+  ex:topicD_legal_decree15_article101 a ex:TextResource ;
+    rdfs:label "Điều 101 Nghị định 15/2020/NĐ-CP về vi phạm trách nhiệm sử dụng dịch vụ mạng xã hội"@vi ;
+    ex:hasRawText "Điều 101 Nghị định 15/2020/NĐ-CP quy định phạt tiền đối với hành vi lợi dụng mạng xã hội để cung cấp, chia sẻ thông tin giả mạo, thông tin sai sự thật, xuyên tạc, vu khống, xúc phạm uy tín, danh dự, nhân phẩm; cung cấp, chia sẻ thông tin cổ súy hủ tục, mê tín, dâm ô, đồi trụy; cung cấp thông tin miêu tả hành động chém, giết, tai nạn, kinh dị; cung cấp thông tin bịa đặt gây hoang mang; chia sẻ tác phẩm báo chí, văn học, nghệ thuật khi không được đồng ý; quảng cáo hàng hoá, dịch vụ bị cấm; chia sẻ bản đồ Việt Nam không thể hiện đúng chủ quyền; chia sẻ đường dẫn đến thông tin bị cấm."@vi ;
+    ex:appearsOnPage ex:page047 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptNghiDinh15 .
+
+  ex:topicD_legal_personalInfo_article17 a ex:TextResource ;
+    rdfs:label "Điểm c khoản 1 Điều 17 Luật An toàn thông tin mạng"@vi ;
+    ex:hasRawText "Tổ chức, cá nhân xử lí thông tin cá nhân không được cung cấp, chia sẻ, phát tán thông tin cá nhân mà mình đã thu thập, tiếp cận, kiểm soát cho bên thứ ba, trừ trường hợp có sự đồng ý của chủ thể thông tin cá nhân đó hoặc theo yêu cầu của cơ quan nhà nước có thẩm quyền."@vi ;
+    ex:appearsOnPage ex:page047 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLuatAnToanThongTinMang .
+
+  ex:topicD_legal_cybersecurity_article8 a ex:TextResource ;
+    rdfs:label "Điểm d khoản 1 Điều 8 Luật An ninh mạng"@vi ;
+    ex:hasRawText "Luật An ninh mạng quy định hành vi bị nghiêm cấm về an ninh mạng, trong đó có thông tin sai sự thật gây hoang mang trong nhân dân, gây thiệt hại cho hoạt động kinh tế - xã hội, gây khó khăn cho hoạt động của cơ quan nhà nước hoặc người thi hành công vụ, xâm phạm quyền và lợi ích hợp pháp của cơ quan, tổ chức, cá nhân khác."@vi ;
+    ex:appearsOnPage ex:page047 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLuatAnNinhMang .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:topicD_p040_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1. Tuân thủ pháp luật trong môi trường số. Bài học đặt vấn đề: trên một số đồ dùng ta thường gặp kí hiệu ©, kí hiệu đó có ý nghĩa gì?"@vi ;
+    ex:appearsOnPage ex:page040 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s1 .
+
+  ex:topicD_p040_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Quyền tác giả là quyền của tác giả đối với những sáng tạo tinh thần và văn hoá của mình. Các sản phẩm số cũng được bảo vệ bởi quyền tác giả, ví dụ Luật Sở hữu trí tuệ được áp dụng cho các xuất bản phẩm đa dạng và các sản phẩm kĩ thuật số như trang web, phần mềm."@vi ;
+    ex:appearsOnPage ex:page040 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s1 .
+
+  ex:topicD_p040_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Hoạt động 1 nêu tình huống một công ty kinh doanh trò chơi trực tuyến đăng bài giới thiệu trò chơi, dịch và lấy video minh hoạ từ trang web của nhà sản xuất game nước ngoài mà chưa liên hệ xin phép nhà sản xuất."@vi ;
+    ex:appearsOnPage ex:page040 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s1 .
+
+  ex:topicD_p041_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Trong tình huống Hoạt động 1, nếu muốn đăng tải bài giới thiệu, công ty cần thoả thuận để có sự đồng ý của tác giả và phải trả phí theo thoả thuận. Công ty đã vi phạm Luật Sở hữu trí tuệ theo các khoản 7, 8, 10 của Điều 28 và tuỳ tình huống có thể bị xử phạt theo Nghị định 131/2013/NĐ-CP."@vi ;
+    ex:appearsOnPage ex:page041 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s1 .
+
+  ex:topicD_p041_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hoạt động 2 yêu cầu học sinh tham khảo Điều 25 Luật Sở hữu trí tuệ để viết bài giới thiệu danh lam thắng cảnh, sử dụng ảnh và lời bình lấy từ một trang web du lịch mà không vi phạm luật."@vi ;
+    ex:appearsOnPage ex:page041 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s1 .
+
+  ex:topicD_p041_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Trong bài viết có thể sử dụng ảnh và lời bình với điều kiện không làm sai ý tác giả và có trích dẫn hợp lí. Để làm rõ nguồn thông tin đã sử dụng, cần ghi rõ tên tác giả hoặc tên cơ quan tổ chức, tên nguồn sách, tạp chí hay địa chỉ trang web, ngày tháng công bố thông tin nếu có."@vi ;
+    ex:appearsOnPage ex:page041 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s1 .
+
+  ex:topicD_p041_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Thông tin cá nhân của một người khi lưu trữ hoặc giao tiếp bất cẩn trong môi trường số rất dễ bị kẻ xấu thu thập, đánh cắp và dùng để đe doạ, lừa đảo, tống tiền nạn nhân hoặc bạn bè, thân nhân của người đó."@vi ;
+    ex:appearsOnPage ex:page041 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p042_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Kẻ xấu có thể dùng kĩ thuật số để chiếm đoạt thông tin cá nhân bằng thủ đoạn tinh vi. Cần thực hiện biện pháp an ninh như sử dụng mật khẩu mạnh, phần mềm diệt virus để chống lại phần mềm độc hại lan truyền đến máy tính."@vi ;
+    ex:appearsOnPage ex:page042 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p042_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Cổng thông tin điện tử của Chính phủ cảnh báo người dân cần nâng cao cảnh giác trước cuộc gọi điện thoại tự xưng là cán bộ cơ quan tư pháp. Kẻ gian thường mạo danh điều tra viên hoặc cán bộ toà án để thu thập thông tin cá nhân như căn cước công dân, quê quán, địa chỉ đăng kí hộ khẩu, họ tên người thân và số tài khoản ngân hàng."@vi ;
+    ex:appearsOnPage ex:page042 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p042_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Khi chia sẻ thông tin trên mạng, bản thân mỗi người phải có ý thức tự bảo vệ thông tin cá nhân của mình và chú ý giữ gìn, không tuỳ tiện tiết lộ thông tin cá nhân của người khác. Trách nhiệm này được quy định tại điểm c khoản 1 Điều 17 Luật An toàn thông tin mạng."@vi ;
+    ex:appearsOnPage ex:page042 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p042_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Hoạt động 3 nêu tình huống một chủ tài khoản Facebook chia sẻ lại thông tin sai sự thật về dịch COVID-19, yêu cầu tìm hiểu điểm a khoản 1 Điều 101 Nghị định 15/2020/NĐ-CP để xác định hình thức xử phạt."@vi ;
+    ex:appearsOnPage ex:page042 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p043_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Mạng xã hội và các kênh thông tin trên Internet ngày càng được ưa chuộng nhưng nhiều diễn đàn, trang tin và nguồn thông tin hoạt động tự phát, thiếu kiểm duyệt, dẫn đến xuất hiện thông tin sai sự thật, lời lẽ thiếu văn hoá hoặc câu chuyện phi đạo đức. Những hành vi đó bị nghiêm cấm theo Luật An ninh mạng."@vi ;
+    ex:appearsOnPage ex:page043 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p043_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Khi người sử dụng mạng xã hội bấm Like, Share hay Comment đối với một nội dung thông tin, các tương tác làm thông tin xuất hiện nhiều hơn và phổ biến rộng hơn. Nếu thông tin có căn cứ hay sai trái thì hành động đó có thể tiếp tay cho việc lan truyền thông tin và có thể bị xử phạt theo khoản 1 Điều 101 Nghị định 15/2020/NĐ-CP."@vi ;
+    ex:appearsOnPage ex:page043 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p043_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Một số người lợi dụng không gian mạng để đăng tải nội dung sai sự thật, xúc phạm uy tín, danh dự của người khác. Những hành vi đó vi phạm Bộ Quy tắc ứng xử trên mạng xã hội theo Quyết định số 874/QĐ-BTTTT ban hành ngày 17/6/2021."@vi ;
+    ex:appearsOnPage ex:page043 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p044_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Tóm tắt bài học nhấn mạnh việc đảm bảo an toàn và hợp pháp khi chia sẻ thông tin trong môi trường số; tôn trọng bản quyền, tôn trọng thông tin cá nhân, dùng mật khẩu mạnh, phần mềm diệt virus và không tuỳ tiện tiết lộ thông tin cá nhân."@vi ;
+    ex:appearsOnPage ex:page044 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s2 .
+
+  ex:topicD_p044_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phụ lục trích Điều 25 Luật Sở hữu trí tuệ số 50/2005/QH11 sửa đổi, bổ sung bởi Luật số 42/2019/QH14, quy định các trường hợp sử dụng tác phẩm đã công bố không phải xin phép và không phải trả tiền nhuận bút, thù lao."@vi ;
+    ex:appearsOnPage ex:page044 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s3 .
+
+  ex:topicD_p045_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phụ lục trích Điều 28 Luật Sở hữu trí tuệ quy định các hành vi xâm phạm quyền tác giả như chiếm đoạt quyền tác giả, mạo danh tác giả, công bố hoặc phân phối tác phẩm không được phép, sao chép tác phẩm không được phép, làm tác phẩm phái sinh không được phép và truyền đạt tác phẩm đến công chúng qua mạng mà không được phép."@vi ;
+    ex:appearsOnPage ex:page045 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s3 .
+
+  ex:topicD_p046_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phụ lục trích Nghị định 131/2013/NĐ-CP về quy định xử phạt vi phạm hành chính về quyền tác giả, quyền liên quan, trong đó có các mức phạt và biện pháp khắc phục hậu quả đối với hành vi xâm phạm quyền bảo vệ sự toàn vẹn của tác phẩm, quyền công bố tác phẩm, quyền làm tác phẩm phái sinh và quyền sao chép tác phẩm."@vi ;
+    ex:appearsOnPage ex:page046 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s3 .
+
+  ex:topicD_p047_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phụ lục trích Nghị định 15/2020/NĐ-CP Điều 101 về vi phạm các quy định về trách nhiệm sử dụng dịch vụ mạng xã hội, quy định xử phạt hành vi cung cấp, chia sẻ thông tin giả mạo, thông tin sai sự thật, xuyên tạc, vu khống, xúc phạm uy tín, danh dự, nhân phẩm và các nội dung bị cấm khác."@vi ;
+    ex:appearsOnPage ex:page047 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s3 .
+
+  ex:topicD_p047_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phụ lục trích điểm c khoản 1 Điều 17 Luật An toàn thông tin mạng về việc không được cung cấp, chia sẻ, phát tán thông tin cá nhân cho bên thứ ba nếu không có sự đồng ý của chủ thể thông tin cá nhân hoặc yêu cầu của cơ quan nhà nước có thẩm quyền."@vi ;
+    ex:appearsOnPage ex:page047 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s3 .
+
+  ex:topicD_p047_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Phụ lục trích điểm d khoản 1 Điều 8 Luật An ninh mạng về hành vi bị nghiêm cấm: thông tin sai sự thật gây hoang mang trong nhân dân, gây thiệt hại cho hoạt động kinh tế - xã hội, gây khó khăn cho hoạt động của cơ quan nhà nước hoặc xâm phạm quyền và lợi ích hợp pháp của cơ quan, tổ chức, cá nhân khác."@vi ;
+    ex:appearsOnPage ex:page047 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:belongsToSection ex:topicD_l1s3 .
+
+  ex:topicD_p048_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 2. Thực hành vận dụng một số điều luật về chia sẻ thông tin trong môi trường số. Bài học yêu cầu vận dụng luật và nghị định để xác định tính hợp pháp của hành vi trong lĩnh vực quản lí, cung cấp, sử dụng sản phẩm và dịch vụ công nghệ thông tin."@vi ;
+    ex:appearsOnPage ex:page048 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:belongsToSection ex:topicD_l2s1 .
+
+  ex:topicD_p048_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài 1 nêu tình huống năm 2007 một nhà xuất bản đã mua quyền dịch và xuất bản truyện Harry Potter và bảo bối tử thần, nhưng nhiều chương của bản dịch bị một nhóm bạn trẻ giấu mặt dịch vội và đưa lên mạng. Học sinh cần tìm hiểu Điều 28 Luật Sở hữu trí tuệ để xác định nhóm đó có vi phạm luật không và vi phạm khoản nào."@vi ;
+    ex:appearsOnPage ex:page048 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:belongsToSection ex:topicD_l2s1 .
+
+  ex:topicD_p048_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Bài 2 yêu cầu nhận biết vi phạm Luật Sở hữu trí tuệ qua các hành động như du khách chụp ảnh bức phù điêu đặt tại công viên, hoặc nhân viên thiết kế thời trang dùng phần mềm chỉnh sửa ảnh không có bản quyền trong công việc hằng ngày ở cơ quan."@vi ;
+    ex:appearsOnPage ex:page048 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:belongsToSection ex:topicD_l2s2 .
+
+  ex:topicD_p048_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Bài 3 yêu cầu nhận biết tính hợp pháp trong chia sẻ thông tin số qua tình huống diễn viên T đăng thông tin sai sự thật về việc chữa trị COVID-19 bằng sản phẩm từ giun đất trên Facebook."@vi ;
+    ex:appearsOnPage ex:page048 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:belongsToSection ex:topicD_l2s3 .
+
+  ex:topicD_p049_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 4 yêu cầu nhận biết biện pháp giúp chia sẻ thông tin an toàn trong môi trường số, gồm không tuỳ tiện tiết lộ thông tin cá nhân, dùng mật khẩu mạnh, đặt thông tin cá nhân ở chế độ Ẩn, chọn đối tượng xem bài đăng, không gửi thông tin quan trọng qua mạng, hạn chế đăng nhập qua máy tính lạ hoặc Wi-Fi không đáng tin cậy."@vi ;
+    ex:appearsOnPage ex:page049 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:belongsToSection ex:topicD_l2s4 .
+
+  ex:topicD_p049_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài vận dụng nêu tình huống An mượn sách của bạn rồi đem đi photo một bản để có sách học, yêu cầu học sinh nhận định việc đó có vi phạm quyền tác giả không."@vi ;
+    ex:appearsOnPage ex:page049 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:belongsToSection ex:topicD_l2s2 .
+
+  ex:topicD_p049_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Bài vận dụng tiếp theo nêu hai tình huống lừa đảo: email thông báo trúng thưởng yêu cầu đăng nhập tài khoản ngân hàng và cuộc gọi mạo danh công an điều tra yêu cầu cung cấp thông tin cá nhân, tài khoản và chuyển tiền sang tài khoản cơ quan điều tra."@vi ;
+    ex:appearsOnPage ex:page049 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:belongsToSection ex:topicD_l2s4 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:page040 ex:hasParagraph ex:topicD_p040_01, ex:topicD_p040_02, ex:topicD_p040_03 .
+  ex:page041 ex:hasParagraph ex:topicD_p041_01, ex:topicD_p041_02, ex:topicD_p041_03, ex:topicD_p041_04 .
+  ex:page042 ex:hasParagraph ex:topicD_p042_01, ex:topicD_p042_02, ex:topicD_p042_03, ex:topicD_p042_04 .
+  ex:page043 ex:hasParagraph ex:topicD_p043_01, ex:topicD_p043_02, ex:topicD_p043_03 .
+  ex:page044 ex:hasParagraph ex:topicD_p044_01, ex:topicD_p044_02 .
+  ex:page045 ex:hasParagraph ex:topicD_p045_01 .
+  ex:page046 ex:hasParagraph ex:topicD_p046_01 .
+  ex:page047 ex:hasParagraph ex:topicD_p047_01, ex:topicD_p047_02, ex:topicD_p047_03 .
+  ex:page048 ex:hasParagraph ex:topicD_p048_01, ex:topicD_p048_02, ex:topicD_p048_03, ex:topicD_p048_04 .
+  ex:page049 ex:hasParagraph ex:topicD_p049_01, ex:topicD_p049_02, ex:topicD_p049_03 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:topicD_l1s1 ex:hasParagraph ex:topicD_p040_01, ex:topicD_p040_02, ex:topicD_p040_03,
+    ex:topicD_p041_01, ex:topicD_p041_02, ex:topicD_p041_03 .
+
+  ex:topicD_l1s2 ex:hasParagraph ex:topicD_p041_04, ex:topicD_p042_01, ex:topicD_p042_02,
+    ex:topicD_p042_03, ex:topicD_p042_04, ex:topicD_p043_01, ex:topicD_p043_02,
+    ex:topicD_p043_03, ex:topicD_p044_01 .
+
+  ex:topicD_l1s3 ex:hasParagraph ex:topicD_p044_02, ex:topicD_p045_01,
+    ex:topicD_p046_01, ex:topicD_p047_01, ex:topicD_p047_02, ex:topicD_p047_03 .
+
+  ex:topicD_l2s1 ex:hasParagraph ex:topicD_p048_01, ex:topicD_p048_02 .
+  ex:topicD_l2s2 ex:hasParagraph ex:topicD_p048_03, ex:topicD_p049_02 .
+  ex:topicD_l2s3 ex:hasParagraph ex:topicD_p048_04 .
+  ex:topicD_l2s4 ex:hasParagraph ex:topicD_p049_01, ex:topicD_p049_03 .
+
+  ###########################################################################
+  # Paragraph order links
+  ###########################################################################
+
+  ex:topicD_p040_01 ex:nextParagraph ex:topicD_p040_02 .
+  ex:topicD_p040_02 ex:previousParagraph ex:topicD_p040_01 ; ex:nextParagraph ex:topicD_p040_03 .
+  ex:topicD_p040_03 ex:previousParagraph ex:topicD_p040_02 ; ex:nextParagraph ex:topicD_p041_01 .
+  ex:topicD_p041_01 ex:previousParagraph ex:topicD_p040_03 ; ex:nextParagraph ex:topicD_p041_02 .
+  ex:topicD_p041_02 ex:previousParagraph ex:topicD_p041_01 ; ex:nextParagraph ex:topicD_p041_03 .
+  ex:topicD_p041_03 ex:previousParagraph ex:topicD_p041_02 ; ex:nextParagraph ex:topicD_p041_04 .
+  ex:topicD_p041_04 ex:previousParagraph ex:topicD_p041_03 ; ex:nextParagraph ex:topicD_p042_01 .
+  ex:topicD_p042_01 ex:previousParagraph ex:topicD_p041_04 ; ex:nextParagraph ex:topicD_p042_02 .
+  ex:topicD_p042_02 ex:previousParagraph ex:topicD_p042_01 ; ex:nextParagraph ex:topicD_p042_03 .
+  ex:topicD_p042_03 ex:previousParagraph ex:topicD_p042_02 ; ex:nextParagraph ex:topicD_p042_04 .
+  ex:topicD_p042_04 ex:previousParagraph ex:topicD_p042_03 ; ex:nextParagraph ex:topicD_p043_01 .
+  ex:topicD_p043_01 ex:previousParagraph ex:topicD_p042_04 ; ex:nextParagraph ex:topicD_p043_02 .
+  ex:topicD_p043_02 ex:previousParagraph ex:topicD_p043_01 ; ex:nextParagraph ex:topicD_p043_03 .
+  ex:topicD_p043_03 ex:previousParagraph ex:topicD_p043_02 ; ex:nextParagraph ex:topicD_p044_01 .
+  ex:topicD_p044_01 ex:previousParagraph ex:topicD_p043_03 ; ex:nextParagraph ex:topicD_p044_02 .
+  ex:topicD_p044_02 ex:previousParagraph ex:topicD_p044_01 ; ex:nextParagraph ex:topicD_p045_01 .
+  ex:topicD_p045_01 ex:previousParagraph ex:topicD_p044_02 ; ex:nextParagraph ex:topicD_p046_01 .
+  ex:topicD_p046_01 ex:previousParagraph ex:topicD_p045_01 ; ex:nextParagraph ex:topicD_p047_01 .
+  ex:topicD_p047_01 ex:previousParagraph ex:topicD_p046_01 ; ex:nextParagraph ex:topicD_p047_02 .
+  ex:topicD_p047_02 ex:previousParagraph ex:topicD_p047_01 ; ex:nextParagraph ex:topicD_p047_03 .
+  ex:topicD_p047_03 ex:previousParagraph ex:topicD_p047_02 ; ex:nextParagraph ex:topicD_p048_01 .
+  ex:topicD_p048_01 ex:previousParagraph ex:topicD_p047_03 ; ex:nextParagraph ex:topicD_p048_02 .
+  ex:topicD_p048_02 ex:previousParagraph ex:topicD_p048_01 ; ex:nextParagraph ex:topicD_p048_03 .
+  ex:topicD_p048_03 ex:previousParagraph ex:topicD_p048_02 ; ex:nextParagraph ex:topicD_p048_04 .
+  ex:topicD_p048_04 ex:previousParagraph ex:topicD_p048_03 ; ex:nextParagraph ex:topicD_p049_01 .
+  ex:topicD_p049_01 ex:previousParagraph ex:topicD_p048_04 ; ex:nextParagraph ex:topicD_p049_02 .
+  ex:topicD_p049_02 ex:previousParagraph ex:topicD_p049_01 ; ex:nextParagraph ex:topicD_p049_03 .
+  ex:topicD_p049_03 ex:previousParagraph ex:topicD_p049_02 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:topicD_p040_01 ex:mentionsConcept ex:conceptMoiTruongSo, ex:conceptPhapLuatMoiTruongSo .
+  ex:topicD_p040_02 ex:mentionsConcept ex:conceptQuyenTacGia, ex:conceptBanQuyen, ex:conceptSanPhamSo, ex:conceptSoHuuTriTue .
+  ex:topicD_p040_03 ex:mentionsConcept ex:conceptBanQuyen, ex:conceptSanPhamSo .
+  ex:topicD_p041_01 ex:mentionsConcept ex:conceptLuậtSoHuuTriTue, ex:conceptNghiDinh131, ex:conceptBanQuyen .
+  ex:topicD_p041_02 ex:mentionsConcept ex:conceptLuậtSoHuuTriTue, ex:conceptSoHuuTriTue .
+  ex:topicD_p041_03 ex:mentionsConcept ex:conceptChuanTrichDan, ex:conceptBanQuyen .
+  ex:topicD_p041_04 ex:mentionsConcept ex:conceptThongTinCaNhan, ex:conceptMoiTruongSo, ex:conceptLuaDaoTrucTuyen .
+  ex:topicD_p042_01 ex:mentionsConcept ex:conceptThongTinCaNhan, ex:conceptMatKhauManh, ex:conceptPhanMemDietVirus, ex:conceptAnToanThongTinMang .
+  ex:topicD_p042_02 ex:mentionsConcept ex:conceptLuaDaoTrucTuyen, ex:conceptThongTinCaNhan .
+  ex:topicD_p042_03 ex:mentionsConcept ex:conceptChiaSeThongTin, ex:conceptThongTinCaNhan, ex:conceptLuatAnToanThongTinMang .
+  ex:topicD_p042_04 ex:mentionsConcept ex:conceptThongTinSaiSuThat, ex:conceptNghiDinh15 .
+  ex:topicD_p043_01 ex:mentionsConcept ex:conceptInternet, ex:conceptThongTinSaiSuThat, ex:conceptVanHoaMoiTruongSo, ex:conceptLuatAnNinhMang .
+  ex:topicD_p043_02 ex:mentionsConcept ex:conceptLikeShareComment, ex:conceptChiaSeThongTin, ex:conceptNghiDinh15 .
+  ex:topicD_p043_03 ex:mentionsConcept ex:conceptQuyTacUngXuMangXaHoi, ex:conceptThongTinSaiSuThat .
+  ex:topicD_p044_01 ex:mentionsConcept ex:conceptChiaSeThongTin, ex:conceptBanQuyen, ex:conceptThongTinCaNhan, ex:conceptMatKhauManh, ex:conceptPhanMemDietVirus .
+  ex:topicD_p044_02 ex:mentionsConcept ex:conceptLuậtSoHuuTriTue, ex:conceptBanQuyen .
+  ex:topicD_p045_01 ex:mentionsConcept ex:conceptLuậtSoHuuTriTue, ex:conceptQuyenTacGia, ex:conceptBanQuyen .
+  ex:topicD_p046_01 ex:mentionsConcept ex:conceptNghiDinh131, ex:conceptQuyenTacGia, ex:conceptBanQuyen .
+  ex:topicD_p047_01 ex:mentionsConcept ex:conceptNghiDinh15, ex:conceptThongTinSaiSuThat, ex:conceptTinGia .
+  ex:topicD_p047_02 ex:mentionsConcept ex:conceptLuatAnToanThongTinMang, ex:conceptThongTinCaNhan .
+  ex:topicD_p047_03 ex:mentionsConcept ex:conceptLuatAnNinhMang, ex:conceptThongTinSaiSuThat .
+  ex:topicD_p048_01 ex:mentionsConcept ex:conceptPhapLuatMoiTruongSo, ex:conceptSanPhamSo, ex:conceptThongTinSo .
+  ex:topicD_p048_02 ex:mentionsConcept ex:conceptBanQuyen, ex:conceptLuậtSoHuuTriTue, ex:conceptSanPhamSo .
+  ex:topicD_p048_03 ex:mentionsConcept ex:conceptSoHuuTriTue, ex:conceptBanQuyen .
+  ex:topicD_p048_04 ex:mentionsConcept ex:conceptChiaSeThongTin, ex:conceptThongTinSaiSuThat, ex:conceptNghiDinh15 .
+  ex:topicD_p049_01 ex:mentionsConcept ex:conceptChiaSeThongTin, ex:conceptThongTinCaNhan, ex:conceptAnToanThongTinMang, ex:conceptMatKhauManh .
+  ex:topicD_p049_02 ex:mentionsConcept ex:conceptBanQuyen, ex:conceptQuyenTacGia .
+  ex:topicD_p049_03 ex:mentionsConcept ex:conceptLuaDaoTrucTuyen, ex:conceptThongTinCaNhan, ex:conceptAnToanThongTinMang .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:conceptPhapLuatMoiTruongSo ex:relatedTo ex:conceptMoiTruongSo .
+  ex:conceptDaoDucMoiTruongSo ex:relatedTo ex:conceptMoiTruongSo .
+  ex:conceptVanHoaMoiTruongSo ex:relatedTo ex:conceptMoiTruongSo .
+  ex:conceptBanQuyen ex:relatedTo ex:conceptQuyenTacGia .
+  ex:conceptQuyenTacGia ex:subConceptOf ex:conceptSoHuuTriTue .
+  ex:conceptSanPhamSo ex:relatedTo ex:conceptBanQuyen .
+  ex:conceptThongTinSo ex:relatedTo ex:conceptMoiTruongSo .
+  ex:conceptChiaSeThongTin ex:relatedTo ex:conceptThongTinSo .
+  ex:conceptThongTinCaNhan ex:subConceptOf ex:conceptDuLieuCaNhan .
+  ex:conceptDuLieuCaNhan ex:relatedTo ex:conceptAnToanThongTinMang .
+  ex:conceptAnNinhMang ex:relatedTo ex:conceptAnToanThongTinMang .
+  ex:conceptTinGia ex:relatedTo ex:conceptThongTinSaiSuThat .
+  ex:conceptThongTinSaiSuThat ex:relatedTo ex:conceptChiaSeThongTin .
+  ex:conceptLuaDaoTrucTuyen ex:relatedTo ex:conceptThongTinCaNhan .
+  ex:conceptMatKhauManh ex:relatedTo ex:conceptAnToanThongTinMang .
+  ex:conceptPhanMemDietVirus ex:relatedTo ex:conceptAnToanThongTinMang .
+  ex:conceptChuanTrichDan ex:relatedTo ex:conceptBanQuyen .
+  ex:conceptLuậtSoHuuTriTue ex:relatedTo ex:conceptSoHuuTriTue .
+  ex:conceptLuậtSoHuuTriTue ex:relatedTo ex:conceptBanQuyen .
+  ex:conceptNghiDinh131 ex:relatedTo ex:conceptBanQuyen .
+  ex:conceptNghiDinh15 ex:relatedTo ex:conceptChiaSeThongTin .
+  ex:conceptLuatAnToanThongTinMang ex:relatedTo ex:conceptThongTinCaNhan .
+  ex:conceptLuatAnNinhMang ex:relatedTo ex:conceptAnNinhMang .
+  ex:conceptLikeShareComment ex:relatedTo ex:conceptChiaSeThongTin .
+  ex:conceptQuyTacUngXuMangXaHoi ex:relatedTo ex:conceptVanHoaMoiTruongSo .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:topicD_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề D"@vi ;
+    ex:hasRawText "Trên một số đồ dùng ta thường gặp kí hiệu ©, kí hiệu đó có ý nghĩa gì?"@vi ;
+    ex:appearsOnPage ex:page040 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:relatedTo ex:conceptBanQuyen .
+
+  ex:topicD_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Vi phạm bản quyền trò chơi trực tuyến"@vi ;
+    ex:hasRawText "Trang web của một công ty kinh doanh trò chơi trực tuyến có đăng bài giới thiệu về trò chơi. Nội dung bài giới thiệu và các video minh hoạ được dịch và lấy từ trang web của nhà sản xuất game nước ngoài. Công ty chưa liên hệ để xin phép nhà sản xuất đó. Hãy tham khảo các khoản 7, 8, 10 Điều 28 Luật Sở hữu trí tuệ và cho biết công ty có vi phạm quyền tác giả không, nếu có thì bị xử phạt ra sao."@vi ;
+    ex:appearsOnPage ex:page040 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:relatedTo ex:conceptBanQuyen, ex:conceptLuậtSoHuuTriTue .
+
+  ex:topicD_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Trích dẫn khi viết bài đăng web"@vi ;
+    ex:hasRawText "Em muốn viết bài đăng lên trang web của trường giới thiệu về một danh lam thắng cảnh ở địa phương, trong đó sử dụng bức ảnh và lời bình lấy từ một trang web du lịch. Hãy tham khảo Điều 25 Luật Sở hữu trí tuệ và cho biết cần thực hiện việc gì để không vi phạm luật."@vi ;
+    ex:appearsOnPage ex:page041 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:relatedTo ex:conceptChuanTrichDan, ex:conceptSoHuuTriTue .
+
+  ex:topicD_l1_activity3 a ex:Activity ;
+    rdfs:label "Hoạt động 3 - Chia sẻ thông tin sai sự thật về COVID-19"@vi ;
+    ex:hasRawText "Tháng 3/2020, một chủ tài khoản Facebook chia sẻ lại thông tin sai sự thật về dịch COVID-19. Theo Luật An ninh mạng, hành vi đó bị nghiêm cấm. Hãy tìm hiểu điểm a khoản 1 Điều 101 Nghị định 15/2020/NĐ-CP để cho biết tài khoản đó bị xử phạt bằng hình thức nào."@vi ;
+    ex:appearsOnPage ex:page042 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:relatedTo ex:conceptThongTinSaiSuThat, ex:conceptNghiDinh15 .
+
+  ex:topicD_l1_activity4 a ex:Activity ;
+    rdfs:label "Hoạt động 4 - Like thông tin sai trái"@vi ;
+    ex:hasRawText "Năm 2017, một người đàn ông bị toà án Thuỵ Sỹ tuyên phạt vì bấm nút Like các bình luận có nội dung nói xấu, phỉ báng người khác trên Facebook. Theo em, ngoài sự vô văn hoá, việc bấm Like một thông tin sai trái có vi phạm pháp luật Việt Nam hay không?"@vi ;
+    ex:appearsOnPage ex:page043 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:relatedTo ex:conceptLikeShareComment, ex:conceptChiaSeThongTin .
+
+  ex:topicD_l1_ex1 a ex:Exercise ;
+    rdfs:label "Bài tập viết đoạn mô tả lịch sử địa phương có trích dẫn"@vi ;
+    ex:hasRawText "Em hãy viết một đoạn mô tả ngắn về lịch sử của tỉnh hay thành phố của em, trong đó sử dụng và có trích dẫn hợp lí những hình ảnh, tư liệu và lời bình từ những tài liệu thu thập được trên Internet."@vi ;
+    ex:appearsOnPage ex:page043 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:relatedTo ex:conceptChuanTrichDan, ex:conceptBanQuyen .
+
+  ex:topicD_l1_practice1 a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 1 - Chia sẻ thông tin cá nhân của bạn"@vi ;
+    ex:hasRawText "Qua mạng xã hội, An thông báo rủ các bạn tới chúc mừng sinh nhật Bình tại nhà, trong thông báo có họ tên và địa chỉ nhà của Bình. An và các bạn không hỏi ý kiến Bình để tạo sự bất ngờ. Theo em, An có vi phạm Luật An toàn thông tin mạng không? Nếu An vi phạm, hậu quả có thể xảy ra là gì?"@vi ;
+    ex:appearsOnPage ex:page043 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:relatedTo ex:conceptThongTinCaNhan, ex:conceptLuatAnToanThongTinMang .
+
+  ex:topicD_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 1 chủ đề D"@vi ;
+    ex:hasRawText "Em hãy nêu một số ví dụ về sự vi phạm pháp luật, vi phạm đạo đức hoặc thiếu văn hoá thường gặp trong giao tiếp qua mạng."@vi ;
+    ex:appearsOnPage ex:page043 ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:relatedTo ex:conceptPhapLuatMoiTruongSo, ex:conceptDaoDucMoiTruongSo, ex:conceptVanHoaMoiTruongSo .
+
+  ex:topicD_l2_task1 a ex:PracticeTask ;
+    rdfs:label "Bài 2 chủ đề D - Xác định tính hợp pháp trong cung cấp sản phẩm số"@vi ;
+    ex:hasRawText "Năm 2007, một nhà xuất bản đã mua quyền dịch và xuất bản cuốn Harry Potter và bảo bối tử thần. Khi nhà xuất bản đang dịch thì nhiều chương bị một nhóm bạn trẻ giấu mặt dịch vội và đưa lên mạng. Hãy tìm hiểu Điều 28 Luật Sở hữu trí tuệ để cho biết nhóm bạn trẻ có vi phạm luật không, nếu có thì vi phạm quy định tại khoản số mấy."@vi ;
+    ex:appearsOnPage ex:page048 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:relatedTo ex:conceptSoHuuTriTue, ex:conceptBanQuyen .
+
+  ex:topicD_l2_task2 a ex:PracticeTask ;
+    rdfs:label "Bài 2 chủ đề D - Nhận biết sự vi phạm Luật Sở hữu trí tuệ"@vi ;
+    ex:hasRawText "Hãy tìm hiểu Điều 25 và Điều 28 Luật Sở hữu trí tuệ số 50/2005/QH11 và cho biết mỗi hành động sau đây có vi phạm không: du khách chụp ảnh một bức phù điêu đặt tại công viên; nhân viên thiết kế thời trang dùng phần mềm chỉnh sửa ảnh không có bản quyền trong công việc hằng ngày ở cơ quan."@vi ;
+    ex:appearsOnPage ex:page048 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:relatedTo ex:conceptSoHuuTriTue, ex:conceptBanQuyen .
+
+  ex:topicD_l2_task3 a ex:PracticeTask ;
+    rdfs:label "Bài 2 chủ đề D - Nhận biết tính hợp pháp trong chia sẻ thông tin số"@vi ;
+    ex:hasRawText "Ngày 19/10/2021, Sở Thông tin Truyền thông thành phố Hồ Chí Minh ban hành quyết định xử phạt vi phạm hành chính đối với diễn viên T vì đăng thông tin sai sự thật trên mạng xã hội về việc chữa trị COVID-19. Hãy tham khảo Điều 101 Nghị định 15/2020/NĐ-CP để xác định hành vi bị xử phạt theo khoản mấy, điểm nào."@vi ;
+    ex:appearsOnPage ex:page048 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:relatedTo ex:conceptThongTinSaiSuThat, ex:conceptNghiDinh15 .
+
+  ex:topicD_l2_task4 a ex:PracticeTask ;
+    rdfs:label "Bài 2 chủ đề D - Nhận biết tính an toàn trong chia sẻ thông tin số"@vi ;
+    ex:hasRawText "Theo em, những biện pháp nào giúp chia sẻ thông tin một cách an toàn trong môi trường số: không tuỳ tiện tiết lộ thông tin cá nhân; đặt và sử dụng mật khẩu mạnh; đặt thông tin cá nhân ở chế độ Ẩn; chọn đối tượng có thể xem bài đăng; không gửi thông tin quan trọng qua mạng; hạn chế đăng nhập trên máy tính lạ hoặc Wi-Fi không đáng tin cậy; tin tưởng hoàn toàn các địa chỉ bắt đầu bằng https."@vi ;
+    ex:appearsOnPage ex:page049 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:relatedTo ex:conceptThongTinCaNhan, ex:conceptAnToanThongTinMang, ex:conceptMatKhauManh .
+
+  ex:topicD_l2_applied1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 chủ đề D - Photo sách học"@vi ;
+    ex:hasRawText "An mượn sách của bạn rồi đem đi photo một bản để có sách học. Theo em, việc đó có vi phạm quyền tác giả không?"@vi ;
+    ex:appearsOnPage ex:page049 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:relatedTo ex:conceptBanQuyen, ex:conceptQuyenTacGia .
+
+  ex:topicD_l2_applied2 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 chủ đề D - Nhận định hai tình huống lừa đảo"@vi ;
+    ex:hasRawText "Ông X nhận email thông báo trúng thưởng và bị yêu cầu đăng nhập tài khoản ngân hàng, mật khẩu và mã OTP. Chị Y nhận cuộc gọi mạo danh công an điều tra yêu cầu cung cấp thông tin cá nhân, tài khoản và chuyển tiền. Em nhận định gì về hai sự việc nêu trên?"@vi ;
+    ex:appearsOnPage ex:page049 ;
+    ex:belongsToLesson ex:topicD_lesson2 ;
+    ex:relatedTo ex:conceptLuaDaoTrucTuyen, ex:conceptThongTinCaNhan, ex:conceptAnToanThongTinMang .
+
+  ex:topicD_lesson1 ex:hasActivity ex:topicD_l1_openingActivity, ex:topicD_l1_activity1,
+    ex:topicD_l1_activity2, ex:topicD_l1_activity3, ex:topicD_l1_activity4 ;
+    ex:hasReviewQuestion ex:topicD_l1_review1 .
+
+  ex:topicD_lesson2 ex:hasActivity ex:topicD_l2_task1, ex:topicD_l2_task2,
+    ex:topicD_l2_task3, ex:topicD_l2_task4 .
+}

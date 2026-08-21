@@ -1,0 +1,1470 @@
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+###############################################################################
+# Auto-generated DefinitionText for KnowledgeConcepts (grade 11) that lacked one.
+# Grounded in GraphDB book excerpts (mentionsConcept / lesson paragraphs /
+# figure captions) via gpt-4.1-mini. 266 definitions.
+###############################################################################
+
+INSERT DATA {
+  ex:gendef_g11_conceptAnToanHeCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa An toàn hệ cơ sở dữ liệu"@vi ;
+    ex:hasDefinitionText "An toàn hệ cơ sở dữ liệu là việc bảo vệ hệ khỏi các mối đe doạ có thể phá vỡ hoạt động hoặc làm mất an toàn dữ liệu trong cơ sở dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptAnToanHeCSDL .
+
+  ex:gendef_g11_conceptAnimationPlayback a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Animation Playback"@vi ;
+    ex:hasDefinitionText "Animation Playback là lệnh cho phép xem trước ảnh động bằng cách phát lại dãy khung hình để kiểm tra và căn chỉnh thời gian trước khi xuất ảnh động."@vi ;
+    ex:explainsConcept ex:g11_conceptAnimationPlayback .
+
+  ex:gendef_g11_conceptAnimiz a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Animiz Animation Maker"@vi ;
+    ex:hasDefinitionText "Animiz Animation Maker là phần mềm làm phim hoạt hình 2D, hỗ trợ tạo và chỉnh sửa video, tạo ảnh động với nhiều mẫu đối tượng, nhân vật, hình ảnh và video, có giao diện gồm các công cụ và bảng điều khiển giúp thiết kế cảnh và quản lý thời gian xuất hiện của các đối tượng trong video."@vi ;
+    ex:explainsConcept ex:g11_conceptAnimiz .
+
+  ex:gendef_g11_conceptAnimizRoles a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Roles trong Animiz"@vi ;
+    ex:hasDefinitionText "Roles trong Animiz là các đối tượng nhân vật được sử dụng trong cảnh, có thể thêm hiệu ứng và tạo hành động như nói, cười, lắc đầu để làm sinh động nội dung."@vi ;
+    ex:explainsConcept ex:g11_conceptAnimizRoles .
+
+  ex:gendef_g11_conceptAuthenticationApp a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ứng dụng xác thực"@vi ;
+    ex:hasDefinitionText "Ứng dụng xác thực là phần mềm dùng để tạo mã xác nhận bảo mật, giúp người dùng đăng nhập an toàn bằng cách nhập mã được cung cấp từ ứng dụng này."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptAuthenticationApp .
+
+  ex:gendef_g11_conceptBaiToanQuanLi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bài toán quản lí"@vi ;
+    ex:hasDefinitionText "Bài toán quản lí là bài toán liên quan đến việc lưu trữ, xử lí và quản lí dữ liệu phản ánh hoạt động của một tổ chức hoặc cá nhân nhằm hỗ trợ ra quyết định chính xác và đáng tin cậy."@vi ;
+    ex:explainsConcept ex:g11_conceptBaiToanQuanLi .
+
+  ex:gendef_g11_conceptBanGhi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bản ghi"@vi ;
+    ex:hasDefinitionText "Bản ghi là mỗi hàng trong bảng dữ liệu, thể hiện thông tin về một đối tượng và không có hai bản ghi giống nhau hoàn toàn."@vi ;
+    ex:explainsConcept ex:g11_conceptBanGhi .
+
+  ex:gendef_g11_conceptBangDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảng dữ liệu"@vi ;
+    ex:hasDefinitionText "Bảng dữ liệu là tập hợp các bản ghi được tổ chức theo hàng và cột, trong đó mỗi hàng là một bản ghi và mỗi cột là một trường, dùng để lưu trữ thông tin về một đối tượng trong cơ sở dữ liệu quan hệ."@vi ;
+    ex:explainsConcept ex:g11_conceptBangDuLieu .
+
+  ex:gendef_g11_conceptBangDuocThamChieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảng được tham chiếu"@vi ;
+    ex:hasDefinitionText "Bảng được tham chiếu là bảng có khoá chính được sử dụng làm khoá ngoài trong bảng khác để liên kết và trích xuất dữ liệu giữa các bảng trong cơ sở dữ liệu quan hệ."@vi ;
+    ex:explainsConcept ex:g11_conceptBangDuocThamChieu .
+
+  ex:gendef_g11_conceptBangMachChinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảng mạch chính"@vi ;
+    ex:hasDefinitionText "Bảng mạch chính là bộ phận trong thân máy tính chứa đế cắm CPU, ROM, khe cắm RAM, khe cắm ổ cứng và các khe cắm khác, đóng vai trò làm nền giao tiếp giữa CPU, RAM và các linh kiện điện tử khác để kết nối với thiết bị ngoại vi."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptBangMachChinh .
+
+  ex:gendef_g11_conceptBangThamChieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảng tham chiếu"@vi ;
+    ex:hasDefinitionText "Bảng tham chiếu là bảng trong cơ sở dữ liệu được liên kết với bảng khác thông qua khoá ngoài để trích xuất và ghép nối dữ liệu giữa các bảng."@vi ;
+    ex:explainsConcept ex:g11_conceptBangThamChieu .
+
+  ex:gendef_g11_conceptBaoCaoCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Báo cáo CSDL"@vi ;
+    ex:hasDefinitionText "Báo cáo CSDL là văn bản trình bày thông tin kết xuất từ cơ sở dữ liệu, có thể xem trực tiếp trên màn hình hoặc in ra, với dữ liệu lấy từ một hay nhiều bảng và truy vấn, được trình bày theo mẫu quy định và làm nổi bật các mục quan trọng."@vi ;
+    ex:explainsConcept ex:g11_conceptBaoCaoCSDL .
+
+  ex:gendef_g11_conceptBaoMatCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảo mật cơ sở dữ liệu"@vi ;
+    ex:hasDefinitionText "Bảo mật cơ sở dữ liệu là việc kiểm soát quyền truy cập và áp dụng các biện pháp để đảm bảo an toàn, tính toàn vẹn của dữ liệu trong cơ sở dữ liệu, đồng thời đảm bảo dữ liệu đến từ các nguồn đáng tin cậy."@vi ;
+    ex:explainsConcept ex:g11_conceptBaoMatCSDL .
+
+  ex:gendef_g11_conceptBaoMatDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảo mật dữ liệu"@vi ;
+    ex:hasDefinitionText "Bảo mật dữ liệu là việc bảo vệ dữ liệu khỏi các truy cập trái phép, đảm bảo an toàn và tính riêng tư khi lưu trữ và chia sẻ trên các thiết bị hoặc dịch vụ lưu trữ."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptBaoMatDuLieu .
+
+  ex:gendef_g11_conceptBaoMatMatKhau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảo mật mật khẩu"@vi ;
+    ex:hasDefinitionText "Bảo mật mật khẩu là việc giữ an toàn cho mật khẩu bằng cách thay đổi kịp thời khi nghi ngờ bị lộ, sử dụng xác minh hai bước và thông báo cho các bên liên quan để hạn chế thiệt hại."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptBaoMatMatKhau .
+
+  ex:gendef_g11_conceptBaoMatTaiKhoan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảo mật tài khoản"@vi ;
+    ex:hasDefinitionText "Bảo mật tài khoản là việc sử dụng mật khẩu mạnh, thay đổi mật khẩu thường xuyên và thiết lập bảo mật hai lớp để bảo vệ tài khoản khỏi truy cập trái phép."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptBaoMatTaiKhoan .
+
+  ex:gendef_g11_conceptBaoMatThongTinCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảo mật thông tin trong CSDL"@vi ;
+    ex:hasDefinitionText "Bảo mật thông tin trong CSDL là việc kiểm soát quyền xem dữ liệu và bảo vệ bí mật của thông tin riêng tư, thương mại hoặc quan trọng trong cơ sở dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptBaoMatThongTinCSDL .
+
+  ex:gendef_g11_conceptBaoTriThietBi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảo trì thiết bị"@vi ;
+    ex:hasDefinitionText "Bảo trì thiết bị là các hoạt động kiểm tra, vệ sinh và sửa chữa nhằm giữ cho thiết bị số hoạt động ổn định và kéo dài tuổi thọ."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptBaoTriThietBi .
+
+  ex:gendef_g11_conceptBaoVeHeThong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảo vệ hệ thống"@vi ;
+    ex:hasDefinitionText "Bảo vệ hệ thống là chức năng của hệ điều hành nhằm ngăn chặn truy cập trái phép và đảm bảo an toàn cho các tài nguyên trong máy tính."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptBaoVeHeThong .
+
+  ex:gendef_g11_conceptBienDoiAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biến đổi ảnh"@vi ;
+    ex:hasDefinitionText "Biến đổi ảnh là các thao tác thay đổi kích thước, xoay, lật hoặc biến đổi phối cảnh của ảnh trong quá trình chỉnh sửa."@vi ;
+    ex:explainsConcept ex:g11_conceptBienDoiAnh .
+
+  ex:gendef_g11_conceptBieuMauCapNhatDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biểu mẫu cho cập nhật dữ liệu"@vi ;
+    ex:hasDefinitionText "Biểu mẫu cho cập nhật dữ liệu là giao diện giúp người dùng nhập mới hoặc sửa dữ liệu trong cơ sở dữ liệu một cách thuận tiện, hạn chế sai sót và vi phạm các ràng buộc khi cập nhật."@vi ;
+    ex:explainsConcept ex:g11_conceptBieuMauCapNhatDuLieu .
+
+  ex:gendef_g11_conceptBieuMauXemDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biểu mẫu cho xem dữ liệu"@vi ;
+    ex:hasDefinitionText "Biểu mẫu cho xem dữ liệu là giao diện cho phép người dùng xem dữ liệu trong cơ sở dữ liệu mà không được sửa đổi, đồng thời có thể sắp xếp và lọc dữ liệu theo các tiêu chí nhất định."@vi ;
+    ex:explainsConcept ex:g11_conceptBieuMauXemDuLieu .
+
+  ex:gendef_g11_conceptBlendEffect a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu ứng Blend"@vi ;
+    ex:hasDefinitionText "Hiệu ứng Blend là hiệu ứng tạo ảnh động mờ dần giữa các lớp ảnh, giúp chuyển đổi mượt mà giữa các khung hình khi xuất ra định dạng GIF."@vi ;
+    ex:explainsConcept ex:g11_conceptBlendEffect .
+
+  ex:gendef_g11_conceptBluetooth a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bluetooth"@vi ;
+    ex:hasDefinitionText "Bluetooth là công nghệ kết nối không dây cho phép máy tính và các thiết bị số khác trao đổi dữ liệu trong phạm vi gần mà không cần dùng cáp nối."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptBluetooth .
+
+  ex:gendef_g11_conceptBoLocEmail a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bộ lọc email"@vi ;
+    ex:hasDefinitionText "Bộ lọc email là công cụ giúp tự động tìm kiếm và phân loại email dựa trên các tiêu chí do người dùng thiết lập, nhằm quản lí email hiệu quả hơn."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:explainsConcept ex:g11_conceptBoLocEmail .
+
+  ex:gendef_g11_conceptBox a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Box"@vi ;
+    ex:hasDefinitionText "Box là một dịch vụ lưu trữ dữ liệu trực tuyến cho phép người dùng tải lên, lưu trữ và chia sẻ các tệp tin qua Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptBox .
+
+  ex:gendef_g11_conceptCSDLQuanHe a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cơ sở dữ liệu quan hệ"@vi ;
+    ex:hasDefinitionText "Cơ sở dữ liệu quan hệ là tập hợp các bảng dữ liệu có liên quan với nhau, trong đó mỗi bảng chứa các bản ghi (hàng) và trường (cột) để lưu trữ thông tin về các đối tượng cần quản lí."@vi ;
+    ex:explainsConcept ex:g11_conceptCSDLQuanHe .
+
+  ex:gendef_g11_conceptCSDLTapTrung a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cơ sở dữ liệu tập trung"@vi ;
+    ex:hasDefinitionText "Cơ sở dữ liệu tập trung là cơ sở dữ liệu được lưu trữ trên một máy tính duy nhất, cho phép người dùng truy cập trực tiếp hoặc qua mạng."@vi ;
+    ex:explainsConcept ex:g11_conceptCSDLTapTrung .
+
+  ex:gendef_g11_conceptCaNhanHoaMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cá nhân hoá máy tính"@vi ;
+    ex:hasDefinitionText "Cá nhân hoá máy tính là việc tuỳ chỉnh các thiết lập như ảnh nền, độ sáng, độ phân giải màn hình, màu sắc con trỏ chuột và thời gian đồng hồ theo nhu cầu hoặc sở thích của người dùng."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptCaNhanHoaMayTinh .
+
+  ex:gendef_g11_conceptCaiDatBaoTriPhanMemCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cài đặt và bảo trì phần mềm CSDL"@vi ;
+    ex:hasDefinitionText "Cài đặt và bảo trì phần mềm CSDL là quá trình nhà quản trị CSDL thực hiện việc lắp đặt, cập nhật, vá lỗi và duy trì phần mềm để đảm bảo tính toàn vẹn dữ liệu của tổ chức."@vi ;
+    ex:explainsConcept ex:g11_conceptCaiDatBaoTriPhanMemCSDL .
+
+  ex:gendef_g11_conceptCanTrongTiMi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cẩn trọng và tỉ mỉ"@vi ;
+    ex:hasDefinitionText "Cẩn trọng và tỉ mỉ là thái độ làm việc kỹ lưỡng, chú ý đến từng chi tiết nhỏ để tránh sai sót, đặc biệt quan trọng khi xử lý khối lượng dữ liệu lớn."@vi ;
+    ex:explainsConcept ex:g11_conceptCanTrongTiMi .
+
+  ex:gendef_g11_conceptCanvas a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khung Canvas"@vi ;
+    ex:hasDefinitionText "Khung Canvas là vùng làm việc chính trong giao diện chỉnh sửa video, nơi hiển thị và thao tác trực tiếp với các đối tượng trong video."@vi ;
+    ex:explainsConcept ex:g11_conceptCanvas .
+
+  ex:gendef_g11_conceptCapNhatDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cập nhật dữ liệu"@vi ;
+    ex:hasDefinitionText "Cập nhật dữ liệu là quá trình thêm, sửa hoặc xoá dữ liệu để phản ánh kịp thời các thay đổi thực tế, đồng thời đảm bảo dữ liệu sau cập nhật vẫn đầy đủ và đúng đắn."@vi ;
+    ex:explainsConcept ex:g11_conceptCapNhatDuLieu .
+
+  ex:gendef_g11_conceptChiaSeLienKet a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chia sẻ liên kết"@vi ;
+    ex:hasDefinitionText "Chia sẻ liên kết là việc gửi đường liên kết của tệp hoặc thư mục trên Google Drive để người khác có thể truy cập và sử dụng theo quyền được cấp."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptChiaSeLienKet .
+
+  ex:gendef_g11_conceptChiaSeTepTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chia sẻ tệp tin"@vi ;
+    ex:hasDefinitionText "Chia sẻ tệp tin là việc gửi hoặc cung cấp quyền truy cập cho người khác vào các tệp hoặc thư mục lưu trữ, giúp nhiều người dùng có thể xem, nhận xét hoặc chỉnh sửa cùng nhau qua các dịch vụ lưu trữ trực tuyến như Google Drive."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptChiaSeTepTin .
+
+  ex:gendef_g11_conceptChinhSuaAmThanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chỉnh sửa âm thanh"@vi ;
+    ex:hasDefinitionText "Chỉnh sửa âm thanh là thao tác biên tập tệp âm thanh bằng cách chia, cắt bỏ hoặc ghép các đoạn âm thanh để tạo thành bản âm thanh mới phù hợp với yêu cầu."@vi ;
+    ex:explainsConcept ex:g11_conceptChinhSuaAmThanh .
+
+  ex:gendef_g11_conceptChinhSuaAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chỉnh sửa ảnh"@vi ;
+    ex:hasDefinitionText "Chỉnh sửa ảnh là thao tác thay đổi, hiệu chỉnh các chi tiết trong ảnh như cắt, tẩy xoá, biến đổi hoặc điều chỉnh màu sắc để làm ảnh phù hợp với mục đích sử dụng."@vi ;
+    ex:explainsConcept ex:g11_conceptChinhSuaAnh .
+
+  ex:gendef_g11_conceptClientServer a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiến trúc khách - chủ"@vi ;
+    ex:hasDefinitionText "Kiến trúc khách - chủ là mô hình tổ chức hệ thống trong đó các máy khách gửi yêu cầu và nhận dịch vụ từ máy chủ, có thể được triển khai dưới dạng 1 tầng, 2 tầng hoặc 3 tầng, áp dụng cho cả hệ CSDL tập trung và phân tán với nhiều máy chủ và máy khách."@vi ;
+    ex:explainsConcept ex:g11_conceptClientServer .
+
+  ex:gendef_g11_conceptCommenter a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Commenter"@vi ;
+    ex:hasDefinitionText "Commenter là người được cấp quyền xem và để lại nhận xét trên tệp hoặc thư mục được chia sẻ, nhưng không thể chỉnh sửa nội dung."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCommenter .
+
+  ex:gendef_g11_conceptCongAND a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cổng AND"@vi ;
+    ex:hasDefinitionText "Cổng AND là cổng logic có đầu ra chỉ bằng 1 khi tất cả các đầu vào đều bằng 1, tương tự như mạch điện chỉ cho đèn sáng khi tất cả công tắc đều đóng."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCongAND .
+
+  ex:gendef_g11_conceptCongGiaoTiep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cổng giao tiếp"@vi ;
+    ex:hasDefinitionText "Cổng giao tiếp là các khe hoặc ổ cắm trên máy tính dùng để kết nối với thiết bị ngoại vi thông qua các loại cáp tương ứng như USB, VGA, HDMI, giúp truyền dữ liệu và tín hiệu giữa máy tính và thiết bị bên ngoài."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptCongGiaoTiep .
+
+  ex:gendef_g11_conceptCongNOT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cổng NOT"@vi ;
+    ex:hasDefinitionText "Cổng NOT là cổng logic có một đầu vào và một đầu ra, hoạt động đảo ngược giá trị đầu vào: nếu đầu vào là 1 thì đầu ra là 0, và ngược lại."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCongNOT .
+
+  ex:gendef_g11_conceptCongOR a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cổng OR"@vi ;
+    ex:hasDefinitionText "Cổng OR là cổng logic có đầu ra bằng 1 khi ít nhất một trong các đầu vào có giá trị 1, ngược lại đầu ra bằng 0 khi tất cả các đầu vào đều bằng 0."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCongOR .
+
+  ex:gendef_g11_conceptCongTron35mm a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cổng tròn 3.5 mm"@vi ;
+    ex:hasDefinitionText "Cổng tròn 3.5 mm là cổng giao tiếp trên máy tính dùng để kết nối các thiết bị âm thanh như tai nghe hoặc micro thông qua cáp có đầu cắm tròn đường kính 3.5 mm."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptCongTron35mm .
+
+  ex:gendef_g11_conceptCongXOR a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cổng XOR"@vi ;
+    ex:hasDefinitionText "Cổng XOR là cổng logic cho đầu ra bằng 1 khi số lượng đầu vào có giá trị 1 là lẻ, thường được dùng để tính tổng trong phép cộng hai số nhị phân 1 bit."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCongXOR .
+
+  ex:gendef_g11_conceptControlPanel a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Control Panel"@vi ;
+    ex:hasDefinitionText "Control Panel là bảng điều khiển cho phép người dùng tùy chỉnh các thiết lập của máy tính như ảnh nền, độ sáng màn hình, kích thước con trỏ chuột và thời gian đồng hồ."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptControlPanel .
+
+  ex:gendef_g11_conceptCropTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Crop"@vi ;
+    ex:hasDefinitionText "Công cụ Crop dùng để chọn và giữ lại một phần hình ảnh theo vùng hình chữ nhật, sau đó loại bỏ phần ảnh bên ngoài vùng đã chọn."@vi ;
+    ex:explainsConcept ex:g11_conceptCropTool .
+
+  ex:gendef_g11_conceptCurvesCommand a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lệnh Curves"@vi ;
+    ex:hasDefinitionText "Lệnh Curves là công cụ trong phần mềm chỉnh sửa ảnh dùng để điều chỉnh độ sáng và màu sắc của ảnh bằng cách hiệu chỉnh các kênh màu Red, Green, Blue."@vi ;
+    ex:explainsConcept ex:g11_conceptCurvesCommand .
+
+  ex:gendef_g11_conceptDB2 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa DB2"@vi ;
+    ex:hasDefinitionText "DB2 là một hệ quản trị cơ sở dữ liệu phổ biến, hỗ trợ ngôn ngữ truy vấn SQL và được sử dụng để quản lý và truy xuất dữ liệu hiệu quả."@vi ;
+    ex:explainsConcept ex:g11_conceptDB2 .
+
+  ex:gendef_g11_conceptDangLuaDaoTrenMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dạng lừa đảo trên mạng"@vi ;
+    ex:hasDefinitionText "Dạng lừa đảo trên mạng là các thủ đoạn tinh vi do kẻ xấu sử dụng nhằm chiếm đoạt tiền hoặc thông tin cá nhân của người dùng qua Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptDangLuaDaoTrenMang .
+
+  ex:gendef_g11_conceptDanhDauSaoEmail a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đánh dấu sao email"@vi ;
+    ex:hasDefinitionText "Đánh dấu sao email là thao tác chọn biểu tượng dấu sao cạnh email để ghi nhận email đó là quan trọng hoặc cần chú ý."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:explainsConcept ex:g11_conceptDanhDauSaoEmail .
+
+  ex:gendef_g11_conceptDaoDucPhapLuatVanHoaSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đạo đức, pháp luật và văn hoá trong môi trường số"@vi ;
+    ex:hasDefinitionText "Đạo đức, pháp luật và văn hoá trong môi trường số là các quy tắc ứng xử đúng đắn, tuân thủ pháp luật và giữ gìn văn hoá khi sử dụng mạng Internet, nhằm phòng tránh lừa đảo và bảo đảm an toàn trên không gian mạng."@vi ;
+    ex:explainsConcept ex:g11_conceptDaoDucPhapLuatVanHoaSo .
+
+  ex:gendef_g11_conceptDaoDucTrenMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đạo đức trên mạng"@vi ;
+    ex:hasDefinitionText "Đạo đức trên mạng là các tiêu chuẩn về hành xử có đạo đức, văn hoá và tuân thủ pháp luật trong không gian mạng, thể hiện ý thức cộng đồng và không lợi dụng vị thế để làm việc xấu."@vi ;
+    ex:explainsConcept ex:g11_conceptDaoDucTrenMang .
+
+  ex:gendef_g11_conceptDatMinhVaoViTriNguoiKhac a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đặt mình vào vị trí người khác"@vi ;
+    ex:hasDefinitionText "Đặt mình vào vị trí người khác là hiểu và cảm nhận được cảm xúc, suy nghĩ của người khác để tránh hiểu lầm và ứng xử phù hợp, nhất là trong giao tiếp trên mạng."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptDatMinhVaoViTriNguoiKhac .
+
+  ex:gendef_g11_conceptDiChuyenAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Di chuyển ảnh"@vi ;
+    ex:hasDefinitionText "Di chuyển ảnh là thao tác thay đổi vị trí hiển thị của ảnh trong khung làm việc mà không làm thay đổi kích thước hoặc nội dung của ảnh."@vi ;
+    ex:explainsConcept ex:g11_conceptDiChuyenAnh .
+
+  ex:gendef_g11_conceptDiChuyenEmail a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Di chuyển email"@vi ;
+    ex:hasDefinitionText "Di chuyển email là thao tác chọn email và chuyển nó sang nhãn (thư mục) khác để quản lý và sắp xếp email hiệu quả hơn."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:explainsConcept ex:g11_conceptDiChuyenEmail .
+
+  ex:gendef_g11_conceptDichVuLuuTruTrucTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dịch vụ lưu trữ trực tuyến"@vi ;
+    ex:hasDefinitionText "Dịch vụ lưu trữ trực tuyến là dịch vụ cho phép người dùng sử dụng Internet để lưu trữ, quản lí, sao lưu và chia sẻ dữ liệu trên mạng."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptDichVuLuuTruTrucTuyen .
+
+  ex:gendef_g11_conceptDienThoaiThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điện thoại thông minh"@vi ;
+    ex:hasDefinitionText "Điện thoại thông minh là thiết bị số có khả năng kết nối với máy tính và các thiết bị khác qua cáp USB, Bluetooth hoặc Wi-Fi để truyền dữ liệu và thực hiện các chức năng đa dạng."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptDienThoaiThongMinh .
+
+  ex:gendef_g11_conceptDienToanDamMay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điện toán đám mây"@vi ;
+    ex:hasDefinitionText "Điện toán đám mây là hình thức lưu trữ và quản lý dữ liệu trên Internet, cho phép người dùng truy cập, chia sẻ và sao lưu tệp tin từ nhiều thiết bị khác nhau mà không cần sử dụng thiết bị lưu trữ vật lý."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptDienToanDamMay .
+
+  ex:gendef_g11_conceptDieuChinhCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điều chỉnh CSDL"@vi ;
+    ex:hasDefinitionText "Điều chỉnh CSDL là quá trình thay đổi các tham số của cơ sở dữ liệu hoặc phần cứng để cải thiện hiệu suất xử lý và đáp ứng yêu cầu sử dụng."@vi ;
+    ex:explainsConcept ex:g11_conceptDieuChinhCSDL .
+
+  ex:gendef_g11_conceptDoPhanGiaiHinhAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Độ phân giải hình ảnh"@vi ;
+    ex:hasDefinitionText "Độ phân giải hình ảnh là số lượng điểm ảnh (pixel) theo chiều ngang và chiều cao tạo nên hình ảnh số, ảnh hưởng đến độ rõ nét của hình ảnh."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptDoPhanGiaiHinhAnh .
+
+  ex:gendef_g11_conceptDoiTuongChiaSe a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đối tượng chia sẻ"@vi ;
+    ex:hasDefinitionText "Đối tượng chia sẻ là nhóm người hoặc tài khoản được người dùng chọn để xem nội dung mà họ đăng tải hoặc chia sẻ trên mạng xã hội như Facebook."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptDoiTuongChiaSe .
+
+  ex:gendef_g11_conceptDoiTuongVideo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đối tượng trong video"@vi ;
+    ex:hasDefinitionText "Đối tượng trong video là các thành phần như hình ảnh, nhân vật hoặc văn bản xuất hiện và được điều chỉnh vị trí, kích thước, thời gian xuất hiện trên khung Timeline trong quá trình chỉnh sửa video."@vi ;
+    ex:explainsConcept ex:g11_conceptDoiTuongVideo .
+
+  ex:gendef_g11_conceptDongBoDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đồng bộ hoá dữ liệu"@vi ;
+    ex:hasDefinitionText "Đồng bộ hoá dữ liệu là quá trình truyền và cập nhật dữ liệu giữa các thiết bị hoặc hệ thống khác nhau để đảm bảo dữ liệu luôn giống nhau trên mọi nơi."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptDongBoDuLieu .
+
+  ex:gendef_g11_conceptDropbox a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dropbox"@vi ;
+    ex:hasDefinitionText "Dropbox là dịch vụ lưu trữ dữ liệu trực tuyến cho phép người dùng tải lên, lưu trữ và chia sẻ các tệp tin với người khác qua Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptDropbox .
+
+  ex:gendef_g11_conceptDuLieuQuanLi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu quản lí"@vi ;
+    ex:hasDefinitionText "Dữ liệu quản lí là tập hợp các thông tin được lưu trữ và xử lí chính xác, phản ánh hoạt động của tổ chức nhằm hỗ trợ việc ra quyết định đúng đắn trong quá trình quản lí."@vi ;
+    ex:explainsConcept ex:g11_conceptDuLieuQuanLi .
+
+  ex:gendef_g11_conceptDuThuaDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dư thừa dữ liệu"@vi ;
+    ex:hasDefinitionText "Dư thừa dữ liệu là tình trạng dữ liệu bị lặp lại nhiều lần trong cùng một bảng hoặc cơ sở dữ liệu, gây ra sự không nhất quán khi cập nhật thông tin."@vi ;
+    ex:explainsConcept ex:g11_conceptDuThuaDuLieu .
+
+  ex:gendef_g11_conceptDungLuongRAM a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dung lượng RAM"@vi ;
+    ex:hasDefinitionText "Dung lượng RAM là kích thước bộ nhớ RAM được đo bằng Byte, ảnh hưởng trực tiếp đến hiệu năng của máy tính khi xử lý dữ liệu."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptDungLuongRAM .
+
+  ex:gendef_g11_conceptEditor a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Editor"@vi ;
+    ex:hasDefinitionText "Editor là người có quyền chỉnh sửa nội dung của tệp hoặc thư mục được chia sẻ trong Google Drive."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptEditor .
+
+  ex:gendef_g11_conceptEmailLuaDao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Email lừa đảo"@vi ;
+    ex:hasDefinitionText "Email lừa đảo là thư điện tử giả mạo thông báo trúng thưởng hoặc tặng quà nhằm chiếm đoạt tiền phí vận chuyển hoặc thông tin cá nhân của người nhận."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptEmailLuaDao .
+
+  ex:gendef_g11_conceptExportAsGif a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xuất ảnh động dạng GIF"@vi ;
+    ex:hasDefinitionText "Xuất ảnh động dạng GIF là quá trình tạo tệp ảnh động từ dãy các khung hình hoặc lớp ảnh đã xây dựng, sử dụng lệnh xuất (Export) với tùy chọn As animation để lưu lại hiệu ứng chuyển động dưới định dạng GIF."@vi ;
+    ex:explainsConcept ex:g11_conceptExportAsGif .
+
+  ex:gendef_g11_conceptFacebook a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Facebook"@vi ;
+    ex:hasDefinitionText "Facebook là mạng xã hội trực tuyến cho phép người dùng kết nối, chia sẻ thông tin, hình ảnh và tạo phòng họp nhóm để trao đổi."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptFacebook .
+
+  ex:gendef_g11_conceptFacebookRoom a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Facebook Room"@vi ;
+    ex:hasDefinitionText "Facebook Room là tính năng tạo phòng họp nhóm trên Facebook để trao đổi thông tin, cho phép đặt tên phòng, thời gian họp và mời người tham gia."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptFacebookRoom .
+
+  ex:gendef_g11_conceptFlipTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Flip"@vi ;
+    ex:hasDefinitionText "Công cụ Flip dùng để lật ảnh theo chiều ngang hoặc chiều dọc, thay đổi hướng nhìn của ảnh."@vi ;
+    ex:explainsConcept ex:g11_conceptFlipTool .
+
+  ex:gendef_g11_conceptFreeSelectTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Free Select"@vi ;
+    ex:hasDefinitionText "Công cụ Free Select cho phép người dùng tự do vẽ đường biên vùng chọn trên ảnh để chỉnh sửa hoặc hiệu chỉnh màu sắc chính xác đối tượng cần thao tác."@vi ;
+    ex:explainsConcept ex:g11_conceptFreeSelectTool .
+
+  ex:gendef_g11_conceptFshare a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Fshare"@vi ;
+    ex:hasDefinitionText "Fshare là một dịch vụ lưu trữ trực tuyến cho phép người dùng lưu trữ, quản lí, sao lưu và chia sẻ dữ liệu qua Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptFshare .
+
+  ex:gendef_g11_conceptGIMP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa GIMP"@vi ;
+    ex:hasDefinitionText "GIMP là phần mềm hỗ trợ chỉnh sửa ảnh, cho phép người dùng thực hiện các thao tác như phóng to, thu nhỏ và quan sát chi tiết trong ảnh một cách dễ dàng."@vi ;
+    ex:explainsConcept ex:g11_conceptGIMP .
+
+  ex:gendef_g11_conceptGiaTriDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giá trị dữ liệu"@vi ;
+    ex:hasDefinitionText "Giá trị dữ liệu là thông tin cụ thể được lưu trữ trong một biến hoặc ô nhớ, biểu diễn nội dung mà dữ liệu mang."@vi ;
+    ex:explainsConcept ex:g11_conceptGiaTriDuLieu .
+
+  ex:gendef_g11_conceptGiaiMaDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giải mã dữ liệu"@vi ;
+    ex:hasDefinitionText "Giải mã dữ liệu là quá trình sử dụng khóa giải mã để chuyển đổi bản mã trở lại dạng dữ liệu ban đầu, giúp người dùng được ủy quyền truy cập thông tin."@vi ;
+    ex:explainsConcept ex:g11_conceptGiaiMaDuLieu .
+
+  ex:gendef_g11_conceptGiaiQuyetVanDeVoiMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giải quyết vấn đề với sự trợ giúp của máy tính"@vi ;
+    ex:hasDefinitionText "Giải quyết vấn đề với sự trợ giúp của máy tính là quá trình sử dụng máy tính để phân tích, thiết kế và thực hiện các bước nhằm tìm ra lời giải cho một vấn đề cụ thể."@vi ;
+    ex:explainsConcept ex:g11_conceptGiaiQuyetVanDeVoiMayTinh .
+
+  ex:gendef_g11_conceptGiamSatHieuSuatCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giám sát hiệu suất CSDL"@vi ;
+    ex:hasDefinitionText "Giám sát hiệu suất CSDL là quá trình theo dõi và đánh giá hoạt động của cơ sở dữ liệu để điều chỉnh các thông số hoặc phần cứng nhằm đảm bảo hệ thống hoạt động hiệu quả."@vi ;
+    ex:explainsConcept ex:g11_conceptGiamSatHieuSuatCSDL .
+
+  ex:gendef_g11_conceptGiaoDienAnimiz a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao diện Animiz"@vi ;
+    ex:hasDefinitionText "Giao diện Animiz là cửa sổ làm việc chính của phần mềm Animiz Animation Maker, bao gồm các mẫu video trực tuyến, bảng chọn và thanh công cụ để tạo và chỉnh sửa video, ảnh động."@vi ;
+    ex:explainsConcept ex:g11_conceptGiaoDienAnimiz .
+
+  ex:gendef_g11_conceptGmail a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Gmail"@vi ;
+    ex:hasDefinitionText "Gmail là dịch vụ thư điện tử cho phép người dùng gửi, nhận và quản lý email thông qua các tính năng như phân loại, gắn nhãn và tìm kiếm thư."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:explainsConcept ex:g11_conceptGmail .
+
+  ex:gendef_g11_conceptGoogleDocs a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Google Docs"@vi ;
+    ex:hasDefinitionText "Google Docs là phần mềm soạn thảo văn bản trực tuyến miễn phí của Google, cho phép người dùng tạo và chỉnh sửa tài liệu trên mạng."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptGoogleDocs .
+
+  ex:gendef_g11_conceptGoogleDrive a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Google Drive"@vi ;
+    ex:hasDefinitionText "Google Drive là dịch vụ lưu trữ trực tuyến của Google cho phép người dùng lưu trữ, quản lí, sao lưu và chia sẻ dữ liệu qua Internet bằng tài khoản Gmail."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptGoogleDrive .
+
+  ex:gendef_g11_conceptGoogleSearch a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Google Search"@vi ;
+    ex:hasDefinitionText "Google Search là công cụ tìm kiếm trên Internet của Google, cho phép người dùng nhập từ khóa hoặc biểu thức tìm kiếm để tìm thông tin nhanh chóng và chính xác."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:explainsConcept ex:g11_conceptGoogleSearch .
+
+  ex:gendef_g11_conceptGoogleSheets a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Google Sheets"@vi ;
+    ex:hasDefinitionText "Google Sheets là phần mềm bảng tính trực tuyến của Google, cho phép tạo và chỉnh sửa bảng tính trên trình duyệt mà không cần cài đặt."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptGoogleSheets .
+
+  ex:gendef_g11_conceptGoogleSlides a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Google Slides"@vi ;
+    ex:hasDefinitionText "Google Slides là phần mềm trực tuyến miễn phí của Google dùng để tạo và thiết kế các trang trình chiếu."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptGoogleSlides .
+
+  ex:gendef_g11_conceptHDD a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ổ cứng HDD"@vi ;
+    ex:hasDefinitionText "Ổ cứng HDD là thiết bị lưu trữ dữ liệu lâu dài trong máy tính, giúp giữ thông tin không bị mất khi tắt nguồn."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptHDD .
+
+  ex:gendef_g11_conceptHDMI a ex:DefinitionText ;
+    rdfs:label "Định nghĩa HDMI"@vi ;
+    ex:hasDefinitionText "HDMI là cổng giao tiếp dùng để kết nối máy tính với màn hình hoặc thiết bị hiển thị khác, truyền tải tín hiệu hình ảnh và âm thanh chất lượng cao."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptHDMI .
+
+  ex:gendef_g11_conceptHanCheThietHai a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hạn chế thiệt hại khi bị lừa đảo"@vi ;
+    ex:hasDefinitionText "Hạn chế thiệt hại khi bị lừa đảo là các biện pháp thực hiện ngay sau khi nghi ngờ bị lừa để bảo vệ tài khoản và thông tin cá nhân, như thay đổi mật khẩu, thiết lập xác minh hai bước, thông báo cho các bên liên quan và cơ quan chức năng nhằm giảm thiểu tổn thất."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptHanCheThietHai .
+
+  ex:gendef_g11_conceptHeCoSoDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hệ cơ sở dữ liệu"@vi ;
+    ex:hasDefinitionText "Hệ cơ sở dữ liệu là tập hợp các phần mềm và công cụ dùng để tạo lập, quản lý và khai thác dữ liệu một cách có tổ chức và hiệu quả."@vi ;
+    ex:explainsConcept ex:g11_conceptHeCoSoDuLieu .
+
+  ex:gendef_g11_conceptHeDieuHanhNguonMo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hệ điều hành nguồn mở"@vi ;
+    ex:hasDefinitionText "Hệ điều hành nguồn mở là hệ điều hành được cung cấp toàn bộ mã nguồn, cho phép mọi người sửa đổi, nâng cấp và sử dụng miễn phí, điển hình như hệ điều hành LINUX và Android dựa trên nền tảng LINUX."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptHeDieuHanhNguonMo .
+
+  ex:gendef_g11_conceptHealingTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Healing"@vi ;
+    ex:hasDefinitionText "Công cụ Healing trong GIMP dùng để tẩy xoá và phục hồi ảnh bằng cách hoà trộn độ sáng và sắc thái giữa vùng mẫu và vùng đích, giúp các điểm ảnh chỉnh sửa trở nên tự nhiên và giảm dấu vết tẩy xoá."@vi ;
+    ex:explainsConcept ex:g11_conceptHealingTool .
+
+  ex:gendef_g11_conceptHieuChinhMauSacAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu chỉnh màu sắc ảnh"@vi ;
+    ex:hasDefinitionText "Hiệu chỉnh màu sắc ảnh là thao tác điều chỉnh các kênh màu (đỏ, xanh lá, xanh dương) để thay đổi hoặc đồng bộ màu sắc của ảnh, giúp làm nổi bật hoặc sửa đổi các chi tiết theo ý muốn."@vi ;
+    ex:explainsConcept ex:g11_conceptHieuChinhMauSacAnh .
+
+  ex:gendef_g11_conceptHieuNangMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu năng máy tính"@vi ;
+    ex:hasDefinitionText "Hiệu năng máy tính là khả năng xử lý công việc của máy, phụ thuộc vào thông số kỹ thuật của các bộ phận và sự đồng bộ giữa chúng, thường được đánh giá qua tốc độ CPU và dung lượng bộ nhớ RAM."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptHieuNangMayTinh .
+
+  ex:gendef_g11_conceptHieuUngAnhDong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu ứng ảnh động"@vi ;
+    ex:hasDefinitionText "Hiệu ứng ảnh động là sự thể hiện chuyển động của đối tượng thông qua chuỗi các khung hình liên tiếp, trong đó mỗi khung hình biểu thị trạng thái khác nhau của đối tượng để tạo cảm giác chuyển động mềm mại."@vi ;
+    ex:explainsConcept ex:g11_conceptHieuUngAnhDong .
+
+  ex:gendef_g11_conceptHieuUngBienMat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu ứng biến mất"@vi ;
+    ex:hasDefinitionText "Hiệu ứng biến mất là hiệu ứng được áp dụng cho đối tượng để tạo sự chuyển động hoặc thay đổi khi đối tượng kết thúc xuất hiện trên màn hình."@vi ;
+    ex:explainsConcept ex:g11_conceptHieuUngBienMat .
+
+  ex:gendef_g11_conceptHieuUngChuyenCanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu ứng chuyển cảnh"@vi ;
+    ex:hasDefinitionText "Hiệu ứng chuyển cảnh là hiệu ứng được thêm vào giữa hai cảnh trong phim hoạt hình để tạo sự chuyển tiếp mượt mà, có thể điều chỉnh loại hiệu ứng và thời lượng hiển thị."@vi ;
+    ex:explainsConcept ex:g11_conceptHieuUngChuyenCanh .
+
+  ex:gendef_g11_conceptHieuUngXuatHien a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu ứng xuất hiện"@vi ;
+    ex:hasDefinitionText "Hiệu ứng xuất hiện là hiệu ứng được thêm vào đối tượng hoặc ảnh để tạo cách thức xuất hiện trên màn hình trong quá trình trình chiếu hoặc hoạt hình."@vi ;
+    ex:explainsConcept ex:g11_conceptHieuUngXuatHien .
+
+  ex:gendef_g11_conceptHoSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hồ sơ"@vi ;
+    ex:hasDefinitionText "Hồ sơ là tập hợp các dữ liệu được tổ chức theo dạng bảng hoặc cấu trúc nhất định để lưu trữ thông tin về một đối tượng, ví dụ như hồ sơ học sinh gồm các thông tin như mã định danh, họ tên, ngày sinh, giới tính, địa chỉ và điểm các môn."@vi ;
+    ex:explainsConcept ex:g11_conceptHoSo .
+
+  ex:gendef_g11_conceptHoiThoaiHoatHinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hội thoại trong phim hoạt hình"@vi ;
+    ex:hasDefinitionText "Hội thoại trong phim hoạt hình là phần lời thoại của nhân vật được thể hiện dưới dạng âm thanh ghi âm hoặc văn bản hiển thị trên màn hình, giúp truyền đạt nội dung và cảm xúc trong câu chuyện."@vi ;
+    ex:explainsConcept ex:g11_conceptHoiThoaiHoatHinh .
+
+  ex:gendef_g11_conceptHuongDanAnToan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hướng dẫn an toàn"@vi ;
+    ex:hasDefinitionText "Hướng dẫn an toàn là các chỉ dẫn trong tài liệu sử dụng thiết bị số nhằm đảm bảo người dùng lắp đặt, vận hành và bảo trì thiết bị đúng cách, tránh gây hại cho bản thân và thiết bị."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptHuongDanAnToan .
+
+  ex:gendef_g11_conceptHuongNghiepTinHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hướng nghiệp với tin học"@vi ;
+    ex:hasDefinitionText "Hướng nghiệp với tin học là hoạt động tìm hiểu và trao đổi thông tin về các nghề liên quan đến tin học, giúp học sinh biết về nghề quản trị cơ sở dữ liệu và tự tìm kiếm thông tin hướng nghiệp qua các kênh truyền thông số."@vi ;
+    ex:explainsConcept ex:g11_conceptHuongNghiepTinHoc .
+
+  ex:gendef_g11_conceptInnerJoin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa INNER JOIN"@vi ;
+    ex:hasDefinitionText "INNER JOIN là kiểu kết nối trong SQL dùng để lấy các bản ghi có giá trị trùng nhau ở các bảng được kết nối, với điều kiện kết nối được chỉ định sau từ khóa ON."@vi ;
+    ex:explainsConcept ex:g11_conceptInnerJoin .
+
+  ex:gendef_g11_conceptJoin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa JOIN"@vi ;
+    ex:hasDefinitionText "JOIN là từ khóa trong SQL dùng để kết nối các bản ghi của hai hoặc nhiều bảng dựa trên điều kiện kết nối, giúp kết hợp dữ liệu từ các bảng khác nhau trong cơ sở dữ liệu quan hệ."@vi ;
+    ex:explainsConcept ex:g11_conceptJoin .
+
+  ex:gendef_g11_conceptKetXuatThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kết xuất thông tin"@vi ;
+    ex:hasDefinitionText "Kết xuất thông tin là quá trình trình bày dữ liệu lấy từ cơ sở dữ liệu dưới dạng báo cáo để xem trực tiếp trên màn hình hoặc in ra, giúp thể hiện thông tin một cách trực quan và theo mẫu quy định."@vi ;
+    ex:explainsConcept ex:g11_conceptKetXuatThongTin .
+
+  ex:gendef_g11_conceptKhacPhucSuCoCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khắc phục sự cố CSDL"@vi ;
+    ex:hasDefinitionText "Khắc phục sự cố CSDL là quá trình nhà quản trị xác định, kiểm tra và xử lý các vấn đề phát sinh để khôi phục dữ liệu và đưa hệ thống cơ sở dữ liệu hoạt động trở lại bình thường, nhằm giảm thiểu thiệt hại cho tổ chức."@vi ;
+    ex:explainsConcept ex:g11_conceptKhacPhucSuCoCSDL .
+
+  ex:gendef_g11_conceptKhaiThacThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khai thác thông tin"@vi ;
+    ex:hasDefinitionText "Khai thác thông tin là quá trình tìm kiếm, thống kê và lập báo cáo từ dữ liệu đã được lưu trữ và xử lí, nhằm phục vụ điều hành công việc và ra quyết định một cách nhanh chóng, chính xác và dễ hiểu."@vi ;
+    ex:explainsConcept ex:g11_conceptKhaiThacThongTin .
+
+  ex:gendef_g11_conceptKhoaChinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khoá chính"@vi ;
+    ex:hasDefinitionText "Khoá chính là khoá được chọn trong số các khoá của bảng để xác định duy nhất mỗi bản ghi và đảm bảo không có giá trị trùng lặp trong trường hoặc tập trường đó."@vi ;
+    ex:explainsConcept ex:g11_conceptKhoaChinh .
+
+  ex:gendef_g11_conceptKhongGayChienTrenMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Không gây chiến trên mạng"@vi ;
+    ex:hasDefinitionText "Không gây chiến trên mạng là hành vi rộng lượng, phản ứng lịch sự và tránh sử dụng ngôn từ bất lịch sự hay hành vi thiếu văn hóa khi giao tiếp trực tuyến."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptKhongGayChienTrenMang .
+
+  ex:gendef_g11_conceptKhongLoiDungViThe a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Không lợi dụng vị thế của mình để làm việc xấu"@vi ;
+    ex:hasDefinitionText "Không lợi dụng vị thế của mình để làm việc xấu là không sử dụng quyền lực hoặc ảnh hưởng cá nhân trên mạng để điều khiển hoặc gây tác động tiêu cực, vi phạm đạo đức mạng."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptKhongLoiDungViThe .
+
+  ex:gendef_g11_conceptKiNangGiaiQuyetVanDe a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kĩ năng giải quyết vấn đề"@vi ;
+    ex:hasDefinitionText "Kĩ năng giải quyết vấn đề là khả năng xác định, kiểm tra và phát hiện nguyên nhân các sự cố, đồng thời đưa ra giải pháp khắc phục và xử lý các vấn đề mới phát sinh."@vi ;
+    ex:explainsConcept ex:g11_conceptKiNangGiaiQuyetVanDe .
+
+  ex:gendef_g11_conceptKiNangGiaoTiep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kĩ năng giao tiếp"@vi ;
+    ex:hasDefinitionText "Kĩ năng giao tiếp là khả năng trao đổi thông tin và làm việc nhóm hiệu quả với các cá nhân và tổ chức khác nhau trong môi trường công việc."@vi ;
+    ex:explainsConcept ex:g11_conceptKiNangGiaoTiep .
+
+  ex:gendef_g11_conceptKiNangPhanTichDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kĩ năng phân tích dữ liệu"@vi ;
+    ex:hasDefinitionText "Kĩ năng phân tích dữ liệu là khả năng xử lý và đánh giá tập dữ liệu để trích xuất thông tin hữu ích, hỗ trợ ra quyết định và cải tiến hệ thống."@vi ;
+    ex:explainsConcept ex:g11_conceptKiNangPhanTichDuLieu .
+
+  ex:gendef_g11_conceptKiNangToChuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kĩ năng tổ chức"@vi ;
+    ex:hasDefinitionText "Kĩ năng tổ chức là khả năng sắp xếp dữ liệu, đưa ra quyết định và phân công nhiệm vụ một cách hợp lý để quản lý hiệu quả công việc và thông tin."@vi ;
+    ex:explainsConcept ex:g11_conceptKiNangToChuc .
+
+  ex:gendef_g11_conceptKichBanAnhDong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kịch bản ảnh động"@vi ;
+    ex:hasDefinitionText "Kịch bản ảnh động là trình tự các khung hình thể hiện hoạt động và sự thay đổi của đối tượng trong ảnh động, trong đó mỗi khung hình biểu thị một trạng thái khác nhau để tạo chuyển động liên tục và mềm mại."@vi ;
+    ex:explainsConcept ex:g11_conceptKichBanAnhDong .
+
+  ex:gendef_g11_conceptKichBanVideo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kịch bản video"@vi ;
+    ex:hasDefinitionText "Kịch bản video là bản kế hoạch chi tiết gồm các phân cảnh và nội dung sẽ xuất hiện trong video, giúp tổ chức và hướng dẫn quá trình sản xuất phim hoặc đoạn video."@vi ;
+    ex:explainsConcept ex:g11_conceptKichBanVideo .
+
+  ex:gendef_g11_conceptKichThuocManHinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kích thước màn hình"@vi ;
+    ex:hasDefinitionText "Kích thước màn hình là độ dài đường chéo của màn hình, thường được đo bằng inch và có tỉ lệ tiêu chuẩn giữa chiều dài và chiều rộng như 4:3, 16:9, 21:9."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptKichThuocManHinh .
+
+  ex:gendef_g11_conceptKiemSoatTruyCap a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiểm soát truy cập"@vi ;
+    ex:hasDefinitionText "Kiểm soát truy cập là biện pháp quản lý và giới hạn quyền sử dụng tài khoản để bảo vệ an toàn cho hệ thống và dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptKiemSoatTruyCap .
+
+  ex:gendef_g11_conceptKiemSoatTruyCapCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiểm soát truy cập cơ sở dữ liệu"@vi ;
+    ex:hasDefinitionText "Kiểm soát truy cập cơ sở dữ liệu là việc nhà quản trị CSDL cấp quyền và giám sát việc truy cập để đảm bảo an toàn, tính toàn vẹn và bảo mật dữ liệu trong cơ sở dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptKiemSoatTruyCapCSDL .
+
+  ex:gendef_g11_conceptKienTrucHeCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiến trúc hệ cơ sở dữ liệu"@vi ;
+    ex:hasDefinitionText "Kiến trúc hệ cơ sở dữ liệu là cách tổ chức các lớp của hệ CSDL gồm lớp cơ sở dữ liệu, lớp hệ quản trị CSDL và lớp ứng dụng, thường theo mô hình khách - chủ với 1, 2 hoặc 3 tầng."@vi ;
+    ex:explainsConcept ex:g11_conceptKienTrucHeCSDL .
+
+  ex:gendef_g11_conceptKienTrucSuCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiến trúc sư CSDL"@vi ;
+    ex:hasDefinitionText "Kiến trúc sư CSDL là người thiết kế cấu trúc và tổ chức của cơ sở dữ liệu để đảm bảo dữ liệu được lưu trữ, quản lý và truy xuất hiệu quả."@vi ;
+    ex:explainsConcept ex:g11_conceptKienTrucSuCSDL .
+
+  ex:gendef_g11_conceptLapBaoCao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lập báo cáo"@vi ;
+    ex:hasDefinitionText "Lập báo cáo là quá trình xử lí và trình bày dữ liệu đã khai thác dưới dạng thông tin dễ hiểu để phục vụ điều hành công việc và ra quyết định."@vi ;
+    ex:explainsConcept ex:g11_conceptLapBaoCao .
+
+  ex:gendef_g11_conceptLapDatThietDat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lắp đặt và thiết đặt"@vi ;
+    ex:hasDefinitionText "Lắp đặt là quá trình đưa thiết bị vào vị trí sử dụng và kết nối các bộ phận cần thiết; thiết đặt là việc cấu hình các thông số để thiết bị hoạt động đúng theo yêu cầu."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptLapDatThietDat .
+
+  ex:gendef_g11_conceptLapKeHoachPhatTrienCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lập kế hoạch phát triển CSDL"@vi ;
+    ex:hasDefinitionText "Lập kế hoạch phát triển CSDL là quá trình cập nhật nhu cầu khai thác dữ liệu mới, đề xuất mở rộng và nâng cấp khả năng đáp ứng của CSDL, đồng thời theo dõi xu thế phát triển và dự báo các yêu cầu tương lai để chuẩn bị tăng khả năng xử lí khi cần thiết."@vi ;
+    ex:explainsConcept ex:g11_conceptLapKeHoachPhatTrienCSDL .
+
+  ex:gendef_g11_conceptLienKetBang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Liên kết giữa các bảng"@vi ;
+    ex:hasDefinitionText "Liên kết giữa các bảng là mối quan hệ được thiết lập thông qua khóa ngoài, cho phép kết hợp và truy xuất dữ liệu từ nhiều bảng trong cơ sở dữ liệu quan hệ."@vi ;
+    ex:explainsConcept ex:g11_conceptLienKetBang .
+
+  ex:gendef_g11_conceptLienKetLuaDao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Liên kết lừa đảo"@vi ;
+    ex:hasDefinitionText "Liên kết lừa đảo là đường dẫn giả mạo trong email hoặc tin nhắn, dẫn đến trang web yêu cầu cung cấp thông tin cá nhân như số tài khoản, mật khẩu nhằm chiếm đoạt tài khoản hoặc thực hiện giao dịch trái phép."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptLienKetLuaDao .
+
+  ex:gendef_g11_conceptLuaDaoDatCocBanHangGia a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lừa đảo chiếm tiền đặt cọc hoặc bán hàng giả"@vi ;
+    ex:hasDefinitionText "Lừa đảo chiếm tiền đặt cọc hoặc bán hàng giả là hành vi lập tài khoản mạo danh gian hàng uy tín để lừa khách đặt mua, yêu cầu chuyển tiền đặt cọc rồi chiếm đoạt hoặc bán hàng giả, kém chất lượng so với quảng cáo."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptLuaDaoDatCocBanHangGia .
+
+  ex:gendef_g11_conceptLuaDaoQuaMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lừa đảo qua mạng"@vi ;
+    ex:hasDefinitionText "Lừa đảo qua mạng là hành vi sử dụng các thủ đoạn tinh vi trên Internet để mạo danh người khác, lừa lấy tiền hoặc thông tin cá nhân của nạn nhân thông qua các hình thức như nhận chuộc, lừa nạp thẻ điện thoại, đặt cọc tiền hay gửi liên kết giả mạo."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptLuaDaoQuaMang .
+
+  ex:gendef_g11_conceptLuaDaoTrungThuongTangQua a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lừa đảo trúng thưởng, tặng quà"@vi ;
+    ex:hasDefinitionText "Lừa đảo trúng thưởng, tặng quà là hình thức gửi email hoặc tin nhắn thông báo người nhận may mắn trúng thưởng kèm theo yêu cầu đóng tiền phí vận chuyển, nhưng thực tế không nhận được quà hoặc chỉ nhận quà có giá trị thấp hơn nhiều so với quảng cáo."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptLuaDaoTrungThuongTangQua .
+
+  ex:gendef_g11_conceptMSDOS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa MS DOS"@vi ;
+    ex:hasDefinitionText "MS DOS là hệ điều hành đơn chương trình cho máy tính cá nhân, tổ chức thông tin theo cấu trúc thư mục phân cấp dạng cây và quản lý dữ liệu theo đơn vị file."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptMSDOS .
+
+  ex:gendef_g11_conceptMaHoaDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mã hoá dữ liệu"@vi ;
+    ex:hasDefinitionText "Mã hoá dữ liệu là biện pháp bảo mật trong cơ sở dữ liệu, chuyển đổi dữ liệu sang dạng bản mã để chỉ người dùng có khoá giải mã mới truy cập được thông tin."@vi ;
+    ex:explainsConcept ex:g11_conceptMaHoaDuLieu .
+
+  ex:gendef_g11_conceptMacOS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa macOS"@vi ;
+    ex:hasDefinitionText "macOS là hệ điều hành dùng cho máy tính Apple, phát triển với giao diện đồ họa thân thiện và là một trong những hệ điều hành thương mại tiêu biểu hiện nay."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptMacOS .
+
+  ex:gendef_g11_conceptMachCong1Bit a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mạch cộng 1 bit"@vi ;
+    ex:hasDefinitionText "Mạch cộng 1 bit là mạch logic thực hiện phép cộng hai số nhị phân 1 bit với đầu ra gồm tổng S và nhớ C, trong đó S bằng A XOR B và C bằng A AND B."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptMachCong1Bit .
+
+  ex:gendef_g11_conceptMachCongDayDu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mạch cộng đầy đủ"@vi ;
+    ex:hasDefinitionText "Mạch cộng đầy đủ là mạch logic có ba đầu vào A, B, C_in và hai đầu ra S, C_out, dùng để thực hiện phép cộng hai số nhị phân 1 bit cùng với số nhớ vào."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptMachCongDayDu .
+
+  ex:gendef_g11_conceptMangXaHoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mạng xã hội"@vi ;
+    ex:hasDefinitionText "Mạng xã hội là các nền tảng trực tuyến cho phép người dùng kết nối, chia sẻ thông tin và tương tác với nhau qua các tính năng bảo mật như mật khẩu mạnh và xác thực hai lớp."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptMangXaHoi .
+
+  ex:gendef_g11_conceptMayIn a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Máy in"@vi ;
+    ex:hasDefinitionText "Máy in là thiết bị kết nối với máy tính để in nội dung từ máy tính ra giấy hoặc các vật liệu khác."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptMayIn .
+
+  ex:gendef_g11_conceptMayTimKiem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Máy tìm kiếm"@vi ;
+    ex:hasDefinitionText "Máy tìm kiếm là công cụ trên Internet giúp người dùng nhập từ khóa hoặc biểu thức tìm kiếm để tìm nhanh thông tin, trang web hoặc hình ảnh phù hợp."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:explainsConcept ex:g11_conceptMayTimKiem .
+
+  ex:gendef_g11_conceptMayTinhXaHoiTriThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Máy tính và xã hội tri thức"@vi ;
+    ex:hasDefinitionText "Máy tính là thiết bị điện tử dùng để xử lý, lưu trữ và truyền tải thông tin; xã hội tri thức là xã hội mà tri thức và thông tin đóng vai trò trung tâm trong phát triển kinh tế, văn hóa và xã hội."@vi ;
+    ex:explainsConcept ex:g11_conceptMayTinhXaHoiTriThuc .
+
+  ex:gendef_g11_conceptMediafire a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mediafire"@vi ;
+    ex:hasDefinitionText "Mediafire là một dịch vụ lưu trữ trực tuyến cho phép người dùng tải lên, lưu trữ và chia sẻ dữ liệu qua Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptMediafire .
+
+  ex:gendef_g11_conceptMega a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mega"@vi ;
+    ex:hasDefinitionText "Mega là một dịch vụ lưu trữ dữ liệu trực tuyến cho phép người dùng tải lên, lưu trữ và chia sẻ các tệp tin qua Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptMega .
+
+  ex:gendef_g11_conceptMegapixel a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Megapixel"@vi ;
+    ex:hasDefinitionText "Megapixel là đơn vị đo số lượng điểm ảnh trong hình ảnh số, tương đương với một triệu điểm ảnh."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptMegapixel .
+
+  ex:gendef_g11_conceptMoveTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Move"@vi ;
+    ex:hasDefinitionText "Công cụ Move là công cụ dùng để di chuyển ảnh trong khung ảnh mà không làm thay đổi kích thước hoặc vị trí của khung ảnh đó."@vi ;
+    ex:explainsConcept ex:g11_conceptMoveTool .
+
+  ex:gendef_g11_conceptNenDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nén dữ liệu"@vi ;
+    ex:hasDefinitionText "Nén dữ liệu là quá trình giảm dung lượng lưu trữ của dữ liệu, đồng thời góp phần tăng cường bảo mật bằng cách chuyển đổi dữ liệu sang dạng khác."@vi ;
+    ex:explainsConcept ex:g11_conceptNenDuLieu .
+
+  ex:gendef_g11_conceptNgonNguTruyVanCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ngôn ngữ truy vấn CSDL"@vi ;
+    ex:hasDefinitionText "Ngôn ngữ truy vấn CSDL là ngôn ngữ dùng để tạo, truy xuất và quản lý dữ liệu trong cơ sở dữ liệu, bao gồm các ngôn ngữ phổ biến như SQL, Oracle SQL và DB2."@vi ;
+    ex:explainsConcept ex:g11_conceptNgonNguTruyVanCSDL .
+
+  ex:gendef_g11_conceptNhaPhanTichCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhà phân tích CSDL"@vi ;
+    ex:hasDefinitionText "Nhà phân tích CSDL là người chuyên nghiên cứu, xử lý và phân tích dữ liệu trong cơ sở dữ liệu để hỗ trợ việc ra quyết định và quản lý thông tin trong các tổ chức."@vi ;
+    ex:explainsConcept ex:g11_conceptNhaPhanTichCSDL .
+
+  ex:gendef_g11_conceptNhaQuanTriDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhà quản trị dữ liệu"@vi ;
+    ex:hasDefinitionText "Nhà quản trị dữ liệu là người chịu trách nhiệm quản lý, bảo đảm an toàn và hiệu quả sử dụng dữ liệu trong tổ chức."@vi ;
+    ex:explainsConcept ex:g11_conceptNhaQuanTriDuLieu .
+
+  ex:gendef_g11_conceptNhanCPU a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhân CPU"@vi ;
+    ex:hasDefinitionText "Nhân CPU là một đơn vị xử lý độc lập bên trong CPU, giúp tăng hiệu năng và tốc độ xử lí khi CPU có nhiều nhân hơn."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptNhanCPU .
+
+  ex:gendef_g11_conceptNhatKiHeThong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhật kí hệ thống"@vi ;
+    ex:hasDefinitionText "Nhật kí hệ thống là biên bản ghi lại các hoạt động và sự kiện xảy ra trong hệ thống để phục vụ việc kiểm soát và bảo vệ an toàn thông tin."@vi ;
+    ex:explainsConcept ex:g11_conceptNhatKiHeThong .
+
+  ex:gendef_g11_conceptNhuCauNhanLucCNTT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhu cầu nhân lực công nghệ thông tin"@vi ;
+    ex:hasDefinitionText "Nhu cầu nhân lực công nghệ thông tin là sự tăng cao về số lượng và chất lượng người lao động có kiến thức và kỹ năng công nghệ thông tin cần thiết để đáp ứng yêu cầu phát triển trong các lĩnh vực như thương mại điện tử, chính phủ điện tử, nền kinh tế số và xã hội số."@vi ;
+    ex:explainsConcept ex:g11_conceptNhuCauNhanLucCNTT .
+
+  ex:gendef_g11_conceptNoSQL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa NoSQL"@vi ;
+    ex:hasDefinitionText "NoSQL là loại cơ sở dữ liệu không chỉ sử dụng ngôn ngữ SQL, được thiết kế để lưu trữ và xử lí dữ liệu tăng nhanh trong các ứng dụng, đặc biệt là ứng dụng web, và hỗ trợ nhiều kiểu lưu trữ dữ liệu khác nhau."@vi ;
+    ex:explainsConcept ex:g11_conceptNoSQL .
+
+  ex:gendef_g11_conceptOneDrive a ex:DefinitionText ;
+    rdfs:label "Định nghĩa OneDrive"@vi ;
+    ex:hasDefinitionText "OneDrive là dịch vụ lưu trữ trực tuyến cho phép người dùng sử dụng Internet để lưu trữ, quản lí, sao lưu và chia sẻ dữ liệu."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptOneDrive .
+
+  ex:gendef_g11_conceptOneTierArchitecture a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiến trúc 1 tầng"@vi ;
+    ex:hasDefinitionText "Kiến trúc 1 tầng là mô hình hệ quản trị cơ sở dữ liệu trong đó các thành phần của hệ thống được tích hợp trong cùng một lớp, không phân tách rõ ràng giữa lớp ứng dụng và lớp quản trị dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptOneTierArchitecture .
+
+  ex:gendef_g11_conceptOpenOffice a ex:DefinitionText ;
+    rdfs:label "Định nghĩa OpenOffice"@vi ;
+    ex:hasDefinitionText "OpenOffice là phần mềm nguồn mở bao gồm các ứng dụng như Writer, Calc, Impress dùng để soạn thảo văn bản, bảng tính và trình chiếu."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptOpenOffice .
+
+  ex:gendef_g11_conceptOracleSQL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Oracle SQL"@vi ;
+    ex:hasDefinitionText "Oracle SQL là ngôn ngữ truy vấn cơ sở dữ liệu được sử dụng trong hệ quản trị cơ sở dữ liệu Oracle, giúp người dùng thao tác và quản lý dữ liệu hiệu quả."@vi ;
+    ex:explainsConcept ex:g11_conceptOracleSQL .
+
+  ex:gendef_g11_conceptPeerToPeer a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiến trúc ngang hàng"@vi ;
+    ex:hasDefinitionText "Kiến trúc ngang hàng là mô hình trong hệ CSDL phân tán, trong đó các máy tính có vai trò ngang bằng và cùng chia sẻ tài nguyên mà không phân biệt máy chủ hay máy khách."@vi ;
+    ex:explainsConcept ex:g11_conceptPeerToPeer .
+
+  ex:gendef_g11_conceptPerspectiveCloneTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Perspective Clone"@vi ;
+    ex:hasDefinitionText "Công cụ Perspective Clone trong GIMP dùng để sao chép đối tượng mẫu sang vùng đích theo phép biến đổi phối cảnh, giúp giữ nguyên tỷ lệ và góc nhìn phù hợp với vùng ảnh cần chỉnh sửa."@vi ;
+    ex:explainsConcept ex:g11_conceptPerspectiveCloneTool .
+
+  ex:gendef_g11_conceptPerspectiveTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Perspective"@vi ;
+    ex:hasDefinitionText "Công cụ Perspective trong chỉnh sửa ảnh dùng để thay đổi phối cảnh của ảnh bằng cách kéo thả các điểm mốc, giúp sửa ảnh bị nghiêng hoặc biến dạng."@vi ;
+    ex:explainsConcept ex:g11_conceptPerspectiveTool .
+
+  ex:gendef_g11_conceptPhanCung a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần cứng"@vi ;
+    ex:hasDefinitionText "Phần cứng là tập hợp các thiết bị vật lí của máy tính, bao gồm các bộ phận như bộ xử lí, bộ nhớ, thiết bị nhập xuất, được hệ điều hành và phần mềm điều khiển và sử dụng."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptPhanCung .
+
+  ex:gendef_g11_conceptPhanCungVaMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần cứng và mạng"@vi ;
+    ex:hasDefinitionText "Phần cứng là các thiết bị vật lý của máy tính, còn mạng là hệ thống kết nối các thiết bị để trao đổi dữ liệu và chia sẻ tài nguyên."@vi ;
+    ex:explainsConcept ex:g11_conceptPhanCungVaMang .
+
+  ex:gendef_g11_conceptPhanMemCaiDatTrenMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm cài trên máy tính cá nhân"@vi ;
+    ex:hasDefinitionText "Phần mềm cài trên máy tính cá nhân là phần mềm được cài đặt trực tiếp vào máy tính để sử dụng mà không cần kết nối internet hoặc khai thác trực tuyến."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptPhanMemCaiDatTrenMayTinh .
+
+  ex:gendef_g11_conceptPhanMemHeThong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm hệ thống"@vi ;
+    ex:hasDefinitionText "Phần mềm hệ thống là phần mềm thiết kế để vận hành và điều khiển phần cứng máy tính, như các trình điều khiển thiết bị."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptPhanMemHeThong .
+
+  ex:gendef_g11_conceptPhanMemKhaiThacTrucTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm khai thác trực tuyến"@vi ;
+    ex:hasDefinitionText "Phần mềm khai thác trực tuyến là phần mềm chỉ sử dụng trên môi trường web, có thể miễn phí hoặc trả tiền cho từng phiên sử dụng, như các phần mềm tra cứu bản đồ, dịch văn bản và hệ thống dạy học trực tuyến."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptPhanMemKhaiThacTrucTuyen .
+
+  ex:gendef_g11_conceptPhanMemMienPhi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm miễn phí"@vi ;
+    ex:hasDefinitionText "Phần mềm miễn phí là phần mềm mà người dùng không phải trả tiền để sử dụng và có thể cài đặt trên máy tính cá nhân."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptPhanMemMienPhi .
+
+  ex:gendef_g11_conceptPhanMemNguonDong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm nguồn đóng"@vi ;
+    ex:hasDefinitionText "Phần mềm nguồn đóng là phần mềm được cung cấp dưới dạng các mô đun chương trình viết trên ngôn ngữ máy, không công khai mã nguồn."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptPhanMemNguonDong .
+
+  ex:gendef_g11_conceptPhanMemThuongMai a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm thương mại"@vi ;
+    ex:hasDefinitionText "Phần mềm thương mại là phần mềm phải trả tiền mua để sử dụng, khác với phần mềm miễn phí mà người dùng không phải trả chi phí khi cài đặt và sử dụng."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson5 ;
+    ex:explainsConcept ex:g11_conceptPhanMemThuongMai .
+
+  ex:gendef_g11_conceptPhanMemUngDung a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm ứng dụng"@vi ;
+    ex:hasDefinitionText "Phần mềm ứng dụng là các chương trình chạy trên nền tảng hệ điều hành, giúp người dùng thực hiện các công việc cụ thể mà không cần biết sâu về kỹ thuật công nghệ."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptPhanMemUngDung .
+
+  ex:gendef_g11_conceptPhapLuatTrenMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Pháp luật trên mạng"@vi ;
+    ex:hasDefinitionText "Pháp luật trên mạng là các quy định và tiêu chuẩn về hành xử có đạo đức, có văn hóa, tuân thủ pháp luật trong không gian mạng, nhằm đảm bảo ý thức cộng đồng và hành vi đúng đắn khi tham gia hoạt động trên mạng."@vi ;
+    ex:explainsConcept ex:g11_conceptPhapLuatTrenMang .
+
+  ex:gendef_g11_conceptPhepBienDoiPhoiCanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép biến đổi phối cảnh"@vi ;
+    ex:hasDefinitionText "Phép biến đổi phối cảnh là phép biến đổi hình học làm thay đổi hình dạng và kích thước của đối tượng theo khung phối cảnh đã xác định, giúp giữ nguyên hiệu ứng phối cảnh khi sao chép hoặc chỉnh sửa hình ảnh."@vi ;
+    ex:explainsConcept ex:g11_conceptPhepBienDoiPhoiCanh .
+
+  ex:gendef_g11_conceptPhepToanNhiPhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tính toán nhị phân"@vi ;
+    ex:hasDefinitionText "Tính toán nhị phân là quá trình thực hiện các phép toán trên các số biểu diễn trong hệ nhị phân, sử dụng các mạch logic cơ bản như cổng AND và XOR để thực hiện các phép tính như cộng, trừ, nhân, chia."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptPhepToanNhiPhan .
+
+  ex:gendef_g11_conceptPhiVanChuyenGia a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phí vận chuyển giả"@vi ;
+    ex:hasDefinitionText "Phí vận chuyển giả là khoản tiền mà người dùng bị lừa yêu cầu trả khi nhận được thông báo trúng thưởng hoặc tặng quà qua mạng xã hội, nhưng thực tế không nhận được món quà hoặc chỉ nhận được món quà có giá trị thấp hơn nhiều."@vi ;
+    ex:explainsConcept ex:g11_conceptPhiVanChuyenGia .
+
+  ex:gendef_g11_conceptPhimHoatHinh2D a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phim hoạt hình 2D"@vi ;
+    ex:hasDefinitionText "Phim hoạt hình 2D là loại phim hoạt hình được tạo ra trên mặt phẳng hai chiều, trong đó câu chuyện được thể hiện qua nhân vật, đối tượng, bối cảnh và hoạt động."@vi ;
+    ex:explainsConcept ex:g11_conceptPhimHoatHinh2D .
+
+  ex:gendef_g11_conceptPhongHopTrucTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phòng họp trực tuyến"@vi ;
+    ex:hasDefinitionText "Phòng họp trực tuyến là không gian họp nhóm trên mạng xã hội Facebook, nơi người dùng có thể tạo, đặt tên, chọn thời gian và mời thành viên tham gia để trao đổi thông tin."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptPhongHopTrucTuyen .
+
+  ex:gendef_g11_conceptPhongNguLuaDao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phòng ngừa lừa đảo qua mạng"@vi ;
+    ex:hasDefinitionText "Phòng ngừa lừa đảo qua mạng là việc nhận biết các dấu hiệu lừa đảo như email hoặc trang web có lỗi chính tả, lỗi hành văn và luôn có ý thức đề phòng để tự bảo vệ, tránh bị lừa khi giao tiếp trực tuyến."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptPhongNguLuaDao .
+
+  ex:gendef_g11_conceptPhuDeVideo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phụ đề video"@vi ;
+    ex:hasDefinitionText "Phụ đề video là văn bản hiển thị trên màn hình trong video, dùng để giới thiệu, giải thích hoặc chuyển tiếp nội dung, được tạo và chỉnh sửa trong cửa sổ nhập phụ đề với các tùy chọn về phông chữ, cỡ chữ, màu sắc và hiệu ứng."@vi ;
+    ex:explainsConcept ex:g11_conceptPhuDeVideo .
+
+  ex:gendef_g11_conceptPhucHoiCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phục hồi CSDL"@vi ;
+    ex:hasDefinitionText "Phục hồi CSDL là quá trình khôi phục dữ liệu từ bản sao lưu để đưa hệ thống cơ sở dữ liệu trở lại hoạt động bình thường sau sự cố hoặc mất dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptPhucHoiCSDL .
+
+  ex:gendef_g11_conceptQBE a ex:DefinitionText ;
+    rdfs:label "Định nghĩa QBE - Query By Example"@vi ;
+    ex:hasDefinitionText "QBE (Query By Example) là phương pháp truy vấn cơ sở dữ liệu bằng cách điền vào các ô trống trong bảng thiết kế mẫu, giúp tạo truy vấn mà không cần sử dụng ngôn ngữ lệnh."@vi ;
+    ex:explainsConcept ex:g11_conceptQBE .
+
+  ex:gendef_g11_conceptQuanLiPhienBan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quản lí phiên bản"@vi ;
+    ex:hasDefinitionText "Quản lí phiên bản là quá trình theo dõi, lưu trữ và cập nhật các phiên bản khác nhau của tệp dữ liệu để dễ dàng chỉnh sửa, phục hồi và quản lý nội dung."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptQuanLiPhienBan .
+
+  ex:gendef_g11_conceptQuanLiTep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quản lí tệp"@vi ;
+    ex:hasDefinitionText "Quản lí tệp là chức năng của hệ điều hành giúp tổ chức, lưu trữ và truy cập các tệp trên máy tính một cách hiệu quả và an toàn."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptQuanLiTep .
+
+  ex:gendef_g11_conceptQuanLiThietBi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quản lí thiết bị"@vi ;
+    ex:hasDefinitionText "Quản lí thiết bị là chức năng của hệ điều hành nhằm điều khiển và khai thác các thiết bị phần cứng trong hệ thống một cách hiệu quả."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptQuanLiThietBi .
+
+  ex:gendef_g11_conceptQuanLiTienTrinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quản lí tiến trình"@vi ;
+    ex:hasDefinitionText "Quản lí tiến trình là chức năng của hệ điều hành giúp điều khiển và phân chia thời gian thực hiện cho nhiều chương trình cùng lúc trong chế độ đa nhiệm."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptQuanLiTienTrinh .
+
+  ex:gendef_g11_conceptQuyTacNenTang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quy tắc nền tảng"@vi ;
+    ex:hasDefinitionText "Quy tắc nền tảng là các tiêu chuẩn về hành xử có đạo đức, văn hóa và tuân thủ pháp luật trên không gian mạng, tương tự như trong cuộc sống thực, nhằm duy trì ý thức cộng đồng và ứng xử văn minh khi tham gia mạng xã hội."@vi ;
+    ex:explainsConcept ex:g11_conceptQuyTacNenTang .
+
+  ex:gendef_g11_conceptQuyTacUngXuMangXaHoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quy tắc ứng xử trên mạng xã hội"@vi ;
+    ex:hasDefinitionText "Quy tắc ứng xử trên mạng xã hội là những nguyên tắc về văn hóa, đạo đức và cách cư xử phù hợp, giúp người dùng giao tiếp văn minh, tôn trọng và bảo vệ các giá trị truyền thống khi tham gia các hoạt động trực tuyến."@vi ;
+    ex:explainsConcept ex:g11_conceptQuyTacUngXuMangXaHoi .
+
+  ex:gendef_g11_conceptQuyenChiaSe a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quyền chia sẻ"@vi ;
+    ex:hasDefinitionText "Quyền chia sẻ là các mức độ cho phép người khác xem, nhận xét hoặc chỉnh sửa tệp hoặc thư mục khi được chủ sở hữu chia sẻ trên Google Drive."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptQuyenChiaSe .
+
+  ex:gendef_g11_conceptQuyenRiengTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quyền riêng tư"@vi ;
+    ex:hasDefinitionText "Quyền riêng tư là khả năng người dùng kiểm soát và giới hạn đối tượng được phép xem hoặc truy cập thông tin cá nhân và các bài đăng của mình trên mạng xã hội."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptQuyenRiengTu .
+
+  ex:gendef_g11_conceptRangBuocDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ràng buộc dữ liệu"@vi ;
+    ex:hasDefinitionText "Ràng buộc dữ liệu là cơ chế liên kết giữa các thành phần giao diện và dữ liệu, giúp tự động cập nhật thông tin khi dữ liệu thay đổi."@vi ;
+    ex:explainsConcept ex:g11_conceptRangBuocDuLieu .
+
+  ex:gendef_g11_conceptRangBuocKhoa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ràng buộc khoá"@vi ;
+    ex:hasDefinitionText "Ràng buộc khoá là quy tắc trong hệ quản trị cơ sở dữ liệu đảm bảo giá trị của trường khoá chính trong bảng là duy nhất và không được để trống, nhằm ngăn chặn việc nhập dữ liệu trùng hoặc thiếu giá trị khoá."@vi ;
+    ex:explainsConcept ex:g11_conceptRangBuocKhoa .
+
+  ex:gendef_g11_conceptRangBuocKhoaNgoai a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ràng buộc khoá ngoài"@vi ;
+    ex:hasDefinitionText "Ràng buộc khoá ngoài yêu cầu mọi giá trị của khoá ngoài trong bảng tham chiếu phải tồn tại trong khoá chính của bảng được tham chiếu, giúp kiểm soát cập nhật và tránh vi phạm liên kết giữa các bảng trong cơ sở dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptRangBuocKhoaNgoai .
+
+  ex:gendef_g11_conceptRangBuocToanVen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ràng buộc toàn vẹn dữ liệu"@vi ;
+    ex:hasDefinitionText "Ràng buộc toàn vẹn dữ liệu là các quy tắc được áp dụng trong cơ sở dữ liệu quan hệ để đảm bảo dữ liệu luôn chính xác, nhất quán và đúng đắn khi thực hiện các thao tác thêm, sửa, xoá."@vi ;
+    ex:explainsConcept ex:g11_conceptRangBuocToanVen .
+
+  ex:gendef_g11_conceptRongLuongVoiNguoiKhac a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Rộng lượng với người khác"@vi ;
+    ex:hasDefinitionText "Rộng lượng với người khác là thái độ khoan dung, phản ứng lịch sự và không gây chiến khi ai đó mắc lỗi, ưu tiên giải quyết riêng tư thay vì công khai to tiếng."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptRongLuongVoiNguoiKhac .
+
+  ex:gendef_g11_conceptRotateTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Rotate"@vi ;
+    ex:hasDefinitionText "Công cụ Rotate là công cụ dùng để xoay ảnh trong quá trình chỉnh sửa ảnh."@vi ;
+    ex:explainsConcept ex:g11_conceptRotateTool .
+
+  ex:gendef_g11_conceptSQL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa SQL"@vi ;
+    ex:hasDefinitionText "SQL là ngôn ngữ truy vấn phổ biến của các hệ quản trị cơ sở dữ liệu quan hệ, dùng để khai thác và cập nhật dữ liệu trong cơ sở dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptSQL .
+
+  ex:gendef_g11_conceptSSD a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ổ cứng SSD"@vi ;
+    ex:hasDefinitionText "Ổ cứng SSD là thiết bị lưu trữ dữ liệu lâu dài bên trong máy tính, giúp lưu trữ dữ liệu không bị mất khi tắt nguồn và có dung lượng lưu trữ tính vào tổng dung lượng của máy tính."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptSSD .
+
+  ex:gendef_g11_conceptSaoLuuCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sao lưu CSDL"@vi ;
+    ex:hasDefinitionText "Sao lưu CSDL là việc tạo bản sao dữ liệu của cơ sở dữ liệu để phòng tránh mất mát do sự cố, giúp khôi phục dữ liệu và duy trì hoạt động bình thường của hệ thống."@vi ;
+    ex:explainsConcept ex:g11_conceptSaoLuuCSDL .
+
+  ex:gendef_g11_conceptSaoLuuDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sao lưu dữ liệu"@vi ;
+    ex:hasDefinitionText "Sao lưu dữ liệu là việc tạo bản sao dữ liệu và lưu trữ ở nơi khác để bảo vệ và khôi phục dữ liệu khi xảy ra sự cố hoặc thảm họa."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptSaoLuuDuLieu .
+
+  ex:gendef_g11_conceptSaoLuuDuPhong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sao lưu dự phòng"@vi ;
+    ex:hasDefinitionText "Sao lưu dự phòng là việc tạo bản sao dữ liệu để bảo vệ và khôi phục thông tin khi xảy ra sự cố, góp phần tăng cường bảo mật và an toàn cho hệ thống."@vi ;
+    ex:explainsConcept ex:g11_conceptSaoLuuDuPhong .
+
+  ex:gendef_g11_conceptScaleTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Scale"@vi ;
+    ex:hasDefinitionText "Công cụ Scale trong GIMP dùng để thay đổi kích thước ảnh hoặc đối tượng trong quá trình chỉnh sửa."@vi ;
+    ex:explainsConcept ex:g11_conceptScaleTool .
+
+  ex:gendef_g11_conceptScene a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cảnh video"@vi ;
+    ex:hasDefinitionText "Cảnh video là một phần hoặc đoạn trong phim hoạt hình hoặc video, chứa các đối tượng và hiệu ứng được sắp xếp để thể hiện một nội dung hoặc sự kiện cụ thể trong dự án."@vi ;
+    ex:explainsConcept ex:g11_conceptScene .
+
+  ex:gendef_g11_conceptSecurityKey a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khoá bảo mật"@vi ;
+    ex:hasDefinitionText "Khoá bảo mật là thiết bị hoặc phương thức dùng để xác thực người dùng, giúp tăng cường bảo vệ tài khoản thông qua các lớp bảo mật như mã xác nhận gửi qua SMS hoặc ứng dụng xác thực."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptSecurityKey .
+
+  ex:gendef_g11_conceptSelectFromWhere a ex:DefinitionText ;
+    rdfs:label "Định nghĩa SELECT FROM WHERE"@vi ;
+    ex:hasDefinitionText "SELECT FROM WHERE là câu truy vấn SQL cơ bản, trong đó SELECT xác định các trường dữ liệu cần lấy, FROM chỉ định bảng dữ liệu nguồn, và WHERE đặt điều kiện để lọc các bản ghi phù hợp."@vi ;
+    ex:explainsConcept ex:g11_conceptSelectFromWhere .
+
+  ex:gendef_g11_conceptSuKienMangXaHoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sự kiện trên mạng xã hội"@vi ;
+    ex:hasDefinitionText "Sự kiện trên mạng xã hội là thông báo được tạo để mời và thông báo cho các thành viên trong nhóm về một hoạt động hoặc buổi họp được tổ chức trên nền tảng mạng xã hội."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptSuKienMangXaHoi .
+
+  ex:gendef_g11_conceptTaiLieuHuongDanSuDung a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tài liệu hướng dẫn sử dụng thiết bị số"@vi ;
+    ex:hasDefinitionText "Tài liệu hướng dẫn sử dụng thiết bị số là tài liệu cung cấp các hướng dẫn an toàn, lắp đặt, vận hành, bảo trì và xử lí sự cố để người dùng có thể sử dụng thiết bị đúng cách và khai thác tốt nhất các tính năng của thiết bị."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptTaiLieuHuongDanSuDung .
+
+  ex:gendef_g11_conceptTaiTepLen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tải tệp lên"@vi ;
+    ex:hasDefinitionText "Tải tệp lên là thao tác chọn tệp từ máy tính và chuyển nó lên dịch vụ lưu trữ trực tuyến như Google Drive để lưu trữ hoặc chia sẻ."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTaiTepLen .
+
+  ex:gendef_g11_conceptTaiTepXuong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tải tệp xuống"@vi ;
+    ex:hasDefinitionText "Tải tệp xuống là hành động sao chép tệp từ một dịch vụ trực tuyến hoặc thiết bị khác về máy tính hoặc thiết bị của người dùng để sử dụng ngoại tuyến."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTaiTepXuong .
+
+  ex:gendef_g11_conceptTaoLapHoSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tạo lập hồ sơ"@vi ;
+    ex:hasDefinitionText "Tạo lập hồ sơ là xác định đầy đủ dữ liệu cần lưu trữ và nhập dữ liệu đúng đắn để quản lí thông tin về một đối tượng hoặc hoạt động."@vi ;
+    ex:explainsConcept ex:g11_conceptTaoLapHoSo .
+
+  ex:gendef_g11_conceptTaoThuMuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tạo thư mục"@vi ;
+    ex:hasDefinitionText "Tạo thư mục là thao tác tạo một thư mục mới trên máy tính hoặc dịch vụ lưu trữ trực tuyến bằng cách chọn lệnh tạo thư mục, đặt tên và xác nhận tạo thư mục đó."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTaoThuMuc .
+
+  ex:gendef_g11_conceptTayXoaAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tẩy xoá ảnh"@vi ;
+    ex:hasDefinitionText "Tẩy xoá ảnh là loại bỏ những chi tiết không mong muốn trong ảnh và thay thế bằng các chi tiết phù hợp để ảnh không còn dấu vết của việc tẩy xoá."@vi ;
+    ex:explainsConcept ex:g11_conceptTayXoaAnh .
+
+  ex:gendef_g11_conceptTenMienGiaMao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tên miền giả mạo"@vi ;
+    ex:hasDefinitionText "Tên miền giả mạo là tên miền có phần đầu giống tên cơ quan, tổ chức, doanh nghiệp nhưng phần đuôi khác với tên miền chính thức hoặc có cách viết sai chính tả nhằm lừa đảo người dùng."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTenMienGiaMao .
+
+  ex:gendef_g11_conceptTepDinhKemEmail a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tệp đính kèm email"@vi ;
+    ex:hasDefinitionText "Tệp đính kèm email là tập tin được gửi kèm theo nội dung email để người nhận có thể tải về và sử dụng."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:explainsConcept ex:g11_conceptTepDinhKemEmail .
+
+  ex:gendef_g11_conceptTextMessageSMS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tin nhắn SMS xác thực"@vi ;
+    ex:hasDefinitionText "Tin nhắn SMS xác thực là mã số gồm 6 chữ số được gửi vào điện thoại để người dùng nhập nhằm xác nhận danh tính khi đăng nhập hoặc thực hiện các thao tác bảo mật."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptTextMessageSMS .
+
+  ex:gendef_g11_conceptTheGioiAoCuocSongThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thế giới ảo, cuộc sống thực"@vi ;
+    ex:hasDefinitionText "Thế giới ảo là không gian mạng nơi con người tương tác và giao tiếp, còn cuộc sống thực là thế giới bên ngoài mạng; cả hai đều yêu cầu hành xử có đạo đức, văn hóa và tuân thủ pháp luật."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTheGioiAoCuocSongThuc .
+
+  ex:gendef_g11_conceptTheGioiThietBiSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thế giới thiết bị số"@vi ;
+    ex:hasDefinitionText "Thế giới thiết bị số là tập hợp các thiết bị điện tử và công nghệ số được kết nối và sử dụng trong cuộc sống hàng ngày, giúp con người thu thập, xử lý và chia sẻ thông tin một cách hiệu quả."@vi ;
+    ex:explainsConcept ex:g11_conceptTheGioiThietBiSo .
+
+  ex:gendef_g11_conceptThietBiLuuTru a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết bị lưu trữ"@vi ;
+    ex:hasDefinitionText "Thiết bị lưu trữ là bộ phận dùng để lưu trữ dữ liệu lâu dài và không bị mất khi máy tính tắt nguồn, bao gồm các ổ cứng HDD, SSD gắn sẵn bên trong máy tính."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptThietBiLuuTru .
+
+  ex:gendef_g11_conceptThietBiSoThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết bị số thông minh"@vi ;
+    ex:hasDefinitionText "Thiết bị số thông minh là các thiết bị kỹ thuật số hiện đại, có khả năng thực hiện nhiều chức năng và được sử dụng đúng cách theo hướng dẫn để khai thác tối ưu tính năng."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptThietBiSoThongMinh .
+
+  ex:gendef_g11_conceptThongBaoCoQuanChucNang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông báo cơ quan chức năng"@vi ;
+    ex:hasDefinitionText "Thông báo cơ quan chức năng là hành động báo cáo với các đơn vị có thẩm quyền khi bị thiệt hại hoặc gặp sự cố liên quan đến an toàn thông tin để được hỗ trợ và xử lý."@vi ;
+    ex:explainsConcept ex:g11_conceptThongBaoCoQuanChucNang .
+
+  ex:gendef_g11_conceptThongKeDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thống kê dữ liệu"@vi ;
+    ex:hasDefinitionText "Thống kê dữ liệu là quá trình thu thập, xử lí và tổng hợp dữ liệu nhằm khai thác thông tin phục vụ cho việc điều hành công việc và ra quyết định."@vi ;
+    ex:explainsConcept ex:g11_conceptThongKeDuLieu .
+
+  ex:gendef_g11_conceptThongSoKiThuat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông số kĩ thuật"@vi ;
+    ex:hasDefinitionText "Thông số kĩ thuật là các chỉ tiêu quan trọng thể hiện đặc điểm và hiệu năng của thiết bị số, như tốc độ bộ xử lí CPU, dung lượng RAM, dung lượng lưu trữ, và có thể khác nhau tùy theo chức năng của thiết bị."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptThongSoKiThuat .
+
+  ex:gendef_g11_conceptThongTinHuongNghiep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông tin hướng nghiệp"@vi ;
+    ex:hasDefinitionText "Thông tin hướng nghiệp là các dữ liệu và kiến thức về nghề nghiệp, bao gồm đặc điểm công việc, yêu cầu kỹ năng, đào tạo, tuyển dụng và môi trường làm việc, giúp học sinh tìm hiểu và lựa chọn nghề phù hợp."@vi ;
+    ex:explainsConcept ex:g11_conceptThongTinHuongNghiep .
+
+  ex:gendef_g11_conceptThreeTierArchitecture a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiến trúc 3 tầng"@vi ;
+    ex:hasDefinitionText "Kiến trúc 3 tầng là mô hình tổ chức hệ CSDL gồm ba lớp: lớp cơ sở dữ liệu, lớp hệ quản trị cơ sở dữ liệu và lớp các ứng dụng cơ sở dữ liệu, giúp phân tách rõ ràng chức năng giữa các thành phần."@vi ;
+    ex:explainsConcept ex:g11_conceptThreeTierArchitecture .
+
+  ex:gendef_g11_conceptThuDienTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thư điện tử"@vi ;
+    ex:hasDefinitionText "Thư điện tử là dịch vụ cho phép gửi và nhận thư qua mạng Internet dưới dạng các email, giúp trao đổi thông tin nhanh chóng và tiện lợi."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:explainsConcept ex:g11_conceptThuDienTu .
+
+  ex:gendef_g11_conceptThuNhoPhongToAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thu nhỏ, phóng to ảnh"@vi ;
+    ex:hasDefinitionText "Thu nhỏ, phóng to ảnh là thao tác thay đổi kích thước hiển thị của ảnh để quan sát chi tiết hoặc toàn bộ ảnh dễ dàng hơn trong quá trình thiết kế và chỉnh sửa."@vi ;
+    ex:explainsConcept ex:g11_conceptThuNhoPhongToAnh .
+
+  ex:gendef_g11_conceptThuRac a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thư rác"@vi ;
+    ex:hasDefinitionText "Thư rác là các tin nhắn hoặc email được gửi đi với số lượng lớn, không mong muốn, gây phiền toái và chiếm dụng tài nguyên mạng và dung lượng lưu trữ."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptThuRac .
+
+  ex:gendef_g11_conceptTieuDeVideo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tiêu đề video"@vi ;
+    ex:hasDefinitionText "Tiêu đề video là văn bản được sử dụng để đặt tên, giới thiệu mở đầu hoặc kết thúc cho video, giúp người xem nhận biết nội dung chính của video đó."@vi ;
+    ex:explainsConcept ex:g11_conceptTieuDeVideo .
+
+  ex:gendef_g11_conceptTimKiemBangGiongNoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tìm kiếm bằng giọng nói"@vi ;
+    ex:hasDefinitionText "Tìm kiếm bằng giọng nói là phương pháp nhập từ khóa tìm kiếm bằng cách nói vào thiết bị, giúp người dùng dễ dàng tìm thông tin trên máy tìm kiếm mà không cần gõ phím."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:explainsConcept ex:g11_conceptTimKiemBangGiongNoi .
+
+  ex:gendef_g11_conceptTimKiemBangHinhAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tìm kiếm bằng hình ảnh"@vi ;
+    ex:hasDefinitionText "Tìm kiếm bằng hình ảnh là phương pháp sử dụng hình ảnh làm dữ liệu đầu vào để tìm các trang web chứa hình ảnh đó, thông tin về vật thể trong hình và các hình ảnh tương tự trên Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:explainsConcept ex:g11_conceptTimKiemBangHinhAnh .
+
+  ex:gendef_g11_conceptTimKiemDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tìm kiếm dữ liệu"@vi ;
+    ex:hasDefinitionText "Tìm kiếm dữ liệu là quá trình khai thác thông tin trong dữ liệu nhằm phục vụ công việc và ra quyết định, yêu cầu xử lí nhanh chóng và chính xác để thu được thông tin dễ hiểu."@vi ;
+    ex:explainsConcept ex:g11_conceptTimKiemDuLieu .
+
+  ex:gendef_g11_conceptTimKiemEmail a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tìm kiếm email"@vi ;
+    ex:hasDefinitionText "Tìm kiếm email là thao tác sử dụng các tiêu chí như người gửi, có tệp đính kèm để lọc và tìm các email trong hộp thư điện tử nhằm nhanh chóng xác định thông tin cần thiết."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:explainsConcept ex:g11_conceptTimKiemEmail .
+
+  ex:gendef_g11_conceptTimKiemNangCao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tìm kiếm nâng cao"@vi ;
+    ex:hasDefinitionText "Tìm kiếm nâng cao là phương pháp sử dụng các bộ lọc hoặc thuộc tính dữ liệu để thu hẹp và chính xác hóa kết quả tìm kiếm trên các công cụ tìm kiếm."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:explainsConcept ex:g11_conceptTimKiemNangCao .
+
+  ex:gendef_g11_conceptTimeline a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khung Timeline"@vi ;
+    ex:hasDefinitionText "Khung Timeline là phần giao diện hiển thị khung thời gian xuất hiện và thứ tự của các đối tượng trong video, cho phép chỉnh sửa vị trí, thời gian và hiệu ứng của từng đối tượng."@vi ;
+    ex:explainsConcept ex:g11_conceptTimeline .
+
+  ex:gendef_g11_conceptTinNhanLuaDao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tin nhắn lừa đảo"@vi ;
+    ex:hasDefinitionText "Tin nhắn lừa đảo là tin nhắn gửi qua mạng xã hội hoặc email thông báo người nhận trúng thưởng hoặc được tặng quà, nhằm chiếm đoạt tiền phí vận chuyển hoặc đánh lừa người nhận cung cấp thông tin cá nhân."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTinNhanLuaDao .
+
+  ex:gendef_g11_conceptToChucLuuTruTimKiemTraoDoiThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tổ chức lưu trữ, tìm kiếm và trao đổi thông tin"@vi ;
+    ex:hasDefinitionText "Tổ chức lưu trữ, tìm kiếm và trao đổi thông tin là quá trình sắp xếp, bảo quản dữ liệu một cách có hệ thống để dễ dàng truy cập, tìm kiếm và chia sẻ thông tin khi cần thiết."@vi ;
+    ex:explainsConcept ex:g11_conceptToChucLuuTruTimKiemTraoDoiThongTin .
+
+  ex:gendef_g11_conceptToanTuTimKiem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Toán tử tìm kiếm"@vi ;
+    ex:hasDefinitionText "Toán tử tìm kiếm là các kí hiệu hoặc từ khóa đặc biệt được sử dụng kết hợp với từ khóa để tạo biểu thức tìm kiếm, giúp tìm kiếm nhanh hơn và trả về kết quả phù hợp hơn trên Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:explainsConcept ex:g11_conceptToanTuTimKiem .
+
+  ex:gendef_g11_conceptToanVenDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tính toàn vẹn dữ liệu"@vi ;
+    ex:hasDefinitionText "Tính toàn vẹn dữ liệu là trạng thái đảm bảo dữ liệu trong cơ sở dữ liệu luôn chính xác, đầy đủ và không bị thay đổi trái phép trong quá trình lưu trữ và xử lý."@vi ;
+    ex:explainsConcept ex:g11_conceptToanVenDuLieu .
+
+  ex:gendef_g11_conceptTocDoCPU a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tốc độ CPU"@vi ;
+    ex:hasDefinitionText "Tốc độ CPU là thông số kỹ thuật đo bằng Hz, thể hiện số chu kỳ xử lý mà CPU thực hiện trong một giây, ảnh hưởng trực tiếp đến hiệu năng và tốc độ xử lý của máy tính."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTocDoCPU .
+
+  ex:gendef_g11_conceptTonTrongQuyenRiengTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tôn trọng quyền riêng tư của người khác"@vi ;
+    ex:hasDefinitionText "Tôn trọng quyền riêng tư của người khác là không tìm cách đọc email, tin nhắn riêng tư của họ và không chia sẻ những thông tin cá nhân mà mình được biết nếu không được phép, tránh xâm phạm và gây áp lực cho người khác."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTonTrongQuyenRiengTu .
+
+  ex:gendef_g11_conceptTonTrongThoiGianCongSuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tôn trọng thời gian và công sức của người khác"@vi ;
+    ex:hasDefinitionText "Tôn trọng thời gian và công sức của người khác là không đăng bài nhiều lần, không gửi tin nhắn hay thư rác để tránh làm phiền, chiếm dụng tài nguyên và gây lãng phí thời gian của người khác."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTonTrongThoiGianCongSuc .
+
+  ex:gendef_g11_conceptTonTrongVanHoaNhom a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tôn trọng văn hoá nhóm"@vi ;
+    ex:hasDefinitionText "Tôn trọng văn hoá nhóm là hiểu và tuân thủ các quy tắc, cách ứng xử phù hợp trong một nhóm mạng, tránh hành vi thô lỗ hoặc lấn át người khác để duy trì môi trường giao tiếp lịch sự và hòa đồng."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTonTrongVanHoaNhom .
+
+  ex:gendef_g11_conceptTrangWebGiaMao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trang web giả mạo"@vi ;
+    ex:hasDefinitionText "Trang web giả mạo là trang web được tạo ra với mục đích lừa người dùng cung cấp thông tin cá nhân như số tài khoản, mật khẩu để chiếm đoạt tài khoản hoặc thực hiện giao dịch trái phép."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptTrangWebGiaMao .
+
+  ex:gendef_g11_conceptTrienVongNgheQuanTriCSDL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Triển vọng nghề quản trị CSDL"@vi ;
+    ex:hasDefinitionText "Triển vọng nghề quản trị CSDL rất tích cực với nhu cầu nhân lực ngày càng tăng trong các lĩnh vực như thương mại điện tử, chính phủ điện tử và nền kinh tế số, đồng thời mức lương và cơ hội việc làm cũng có xu hướng phát triển ổn định."@vi ;
+    ex:explainsConcept ex:g11_conceptTrienVongNgheQuanTriCSDL .
+
+  ex:gendef_g11_conceptTrinhDieuKhienThietBi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trình điều khiển thiết bị"@vi ;
+    ex:hasDefinitionText "Trình điều khiển thiết bị là phần mềm hệ thống dùng để vận hành và điều khiển phần cứng máy tính."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptTrinhDieuKhienThietBi .
+
+  ex:gendef_g11_conceptTruongDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trường dữ liệu"@vi ;
+    ex:hasDefinitionText "Trường dữ liệu là một cột trong bảng dữ liệu, dùng để lưu trữ một loại thông tin cụ thể trong mỗi bản ghi."@vi ;
+    ex:explainsConcept ex:g11_conceptTruongDuLieu .
+
+  ex:gendef_g11_conceptTuKhoaTimKiem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Từ khoá tìm kiếm"@vi ;
+    ex:hasDefinitionText "Từ khoá tìm kiếm là các từ hoặc cụm từ được sử dụng để nhập vào công cụ tìm kiếm nhằm tìm kiếm thông tin liên quan trên Internet."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:explainsConcept ex:g11_conceptTuKhoaTimKiem .
+
+  ex:gendef_g11_conceptTuLieuVideo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tư liệu video"@vi ;
+    ex:hasDefinitionText "Tư liệu video là các hình ảnh, âm thanh hoặc đoạn phim được chuẩn bị và sử dụng để tạo thành video trong quá trình biên tập và sản xuất."@vi ;
+    ex:explainsConcept ex:g11_conceptTuLieuVideo .
+
+  ex:gendef_g11_conceptTuongLua a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tường lửa"@vi ;
+    ex:hasDefinitionText "Tường lửa là biện pháp bảo vệ an toàn hệ thống bằng cách kiểm soát và ngăn chặn các truy cập trái phép từ bên ngoài vào hệ thống."@vi ;
+    ex:explainsConcept ex:g11_conceptTuongLua .
+
+  ex:gendef_g11_conceptTuyenDungNhanLuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tuyển dụng nhân lực"@vi ;
+    ex:hasDefinitionText "Tuyển dụng nhân lực là quá trình tìm kiếm và lựa chọn người phù hợp để làm việc tại các vị trí trong tổ chức, dựa trên yêu cầu về kiến thức, kỹ năng và đặc điểm công việc."@vi ;
+    ex:explainsConcept ex:g11_conceptTuyenDungNhanLuc .
+
+  ex:gendef_g11_conceptTwoTierArchitecture a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiến trúc 2 tầng"@vi ;
+    ex:hasDefinitionText "Kiến trúc 2 tầng là mô hình khách - chủ trong hệ quản trị cơ sở dữ liệu, trong đó ứng dụng và hệ quản trị CSDL được phân chia thành hai lớp riêng biệt để xử lý và quản lý dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptTwoTierArchitecture .
+
+  ex:gendef_g11_conceptUSB a ex:DefinitionText ;
+    rdfs:label "Định nghĩa USB"@vi ;
+    ex:hasDefinitionText "USB là cổng giao tiếp dùng để kết nối máy tính với các thiết bị khác như máy in, điện thoại để truyền dữ liệu hoặc sạc pin."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptUSB .
+
+  ex:gendef_g11_conceptUngDungTinHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ứng dụng tin học"@vi ;
+    ex:hasDefinitionText "Ứng dụng tin học là việc sử dụng máy tính và phần mềm để giải quyết các bài toán, công việc trong học tập, lao động và đời sống."@vi ;
+    ex:explainsConcept ex:g11_conceptUngDungTinHoc .
+
+  ex:gendef_g11_conceptUngXuVanHoaAnToanTrenMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ứng xử văn hoá và an toàn trên mạng"@vi ;
+    ex:hasDefinitionText "Ứng xử văn hoá và an toàn trên mạng là hành vi tôn trọng, lịch sự khi giao tiếp và biết cách phòng tránh các nguy cơ như lừa đảo để bảo vệ bản thân trong môi trường số."@vi ;
+    ex:explainsConcept ex:g11_conceptUngXuVanHoaAnToanTrenMang .
+
+  ex:gendef_g11_conceptUnix a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Unix"@vi ;
+    ex:hasDefinitionText "Unix là một hệ điều hành được sử dụng phổ biến trong quản trị cơ sở dữ liệu và các ứng dụng máy tính."@vi ;
+    ex:explainsConcept ex:g11_conceptUnix .
+
+  ex:gendef_g11_conceptVGA a ex:DefinitionText ;
+    rdfs:label "Định nghĩa VGA"@vi ;
+    ex:hasDefinitionText "VGA là một cổng giao tiếp dùng để kết nối máy tính với màn hình, giúp truyền tín hiệu hình ảnh từ máy tính ra màn hình hiển thị."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptVGA .
+
+  ex:gendef_g11_conceptVanHanhThietBi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Vận hành thiết bị"@vi ;
+    ex:hasDefinitionText "Vận hành thiết bị là quá trình sử dụng và điều khiển thiết bị số theo hướng dẫn để thiết bị hoạt động đúng chức năng."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptVanHanhThietBi .
+
+  ex:gendef_g11_conceptVanHoaUngXuTrenMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Văn hoá ứng xử trên mạng"@vi ;
+    ex:hasDefinitionText "Văn hoá ứng xử trên mạng là việc tuân thủ các tiêu chuẩn về đạo đức, lịch sự và tôn trọng cộng đồng khi giao tiếp, hành động trên không gian mạng, giống như trong cuộc sống thực."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptVanHoaUngXuTrenMang .
+
+  ex:gendef_g11_conceptViewer a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Viewer"@vi ;
+    ex:hasDefinitionText "Viewer là quyền truy cập cho phép người dùng xem tệp hoặc thư mục được chia sẻ mà không thể chỉnh sửa hay bình luận."@vi ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptViewer .
+
+  ex:gendef_g11_conceptWiFi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Wi-Fi"@vi ;
+    ex:hasDefinitionText "Wi-Fi là công nghệ kết nối không dây cho phép các thiết bị số giao tiếp và truy cập mạng mà không cần dùng cáp nối."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson4 ;
+    ex:explainsConcept ex:g11_conceptWiFi .
+
+  ex:gendef_g11_conceptWindows a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Windows"@vi ;
+    ex:hasDefinitionText "Windows là hệ điều hành phát triển từ nền tảng MS DOS, sử dụng giao diện đồ họa thân thiện giúp người dùng dễ dàng tương tác với máy tính cá nhân."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson3 ;
+    ex:explainsConcept ex:g11_conceptWindows .
+
+  ex:gendef_g11_conceptXacMinhHaiBuoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xác minh hai bước"@vi ;
+    ex:hasDefinitionText "Xác minh hai bước là phương pháp bảo mật yêu cầu người dùng cung cấp thêm một bước xác nhận thứ hai ngoài mật khẩu để đăng nhập vào tài khoản, giúp tăng cường an toàn thông tin cá nhân."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptXacMinhHaiBuoc .
+
+  ex:gendef_g11_conceptXacMinhThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xác minh thông tin"@vi ;
+    ex:hasDefinitionText "Xác minh thông tin là việc kiểm tra lại thông tin bằng các cách khác nhau như gọi điện thoại hoặc truy cập trang web chính thức để đảm bảo tính chính xác và phát hiện thông tin giả mạo."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptXacMinhThongTin .
+
+  ex:gendef_g11_conceptXacThucNguoiTruyCap a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xác thực người truy cập"@vi ;
+    ex:hasDefinitionText "Xác thực người truy cập là biện pháp kiểm tra và xác nhận danh tính của người dùng trước khi cho phép truy cập vào hệ thống hoặc cơ sở dữ liệu."@vi ;
+    ex:explainsConcept ex:g11_conceptXacThucNguoiTruyCap .
+
+  ex:gendef_g11_conceptXacThucQuyenTruyCap a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xác thực quyền truy cập"@vi ;
+    ex:hasDefinitionText "Xác thực quyền truy cập là quá trình kiểm tra và đảm bảo người dùng có quyền hợp pháp để truy cập và sử dụng dữ liệu trong hệ thống."@vi ;
+    ex:explainsConcept ex:g11_conceptXacThucQuyenTruyCap .
+
+  ex:gendef_g11_conceptXuLiSuCo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xử lí sự cố"@vi ;
+    ex:hasDefinitionText "Xử lí sự cố là quá trình tìm hiểu và khắc phục các vấn đề phát sinh trong quá trình sử dụng thiết bị số để thiết bị hoạt động bình thường trở lại."@vi ;
+    ex:belongsToLesson ex:g11_topicA_lesson2 ;
+    ex:explainsConcept ex:g11_conceptXuLiSuCo .
+
+  ex:gendef_g11_conceptXuLiThongTinQuanLi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xử lí thông tin trong bài toán quản lí"@vi ;
+    ex:hasDefinitionText "Xử lí thông tin trong bài toán quản lí là quá trình tạo lập hồ sơ, cập nhật và khai thác thông tin liên quan đến hoạt động của một tổ chức."@vi ;
+    ex:explainsConcept ex:g11_conceptXuLiThongTinQuanLi .
+
+  ex:gendef_g11_conceptXuatBanVideo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xuất bản video"@vi ;
+    ex:hasDefinitionText "Xuất bản video là bước lưu và chuyển đổi dự án video sang các định dạng khác nhau để lưu trữ hoặc chia sẻ qua Internet."@vi ;
+    ex:explainsConcept ex:g11_conceptXuatBanVideo .
+
+  ex:gendef_g11_conceptYThucCongDongSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ý thức cộng đồng số"@vi ;
+    ex:hasDefinitionText "Ý thức cộng đồng số là nhận thức và tuân thủ các tiêu chuẩn về hành xử có đạo đức, văn hóa và pháp luật khi tham gia hoạt động trên không gian mạng, coi mạng là một cộng đồng cần được tôn trọng và bảo vệ."@vi ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptYThucCongDongSo .
+
+  ex:gendef_g11_conceptZoomTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Zoom"@vi ;
+    ex:hasDefinitionText "Công cụ Zoom là công cụ dùng để phóng to hoặc thu nhỏ ảnh, giúp thay đổi tỉ lệ hiển thị của ảnh trên màn hình."@vi ;
+    ex:explainsConcept ex:g11_conceptZoomTool .
+};

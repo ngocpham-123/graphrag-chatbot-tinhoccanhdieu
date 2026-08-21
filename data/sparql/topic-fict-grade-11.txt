@@ -1,0 +1,1894 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 11 TOPIC F ICT
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 resources.
+# Source file: Tin học (tin học ứng dụng) 11 CD-pages-8.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g11_grade11 a ex:GradeLevel ;
+    rdfs:label "Lớp 11"@vi ;
+    ex:gradeNumber 11 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g11_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 11 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 11 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g11_grade11 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicFict_shared a ex:Topic ;
+    rdfs:label "Chủ đề F ICT (dùng chung các khối)"@vi ;
+    ex:hasTitle "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi .
+
+  ex:g11_topicFict a ex:Topic ;
+    rdfs:label "Chủ đề F ICT - Thực hành tạo và khai thác cơ sở dữ liệu"@vi ;
+    ex:hasTitle "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi ;
+    ex:hasSubtitle "Thực hành tạo và khai thác cơ sở dữ liệu"@vi ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicFict_shared ;
+    ex:topicOrder 6 ;
+    ex:hasStartPage 127 ;
+    ex:hasEndPage 170 ;
+    ex:sourceFileName "Tin học (tin học ứng dụng) 11 CD-pages-8.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g11_topicFict_lesson1, ex:g11_topicFict_lesson2,
+                 ex:g11_topicFict_lesson3, ex:g11_topicFict_lesson4,
+                 ex:g11_topicFict_lesson5, ex:g11_topicFict_lesson6,
+                 ex:g11_topicFict_lesson7, ex:g11_topicFict_lesson8 ;
+    ex:hasPage ex:g11_page127, ex:g11_page128, ex:g11_page129, ex:g11_page130,
+               ex:g11_page131, ex:g11_page132, ex:g11_page133, ex:g11_page134,
+               ex:g11_page135, ex:g11_page136, ex:g11_page137, ex:g11_page138,
+               ex:g11_page139, ex:g11_page140, ex:g11_page141, ex:g11_page142,
+               ex:g11_page143, ex:g11_page144, ex:g11_page145, ex:g11_page146,
+               ex:g11_page147, ex:g11_page148, ex:g11_page149, ex:g11_page150,
+               ex:g11_page151, ex:g11_page152, ex:g11_page153, ex:g11_page154,
+               ex:g11_page155, ex:g11_page156, ex:g11_page157, ex:g11_page158,
+               ex:g11_page159, ex:g11_page160, ex:g11_page161, ex:g11_page162,
+               ex:g11_page163, ex:g11_page164, ex:g11_page165, ex:g11_page166,
+               ex:g11_page167, ex:g11_page168, ex:g11_page169, ex:g11_page170 .
+
+  ex:g11_tinhoc_ungdung_canhdieu ex:hasTopic ex:g11_topicFict .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g11_topicFict_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Làm quen với Microsoft Access"@vi ;
+    ex:hasTitle "Làm quen với Microsoft Access"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g11_topicFict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 127 ;
+    ex:hasEndPage 132 ;
+    ex:hasSection ex:g11_topicFict_l1s1, ex:g11_topicFict_l1s2, ex:g11_topicFict_l1s3,
+                  ex:g11_topicFict_l1s4, ex:g11_topicFict_l1s5, ex:g11_topicFict_l1s6 .
+
+  ex:g11_topicFict_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Tạo bảng trong cơ sở dữ liệu"@vi ;
+    ex:hasTitle "Tạo bảng trong cơ sở dữ liệu"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g11_topicFict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 133 ;
+    ex:hasEndPage 138 ;
+    ex:hasSection ex:g11_topicFict_l2s1, ex:g11_topicFict_l2s2,
+                  ex:g11_topicFict_l2s3 .
+
+  ex:g11_topicFict_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Liên kết các bảng trong cơ sở dữ liệu"@vi ;
+    ex:hasTitle "Liên kết các bảng trong cơ sở dữ liệu"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g11_topicFict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 139 ;
+    ex:hasEndPage 143 ;
+    ex:hasSection ex:g11_topicFict_l3s1, ex:g11_topicFict_l3s2,
+                  ex:g11_topicFict_l3s3 .
+
+  ex:g11_topicFict_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Tạo và sử dụng biểu mẫu"@vi ;
+    ex:hasTitle "Tạo và sử dụng biểu mẫu"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:g11_topicFict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 144 ;
+    ex:hasEndPage 149 ;
+    ex:hasSection ex:g11_topicFict_l4s1, ex:g11_topicFict_l4s2,
+                  ex:g11_topicFict_l4s3, ex:g11_topicFict_l4s4 .
+
+  ex:g11_topicFict_lesson5 a ex:Lesson ;
+    rdfs:label "Bài 5. Thiết kế truy vấn"@vi ;
+    ex:hasTitle "Thiết kế truy vấn"@vi ;
+    ex:lessonNumber 5 ;
+    ex:belongsToTopic ex:g11_topicFict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 150 ;
+    ex:hasEndPage 155 ;
+    ex:hasSection ex:g11_topicFict_l5s1, ex:g11_topicFict_l5s2, ex:g11_topicFict_l5s3,
+                  ex:g11_topicFict_l5s4, ex:g11_topicFict_l5s5, ex:g11_topicFict_l5s6 .
+
+  ex:g11_topicFict_lesson6 a ex:Lesson ;
+    rdfs:label "Bài 6. Tạo báo cáo đơn giản"@vi ;
+    ex:hasTitle "Tạo báo cáo đơn giản"@vi ;
+    ex:lessonNumber 6 ;
+    ex:belongsToTopic ex:g11_topicFict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 156 ;
+    ex:hasEndPage 160 ;
+    ex:hasSection ex:g11_topicFict_l6s1, ex:g11_topicFict_l6s2,
+                  ex:g11_topicFict_l6s3, ex:g11_topicFict_l6s4 .
+
+  ex:g11_topicFict_lesson7 a ex:Lesson ;
+    rdfs:label "Bài 7. Chỉnh sửa các thành phần giao diện"@vi ;
+    ex:hasTitle "Chỉnh sửa các thành phần giao diện"@vi ;
+    ex:lessonNumber 7 ;
+    ex:belongsToTopic ex:g11_topicFict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 161 ;
+    ex:hasEndPage 166 ;
+    ex:hasSection ex:g11_topicFict_l7s1, ex:g11_topicFict_l7s2,
+                  ex:g11_topicFict_l7s3, ex:g11_topicFict_l7s4,
+                  ex:g11_topicFict_l7s5 .
+
+  ex:g11_topicFict_lesson8 a ex:Lesson ;
+    rdfs:label "Bài 8. Hoàn tất ứng dụng"@vi ;
+    ex:hasTitle "Hoàn tất ứng dụng"@vi ;
+    ex:lessonNumber 8 ;
+    ex:belongsToTopic ex:g11_topicFict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 167 ;
+    ex:hasEndPage 170 ;
+    ex:hasSection ex:g11_topicFict_l8s1, ex:g11_topicFict_l8s2,
+                  ex:g11_topicFict_l8s3 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g11_topicFict_l1s1 a ex:Section ; rdfs:label "Giới thiệu Microsoft Access"@vi ; ex:hasTitle "Giới thiệu Microsoft Access"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicFict_lesson1 .
+  ex:g11_topicFict_l1s2 a ex:Section ; rdfs:label "Cơ sở dữ liệu trong Access"@vi ; ex:hasTitle "Cơ sở dữ liệu trong Access"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicFict_lesson1 .
+  ex:g11_topicFict_l1s3 a ex:Section ; rdfs:label "Tạo mới cơ sở dữ liệu"@vi ; ex:hasTitle "Tạo mới cơ sở dữ liệu"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicFict_lesson1 .
+  ex:g11_topicFict_l1s4 a ex:Section ; rdfs:label "Bảng và các kiểu dữ liệu cột"@vi ; ex:hasTitle "Bảng và các kiểu dữ liệu cột"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicFict_lesson1 .
+  ex:g11_topicFict_l1s5 a ex:Section ; rdfs:label "Khám phá khung nhìn thiết kế bảng"@vi ; ex:hasTitle "Hướng dẫn thao tác khám phá trong khung nhìn thiết kế bảng"@vi ; ex:sectionOrder 5 ; ex:belongsToLesson ex:g11_topicFict_lesson1 .
+  ex:g11_topicFict_l1s6 a ex:Section ; rdfs:label "Thực hành làm quen với Microsoft Access"@vi ; ex:hasTitle "Thực hành làm quen với Microsoft Access"@vi ; ex:sectionOrder 6 ; ex:belongsToLesson ex:g11_topicFict_lesson1 .
+
+  ex:g11_topicFict_l2s1 a ex:Section ; rdfs:label "Các bảng trong cơ sở dữ liệu thư viện trường"@vi ; ex:hasTitle "Các bảng trong cơ sở dữ liệu thư viện trường"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicFict_lesson2 .
+  ex:g11_topicFict_l2s2 a ex:Section ; rdfs:label "Chuyển quan hệ nhiều-nhiều thành quan hệ một-nhiều"@vi ; ex:hasTitle "Chuyển quan hệ “nhiều - nhiều” thành quan hệ “một - nhiều”"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicFict_lesson2 .
+  ex:g11_topicFict_l2s3 a ex:Section ; rdfs:label "Thực hành tạo bảng trong CSDL"@vi ; ex:hasTitle "Thực hành tạo bảng trong CSDL"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicFict_lesson2 .
+
+  ex:g11_topicFict_l3s1 a ex:Section ; rdfs:label "Thiết lập mối quan hệ giữa hai bảng"@vi ; ex:hasTitle "Thiết lập mối quan hệ giữa hai bảng"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicFict_lesson3 .
+  ex:g11_topicFict_l3s2 a ex:Section ; rdfs:label "Cột dữ liệu từ tra cứu"@vi ; ex:hasTitle "Cột dữ liệu từ tra cứu"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicFict_lesson3 .
+  ex:g11_topicFict_l3s3 a ex:Section ; rdfs:label "Thực hành tạo liên kết giữa các bảng trong CSDL"@vi ; ex:hasTitle "Thực hành tạo liên kết giữa các bảng trong CSDL"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicFict_lesson3 .
+
+  ex:g11_topicFict_l4s1 a ex:Section ; rdfs:label "Tạo biểu mẫu trong Access"@vi ; ex:hasTitle "Tạo biểu mẫu trong Access"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicFict_lesson4 .
+  ex:g11_topicFict_l4s2 a ex:Section ; rdfs:label "Biểu mẫu phân cấp và biểu mẫu đồng bộ hoá"@vi ; ex:hasTitle "Biểu mẫu phân cấp và biểu mẫu đồng bộ hoá"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicFict_lesson4 .
+  ex:g11_topicFict_l4s3 a ex:Section ; rdfs:label "Sử dụng biểu mẫu để nhập hoặc xem dữ liệu"@vi ; ex:hasTitle "Sử dụng biểu mẫu để nhập hoặc xem dữ liệu"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicFict_lesson4 .
+  ex:g11_topicFict_l4s4 a ex:Section ; rdfs:label "Thực hành tạo và sử dụng biểu mẫu"@vi ; ex:hasTitle "Thực hành tạo và sử dụng biểu mẫu"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicFict_lesson4 .
+
+  ex:g11_topicFict_l5s1 a ex:Section ; rdfs:label "Thiết kế truy vấn đơn giản"@vi ; ex:hasTitle "Thiết kế truy vấn đơn giản"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicFict_lesson5 .
+  ex:g11_topicFict_l5s2 a ex:Section ; rdfs:label "Sắp xếp kết quả truy vấn"@vi ; ex:hasTitle "Sắp xếp kết quả truy vấn"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicFict_lesson5 .
+  ex:g11_topicFict_l5s3 a ex:Section ; rdfs:label "Chọn bản ghi cho truy vấn SELECT"@vi ; ex:hasTitle "Chọn bản ghi cho truy vấn SELECT"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicFict_lesson5 .
+  ex:g11_topicFict_l5s4 a ex:Section ; rdfs:label "Truy vấn có tham số"@vi ; ex:hasTitle "Truy vấn có tham số"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicFict_lesson5 .
+  ex:g11_topicFict_l5s5 a ex:Section ; rdfs:label "Truy vấn hành động"@vi ; ex:hasTitle "Truy vấn hành động"@vi ; ex:sectionOrder 5 ; ex:belongsToLesson ex:g11_topicFict_lesson5 .
+  ex:g11_topicFict_l5s6 a ex:Section ; rdfs:label "Thực hành thiết kế truy vấn"@vi ; ex:hasTitle "Thực hành thiết kế truy vấn"@vi ; ex:sectionOrder 6 ; ex:belongsToLesson ex:g11_topicFict_lesson5 .
+
+  ex:g11_topicFict_l6s1 a ex:Section ; rdfs:label "Xây dựng báo cáo đơn giản"@vi ; ex:hasTitle "Xây dựng báo cáo đơn giản"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicFict_lesson6 .
+  ex:g11_topicFict_l6s2 a ex:Section ; rdfs:label "Hướng dẫn sử dụng Report Wizard"@vi ; ex:hasTitle "Hướng dẫn sử dụng Report Wizard"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicFict_lesson6 .
+  ex:g11_topicFict_l6s3 a ex:Section ; rdfs:label "Gộp nhóm, sắp xếp và các tổng con"@vi ; ex:hasTitle "Gộp nhóm, sắp xếp và các tổng con"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicFict_lesson6 .
+  ex:g11_topicFict_l6s4 a ex:Section ; rdfs:label "Thực hành tạo báo cáo đơn giản"@vi ; ex:hasTitle "Thực hành tạo báo cáo đơn giản"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicFict_lesson6 .
+
+  ex:g11_topicFict_l7s1 a ex:Section ; rdfs:label "Các thành phần và phần tử trong báo cáo"@vi ; ex:hasTitle "Các thành phần và các phần tử trong báo cáo"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicFict_lesson7 .
+  ex:g11_topicFict_l7s2 a ex:Section ; rdfs:label "Các thành phần và phần tử trong biểu mẫu"@vi ; ex:hasTitle "Các thành phần và các phần tử trong biểu mẫu"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicFict_lesson7 .
+  ex:g11_topicFict_l7s3 a ex:Section ; rdfs:label "Chỉnh sửa bài trí"@vi ; ex:hasTitle "Chỉnh sửa bài trí"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicFict_lesson7 .
+  ex:g11_topicFict_l7s4 a ex:Section ; rdfs:label "Chủ đề, màu sắc và kiểu dáng phông chữ"@vi ; ex:hasTitle "Chủ đề, màu sắc và kiểu dáng phông chữ"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicFict_lesson7 .
+  ex:g11_topicFict_l7s5 a ex:Section ; rdfs:label "Thực hành chỉnh sửa giao diện ứng dụng"@vi ; ex:hasTitle "Thực hành chỉnh sửa giao diện ứng dụng"@vi ; ex:sectionOrder 5 ; ex:belongsToLesson ex:g11_topicFict_lesson7 .
+
+  ex:g11_topicFict_l8s1 a ex:Section ; rdfs:label "Biểu mẫu điều hướng"@vi ; ex:hasTitle "Biểu mẫu điều hướng"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicFict_lesson8 .
+  ex:g11_topicFict_l8s2 a ex:Section ; rdfs:label "Thiết kế giao diện ứng dụng quản lí thư viện trường"@vi ; ex:hasTitle "Thiết kế giao diện của ứng dụng quản lí thư viện trường"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicFict_lesson8 .
+  ex:g11_topicFict_l8s3 a ex:Section ; rdfs:label "Thực hành tổng hợp"@vi ; ex:hasTitle "Thực hành tổng hợp"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicFict_lesson8 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g11_page127 a ex:Page ; ex:hasPageNumber 127 ; ex:hasPrintedPageNumber 127 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g11_topicFict_lesson1 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page128 a ex:Page ; ex:hasPageNumber 128 ; ex:hasPrintedPageNumber 128 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g11_topicFict_lesson1 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page129 a ex:Page ; ex:hasPageNumber 129 ; ex:hasPrintedPageNumber 129 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g11_topicFict_lesson1 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page130 a ex:Page ; ex:hasPageNumber 130 ; ex:hasPrintedPageNumber 130 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g11_topicFict_lesson1 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page131 a ex:Page ; ex:hasPageNumber 131 ; ex:hasPrintedPageNumber 131 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g11_topicFict_lesson1 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page132 a ex:Page ; ex:hasPageNumber 132 ; ex:hasPrintedPageNumber 132 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g11_topicFict_lesson1 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page133 a ex:Page ; ex:hasPageNumber 133 ; ex:hasPrintedPageNumber 133 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g11_topicFict_lesson2 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page134 a ex:Page ; ex:hasPageNumber 134 ; ex:hasPrintedPageNumber 134 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g11_topicFict_lesson2 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page135 a ex:Page ; ex:hasPageNumber 135 ; ex:hasPrintedPageNumber 135 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g11_topicFict_lesson2 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page136 a ex:Page ; ex:hasPageNumber 136 ; ex:hasPrintedPageNumber 136 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g11_topicFict_lesson2 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page137 a ex:Page ; ex:hasPageNumber 137 ; ex:hasPrintedPageNumber 137 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g11_topicFict_lesson2 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page138 a ex:Page ; ex:hasPageNumber 138 ; ex:hasPrintedPageNumber 138 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g11_topicFict_lesson2 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page139 a ex:Page ; ex:hasPageNumber 139 ; ex:hasPrintedPageNumber 139 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g11_topicFict_lesson3 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page140 a ex:Page ; ex:hasPageNumber 140 ; ex:hasPrintedPageNumber 140 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g11_topicFict_lesson3 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page141 a ex:Page ; ex:hasPageNumber 141 ; ex:hasPrintedPageNumber 141 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g11_topicFict_lesson3 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page142 a ex:Page ; ex:hasPageNumber 142 ; ex:hasPrintedPageNumber 142 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:g11_topicFict_lesson3 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page143 a ex:Page ; ex:hasPageNumber 143 ; ex:hasPrintedPageNumber 143 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:g11_topicFict_lesson3 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page144 a ex:Page ; ex:hasPageNumber 144 ; ex:hasPrintedPageNumber 144 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:g11_topicFict_lesson4 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page145 a ex:Page ; ex:hasPageNumber 145 ; ex:hasPrintedPageNumber 145 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:g11_topicFict_lesson4 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page146 a ex:Page ; ex:hasPageNumber 146 ; ex:hasPrintedPageNumber 146 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:g11_topicFict_lesson4 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page147 a ex:Page ; ex:hasPageNumber 147 ; ex:hasPrintedPageNumber 147 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:g11_topicFict_lesson4 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page148 a ex:Page ; ex:hasPageNumber 148 ; ex:hasPrintedPageNumber 148 ; ex:pdfPageIndex 22 ; ex:belongsToLesson ex:g11_topicFict_lesson4 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page149 a ex:Page ; ex:hasPageNumber 149 ; ex:hasPrintedPageNumber 149 ; ex:pdfPageIndex 23 ; ex:belongsToLesson ex:g11_topicFict_lesson4 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page150 a ex:Page ; ex:hasPageNumber 150 ; ex:hasPrintedPageNumber 150 ; ex:pdfPageIndex 24 ; ex:belongsToLesson ex:g11_topicFict_lesson5 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page151 a ex:Page ; ex:hasPageNumber 151 ; ex:hasPrintedPageNumber 151 ; ex:pdfPageIndex 25 ; ex:belongsToLesson ex:g11_topicFict_lesson5 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page152 a ex:Page ; ex:hasPageNumber 152 ; ex:hasPrintedPageNumber 152 ; ex:pdfPageIndex 26 ; ex:belongsToLesson ex:g11_topicFict_lesson5 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page153 a ex:Page ; ex:hasPageNumber 153 ; ex:hasPrintedPageNumber 153 ; ex:pdfPageIndex 27 ; ex:belongsToLesson ex:g11_topicFict_lesson5 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page154 a ex:Page ; ex:hasPageNumber 154 ; ex:hasPrintedPageNumber 154 ; ex:pdfPageIndex 28 ; ex:belongsToLesson ex:g11_topicFict_lesson5 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page155 a ex:Page ; ex:hasPageNumber 155 ; ex:hasPrintedPageNumber 155 ; ex:pdfPageIndex 29 ; ex:belongsToLesson ex:g11_topicFict_lesson5 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page156 a ex:Page ; ex:hasPageNumber 156 ; ex:hasPrintedPageNumber 156 ; ex:pdfPageIndex 30 ; ex:belongsToLesson ex:g11_topicFict_lesson6 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page157 a ex:Page ; ex:hasPageNumber 157 ; ex:hasPrintedPageNumber 157 ; ex:pdfPageIndex 31 ; ex:belongsToLesson ex:g11_topicFict_lesson6 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page158 a ex:Page ; ex:hasPageNumber 158 ; ex:hasPrintedPageNumber 158 ; ex:pdfPageIndex 32 ; ex:belongsToLesson ex:g11_topicFict_lesson6 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page159 a ex:Page ; ex:hasPageNumber 159 ; ex:hasPrintedPageNumber 159 ; ex:pdfPageIndex 33 ; ex:belongsToLesson ex:g11_topicFict_lesson6 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page160 a ex:Page ; ex:hasPageNumber 160 ; ex:hasPrintedPageNumber 160 ; ex:pdfPageIndex 34 ; ex:belongsToLesson ex:g11_topicFict_lesson6 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page161 a ex:Page ; ex:hasPageNumber 161 ; ex:hasPrintedPageNumber 161 ; ex:pdfPageIndex 35 ; ex:belongsToLesson ex:g11_topicFict_lesson7 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page162 a ex:Page ; ex:hasPageNumber 162 ; ex:hasPrintedPageNumber 162 ; ex:pdfPageIndex 36 ; ex:belongsToLesson ex:g11_topicFict_lesson7 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page163 a ex:Page ; ex:hasPageNumber 163 ; ex:hasPrintedPageNumber 163 ; ex:pdfPageIndex 37 ; ex:belongsToLesson ex:g11_topicFict_lesson7 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page164 a ex:Page ; ex:hasPageNumber 164 ; ex:hasPrintedPageNumber 164 ; ex:pdfPageIndex 38 ; ex:belongsToLesson ex:g11_topicFict_lesson7 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page165 a ex:Page ; ex:hasPageNumber 165 ; ex:hasPrintedPageNumber 165 ; ex:pdfPageIndex 39 ; ex:belongsToLesson ex:g11_topicFict_lesson7 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page166 a ex:Page ; ex:hasPageNumber 166 ; ex:hasPrintedPageNumber 166 ; ex:pdfPageIndex 40 ; ex:belongsToLesson ex:g11_topicFict_lesson7 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page167 a ex:Page ; ex:hasPageNumber 167 ; ex:hasPrintedPageNumber 167 ; ex:pdfPageIndex 41 ; ex:belongsToLesson ex:g11_topicFict_lesson8 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page168 a ex:Page ; ex:hasPageNumber 168 ; ex:hasPrintedPageNumber 168 ; ex:pdfPageIndex 42 ; ex:belongsToLesson ex:g11_topicFict_lesson8 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page169 a ex:Page ; ex:hasPageNumber 169 ; ex:hasPrintedPageNumber 169 ; ex:pdfPageIndex 43 ; ex:belongsToLesson ex:g11_topicFict_lesson8 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page170 a ex:Page ; ex:hasPageNumber 170 ; ex:hasPrintedPageNumber 170 ; ex:pdfPageIndex 44 ; ex:belongsToLesson ex:g11_topicFict_lesson8 ; ex:belongsToTopic ex:g11_topicFict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g11_page126 ex:nextPage ex:g11_page127 .
+  ex:g11_page127 ex:previousPage ex:g11_page126 ; ex:nextPage ex:g11_page128 .
+  ex:g11_page128 ex:previousPage ex:g11_page127 ; ex:nextPage ex:g11_page129 .
+  ex:g11_page129 ex:previousPage ex:g11_page128 ; ex:nextPage ex:g11_page130 .
+  ex:g11_page130 ex:previousPage ex:g11_page129 ; ex:nextPage ex:g11_page131 .
+  ex:g11_page131 ex:previousPage ex:g11_page130 ; ex:nextPage ex:g11_page132 .
+  ex:g11_page132 ex:previousPage ex:g11_page131 ; ex:nextPage ex:g11_page133 .
+  ex:g11_page133 ex:previousPage ex:g11_page132 ; ex:nextPage ex:g11_page134 .
+  ex:g11_page134 ex:previousPage ex:g11_page133 ; ex:nextPage ex:g11_page135 .
+  ex:g11_page135 ex:previousPage ex:g11_page134 ; ex:nextPage ex:g11_page136 .
+  ex:g11_page136 ex:previousPage ex:g11_page135 ; ex:nextPage ex:g11_page137 .
+  ex:g11_page137 ex:previousPage ex:g11_page136 ; ex:nextPage ex:g11_page138 .
+  ex:g11_page138 ex:previousPage ex:g11_page137 ; ex:nextPage ex:g11_page139 .
+  ex:g11_page139 ex:previousPage ex:g11_page138 ; ex:nextPage ex:g11_page140 .
+  ex:g11_page140 ex:previousPage ex:g11_page139 ; ex:nextPage ex:g11_page141 .
+  ex:g11_page141 ex:previousPage ex:g11_page140 ; ex:nextPage ex:g11_page142 .
+  ex:g11_page142 ex:previousPage ex:g11_page141 ; ex:nextPage ex:g11_page143 .
+  ex:g11_page143 ex:previousPage ex:g11_page142 ; ex:nextPage ex:g11_page144 .
+  ex:g11_page144 ex:previousPage ex:g11_page143 ; ex:nextPage ex:g11_page145 .
+  ex:g11_page145 ex:previousPage ex:g11_page144 ; ex:nextPage ex:g11_page146 .
+  ex:g11_page146 ex:previousPage ex:g11_page145 ; ex:nextPage ex:g11_page147 .
+  ex:g11_page147 ex:previousPage ex:g11_page146 ; ex:nextPage ex:g11_page148 .
+  ex:g11_page148 ex:previousPage ex:g11_page147 ; ex:nextPage ex:g11_page149 .
+  ex:g11_page149 ex:previousPage ex:g11_page148 ; ex:nextPage ex:g11_page150 .
+  ex:g11_page150 ex:previousPage ex:g11_page149 ; ex:nextPage ex:g11_page151 .
+  ex:g11_page151 ex:previousPage ex:g11_page150 ; ex:nextPage ex:g11_page152 .
+  ex:g11_page152 ex:previousPage ex:g11_page151 ; ex:nextPage ex:g11_page153 .
+  ex:g11_page153 ex:previousPage ex:g11_page152 ; ex:nextPage ex:g11_page154 .
+  ex:g11_page154 ex:previousPage ex:g11_page153 ; ex:nextPage ex:g11_page155 .
+  ex:g11_page155 ex:previousPage ex:g11_page154 ; ex:nextPage ex:g11_page156 .
+  ex:g11_page156 ex:previousPage ex:g11_page155 ; ex:nextPage ex:g11_page157 .
+  ex:g11_page157 ex:previousPage ex:g11_page156 ; ex:nextPage ex:g11_page158 .
+  ex:g11_page158 ex:previousPage ex:g11_page157 ; ex:nextPage ex:g11_page159 .
+  ex:g11_page159 ex:previousPage ex:g11_page158 ; ex:nextPage ex:g11_page160 .
+  ex:g11_page160 ex:previousPage ex:g11_page159 ; ex:nextPage ex:g11_page161 .
+  ex:g11_page161 ex:previousPage ex:g11_page160 ; ex:nextPage ex:g11_page162 .
+  ex:g11_page162 ex:previousPage ex:g11_page161 ; ex:nextPage ex:g11_page163 .
+  ex:g11_page163 ex:previousPage ex:g11_page162 ; ex:nextPage ex:g11_page164 .
+  ex:g11_page164 ex:previousPage ex:g11_page163 ; ex:nextPage ex:g11_page165 .
+  ex:g11_page165 ex:previousPage ex:g11_page164 ; ex:nextPage ex:g11_page166 .
+  ex:g11_page166 ex:previousPage ex:g11_page165 ; ex:nextPage ex:g11_page167 .
+  ex:g11_page167 ex:previousPage ex:g11_page166 ; ex:nextPage ex:g11_page168 .
+  ex:g11_page168 ex:previousPage ex:g11_page167 ; ex:nextPage ex:g11_page169 .
+  ex:g11_page169 ex:previousPage ex:g11_page168 ; ex:nextPage ex:g11_page170 .
+  ex:g11_page170 ex:previousPage ex:g11_page169 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g11_conceptGiaiQuyetVanDeMayTinh a ex:KnowledgeConcept ; rdfs:label "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi .
+  ex:g11_conceptThucHanhCSDL a ex:KnowledgeConcept ; rdfs:label "Thực hành tạo và khai thác cơ sở dữ liệu"@vi .
+  ex:g11_conceptMicrosoftAccess a ex:KnowledgeConcept ; rdfs:label "Microsoft Access"@vi .
+  ex:g11_conceptCSDLAccess a ex:KnowledgeConcept ; rdfs:label "Cơ sở dữ liệu Access"@vi .
+  ex:g11_conceptVungNutLenhAccess a ex:KnowledgeConcept ; rdfs:label "Vùng nút lệnh trong Access"@vi .
+  ex:g11_conceptVungDieuHuongAccess a ex:KnowledgeConcept ; rdfs:label "Vùng điều hướng trong Access"@vi .
+  ex:g11_conceptVungLamViecAccess a ex:KnowledgeConcept ; rdfs:label "Vùng làm việc trong Access"@vi .
+  ex:g11_conceptKhungNhinAccess a ex:KnowledgeConcept ; rdfs:label "Khung nhìn trong Access"@vi .
+  ex:g11_conceptBlankDatabase a ex:KnowledgeConcept ; rdfs:label "Blank Database"@vi .
+  ex:g11_conceptKhuonMauAccess a ex:KnowledgeConcept ; rdfs:label "Khuôn mẫu Access"@vi .
+  ex:g11_conceptBangCSDL a ex:KnowledgeConcept ; rdfs:label "Bảng trong cơ sở dữ liệu"@vi .
+  ex:g11_conceptBanGhi a ex:KnowledgeConcept ; rdfs:label "Bản ghi"@vi .
+  ex:g11_conceptTruongDuLieu a ex:KnowledgeConcept ; rdfs:label "Trường dữ liệu"@vi .
+  ex:g11_conceptKieuDuLieuAccess a ex:KnowledgeConcept ; rdfs:label "Kiểu dữ liệu trong Access"@vi .
+  ex:g11_conceptDesignView a ex:KnowledgeConcept ; rdfs:label "Design View"@vi .
+  ex:g11_conceptDatasheetView a ex:KnowledgeConcept ; rdfs:label "Datasheet View"@vi .
+  ex:g11_conceptFieldProperties a ex:KnowledgeConcept ; rdfs:label "Field Properties"@vi .
+  ex:g11_conceptKhoaChinh a ex:KnowledgeConcept ; rdfs:label "Khoá chính"@vi .
+  ex:g11_conceptKhoaNgoai a ex:KnowledgeConcept ; rdfs:label "Khoá ngoại"@vi .
+  ex:g11_conceptQuanHeBang a ex:KnowledgeConcept ; rdfs:label "Quan hệ giữa các bảng"@vi .
+  ex:g11_conceptQuanHeNhieuNhieu a ex:KnowledgeConcept ; rdfs:label "Quan hệ nhiều - nhiều"@vi .
+  ex:g11_conceptQuanHeMotNhieu a ex:KnowledgeConcept ; rdfs:label "Quan hệ một - nhiều"@vi .
+  ex:g11_conceptBangNoi a ex:KnowledgeConcept ; rdfs:label "Bảng nối"@vi .
+  ex:g11_conceptBangSach a ex:KnowledgeConcept ; rdfs:label "Bảng Sách"@vi .
+  ex:g11_conceptBangBanDoc a ex:KnowledgeConcept ; rdfs:label "Bảng Bạn Đọc"@vi .
+  ex:g11_conceptBangMuonTra a ex:KnowledgeConcept ; rdfs:label "Bảng Mượn-Trả"@vi .
+  ex:g11_conceptRelationships a ex:KnowledgeConcept ; rdfs:label "Relationships"@vi .
+  ex:g11_conceptJoinProperties a ex:KnowledgeConcept ; rdfs:label "Join Properties"@vi .
+  ex:g11_conceptInnerJoin a ex:KnowledgeConcept ; rdfs:label "Inner join"@vi .
+  ex:g11_conceptLeftOuterJoin a ex:KnowledgeConcept ; rdfs:label "Left outer join"@vi .
+  ex:g11_conceptRightOuterJoin a ex:KnowledgeConcept ; rdfs:label "Right outer join"@vi .
+  ex:g11_conceptReferentialIntegrity a ex:KnowledgeConcept ; rdfs:label "Toàn vẹn tham chiếu"@vi .
+  ex:g11_conceptLookupWizard a ex:KnowledgeConcept ; rdfs:label "Lookup Wizard"@vi .
+  ex:g11_conceptCotTraCuu a ex:KnowledgeConcept ; rdfs:label "Cột dữ liệu từ tra cứu"@vi .
+  ex:g11_conceptBieuMauAccess a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu trong Access"@vi .
+  ex:g11_conceptBoundForm a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu có kết buộc"@vi .
+  ex:g11_conceptUnboundForm a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu không kết buộc"@vi .
+  ex:g11_conceptFormWizard a ex:KnowledgeConcept ; rdfs:label "Form Wizard"@vi .
+  ex:g11_conceptSplitForm a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu tách đôi"@vi .
+  ex:g11_conceptMultipleItemsForm a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu nhiều bản ghi"@vi .
+  ex:g11_conceptSubform a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu con"@vi .
+  ex:g11_conceptLinkedForms a ex:KnowledgeConcept ; rdfs:label "Linked forms"@vi .
+  ex:g11_conceptFormView a ex:KnowledgeConcept ; rdfs:label "Form View"@vi .
+  ex:g11_conceptSapXepDuLieu a ex:KnowledgeConcept ; rdfs:label "Sắp xếp dữ liệu"@vi .
+  ex:g11_conceptLocDuLieu a ex:KnowledgeConcept ; rdfs:label "Lọc dữ liệu"@vi .
+  ex:g11_conceptTruyVan a ex:KnowledgeConcept ; rdfs:label "Truy vấn"@vi .
+  ex:g11_conceptSELECTQuery a ex:KnowledgeConcept ; rdfs:label "Truy vấn SELECT"@vi .
+  ex:g11_conceptQueryDesign a ex:KnowledgeConcept ; rdfs:label "Query Design"@vi .
+  ex:g11_conceptLuoiQBE a ex:KnowledgeConcept ; rdfs:label "Lưới QBE"@vi .
+  ex:g11_conceptTieuChiTruyVan a ex:KnowledgeConcept ; rdfs:label "Tiêu chí truy vấn"@vi .
+  ex:g11_conceptBieuThucLogic a ex:KnowledgeConcept ; rdfs:label "Biểu thức logic"@vi .
+  ex:g11_conceptParameterQuery a ex:KnowledgeConcept ; rdfs:label "Truy vấn có tham số"@vi .
+  ex:g11_conceptActionQuery a ex:KnowledgeConcept ; rdfs:label "Truy vấn hành động"@vi .
+  ex:g11_conceptMakeTableQuery a ex:KnowledgeConcept ; rdfs:label "Make Table query"@vi .
+  ex:g11_conceptAppendQuery a ex:KnowledgeConcept ; rdfs:label "Append query"@vi .
+  ex:g11_conceptUpdateQuery a ex:KnowledgeConcept ; rdfs:label "Update query"@vi .
+  ex:g11_conceptDeleteQuery a ex:KnowledgeConcept ; rdfs:label "Delete query"@vi .
+  ex:g11_conceptBaoCaoAccess a ex:KnowledgeConcept ; rdfs:label "Báo cáo trong Access"@vi .
+  ex:g11_conceptBaoCaoChiTiet a ex:KnowledgeConcept ; rdfs:label "Báo cáo chi tiết"@vi .
+  ex:g11_conceptBaoCaoTomTat a ex:KnowledgeConcept ; rdfs:label "Báo cáo tóm tắt"@vi .
+  ex:g11_conceptReportWizard a ex:KnowledgeConcept ; rdfs:label "Report Wizard"@vi .
+  ex:g11_conceptGroupSortTotal a ex:KnowledgeConcept ; rdfs:label "Group, Sort, and Total"@vi .
+  ex:g11_conceptCrosstabQueryWizard a ex:KnowledgeConcept ; rdfs:label "Crosstab Query Wizard"@vi .
+  ex:g11_conceptReportHeader a ex:KnowledgeConcept ; rdfs:label "Report Header"@vi .
+  ex:g11_conceptPageHeader a ex:KnowledgeConcept ; rdfs:label "Page Header"@vi .
+  ex:g11_conceptDetailSection a ex:KnowledgeConcept ; rdfs:label "Detail"@vi .
+  ex:g11_conceptPageFooter a ex:KnowledgeConcept ; rdfs:label "Page Footer"@vi .
+  ex:g11_conceptReportFooter a ex:KnowledgeConcept ; rdfs:label "Report Footer"@vi .
+  ex:g11_conceptControlAccess a ex:KnowledgeConcept ; rdfs:label "Điều khiển trong Access"@vi .
+  ex:g11_conceptTextBox a ex:KnowledgeConcept ; rdfs:label "Hộp dữ liệu"@vi .
+  ex:g11_conceptLabelControl a ex:KnowledgeConcept ; rdfs:label "Nhãn tên trường"@vi .
+  ex:g11_conceptLayoutView a ex:KnowledgeConcept ; rdfs:label "Layout View"@vi .
+  ex:g11_conceptArrangeRibbon a ex:KnowledgeConcept ; rdfs:label "Dải lệnh Arrange"@vi .
+  ex:g11_conceptThemesAccess a ex:KnowledgeConcept ; rdfs:label "Themes trong Access"@vi .
+  ex:g11_conceptColorsAccess a ex:KnowledgeConcept ; rdfs:label "Colors trong Access"@vi .
+  ex:g11_conceptFontsAccess a ex:KnowledgeConcept ; rdfs:label "Fonts trong Access"@vi .
+  ex:g11_conceptNavigationForm a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu điều hướng"@vi .
+  ex:g11_conceptSwitchboard a ex:KnowledgeConcept ; rdfs:label "Bảng điều khiển trung tâm"@vi .
+  ex:g11_conceptUngDungQuanLiThuVien a ex:KnowledgeConcept ; rdfs:label "Ứng dụng quản lí thư viện"@vi .
+  ex:g11_conceptVBAAccess a ex:KnowledgeConcept ; rdfs:label "VBA trong Access"@vi .
+
+  ex:g11_topicFict ex:hasConcept ex:g11_conceptMicrosoftAccess, ex:g11_conceptCSDLAccess,
+    ex:g11_conceptBangCSDL, ex:g11_conceptQuanHeBang, ex:g11_conceptBieuMauAccess,
+    ex:g11_conceptTruyVan, ex:g11_conceptBaoCaoAccess, ex:g11_conceptNavigationForm,
+    ex:g11_conceptUngDungQuanLiThuVien .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g11_topicFict_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ biết một số đặc điểm của phần mềm hệ quản trị cơ sở dữ liệu quan hệ Microsoft Access và các thành phần chính trong cửa sổ làm việc; biết một số kiểu dữ liệu trường của bản ghi và cách thiết lập kiểu dữ liệu trường; tạo lập được cơ sở dữ liệu đơn giản từ khuôn mẫu Microsoft Access và biết cách nhập dữ liệu vào một bảng."@vi ;
+    ex:appearsOnPage ex:g11_page127 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 .
+
+  ex:g11_topicFict_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ biết cách tạo bảng theo thiết kế, biết sơ bộ cách thiết lập một số thuộc tính kiểu dữ liệu thường dùng và tạo được một số bảng CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page133 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 .
+
+  ex:g11_topicFict_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ biết cách thiết lập đúng đắn mối quan hệ giữa các bảng trong một CSDL để kết nối dữ liệu giữa hai bản ghi từ hai bảng, tạo được CSDL có nhiều bảng và thiết lập được quan hệ giữa các bảng."@vi ;
+    ex:appearsOnPage ex:g11_page139 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 .
+
+  ex:g11_topicFict_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ phân biệt được biểu mẫu có kết buộc với bảng CSDL và biểu mẫu không kết buộc; tạo được một số loại biểu mẫu thường dùng nhất; sử dụng được biểu mẫu để nhập dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page144 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 .
+
+  ex:g11_topicFict_l5_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 5 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tạo và sử dụng được các truy vấn để tìm kiếm, kết xuất thông tin từ CSDL; góp phần giải thích tính ưu việt của việc quản lí dữ liệu một cách khoa học nhờ ứng dụng CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page150 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 .
+
+  ex:g11_topicFict_l6_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 6 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ thực hiện được việc kết xuất thông tin từ CSDL và tìm hiểu thêm một vài chức năng của hệ quản trị CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page156 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 .
+
+  ex:g11_topicFict_l7_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 7 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ chỉnh sửa được bài trí các thành phần trong biểu mẫu, báo cáo; thiết lập được chủ đề màu sắc và phong cách văn bản của giao diện ứng dụng."@vi ;
+    ex:appearsOnPage ex:g11_page161 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 .
+
+  ex:g11_topicFict_l8_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 8 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tạo được biểu mẫu điều hướng để làm giao diện khi mở ứng dụng và hoàn tất một ứng dụng đơn giản có thể sử dụng được."@vi ;
+    ex:appearsOnPage ex:g11_page167 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 .
+
+  ex:g11_topicFict_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề F ICT lớp 11"@vi ;
+    ex:hasSummaryText "Có thể mở bảng, biểu mẫu, truy vấn, báo cáo dưới các khung nhìn khác nhau trong vùng làm việc của Access. Khung nhìn thiết kế bảng gồm phần trên là danh sách tên trường và kiểu dữ liệu, phần dưới là thuộc tính chi tiết của trường đang thiết kế, chỉnh sửa."@vi ;
+    ex:appearsOnPage ex:g11_page132 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 .
+
+  ex:g11_topicFict_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề F ICT lớp 11"@vi ;
+    ex:hasSummaryText "Sau khi tạo bảng mới cần mở khung nhìn thiết kế để nhập tên cột, chọn kiểu dữ liệu, xác định các thuộc tính quan trọng như Field Size, Required, Indexed và Yes/No Duplicates; chọn cột làm khoá chính; chuyển sang khung nhìn bảng dữ liệu và thử nhập dữ liệu để kiểm tra."@vi ;
+    ex:appearsOnPage ex:g11_page138 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 .
+
+  ex:g11_topicFict_l3_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 3 chủ đề F ICT lớp 11"@vi ;
+    ex:hasSummaryText "Thiết lập, chỉnh sửa và xoá mối quan hệ giữa hai bảng trong CSDL bắt đầu bằng chọn Database Tools\\Relationships. Có thể kéo thả trường khoá ngoại của bảng con vào trường khoá chính của bảng mẹ để tạo quan hệ; chọn thuộc tính kết nối trong Join Properties; thiết lập kiểu dữ liệu từ tra cứu để đảm bảo toàn vẹn tham chiếu."@vi ;
+    ex:appearsOnPage ex:g11_page143 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 .
+
+  ex:g11_topicFict_l4_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 4 chủ đề F ICT lớp 11"@vi ;
+    ex:hasSummaryText "Biểu mẫu dùng để nhập và xem dữ liệu từ một hoặc nhiều bảng; có thể hiển thị một bản ghi hay nhiều bản ghi; có thể trình bày tách đôi thành hai phần. Nút lệnh Form tạo nhanh biểu mẫu nhưng không cho phép tuỳ biến; Form Wizard hỗ trợ tạo biểu mẫu theo yêu cầu sử dụng."@vi ;
+    ex:appearsOnPage ex:g11_page149 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 .
+
+  ex:g11_topicFict_l5_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 5 chủ đề F ICT lớp 11"@vi ;
+    ex:hasSummaryText "Query Design cho phép chọn bảng hoặc truy vấn, lấy các trường dữ liệu cần có; mỗi cột trong lưới QBE ứng với một trường dữ liệu. Hàng Sort dùng để sắp xếp, hàng Criteria dùng để viết biểu thức logic chọn bản ghi, hàng Or dùng để viết biểu thức theo phép toán OR."@vi ;
+    ex:appearsOnPage ex:g11_page155 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 .
+
+  ex:g11_topicFict_l6_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 6 chủ đề F ICT lớp 11"@vi ;
+    ex:hasSummaryText "Lệnh Report giúp tạo báo cáo chi tiết có phân nhóm dựa trên truy vấn đã sắp xếp kết quả. Report Wizard hỗ trợ tạo báo cáo lấy dữ liệu từ nhiều bảng hay truy vấn, có tuỳ chọn sắp xếp và bài trí. Trong khung nhìn thiết kế báo cáo, nhóm lệnh Group & Sort hỗ trợ phân nhóm, sắp xếp và thêm tổng con."@vi ;
+    ex:appearsOnPage ex:g11_page160 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 .
+
+  ex:g11_topicFict_l7_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 7 chủ đề F ICT lớp 11"@vi ;
+    ex:hasSummaryText "Các nhóm việc chính khi chỉnh sửa phần tử biểu mẫu, báo cáo gồm đổi tên tiêu đề và nhãn tên, chỉnh sửa kích thước phần tử cho hợp lí, di chuyển sắp xếp lại. Có thể luân phiên sử dụng Layout View, Design View và Form View để sắp xếp bài trí và kiểm tra kết quả."@vi ;
+    ex:appearsOnPage ex:g11_page166 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 .
+
+  ex:g11_topicFict_l8_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 8 chủ đề F ICT lớp 11"@vi ;
+    ex:hasSummaryText "Những công việc chính để hoàn tất ứng dụng là thiết kế giao diện và bài trí nút lệnh phù hợp với quy trình nghiệp vụ quản lí CSDL, tạo một biểu mẫu điều hướng, chỉnh sửa và chạy thử biểu mẫu điều hướng, sau đó thiết lập biểu mẫu điều hướng làm bảng điều khiển trung tâm của ứng dụng."@vi ;
+    ex:appearsOnPage ex:g11_page170 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 .
+
+  ex:g11_topicFict_lesson1 ex:hasSummary ex:g11_topicFict_l1_summary .
+  ex:g11_topicFict_lesson2 ex:hasSummary ex:g11_topicFict_l2_summary .
+  ex:g11_topicFict_lesson3 ex:hasSummary ex:g11_topicFict_l3_summary .
+  ex:g11_topicFict_lesson4 ex:hasSummary ex:g11_topicFict_l4_summary .
+  ex:g11_topicFict_lesson5 ex:hasSummary ex:g11_topicFict_l5_summary .
+  ex:g11_topicFict_lesson6 ex:hasSummary ex:g11_topicFict_l6_summary .
+  ex:g11_topicFict_lesson7 ex:hasSummary ex:g11_topicFict_l7_summary .
+  ex:g11_topicFict_lesson8 ex:hasSummary ex:g11_topicFict_l8_summary .
+
+  ###########################################################################
+  # Figures
+  ###########################################################################
+
+  ex:g11_topicFict_fig_l1_accessWindow a ex:Figure ;
+    rdfs:label "Hình 1. Một cửa sổ làm việc của Access"@vi ;
+    ex:hasCaption "Hình 1. Một cửa sổ làm việc của Access"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g11_page128 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptMicrosoftAccess, ex:g11_conceptVungNutLenhAccess,
+                         ex:g11_conceptVungDieuHuongAccess, ex:g11_conceptVungLamViecAccess .
+
+  ex:g11_topicFict_fig_l1_blankDatabase a ex:Figure ;
+    rdfs:label "Hình 2. Tạo CSDL trống"@vi ;
+    ex:hasCaption "Hình 2. Tạo CSDL trống"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g11_page129 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBlankDatabase, ex:g11_conceptCSDLAccess .
+
+  ex:g11_topicFict_fig_l1_tableViews a ex:Figure ;
+    rdfs:label "Hình 3. Khung nhìn thiết kế và khung nhìn bảng dữ liệu"@vi ;
+    ex:hasCaption "Hình 3. Khung nhìn thiết kế và khung nhìn bảng dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g11_page130 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptDesignView, ex:g11_conceptDatasheetView .
+
+  ex:g11_topicFict_fig_l1_designDataType a ex:Figure ;
+    rdfs:label "Hình 4. Khung nhìn thiết kế bảng và cách thiết lập kiểu dữ liệu cho cột"@vi ;
+    ex:hasCaption "Hình 4. Khung nhìn thiết kế bảng và cách thiết lập kiểu dữ liệu cho cột"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:g11_page131 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptDesignView, ex:g11_conceptKieuDuLieuAccess, ex:g11_conceptFieldProperties .
+
+  ex:g11_topicFict_fig_l2_sachDatasheet a ex:Figure ;
+    rdfs:label "Hình 1. Bảng Sách trong khung nhìn bảng dữ liệu"@vi ;
+    ex:hasCaption "Hình 1. Bảng Sách trong khung nhìn bảng dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:g11_page134 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBangSach, ex:g11_conceptDatasheetView .
+
+  ex:g11_topicFict_fig_l2_bandocDatasheet a ex:Figure ;
+    rdfs:label "Hình 2. Bảng Bạn Đọc trong khung nhìn dữ liệu"@vi ;
+    ex:hasCaption "Hình 2. Bảng Bạn Đọc trong khung nhìn dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:g11_page135 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBangBanDoc, ex:g11_conceptDatasheetView .
+
+  ex:g11_topicFict_fig_l3_joinOptions a ex:Figure ;
+    rdfs:label "Hình 1. Các lựa chọn kết nối dữ liệu"@vi ;
+    ex:hasCaption "Hình 1. Các lựa chọn kết nối dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:g11_page139 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptJoinProperties, ex:g11_conceptInnerJoin,
+                         ex:g11_conceptLeftOuterJoin, ex:g11_conceptRightOuterJoin .
+
+  ex:g11_topicFict_fig_l3_relationshipWindow a ex:Figure ;
+    rdfs:label "Hình 2. Vùng làm việc với các mối quan hệ hiển thị các quan hệ hiện có"@vi ;
+    ex:hasCaption "Hình 2. Vùng làm việc với các mối quan hệ hiển thị các quan hệ hiện có"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:g11_page140 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptRelationships, ex:g11_conceptQuanHeBang .
+
+  ex:g11_topicFict_fig_l3_lookupMaSach a ex:Figure ;
+    rdfs:label "Hình 3. Chọn để nhập Mã sách cho một bản ghi Mượn-Trả"@vi ;
+    ex:hasCaption "Hình 3. Chọn để nhập Mã sách cho một bản ghi Mượn-Trả"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:g11_page141 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptLookupWizard, ex:g11_conceptCotTraCuu .
+
+  ex:g11_topicFict_fig_l3_lookupWizardSteps a ex:Figure ;
+    rdfs:label "Hình 4. Thiết lập kiểu dữ liệu từ tra cứu"@vi ;
+    ex:hasCaption "Hình 4. Thiết lập kiểu dữ liệu từ tra cứu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:g11_page142 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptLookupWizard, ex:g11_conceptCotTraCuu,
+                         ex:g11_conceptReferentialIntegrity .
+
+  ex:g11_topicFict_fig_l4_splitForm a ex:Figure ;
+    rdfs:label "Hình 1. Biểu mẫu tách đôi"@vi ;
+    ex:hasCaption "Hình 1. Biểu mẫu tách đôi"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:g11_page144 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSplitForm, ex:g11_conceptBieuMauAccess .
+
+  ex:g11_topicFict_fig_l4_formCommands a ex:Figure ;
+    rdfs:label "Hình 2. Các nút lệnh tạo biểu mẫu"@vi ;
+    ex:hasCaption "Hình 2. Các nút lệnh tạo biểu mẫu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:g11_page145 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptFormWizard, ex:g11_conceptBieuMauAccess .
+
+  ex:g11_topicFict_fig_l4_formWizardFields a ex:Figure ;
+    rdfs:label "Hình 3. Chọn các trường dữ liệu"@vi ;
+    ex:hasCaption "Hình 3. Chọn các trường dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:g11_page146 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptFormWizard .
+
+  ex:g11_topicFict_fig_l4_syncForm a ex:Figure ;
+    rdfs:label "Hình 4. Chọn tạo biểu mẫu đồng bộ hoá"@vi ;
+    ex:hasCaption "Hình 4. Chọn tạo biểu mẫu đồng bộ hoá"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:g11_page147 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSubform, ex:g11_conceptLinkedForms .
+
+  ex:g11_topicFict_fig_l4_formViews a ex:Figure ;
+    rdfs:label "Hình 5. Các khung nhìn biểu mẫu"@vi ;
+    ex:hasCaption "Hình 5. Các khung nhìn biểu mẫu"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:g11_page147 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptFormView, ex:g11_conceptLayoutView, ex:g11_conceptDesignView .
+
+  ex:g11_topicFict_fig_l4_multiRecordForm a ex:Figure ;
+    rdfs:label "Hình 6. Một biểu mẫu nhiều bản ghi"@vi ;
+    ex:hasCaption "Hình 6. Một biểu mẫu nhiều bản ghi"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:g11_page148 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptMultipleItemsForm, ex:g11_conceptBieuMauAccess .
+
+  ex:g11_topicFict_fig_l4_sortFilter a ex:Figure ;
+    rdfs:label "Hình 7. Nhóm lệnh sắp xếp và lọc dữ liệu Sort & Filter"@vi ;
+    ex:hasCaption "Hình 7. Nhóm lệnh sắp xếp và lọc dữ liệu Sort & Filter"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:g11_page148 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSapXepDuLieu, ex:g11_conceptLocDuLieu .
+
+  ex:g11_topicFict_fig_l5_queryDesignWorkspace a ex:Figure ;
+    rdfs:label "Hình 1. Vùng làm việc thiết kế truy vấn"@vi ;
+    ex:hasCaption "Hình 1. Vùng làm việc thiết kế truy vấn"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 18 ;
+    ex:appearsOnPage ex:g11_page151 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptQueryDesign, ex:g11_conceptLuoiQBE .
+
+  ex:g11_topicFict_fig_l5_queryResult a ex:Figure ;
+    rdfs:label "Hình 2. Kết quả chạy truy vấn"@vi ;
+    ex:hasCaption "Hình 2. Kết quả chạy truy vấn"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 19 ;
+    ex:appearsOnPage ex:g11_page151 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSELECTQuery, ex:g11_conceptTruyVan .
+
+  ex:g11_topicFict_fig_l5_sortByName a ex:Figure ;
+    rdfs:label "Hình 3. Sắp xếp theo Tên"@vi ;
+    ex:hasCaption "Hình 3. Sắp xếp theo Tên"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 20 ;
+    ex:appearsOnPage ex:g11_page152 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSapXepDuLieu, ex:g11_conceptLuoiQBE .
+
+  ex:g11_topicFict_fig_l5_criteriaVH01 a ex:Figure ;
+    rdfs:label "Hình 4. Chọn lấy ra bản ghi có Mã sách = “VH-01”"@vi ;
+    ex:hasCaption "Hình 4. Chọn lấy ra bản ghi có Mã sách = “VH-01”"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 21 ;
+    ex:appearsOnPage ex:g11_page152 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTieuChiTruyVan, ex:g11_conceptBieuThucLogic .
+
+  ex:g11_topicFict_fig_l5_parameterPrompt a ex:Figure ;
+    rdfs:label "Hình 5. Lời nhắc điền tham số"@vi ;
+    ex:hasCaption "Hình 5. Lời nhắc điền tham số"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 22 ;
+    ex:appearsOnPage ex:g11_page154 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptParameterQuery .
+
+  ex:g11_topicFict_fig_l6_reportQuery a ex:Figure ;
+    rdfs:label "Hình 1. Một ví dụ truy vấn chuẩn bị báo cáo chi tiết"@vi ;
+    ex:hasCaption "Hình 1. Một ví dụ truy vấn chuẩn bị báo cáo chi tiết"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 23 ;
+    ex:appearsOnPage ex:g11_page157 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTruyVan, ex:g11_conceptBaoCaoChiTiet .
+
+  ex:g11_topicFict_fig_l6_reportWizard a ex:Figure ;
+    rdfs:label "Hình 2. Report Wizard hỗ trợ làm báo cáo"@vi ;
+    ex:hasCaption "Hình 2. Report Wizard hỗ trợ làm báo cáo"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 24 ;
+    ex:appearsOnPage ex:g11_page158 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptReportWizard, ex:g11_conceptBaoCaoAccess .
+
+  ex:g11_topicFict_fig_l6_groupMonth a ex:Figure ;
+    rdfs:label "Hình 3. Lựa chọn nhóm theo “Month”"@vi ;
+    ex:hasCaption "Hình 3. Lựa chọn nhóm theo “Month”"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 25 ;
+    ex:appearsOnPage ex:g11_page159 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptGroupSortTotal .
+
+  ex:g11_topicFict_fig_l6_totalOptions a ex:Figure ;
+    rdfs:label "Hình 4. Lựa chọn cách tóm tắt số liệu từng nhóm"@vi ;
+    ex:hasCaption "Hình 4. Lựa chọn cách tóm tắt số liệu từng nhóm"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 26 ;
+    ex:appearsOnPage ex:g11_page159 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptGroupSortTotal .
+
+  ex:g11_topicFict_fig_l6_crosstabReport a ex:Figure ;
+    rdfs:label "Hình 5. Báo cáo được tạo ra dựa trên kết quả truy vấn crosstab"@vi ;
+    ex:hasCaption "Hình 5. Báo cáo được tạo ra dựa trên kết quả truy vấn crosstab"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 27 ;
+    ex:appearsOnPage ex:g11_page160 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCrosstabQueryWizard, ex:g11_conceptBaoCaoTomTat .
+
+  ex:g11_topicFict_fig_l7_reportViews a ex:Figure ;
+    rdfs:label "Hình 1. Các khung nhìn báo cáo"@vi ;
+    ex:hasCaption "Hình 1. Các khung nhìn báo cáo"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 28 ;
+    ex:appearsOnPage ex:g11_page161 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBaoCaoAccess, ex:g11_conceptDesignView, ex:g11_conceptLayoutView .
+
+  ex:g11_topicFict_fig_l7_reportParts a ex:Figure ;
+    rdfs:label "Hình 2. Các phần của báo cáo và các hộp dữ liệu trong phần Detail"@vi ;
+    ex:hasCaption "Hình 2. Các phần của báo cáo và các hộp dữ liệu trong phần Detail"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 29 ;
+    ex:appearsOnPage ex:g11_page161 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptReportHeader, ex:g11_conceptPageHeader,
+                         ex:g11_conceptDetailSection, ex:g11_conceptPageFooter,
+                         ex:g11_conceptReportFooter, ex:g11_conceptTextBox .
+
+  ex:g11_topicFict_fig_l7_formDesign a ex:Figure ;
+    rdfs:label "Hình 3. Biểu mẫu dưới khung nhìn thiết kế"@vi ;
+    ex:hasCaption "Hình 3. Biểu mẫu dưới khung nhìn thiết kế"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 30 ;
+    ex:appearsOnPage ex:g11_page163 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBieuMauAccess, ex:g11_conceptDesignView .
+
+  ex:g11_topicFict_fig_l7_layoutForm a ex:Figure ;
+    rdfs:label "Hình 4. Một biểu mẫu nhiều bản ghi dưới khung nhìn bài trí"@vi ;
+    ex:hasCaption "Hình 4. Một biểu mẫu nhiều bản ghi dưới khung nhìn bài trí"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 31 ;
+    ex:appearsOnPage ex:g11_page163 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptLayoutView, ex:g11_conceptMultipleItemsForm .
+
+  ex:g11_topicFict_fig_l7_arrangeRibbon a ex:Figure ;
+    rdfs:label "Hình 5. Dải lệnh Arrange"@vi ;
+    ex:hasCaption "Hình 5. Dải lệnh Arrange"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 32 ;
+    ex:appearsOnPage ex:g11_page165 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptArrangeRibbon, ex:g11_conceptLayoutView .
+
+  ex:g11_topicFict_fig_l8_navigationChoices a ex:Figure ;
+    rdfs:label "Hình 1. Các lựa chọn biểu mẫu điều hướng"@vi ;
+    ex:hasCaption "Hình 1. Các lựa chọn biểu mẫu điều hướng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 33 ;
+    ex:appearsOnPage ex:g11_page167 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptNavigationForm .
+
+  ex:g11_topicFict_fig_l8_dragAddNew a ex:Figure ;
+    rdfs:label "Hình 2. Kéo thả vào Add New"@vi ;
+    ex:hasCaption "Hình 2. Kéo thả vào Add New"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 34 ;
+    ex:appearsOnPage ex:g11_page168 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptNavigationForm .
+
+  ex:g11_topicFict_fig_l8_centralNavigation a ex:Figure ;
+    rdfs:label "Hình 3. Biểu mẫu điều hướng làm bản điều khiển trung tâm của ứng dụng"@vi ;
+    ex:hasCaption "Hình 3. Biểu mẫu điều hướng làm bản điều khiển trung tâm của ứng dụng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 35 ;
+    ex:appearsOnPage ex:g11_page169 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptNavigationForm, ex:g11_conceptSwitchboard,
+                         ex:g11_conceptUngDungQuanLiThuVien .
+
+  ###########################################################################
+  # Figure-to-page links
+  ###########################################################################
+
+  ex:g11_page128 ex:hasFigure ex:g11_topicFict_fig_l1_accessWindow .
+  ex:g11_page129 ex:hasFigure ex:g11_topicFict_fig_l1_blankDatabase .
+  ex:g11_page130 ex:hasFigure ex:g11_topicFict_fig_l1_tableViews .
+  ex:g11_page131 ex:hasFigure ex:g11_topicFict_fig_l1_designDataType .
+  ex:g11_page134 ex:hasFigure ex:g11_topicFict_fig_l2_sachDatasheet .
+  ex:g11_page135 ex:hasFigure ex:g11_topicFict_fig_l2_bandocDatasheet .
+  ex:g11_page139 ex:hasFigure ex:g11_topicFict_fig_l3_joinOptions .
+  ex:g11_page140 ex:hasFigure ex:g11_topicFict_fig_l3_relationshipWindow .
+  ex:g11_page141 ex:hasFigure ex:g11_topicFict_fig_l3_lookupMaSach .
+  ex:g11_page142 ex:hasFigure ex:g11_topicFict_fig_l3_lookupWizardSteps .
+  ex:g11_page144 ex:hasFigure ex:g11_topicFict_fig_l4_splitForm .
+  ex:g11_page145 ex:hasFigure ex:g11_topicFict_fig_l4_formCommands .
+  ex:g11_page146 ex:hasFigure ex:g11_topicFict_fig_l4_formWizardFields .
+  ex:g11_page147 ex:hasFigure ex:g11_topicFict_fig_l4_syncForm, ex:g11_topicFict_fig_l4_formViews .
+  ex:g11_page148 ex:hasFigure ex:g11_topicFict_fig_l4_multiRecordForm, ex:g11_topicFict_fig_l4_sortFilter .
+  ex:g11_page151 ex:hasFigure ex:g11_topicFict_fig_l5_queryDesignWorkspace, ex:g11_topicFict_fig_l5_queryResult .
+  ex:g11_page152 ex:hasFigure ex:g11_topicFict_fig_l5_sortByName, ex:g11_topicFict_fig_l5_criteriaVH01 .
+  ex:g11_page154 ex:hasFigure ex:g11_topicFict_fig_l5_parameterPrompt .
+  ex:g11_page157 ex:hasFigure ex:g11_topicFict_fig_l6_reportQuery .
+  ex:g11_page158 ex:hasFigure ex:g11_topicFict_fig_l6_reportWizard .
+  ex:g11_page159 ex:hasFigure ex:g11_topicFict_fig_l6_groupMonth, ex:g11_topicFict_fig_l6_totalOptions .
+  ex:g11_page160 ex:hasFigure ex:g11_topicFict_fig_l6_crosstabReport .
+  ex:g11_page161 ex:hasFigure ex:g11_topicFict_fig_l7_reportViews, ex:g11_topicFict_fig_l7_reportParts .
+  ex:g11_page163 ex:hasFigure ex:g11_topicFict_fig_l7_formDesign, ex:g11_topicFict_fig_l7_layoutForm .
+  ex:g11_page165 ex:hasFigure ex:g11_topicFict_fig_l7_arrangeRibbon .
+  ex:g11_page167 ex:hasFigure ex:g11_topicFict_fig_l8_navigationChoices .
+  ex:g11_page168 ex:hasFigure ex:g11_topicFict_fig_l8_dragAddNew .
+  ex:g11_page169 ex:hasFigure ex:g11_topicFict_fig_l8_centralNavigation .
+
+  ###########################################################################
+  # Tables
+  ###########################################################################
+
+  ex:g11_topicFict_table_l2_datatypes a ex:Table ;
+    rdfs:label "Bảng 1. Một số kiểu dữ liệu thường dùng trong Access"@vi ;
+    ex:hasCaption "Bảng 1. Một số kiểu dữ liệu thường dùng trong Access"@vi ;
+    ex:hasRawText "Các kiểu dữ liệu gồm Short Text, Long Text, Number, Date/Time, Currency, AutoNumber, Yes/No; bảng nêu mô tả, kích thước và giải thích thêm cho từng kiểu."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:g11_page133 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKieuDuLieuAccess .
+
+  ex:g11_topicFict_table_l2_sachFields a ex:Table ;
+    rdfs:label "Bảng 2. Các trường dữ liệu trong bảng Sách"@vi ;
+    ex:hasCaption "Bảng 2. Các trường dữ liệu trong bảng Sách"@vi ;
+    ex:hasRawText "Các trường dữ liệu trong bảng Sách gồm Mã sách, Tên sách, Sẵn có, Số trang, Tác giả, Loại sách; bảng nêu kiểu dữ liệu và chú thích cho từng trường."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 2 ;
+    ex:appearsOnPage ex:g11_page134 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBangSach, ex:g11_conceptTruongDuLieu .
+
+  ex:g11_topicFict_table_l2_bandocFields a ex:Table ;
+    rdfs:label "Bảng 3. Các trường dữ liệu trong bảng Bạn Đọc"@vi ;
+    ex:hasCaption "Bảng 3. Các trường dữ liệu trong bảng Bạn Đọc"@vi ;
+    ex:hasRawText "Các trường dữ liệu trong bảng Bạn Đọc gồm Số thẻ, Mã học sinh, Họ và đệm, Tên, Ngày sinh, Giới tính, Số điện thoại, Email, Ảnh; bảng nêu kiểu dữ liệu và chú thích cho từng trường."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 3 ;
+    ex:appearsOnPage ex:g11_page135 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBangBanDoc, ex:g11_conceptTruongDuLieu .
+
+  ex:g11_topicFict_table_l2_muontraFields a ex:Table ;
+    rdfs:label "Bảng 4. Các trường dữ liệu trong bảng Mượn-Trả"@vi ;
+    ex:hasCaption "Bảng 4. Các trường dữ liệu trong bảng Mượn-Trả"@vi ;
+    ex:hasRawText "Các trường dữ liệu trong bảng Mượn-Trả gồm ID, Số thẻ, Mã sách, Ngày mượn, Ngày trả, Chú thích; bảng nêu kiểu dữ liệu và chú thích cho từng trường."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 4 ;
+    ex:appearsOnPage ex:g11_page137 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBangMuonTra, ex:g11_conceptBangNoi .
+
+  ex:g11_topicFict_table_l5_criteriaExamples a ex:Table ;
+    rdfs:label "Bảng 1. Một số ví dụ về tiêu chí lựa chọn dữ liệu"@vi ;
+    ex:hasCaption "Bảng 1. Một số ví dụ về tiêu chí lựa chọn dữ liệu"@vi ;
+    ex:hasRawText "Bảng minh hoạ các biểu thức logic cho kiểu dữ liệu số, ngày tháng, xâu kí tự và logic, ví dụ >100 AND <=200, >=#14/09/2022# AND <=#20/09/2022#, =\"An\", >\"An\", Is Not Null."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 5 ;
+    ex:appearsOnPage ex:g11_page153 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTieuChiTruyVan, ex:g11_conceptBieuThucLogic .
+
+  ex:g11_topicFict_table_l5_combinedCriteria a ex:Table ;
+    rdfs:label "Bảng 2. Một ví dụ về minh hoạ cách viết cho hai trường"@vi ;
+    ex:hasCaption "Bảng 2. Một ví dụ về minh hoạ cách viết cho hai trường"@vi ;
+    ex:hasRawText "Bảng minh hoạ cách kết hợp tiêu chí Ngày mượn và Số trang bằng AND hoặc OR, ví dụ sách mượn trước ngày 05/9/2022 và hơn 100 trang, hoặc sách mượn bắt đầu từ ngày 05/9/2022 hoặc dưới 200 trang."@vi ;
+    ex:tableOrderOnPage 2 ;
+    ex:globalTableOrder 6 ;
+    ex:appearsOnPage ex:g11_page153 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTieuChiTruyVan, ex:g11_conceptBieuThucLogic .
+
+  ex:g11_page133 ex:hasTable ex:g11_topicFict_table_l2_datatypes .
+  ex:g11_page134 ex:hasTable ex:g11_topicFict_table_l2_sachFields .
+  ex:g11_page135 ex:hasTable ex:g11_topicFict_table_l2_bandocFields .
+  ex:g11_page137 ex:hasTable ex:g11_topicFict_table_l2_muontraFields .
+  ex:g11_page153 ex:hasTable ex:g11_topicFict_table_l5_criteriaExamples, ex:g11_topicFict_table_l5_combinedCriteria .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g11_topicFict_def_access a ex:DefinitionText ;
+    rdfs:label "Microsoft Access"@vi ;
+    ex:hasDefinitionText "Microsoft Access là phần mềm hệ quản trị cơ sở dữ liệu quan hệ phù hợp với cơ quan, doanh nghiệp nhỏ hay người dùng cá nhân."@vi ;
+    ex:appearsOnPage ex:g11_page127 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:explainsConcept ex:g11_conceptMicrosoftAccess .
+
+  ex:g11_topicFict_def_accessDatabaseFile a ex:DefinitionText ;
+    rdfs:label "Tệp cơ sở dữ liệu Access"@vi ;
+    ex:hasDefinitionText "Một cơ sở dữ liệu Access được lưu trong máy tính thành một tệp có đuôi tên tệp là .accdb; mỗi cửa sổ Access làm việc với một CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page129 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCSDLAccess .
+
+  ex:g11_topicFict_def_businessLogic a ex:DefinitionText ;
+    rdfs:label "Logic nghiệp vụ"@vi ;
+    ex:hasDefinitionText "Trong tin học, logic nghiệp vụ hàm ý các quy tắc nghiệp vụ trong thế giới thực mà người thiết kế CSDL cần dựa vào để xác định cách thu thập, lưu trữ và thao tác dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page134 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 .
+
+  ex:g11_topicFict_def_query a ex:DefinitionText ;
+    rdfs:label "Truy vấn"@vi ;
+    ex:hasDefinitionText "Truy vấn là một mẫu câu hỏi, cho phép chọn từ các bảng đúng những gì ta cần xem; sau khi thiết kế và ghi lưu, mỗi khi mở lại truy vấn, ta có câu trả lời dựa trên dữ liệu mới nhất."@vi ;
+    ex:appearsOnPage ex:g11_page150 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:explainsConcept ex:g11_conceptTruyVan .
+
+  ex:g11_topicFict_def_parameterQuery a ex:DefinitionText ;
+    rdfs:label "Truy vấn có tham số"@vi ;
+    ex:hasDefinitionText "Truy vấn có tham số là một truy vấn mời người dùng gõ nhập thêm yêu cầu lựa chọn trong khi chạy truy vấn, làm tăng tính linh hoạt khi khai thác dữ liệu từ CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page154 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:explainsConcept ex:g11_conceptParameterQuery .
+
+  ex:g11_topicFict_def_actionQuery a ex:DefinitionText ;
+    rdfs:label "Truy vấn hành động"@vi ;
+    ex:hasDefinitionText "Truy vấn hành động là truy vấn làm thay đổi bảng hoặc thay đổi một loạt nhiều bản ghi; kết quả của truy vấn hành động không thể đảo ngược bằng Undo nên cần rất thận trọng khi thực hiện."@vi ;
+    ex:appearsOnPage ex:g11_page154 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:explainsConcept ex:g11_conceptActionQuery .
+
+  ex:g11_topicFict_def_report a ex:DefinitionText ;
+    rdfs:label "Báo cáo trong Access"@vi ;
+    ex:hasDefinitionText "Báo cáo nhằm đáp ứng yêu cầu thông tin của cấp quản lí, cơ quan, doanh nghiệp; mỗi khi chạy thực thi, thông tin trong báo cáo được kết xuất từ dữ liệu cập nhật mới nhất."@vi ;
+    ex:appearsOnPage ex:g11_page156 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:explainsConcept ex:g11_conceptBaoCaoAccess .
+
+  ex:g11_topicFict_def_navigationForm a ex:DefinitionText ;
+    rdfs:label "Biểu mẫu điều hướng"@vi ;
+    ex:hasDefinitionText "Biểu mẫu điều hướng đơn giản là một giao diện có chứa các nút điều khiển giúp điều hướng để người dùng dễ dàng chuyển đổi giữa các biểu mẫu và báo cáo khác nhau trong CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page167 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:explainsConcept ex:g11_conceptNavigationForm .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g11_topicFict_p127_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1 giới thiệu Microsoft Access, các thành phần chính của cửa sổ làm việc, một số kiểu dữ liệu trường trong bảng và cách tạo lập CSDL đơn giản từ khuôn mẫu hoặc CSDL trống."@vi ;
+    ex:appearsOnPage ex:g11_page127 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToSection ex:g11_topicFict_l1s1 .
+
+  ex:g11_topicFict_p128_01 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Cửa sổ làm việc của Access có vùng nút lệnh, vùng điều hướng, vùng làm việc và các nút lệnh thay đổi khung nhìn. Vùng điều hướng hiển thị các đối tượng trong CSDL như bảng, truy vấn, biểu mẫu và báo cáo."@vi ;
+    ex:appearsOnPage ex:g11_page128 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToSection ex:g11_topicFict_l1s1 .
+
+  ex:g11_topicFict_p129_01 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Một CSDL Access được lưu thành tệp .accdb. Có thể tạo CSDL mới từ khuôn mẫu có sẵn hoặc từ CSDL trống; với CSDL trống, người dùng tự tạo đối tượng như bảng, biểu mẫu, báo cáo, truy vấn."@vi ;
+    ex:appearsOnPage ex:g11_page129 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToSection ex:g11_topicFict_l1s2 .
+
+  ex:g11_topicFict_p130_01 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Có hai khung nhìn bảng quan trọng là khung nhìn thiết kế và khung nhìn bảng dữ liệu. Trong bảng dữ liệu, mỗi bản ghi là một hàng, mỗi cột là một trường của bản ghi và chứa dữ liệu thuộc một kiểu nhất định."@vi ;
+    ex:appearsOnPage ex:g11_page130 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToSection ex:g11_topicFict_l1s4 .
+
+  ex:g11_topicFict_p131_01 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Khung nhìn thiết kế bảng hiển thị các cột Field Name và Data Type ở nửa trên, còn Field Properties ở nửa dưới để thiết lập thuộc tính chi tiết của từng trường."@vi ;
+    ex:appearsOnPage ex:g11_page131 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToSection ex:g11_topicFict_l1s5 .
+
+  ex:g11_topicFict_p132_01 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Phần thực hành yêu cầu tạo CSDL theo mẫu Students, khám phá biểu mẫu Student List, nhập thử dữ liệu, xem thuộc tính chi tiết của cột và thử các thao tác thiết kế cột trong khung nhìn thiết kế bảng."@vi ;
+    ex:appearsOnPage ex:g11_page132 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:belongsToSection ex:g11_topicFict_l1s6 .
+
+  ex:g11_topicFict_p133_01 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "Bài 2 giới thiệu cách tạo bảng trong cơ sở dữ liệu. Bảng dữ liệu có nhiều cột, mỗi cột cần được thiết lập kiểu dữ liệu phù hợp như Short Text, Long Text, Number, Date/Time, Currency, AutoNumber hoặc Yes/No."@vi ;
+    ex:appearsOnPage ex:g11_page133 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToSection ex:g11_topicFict_l2s1 .
+
+  ex:g11_topicFict_p134_01 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "CSDL thư viện đơn giản gồm các bảng Sách, Bạn Đọc và Mượn-Trả sách. Bảng Sách có các trường như Mã sách, Tên sách, Sẵn có, Số trang, Tác giả và Loại sách."@vi ;
+    ex:appearsOnPage ex:g11_page134 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToSection ex:g11_topicFict_l2s1 .
+
+  ex:g11_topicFict_p135_01 a ex:Paragraph ;
+    ex:paragraphOrder 9 ;
+    ex:hasRawText "Bảng Bạn Đọc có các trường như Số thẻ, Mã học sinh, Họ và đệm, Tên, Ngày sinh, Giới tính, Số điện thoại, Email và Ảnh. Có thể dùng mã số thẻ để phân biệt bạn đọc, nhưng với thư viện quy mô lớn cần phân loại rõ ràng hơn."@vi ;
+    ex:appearsOnPage ex:g11_page135 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToSection ex:g11_topicFict_l2s1 .
+
+  ex:g11_topicFict_p136_01 a ex:Paragraph ;
+    ex:paragraphOrder 10 ;
+    ex:hasRawText "Khi tạo bảng theo thiết kế, mở bảng trong khung nhìn thiết kế, nhập lần lượt tên trường, chọn kiểu dữ liệu trong Data Type và thiết lập các thuộc tính chi tiết trong Field Properties như Field Size, Format, Input Mask, Required và Indexed."@vi ;
+    ex:appearsOnPage ex:g11_page136 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToSection ex:g11_topicFict_l2s1 .
+
+  ex:g11_topicFict_p137_01 a ex:Paragraph ;
+    ex:paragraphOrder 11 ;
+    ex:hasRawText "Quan hệ mượn sách giữa bạn đọc và sách là quan hệ nhiều-nhiều. Để tạo bảng dữ liệu cần tạo bảng nối Mượn-Trả, biến quan hệ nhiều-nhiều thành hai quan hệ một-nhiều với hai khoá ngoại Số thẻ và Mã sách."@vi ;
+    ex:appearsOnPage ex:g11_page137 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToSection ex:g11_topicFict_l2s2 .
+
+  ex:g11_topicFict_p138_01 a ex:Paragraph ;
+    ex:paragraphOrder 12 ;
+    ex:hasRawText "Thực hành tạo bảng trong CSDL yêu cầu tạo bảng Sách và bảng Bạn Đọc theo thiết kế, nhập thử dữ liệu, chọn khoá chính phù hợp, đặt thuộc tính Field Size, Indexed và Format cho một số trường."@vi ;
+    ex:appearsOnPage ex:g11_page138 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:belongsToSection ex:g11_topicFict_l2s3 .
+
+  ex:g11_topicFict_p139_01 a ex:Paragraph ;
+    ex:paragraphOrder 13 ;
+    ex:hasRawText "Bài 3 giới thiệu liên kết các bảng trong cơ sở dữ liệu. Thiết lập mối quan hệ giữa hai bảng nhằm nối dữ liệu giữa các bản ghi tương ứng; các lựa chọn kết nối gồm phép nối trong, nối ngoài bên trái và nối ngoài bên phải."@vi ;
+    ex:appearsOnPage ex:g11_page139 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToSection ex:g11_topicFict_l3s1 .
+
+  ex:g11_topicFict_p140_01 a ex:Paragraph ;
+    ex:paragraphOrder 14 ;
+    ex:hasRawText "Để thiết lập quan hệ, chọn Database Tools\\Relationships, đưa hộp thể hiện bảng vào vùng làm việc, kéo thả trường khoá ngoại của bảng con vào trường khoá chính của bảng mẹ, rồi chọn Enforce Referential Integrity nếu cần đảm bảo toàn vẹn tham chiếu."@vi ;
+    ex:appearsOnPage ex:g11_page140 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToSection ex:g11_topicFict_l3s1 .
+
+  ex:g11_topicFict_p141_01 a ex:Paragraph ;
+    ex:paragraphOrder 15 ;
+    ex:hasRawText "Cột dữ liệu từ tra cứu giúp người dùng chọn mục dữ liệu từ danh sách thay cho gõ nhập. Access dùng Lookup Wizard để thiết lập quan hệ khoá ngoại và khoá chính giữa hai bảng, đồng thời hỗ trợ nhập dữ liệu bằng danh sách thả xuống."@vi ;
+    ex:appearsOnPage ex:g11_page141 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToSection ex:g11_topicFict_l3s2 .
+
+  ex:g11_topicFict_p142_01 a ex:Paragraph ;
+    ex:paragraphOrder 16 ;
+    ex:hasRawText "Lookup Wizard yêu cầu chọn nguồn dữ liệu, chọn trường dữ liệu, chọn trường sắp xếp, đặt tên trường lookup và có thể thiết lập đảm bảo toàn vẹn tham chiếu trong hộp thoại Edit Relationships."@vi ;
+    ex:appearsOnPage ex:g11_page142 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToSection ex:g11_topicFict_l3s2 .
+
+  ex:g11_topicFict_p143_01 a ex:Paragraph ;
+    ex:paragraphOrder 17 ;
+    ex:hasRawText "Thực hành bài 3 yêu cầu tạo bảng Mượn-Trả, thiết lập quan hệ một-nhiều từ Sách và Bạn Đọc tới Mượn-Trả, đồng thời thiết lập cột Số thẻ và Mã sách thành kiểu dữ liệu từ tra cứu."@vi ;
+    ex:appearsOnPage ex:g11_page143 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:belongsToSection ex:g11_topicFict_l3s3 .
+
+  ex:g11_topicFict_p144_01 a ex:Paragraph ;
+    ex:paragraphOrder 18 ;
+    ex:hasRawText "Bài 4 giới thiệu biểu mẫu trong Access. Biểu mẫu có thể hiển thị một bản ghi, nhiều bản ghi hoặc tách đôi; biểu mẫu có kết buộc dùng để nhập, chỉnh sửa, xem dữ liệu còn biểu mẫu không kết buộc không dùng để nhập hoặc chỉnh sửa dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page144 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToSection ex:g11_topicFict_l4s1 .
+
+  ex:g11_topicFict_p145_01 a ex:Paragraph ;
+    ex:paragraphOrder 19 ;
+    ex:hasRawText "Access có thể tạo nhanh biểu mẫu bằng Form, Multiple Items, Datasheet hoặc Split Form. Form tạo nhanh biểu mẫu một bản ghi, More Forms tạo biểu mẫu nhiều bản ghi hoặc tách đôi."@vi ;
+    ex:appearsOnPage ex:g11_page145 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToSection ex:g11_topicFict_l4s1 .
+
+  ex:g11_topicFict_p146_01 a ex:Paragraph ;
+    ex:paragraphOrder 20 ;
+    ex:hasRawText "Form Wizard hỗ trợ tạo biểu mẫu có tuỳ biến hơn: chọn trường dữ liệu từ bảng hoặc truy vấn, chọn kiểu trình bày như columnar, tabular, datasheet hay justified, rồi kết thúc và ghi lưu biểu mẫu."@vi ;
+    ex:appearsOnPage ex:g11_page146 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToSection ex:g11_topicFict_l4s1 .
+
+  ex:g11_topicFict_p147_01 a ex:Paragraph ;
+    ex:paragraphOrder 21 ;
+    ex:hasRawText "Biểu mẫu phân cấp và đồng bộ hoá cho phép hiển thị dữ liệu từ hai bảng khác nhau theo quan hệ đã thiết lập trước. Khi chọn trường từ bảng mẹ và bảng con, Form Wizard có thể tạo Form with subform(s) hoặc Linked forms."@vi ;
+    ex:appearsOnPage ex:g11_page147 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToSection ex:g11_topicFict_l4s2 .
+
+  ex:g11_topicFict_p148_01 a ex:Paragraph ;
+    ex:paragraphOrder 22 ;
+    ex:hasRawText "Biểu mẫu trong Form View có thể dùng để nhập hoặc xem dữ liệu. Có thể sắp xếp bản ghi theo giá trị một trường, lưu cách sắp xếp hoặc lọc các bản ghi theo danh sách giá trị."@vi ;
+    ex:appearsOnPage ex:g11_page148 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToSection ex:g11_topicFict_l4s3 .
+
+  ex:g11_topicFict_p149_01 a ex:Paragraph ;
+    ex:paragraphOrder 23 ;
+    ex:hasRawText "Thực hành bài 4 yêu cầu tạo biểu mẫu nhập dữ liệu vào bảng Mượn-Trả, tạo biểu mẫu tìm mượn sách từ bảng Sách với yêu cầu sắp xếp và lọc theo cột Sẵn có, rồi dùng biểu mẫu để nhập một số bản ghi."@vi ;
+    ex:appearsOnPage ex:g11_page149 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:belongsToSection ex:g11_topicFict_l4s4 .
+
+  ex:g11_topicFict_p150_01 a ex:Paragraph ;
+    ex:paragraphOrder 24 ;
+    ex:hasRawText "Bài 5 giới thiệu thiết kế truy vấn. Truy vấn SELECT là truy vấn SQL hay dùng nhất, cho phép tìm kiếm và kết xuất thông tin từ CSDL, ví dụ tìm sách có sẵn để mượn hoặc chuẩn bị thao tác cho mượn - nhận trả."@vi ;
+    ex:appearsOnPage ex:g11_page150 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToSection ex:g11_topicFict_l5s1 .
+
+  ex:g11_topicFict_p151_01 a ex:Paragraph ;
+    ex:paragraphOrder 25 ;
+    ex:hasRawText "Query Design cho phép chọn bảng hoặc truy vấn nguồn, hiển thị các bảng đã chọn và lưới QBE. Mỗi cột trong lưới QBE ứng với một trường dữ liệu được chọn, có các hàng Field, Table, Sort, Show, Criteria và Or."@vi ;
+    ex:appearsOnPage ex:g11_page151 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToSection ex:g11_topicFict_l5s1 .
+
+  ex:g11_topicFict_p152_01 a ex:Paragraph ;
+    ex:paragraphOrder 26 ;
+    ex:hasRawText "Trong khung nhìn thiết kế truy vấn, hàng Sort dùng để sắp xếp kết quả theo một hoặc nhiều trường. Hàng Criteria dùng để viết biểu thức logic nhằm chọn các bản ghi, ví dụ chọn bản ghi có Mã sách là VH-01."@vi ;
+    ex:appearsOnPage ex:g11_page152 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToSection ex:g11_topicFict_l5s2 .
+
+  ex:g11_topicFict_p153_01 a ex:Paragraph ;
+    ex:paragraphOrder 27 ;
+    ex:hasRawText "Tiêu chí lựa chọn bản ghi có thể dùng các phép so sánh, kiểm tra miền giá trị và kết hợp bằng AND hoặc OR. Các biểu thức logic khác nhau được viết ở hàng Criteria hoặc hàng Or trong lưới QBE."@vi ;
+    ex:appearsOnPage ex:g11_page153 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToSection ex:g11_topicFict_l5s3 .
+
+  ex:g11_topicFict_p154_01 a ex:Paragraph ;
+    ex:paragraphOrder 28 ;
+    ex:hasRawText "Truy vấn có tham số dùng cặp ngoặc vuông để chứa lời nhắc tham số. Ngoài truy vấn SELECT còn có truy vấn hành động như Make Table, Append, Update và Delete; các truy vấn này làm thay đổi dữ liệu nên cần thận trọng."@vi ;
+    ex:appearsOnPage ex:g11_page154 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToSection ex:g11_topicFict_l5s4 .
+
+  ex:g11_topicFict_p155_01 a ex:Paragraph ;
+    ex:paragraphOrder 29 ;
+    ex:hasRawText "Thực hành thiết kế truy vấn yêu cầu tạo truy vấn q-BanDoc-MuonTra, thêm các tiêu chí lựa chọn, tạo truy vấn tìm sách có sẵn để mượn, tạo biểu mẫu dựa trên truy vấn và chuyển một truy vấn thành truy vấn có tham số."@vi ;
+    ex:appearsOnPage ex:g11_page155 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:belongsToSection ex:g11_topicFict_l5s6 .
+
+  ex:g11_topicFict_p156_01 a ex:Paragraph ;
+    ex:paragraphOrder 30 ;
+    ex:hasRawText "Bài 6 giới thiệu báo cáo trong Access. Báo cáo là bước kết xuất thông tin từ CSDL, phục vụ yêu cầu thông tin của cấp quản lí; có các dạng báo cáo chi tiết, báo cáo tóm tắt và báo cáo tóm tắt phân tích nhiều chiều."@vi ;
+    ex:appearsOnPage ex:g11_page156 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToSection ex:g11_topicFict_l6s1 .
+
+  ex:g11_topicFict_p157_01 a ex:Paragraph ;
+    ex:paragraphOrder 31 ;
+    ex:hasRawText "Có thể tạo báo cáo dựa trên nguồn dữ liệu là bảng hoặc truy vấn. Trước khi tạo báo cáo chi tiết hoạt động mượn trả theo tháng, có thể tạo truy vấn chuẩn bị dữ liệu, sắp xếp theo Ngày mượn và thêm cột tính Month từ ngày mượn."@vi ;
+    ex:appearsOnPage ex:g11_page157 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToSection ex:g11_topicFict_l6s1 .
+
+  ex:g11_topicFict_p158_01 a ex:Paragraph ;
+    ex:paragraphOrder 32 ;
+    ex:hasRawText "Report Wizard hỗ trợ tạo báo cáo theo các bước: chọn bảng hoặc truy vấn nguồn, chọn trường dữ liệu, chọn gộp nhóm, chọn bài trí, đặt tên báo cáo và hoàn tất."@vi ;
+    ex:appearsOnPage ex:g11_page158 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToSection ex:g11_topicFict_l6s2 .
+
+  ex:g11_topicFict_p159_01 a ex:Paragraph ;
+    ex:paragraphOrder 33 ;
+    ex:hasRawText "Trong khung nhìn thiết kế báo cáo, Group & Sort cho phép thêm nhóm, chọn trường nhóm như Month, bỏ sắp xếp không cần thiết, mở More để chọn tổng con như Count Values và chọn cách hiển thị tổng."@vi ;
+    ex:appearsOnPage ex:g11_page159 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToSection ex:g11_topicFict_l6s3 .
+
+  ex:g11_topicFict_p160_01 a ex:Paragraph ;
+    ex:paragraphOrder 34 ;
+    ex:hasRawText "Phần bài tìm hiểu thêm giới thiệu Crosstab Query Wizard để tạo truy vấn tóm tắt dữ liệu lớn và phân tích nhiều chiều; báo cáo phân tích nhiều chiều có thể dựa trên truy vấn crosstab."@vi ;
+    ex:appearsOnPage ex:g11_page160 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:belongsToSection ex:g11_topicFict_l6s4 .
+
+  ex:g11_topicFict_p161_01 a ex:Paragraph ;
+    ex:paragraphOrder 35 ;
+    ex:hasRawText "Bài 7 giới thiệu chỉnh sửa thành phần giao diện trong biểu mẫu và báo cáo. Báo cáo có các phần như Report Header, Page Header, Detail, Page Footer và Report Footer; các phần chứa các điều khiển như hộp dữ liệu và nhãn tên trường."@vi ;
+    ex:appearsOnPage ex:g11_page161 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToSection ex:g11_topicFict_l7s1 .
+
+  ex:g11_topicFict_p162_01 a ex:Paragraph ;
+    ex:paragraphOrder 36 ;
+    ex:hasRawText "Hộp dữ liệu trong báo cáo được kết buộc với trường dữ liệu từ bảng hoặc truy vấn, còn nhãn tên trường chỉ là nhãn không kết buộc. Biểu mẫu trong khung nhìn thiết kế có các phần Form Header, Form Footer và Detail."@vi ;
+    ex:appearsOnPage ex:g11_page162 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToSection ex:g11_topicFict_l7s2 .
+
+  ex:g11_topicFict_p163_01 a ex:Paragraph ;
+    ex:paragraphOrder 37 ;
+    ex:hasRawText "Biểu mẫu hay báo cáo được tạo tự động có thể dùng ngay nhưng thường cần chỉnh sửa bài trí để kích thước các phần tử hợp lí và bố cục hài hoà, thuận tiện sử dụng."@vi ;
+    ex:appearsOnPage ex:g11_page163 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToSection ex:g11_topicFict_l7s3 .
+
+  ex:g11_topicFict_p164_01 a ex:Paragraph ;
+    ex:paragraphOrder 38 ;
+    ex:hasRawText "Các nhóm việc chỉnh sửa bài trí gồm đổi tên tiêu đề và nhãn tên, chỉnh sửa kích thước các phần tử, di chuyển và sắp xếp lại. Layout View cho phép co giãn phần tử bằng cách kéo cạnh chiều rộng hoặc chiều cao."@vi ;
+    ex:appearsOnPage ex:g11_page164 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToSection ex:g11_topicFict_l7s3 .
+
+  ex:g11_topicFict_p165_01 a ex:Paragraph ;
+    ex:paragraphOrder 39 ;
+    ex:hasRawText "Dải lệnh Arrange hỗ trợ chèn thêm cột, hàng, chia tách, hoà nhập ô và di chuyển phần tử trong biểu mẫu. Chủ đề Themes, Colors và Fonts có thể áp dụng màu sắc và kiểu chữ thống nhất cho các đối tượng trong CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page165 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToSection ex:g11_topicFict_l7s4 .
+
+  ex:g11_topicFict_p166_01 a ex:Paragraph ;
+    ex:paragraphOrder 40 ;
+    ex:hasRawText "Thực hành bài 7 yêu cầu chỉnh sửa kích thước dòng nơi nhiều phần tử cùng cột, bố trí lại hộp dữ liệu của trường Ảnh, chọn áp dụng Themes và Colors cho toàn bộ giao diện."@vi ;
+    ex:appearsOnPage ex:g11_page166 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:belongsToSection ex:g11_topicFict_l7s5 .
+
+  ex:g11_topicFict_p167_01 a ex:Paragraph ;
+    ex:paragraphOrder 41 ;
+    ex:hasRawText "Bài 8 giới thiệu hoàn tất ứng dụng. Biểu mẫu điều hướng giúp người dùng dễ chuyển đổi giữa các biểu mẫu và báo cáo, làm giao diện khi mở ứng dụng thay cho vùng điều hướng Access."@vi ;
+    ex:appearsOnPage ex:g11_page167 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:belongsToSection ex:g11_topicFict_l8s1 .
+
+  ex:g11_topicFict_p168_01 a ex:Paragraph ;
+    ex:paragraphOrder 42 ;
+    ex:hasRawText "Để tạo biểu mẫu điều hướng, chọn Create\\Navigation, chọn bố cục như Horizontal Tabs, kéo các biểu mẫu hoặc báo cáo từ vùng điều hướng vào ô Add New, rồi có thể thiết lập Navigation Form làm Display Form trong Current Database."@vi ;
+    ex:appearsOnPage ex:g11_page168 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:belongsToSection ex:g11_topicFict_l8s1 .
+
+  ex:g11_topicFict_p169_01 a ex:Paragraph ;
+    ex:paragraphOrder 43 ;
+    ex:hasRawText "Thiết kế giao diện ứng dụng quản lí thư viện trường cần xác định các biểu mẫu như TìmSách, ChoMượn, NhậnTrả và các báo cáo như MượnTrả-TheoTháng, MượnTrả-Tháng-LoạiSách. Biểu mẫu điều hướng có thể làm bảng điều khiển trung tâm của ứng dụng."@vi ;
+    ex:appearsOnPage ex:g11_page169 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:belongsToSection ex:g11_topicFict_l8s2 .
+
+  ex:g11_topicFict_p170_01 a ex:Paragraph ;
+    ex:paragraphOrder 44 ;
+    ex:hasRawText "Thực hành tổng hợp yêu cầu tạo và chỉnh sửa bài trí biểu mẫu điều hướng, hoàn thiện biểu mẫu nhập dữ liệu cho bảng Bạn đọc, thử xuất báo cáo và hoàn tất ứng dụng quản lí thư viện theo yêu cầu sử dụng thực tế."@vi ;
+    ex:appearsOnPage ex:g11_page170 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:belongsToSection ex:g11_topicFict_l8s3 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g11_page127 ex:hasParagraph ex:g11_topicFict_p127_01 .
+  ex:g11_page128 ex:hasParagraph ex:g11_topicFict_p128_01 .
+  ex:g11_page129 ex:hasParagraph ex:g11_topicFict_p129_01 .
+  ex:g11_page130 ex:hasParagraph ex:g11_topicFict_p130_01 .
+  ex:g11_page131 ex:hasParagraph ex:g11_topicFict_p131_01 .
+  ex:g11_page132 ex:hasParagraph ex:g11_topicFict_p132_01 .
+  ex:g11_page133 ex:hasParagraph ex:g11_topicFict_p133_01 .
+  ex:g11_page134 ex:hasParagraph ex:g11_topicFict_p134_01 .
+  ex:g11_page135 ex:hasParagraph ex:g11_topicFict_p135_01 .
+  ex:g11_page136 ex:hasParagraph ex:g11_topicFict_p136_01 .
+  ex:g11_page137 ex:hasParagraph ex:g11_topicFict_p137_01 .
+  ex:g11_page138 ex:hasParagraph ex:g11_topicFict_p138_01 .
+  ex:g11_page139 ex:hasParagraph ex:g11_topicFict_p139_01 .
+  ex:g11_page140 ex:hasParagraph ex:g11_topicFict_p140_01 .
+  ex:g11_page141 ex:hasParagraph ex:g11_topicFict_p141_01 .
+  ex:g11_page142 ex:hasParagraph ex:g11_topicFict_p142_01 .
+  ex:g11_page143 ex:hasParagraph ex:g11_topicFict_p143_01 .
+  ex:g11_page144 ex:hasParagraph ex:g11_topicFict_p144_01 .
+  ex:g11_page145 ex:hasParagraph ex:g11_topicFict_p145_01 .
+  ex:g11_page146 ex:hasParagraph ex:g11_topicFict_p146_01 .
+  ex:g11_page147 ex:hasParagraph ex:g11_topicFict_p147_01 .
+  ex:g11_page148 ex:hasParagraph ex:g11_topicFict_p148_01 .
+  ex:g11_page149 ex:hasParagraph ex:g11_topicFict_p149_01 .
+  ex:g11_page150 ex:hasParagraph ex:g11_topicFict_p150_01 .
+  ex:g11_page151 ex:hasParagraph ex:g11_topicFict_p151_01 .
+  ex:g11_page152 ex:hasParagraph ex:g11_topicFict_p152_01 .
+  ex:g11_page153 ex:hasParagraph ex:g11_topicFict_p153_01 .
+  ex:g11_page154 ex:hasParagraph ex:g11_topicFict_p154_01 .
+  ex:g11_page155 ex:hasParagraph ex:g11_topicFict_p155_01 .
+  ex:g11_page156 ex:hasParagraph ex:g11_topicFict_p156_01 .
+  ex:g11_page157 ex:hasParagraph ex:g11_topicFict_p157_01 .
+  ex:g11_page158 ex:hasParagraph ex:g11_topicFict_p158_01 .
+  ex:g11_page159 ex:hasParagraph ex:g11_topicFict_p159_01 .
+  ex:g11_page160 ex:hasParagraph ex:g11_topicFict_p160_01 .
+  ex:g11_page161 ex:hasParagraph ex:g11_topicFict_p161_01 .
+  ex:g11_page162 ex:hasParagraph ex:g11_topicFict_p162_01 .
+  ex:g11_page163 ex:hasParagraph ex:g11_topicFict_p163_01 .
+  ex:g11_page164 ex:hasParagraph ex:g11_topicFict_p164_01 .
+  ex:g11_page165 ex:hasParagraph ex:g11_topicFict_p165_01 .
+  ex:g11_page166 ex:hasParagraph ex:g11_topicFict_p166_01 .
+  ex:g11_page167 ex:hasParagraph ex:g11_topicFict_p167_01 .
+  ex:g11_page168 ex:hasParagraph ex:g11_topicFict_p168_01 .
+  ex:g11_page169 ex:hasParagraph ex:g11_topicFict_p169_01 .
+  ex:g11_page170 ex:hasParagraph ex:g11_topicFict_p170_01 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g11_topicFict_p127_01 ex:nextParagraph ex:g11_topicFict_p128_01 .
+  ex:g11_topicFict_p128_01 ex:previousParagraph ex:g11_topicFict_p127_01 ; ex:nextParagraph ex:g11_topicFict_p129_01 .
+  ex:g11_topicFict_p129_01 ex:previousParagraph ex:g11_topicFict_p128_01 ; ex:nextParagraph ex:g11_topicFict_p130_01 .
+  ex:g11_topicFict_p130_01 ex:previousParagraph ex:g11_topicFict_p129_01 ; ex:nextParagraph ex:g11_topicFict_p131_01 .
+  ex:g11_topicFict_p131_01 ex:previousParagraph ex:g11_topicFict_p130_01 ; ex:nextParagraph ex:g11_topicFict_p132_01 .
+  ex:g11_topicFict_p132_01 ex:previousParagraph ex:g11_topicFict_p131_01 ; ex:nextParagraph ex:g11_topicFict_p133_01 .
+  ex:g11_topicFict_p133_01 ex:previousParagraph ex:g11_topicFict_p132_01 ; ex:nextParagraph ex:g11_topicFict_p134_01 .
+  ex:g11_topicFict_p134_01 ex:previousParagraph ex:g11_topicFict_p133_01 ; ex:nextParagraph ex:g11_topicFict_p135_01 .
+  ex:g11_topicFict_p135_01 ex:previousParagraph ex:g11_topicFict_p134_01 ; ex:nextParagraph ex:g11_topicFict_p136_01 .
+  ex:g11_topicFict_p136_01 ex:previousParagraph ex:g11_topicFict_p135_01 ; ex:nextParagraph ex:g11_topicFict_p137_01 .
+  ex:g11_topicFict_p137_01 ex:previousParagraph ex:g11_topicFict_p136_01 ; ex:nextParagraph ex:g11_topicFict_p138_01 .
+  ex:g11_topicFict_p138_01 ex:previousParagraph ex:g11_topicFict_p137_01 ; ex:nextParagraph ex:g11_topicFict_p139_01 .
+  ex:g11_topicFict_p139_01 ex:previousParagraph ex:g11_topicFict_p138_01 ; ex:nextParagraph ex:g11_topicFict_p140_01 .
+  ex:g11_topicFict_p140_01 ex:previousParagraph ex:g11_topicFict_p139_01 ; ex:nextParagraph ex:g11_topicFict_p141_01 .
+  ex:g11_topicFict_p141_01 ex:previousParagraph ex:g11_topicFict_p140_01 ; ex:nextParagraph ex:g11_topicFict_p142_01 .
+  ex:g11_topicFict_p142_01 ex:previousParagraph ex:g11_topicFict_p141_01 ; ex:nextParagraph ex:g11_topicFict_p143_01 .
+  ex:g11_topicFict_p143_01 ex:previousParagraph ex:g11_topicFict_p142_01 ; ex:nextParagraph ex:g11_topicFict_p144_01 .
+  ex:g11_topicFict_p144_01 ex:previousParagraph ex:g11_topicFict_p143_01 ; ex:nextParagraph ex:g11_topicFict_p145_01 .
+  ex:g11_topicFict_p145_01 ex:previousParagraph ex:g11_topicFict_p144_01 ; ex:nextParagraph ex:g11_topicFict_p146_01 .
+  ex:g11_topicFict_p146_01 ex:previousParagraph ex:g11_topicFict_p145_01 ; ex:nextParagraph ex:g11_topicFict_p147_01 .
+  ex:g11_topicFict_p147_01 ex:previousParagraph ex:g11_topicFict_p146_01 ; ex:nextParagraph ex:g11_topicFict_p148_01 .
+  ex:g11_topicFict_p148_01 ex:previousParagraph ex:g11_topicFict_p147_01 ; ex:nextParagraph ex:g11_topicFict_p149_01 .
+  ex:g11_topicFict_p149_01 ex:previousParagraph ex:g11_topicFict_p148_01 ; ex:nextParagraph ex:g11_topicFict_p150_01 .
+  ex:g11_topicFict_p150_01 ex:previousParagraph ex:g11_topicFict_p149_01 ; ex:nextParagraph ex:g11_topicFict_p151_01 .
+  ex:g11_topicFict_p151_01 ex:previousParagraph ex:g11_topicFict_p150_01 ; ex:nextParagraph ex:g11_topicFict_p152_01 .
+  ex:g11_topicFict_p152_01 ex:previousParagraph ex:g11_topicFict_p151_01 ; ex:nextParagraph ex:g11_topicFict_p153_01 .
+  ex:g11_topicFict_p153_01 ex:previousParagraph ex:g11_topicFict_p152_01 ; ex:nextParagraph ex:g11_topicFict_p154_01 .
+  ex:g11_topicFict_p154_01 ex:previousParagraph ex:g11_topicFict_p153_01 ; ex:nextParagraph ex:g11_topicFict_p155_01 .
+  ex:g11_topicFict_p155_01 ex:previousParagraph ex:g11_topicFict_p154_01 ; ex:nextParagraph ex:g11_topicFict_p156_01 .
+  ex:g11_topicFict_p156_01 ex:previousParagraph ex:g11_topicFict_p155_01 ; ex:nextParagraph ex:g11_topicFict_p157_01 .
+  ex:g11_topicFict_p157_01 ex:previousParagraph ex:g11_topicFict_p156_01 ; ex:nextParagraph ex:g11_topicFict_p158_01 .
+  ex:g11_topicFict_p158_01 ex:previousParagraph ex:g11_topicFict_p157_01 ; ex:nextParagraph ex:g11_topicFict_p159_01 .
+  ex:g11_topicFict_p159_01 ex:previousParagraph ex:g11_topicFict_p158_01 ; ex:nextParagraph ex:g11_topicFict_p160_01 .
+  ex:g11_topicFict_p160_01 ex:previousParagraph ex:g11_topicFict_p159_01 ; ex:nextParagraph ex:g11_topicFict_p161_01 .
+  ex:g11_topicFict_p161_01 ex:previousParagraph ex:g11_topicFict_p160_01 ; ex:nextParagraph ex:g11_topicFict_p162_01 .
+  ex:g11_topicFict_p162_01 ex:previousParagraph ex:g11_topicFict_p161_01 ; ex:nextParagraph ex:g11_topicFict_p163_01 .
+  ex:g11_topicFict_p163_01 ex:previousParagraph ex:g11_topicFict_p162_01 ; ex:nextParagraph ex:g11_topicFict_p164_01 .
+  ex:g11_topicFict_p164_01 ex:previousParagraph ex:g11_topicFict_p163_01 ; ex:nextParagraph ex:g11_topicFict_p165_01 .
+  ex:g11_topicFict_p165_01 ex:previousParagraph ex:g11_topicFict_p164_01 ; ex:nextParagraph ex:g11_topicFict_p166_01 .
+  ex:g11_topicFict_p166_01 ex:previousParagraph ex:g11_topicFict_p165_01 ; ex:nextParagraph ex:g11_topicFict_p167_01 .
+  ex:g11_topicFict_p167_01 ex:previousParagraph ex:g11_topicFict_p166_01 ; ex:nextParagraph ex:g11_topicFict_p168_01 .
+  ex:g11_topicFict_p168_01 ex:previousParagraph ex:g11_topicFict_p167_01 ; ex:nextParagraph ex:g11_topicFict_p169_01 .
+  ex:g11_topicFict_p169_01 ex:previousParagraph ex:g11_topicFict_p168_01 ; ex:nextParagraph ex:g11_topicFict_p170_01 .
+  ex:g11_topicFict_p170_01 ex:previousParagraph ex:g11_topicFict_p169_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g11_topicFict_p127_01 ex:mentionsConcept ex:g11_conceptMicrosoftAccess, ex:g11_conceptCSDLAccess, ex:g11_conceptKieuDuLieuAccess .
+  ex:g11_topicFict_p128_01 ex:mentionsConcept ex:g11_conceptVungNutLenhAccess, ex:g11_conceptVungDieuHuongAccess, ex:g11_conceptVungLamViecAccess, ex:g11_conceptBangCSDL, ex:g11_conceptTruyVan, ex:g11_conceptBieuMauAccess, ex:g11_conceptBaoCaoAccess .
+  ex:g11_topicFict_p129_01 ex:mentionsConcept ex:g11_conceptCSDLAccess, ex:g11_conceptBlankDatabase, ex:g11_conceptKhuonMauAccess .
+  ex:g11_topicFict_p130_01 ex:mentionsConcept ex:g11_conceptDesignView, ex:g11_conceptDatasheetView, ex:g11_conceptBanGhi, ex:g11_conceptTruongDuLieu .
+  ex:g11_topicFict_p131_01 ex:mentionsConcept ex:g11_conceptFieldProperties, ex:g11_conceptKieuDuLieuAccess .
+  ex:g11_topicFict_p132_01 ex:mentionsConcept ex:g11_conceptMicrosoftAccess, ex:g11_conceptDesignView, ex:g11_conceptFieldProperties .
+  ex:g11_topicFict_p133_01 ex:mentionsConcept ex:g11_conceptBangCSDL, ex:g11_conceptKieuDuLieuAccess .
+  ex:g11_topicFict_p134_01 ex:mentionsConcept ex:g11_conceptBangSach, ex:g11_conceptBangBanDoc, ex:g11_conceptBangMuonTra .
+  ex:g11_topicFict_p135_01 ex:mentionsConcept ex:g11_conceptBangBanDoc, ex:g11_conceptTruongDuLieu .
+  ex:g11_topicFict_p136_01 ex:mentionsConcept ex:g11_conceptDesignView, ex:g11_conceptFieldProperties, ex:g11_conceptKhoaChinh .
+  ex:g11_topicFict_p137_01 ex:mentionsConcept ex:g11_conceptQuanHeNhieuNhieu, ex:g11_conceptQuanHeMotNhieu, ex:g11_conceptBangNoi, ex:g11_conceptKhoaNgoai .
+  ex:g11_topicFict_p138_01 ex:mentionsConcept ex:g11_conceptBangSach, ex:g11_conceptBangBanDoc, ex:g11_conceptKhoaChinh, ex:g11_conceptFieldProperties .
+  ex:g11_topicFict_p139_01 ex:mentionsConcept ex:g11_conceptQuanHeBang, ex:g11_conceptJoinProperties, ex:g11_conceptInnerJoin, ex:g11_conceptLeftOuterJoin, ex:g11_conceptRightOuterJoin .
+  ex:g11_topicFict_p140_01 ex:mentionsConcept ex:g11_conceptRelationships, ex:g11_conceptKhoaNgoai, ex:g11_conceptKhoaChinh, ex:g11_conceptReferentialIntegrity .
+  ex:g11_topicFict_p141_01 ex:mentionsConcept ex:g11_conceptCotTraCuu, ex:g11_conceptLookupWizard, ex:g11_conceptKhoaNgoai, ex:g11_conceptKhoaChinh .
+  ex:g11_topicFict_p142_01 ex:mentionsConcept ex:g11_conceptLookupWizard, ex:g11_conceptReferentialIntegrity .
+  ex:g11_topicFict_p143_01 ex:mentionsConcept ex:g11_conceptBangMuonTra, ex:g11_conceptQuanHeMotNhieu, ex:g11_conceptCotTraCuu .
+  ex:g11_topicFict_p144_01 ex:mentionsConcept ex:g11_conceptBieuMauAccess, ex:g11_conceptBoundForm, ex:g11_conceptUnboundForm, ex:g11_conceptSplitForm .
+  ex:g11_topicFict_p145_01 ex:mentionsConcept ex:g11_conceptFormWizard, ex:g11_conceptMultipleItemsForm, ex:g11_conceptSplitForm .
+  ex:g11_topicFict_p146_01 ex:mentionsConcept ex:g11_conceptFormWizard .
+  ex:g11_topicFict_p147_01 ex:mentionsConcept ex:g11_conceptSubform, ex:g11_conceptLinkedForms, ex:g11_conceptQuanHeBang .
+  ex:g11_topicFict_p148_01 ex:mentionsConcept ex:g11_conceptFormView, ex:g11_conceptSapXepDuLieu, ex:g11_conceptLocDuLieu .
+  ex:g11_topicFict_p149_01 ex:mentionsConcept ex:g11_conceptBieuMauAccess, ex:g11_conceptBangMuonTra, ex:g11_conceptBangSach .
+  ex:g11_topicFict_p150_01 ex:mentionsConcept ex:g11_conceptSELECTQuery, ex:g11_conceptTruyVan .
+  ex:g11_topicFict_p151_01 ex:mentionsConcept ex:g11_conceptQueryDesign, ex:g11_conceptLuoiQBE .
+  ex:g11_topicFict_p152_01 ex:mentionsConcept ex:g11_conceptSapXepDuLieu, ex:g11_conceptTieuChiTruyVan, ex:g11_conceptBieuThucLogic .
+  ex:g11_topicFict_p153_01 ex:mentionsConcept ex:g11_conceptTieuChiTruyVan, ex:g11_conceptBieuThucLogic .
+  ex:g11_topicFict_p154_01 ex:mentionsConcept ex:g11_conceptParameterQuery, ex:g11_conceptActionQuery, ex:g11_conceptMakeTableQuery, ex:g11_conceptAppendQuery, ex:g11_conceptUpdateQuery, ex:g11_conceptDeleteQuery .
+  ex:g11_topicFict_p155_01 ex:mentionsConcept ex:g11_conceptQueryDesign, ex:g11_conceptParameterQuery, ex:g11_conceptBieuMauAccess .
+  ex:g11_topicFict_p156_01 ex:mentionsConcept ex:g11_conceptBaoCaoAccess, ex:g11_conceptBaoCaoChiTiet, ex:g11_conceptBaoCaoTomTat .
+  ex:g11_topicFict_p157_01 ex:mentionsConcept ex:g11_conceptTruyVan, ex:g11_conceptBaoCaoChiTiet .
+  ex:g11_topicFict_p158_01 ex:mentionsConcept ex:g11_conceptReportWizard, ex:g11_conceptBaoCaoAccess .
+  ex:g11_topicFict_p159_01 ex:mentionsConcept ex:g11_conceptGroupSortTotal .
+  ex:g11_topicFict_p160_01 ex:mentionsConcept ex:g11_conceptCrosstabQueryWizard, ex:g11_conceptBaoCaoTomTat .
+  ex:g11_topicFict_p161_01 ex:mentionsConcept ex:g11_conceptReportHeader, ex:g11_conceptPageHeader, ex:g11_conceptDetailSection, ex:g11_conceptPageFooter, ex:g11_conceptReportFooter, ex:g11_conceptTextBox, ex:g11_conceptLabelControl .
+  ex:g11_topicFict_p162_01 ex:mentionsConcept ex:g11_conceptTextBox, ex:g11_conceptLabelControl, ex:g11_conceptBieuMauAccess, ex:g11_conceptDetailSection .
+  ex:g11_topicFict_p163_01 ex:mentionsConcept ex:g11_conceptBieuMauAccess, ex:g11_conceptBaoCaoAccess, ex:g11_conceptLayoutView .
+  ex:g11_topicFict_p164_01 ex:mentionsConcept ex:g11_conceptLayoutView, ex:g11_conceptControlAccess .
+  ex:g11_topicFict_p165_01 ex:mentionsConcept ex:g11_conceptArrangeRibbon, ex:g11_conceptThemesAccess, ex:g11_conceptColorsAccess, ex:g11_conceptFontsAccess .
+  ex:g11_topicFict_p166_01 ex:mentionsConcept ex:g11_conceptBieuMauAccess, ex:g11_conceptThemesAccess, ex:g11_conceptColorsAccess .
+  ex:g11_topicFict_p167_01 ex:mentionsConcept ex:g11_conceptNavigationForm, ex:g11_conceptSwitchboard .
+  ex:g11_topicFict_p168_01 ex:mentionsConcept ex:g11_conceptNavigationForm .
+  ex:g11_topicFict_p169_01 ex:mentionsConcept ex:g11_conceptUngDungQuanLiThuVien, ex:g11_conceptNavigationForm, ex:g11_conceptSwitchboard .
+  ex:g11_topicFict_p170_01 ex:mentionsConcept ex:g11_conceptNavigationForm, ex:g11_conceptUngDungQuanLiThuVien, ex:g11_conceptBaoCaoAccess .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g11_conceptThucHanhCSDL ex:subConceptOf ex:g11_conceptGiaiQuyetVanDeMayTinh .
+  ex:g11_conceptMicrosoftAccess ex:relatedTo ex:g11_conceptThucHanhCSDL .
+  ex:g11_conceptCSDLAccess ex:relatedTo ex:g11_conceptMicrosoftAccess .
+  ex:g11_conceptVungNutLenhAccess ex:partOf ex:g11_conceptMicrosoftAccess .
+  ex:g11_conceptVungDieuHuongAccess ex:partOf ex:g11_conceptMicrosoftAccess .
+  ex:g11_conceptVungLamViecAccess ex:partOf ex:g11_conceptMicrosoftAccess .
+  ex:g11_conceptKhungNhinAccess ex:partOf ex:g11_conceptMicrosoftAccess .
+  ex:g11_conceptBlankDatabase ex:subConceptOf ex:g11_conceptCSDLAccess .
+  ex:g11_conceptKhuonMauAccess ex:relatedTo ex:g11_conceptCSDLAccess .
+  ex:g11_conceptBangCSDL ex:partOf ex:g11_conceptCSDLAccess .
+  ex:g11_conceptBanGhi ex:partOf ex:g11_conceptBangCSDL .
+  ex:g11_conceptTruongDuLieu ex:partOf ex:g11_conceptBangCSDL .
+  ex:g11_conceptKieuDuLieuAccess ex:relatedTo ex:g11_conceptTruongDuLieu .
+  ex:g11_conceptDesignView ex:subConceptOf ex:g11_conceptKhungNhinAccess .
+  ex:g11_conceptDatasheetView ex:subConceptOf ex:g11_conceptKhungNhinAccess .
+  ex:g11_conceptFieldProperties ex:relatedTo ex:g11_conceptTruongDuLieu .
+  ex:g11_conceptKhoaChinh ex:relatedTo ex:g11_conceptBangCSDL .
+  ex:g11_conceptKhoaNgoai ex:relatedTo ex:g11_conceptQuanHeBang .
+  ex:g11_conceptQuanHeBang ex:partOf ex:g11_conceptCSDLAccess .
+  ex:g11_conceptQuanHeNhieuNhieu ex:subConceptOf ex:g11_conceptQuanHeBang .
+  ex:g11_conceptQuanHeMotNhieu ex:subConceptOf ex:g11_conceptQuanHeBang .
+  ex:g11_conceptBangNoi ex:relatedTo ex:g11_conceptQuanHeNhieuNhieu .
+  ex:g11_conceptBangSach ex:subConceptOf ex:g11_conceptBangCSDL .
+  ex:g11_conceptBangBanDoc ex:subConceptOf ex:g11_conceptBangCSDL .
+  ex:g11_conceptBangMuonTra ex:subConceptOf ex:g11_conceptBangNoi .
+  ex:g11_conceptRelationships ex:relatedTo ex:g11_conceptQuanHeBang .
+  ex:g11_conceptJoinProperties ex:relatedTo ex:g11_conceptQuanHeBang .
+  ex:g11_conceptInnerJoin ex:subConceptOf ex:g11_conceptJoinProperties .
+  ex:g11_conceptLeftOuterJoin ex:subConceptOf ex:g11_conceptJoinProperties .
+  ex:g11_conceptRightOuterJoin ex:subConceptOf ex:g11_conceptJoinProperties .
+  ex:g11_conceptReferentialIntegrity ex:relatedTo ex:g11_conceptQuanHeBang .
+  ex:g11_conceptLookupWizard ex:relatedTo ex:g11_conceptCotTraCuu .
+  ex:g11_conceptCotTraCuu ex:relatedTo ex:g11_conceptKhoaNgoai .
+  ex:g11_conceptBieuMauAccess ex:partOf ex:g11_conceptCSDLAccess .
+  ex:g11_conceptBoundForm ex:subConceptOf ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptUnboundForm ex:subConceptOf ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptFormWizard ex:relatedTo ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptSplitForm ex:subConceptOf ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptMultipleItemsForm ex:subConceptOf ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptSubform ex:subConceptOf ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptLinkedForms ex:relatedTo ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptFormView ex:subConceptOf ex:g11_conceptKhungNhinAccess .
+  ex:g11_conceptSapXepDuLieu ex:relatedTo ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptLocDuLieu ex:relatedTo ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptTruyVan ex:partOf ex:g11_conceptCSDLAccess .
+  ex:g11_conceptSELECTQuery ex:subConceptOf ex:g11_conceptTruyVan .
+  ex:g11_conceptQueryDesign ex:relatedTo ex:g11_conceptTruyVan .
+  ex:g11_conceptLuoiQBE ex:partOf ex:g11_conceptQueryDesign .
+  ex:g11_conceptTieuChiTruyVan ex:partOf ex:g11_conceptSELECTQuery .
+  ex:g11_conceptBieuThucLogic ex:relatedTo ex:g11_conceptTieuChiTruyVan .
+  ex:g11_conceptParameterQuery ex:subConceptOf ex:g11_conceptTruyVan .
+  ex:g11_conceptActionQuery ex:subConceptOf ex:g11_conceptTruyVan .
+  ex:g11_conceptMakeTableQuery ex:subConceptOf ex:g11_conceptActionQuery .
+  ex:g11_conceptAppendQuery ex:subConceptOf ex:g11_conceptActionQuery .
+  ex:g11_conceptUpdateQuery ex:subConceptOf ex:g11_conceptActionQuery .
+  ex:g11_conceptDeleteQuery ex:subConceptOf ex:g11_conceptActionQuery .
+  ex:g11_conceptBaoCaoAccess ex:partOf ex:g11_conceptCSDLAccess .
+  ex:g11_conceptBaoCaoChiTiet ex:subConceptOf ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptBaoCaoTomTat ex:subConceptOf ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptReportWizard ex:relatedTo ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptGroupSortTotal ex:relatedTo ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptCrosstabQueryWizard ex:relatedTo ex:g11_conceptBaoCaoTomTat .
+  ex:g11_conceptReportHeader ex:partOf ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptPageHeader ex:partOf ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptDetailSection ex:partOf ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptPageFooter ex:partOf ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptReportFooter ex:partOf ex:g11_conceptBaoCaoAccess .
+  ex:g11_conceptControlAccess ex:partOf ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptTextBox ex:subConceptOf ex:g11_conceptControlAccess .
+  ex:g11_conceptLabelControl ex:subConceptOf ex:g11_conceptControlAccess .
+  ex:g11_conceptLayoutView ex:subConceptOf ex:g11_conceptKhungNhinAccess .
+  ex:g11_conceptArrangeRibbon ex:relatedTo ex:g11_conceptLayoutView .
+  ex:g11_conceptThemesAccess ex:relatedTo ex:g11_conceptMicrosoftAccess .
+  ex:g11_conceptColorsAccess ex:partOf ex:g11_conceptThemesAccess .
+  ex:g11_conceptFontsAccess ex:partOf ex:g11_conceptThemesAccess .
+  ex:g11_conceptNavigationForm ex:subConceptOf ex:g11_conceptBieuMauAccess .
+  ex:g11_conceptSwitchboard ex:relatedTo ex:g11_conceptNavigationForm .
+  ex:g11_conceptUngDungQuanLiThuVien ex:relatedTo ex:g11_conceptThucHanhCSDL .
+  ex:g11_conceptVBAAccess ex:relatedTo ex:g11_conceptMicrosoftAccess .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g11_topicFict_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Một doanh nghiệp nhỏ cần quản lí kho hàng bằng máy tính. Theo em, nên chọn dùng phần mềm ứng dụng nào? Tại sao?"@vi ;
+    ex:appearsOnPage ex:g11_page127 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:relatedTo ex:g11_conceptMicrosoftAccess, ex:g11_conceptCSDLAccess .
+
+  ex:g11_topicFict_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 1 - Khám phá cửa sổ làm việc Microsoft Access"@vi ;
+    ex:hasRawText "Quan sát hình minh hoạ các thành phần chính trong cửa sổ Microsoft Access phiên bản 365; cho biết điểm giống và khác nhau giữa cửa sổ làm việc của Access với Microsoft Word và Microsoft Excel."@vi ;
+    ex:appearsOnPage ex:g11_page127 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:relatedTo ex:g11_conceptMicrosoftAccess, ex:g11_conceptVungNutLenhAccess .
+
+  ex:g11_topicFict_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 1 - Làm quen với Microsoft Access"@vi ;
+    ex:hasRawText "Tạo CSDL theo mẫu Students, lưu CSDL, khám phá biểu mẫu Student List, nhập thử dữ liệu, mở bảng Students để xem kết quả, xem thuộc tính chi tiết của cột và thử thao tác thiết kế cột trong khung nhìn thiết kế bảng."@vi ;
+    ex:appearsOnPage ex:g11_page132 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:relatedTo ex:g11_conceptMicrosoftAccess, ex:g11_conceptDesignView, ex:g11_conceptFieldProperties .
+
+  ex:g11_topicFict_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 1 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Vùng điều hướng trong cửa sổ làm việc Access hiển thị những gì? Có thể mở bảng CSDL dưới những khung nhìn nào? Khung nhìn thiết kế bảng gồm mấy phần và từng phần hiển thị những gì?"@vi ;
+    ex:appearsOnPage ex:g11_page132 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson1 ;
+    ex:relatedTo ex:g11_conceptVungDieuHuongAccess, ex:g11_conceptDesignView, ex:g11_conceptDatasheetView .
+
+  ex:g11_topicFict_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Thư viện trường em lưu trữ những gì và hằng ngày phục vụ những ai?"@vi ;
+    ex:appearsOnPage ex:g11_page133 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:relatedTo ex:g11_conceptUngDungQuanLiThuVien, ex:g11_conceptBangCSDL .
+
+  ex:g11_topicFict_l2_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 2 - Xác định thông tin cần ghi trong hoạt động thư viện"@vi ;
+    ex:hasRawText "Hoạt động hằng ngày của thư viện trường gồm các giao dịch mượn, trả sách của học sinh. Theo em, những thông tin liên quan đến các hoạt động đó mà thủ thư cần ghi lại là gì?"@vi ;
+    ex:appearsOnPage ex:g11_page134 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:relatedTo ex:g11_conceptBangSach, ex:g11_conceptBangBanDoc, ex:g11_conceptBangMuonTra .
+
+  ex:g11_topicFict_l2_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 2 - Tạo bảng trong CSDL"@vi ;
+    ex:hasRawText "Tạo bảng Sách theo thiết kế và thử nhập dữ liệu; chuyển sang khung nhìn thiết kế, chọn Mã sách làm khoá chính, ghi lưu thay đổi thiết kế. Tạo bảng Bạn Đọc theo thiết kế, chọn Số thẻ làm khoá chính và thiết lập một số thuộc tính trường."@vi ;
+    ex:appearsOnPage ex:g11_page137 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:relatedTo ex:g11_conceptBangSach, ex:g11_conceptBangBanDoc, ex:g11_conceptKhoaChinh .
+
+  ex:g11_topicFict_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 2 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Để tạo một bảng mới cần thao tác như thế nào? Để tạo cột và xác định kiểu dữ liệu cho cột cần thao tác như thế nào? Để chọn một cột làm khoá chính cần làm gì?"@vi ;
+    ex:appearsOnPage ex:g11_page138 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson2 ;
+    ex:relatedTo ex:g11_conceptBangCSDL, ex:g11_conceptKieuDuLieuAccess, ex:g11_conceptKhoaChinh .
+
+  ex:g11_topicFict_l3_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 3 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Khi một bạn đọc mượn sách, thủ thư cần ghi lại những thông tin gì? Có một bảng nào trong CSDL chứa đầy đủ những thông tin này hay không?"@vi ;
+    ex:appearsOnPage ex:g11_page139 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:relatedTo ex:g11_conceptBangMuonTra, ex:g11_conceptQuanHeBang .
+
+  ex:g11_topicFict_l3_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 3 - Ôn lại khoá ngoại và ràng buộc khoá ngoại"@vi ;
+    ex:hasRawText "Em đã học về quan hệ giữa bảng và khoá ngoại trong CSDL quan hệ. Hãy cho biết khoá ngoại của một bảng là gì và ràng buộc khoá ngoại là gì?"@vi ;
+    ex:appearsOnPage ex:g11_page139 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:relatedTo ex:g11_conceptKhoaNgoai, ex:g11_conceptReferentialIntegrity .
+
+  ex:g11_topicFict_l3_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 3 - Tạo liên kết giữa các bảng trong CSDL"@vi ;
+    ex:hasRawText "Tạo bảng Mượn-Trả theo thiết kế và thử nhập dữ liệu; thiết lập quan hệ một-nhiều từ bảng Sách và từ bảng Bạn Đọc tới bảng Mượn-Trả; thiết lập cột Số thẻ và Mã sách thành kiểu dữ liệu tra cứu."@vi ;
+    ex:appearsOnPage ex:g11_page143 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:relatedTo ex:g11_conceptBangMuonTra, ex:g11_conceptQuanHeMotNhieu, ex:g11_conceptCotTraCuu .
+
+  ex:g11_topicFict_l3_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 3 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Cần mở cửa sổ làm việc nào để thiết lập, chỉnh sửa mối quan hệ giữa các bảng CSDL? Để thiết lập kiểu dữ liệu từ tra cứu cần thao tác như thế nào?"@vi ;
+    ex:appearsOnPage ex:g11_page143 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson3 ;
+    ex:relatedTo ex:g11_conceptRelationships, ex:g11_conceptLookupWizard .
+
+  ex:g11_topicFict_l4_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 4 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Em hãy kể một loại biểu mẫu điền thông tin mà em biết, nó gồm những mục gì? Một số mục có một hoặc vài ô vuông để đánh dấu chọn, vì sao có mẫu như thế?"@vi ;
+    ex:appearsOnPage ex:g11_page144 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:relatedTo ex:g11_conceptBieuMauAccess .
+
+  ex:g11_topicFict_l4_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 4 - Xác định biểu mẫu làm việc với dữ liệu mượn trả"@vi ;
+    ex:hasRawText "Để biết một quyển sách đã được những học sinh nào mượn, cần hiển thị đồng thời dữ liệu từ bảng Mượn-Trả và bảng Bạn đọc. Có thể tạo nhanh một biểu mẫu để làm việc này bằng nút lệnh Form hay không? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page146 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:relatedTo ex:g11_conceptFormWizard, ex:g11_conceptSubform, ex:g11_conceptQuanHeBang .
+
+  ex:g11_topicFict_l4_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 4 - Tạo và sử dụng biểu mẫu"@vi ;
+    ex:hasRawText "Tạo biểu mẫu để nhập dữ liệu vào bảng Mượn-Trả sách; tạo biểu mẫu để tìm mượn sách dựa trên bảng Sách, sắp xếp theo Tên sách, lọc theo cột Sẵn có và ghi lưu biểu mẫu; dùng biểu mẫu để nhập dữ liệu vào bảng Mượn-Trả."@vi ;
+    ex:appearsOnPage ex:g11_page149 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:relatedTo ex:g11_conceptBieuMauAccess, ex:g11_conceptBangMuonTra, ex:g11_conceptSapXepDuLieu, ex:g11_conceptLocDuLieu .
+
+  ex:g11_topicFict_l4_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 4 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Mục dữ liệu có kết buộc với bảng CSDL và không kết buộc khác nhau như thế nào? Dùng nút lệnh nào để tạo nhanh biểu mẫu và trường hợp nào nên chọn cách làm này?"@vi ;
+    ex:appearsOnPage ex:g11_page149 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson4 ;
+    ex:relatedTo ex:g11_conceptBoundForm, ex:g11_conceptUnboundForm, ex:g11_conceptFormWizard .
+
+  ex:g11_topicFict_l5_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 5 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Theo em để lấy ra một thông tin cụ thể từ CSDL thì cần công cụ gì?"@vi ;
+    ex:appearsOnPage ex:g11_page150 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:relatedTo ex:g11_conceptTruyVan .
+
+  ex:g11_topicFict_l5_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 5 - Ôn lại truy vấn SELECT"@vi ;
+    ex:hasRawText "SELECT là truy vấn SQL hay dùng nhất. Hãy cho biết cấu trúc cơ bản của câu lệnh này."@vi ;
+    ex:appearsOnPage ex:g11_page150 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:relatedTo ex:g11_conceptSELECTQuery .
+
+  ex:g11_topicFict_l5_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 5 - Thiết kế truy vấn"@vi ;
+    ex:hasRawText "Thiết kế truy vấn q-BanDoc-MuonTra, thử thêm tiêu chí lựa chọn cho trường Tên và Ngày mượn; thiết kế truy vấn tìm sách có sẵn để mượn; tạo biểu mẫu dựa trên truy vấn; thiết kế truy vấn nối bảng Mượn-Trả và Sách, sau đó chuyển thành truy vấn có tham số."@vi ;
+    ex:appearsOnPage ex:g11_page154 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:relatedTo ex:g11_conceptQueryDesign, ex:g11_conceptTieuChiTruyVan, ex:g11_conceptParameterQuery .
+
+  ex:g11_topicFict_l5_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 5 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Thao tác nào sẽ mở vùng làm việc thiết kế truy vấn? Truy vấn có tham số là gì và lời nhắc điền tham số viết ở đâu? Truy vấn hành động là gì và tại sao cần rất thận trọng khi thực hiện nó?"@vi ;
+    ex:appearsOnPage ex:g11_page155 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson5 ;
+    ex:relatedTo ex:g11_conceptQueryDesign, ex:g11_conceptParameterQuery, ex:g11_conceptActionQuery .
+
+  ex:g11_topicFict_l6_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 6 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Theo em hiểu, làm báo cáo nghĩa là gì?"@vi ;
+    ex:appearsOnPage ex:g11_page156 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:relatedTo ex:g11_conceptBaoCaoAccess .
+
+  ex:g11_topicFict_l6_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 6 - Nhận biết báo cáo và nguồn dữ liệu báo cáo"@vi ;
+    ex:hasRawText "Em đã học về kết xuất thông tin bằng báo cáo. Hãy cho biết báo cáo là gì và dữ liệu để đưa vào báo cáo được lấy từ đâu."@vi ;
+    ex:appearsOnPage ex:g11_page156 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:relatedTo ex:g11_conceptBaoCaoAccess, ex:g11_conceptTruyVan .
+
+  ex:g11_topicFict_l6_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 6 - Tạo báo cáo đơn giản"@vi ;
+    ex:hasRawText "Tạo truy vấn dữ liệu làm nguồn dữ liệu cho báo cáo; tạo báo cáo đơn giản bằng nút lệnh Report, lưu kết quả thành báo cáo MượnTrả-Month; mở báo cáo, gộp nhóm theo tháng, tính tổng con, xác định cách hiển thị và ghi lưu."@vi ;
+    ex:appearsOnPage ex:g11_page159 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:relatedTo ex:g11_conceptBaoCaoAccess, ex:g11_conceptTruyVan, ex:g11_conceptGroupSortTotal .
+
+  ex:g11_topicFict_l6_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 6 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Báo cáo chi tiết khác với báo cáo tóm tắt ở điểm nào? Khi nào nên dùng nút lệnh tạo báo cáo nhanh và khi nào nên dùng công cụ Report Wizard?"@vi ;
+    ex:appearsOnPage ex:g11_page160 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson6 ;
+    ex:relatedTo ex:g11_conceptBaoCaoChiTiet, ex:g11_conceptBaoCaoTomTat, ex:g11_conceptReportWizard .
+
+  ex:g11_topicFict_l7_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 7 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Em hãy cho biết dải lệnh Layout có chức năng gì."@vi ;
+    ex:appearsOnPage ex:g11_page161 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:relatedTo ex:g11_conceptLayoutView .
+
+  ex:g11_topicFict_l7_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 bài 7 - Xác định thành phần của báo cáo"@vi ;
+    ex:hasRawText "Em hãy cho biết một báo cáo thường có những thành phần nào và nội dung của mỗi phần."@vi ;
+    ex:appearsOnPage ex:g11_page161 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:relatedTo ex:g11_conceptReportHeader, ex:g11_conceptPageHeader, ex:g11_conceptDetailSection, ex:g11_conceptPageFooter, ex:g11_conceptReportFooter .
+
+  ex:g11_topicFict_l7_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 bài 7 - Áp dụng Themes, Colors và Fonts"@vi ;
+    ex:hasRawText "Mở biểu mẫu trong khung nhìn bài trí, chọn thẻ Design để thấy nhóm lệnh Themes, nháy mũi tên xuống để thử các chủ đề, sau đó thử áp dụng Colors hoặc Fonts khác nhau."@vi ;
+    ex:appearsOnPage ex:g11_page165 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:relatedTo ex:g11_conceptThemesAccess, ex:g11_conceptColorsAccess, ex:g11_conceptFontsAccess .
+
+  ex:g11_topicFict_l7_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 7 - Chỉnh sửa giao diện ứng dụng"@vi ;
+    ex:hasRawText "Mở biểu mẫu nhiều bản ghi dùng để nhập dữ liệu cho bảng Sách trong khung nhìn bài trí và chỉnh sửa kích thước dòng; mở biểu mẫu một bản ghi cho bảng Bạn đọc trong khung nhìn thiết kế, bố trí lại hộp dữ liệu trường Ảnh; chọn áp dụng Themes và Colors cho toàn bộ giao diện."@vi ;
+    ex:appearsOnPage ex:g11_page166 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:relatedTo ex:g11_conceptBieuMauAccess, ex:g11_conceptLayoutView, ex:g11_conceptThemesAccess .
+
+  ex:g11_topicFict_l7_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 7 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Mở khung nhìn nào để chỉnh sửa kích thước các thành phần giao diện và khung nhìn nào để di chuyển một thành phần giao diện? Chủ đề là gì, mở nhóm lệnh nào để chọn áp dụng một chủ đề? Để chỉnh sửa định dạng riêng cho một phần tử cụ thể phải làm gì?"@vi ;
+    ex:appearsOnPage ex:g11_page166 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson7 ;
+    ex:relatedTo ex:g11_conceptLayoutView, ex:g11_conceptDesignView, ex:g11_conceptThemesAccess .
+
+  ex:g11_topicFict_l8_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 8 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Theo em, làm thế nào để một người không học Access cũng có thể sử dụng được các công cụ quản lí thư viện ta đã tạo ra trong các bài học?"@vi ;
+    ex:appearsOnPage ex:g11_page167 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:relatedTo ex:g11_conceptNavigationForm, ex:g11_conceptUngDungQuanLiThuVien .
+
+  ex:g11_topicFict_l8_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 8 - Mô tả công việc thường ngày của thư viện"@vi ;
+    ex:hasRawText "Em sẽ nói gì nếu được yêu cầu mô tả ngắn gọn về công việc thường ngày của thư viện?"@vi ;
+    ex:appearsOnPage ex:g11_page169 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:relatedTo ex:g11_conceptUngDungQuanLiThuVien .
+
+  ex:g11_topicFict_l8_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành tổng hợp bài 8 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Tạo và chỉnh sửa bài trí biểu mẫu điều hướng; hoàn thiện biểu mẫu một bản ghi để nhập dữ liệu cho bảng Bạn đọc; thử xuất ra một báo cáo; hoàn tất ứng dụng quản lí thư viện theo yêu cầu sử dụng thực tế."@vi ;
+    ex:appearsOnPage ex:g11_page170 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:relatedTo ex:g11_conceptNavigationForm, ex:g11_conceptBieuMauAccess, ex:g11_conceptBaoCaoAccess, ex:g11_conceptUngDungQuanLiThuVien .
+
+  ex:g11_topicFict_l8_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 8 chủ đề F ICT lớp 11"@vi ;
+    ex:hasRawText "Biểu mẫu điều hướng dùng để làm gì và chứa những gì? Thao tác thiết lập biểu mẫu điều hướng làm bảng điều khiển trung tâm của ứng dụng gồm mấy bước và bắt đầu bằng thao tác nào?"@vi ;
+    ex:appearsOnPage ex:g11_page170 ;
+    ex:belongsToLesson ex:g11_topicFict_lesson8 ;
+    ex:relatedTo ex:g11_conceptNavigationForm, ex:g11_conceptSwitchboard .
+
+  ex:g11_topicFict_lesson1 ex:hasActivity ex:g11_topicFict_l1_openingActivity,
+    ex:g11_topicFict_l1_activity1, ex:g11_topicFict_l1_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicFict_l1_review1 .
+
+  ex:g11_topicFict_lesson2 ex:hasActivity ex:g11_topicFict_l2_openingActivity,
+    ex:g11_topicFict_l2_activity1, ex:g11_topicFict_l2_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicFict_l2_review1 .
+
+  ex:g11_topicFict_lesson3 ex:hasActivity ex:g11_topicFict_l3_openingActivity,
+    ex:g11_topicFict_l3_activity1, ex:g11_topicFict_l3_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicFict_l3_review1 .
+
+  ex:g11_topicFict_lesson4 ex:hasActivity ex:g11_topicFict_l4_openingActivity,
+    ex:g11_topicFict_l4_activity1, ex:g11_topicFict_l4_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicFict_l4_review1 .
+
+  ex:g11_topicFict_lesson5 ex:hasActivity ex:g11_topicFict_l5_openingActivity,
+    ex:g11_topicFict_l5_activity1, ex:g11_topicFict_l5_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicFict_l5_review1 .
+
+  ex:g11_topicFict_lesson6 ex:hasActivity ex:g11_topicFict_l6_openingActivity,
+    ex:g11_topicFict_l6_activity1, ex:g11_topicFict_l6_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicFict_l6_review1 .
+
+  ex:g11_topicFict_lesson7 ex:hasActivity ex:g11_topicFict_l7_openingActivity,
+    ex:g11_topicFict_l7_activity1, ex:g11_topicFict_l7_activity2,
+    ex:g11_topicFict_l7_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicFict_l7_review1 .
+
+  ex:g11_topicFict_lesson8 ex:hasActivity ex:g11_topicFict_l8_openingActivity,
+    ex:g11_topicFict_l8_activity1, ex:g11_topicFict_l8_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicFict_l8_review1 .
+}

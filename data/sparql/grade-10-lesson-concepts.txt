@@ -1,0 +1,13 @@
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+###############################################################################
+# Auto-generated lesson-level ex:hasConcept links (grade 10).
+# Backfills lessons that had no concepts by attaching each of the lesson's
+# topic concepts to the lesson(s) whose text mentions/illustrates it.
+# 1 lessons.
+###############################################################################
+
+INSERT DATA {
+  ex:topicAcs_extra_colorSystem ex:hasConcept ex:conceptHeMauRGB .
+};

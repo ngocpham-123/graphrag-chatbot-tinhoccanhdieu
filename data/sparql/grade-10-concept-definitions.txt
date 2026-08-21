@@ -1,0 +1,1579 @@
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+###############################################################################
+# Auto-generated DefinitionText for KnowledgeConcepts (grade 10) that lacked one.
+# Grounded in GraphDB book excerpts (mentionsConcept / lesson paragraphs /
+# figure captions) via gpt-4.1-mini. 264 definitions.
+###############################################################################
+
+INSERT DATA {
+  ex:gendef_conceptASCIIExtended a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảng mã ASCII mở rộng"@vi ;
+    ex:hasDefinitionText "Bảng mã ASCII mở rộng là bảng mã dùng 8 bit để biểu diễn 256 kí tự, trong đó 128 kí tự đầu giống bảng mã ASCII chuẩn và 128 kí tự còn lại được thêm vào để mã hóa các kí tự của nhiều ngôn ngữ khác nhau."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptASCIIExtended .
+
+  ex:gendef_conceptAddAlphaChannel a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Add Alpha Channel"@vi ;
+    ex:hasDefinitionText "Add Alpha Channel là lệnh trong phần mềm GIMP dùng để thêm kênh alpha, tức kênh lưu độ trong suốt của điểm ảnh, vào lớp ảnh nhằm hỗ trợ xử lý độ trong suốt."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptAddAlphaChannel .
+
+  ex:gendef_conceptAlphaToSelection a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Alpha to Selection"@vi ;
+    ex:hasDefinitionText "Alpha to Selection là lệnh chuyển kênh alpha của một lớp ảnh thành vùng chọn, giúp thực hiện các thao tác thiết kế hoặc chỉnh sửa trong phạm vi vùng chọn đó."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptAlphaToSelection .
+
+  ex:gendef_conceptAnHienLop a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ẩn hiện lớp"@vi ;
+    ex:hasDefinitionText "Ẩn hiện lớp là thao tác tắt hoặc bật hiển thị của một lớp đồ họa trong phần mềm, giúp người dùng có thể xem hoặc ẩn các thành phần trên lớp đó khi thiết kế."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptAnHienLop .
+
+  ex:gendef_conceptAnNinhMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa An ninh mạng"@vi ;
+    ex:hasDefinitionText "An ninh mạng là việc bảo vệ hệ thống, dữ liệu và thông tin trên mạng khỏi các hành vi xâm phạm, tấn công hoặc phát tán thông tin sai sự thật nhằm đảm bảo an toàn và ổn định cho môi trường mạng."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptAnNinhMang .
+
+  ex:gendef_conceptAnToanThongTinMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa An toàn thông tin mạng"@vi ;
+    ex:hasDefinitionText "An toàn thông tin mạng là việc bảo vệ thông tin cá nhân và dữ liệu trên mạng khỏi các hành vi chiếm đoạt, lừa đảo bằng cách sử dụng các biện pháp như mật khẩu mạnh, phần mềm diệt virus và hạn chế chia sẻ thông tin không an toàn."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptAnToanThongTinMang .
+
+  ex:gendef_conceptAnhBitmap a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ảnh bitmap"@vi ;
+    ex:hasDefinitionText "Ảnh bitmap là hình ảnh được biểu diễn dưới dạng ma trận các điểm ảnh (pixel) với màu sắc và sắc thái khác nhau."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptAnhBitmap .
+
+  ex:gendef_conceptAnhCoNenTrongSuot a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ảnh có nền trong suốt"@vi ;
+    ex:hasDefinitionText "Ảnh có nền trong suốt là ảnh mà phần nền không có màu, cho phép nhìn xuyên qua đến các lớp ảnh phía dưới hoặc nền hiển thị bên dưới ảnh."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptAnhCoNenTrongSuot .
+
+  ex:gendef_conceptBaiToanTinHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bài toán tin học"@vi ;
+    ex:hasDefinitionText "Bài toán tin học là một vấn đề cần giải quyết trên máy tính, bao gồm xác định yêu cầu, dữ liệu vào, dữ liệu ra và thực hiện các bước phân tích, thiết kế thuật toán, viết chương trình, chạy thử, kiểm thử và đánh giá."@vi ;
+    ex:belongsToLesson ex:topicF_lesson17 ;
+    ex:explainsConcept ex:conceptBaiToanTinHoc .
+
+  ex:gendef_conceptBanQuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bản quyền"@vi ;
+    ex:hasDefinitionText "Bản quyền là quyền của tác giả đối với các sáng tạo tinh thần và văn hóa của mình, được pháp luật bảo vệ để ngăn chặn việc sao chép, sử dụng hoặc phân phối tác phẩm mà không được phép."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptBanQuyen .
+
+  ex:gendef_conceptBangTuyChon a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảng tuỳ chọn"@vi ;
+    ex:hasDefinitionText "Bảng tuỳ chọn là khu vực trong phần mềm cho phép người dùng điều chỉnh các thiết lập hoặc thuộc tính của công cụ, đối tượng hoặc thao tác đang sử dụng để tạo hoặc chỉnh sửa sản phẩm."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptBangTuyChon .
+
+  ex:gendef_conceptBanner a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Banner"@vi ;
+    ex:hasDefinitionText "Banner là một sản phẩm đồ họa thường dùng để quảng cáo hoặc truyền tải thông tin, được thiết kế với kích thước phù hợp và có thể bao gồm nhiều lớp hình ảnh riêng biệt."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptBanner .
+
+  ex:gendef_conceptBannerCLBICT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Banner Câu lạc bộ Tin học ứng dụng"@vi ;
+    ex:hasDefinitionText "Banner Câu lạc bộ Tin học ứng dụng là hình ảnh thiết kế có kích thước phù hợp, gồm các đối tượng được tạo trên các lớp riêng biệt với nền trong suốt, dùng để đại diện cho câu lạc bộ Tin học ứng dụng của lớp hoặc trường."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:explainsConcept ex:conceptBannerCLBICT .
+
+  ex:gendef_conceptBaoCaoKetQuaDuAn a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Báo cáo kết quả dự án"@vi ;
+    ex:hasDefinitionText "Báo cáo kết quả dự án là việc trình bày kết quả thực hiện dự án và giới thiệu sản phẩm của nhóm sau khi hoàn thành các công việc theo kế hoạch."@vi ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:explainsConcept ex:conceptBaoCaoKetQuaDuAn .
+
+  ex:gendef_conceptBatNatQuaMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bắt nạt qua mạng"@vi ;
+    ex:hasDefinitionText "Bắt nạt qua mạng là hành vi nhiều người cố ý chế giễu, bêu xấu, miệt thị, đe doạ hoặc gây tổn thương nạn nhân qua tin nhắn, thư điện tử, cuộc gọi, bài đăng hoặc bình luận trên mạng xã hội."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptBatNatQuaMang .
+
+  ex:gendef_conceptBien a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biến"@vi ;
+    ex:hasDefinitionText "Biến là tên dùng để đại diện cho một giá trị trong chương trình, cho phép lưu trữ và thay đổi dữ liệu khi thực hiện các phép tính hoặc xử lý thông tin."@vi ;
+    ex:belongsToLesson ex:topicF_lesson2 ;
+    ex:explainsConcept ex:conceptBien .
+
+  ex:gendef_conceptBieuDienNhiPhanAmThanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biểu diễn nhị phân âm thanh"@vi ;
+    ex:hasDefinitionText "Biểu diễn nhị phân âm thanh là cách chuyển đổi tín hiệu âm thanh thành dãy bit nhị phân liên tục theo thời gian để tạo thành dữ liệu âm thanh số."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptBieuDienNhiPhanAmThanh .
+
+  ex:gendef_conceptBieuDienThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biểu diễn thông tin"@vi ;
+    ex:hasDefinitionText "Biểu diễn thông tin là cách thể hiện dữ liệu dưới dạng phù hợp để máy tính có thể lưu trữ, xử lý và truyền đạt."@vi ;
+    ex:explainsConcept ex:conceptBieuDienThongTin .
+
+  ex:gendef_conceptBieuThucLogic a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biểu thức logic"@vi ;
+    ex:hasDefinitionText "Biểu thức logic là biểu thức sử dụng các phép toán logic để cho kết quả đúng hoặc sai, thường dùng trong các câu lệnh điều kiện để kiểm tra điều kiện rẽ nhánh."@vi ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:explainsConcept ex:conceptBieuThucLogic .
+
+  ex:gendef_conceptBieuThucSoHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biểu thức số học"@vi ;
+    ex:hasDefinitionText "Biểu thức số học là tổ hợp các số, biến và các phép toán số học được kết hợp với nhau để tính toán và cho ra kết quả số."@vi ;
+    ex:belongsToLesson ex:topicF_lesson2 ;
+    ex:explainsConcept ex:conceptBieuThucSoHoc .
+
+  ex:gendef_conceptBit a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bit"@vi ;
+    ex:hasDefinitionText "Bit là đơn vị nhỏ nhất để biểu diễn dữ liệu trong máy tính, có giá trị là 0 hoặc 1, và là nền tảng cho các phép toán xử lí dữ liệu."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptBit .
+
+  ex:gendef_conceptBoKiTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bộ kí tự"@vi ;
+    ex:hasDefinitionText "Bộ kí tự là tập hợp các kí tự được quy định và mã hóa để sử dụng trong máy tính, như bảng mã ASCII, ASCII mở rộng hay Unicode."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptBoKiTu .
+
+  ex:gendef_conceptBucketFill a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Bucket Fill"@vi ;
+    ex:hasDefinitionText "Công cụ Bucket Fill dùng để tô màu thuần nhất, phủ một màu duy nhất lên bề mặt đối tượng trong hình ảnh."@vi ;
+    ex:explainsConcept ex:conceptBucketFill .
+
+  ex:gendef_conceptCachMangCongNghiep40 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cách mạng công nghiệp lần thứ tư"@vi ;
+    ex:hasDefinitionText "Cách mạng công nghiệp lần thứ tư là giai đoạn phát triển công nghiệp đặc trưng bởi các công nghệ kết hợp giữa yếu tố vật chất, kỹ thuật số và sinh học, trong đó các máy móc và thiết bị có thể giao tiếp và hợp tác với nhau cũng như với con người qua Internet vạn vật trong thời gian thực."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptCachMangCongNghiep40 .
+
+  ex:gendef_conceptCauLenhLap a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh lặp"@vi ;
+    ex:hasDefinitionText "Câu lệnh lặp là câu lệnh cho phép thực hiện một nhóm lệnh nhiều lần dựa trên điều kiện hoặc số lần lặp đã biết, như câu lệnh for và while trong Python."@vi ;
+    ex:belongsToLesson ex:topicF_lesson8 ;
+    ex:explainsConcept ex:conceptCauLenhLap .
+
+  ex:gendef_conceptCauLenhReNhanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh rẽ nhánh"@vi ;
+    ex:hasDefinitionText "Câu lệnh rẽ nhánh là câu lệnh cho phép chương trình thực hiện các hành động khác nhau tùy theo điều kiện được kiểm tra."@vi ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:explainsConcept ex:conceptCauLenhReNhanh .
+
+  ex:gendef_conceptChiSoDanhSach a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chỉ số danh sách"@vi ;
+    ex:hasDefinitionText "Chỉ số danh sách là số nguyên dùng để xác định vị trí của một phần tử trong danh sách, giúp truy cập và thao tác với phần tử đó."@vi ;
+    ex:belongsToLesson ex:topicF_lesson14 ;
+    ex:explainsConcept ex:conceptChiSoDanhSach .
+
+  ex:gendef_conceptChiaSeThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chia sẻ thông tin"@vi ;
+    ex:hasDefinitionText "Chia sẻ thông tin là hành động truyền tải hoặc phổ biến nội dung thông tin đến người khác qua mạng xã hội hoặc môi trường số, đồng thời cần đảm bảo an toàn, hợp pháp và tôn trọng thông tin cá nhân khi thực hiện."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptChiaSeThongTin .
+
+  ex:gendef_conceptChinhPhuDienTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chính phủ điện tử"@vi ;
+    ex:hasDefinitionText "Chính phủ điện tử là hình thức sử dụng Internet và công nghệ thông tin để cung cấp dịch vụ, trao đổi thông tin và thực hiện các hoạt động quản lý nhà nước một cách hiệu quả và tiện lợi."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptChinhPhuDienTu .
+
+  ex:gendef_conceptChuanTrichDan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trích dẫn nguồn thông tin"@vi ;
+    ex:hasDefinitionText "Trích dẫn nguồn thông tin là việc ghi rõ tên tác giả, cơ quan tổ chức, tên nguồn sách, tạp chí hoặc địa chỉ trang web và ngày tháng công bố để làm rõ nguồn thông tin đã sử dụng trong bài viết."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptChuanTrichDan .
+
+  ex:gendef_conceptChuoiKhoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chuỗi khối"@vi ;
+    ex:hasDefinitionText "Chuỗi khối là công nghệ xích các khối dữ liệu với nhau và phân tán bản sao trong cộng đồng, giúp bảo đảm tính minh bạch của thông tin."@vi ;
+    ex:belongsToLesson ex:extra_publicKeyBlockchain ;
+    ex:explainsConcept ex:conceptChuoiKhoi .
+
+  ex:gendef_conceptChuongTrinhCon a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chương trình con"@vi ;
+    ex:hasDefinitionText "Chương trình con là một phần mã lệnh được đặt tên, thực hiện một nhiệm vụ cụ thể và có thể được gọi nhiều lần trong chương trình chính để tái sử dụng mã."@vi ;
+    ex:belongsToLesson ex:topicF_lesson10 ;
+    ex:explainsConcept ex:conceptChuongTrinhCon .
+
+  ex:gendef_conceptChuongTrinhMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chương trình máy tính"@vi ;
+    ex:hasDefinitionText "Chương trình máy tính là tập hợp các chỉ dẫn được viết bằng ngôn ngữ lập trình để máy tính thực hiện các công việc cụ thể."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptChuongTrinhMayTinh .
+
+  ex:gendef_conceptChuyenDoiHeDem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chuyển đổi hệ đếm"@vi ;
+    ex:hasDefinitionText "Chuyển đổi hệ đếm là quá trình biến đổi biểu diễn của một số từ hệ đếm này sang hệ đếm khác, ví dụ như chuyển số từ hệ nhị phân sang hệ thập phân hoặc ngược lại."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptChuyenDoiHeDem .
+
+  ex:gendef_conceptChuyenMaKiTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chuyển mã kí tự"@vi ;
+    ex:hasDefinitionText "Chuyển mã kí tự là quá trình đổi các kí tự trong văn bản từ một bảng mã này sang bảng mã khác để phù hợp với tiêu chuẩn mã hóa mới, như chuyển từ mã cũ sang Unicode."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptChuyenMaKiTu .
+
+  ex:gendef_conceptCoHoiViecLamCNTT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cơ hội việc làm công nghệ thông tin"@vi ;
+    ex:hasDefinitionText "Cơ hội việc làm công nghệ thông tin là khả năng người lao động có thể làm việc tại nhiều vị trí và tổ chức khác nhau như cơ quan nhà nước, doanh nghiệp, công ty phần mềm, hoặc các ngành như ngân hàng, viễn thông, xây dựng, với nhiều vai trò như lập trình viên, chuyên viên phân tích, quản trị hệ thống và giảng dạy."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptCoHoiViecLamCNTT .
+
+  ex:gendef_conceptCoQuanNhaNuoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cơ quan Nhà nước"@vi ;
+    ex:hasDefinitionText "Cơ quan Nhà nước là các tổ chức thuộc các cấp chính quyền và bộ ngành, chính phủ, thực hiện chức năng quản lý hành chính và điều hành công việc của Nhà nước."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptCoQuanNhaNuoc .
+
+  ex:gendef_conceptCodePython a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cửa sổ Code của Python"@vi ;
+    ex:hasDefinitionText "Cửa sổ Code của Python là nơi soạn thảo, lưu và chạy chương trình Python, giúp người dùng viết và thực hiện các câu lệnh trong ngôn ngữ này."@vi ;
+    ex:belongsToLesson ex:topicF_lesson2 ;
+    ex:explainsConcept ex:conceptCodePython .
+
+  ex:gendef_conceptCongTyPhanMem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công ty phần mềm"@vi ;
+    ex:hasDefinitionText "Công ty phần mềm là tổ chức sản xuất các loại sản phẩm phần mềm khác nhau, có thể phục vụ nhiều lĩnh vực như ngân hàng, viễn thông hoặc quản trị kinh doanh, với quy mô từ nhỏ đến lớn."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptCongTyPhanMem .
+
+  ex:gendef_conceptCropTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Crop"@vi ;
+    ex:hasDefinitionText "Công cụ Crop dùng để cắt lấy phần cần thiết của ảnh nguồn trước khi sao chép hoặc chỉnh sửa tiếp."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptCropTool .
+
+  ex:gendef_conceptDaoDucMoiTruongSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đạo đức trong môi trường số"@vi ;
+    ex:hasDefinitionText "Đạo đức trong môi trường số là các nguyên tắc và quy tắc ứng xử đúng đắn khi sử dụng công nghệ thông tin và Internet, nhằm bảo vệ quyền lợi và tôn trọng người khác trong không gian mạng."@vi ;
+    ex:explainsConcept ex:conceptDaoDucMoiTruongSo .
+
+  ex:gendef_conceptDaoTaoCNTT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đào tạo công nghệ thông tin"@vi ;
+    ex:hasDefinitionText "Đào tạo công nghệ thông tin là quá trình giảng dạy và học tập nhằm trang bị kiến thức, kỹ năng về công nghệ thông tin tại các cơ sở giáo dục như cao đẳng và đại học."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptDaoTaoCNTT .
+
+  ex:gendef_conceptDayBit a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dãy bit"@vi ;
+    ex:hasDefinitionText "Dãy bit là chuỗi các bit (0 hoặc 1) được sắp xếp theo thứ tự, dùng để biểu diễn và xử lí dữ liệu trong máy tính."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptDayBit .
+
+  ex:gendef_conceptDiaChiIP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Địa chỉ IP"@vi ;
+    ex:hasDefinitionText "Địa chỉ IP là một dãy số dùng để xác định duy nhất một thiết bị trên mạng máy tính, thường được viết dưới dạng bốn số thập phân trong IPv4."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptDiaChiIP .
+
+  ex:gendef_conceptDichTuDong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dịch tự động"@vi ;
+    ex:hasDefinitionText "Dịch tự động là quá trình sử dụng phần mềm hoặc thiết bị để chuyển đổi văn bản hoặc lời nói từ một ngôn ngữ sang ngôn ngữ khác một cách tự động."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptDichTuDong .
+
+  ex:gendef_conceptDichVuDamMay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dịch vụ đám mây"@vi ;
+    ex:hasDefinitionText "Dịch vụ đám mây là các dịch vụ như lưu trữ, thư điện tử, ứng dụng văn phòng trực tuyến được cung cấp qua mạng bởi công ty điện toán đám mây khi có yêu cầu, với chi phí thấp, chất lượng cao và tính tương thích rộng."@vi ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptDichVuDamMay .
+
+  ex:gendef_conceptDiemAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điểm ảnh"@vi ;
+    ex:hasDefinitionText "Điểm ảnh là một phần tử ảnh nhỏ nhất trong hình ảnh số, được coi như một ô vuông đồng màu có diện tích rất nhỏ, xếp nối tiếp nhau từ trái sang phải, từ trên xuống dưới để tạo thành hình ảnh."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptDiemAnh .
+
+  ex:gendef_conceptDiemMaUnicode a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điểm mã Unicode"@vi ;
+    ex:hasDefinitionText "Điểm mã Unicode là một dãy kí số duy nhất được gán cho mỗi kí tự, kí hiệu hoặc biểu tượng trong hệ thống Unicode, dùng để đại diện cho các kí tự trong các ngôn ngữ khác nhau trên thế giới."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptDiemMaUnicode .
+
+  ex:gendef_conceptDienThoaiThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điện thoại thông minh"@vi ;
+    ex:hasDefinitionText "Điện thoại thông minh là thiết bị di động có thể thực hiện nhiều chức năng như gọi điện, nhắn tin, truy cập Internet và cài đặt các ứng dụng khác nhau."@vi ;
+    ex:belongsToLesson ex:lesson3 ;
+    ex:explainsConcept ex:conceptDienThoaiThongMinh .
+
+  ex:gendef_conceptDienToanDamMay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điện toán đám mây"@vi ;
+    ex:hasDefinitionText "Điện toán đám mây là mô hình cung cấp dịch vụ qua Internet với nguồn tài nguyên lớn như máy chủ, phần mềm và đường truyền, giúp người dùng sử dụng các dịch vụ như lưu trữ, thư điện tử và ứng dụng trực tuyến một cách tiện lợi và chi phí thấp."@vi ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptDienToanDamMay .
+
+  ex:gendef_conceptDoPhanGiai a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Độ phân giải"@vi ;
+    ex:hasDefinitionText "Độ phân giải là số lượng điểm ảnh theo chiều ngang và chiều cao tạo nên một hình ảnh kỹ thuật số, thể hiện chi tiết và độ sắc nét của ảnh."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptDoPhanGiai .
+
+  ex:gendef_conceptDoPhanGiaiAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Độ phân giải ảnh"@vi ;
+    ex:hasDefinitionText "Độ phân giải ảnh là số lượng điểm ảnh trên một đơn vị chiều dài, thể hiện mức độ chi tiết và rõ nét của ảnh."@vi ;
+    ex:explainsConcept ex:conceptDoPhanGiaiAnh .
+
+  ex:gendef_conceptDoSauMau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Độ sâu màu"@vi ;
+    ex:hasDefinitionText "Độ sâu màu là số bit dùng để biểu diễn thông tin màu sắc của mỗi điểm ảnh, quyết định số lượng màu có thể hiển thị trong hình ảnh số."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptDoSauMau .
+
+  ex:gendef_conceptDoanhNghiepSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Doanh nghiệp số"@vi ;
+    ex:hasDefinitionText "Doanh nghiệp số là tổ chức sử dụng công nghệ số và các hệ thống xử lý thông tin để quản lý, sản xuất và kinh doanh hiệu quả trong xã hội thông tin."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptDoanhNghiepSo .
+
+  ex:gendef_conceptDoanhNghiepTaiChinhNganHang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Doanh nghiệp tài chính - ngân hàng"@vi ;
+    ex:hasDefinitionText "Doanh nghiệp tài chính - ngân hàng là các tổ chức của Nhà nước hoặc tư nhân hoạt động trong lĩnh vực tài chính, sử dụng hệ thống phần mềm phức tạp để xử lý nghiệp vụ và bảo mật thông tin."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptDoanhNghiepTaiChinhNganHang .
+
+  ex:gendef_conceptDonViLuuTru a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đơn vị lưu trữ dữ liệu"@vi ;
+    ex:hasDefinitionText "Đơn vị lưu trữ dữ liệu là các đơn vị đo kích thước dữ liệu trong máy tính, bao gồm byte và các bội số như KB, MB, GB, TB, PB, EB, ZB, YB."@vi ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:explainsConcept ex:conceptDonViLuuTru .
+
+  ex:gendef_conceptDuAnHuongNghiep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dự án hướng nghiệp"@vi ;
+    ex:hasDefinitionText "Dự án hướng nghiệp là hoạt động học tập theo nhóm nhằm tìm hiểu, khai thác thông tin và giới thiệu về các nghề trong lĩnh vực thiết kế và lập trình, qua đó phát triển kỹ năng tìm kiếm, giao lưu và trình bày thông tin."@vi ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:explainsConcept ex:conceptDuAnHuongNghiep .
+
+  ex:gendef_conceptDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu"@vi ;
+    ex:hasDefinitionText "Dữ liệu là các văn bản chữ và số, hình vẽ, hình ảnh, âm thanh, đoạn video thể hiện thông tin dưới dạng có thể lưu trữ và xử lí."@vi ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:explainsConcept ex:conceptDuLieu .
+
+  ex:gendef_conceptDuLieuAnalog a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu tương tự"@vi ;
+    ex:hasDefinitionText "Dữ liệu tương tự là dữ liệu có dạng liên tục, biểu diễn bằng các giá trị thay đổi liên tục theo thời gian hoặc không gian, như sóng âm được thể hiện bằng đường cong nhấp nhô liên tục."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptDuLieuAnalog .
+
+  ex:gendef_conceptDuLieuCaNhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu cá nhân"@vi ;
+    ex:hasDefinitionText "Dữ liệu cá nhân là các thông tin liên quan đến một cá nhân cụ thể, giúp nhận dạng hoặc xác định người đó trong môi trường số."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptDuLieuCaNhan .
+
+  ex:gendef_conceptDuLieuDauRa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu đầu ra"@vi ;
+    ex:hasDefinitionText "Dữ liệu đầu ra là thông tin hoặc kết quả được máy tính tạo ra sau khi xử lý dữ liệu đầu vào theo chương trình đã viết."@vi ;
+    ex:belongsToLesson ex:topicF_lesson17 ;
+    ex:explainsConcept ex:conceptDuLieuDauRa .
+
+  ex:gendef_conceptDuLieuDauVao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu đầu vào"@vi ;
+    ex:hasDefinitionText "Dữ liệu đầu vào là thông tin hoặc giá trị được nhập vào máy tính để chương trình xử lý và cho ra kết quả."@vi ;
+    ex:belongsToLesson ex:topicF_lesson17 ;
+    ex:explainsConcept ex:conceptDuLieuDauVao .
+
+  ex:gendef_conceptDuLieuLon a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu lớn"@vi ;
+    ex:hasDefinitionText "Dữ liệu lớn là tập hợp dữ liệu có kích thước rất lớn và đa dạng, vượt quá khả năng xử lý của các phương pháp truyền thống, thường được sử dụng để phân tích và rút ra thông tin có giá trị trong xã hội thông tin."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptDuLieuLon .
+
+  ex:gendef_conceptDuLieuSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu số"@vi ;
+    ex:hasDefinitionText "Dữ liệu số là các con số được biểu diễn dưới dạng số học, có thể được máy tính xử lí để tạo ra thông tin."@vi ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:explainsConcept ex:conceptDuLieuSo .
+
+  ex:gendef_conceptDuyetDanhSach a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Duyệt danh sách"@vi ;
+    ex:hasDefinitionText "Duyệt danh sách là quá trình truy cập tuần tự từng phần tử trong danh sách để thực hiện các thao tác hoặc xử lí dữ liệu."@vi ;
+    ex:belongsToLesson ex:topicF_lesson14 ;
+    ex:explainsConcept ex:conceptDuyetDanhSach .
+
+  ex:gendef_conceptEBanking a ex:DefinitionText ;
+    rdfs:label "Định nghĩa E-Banking"@vi ;
+    ex:hasDefinitionText "E-Banking là hình thức sử dụng mạng máy tính và Internet để thực hiện các giao dịch và dịch vụ ngân hàng một cách điện tử, giúp khách hàng thuận tiện trong quản lý tài chính và giao dịch trực tuyến."@vi ;
+    ex:explainsConcept ex:conceptEBanking .
+
+  ex:gendef_conceptECommerce a ex:DefinitionText ;
+    rdfs:label "Định nghĩa E-Commerce"@vi ;
+    ex:hasDefinitionText "E-Commerce là hình thức kinh doanh và giao dịch hàng hóa, dịch vụ thông qua mạng Internet, giúp thúc đẩy thương mại điện tử và thanh toán điện tử."@vi ;
+    ex:explainsConcept ex:conceptECommerce .
+
+  ex:gendef_conceptELearning a ex:DefinitionText ;
+    rdfs:label "Định nghĩa E-Learning"@vi ;
+    ex:hasDefinitionText "E-Learning là hình thức dạy học trực tuyến sử dụng công nghệ số để truyền tải và tiếp nhận kiến thức qua mạng internet."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptELearning .
+
+  ex:gendef_conceptEPayment a ex:DefinitionText ;
+    rdfs:label "Định nghĩa E-Payment"@vi ;
+    ex:hasDefinitionText "E-Payment là phương thức thanh toán điện tử được thực hiện qua mạng Internet, giúp giao dịch nhanh chóng và tiện lợi trong thương mại điện tử."@vi ;
+    ex:explainsConcept ex:conceptEPayment .
+
+  ex:gendef_conceptEllipseSelect a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ellipse Select"@vi ;
+    ex:hasDefinitionText "Ellipse Select là công cụ tạo vùng chọn hình elip trên ảnh để xử lí riêng biệt vùng đó, có thể đảo ngược, co giãn, xoá hoặc bỏ vùng chọn."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptEllipseSelect .
+
+  ex:gendef_conceptExportAs a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lệnh Export As"@vi ;
+    ex:hasDefinitionText "Lệnh Export As cho phép lưu sản phẩm thiết kế sang định dạng tệp khác, ví dụ như xuất ảnh từ định dạng gốc sang định dạng JPG."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptExportAs .
+
+  ex:gendef_conceptFillPath a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Fill Path"@vi ;
+    ex:hasDefinitionText "Fill Path là thao tác tô màu vùng được giới hạn bởi đường dẫn trong phần mềm đồ họa."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptFillPath .
+
+  ex:gendef_conceptFreeSelect a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Free Select"@vi ;
+    ex:hasDefinitionText "Free Select là công cụ cho phép chọn đối tượng bằng cách nháy chuột quanh biên đối tượng để tách ra khỏi nền ảnh."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptFreeSelect .
+
+  ex:gendef_conceptGhepAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ghép ảnh"@vi ;
+    ex:hasDefinitionText "Ghép ảnh là thao tác sao chép một phần hoặc toàn bộ ảnh nguồn vào ảnh đích, sau đó điều chỉnh kích thước và vị trí ảnh mới để tạo thành hình ảnh hoàn chỉnh."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptGhepAnh .
+
+  ex:gendef_conceptGhepXau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ghép xâu"@vi ;
+    ex:hasDefinitionText "Ghép xâu là thao tác nối hai hoặc nhiều xâu kí tự lại với nhau thành một xâu mới bằng phép toán +."@vi ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:explainsConcept ex:conceptGhepXau .
+
+  ex:gendef_conceptGhiChuThich a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ghi chú thích trong chương trình"@vi ;
+    ex:hasDefinitionText "Ghi chú thích trong chương trình là các dòng văn bản được thêm vào mã nguồn để giải thích, làm rõ nội dung chương trình mà không ảnh hưởng đến quá trình thực thi."@vi ;
+    ex:belongsToLesson ex:topicF_lesson5 ;
+    ex:explainsConcept ex:conceptGhiChuThich .
+
+  ex:gendef_conceptGiaoThongThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao thông thông minh"@vi ;
+    ex:hasDefinitionText "Giao thông thông minh là hệ thống sử dụng cảm biến và thiết bị điện tử như đèn giao thông, biển báo điện tử, xe tự lái, trạm cân và trạm thu phí tự động để nhận dạng biển số, loại xe, mật độ dòng xe và chướng ngại vật, nhằm quản lý và điều khiển giao thông hiệu quả."@vi ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptGiaoThongThongMinh .
+
+  ex:gendef_conceptGoLoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Gỡ lỗi chương trình"@vi ;
+    ex:hasDefinitionText "Gỡ lỗi chương trình là quá trình phát hiện và sửa các lỗi trong chương trình để chương trình hoạt động đúng như mong muốn."@vi ;
+    ex:belongsToLesson ex:topicF_lesson16 ;
+    ex:explainsConcept ex:conceptGoLoi .
+
+  ex:gendef_conceptGradient a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tô màu gradient"@vi ;
+    ex:hasDefinitionText "Tô màu gradient là cách tô màu tạo dải màu chuyển dần từ màu thứ nhất sang màu thứ hai trên bề mặt đối tượng."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptGradient .
+
+  ex:gendef_conceptGrowShrinkSelection a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Co hoặc giãn vùng chọn"@vi ;
+    ex:hasDefinitionText "Co hoặc giãn vùng chọn là thao tác thay đổi kích thước vùng chọn trên ảnh để xử lí riêng biệt một phần cụ thể của ảnh."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptGrowShrinkSelection .
+
+  ex:gendef_conceptHamCount a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hàm count()"@vi ;
+    ex:hasDefinitionText "Hàm count() dùng để đếm số lần xuất hiện của một xâu con trong một xâu kí tự."@vi ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:explainsConcept ex:conceptHamCount .
+
+  ex:gendef_conceptHamFind a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hàm find()"@vi ;
+    ex:hasDefinitionText "Hàm find() dùng để tìm vị trí xuất hiện đầu tiên của một xâu con trong xâu kí tự cho trước."@vi ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:explainsConcept ex:conceptHamFind .
+
+  ex:gendef_conceptHamLen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hàm len()"@vi ;
+    ex:hasDefinitionText "Hàm len() dùng để xác định độ dài của một xâu kí tự, tức là số lượng kí tự có trong xâu đó."@vi ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:explainsConcept ex:conceptHamLen .
+
+  ex:gendef_conceptHamPython a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hàm trong Python"@vi ;
+    ex:hasDefinitionText "Hàm trong Python là chương trình con được khai báo bằng từ khóa def, có thể nhận tham số, thực hiện các câu lệnh và trả về kết quả bằng câu lệnh return."@vi ;
+    ex:belongsToLesson ex:topicF_lesson10 ;
+    ex:explainsConcept ex:conceptHamPython .
+
+  ex:gendef_conceptHamRange a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hàm range()"@vi ;
+    ex:hasDefinitionText "Hàm range() tạo ra một dãy số nguyên theo một khoảng xác định, thường dùng để xác định số lần lặp trong câu lệnh for."@vi ;
+    ex:belongsToLesson ex:topicF_lesson8 ;
+    ex:explainsConcept ex:conceptHamRange .
+
+  ex:gendef_conceptHamReplace a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hàm replace()"@vi ;
+    ex:hasDefinitionText "Hàm replace() là hàm dùng để thay thế một phần xâu kí tự bằng một phần xâu kí tự khác trong dữ liệu kiểu xâu."@vi ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:explainsConcept ex:conceptHamReplace .
+
+  ex:gendef_conceptHamToanHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hàm toán học"@vi ;
+    ex:hasDefinitionText "Hàm toán học là các hàm có sẵn trong ngôn ngữ lập trình dùng để thực hiện các phép tính toán học cơ bản hoặc nâng cao trên dữ liệu số."@vi ;
+    ex:belongsToLesson ex:topicF_lesson5 ;
+    ex:explainsConcept ex:conceptHamToanHoc .
+
+  ex:gendef_conceptHang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hằng"@vi ;
+    ex:hasDefinitionText "Hằng là giá trị cố định trong chương trình, không thay đổi trong quá trình thực thi."@vi ;
+    ex:belongsToLesson ex:topicF_lesson4 ;
+    ex:explainsConcept ex:conceptHang .
+
+  ex:gendef_conceptHeDemCoSo16 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hệ đếm cơ số 16"@vi ;
+    ex:hasDefinitionText "Hệ đếm cơ số 16 là hệ đếm dùng các kí số từ 0 đến 9 và các chữ A, B, C, D, E, F tương ứng với giá trị từ 10 đến 15."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:explainsConcept ex:conceptHeDemCoSo16 .
+
+  ex:gendef_conceptHeDemCoSo8 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hệ đếm cơ số 8"@vi ;
+    ex:hasDefinitionText "Hệ đếm cơ số 8 là hệ đếm dùng các kí số từ 0 đến 7 để biểu diễn các số."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:explainsConcept ex:conceptHeDemCoSo8 .
+
+  ex:gendef_conceptHeMau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hệ màu"@vi ;
+    ex:hasDefinitionText "Hệ màu là cách số hóa các màu sắc bằng cách tương ứng mỗi màu với một mẫu bit, như hệ màu RGB định nghĩa mã màu dựa trên các thành phần đỏ, xanh lục và xanh lam."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptHeMau .
+
+  ex:gendef_conceptHeThapPhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hệ thập phân"@vi ;
+    ex:hasDefinitionText "Hệ thập phân là hệ đếm cơ số 10, sử dụng mười kí số từ 0 đến 9 để biểu diễn các số, trong đó giá trị của mỗi kí số tăng gấp 10 lần khi dịch sang trái một vị trí cột."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptHeThapPhan .
+
+  ex:gendef_conceptHieuUngHoaMau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu ứng hoà màu"@vi ;
+    ex:hasDefinitionText "Hiệu ứng hoà màu là quá trình kết hợp hai hoặc nhiều màu lại với nhau để tạo ra màu mới, thường dùng để tạo hiệu ứng chuyển màu mượt mà trên hình ảnh hoặc nền."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:explainsConcept ex:conceptHieuUngHoaMau .
+
+  ex:gendef_conceptHocLieuMo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Học liệu mở"@vi ;
+    ex:hasDefinitionText "Học liệu mở là các tài liệu học tập được số hóa và có thể truy cập miễn phí trên mạng, bao gồm bài giảng, tài liệu tham khảo, bài tập, thí nghiệm ảo và bài kiểm tra."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptHocLieuMo .
+
+  ex:gendef_conceptHocTrucTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Học trực tuyến"@vi ;
+    ex:hasDefinitionText "Học trực tuyến là phương thức học qua Internet, trong đó bài giảng được số hóa và đưa lên mạng, giúp người học có thể học ở bất kỳ nơi nào có kết nối Internet."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptHocTrucTuyen .
+
+  ex:gendef_conceptHopCongCu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hộp công cụ"@vi ;
+    ex:hasDefinitionText "Hộp công cụ là thành phần trên màn hình làm việc của GIMP chứa các công cụ để thao tác và chỉnh sửa ảnh."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptHopCongCu .
+
+  ex:gendef_conceptHuongNghiepTinHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hướng nghiệp với tin học"@vi ;
+    ex:hasDefinitionText "Hướng nghiệp với tin học là việc định hướng và lựa chọn nghề nghiệp trong lĩnh vực tin học dựa trên khả năng, sở thích và cơ hội đào tạo, việc làm phù hợp với từng cá nhân."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptHuongNghiepTinHoc .
+
+  ex:gendef_conceptIDLE a ex:DefinitionText ;
+    rdfs:label "Định nghĩa IDLE"@vi ;
+    ex:hasDefinitionText "IDLE là môi trường lập trình tích hợp của Python, giúp viết, chạy và kiểm tra các câu lệnh Python một cách dễ dàng."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptIDLE .
+
+  ex:gendef_conceptIPv4 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa IPv4"@vi ;
+    ex:hasDefinitionText "IPv4 là địa chỉ mạng được viết dưới dạng bốn số thập phân, dùng để xác định thiết bị trong mạng máy tính."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptIPv4 .
+
+  ex:gendef_conceptIPv6 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa IPv6"@vi ;
+    ex:hasDefinitionText "IPv6 là phiên bản địa chỉ IP mới với độ dài 128 bit, được sử dụng để xác định các thiết bị kết nối Internet thay cho IPv4 nhằm mở rộng số lượng địa chỉ."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptIPv6 .
+
+  ex:gendef_conceptInternet a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Internet"@vi ;
+    ex:hasDefinitionText "Internet là mạng lưới kết nối toàn cầu, cung cấp kho tri thức và thông tin khổng lồ, hỗ trợ học tập, làm việc, giao tiếp và nhiều dịch vụ xã hội khác thông qua các thiết bị có kết nối mạng."@vi ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:explainsConcept ex:conceptInternet .
+
+  ex:gendef_conceptInternetVanVat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Internet vạn vật"@vi ;
+    ex:hasDefinitionText "Internet vạn vật là mạng lưới các thiết bị, máy móc được gắn cảm biến và trí tuệ nhân tạo, giúp chúng giao tiếp, phối hợp hoạt động với nhau và với con người trong thời gian thực."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptInternetVanVat .
+
+  ex:gendef_conceptInvertSelection a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đảo ngược vùng chọn"@vi ;
+    ex:hasDefinitionText "Đảo ngược vùng chọn là thao tác chuyển vùng được chọn thành vùng không được chọn và ngược lại trên ảnh, giúp xử lí riêng biệt các phần khác nhau của ảnh."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptInvertSelection .
+
+  ex:gendef_conceptKenhMau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kênh màu"@vi ;
+    ex:hasDefinitionText "Kênh màu là thành phần quản lí các thông tin màu sắc trong ảnh, giúp điều chỉnh và xử lí từng kênh màu riêng biệt."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptKenhMau .
+
+  ex:gendef_conceptKhongGianMauRGB a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Không gian màu RGB"@vi ;
+    ex:hasDefinitionText "Không gian màu RGB là hệ màu sử dụng ba màu cơ bản đỏ (Red), xanh lá (Green) và xanh dương (Blue) để tạo ra các màu sắc khác nhau trong ảnh kỹ thuật số."@vi ;
+    ex:explainsConcept ex:conceptKhongGianMauRGB .
+
+  ex:gendef_conceptKiTuTiengViet a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kí tự tiếng Việt"@vi ;
+    ex:hasDefinitionText "Kí tự tiếng Việt là các chữ cái Latin có thêm các dấu thanh và dấu phụ đặc trưng, được mã hóa theo tiêu chuẩn Unicode để đảm bảo tính nhất quán và tương thích trong xử lý văn bản."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptKiTuTiengViet .
+
+  ex:gendef_conceptKiemThu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiểm thử chương trình"@vi ;
+    ex:hasDefinitionText "Kiểm thử chương trình là quá trình chạy thử chương trình để phát hiện và sửa các lỗi như lỗi cú pháp, lỗi thực thi và lỗi logic nhằm đảm bảo chương trình hoạt động đúng yêu cầu."@vi ;
+    ex:belongsToLesson ex:topicF_lesson16 ;
+    ex:explainsConcept ex:conceptKiemThu .
+
+  ex:gendef_conceptKiemThuPhanMem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiểm thử phần mềm"@vi ;
+    ex:hasDefinitionText "Kiểm thử phần mềm là quá trình thử nghiệm sản phẩm để phát hiện và kiểm tra các khiếm khuyết kỹ thuật trong phần mềm."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptKiemThuPhanMem .
+
+  ex:gendef_conceptKieuDanhSach a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiểu dữ liệu danh sách"@vi ;
+    ex:hasDefinitionText "Kiểu dữ liệu danh sách là kiểu dữ liệu dùng để lưu trữ một tập hợp các phần tử theo thứ tự, cho phép truy cập, duyệt và thực hiện các thao tác như tìm kiếm, sắp xếp, lọc và xử lý dữ liệu trên các phần tử đó."@vi ;
+    ex:belongsToLesson ex:topicF_lesson14 ;
+    ex:explainsConcept ex:conceptKieuDanhSach .
+
+  ex:gendef_conceptKieuDuLieuSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiểu dữ liệu số"@vi ;
+    ex:hasDefinitionText "Kiểu dữ liệu số là kiểu dữ liệu dùng để biểu diễn các giá trị số, bao gồm số nguyên và số thực trong lập trình."@vi ;
+    ex:belongsToLesson ex:topicF_lesson4 ;
+    ex:explainsConcept ex:conceptKieuDuLieuSo .
+
+  ex:gendef_conceptKieuXauKiTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kiểu dữ liệu xâu kí tự"@vi ;
+    ex:hasDefinitionText "Kiểu dữ liệu xâu kí tự là kiểu dữ liệu dùng để lưu trữ và xử lí các chuỗi các kí tự, cho phép thực hiện các thao tác như đo độ dài, ghép, đếm kí tự, tìm kiếm và thay thế trong chuỗi."@vi ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:explainsConcept ex:conceptKieuXauKiTu .
+
+  ex:gendef_conceptKinhTeTriThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kinh tế tri thức"@vi ;
+    ex:hasDefinitionText "Kinh tế tri thức là nền kinh tế dựa trên việc tạo ra, sử dụng và quản lý tri thức, thông tin để nâng cao hiệu quả sản xuất và phát triển xã hội."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptKinhTeTriThuc .
+
+  ex:gendef_conceptKyThuatPhanMem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kĩ thuật phần mềm"@vi ;
+    ex:hasDefinitionText "Kĩ thuật phần mềm là ngành đào tạo và áp dụng các quy trình, phương pháp để phân tích, thiết kế, phát triển, kiểm thử, bảo trì và quản lí dự án phần mềm nhằm tạo ra các sản phẩm phần mềm chất lượng."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptKyThuatPhanMem .
+
+  ex:gendef_conceptLamViecTuXa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Làm việc từ xa"@vi ;
+    ex:hasDefinitionText "Làm việc từ xa là hình thức làm việc thông qua kết nối Internet, cho phép người lao động thực hiện công việc ở nhà, quán cà phê hoặc khi di chuyển mà không cần đến văn phòng."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptLamViecTuXa .
+
+  ex:gendef_conceptLapTrinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lập trình"@vi ;
+    ex:hasDefinitionText "Lập trình là quá trình sử dụng ngôn ngữ lập trình để viết các chỉ dẫn cho máy tính thực hiện các công việc theo yêu cầu."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptLapTrinh .
+
+  ex:gendef_conceptLapTrinhPhanMem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lập trình phần mềm"@vi ;
+    ex:hasDefinitionText "Lập trình phần mềm là công đoạn chuyển mô tả thiết kế phần mềm thành các lệnh máy tính thực hiện được."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptLapTrinhPhanMem .
+
+  ex:gendef_conceptLapTrinhThietBiDiDong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lập trình cho thiết bị di động"@vi ;
+    ex:hasDefinitionText "Lập trình cho thiết bị di động là công việc phát triển các ứng dụng chạy trên điện thoại thông minh và máy tính bảng, giúp người dùng thực hiện nhiều chức năng khác nhau."@vi ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:explainsConcept ex:conceptLapTrinhThietBiDiDong .
+
+  ex:gendef_conceptLapTrinhTroChoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lập trình trò chơi"@vi ;
+    ex:hasDefinitionText "Lập trình trò chơi là công việc thiết kế và viết mã để tạo ra các trò chơi điện tử, bao gồm các yếu tố đồ họa, âm thanh và tương tác."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptLapTrinhTroChoi .
+
+  ex:gendef_conceptLayMauAmThanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lấy mẫu âm thanh"@vi ;
+    ex:hasDefinitionText "Lấy mẫu âm thanh là quá trình rời rạc hóa tín hiệu âm thanh liên tục thành các mẫu rất ngắn theo những khoảng thời gian cách đều, mỗi mẫu thể hiện giá trị biên độ tại thời điểm lấy mẫu."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptLayMauAmThanh .
+
+  ex:gendef_conceptLayerTransparency a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Layer Transparency"@vi ;
+    ex:hasDefinitionText "Layer Transparency là độ trong suốt của một lớp ảnh, được lưu trữ trong kênh alpha để xác định mức độ hiển thị của các điểm ảnh trên lớp đó."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptLayerTransparency .
+
+  ex:gendef_conceptLenhBreak a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh break"@vi ;
+    ex:hasDefinitionText "Câu lệnh break dùng để kết thúc ngay vòng lặp hiện tại, bỏ qua phần còn lại của vòng lặp và tiếp tục thực hiện các câu lệnh sau vòng lặp."@vi ;
+    ex:belongsToLesson ex:topicF_lesson9 ;
+    ex:explainsConcept ex:conceptLenhBreak .
+
+  ex:gendef_conceptLenhContinue a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh continue"@vi ;
+    ex:hasDefinitionText "Câu lệnh continue trong Python được dùng để bỏ qua phần còn lại của vòng lặp hiện tại và chuyển sang lần lặp tiếp theo."@vi ;
+    ex:belongsToLesson ex:topicF_lesson9 ;
+    ex:explainsConcept ex:conceptLenhContinue .
+
+  ex:gendef_conceptLenhElif a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh elif"@vi ;
+    ex:hasDefinitionText "Câu lệnh elif là phần mở rộng của câu lệnh if dùng để kiểm tra thêm một điều kiện khác khi điều kiện trước đó sai, giúp thực hiện các lựa chọn rẽ nhánh trong chương trình."@vi ;
+    ex:explainsConcept ex:conceptLenhElif .
+
+  ex:gendef_conceptLenhFor a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh for"@vi ;
+    ex:hasDefinitionText "Câu lệnh for là cấu trúc lặp trong Python dùng để thực hiện một khối lệnh nhiều lần với số lần lặp biết trước, thường kết hợp với hàm range()."@vi ;
+    ex:belongsToLesson ex:topicF_lesson8 ;
+    ex:explainsConcept ex:conceptLenhFor .
+
+  ex:gendef_conceptLenhIf a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh if"@vi ;
+    ex:hasDefinitionText "Câu lệnh if là câu lệnh rẽ nhánh trong lập trình, cho phép thực hiện một đoạn mã khi điều kiện cho trước đúng."@vi ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:explainsConcept ex:conceptLenhIf .
+
+  ex:gendef_conceptLenhIfElse a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh if-else"@vi ;
+    ex:hasDefinitionText "Câu lệnh if-else là cấu trúc rẽ nhánh trong lập trình cho phép thực hiện một trong hai khối lệnh tùy theo điều kiện đúng hoặc sai."@vi ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:explainsConcept ex:conceptLenhIfElse .
+
+  ex:gendef_conceptLenhInput a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh input()"@vi ;
+    ex:hasDefinitionText "Câu lệnh input() trong Python dùng để nhập dữ liệu từ bàn phím dưới dạng chuỗi ký tự trong quá trình chạy chương trình."@vi ;
+    ex:belongsToLesson ex:topicF_lesson3 ;
+    ex:explainsConcept ex:conceptLenhInput .
+
+  ex:gendef_conceptLenhPrint a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh print()"@vi ;
+    ex:hasDefinitionText "Câu lệnh print() trong Python dùng để hiển thị thông tin hoặc kết quả tính toán ra màn hình."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptLenhPrint .
+
+  ex:gendef_conceptLenhReturn a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh return"@vi ;
+    ex:hasDefinitionText "Câu lệnh return dùng để trả về giá trị từ một hàm và kết thúc việc thực thi hàm đó."@vi ;
+    ex:belongsToLesson ex:topicF_lesson10 ;
+    ex:explainsConcept ex:conceptLenhReturn .
+
+  ex:gendef_conceptLenhWhile a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Câu lệnh while"@vi ;
+    ex:hasDefinitionText "Câu lệnh while là cấu trúc lặp trong Python dùng để thực hiện một khối lệnh nhiều lần khi điều kiện cho trước còn đúng, thường áp dụng khi số lần lặp chưa biết trước."@vi ;
+    ex:belongsToLesson ex:topicF_lesson8 ;
+    ex:explainsConcept ex:conceptLenhWhile .
+
+  ex:gendef_conceptLikeShareComment a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Like, Share, Comment"@vi ;
+    ex:hasDefinitionText "Like, Share, Comment là các hành động tương tác trên mạng xã hội giúp nội dung thông tin xuất hiện nhiều hơn và được phổ biến rộng hơn."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLikeShareComment .
+
+  ex:gendef_conceptLogo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Logo"@vi ;
+    ex:hasDefinitionText "Logo là hình ảnh hoặc biểu tượng được thiết kế để đại diện cho một tổ chức, nhóm hoặc sản phẩm, thường được tạo bằng phần mềm thiết kế đồ họa với các hình khối, màu sắc và văn bản."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptLogo .
+
+  ex:gendef_conceptLoiCuPhap a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lỗi cú pháp"@vi ;
+    ex:hasDefinitionText "Lỗi cú pháp là lỗi do chương trình không tuân theo đúng quy tắc ngữ pháp của ngôn ngữ lập trình, khiến chương trình không thể biên dịch hoặc chạy được."@vi ;
+    ex:belongsToLesson ex:topicF_lesson7 ;
+    ex:explainsConcept ex:conceptLoiCuPhap .
+
+  ex:gendef_conceptLoiGoiHam a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lời gọi hàm"@vi ;
+    ex:hasDefinitionText "Lời gọi hàm là câu lệnh hoặc biểu thức dùng để thực thi một hàm đã được định nghĩa, thường bao gồm tên hàm và các đối số truyền vào nếu có."@vi ;
+    ex:belongsToLesson ex:topicF_lesson10 ;
+    ex:explainsConcept ex:conceptLoiGoiHam .
+
+  ex:gendef_conceptLoiLogic a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lỗi logic"@vi ;
+    ex:hasDefinitionText "Lỗi logic là lỗi trong chương trình khiến kết quả thực thi không đúng như mong đợi, dù chương trình không bị lỗi cú pháp hay lỗi thực thi."@vi ;
+    ex:belongsToLesson ex:topicF_lesson16 ;
+    ex:explainsConcept ex:conceptLoiLogic .
+
+  ex:gendef_conceptLoiThucThi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lỗi thực thi"@vi ;
+    ex:hasDefinitionText "Lỗi thực thi là lỗi xảy ra trong quá trình chương trình đang chạy, khiến chương trình bị dừng hoặc hoạt động không đúng."@vi ;
+    ex:belongsToLesson ex:topicF_lesson16 ;
+    ex:explainsConcept ex:conceptLoiThucThi .
+
+  ex:gendef_conceptLongHinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lồng hình"@vi ;
+    ex:hasDefinitionText "Lồng hình là kĩ thuật thiết kế để xử lí các điểm giao cắt giữa hai đối tượng bằng cách đưa một phần của đối tượng này lên trên hoặc xuống dưới đối tượng kia thông qua việc tạo vùng chọn và lớp mới che phủ."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptLongHinh .
+
+  ex:gendef_conceptLopAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lớp ảnh"@vi ;
+    ex:hasDefinitionText "Lớp ảnh là một phần riêng biệt trong ảnh, chứa các đối tượng hoặc hình ảnh riêng biệt, cho phép chỉnh sửa, ẩn hiện và thay đổi thứ tự độc lập để tạo thành ảnh hợp thành."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptLopAnh .
+
+  ex:gendef_conceptLuaDaoTrucTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lừa đảo trực tuyến"@vi ;
+    ex:hasDefinitionText "Lừa đảo trực tuyến là hành vi kẻ xấu mạo danh người có thẩm quyền hoặc sử dụng các thủ đoạn qua mạng để thu thập thông tin cá nhân, tài khoản ngân hàng nhằm chiếm đoạt tài sản hoặc gây hại cho nạn nhân."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLuaDaoTrucTuyen .
+
+  ex:gendef_conceptLuatAnNinhMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Luật An ninh mạng"@vi ;
+    ex:hasDefinitionText "Luật An ninh mạng là văn bản pháp luật quy định các hành vi bị nghiêm cấm trên mạng, nhằm bảo vệ an ninh, trật tự và quyền lợi hợp pháp của tổ chức, cá nhân trên môi trường mạng."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLuatAnNinhMang .
+
+  ex:gendef_conceptLuatAnToanThongTinMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Luật An toàn thông tin mạng"@vi ;
+    ex:hasDefinitionText "Luật An toàn thông tin mạng quy định trách nhiệm bảo vệ thông tin cá nhân khi chia sẻ trên mạng, trong đó cấm cung cấp, chia sẻ thông tin cá nhân cho bên thứ ba nếu không có sự đồng ý của chủ thể hoặc yêu cầu của cơ quan nhà nước có thẩm quyền."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLuatAnToanThongTinMang .
+
+  ex:gendef_conceptLuongTuHoa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lượng tử hoá"@vi ;
+    ex:hasDefinitionText "Lượng tử hoá là quá trình chuyển đổi giá trị mẫu liên tục thành các giá trị rời rạc bằng cách chia biên độ tín hiệu thành các khoảng cố định và gán mỗi mẫu vào một số hiệu khoảng."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptLuongTuHoa .
+
+  ex:gendef_conceptLuuTruDamMay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lưu trữ đám mây"@vi ;
+    ex:hasDefinitionText "Lưu trữ đám mây là dịch vụ lưu trữ dữ liệu trên Internet do công ty điện toán đám mây cung cấp, giúp người dùng lưu giữ và truy cập dữ liệu mọi lúc, mọi nơi với chi phí thấp và chất lượng cao."@vi ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptLuuTruDamMay .
+
+  ex:gendef_conceptLuậtSoHuuTriTue a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Luật Sở hữu trí tuệ"@vi ;
+    ex:hasDefinitionText "Luật Sở hữu trí tuệ là văn bản pháp luật quy định quyền của tác giả và các hành vi bị cấm liên quan đến việc sử dụng, sao chép, công bố tác phẩm nhằm bảo vệ quyền lợi của người sáng tạo."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptLuậtSoHuuTriTue .
+
+  ex:gendef_conceptMaKiTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mã kí tự"@vi ;
+    ex:hasDefinitionText "Mã kí tự là một dãy kí số duy nhất được gán cho mỗi kí tự, dùng để biểu diễn kí tự đó dưới dạng mã nhị phân trong máy tính."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptMaKiTu .
+
+  ex:gendef_conceptMaNhiPhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mã nhị phân"@vi ;
+    ex:hasDefinitionText "Mã nhị phân là dãy bit dùng để biểu diễn các kí tự trong máy tính theo quy định chung, như bảng mã ASCII hoặc các bộ mã Unicode như UTF-8, giúp máy tính xử lí và lưu trữ thông tin."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptMaNhiPhan .
+
+  ex:gendef_conceptMaQR a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mã QR"@vi ;
+    ex:hasDefinitionText "Mã QR (Quick Response) là loại mã vạch hai chiều được sử dụng rộng rãi để trao đổi thông tin, thanh toán tiêu dùng và nhiều tiện ích khác."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptMaQR .
+
+  ex:gendef_conceptManHinhLamViecGIMP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Màn hình làm việc của GIMP"@vi ;
+    ex:hasDefinitionText "Màn hình làm việc của GIMP là giao diện chính bao gồm hệ thống bảng chọn, hộp công cụ, bảng tùy chọn, cửa sổ ảnh và các bảng quản lí lớp ảnh, kênh màu, đường dẫn."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptManHinhLamViecGIMP .
+
+  ex:gendef_conceptMangLAN a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mạng LAN"@vi ;
+    ex:hasDefinitionText "Mạng LAN là mạng kết nối các máy tính trong phạm vi nhỏ như cơ quan hoặc gia đình, thuộc quyền sở hữu và quản lý nội bộ."@vi ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptMangLAN .
+
+  ex:gendef_conceptMangMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mạng máy tính"@vi ;
+    ex:hasDefinitionText "Mạng máy tính là hệ thống các máy tính và thiết bị được kết nối với nhau để trao đổi thông tin và chia sẻ tài nguyên, giúp nâng cao hiệu quả học tập, làm việc và chất lượng cuộc sống."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptMangMayTinh .
+
+  ex:gendef_conceptMangXaHoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mạng xã hội"@vi ;
+    ex:hasDefinitionText "Mạng xã hội là nền tảng trực tuyến cho phép người dùng kết nối, chia sẻ thông tin và tương tác với nhau."@vi ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:explainsConcept ex:conceptMangXaHoi .
+
+  ex:gendef_conceptMatKhauManh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mật khẩu mạnh"@vi ;
+    ex:hasDefinitionText "Mật khẩu mạnh là mật khẩu có độ phức tạp cao, giúp bảo vệ thông tin cá nhân khỏi bị kẻ xấu chiếm đoạt bằng các thủ đoạn tinh vi."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptMatKhauManh .
+
+  ex:gendef_conceptMatMaKhoaCongKhai a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mật mã khoá công khai"@vi ;
+    ex:hasDefinitionText "Mật mã khoá công khai sử dụng một cặp khoá gồm khoá công khai để mã hoá dữ liệu và khoá bí mật để giải mã, giúp người gửi mã hoá thông tin bằng khoá công khai của người nhận và người nhận giải mã bằng khoá bí mật của mình."@vi ;
+    ex:belongsToLesson ex:extra_publicKeyBlockchain ;
+    ex:explainsConcept ex:conceptMatMaKhoaCongKhai .
+
+  ex:gendef_conceptMauHauCanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Màu hậu cảnh"@vi ;
+    ex:hasDefinitionText "Màu hậu cảnh là màu được sử dụng để tô hoặc phủ nền phía sau đối tượng trong hình ảnh hoặc giao diện."@vi ;
+    ex:explainsConcept ex:conceptMauHauCanh .
+
+  ex:gendef_conceptMauTienCanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Màu tiền cảnh"@vi ;
+    ex:hasDefinitionText "Màu tiền cảnh là màu được sử dụng để tô hoặc phủ lên đối tượng ở lớp phía trước trong khi tô màu."@vi ;
+    ex:explainsConcept ex:conceptMauTienCanh .
+
+  ex:gendef_conceptMayTimKiem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Máy tìm kiếm"@vi ;
+    ex:hasDefinitionText "Máy tìm kiếm là công cụ trên Internet giúp người dùng tìm kiếm thông tin nhanh chóng và hiệu quả từ các trang web."@vi ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:explainsConcept ex:conceptMayTimKiem .
+
+  ex:gendef_conceptMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Máy tính"@vi ;
+    ex:hasDefinitionText "Máy tính là thiết bị thực hiện ba bước xử lí thông tin gồm nhận dữ liệu vào, xử lí dữ liệu và đưa kết quả xử lí ra cho con người."@vi ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:explainsConcept ex:conceptMayTinh .
+
+  ex:gendef_conceptMoiTruongLapTrinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Môi trường lập trình"@vi ;
+    ex:hasDefinitionText "Môi trường lập trình là phần mềm hỗ trợ người dùng viết, chỉnh sửa và chạy các chương trình máy tính, như IDLE trong Python giúp thực hiện các câu lệnh và kiểm tra kết quả ngay lập tức."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptMoiTruongLapTrinh .
+
+  ex:gendef_conceptMoiTruongSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Môi trường số"@vi ;
+    ex:hasDefinitionText "Môi trường số là không gian sử dụng các thiết bị và dịch vụ công nghệ số để lưu trữ, trao đổi và xử lý thông tin."@vi ;
+    ex:explainsConcept ex:conceptMoiTruongSo .
+
+  ex:gendef_conceptMoveTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Move"@vi ;
+    ex:hasDefinitionText "Công cụ Move dùng để di chuyển ảnh hoặc đối tượng đến vị trí phù hợp trên màn hình."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptMoveTool .
+
+  ex:gendef_conceptNganHangSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ngân hàng số"@vi ;
+    ex:hasDefinitionText "Ngân hàng số là hình thức cung cấp dịch vụ ngân hàng thông qua các kênh điện tử, giúp khách hàng thực hiện giao dịch nhanh chóng và tiện lợi mà không cần đến trực tiếp chi nhánh."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptNganHangSo .
+
+  ex:gendef_conceptNgheLapTrinhVien a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lập trình viên"@vi ;
+    ex:hasDefinitionText "Lập trình viên là người viết mã lệnh để tạo ra các phần mềm, ứng dụng hoặc hệ thống máy tính theo yêu cầu thiết kế."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptNgheLapTrinhVien .
+
+  ex:gendef_conceptNghiDinh131 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nghị định 131/2013/NĐ-CP"@vi ;
+    ex:hasDefinitionText "Nghị định 131/2013/NĐ-CP quy định xử phạt vi phạm hành chính về quyền tác giả và quyền liên quan, bao gồm các mức phạt và biện pháp khắc phục đối với hành vi xâm phạm quyền bảo vệ tác phẩm."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptNghiDinh131 .
+
+  ex:gendef_conceptNghiDinh15 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nghị định 15/2020/NĐ-CP"@vi ;
+    ex:hasDefinitionText "Nghị định 15/2020/NĐ-CP quy định xử phạt vi phạm trong việc cung cấp, chia sẻ thông tin giả mạo, sai sự thật và các hành vi vi phạm trách nhiệm sử dụng dịch vụ mạng xã hội."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptNghiDinh15 .
+
+  ex:gendef_conceptNgonNguLapTrinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ngôn ngữ lập trình"@vi ;
+    ex:hasDefinitionText "Ngôn ngữ lập trình là ngôn ngữ được con người sử dụng để viết các chỉ dẫn cho máy tính thực hiện các công việc, vì máy tính không hiểu trực tiếp ngôn ngữ tự nhiên của con người."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptNgonNguLapTrinh .
+
+  ex:gendef_conceptNgonNguLapTrinhBacCao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ngôn ngữ lập trình bậc cao"@vi ;
+    ex:hasDefinitionText "Ngôn ngữ lập trình bậc cao là ngôn ngữ dùng để viết chỉ dẫn cho máy tính, gần gũi với ngôn ngữ tự nhiên của con người và dễ hiểu hơn so với ngôn ngữ máy."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptNgonNguLapTrinhBacCao .
+
+  ex:gendef_conceptNguonNhanLucCNTT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nguồn nhân lực công nghệ thông tin"@vi ;
+    ex:hasDefinitionText "Nguồn nhân lực công nghệ thông tin là đội ngũ người lao động có kỹ năng thiết kế, lập trình và phát triển các sản phẩm công nghệ thông tin nhằm đáp ứng nhu cầu quản lí, sản xuất, kinh doanh và phát triển xã hội trong nhiều ngành nghề khác nhau."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptNguonNhanLucCNTT .
+
+  ex:gendef_conceptNhaThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhà thông minh"@vi ;
+    ex:hasDefinitionText "Nhà thông minh là ngôi nhà sử dụng hệ thống cảm biến để tự động theo dõi các điều kiện sinh hoạt và cho phép chủ nhà điều khiển các thiết bị gia dụng, an ninh thông minh trực tiếp hoặc từ xa."@vi ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptNhaThongMinh .
+
+  ex:gendef_conceptNhomNgheThietKeLapTrinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhóm nghề thiết kế và lập trình"@vi ;
+    ex:hasDefinitionText "Nhóm nghề thiết kế và lập trình là công việc tạo ra sản phẩm phần mềm máy tính nhằm đáp ứng nhu cầu của người dùng và phát triển xã hội, đòi hỏi tư duy logic, sáng tạo và khả năng cập nhật kiến thức thường xuyên."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptNhomNgheThietKeLapTrinh .
+
+  ex:gendef_conceptNongNghiepThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nông nghiệp thông minh"@vi ;
+    ex:hasDefinitionText "Nông nghiệp thông minh là phương pháp sử dụng mạng cảm biến để thu thập dữ liệu về môi trường và cây trồng, từ đó máy móc tự động thực hiện tưới tiêu, chăm sóc vật nuôi và phát hiện bệnh nhằm nâng cao hiệu quả sản xuất."@vi ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptNongNghiepThongMinh .
+
+  ex:gendef_conceptOlympicVietNamLogo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Logo Olympic Việt Nam"@vi ;
+    ex:hasDefinitionText "Logo Olympic Việt Nam là biểu tượng gồm các vòng tròn Olympic lồng nhau, được thiết kế và lưu dưới dạng tệp ảnh trong bài thực hành tổng hợp của môn Tin học phổ thông."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:explainsConcept ex:conceptOlympicVietNamLogo .
+
+  ex:gendef_conceptOpenCourseWare a ex:DefinitionText ;
+    rdfs:label "Định nghĩa OpenCourseWare"@vi ;
+    ex:hasDefinitionText "OpenCourseWare là nguồn học liệu mở bao gồm bài giảng, tài liệu tham khảo, bài tập, thí nghiệm ảo và bài kiểm tra được số hóa và cung cấp miễn phí trên mạng cho người học."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptOpenCourseWare .
+
+  ex:gendef_conceptPathsTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Paths"@vi ;
+    ex:hasDefinitionText "Công cụ Paths cho phép tạo và chỉnh sửa đường dẫn bằng cách nháy chuột tại các điểm mốc để vẽ hình có hình dạng tùy ý, bao gồm cả đường dẫn khép kín khi điểm mốc cuối trùng điểm đầu."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptPathsTool .
+
+  ex:gendef_conceptPhanMemDietVirus a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm diệt virus"@vi ;
+    ex:hasDefinitionText "Phần mềm diệt virus là chương trình giúp phát hiện và loại bỏ phần mềm độc hại, bảo vệ máy tính khỏi các mối nguy hiểm từ virus và các mã độc khác."@vi ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:explainsConcept ex:conceptPhanMemDietVirus .
+
+  ex:gendef_conceptPhanMemDocHai a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm độc hại"@vi ;
+    ex:hasDefinitionText "Phần mềm độc hại là các chương trình được tạo ra nhằm gây hại cho máy tính, thiết bị số, phần mềm, dữ liệu và người dùng, bao gồm các loại như virus máy tính, sâu máy tính, phần mềm gián điệp và phần mềm quảng cáo."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptPhanMemDocHai .
+
+  ex:gendef_conceptPhanMemGianDiep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm gián điệp"@vi ;
+    ex:hasDefinitionText "Phần mềm gián điệp là loại phần mềm độc hại được tạo ra để thu thập thông tin của người dùng hoặc máy tính mà không được phép."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptPhanMemGianDiep .
+
+  ex:gendef_conceptPhanMemQuangCao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm quảng cáo"@vi ;
+    ex:hasDefinitionText "Phần mềm quảng cáo là loại phần mềm độc hại được tạo ra để hiển thị quảng cáo không mong muốn trên máy tính hoặc thiết bị số của người dùng."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptPhanMemQuangCao .
+
+  ex:gendef_conceptPhanMemUngDungWeb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm ứng dụng web"@vi ;
+    ex:hasDefinitionText "Phần mềm ứng dụng web là các chương trình được phát triển và triển khai trên nền tảng trực tuyến, phục vụ nhiều lĩnh vực như chính phủ điện tử, quản trị doanh nghiệp, thanh toán, giải trí, y tế, mạng xã hội và giáo dục."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptPhanMemUngDungWeb .
+
+  ex:gendef_conceptPhanTichHeThong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phân tích hệ thống"@vi ;
+    ex:hasDefinitionText "Phân tích hệ thống là công đoạn xác định nhu cầu, vai trò phần mềm, thông tin đầu vào và đầu ra trong quá trình phát triển phần mềm."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptPhanTichHeThong .
+
+  ex:gendef_conceptPhanTuDanhSach a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử danh sách"@vi ;
+    ex:hasDefinitionText "Phần tử danh sách là từng giá trị riêng biệt được lưu trữ trong danh sách và có thể truy cập thông qua chỉ số của nó."@vi ;
+    ex:belongsToLesson ex:topicF_lesson14 ;
+    ex:explainsConcept ex:conceptPhanTuDanhSach .
+
+  ex:gendef_conceptPhapLuatMoiTruongSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Pháp luật trong môi trường số"@vi ;
+    ex:hasDefinitionText "Pháp luật trong môi trường số là hệ thống các quy định pháp lý điều chỉnh việc quản lí, cung cấp, sử dụng sản phẩm và dịch vụ công nghệ thông tin nhằm bảo vệ quyền và nghĩa vụ của các bên trong không gian số."@vi ;
+    ex:explainsConcept ex:conceptPhapLuatMoiTruongSo .
+
+  ex:gendef_conceptPhatTrienPhanMem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phát triển phần mềm"@vi ;
+    ex:hasDefinitionText "Phát triển phần mềm là quá trình tạo ra sản phẩm phần mềm máy tính thông qua các công đoạn phân tích hệ thống, thiết kế, lập trình và kiểm thử để đáp ứng nhu cầu của người dùng."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptPhatTrienPhanMem .
+
+  ex:gendef_conceptPhepBu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép bù"@vi ;
+    ex:hasDefinitionText "Phép bù là phép toán chuyển đổi một dãy bit thành dãy bit đối lập, thường dùng để biểu diễn số âm hoặc thực hiện các phép tính nhị phân."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepBu .
+
+  ex:gendef_conceptPhepCongLogic a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép cộng logic"@vi ;
+    ex:hasDefinitionText "Phép cộng logic (phép toán OR) là phép toán cho kết quả bằng 0 khi và chỉ khi cả hai bit toán hạng đều là 0, còn lại cho kết quả là 1."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepCongLogic .
+
+  ex:gendef_conceptPhepCongNhiPhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép cộng nhị phân"@vi ;
+    ex:hasDefinitionText "Phép cộng nhị phân là phép toán cộng hai số trong hệ nhị phân theo quy tắc dùng bảng cộng cơ sở, trong đó khi cộng 1 và 1 thì viết 0 và nhớ 1 sang cột bên trái."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepCongNhiPhan .
+
+  ex:gendef_conceptPhepGan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép gán"@vi ;
+    ex:hasDefinitionText "Phép gán là thao tác lưu giá trị của một biểu thức vào một biến trong chương trình."@vi ;
+    ex:belongsToLesson ex:topicF_lesson2 ;
+    ex:explainsConcept ex:conceptPhepGan .
+
+  ex:gendef_conceptPhepNhanLogic a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép nhân logic"@vi ;
+    ex:hasDefinitionText "Phép nhân logic (AND) là phép toán cho kết quả bằng 1 khi và chỉ khi cả hai bit toán hạng đều là 1; kết quả bằng 0 trong các trường hợp còn lại."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepNhanLogic .
+
+  ex:gendef_conceptPhepNhanNhiPhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép nhân nhị phân"@vi ;
+    ex:hasDefinitionText "Phép nhân nhị phân là phép toán nhân hai số trong hệ nhị phân, trong đó bảng nhân cơ sở tương tự phép toán AND giữa các bit của hai số."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepNhanNhiPhan .
+
+  ex:gendef_conceptPhepSoSanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép so sánh"@vi ;
+    ex:hasDefinitionText "Phép so sánh là các toán tử dùng để so sánh hai giá trị với nhau, cho kết quả True hoặc False, bao gồm các phép lớn hơn (>), lớn hơn hoặc bằng (>=), nhỏ hơn (<), nhỏ hơn hoặc bằng (<=), bằng (==) và khác (!=)."@vi ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:explainsConcept ex:conceptPhepSoSanh .
+
+  ex:gendef_conceptPhepTinhLogic a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép tính logic"@vi ;
+    ex:hasDefinitionText "Phép tính logic là các phép toán dùng để xử lý giá trị True hoặc False, bao gồm and, or, not, giúp kết hợp hoặc phủ định các điều kiện trong lập trình."@vi ;
+    ex:belongsToLesson ex:topicF_lesson6 ;
+    ex:explainsConcept ex:conceptPhepTinhLogic .
+
+  ex:gendef_conceptPhepToanAND a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép toán AND"@vi ;
+    ex:hasDefinitionText "Phép toán AND là phép toán hai toán hạng trên bit, cho kết quả là 1 khi và chỉ khi cả hai bit đều là 1; kết quả bằng 0 trong các trường hợp còn lại."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepToanAND .
+
+  ex:gendef_conceptPhepToanNOT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép toán NOT"@vi ;
+    ex:hasDefinitionText "Phép toán NOT là phép toán một toán hạng cho kết quả là giá trị trái ngược với đầu vào, được thực hiện với từng bit trong dãy bit."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepToanNOT .
+
+  ex:gendef_conceptPhepToanOR a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép toán OR"@vi ;
+    ex:hasDefinitionText "Phép toán OR là phép toán bit hai toán hạng cho kết quả là 0 khi và chỉ khi cả hai bit đầu vào đều là 0, còn lại cho kết quả là 1; còn gọi là phép cộng logic."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepToanOR .
+
+  ex:gendef_conceptPhepToanXOR a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phép toán XOR"@vi ;
+    ex:hasDefinitionText "Phép toán XOR là phép toán bit hai toán hạng cho kết quả bằng 1 khi và chỉ khi hai bit toán hạng khác nhau, còn lại cho kết quả 0."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson1 ;
+    ex:explainsConcept ex:conceptPhepToanXOR .
+
+  ex:gendef_conceptPoster a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Poster"@vi ;
+    ex:hasDefinitionText "Poster là một sản phẩm đồ họa được thiết kế để truyền tải thông tin hoặc quảng cáo, thường được tạo bằng phần mềm thiết kế đồ họa như áp phích, banner, băng rôn."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptPoster .
+
+  ex:gendef_conceptPython a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Python"@vi ;
+    ex:hasDefinitionText "Python là ngôn ngữ lập trình bậc cao được sử dụng để viết và chạy các chương trình đơn giản, hỗ trợ các biểu thức số học, nhập dữ liệu và sử dụng các hàm toán học cơ bản."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptPython .
+
+  ex:gendef_conceptQuyTacUngXuMangXaHoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quy tắc ứng xử trên mạng xã hội"@vi ;
+    ex:hasDefinitionText "Quy tắc ứng xử trên mạng xã hội là các quy định nhằm ngăn chặn hành vi đăng tải nội dung sai sự thật, xúc phạm uy tín, danh dự của người khác và đảm bảo môi trường mạng lành mạnh."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptQuyTacUngXuMangXaHoi .
+
+  ex:gendef_conceptQuyTrinhLapTrinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quy trình lập trình"@vi ;
+    ex:hasDefinitionText "Quy trình lập trình là các bước tuần tự gồm xác định bài toán, phân tích, thiết kế thuật toán, viết chương trình, chạy thử, kiểm thử và đánh giá để giải quyết bài toán trên máy tính."@vi ;
+    ex:belongsToLesson ex:topicF_lesson18 ;
+    ex:explainsConcept ex:conceptQuyTrinhLapTrinh .
+
+  ex:gendef_conceptRectangleSelect a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Rectangle Select"@vi ;
+    ex:hasDefinitionText "Rectangle Select là công cụ tạo vùng chọn hình chữ nhật trên ảnh để xử lí riêng biệt vùng đó, có thể đảo ngược, co giãn, xoá hoặc bỏ vùng chọn."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptRectangleSelect .
+
+  ex:gendef_conceptRoiRacHoaMau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Rời rạc hoá màu"@vi ;
+    ex:hasDefinitionText "Rời rạc hoá màu là quá trình chuyển đổi hình ảnh thành các điểm ảnh nhỏ có màu đồng nhất, sau đó mã hóa màu của các điểm ảnh này thành dãy bit để biểu diễn ảnh số."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptRoiRacHoaMau .
+
+  ex:gendef_conceptSanPhamDuAn a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sản phẩm dự án"@vi ;
+    ex:hasDefinitionText "Sản phẩm dự án là kết quả cụ thể được nhóm chuẩn bị và hoàn thiện trong quá trình thực hiện dự án, như bản mô tả nghề hoặc bài trình bày giới thiệu về nghề đã tìm hiểu."@vi ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:explainsConcept ex:conceptSanPhamDuAn .
+
+  ex:gendef_conceptSanPhamSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sản phẩm số"@vi ;
+    ex:hasDefinitionText "Sản phẩm số là các tác phẩm hoặc nội dung được tạo ra, lưu trữ và phân phối dưới dạng kỹ thuật số, như phần mềm, trang web, video hoặc các xuất bản phẩm điện tử, được bảo vệ bởi quyền tác giả."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptSanPhamSo .
+
+  ex:gendef_conceptSapXepDanhSach a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sắp xếp danh sách"@vi ;
+    ex:hasDefinitionText "Sắp xếp danh sách là quá trình sắp xếp các phần tử trong danh sách theo một thứ tự nhất định, ví dụ như từ nhỏ đến lớn hoặc từ lớn đến nhỏ."@vi ;
+    ex:belongsToLesson ex:topicF_lesson15 ;
+    ex:explainsConcept ex:conceptSapXepDanhSach .
+
+  ex:gendef_conceptSapXepLop a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sắp xếp lớp"@vi ;
+    ex:hasDefinitionText "Sắp xếp lớp là việc thay đổi thứ tự các lớp trong ảnh để điều chỉnh cách hiển thị và ảnh hợp thành trong cửa sổ ảnh."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptSapXepLop .
+
+  ex:gendef_conceptSauMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sâu máy tính"@vi ;
+    ex:hasDefinitionText "Sâu máy tính là phần mềm độc hại có khả năng tự nhân bản và lây lan qua mạng máy tính, gây hại cho thiết bị và dữ liệu."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptSauMayTinh .
+
+  ex:gendef_conceptScaleTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Scale"@vi ;
+    ex:hasDefinitionText "Công cụ Scale dùng để thay đổi kích thước ảnh sao cho phù hợp với yêu cầu ghép ảnh hoặc bố cục."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptScaleTool .
+
+  ex:gendef_conceptSelectFromPath a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Select From Path"@vi ;
+    ex:hasDefinitionText "Select From Path là thao tác chuyển đổi từ đường dẫn sang vùng chọn trong hình ảnh hoặc đồ họa."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptSelectFromPath .
+
+  ex:gendef_conceptSelectNone a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bỏ vùng chọn"@vi ;
+    ex:hasDefinitionText "Bỏ vùng chọn là thao tác hủy bỏ vùng chọn hiện có trên ảnh, để không còn xử lí riêng biệt vùng đó nữa."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptSelectNone .
+
+  ex:gendef_conceptShellPython a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cửa sổ Shell của Python"@vi ;
+    ex:hasDefinitionText "Cửa sổ Shell của Python là giao diện cho phép nhập và thực thi các câu lệnh Python ngay lập tức, giúp học sinh làm quen với lập trình và kiểm tra kết quả nhanh chóng."@vi ;
+    ex:belongsToLesson ex:topicF_lesson1 ;
+    ex:explainsConcept ex:conceptShellPython .
+
+  ex:gendef_conceptSoBu1 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Số bù 1"@vi ;
+    ex:hasDefinitionText "Số bù 1 của một số nhị phân x là kết quả của phép toán NOT trên x, tức là đảo tất cả các bit của x."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:explainsConcept ex:conceptSoBu1 .
+
+  ex:gendef_conceptSoBu2 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Số bù 2"@vi ;
+    ex:hasDefinitionText "Số bù 2 của một số nhị phân x là kết quả của phép toán lấy số bù 1 của x (phép NOT từng bit) rồi cộng thêm 1 vào kết quả đó."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson2 ;
+    ex:explainsConcept ex:conceptSoBu2 .
+
+  ex:gendef_conceptSoHoaAmThanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Số hoá âm thanh"@vi ;
+    ex:hasDefinitionText "Số hoá âm thanh là quá trình chuyển đổi sóng âm liên tục thành dãy số nhị phân để lưu trữ và xử lý trên máy tính."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptSoHoaAmThanh .
+
+  ex:gendef_conceptSoHoaHinhAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Số hoá hình ảnh"@vi ;
+    ex:hasDefinitionText "Số hoá hình ảnh là quá trình chia hình ảnh thành nhiều phần tử ảnh nhỏ gọi là điểm ảnh (pixel) và biểu diễn màu sắc của từng điểm ảnh dưới dạng mã nhị phân để tạo thành dãy bit biểu diễn ảnh số."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptSoHoaHinhAnh .
+
+  ex:gendef_conceptSoHoaVanBan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Số hoá văn bản"@vi ;
+    ex:hasDefinitionText "Số hoá văn bản là quá trình chuyển các ký tự chữ số và chữ cái trong văn bản thành dãy bit để máy tính có thể lưu trữ và xử lý."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptSoHoaVanBan .
+
+  ex:gendef_conceptSoHuuTriTue a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sở hữu trí tuệ"@vi ;
+    ex:hasDefinitionText "Sở hữu trí tuệ là quyền của cá nhân hoặc tổ chức đối với các sáng tạo tinh thần, văn hóa và các sản phẩm kỹ thuật số như phần mềm, trang web, được bảo vệ bởi pháp luật nhằm ngăn chặn việc sử dụng trái phép."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptSoHuuTriTue .
+
+  ex:gendef_conceptSoNguyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Số nguyên"@vi ;
+    ex:hasDefinitionText "Số nguyên là kiểu dữ liệu dùng để biểu diễn các số không có phần thập phân, bao gồm cả số âm, số không và số dương."@vi ;
+    ex:belongsToLesson ex:topicF_lesson4 ;
+    ex:explainsConcept ex:conceptSoNguyen .
+
+  ex:gendef_conceptSoThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Số thực"@vi ;
+    ex:hasDefinitionText "Số thực là kiểu dữ liệu dùng để biểu diễn các số có phần thập phân trong Python."@vi ;
+    ex:belongsToLesson ex:topicF_lesson4 ;
+    ex:explainsConcept ex:conceptSoThuc .
+
+  ex:gendef_conceptStrokePath a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Stroke Path"@vi ;
+    ex:hasDefinitionText "Stroke Path là thao tác tạo nét vẽ theo đường dẫn đã chọn trong phần mềm đồ họa."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptStrokePath .
+
+  ex:gendef_conceptTCVN3 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa TCVN3"@vi ;
+    ex:hasDefinitionText "TCVN3 là bảng mã tiêu chuẩn cũ của Việt Nam dùng để mã hóa chữ Việt, nhiều văn bản cũ theo tiêu chuẩn này vẫn còn được lưu trữ và sử dụng."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptTCVN3 .
+
+  ex:gendef_conceptTachAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tách ảnh"@vi ;
+    ex:hasDefinitionText "Tách ảnh là thao tác chọn và tách đối tượng ra khỏi nền ảnh bằng công cụ chọn, sau đó xoá nền để tạo lớp ảnh có nền trong suốt, phục vụ cho việc ghép ảnh hoặc thiết kế đồ họa."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptTachAnh .
+
+  ex:gendef_conceptTaoDuongVien a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tạo đường viền"@vi ;
+    ex:hasDefinitionText "Tạo đường viền là kĩ thuật dùng một lớp mới, xác định vùng chọn hình dạng, tô màu cho vùng chọn, co vùng chọn theo độ dày đường viền rồi xoá vùng chọn bên trong để tạo viền bao quanh hình."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptTaoDuongVien .
+
+  ex:gendef_conceptTaoTepAnhMoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tạo tệp ảnh mới"@vi ;
+    ex:hasDefinitionText "Tạo tệp ảnh mới là thao tác chọn File/New để mở hộp thoại nhập các tham số như kích thước và độ phân giải, nhằm tạo một tệp ảnh mới phù hợp với yêu cầu sản phẩm đồ họa."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptTaoTepAnhMoi .
+
+  ex:gendef_conceptTextTool a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Công cụ Text"@vi ;
+    ex:hasDefinitionText "Công cụ Text là công cụ dùng để tạo và định dạng văn bản trên một lớp riêng biệt, biểu tượng chữ T đại diện cho lớp chứa văn bản đó."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptTextTool .
+
+  ex:gendef_conceptThamSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tham số"@vi ;
+    ex:hasDefinitionText "Tham số là biến được khai báo trong định nghĩa hàm, dùng để nhận giá trị khi hàm được gọi."@vi ;
+    ex:belongsToLesson ex:topicF_lesson10 ;
+    ex:explainsConcept ex:conceptThamSo .
+
+  ex:gendef_conceptThanhToanDienTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thanh toán điện tử"@vi ;
+    ex:hasDefinitionText "Thanh toán điện tử là phương thức thanh toán được thực hiện qua mạng Internet, giúp giao dịch nhanh chóng và tiện lợi trong thương mại điện tử."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptThanhToanDienTu .
+
+  ex:gendef_conceptThapDuLieuThongTinTriThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tháp dữ liệu - thông tin - tri thức"@vi ;
+    ex:hasDefinitionText "Tháp dữ liệu - thông tin - tri thức minh họa quá trình trích xuất và tinh lọc dần từ dữ liệu thành thông tin, rồi từ thông tin thành tri thức."@vi ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:explainsConcept ex:conceptThapDuLieuThongTinTriThuc .
+
+  ex:gendef_conceptThietBiSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết bị số"@vi ;
+    ex:hasDefinitionText "Thiết bị số là các thiết bị điện tử sử dụng tín hiệu số để xử lý, lưu trữ và truyền tải thông tin, như máy tính, điện thoại thông minh và máy tính bảng."@vi ;
+    ex:belongsToLesson ex:lesson3 ;
+    ex:explainsConcept ex:conceptThietBiSo .
+
+  ex:gendef_conceptThietBiThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết bị thông minh"@vi ;
+    ex:hasDefinitionText "Thiết bị thông minh là đồ dùng có khả năng xử lí thông tin, kết nối với người dùng hoặc các thiết bị khác, đồng thời hoạt động tương tác và tự chủ ở một mức độ nhất định."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptThietBiThongMinh .
+
+  ex:gendef_conceptThietBiVaoRaChuan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết bị vào - ra chuẩn"@vi ;
+    ex:hasDefinitionText "Thiết bị vào - ra chuẩn là các thiết bị phần cứng dùng để nhập dữ liệu vào máy tính và xuất kết quả ra ngoài, giúp người dùng tương tác với hệ thống máy tính."@vi ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:explainsConcept ex:conceptThietBiVaoRaChuan .
+
+  ex:gendef_conceptThietKeGame a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết kế game"@vi ;
+    ex:hasDefinitionText "Thiết kế game là quá trình tạo ra ý tưởng, nội dung và cách thức hoạt động của trò chơi, bao gồm thiết kế đồ họa, lập trình và âm thanh để phát triển sản phẩm game hoàn chỉnh."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptThietKeGame .
+
+  ex:gendef_conceptThietKePhanMem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết kế phần mềm"@vi ;
+    ex:hasDefinitionText "Thiết kế phần mềm là công đoạn chuyển các yêu cầu đã phân tích thành bản thiết kế chi tiết để làm cơ sở lập trình."@vi ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:explainsConcept ex:conceptThietKePhanMem .
+
+  ex:gendef_conceptThietKeTrenLopBanSao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết kế trên lớp bản sao"@vi ;
+    ex:hasDefinitionText "Thiết kế trên lớp bản sao là kĩ thuật nhân đôi lớp đối tượng ban đầu để chỉnh sửa và tạo các đối tượng mới, giúp kết hợp hoặc tạo hiệu ứng như bóng cho văn bản hoặc các hình họa phức tạp."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptThietKeTrenLopBanSao .
+
+  ex:gendef_conceptThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông tin"@vi ;
+    ex:hasDefinitionText "Thông tin là nội dung được rút ra từ dữ liệu sau quá trình xử lí, thể hiện kiến thức hoặc ý nghĩa hữu ích để con người hiểu và sử dụng."@vi ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:explainsConcept ex:conceptThongTin .
+
+  ex:gendef_conceptThongTinCaNhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông tin cá nhân"@vi ;
+    ex:hasDefinitionText "Thông tin cá nhân là các dữ liệu liên quan đến một người, như họ tên, địa chỉ, số căn cước, tài khoản ngân hàng, cần được bảo vệ để tránh bị kẻ xấu thu thập, đánh cắp và sử dụng vào mục đích xấu trong môi trường số."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptThongTinCaNhan .
+
+  ex:gendef_conceptThongTinSaiSuThat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông tin sai sự thật"@vi ;
+    ex:hasDefinitionText "Thông tin sai sự thật là nội dung được đăng tải hoặc chia sẻ trên mạng xã hội hoặc Internet nhưng không đúng với sự thật, gây hiểu nhầm, hoang mang hoặc thiệt hại cho cá nhân, tổ chức và xã hội."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptThongTinSaiSuThat .
+
+  ex:gendef_conceptThongTinSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông tin số"@vi ;
+    ex:hasDefinitionText "Thông tin số là dữ liệu được biểu diễn dưới dạng các con số hoặc mã nhị phân, giúp máy tính lưu trữ, xử lý và truyền tải thông tin một cách hiệu quả trong môi trường số."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptThongTinSo .
+
+  ex:gendef_conceptThuVienLapTrinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thư viện lập trình"@vi ;
+    ex:hasDefinitionText "Thư viện lập trình là tập hợp các hàm đã được viết sẵn, giúp lập trình viên sử dụng lại để giải quyết các bài toán mà không cần phải tự viết lại từ đầu."@vi ;
+    ex:belongsToLesson ex:topicF_lesson10 ;
+    ex:explainsConcept ex:conceptThuVienLapTrinh .
+
+  ex:gendef_conceptThuVienMath a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thư viện math"@vi ;
+    ex:hasDefinitionText "Thư viện math là tập hợp các hàm toán học do Python cung cấp để hỗ trợ thực hiện các phép tính và xử lý số học trong chương trình."@vi ;
+    ex:belongsToLesson ex:topicF_lesson5 ;
+    ex:explainsConcept ex:conceptThuVienMath .
+
+  ex:gendef_conceptThuatToan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuật toán"@vi ;
+    ex:hasDefinitionText "Thuật toán là quy trình tuần tự các bước rõ ràng để giải quyết một bài toán trên máy tính."@vi ;
+    ex:belongsToLesson ex:topicF_lesson17 ;
+    ex:explainsConcept ex:conceptThuatToan .
+
+  ex:gendef_conceptThucHanhTongHop a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thực hành tổng hợp"@vi ;
+    ex:hasDefinitionText "Thực hành tổng hợp là hoạt động thiết kế sản phẩm đồ họa như logo hoặc poster, kết hợp các kỹ thuật và kiến thức đã học để tạo ra sản phẩm hoàn chỉnh và lưu trữ đúng định dạng."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:explainsConcept ex:conceptThucHanhTongHop .
+
+  ex:gendef_conceptThuongMaiDienTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thương mại điện tử"@vi ;
+    ex:hasDefinitionText "Thương mại điện tử là hoạt động kinh doanh, mua bán hàng hóa và dịch vụ thông qua mạng Internet, giúp tăng hiệu quả và cạnh tranh trong kinh doanh."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptThuongMaiDienTu .
+
+  ex:gendef_conceptTieuChiDanhGiaDuAn a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tiêu chí đánh giá dự án"@vi ;
+    ex:hasDefinitionText "Tiêu chí đánh giá dự án là các yêu cầu hoặc tiêu chuẩn dùng để xem xét nội dung và hình thức của sản phẩm nhằm đảm bảo thông tin đầy đủ, thẩm mỹ và hấp dẫn."@vi ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:explainsConcept ex:conceptTieuChiDanhGiaDuAn .
+
+  ex:gendef_conceptTimKiemThongTinNgheNghiep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tìm kiếm thông tin nghề nghiệp"@vi ;
+    ex:hasDefinitionText "Tìm kiếm thông tin nghề nghiệp là quá trình sử dụng các phương tiện như mạng internet, phỏng vấn và giao lưu để thu thập, tổng hợp và biên tập thông tin liên quan đến các nghề nghiệp nhằm phục vụ cho việc lập kế hoạch và phát triển nghề nghiệp."@vi ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:explainsConcept ex:conceptTimKiemThongTinNgheNghiep .
+
+  ex:gendef_conceptTinGia a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông tin giả mạo"@vi ;
+    ex:hasDefinitionText "Thông tin giả mạo là những nội dung được tạo ra hoặc chia sẻ nhằm cung cấp thông tin sai sự thật, xuyên tạc hoặc không chính xác, gây hiểu lầm cho người tiếp nhận."@vi ;
+    ex:belongsToLesson ex:topicD_lesson1 ;
+    ex:explainsConcept ex:conceptTinGia .
+
+  ex:gendef_conceptTinHieuAmThanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tín hiệu âm thanh"@vi ;
+    ex:hasDefinitionText "Tín hiệu âm thanh là dữ liệu dạng tương tự biểu diễn sóng âm có dạng đường cong liên tục lên xuống nhấp nhô, thể hiện biến đổi cao độ và cường độ của âm thanh theo thời gian."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson4 ;
+    ex:explainsConcept ex:conceptTinHieuAmThanh .
+
+  ex:gendef_conceptToMau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tô màu"@vi ;
+    ex:hasDefinitionText "Tô màu là thao tác phủ màu lên đối tượng, có thể là hậu cảnh hoặc tiền cảnh, bằng cách chọn màu và áp dụng lên bề mặt đối tượng dưới dạng màu thuần nhất hoặc màu chuyển dần (gradient)."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptToMau .
+
+  ex:gendef_conceptToPath a ex:DefinitionText ;
+    rdfs:label "Định nghĩa To Path"@vi ;
+    ex:hasDefinitionText "To Path là thao tác chuyển đổi vùng chọn thành đường dẫn trong phần mềm đồ họa, giúp dễ dàng chỉnh sửa hoặc tạo nét vẽ theo đường dẫn đó."@vi ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptToPath .
+
+  ex:gendef_conceptToanTuSoHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Toán tử số học"@vi ;
+    ex:hasDefinitionText "Toán tử số học là các kí hiệu dùng để thực hiện các phép tính như cộng (+), trừ (-), nhân (*), chia (/), chia lấy phần nguyên (//), chia lấy phần dư (%) và luỹ thừa (**)."@vi ;
+    ex:belongsToLesson ex:topicF_lesson2 ;
+    ex:explainsConcept ex:conceptToanTuSoHoc .
+
+  ex:gendef_conceptTocDoTinhToan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tốc độ tính toán"@vi ;
+    ex:hasDefinitionText "Tốc độ tính toán của máy tính là số phép tính mà máy có thể thực hiện trong một giây, thường được gọi tắt là flops."@vi ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:explainsConcept ex:conceptTocDoTinhToan .
+
+  ex:gendef_conceptTriThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tri thức"@vi ;
+    ex:hasDefinitionText "Tri thức là kết quả của quá trình trích xuất và tinh lọc từ thông tin, giúp con người hiểu và áp dụng được các kiến thức một cách hiệu quả."@vi ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:explainsConcept ex:conceptTriThuc .
+
+  ex:gendef_conceptTriTueNhanTao a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trí tuệ nhân tạo"@vi ;
+    ex:hasDefinitionText "Trí tuệ nhân tạo là công nghệ máy tính có khả năng thực hiện các nhiệm vụ thông minh, tạo ra kết quả ngoài dự kiến và ảnh hưởng lớn đến xã hội loài người."@vi ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:explainsConcept ex:conceptTriTueNhanTao .
+
+  ex:gendef_conceptUTF16 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa UTF-16"@vi ;
+    ex:hasDefinitionText "UTF-16 là một phương thức mã hoá chuyển mã kí tự Unicode thành dãy bit nhị phân để máy tính xử lí, sử dụng 16 bit cho mỗi đơn vị mã."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptUTF16 .
+
+  ex:gendef_conceptUTF32 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa UTF-32"@vi ;
+    ex:hasDefinitionText "UTF-32 là một phương thức mã hóa Unicode chuyển mã ký tự thành dãy bit có độ dài cố định 32 bit để máy tính xử lý."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptUTF32 .
+
+  ex:gendef_conceptUngDungTinHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ứng dụng tin học"@vi ;
+    ex:hasDefinitionText "Ứng dụng tin học là việc sử dụng máy tính và phần mềm để giải quyết các bài toán, công việc trong học tập, lao động và đời sống."@vi ;
+    ex:explainsConcept ex:conceptUngDungTinHoc .
+
+  ex:gendef_conceptUnikey a ex:DefinitionText ;
+    rdfs:label "Định nghĩa UniKey"@vi ;
+    ex:hasDefinitionText "UniKey là bộ gõ tiếng Việt phổ biến có công cụ chuyển đổi mã kí tự giúp chuyển đổi văn bản theo tiêu chuẩn cũ sang mã Unicode phù hợp với tiêu chuẩn mới."@vi ;
+    ex:belongsToLesson ex:topicAcs_lesson3 ;
+    ex:explainsConcept ex:conceptUnikey .
+
+  ex:gendef_conceptVanHoaMoiTruongSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Văn hoá trong môi trường số"@vi ;
+    ex:hasDefinitionText "Văn hoá trong môi trường số là cách ứng xử, giao tiếp và chia sẻ thông tin trên Internet và mạng xã hội, thể hiện sự tôn trọng, trung thực và tuân thủ các quy định pháp luật nhằm xây dựng môi trường mạng lành mạnh."@vi ;
+    ex:explainsConcept ex:conceptVanHoaMoiTruongSo .
+
+  ex:gendef_conceptVirusMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Virus máy tính"@vi ;
+    ex:hasDefinitionText "Virus máy tính là phần mềm độc hại được tạo ra nhằm gây hại cho máy tính, thiết bị số, phần mềm, dữ liệu và người dùng."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptVirusMayTinh .
+
+  ex:gendef_conceptWWW a ex:DefinitionText ;
+    rdfs:label "Định nghĩa World Wide Web"@vi ;
+    ex:hasDefinitionText "World Wide Web là hệ thống các trang thông tin được kết nối với nhau trên Internet, giúp người dùng truy cập và chia sẻ dữ liệu dễ dàng."@vi ;
+    ex:belongsToLesson ex:lesson2 ;
+    ex:explainsConcept ex:conceptWWW .
+
+  ex:gendef_conceptXaHoiTriThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xã hội tri thức"@vi ;
+    ex:hasDefinitionText "Xã hội tri thức là xã hội dựa trên việc không ngừng tạo ra và sử dụng hàng loạt tri thức trong mọi lĩnh vực với sự trợ giúp của công nghệ thông tin và truyền thông hiện đại."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptXaHoiTriThuc .
+
+  ex:gendef_conceptXacThucHaiBuoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xác thực hai bước"@vi ;
+    ex:hasDefinitionText "Xác thực hai bước là phương pháp bảo mật yêu cầu người dùng cung cấp hai loại thông tin khác nhau để đăng nhập, giúp tăng cường bảo vệ tài khoản khỏi truy cập trái phép."@vi ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:explainsConcept ex:conceptXacThucHaiBuoc .
+
+  ex:gendef_conceptXauCon a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xâu con"@vi ;
+    ex:hasDefinitionText "Xâu con là một phần liên tiếp của một xâu cho trước, được xác định bằng vị trí bắt đầu và độ dài trong xâu đó."@vi ;
+    ex:belongsToLesson ex:topicF_lesson12 ;
+    ex:explainsConcept ex:conceptXauCon .
+
+  ex:gendef_conceptXuLiThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xử lí thông tin"@vi ;
+    ex:hasDefinitionText "Xử lí thông tin là quá trình nhận dữ liệu đầu vào, thực hiện các thao tác trên dữ liệu đó và cho ra kết quả là thông tin hữu ích."@vi ;
+    ex:belongsToLesson ex:lesson1 ;
+    ex:explainsConcept ex:conceptXuLiThongTin .
+
+  ex:gendef_conceptYTeSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Y tế số"@vi ;
+    ex:hasDefinitionText "Y tế số là việc ứng dụng công nghệ số và tin học trong lĩnh vực y tế để nâng cao hiệu quả khám chữa bệnh và quản lý thông tin sức khỏe."@vi ;
+    ex:belongsToLesson ex:lesson4 ;
+    ex:explainsConcept ex:conceptYTeSo .
+
+  ex:gendef_conceptYTeThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Y tế thông minh"@vi ;
+    ex:hasDefinitionText "Y tế thông minh là việc sử dụng các thiết bị y tế có khả năng theo dõi liên tục các chỉ số sức khỏe và gửi cảnh báo kịp thời để hỗ trợ chăm sóc và bảo vệ sức khỏe."@vi ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptYTeThongMinh .
+};

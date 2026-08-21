@@ -1,0 +1,28 @@
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+###############################################################################
+# Auto-generated lesson-level ex:hasConcept links (grade 11).
+# Backfills lessons that had no concepts by attaching each of the lesson's
+# topic concepts to the lesson(s) whose text mentions/illustrates it.
+# 16 lessons.
+###############################################################################
+
+INSERT DATA {
+  ex:g11_topicEict_lesson1 ex:hasConcept ex:g11_conceptChinhSuaAnh, ex:g11_conceptGIMP .
+  ex:g11_topicEict_lesson2 ex:hasConcept ex:g11_conceptTayXoaAnh .
+  ex:g11_topicEict_lesson3 ex:hasConcept ex:g11_conceptAnhDong, ex:g11_conceptChinhSuaAnh, ex:g11_conceptTayXoaAnh .
+  ex:g11_topicEict_lesson4 ex:hasConcept ex:g11_conceptAnimiz, ex:g11_conceptChinhSuaVideo, ex:g11_conceptLamVideo .
+  ex:g11_topicEict_lesson5 ex:hasConcept ex:g11_conceptChinhSuaVideo .
+  ex:g11_topicEict_lesson6 ex:hasConcept ex:g11_conceptAnimiz, ex:g11_conceptPhimHoatHinh .
+  ex:g11_topicEict_lesson7 ex:hasConcept ex:g11_conceptAnhDong, ex:g11_conceptChinhSuaAnh, ex:g11_conceptPhimHoatHinh, ex:g11_conceptTayXoaAnh .
+  ex:g11_topicF_lesson1 ex:hasConcept ex:g11_conceptBaiToanQuanLi, ex:g11_conceptBieuMau, ex:g11_conceptCoSoDuLieu, ex:g11_conceptHeQuanTriCSDL .
+  ex:g11_topicF_lesson2 ex:hasConcept ex:g11_conceptCSDLQuanHe, ex:g11_conceptHeQuanTriCSDL, ex:g11_conceptKhoaChinh, ex:g11_conceptTruyVanCSDL .
+  ex:g11_topicF_lesson3 ex:hasConcept ex:g11_conceptCSDLQuanHe, ex:g11_conceptHeQuanTriCSDL, ex:g11_conceptKhoaNgoai .
+  ex:g11_topicF_lesson4 ex:hasConcept ex:g11_conceptBieuMau, ex:g11_conceptHeQuanTriCSDL .
+  ex:g11_topicF_lesson5 ex:hasConcept ex:g11_conceptSQL, ex:g11_conceptTruyVanCSDL .
+  ex:g11_topicF_lesson6 ex:hasConcept ex:g11_conceptBaoCaoCSDL, ex:g11_conceptSQL, ex:g11_conceptTruyVanCSDL .
+  ex:g11_topicF_lesson7 ex:hasConcept ex:g11_conceptCSDLPhanTan, ex:g11_conceptCSDLTapTrung .
+  ex:g11_topicF_lesson8 ex:hasConcept ex:g11_conceptAnToanHeCSDL, ex:g11_conceptBaoMatThongTinCSDL .
+  ex:g11_topicG_lesson1 ex:hasConcept ex:g11_conceptBaoMatCSDL, ex:g11_conceptCaiDatBaoTriPhanMemCSDL, ex:g11_conceptDatabaseAdministrator, ex:g11_conceptGiamSatHieuSuatCSDL, ex:g11_conceptHuongNghiepTinHoc, ex:g11_conceptKhacPhucSuCoCSDL, ex:g11_conceptLapKeHoachPhatTrienCSDL, ex:g11_conceptNgheQuanTriCSDL, ex:g11_conceptNgonNguTruyVanCSDL, ex:g11_conceptNhaQuanTriCSDL, ex:g11_conceptNhuCauNhanLucCNTT, ex:g11_conceptPhucHoiCSDL, ex:g11_conceptSQL, ex:g11_conceptSaoLuuCSDL, ex:g11_conceptTrienVongNgheQuanTriCSDL .
+};

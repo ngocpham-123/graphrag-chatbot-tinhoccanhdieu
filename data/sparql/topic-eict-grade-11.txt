@@ -1,0 +1,2197 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 11 TOPIC E ICT
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 resources.
+# Source file: Tin học (tin học ứng dụng) 11 CD-pages-7.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g11_grade11 a ex:GradeLevel ;
+    rdfs:label "Lớp 11"@vi ;
+    ex:gradeNumber 11 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g11_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 11 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 11 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g11_grade11 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicEict_shared a ex:Topic ;
+    rdfs:label "Chủ đề E ICT (dùng chung các khối)"@vi ;
+    ex:hasTitle "Ứng dụng tin học"@vi .
+
+  ex:g11_topicEict a ex:Topic ;
+    rdfs:label "Chủ đề E ICT - Ứng dụng tin học"@vi ;
+    ex:hasTitle "Ứng dụng tin học"@vi ;
+    ex:hasSubtitle "Phần mềm chỉnh sửa ảnh và làm video"@vi ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicEict_shared ;
+    ex:topicOrder 5 ;
+    ex:hasStartPage 89 ;
+    ex:hasEndPage 126 ;
+    ex:sourceFileName "Tin học (tin học ứng dụng) 11 CD-pages-7.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g11_topicEict_lesson1, ex:g11_topicEict_lesson2,
+                 ex:g11_topicEict_lesson3, ex:g11_topicEict_lesson4,
+                 ex:g11_topicEict_lesson5, ex:g11_topicEict_lesson6,
+                 ex:g11_topicEict_lesson7 ;
+    ex:hasPage ex:g11_page089, ex:g11_page090, ex:g11_page091, ex:g11_page092,
+               ex:g11_page093, ex:g11_page094, ex:g11_page095, ex:g11_page096,
+               ex:g11_page097, ex:g11_page098, ex:g11_page099, ex:g11_page100,
+               ex:g11_page101, ex:g11_page102, ex:g11_page103, ex:g11_page104,
+               ex:g11_page105, ex:g11_page106, ex:g11_page107, ex:g11_page108,
+               ex:g11_page109, ex:g11_page110, ex:g11_page111, ex:g11_page112,
+               ex:g11_page113, ex:g11_page114, ex:g11_page115, ex:g11_page116,
+               ex:g11_page117, ex:g11_page118, ex:g11_page119, ex:g11_page120,
+               ex:g11_page121, ex:g11_page122, ex:g11_page123, ex:g11_page124,
+               ex:g11_page125, ex:g11_page126 .
+
+  ex:g11_tinhoc_ungdung_canhdieu ex:hasTopic ex:g11_topicEict .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g11_topicEict_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Một số thao tác chỉnh sửa ảnh và hỗ trợ chỉnh sửa ảnh trong phần mềm GIMP"@vi ;
+    ex:hasTitle "Một số thao tác chỉnh sửa ảnh và hỗ trợ chỉnh sửa ảnh trong phần mềm GIMP"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g11_topicEict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 89 ;
+    ex:hasEndPage 93 ;
+    ex:hasSection ex:g11_topicEict_l1s1, ex:g11_topicEict_l1s2,
+                  ex:g11_topicEict_l1s3, ex:g11_topicEict_l1s4 .
+
+  ex:g11_topicEict_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Tẩy xoá ảnh trong GIMP"@vi ;
+    ex:hasTitle "Tẩy xoá ảnh trong GIMP"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g11_topicEict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 94 ;
+    ex:hasEndPage 99 ;
+    ex:hasSection ex:g11_topicEict_l2s1, ex:g11_topicEict_l2s2,
+                  ex:g11_topicEict_l2s3, ex:g11_topicEict_l2s4 .
+
+  ex:g11_topicEict_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Tạo ảnh động trong GIMP"@vi ;
+    ex:hasTitle "Tạo ảnh động trong GIMP"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g11_topicEict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 100 ;
+    ex:hasEndPage 105 ;
+    ex:hasSection ex:g11_topicEict_l3s1, ex:g11_topicEict_l3s2,
+                  ex:g11_topicEict_l3s3, ex:g11_topicEict_l3s4 .
+
+  ex:g11_topicEict_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Giới thiệu phần mềm làm video Animiz"@vi ;
+    ex:hasTitle "Giới thiệu phần mềm làm video Animiz"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:g11_topicEict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 106 ;
+    ex:hasEndPage 111 ;
+    ex:hasSection ex:g11_topicEict_l4s1, ex:g11_topicEict_l4s2,
+                  ex:g11_topicEict_l4s3 .
+
+  ex:g11_topicEict_lesson5 a ex:Lesson ;
+    rdfs:label "Bài 5. Chỉnh sửa video trên Animiz"@vi ;
+    ex:hasTitle "Chỉnh sửa video trên Animiz"@vi ;
+    ex:lessonNumber 5 ;
+    ex:belongsToTopic ex:g11_topicEict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 112 ;
+    ex:hasEndPage 117 ;
+    ex:hasSection ex:g11_topicEict_l5s1, ex:g11_topicEict_l5s2,
+                  ex:g11_topicEict_l5s3, ex:g11_topicEict_l5s4,
+                  ex:g11_topicEict_l5s5, ex:g11_topicEict_l5s6 .
+
+  ex:g11_topicEict_lesson6 a ex:Lesson ;
+    rdfs:label "Bài 6. Làm phim hoạt hình trên Animiz"@vi ;
+    ex:hasTitle "Làm phim hoạt hình trên Animiz"@vi ;
+    ex:lessonNumber 6 ;
+    ex:belongsToTopic ex:g11_topicEict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 118 ;
+    ex:hasEndPage 123 ;
+    ex:hasSection ex:g11_topicEict_l6s1, ex:g11_topicEict_l6s2 .
+
+  ex:g11_topicEict_lesson7 a ex:Lesson ;
+    rdfs:label "Bài 7. Thực hành tổng hợp"@vi ;
+    ex:hasTitle "Thực hành tổng hợp"@vi ;
+    ex:lessonNumber 7 ;
+    ex:belongsToTopic ex:g11_topicEict ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 124 ;
+    ex:hasEndPage 126 ;
+    ex:hasSection ex:g11_topicEict_l7s1, ex:g11_topicEict_l7s2 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g11_topicEict_l1s1 a ex:Section ;
+    rdfs:label "Thu nhỏ, phóng to và di chuyển ảnh trong GIMP"@vi ;
+    ex:hasTitle "Thu nhỏ, phóng to và di chuyển ảnh trong GIMP"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 .
+
+  ex:g11_topicEict_l1s2 a ex:Section ;
+    rdfs:label "Cắt ảnh trong GIMP"@vi ;
+    ex:hasTitle "Cắt ảnh trong GIMP"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 .
+
+  ex:g11_topicEict_l1s3 a ex:Section ;
+    rdfs:label "Biến đổi ảnh trong GIMP"@vi ;
+    ex:hasTitle "Biến đổi ảnh trong GIMP"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 .
+
+  ex:g11_topicEict_l1s4 a ex:Section ;
+    rdfs:label "Thực hành chỉnh sửa ảnh"@vi ;
+    ex:hasTitle "Thực hành chỉnh sửa ảnh"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 .
+
+  ex:g11_topicEict_l2s1 a ex:Section ;
+    rdfs:label "Tẩy xoá ảnh bằng công cụ Clone"@vi ;
+    ex:hasTitle "Tẩy xoá ảnh bằng công cụ Clone"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 .
+
+  ex:g11_topicEict_l2s2 a ex:Section ;
+    rdfs:label "Tẩy xoá ảnh bằng công cụ Healing"@vi ;
+    ex:hasTitle "Tẩy xoá ảnh bằng công cụ Healing"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 .
+
+  ex:g11_topicEict_l2s3 a ex:Section ;
+    rdfs:label "Sao chép ảnh theo phép biến đổi phối cảnh bằng công cụ Perspective Clone"@vi ;
+    ex:hasTitle "Sao chép ảnh theo phép biến đổi phối cảnh bằng công cụ Perspective Clone"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 .
+
+  ex:g11_topicEict_l2s4 a ex:Section ;
+    rdfs:label "Thực hành tẩy xoá ảnh"@vi ;
+    ex:hasTitle "Thực hành tẩy xoá ảnh"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 .
+
+  ex:g11_topicEict_l3s1 a ex:Section ;
+    rdfs:label "Ảnh động, kịch bản và hiệu ứng của ảnh động"@vi ;
+    ex:hasTitle "Ảnh động, kịch bản và hiệu ứng của ảnh động"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 .
+
+  ex:g11_topicEict_l3s2 a ex:Section ;
+    rdfs:label "Tạo ảnh động với hiệu ứng tự thiết kế trong GIMP"@vi ;
+    ex:hasTitle "Tạo ảnh động với hiệu ứng tự thiết kế trong GIMP"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 .
+
+  ex:g11_topicEict_l3s3 a ex:Section ;
+    rdfs:label "Tạo ảnh động từ hiệu ứng có sẵn trong GIMP"@vi ;
+    ex:hasTitle "Tạo ảnh động từ hiệu ứng có sẵn trong GIMP"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 .
+
+  ex:g11_topicEict_l3s4 a ex:Section ;
+    rdfs:label "Thực hành tạo hiệu ứng cho ảnh động"@vi ;
+    ex:hasTitle "Thực hành tạo hiệu ứng cho ảnh động"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 .
+
+  ex:g11_topicEict_l4s1 a ex:Section ;
+    rdfs:label "Video phục vụ học tập và giải trí"@vi ;
+    ex:hasTitle "Video phục vụ học tập và giải trí"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 .
+
+  ex:g11_topicEict_l4s2 a ex:Section ;
+    rdfs:label "Khám phá phần mềm Animiz Animation Maker"@vi ;
+    ex:hasTitle "Khám phá phần mềm Animiz Animation Maker"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 .
+
+  ex:g11_topicEict_l4s3 a ex:Section ;
+    rdfs:label "Thực hành tạo video"@vi ;
+    ex:hasTitle "Thực hành tạo video"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 .
+
+  ex:g11_topicEict_l5s1 a ex:Section ;
+    rdfs:label "Công việc chỉnh sửa video"@vi ;
+    ex:hasTitle "Công việc chỉnh sửa video"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 .
+
+  ex:g11_topicEict_l5s2 a ex:Section ;
+    rdfs:label "Chỉnh sửa hình ảnh"@vi ;
+    ex:hasTitle "Chỉnh sửa hình ảnh"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 .
+
+  ex:g11_topicEict_l5s3 a ex:Section ;
+    rdfs:label "Chỉnh sửa âm thanh"@vi ;
+    ex:hasTitle "Chỉnh sửa âm thanh"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 .
+
+  ex:g11_topicEict_l5s4 a ex:Section ;
+    rdfs:label "Thêm hiệu ứng chuyển cảnh"@vi ;
+    ex:hasTitle "Thêm hiệu ứng chuyển cảnh"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 .
+
+  ex:g11_topicEict_l5s5 a ex:Section ;
+    rdfs:label "Thêm phụ đề"@vi ;
+    ex:hasTitle "Thêm phụ đề"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 .
+
+  ex:g11_topicEict_l5s6 a ex:Section ;
+    rdfs:label "Thực hành chỉnh sửa video"@vi ;
+    ex:hasTitle "Thực hành chỉnh sửa video"@vi ;
+    ex:sectionOrder 6 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 .
+
+  ex:g11_topicEict_l6s1 a ex:Section ;
+    rdfs:label "Giới thiệu phim hoạt hình"@vi ;
+    ex:hasTitle "Giới thiệu phim hoạt hình"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 .
+
+  ex:g11_topicEict_l6s2 a ex:Section ;
+    rdfs:label "Thực hành tạo phim hoạt hình"@vi ;
+    ex:hasTitle "Thực hành tạo phim hoạt hình"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 .
+
+  ex:g11_topicEict_l7s1 a ex:Section ;
+    rdfs:label "Nhiệm vụ 1. Thực hành chỉnh sửa ảnh và tạo ảnh động"@vi ;
+    ex:hasTitle "Nhiệm vụ 1. Thực hành chỉnh sửa ảnh và tạo ảnh động"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 .
+
+  ex:g11_topicEict_l7s2 a ex:Section ;
+    rdfs:label "Nhiệm vụ 2. Thực hành tạo phim hoạt hình"@vi ;
+    ex:hasTitle "Nhiệm vụ 2. Thực hành tạo phim hoạt hình"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g11_page089 a ex:Page ; ex:hasPageNumber 89 ; ex:hasPrintedPageNumber 89 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g11_topicEict_lesson1 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page090 a ex:Page ; ex:hasPageNumber 90 ; ex:hasPrintedPageNumber 90 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g11_topicEict_lesson1 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page091 a ex:Page ; ex:hasPageNumber 91 ; ex:hasPrintedPageNumber 91 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g11_topicEict_lesson1 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page092 a ex:Page ; ex:hasPageNumber 92 ; ex:hasPrintedPageNumber 92 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g11_topicEict_lesson1 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page093 a ex:Page ; ex:hasPageNumber 93 ; ex:hasPrintedPageNumber 93 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g11_topicEict_lesson1 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page094 a ex:Page ; ex:hasPageNumber 94 ; ex:hasPrintedPageNumber 94 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g11_topicEict_lesson2 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page095 a ex:Page ; ex:hasPageNumber 95 ; ex:hasPrintedPageNumber 95 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g11_topicEict_lesson2 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page096 a ex:Page ; ex:hasPageNumber 96 ; ex:hasPrintedPageNumber 96 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g11_topicEict_lesson2 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page097 a ex:Page ; ex:hasPageNumber 97 ; ex:hasPrintedPageNumber 97 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g11_topicEict_lesson2 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page098 a ex:Page ; ex:hasPageNumber 98 ; ex:hasPrintedPageNumber 98 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g11_topicEict_lesson2 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page099 a ex:Page ; ex:hasPageNumber 99 ; ex:hasPrintedPageNumber 99 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g11_topicEict_lesson2 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page100 a ex:Page ; ex:hasPageNumber 100 ; ex:hasPrintedPageNumber 100 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g11_topicEict_lesson3 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page101 a ex:Page ; ex:hasPageNumber 101 ; ex:hasPrintedPageNumber 101 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g11_topicEict_lesson3 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page102 a ex:Page ; ex:hasPageNumber 102 ; ex:hasPrintedPageNumber 102 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g11_topicEict_lesson3 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page103 a ex:Page ; ex:hasPageNumber 103 ; ex:hasPrintedPageNumber 103 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g11_topicEict_lesson3 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page104 a ex:Page ; ex:hasPageNumber 104 ; ex:hasPrintedPageNumber 104 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:g11_topicEict_lesson3 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page105 a ex:Page ; ex:hasPageNumber 105 ; ex:hasPrintedPageNumber 105 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:g11_topicEict_lesson3 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page106 a ex:Page ; ex:hasPageNumber 106 ; ex:hasPrintedPageNumber 106 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:g11_topicEict_lesson4 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page107 a ex:Page ; ex:hasPageNumber 107 ; ex:hasPrintedPageNumber 107 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:g11_topicEict_lesson4 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page108 a ex:Page ; ex:hasPageNumber 108 ; ex:hasPrintedPageNumber 108 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:g11_topicEict_lesson4 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page109 a ex:Page ; ex:hasPageNumber 109 ; ex:hasPrintedPageNumber 109 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:g11_topicEict_lesson4 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page110 a ex:Page ; ex:hasPageNumber 110 ; ex:hasPrintedPageNumber 110 ; ex:pdfPageIndex 22 ; ex:belongsToLesson ex:g11_topicEict_lesson4 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page111 a ex:Page ; ex:hasPageNumber 111 ; ex:hasPrintedPageNumber 111 ; ex:pdfPageIndex 23 ; ex:belongsToLesson ex:g11_topicEict_lesson4 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page112 a ex:Page ; ex:hasPageNumber 112 ; ex:hasPrintedPageNumber 112 ; ex:pdfPageIndex 24 ; ex:belongsToLesson ex:g11_topicEict_lesson5 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page113 a ex:Page ; ex:hasPageNumber 113 ; ex:hasPrintedPageNumber 113 ; ex:pdfPageIndex 25 ; ex:belongsToLesson ex:g11_topicEict_lesson5 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page114 a ex:Page ; ex:hasPageNumber 114 ; ex:hasPrintedPageNumber 114 ; ex:pdfPageIndex 26 ; ex:belongsToLesson ex:g11_topicEict_lesson5 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page115 a ex:Page ; ex:hasPageNumber 115 ; ex:hasPrintedPageNumber 115 ; ex:pdfPageIndex 27 ; ex:belongsToLesson ex:g11_topicEict_lesson5 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page116 a ex:Page ; ex:hasPageNumber 116 ; ex:hasPrintedPageNumber 116 ; ex:pdfPageIndex 28 ; ex:belongsToLesson ex:g11_topicEict_lesson5 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page117 a ex:Page ; ex:hasPageNumber 117 ; ex:hasPrintedPageNumber 117 ; ex:pdfPageIndex 29 ; ex:belongsToLesson ex:g11_topicEict_lesson5 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page118 a ex:Page ; ex:hasPageNumber 118 ; ex:hasPrintedPageNumber 118 ; ex:pdfPageIndex 30 ; ex:belongsToLesson ex:g11_topicEict_lesson6 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page119 a ex:Page ; ex:hasPageNumber 119 ; ex:hasPrintedPageNumber 119 ; ex:pdfPageIndex 31 ; ex:belongsToLesson ex:g11_topicEict_lesson6 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page120 a ex:Page ; ex:hasPageNumber 120 ; ex:hasPrintedPageNumber 120 ; ex:pdfPageIndex 32 ; ex:belongsToLesson ex:g11_topicEict_lesson6 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page121 a ex:Page ; ex:hasPageNumber 121 ; ex:hasPrintedPageNumber 121 ; ex:pdfPageIndex 33 ; ex:belongsToLesson ex:g11_topicEict_lesson6 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page122 a ex:Page ; ex:hasPageNumber 122 ; ex:hasPrintedPageNumber 122 ; ex:pdfPageIndex 34 ; ex:belongsToLesson ex:g11_topicEict_lesson6 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page123 a ex:Page ; ex:hasPageNumber 123 ; ex:hasPrintedPageNumber 123 ; ex:pdfPageIndex 35 ; ex:belongsToLesson ex:g11_topicEict_lesson6 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page124 a ex:Page ; ex:hasPageNumber 124 ; ex:hasPrintedPageNumber 124 ; ex:pdfPageIndex 36 ; ex:belongsToLesson ex:g11_topicEict_lesson7 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page125 a ex:Page ; ex:hasPageNumber 125 ; ex:hasPrintedPageNumber 125 ; ex:pdfPageIndex 37 ; ex:belongsToLesson ex:g11_topicEict_lesson7 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page126 a ex:Page ; ex:hasPageNumber 126 ; ex:hasPrintedPageNumber 126 ; ex:pdfPageIndex 38 ; ex:belongsToLesson ex:g11_topicEict_lesson7 ; ex:belongsToTopic ex:g11_topicEict ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g11_page088 ex:nextPage ex:g11_page089 .
+  ex:g11_page089 ex:previousPage ex:g11_page088 ; ex:nextPage ex:g11_page090 .
+  ex:g11_page090 ex:previousPage ex:g11_page089 ; ex:nextPage ex:g11_page091 .
+  ex:g11_page091 ex:previousPage ex:g11_page090 ; ex:nextPage ex:g11_page092 .
+  ex:g11_page092 ex:previousPage ex:g11_page091 ; ex:nextPage ex:g11_page093 .
+  ex:g11_page093 ex:previousPage ex:g11_page092 ; ex:nextPage ex:g11_page094 .
+  ex:g11_page094 ex:previousPage ex:g11_page093 ; ex:nextPage ex:g11_page095 .
+  ex:g11_page095 ex:previousPage ex:g11_page094 ; ex:nextPage ex:g11_page096 .
+  ex:g11_page096 ex:previousPage ex:g11_page095 ; ex:nextPage ex:g11_page097 .
+  ex:g11_page097 ex:previousPage ex:g11_page096 ; ex:nextPage ex:g11_page098 .
+  ex:g11_page098 ex:previousPage ex:g11_page097 ; ex:nextPage ex:g11_page099 .
+  ex:g11_page099 ex:previousPage ex:g11_page098 ; ex:nextPage ex:g11_page100 .
+  ex:g11_page100 ex:previousPage ex:g11_page099 ; ex:nextPage ex:g11_page101 .
+  ex:g11_page101 ex:previousPage ex:g11_page100 ; ex:nextPage ex:g11_page102 .
+  ex:g11_page102 ex:previousPage ex:g11_page101 ; ex:nextPage ex:g11_page103 .
+  ex:g11_page103 ex:previousPage ex:g11_page102 ; ex:nextPage ex:g11_page104 .
+  ex:g11_page104 ex:previousPage ex:g11_page103 ; ex:nextPage ex:g11_page105 .
+  ex:g11_page105 ex:previousPage ex:g11_page104 ; ex:nextPage ex:g11_page106 .
+  ex:g11_page106 ex:previousPage ex:g11_page105 ; ex:nextPage ex:g11_page107 .
+  ex:g11_page107 ex:previousPage ex:g11_page106 ; ex:nextPage ex:g11_page108 .
+  ex:g11_page108 ex:previousPage ex:g11_page107 ; ex:nextPage ex:g11_page109 .
+  ex:g11_page109 ex:previousPage ex:g11_page108 ; ex:nextPage ex:g11_page110 .
+  ex:g11_page110 ex:previousPage ex:g11_page109 ; ex:nextPage ex:g11_page111 .
+  ex:g11_page111 ex:previousPage ex:g11_page110 ; ex:nextPage ex:g11_page112 .
+  ex:g11_page112 ex:previousPage ex:g11_page111 ; ex:nextPage ex:g11_page113 .
+  ex:g11_page113 ex:previousPage ex:g11_page112 ; ex:nextPage ex:g11_page114 .
+  ex:g11_page114 ex:previousPage ex:g11_page113 ; ex:nextPage ex:g11_page115 .
+  ex:g11_page115 ex:previousPage ex:g11_page114 ; ex:nextPage ex:g11_page116 .
+  ex:g11_page116 ex:previousPage ex:g11_page115 ; ex:nextPage ex:g11_page117 .
+  ex:g11_page117 ex:previousPage ex:g11_page116 ; ex:nextPage ex:g11_page118 .
+  ex:g11_page118 ex:previousPage ex:g11_page117 ; ex:nextPage ex:g11_page119 .
+  ex:g11_page119 ex:previousPage ex:g11_page118 ; ex:nextPage ex:g11_page120 .
+  ex:g11_page120 ex:previousPage ex:g11_page119 ; ex:nextPage ex:g11_page121 .
+  ex:g11_page121 ex:previousPage ex:g11_page120 ; ex:nextPage ex:g11_page122 .
+  ex:g11_page122 ex:previousPage ex:g11_page121 ; ex:nextPage ex:g11_page123 .
+  ex:g11_page123 ex:previousPage ex:g11_page122 ; ex:nextPage ex:g11_page124 .
+  ex:g11_page124 ex:previousPage ex:g11_page123 ; ex:nextPage ex:g11_page125 .
+  ex:g11_page125 ex:previousPage ex:g11_page124 ; ex:nextPage ex:g11_page126 .
+  ex:g11_page126 ex:previousPage ex:g11_page125 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g11_conceptUngDungTinHoc a ex:KnowledgeConcept ; rdfs:label "Ứng dụng tin học"@vi .
+  ex:g11_conceptChinhSuaAnh a ex:KnowledgeConcept ; rdfs:label "Chỉnh sửa ảnh"@vi .
+  ex:g11_conceptGIMP a ex:KnowledgeConcept ; rdfs:label "GIMP"@vi .
+  ex:g11_conceptThuNhoPhongToAnh a ex:KnowledgeConcept ; rdfs:label "Thu nhỏ, phóng to ảnh"@vi .
+  ex:g11_conceptDiChuyenAnh a ex:KnowledgeConcept ; rdfs:label "Di chuyển ảnh"@vi .
+  ex:g11_conceptZoomTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Zoom"@vi .
+  ex:g11_conceptMoveTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Move"@vi .
+  ex:g11_conceptCropTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Crop"@vi .
+  ex:g11_conceptCatAnh a ex:KnowledgeConcept ; rdfs:label "Cắt ảnh"@vi .
+  ex:g11_conceptBienDoiAnh a ex:KnowledgeConcept ; rdfs:label "Biến đổi ảnh"@vi .
+  ex:g11_conceptScaleTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Scale"@vi .
+  ex:g11_conceptRotateTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Rotate"@vi .
+  ex:g11_conceptFlipTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Flip"@vi .
+  ex:g11_conceptPerspectiveTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Perspective"@vi .
+  ex:g11_conceptFreeSelectTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Free Select"@vi .
+  ex:g11_conceptCurvesCommand a ex:KnowledgeConcept ; rdfs:label "Lệnh Curves"@vi .
+  ex:g11_conceptHieuChinhMauSacAnh a ex:KnowledgeConcept ; rdfs:label "Hiệu chỉnh màu sắc ảnh"@vi .
+  ex:g11_conceptTayXoaAnh a ex:KnowledgeConcept ; rdfs:label "Tẩy xoá ảnh"@vi .
+  ex:g11_conceptCloneTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Clone"@vi .
+  ex:g11_conceptHealingTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Healing"@vi .
+  ex:g11_conceptPerspectiveCloneTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Perspective Clone"@vi .
+  ex:g11_conceptVungMau a ex:KnowledgeConcept ; rdfs:label "Vùng mẫu"@vi .
+  ex:g11_conceptVungDich a ex:KnowledgeConcept ; rdfs:label "Vùng đích"@vi .
+  ex:g11_conceptPhepBienDoiPhoiCanh a ex:KnowledgeConcept ; rdfs:label "Phép biến đổi phối cảnh"@vi .
+  ex:g11_conceptAnhDong a ex:KnowledgeConcept ; rdfs:label "Ảnh động"@vi .
+  ex:g11_conceptKhungHinhAnhDong a ex:KnowledgeConcept ; rdfs:label "Khung hình ảnh động"@vi .
+  ex:g11_conceptKichBanAnhDong a ex:KnowledgeConcept ; rdfs:label "Kịch bản ảnh động"@vi .
+  ex:g11_conceptHieuUngAnhDong a ex:KnowledgeConcept ; rdfs:label "Hiệu ứng ảnh động"@vi .
+  ex:g11_conceptAnimationPlayback a ex:KnowledgeConcept ; rdfs:label "Animation Playback"@vi .
+  ex:g11_conceptExportAsGif a ex:KnowledgeConcept ; rdfs:label "Xuất ảnh động dạng GIF"@vi .
+  ex:g11_conceptBlendEffect a ex:KnowledgeConcept ; rdfs:label "Hiệu ứng Blend"@vi .
+  ex:g11_conceptLamVideo a ex:KnowledgeConcept ; rdfs:label "Làm video"@vi .
+  ex:g11_conceptAnimiz a ex:KnowledgeConcept ; rdfs:label "Animiz Animation Maker"@vi .
+  ex:g11_conceptDuAnVideo a ex:KnowledgeConcept ; rdfs:label "Dự án video"@vi .
+  ex:g11_conceptKichBanVideo a ex:KnowledgeConcept ; rdfs:label "Kịch bản video"@vi .
+  ex:g11_conceptTuLieuVideo a ex:KnowledgeConcept ; rdfs:label "Tư liệu video"@vi .
+  ex:g11_conceptGiaoDienAnimiz a ex:KnowledgeConcept ; rdfs:label "Giao diện Animiz"@vi .
+  ex:g11_conceptCanvas a ex:KnowledgeConcept ; rdfs:label "Khung Canvas"@vi .
+  ex:g11_conceptTimeline a ex:KnowledgeConcept ; rdfs:label "Khung Timeline"@vi .
+  ex:g11_conceptScene a ex:KnowledgeConcept ; rdfs:label "Cảnh video"@vi .
+  ex:g11_conceptDoiTuongVideo a ex:KnowledgeConcept ; rdfs:label "Đối tượng trong video"@vi .
+  ex:g11_conceptChinhSuaVideo a ex:KnowledgeConcept ; rdfs:label "Chỉnh sửa video"@vi .
+  ex:g11_conceptChinhSuaAmThanh a ex:KnowledgeConcept ; rdfs:label "Chỉnh sửa âm thanh"@vi .
+  ex:g11_conceptHieuUngXuatHien a ex:KnowledgeConcept ; rdfs:label "Hiệu ứng xuất hiện"@vi .
+  ex:g11_conceptHieuUngBienMat a ex:KnowledgeConcept ; rdfs:label "Hiệu ứng biến mất"@vi .
+  ex:g11_conceptHieuUngChuyenCanh a ex:KnowledgeConcept ; rdfs:label "Hiệu ứng chuyển cảnh"@vi .
+  ex:g11_conceptPhuDeVideo a ex:KnowledgeConcept ; rdfs:label "Phụ đề video"@vi .
+  ex:g11_conceptTieuDeVideo a ex:KnowledgeConcept ; rdfs:label "Tiêu đề video"@vi .
+  ex:g11_conceptXuatBanVideo a ex:KnowledgeConcept ; rdfs:label "Xuất bản video"@vi .
+  ex:g11_conceptPhimHoatHinh a ex:KnowledgeConcept ; rdfs:label "Phim hoạt hình"@vi .
+  ex:g11_conceptAnimizRoles a ex:KnowledgeConcept ; rdfs:label "Roles trong Animiz"@vi .
+  ex:g11_conceptHoiThoaiHoatHinh a ex:KnowledgeConcept ; rdfs:label "Hội thoại trong phim hoạt hình"@vi .
+  ex:g11_conceptPhimHoatHinh2D a ex:KnowledgeConcept ; rdfs:label "Phim hoạt hình 2D"@vi .
+
+  ex:g11_topicEict ex:hasConcept ex:g11_conceptUngDungTinHoc, ex:g11_conceptChinhSuaAnh,
+    ex:g11_conceptGIMP, ex:g11_conceptTayXoaAnh, ex:g11_conceptAnhDong,
+    ex:g11_conceptLamVideo, ex:g11_conceptAnimiz, ex:g11_conceptChinhSuaVideo,
+    ex:g11_conceptPhimHoatHinh .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g11_topicEict_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Thực hiện được các thao tác thu nhỏ, phóng to và di chuyển ảnh. Thực hiện được một số thao tác chỉnh sửa ảnh: cắt ảnh, hiệu chỉnh màu sắc cho ảnh và biến đổi ảnh đơn giản như thay đổi kích thước, xoay, lật, làm nghiêng."@vi ;
+    ex:appearsOnPage ex:g11_page089 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 .
+
+  ex:g11_topicEict_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Thực hiện được cách tẩy xoá ảnh bằng các công cụ Clone và Healing. Thực hiện được cách sao chép ảnh theo phép phối cảnh bằng công cụ Perspective Clone."@vi ;
+    ex:appearsOnPage ex:g11_page094 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 .
+
+  ex:g11_topicEict_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Tạo được ảnh động với hiệu ứng tự thiết kế. Tạo được ảnh động từ các hiệu ứng có sẵn trong phần mềm."@vi ;
+    ex:appearsOnPage ex:g11_page100 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 .
+
+  ex:g11_topicEict_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Bước đầu biết sử dụng một số chức năng chính của phần mềm làm video. Tạo được một số đoạn video từ ảnh và video có sẵn."@vi ;
+    ex:appearsOnPage ex:g11_page106 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 .
+
+  ex:g11_topicEict_l5_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 5 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Sử dụng được một số công cụ cơ bản chỉnh sửa video: chỉnh sửa hình ảnh, âm thanh, tạo phụ đề, tạo các hiệu ứng chuyển cảnh, căn chỉnh thời gian. Biên tập được đoạn video phục vụ học tập, giải trí."@vi ;
+    ex:appearsOnPage ex:g11_page112 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 .
+
+  ex:g11_topicEict_l6_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 6 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Bước đầu biết cách làm phim hoạt hình đơn giản bằng phần mềm làm video. Tạo được phim hoạt hình từ ảnh, có hội thoại giữa các nhân vật và có phụ đề."@vi ;
+    ex:appearsOnPage ex:g11_page118 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 .
+
+  ex:g11_topicEict_l7_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 7 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Chỉnh sửa được ảnh và tạo được ảnh động bằng GIMP. Tạo được phim hoạt hình ngắn bằng phần mềm Animiz Animation Maker."@vi ;
+    ex:appearsOnPage ex:g11_page124 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 .
+
+  ex:g11_topicEict_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề E ICT lớp 11"@vi ;
+    ex:hasSummaryText "Thu nhỏ, phóng to ảnh bằng cách nhấn giữ phím Ctrl và lăn nút cuộn chuột; hai cách khác là dùng công cụ Zoom hoặc ô tỉ lệ thu/phóng ảnh. Di chuyển toàn bộ ảnh và khung ảnh bằng cách nhấn giữ Space và di chuyển chuột; di chuyển ảnh nhưng giữ cố định khung ảnh bằng công cụ Move. Một số công cụ biến đổi ảnh thường sử dụng là Scale, Rotate, Flip và Perspective."@vi ;
+    ex:appearsOnPage ex:g11_page093 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 .
+
+  ex:g11_topicEict_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề E ICT lớp 11"@vi ;
+    ex:hasSummaryText "Công cụ Clone dùng để sao chép y nguyên hình dạng, kích thước vùng mẫu sang vùng đích. Công cụ Perspective Clone dùng để sao chép từ vùng mẫu sang vùng đích theo một phép biến đổi đồng dạng phối cảnh. Công cụ Healing dùng để sao chép, hoà trộn màu sắc và ánh sáng giữa vùng mẫu với vùng đích. Các công cụ Clone, Perspective Clone và Healing giúp tẩy xoá các dấu vết trên ảnh, thay thế một chi tiết trên ảnh bằng chi tiết khác có trên ảnh đó."@vi ;
+    ex:appearsOnPage ex:g11_page099 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 .
+
+  ex:g11_topicEict_l3_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 3 chủ đề E ICT lớp 11"@vi ;
+    ex:hasSummaryText "Ảnh động gồm một dãy các khung hình. Thứ tự các khung hình cùng với thời gian xuất hiện của chúng thể hiện kịch bản tạo ra hiệu ứng của ảnh động. GIMP cung cấp một số hiệu ứng để tạo ảnh động, các hiệu ứng khác có thể tự thiết kế theo trí tưởng tượng và sự sáng tạo. Khi thiết kế ảnh động với hiệu ứng tự tạo, nguồn ảnh tĩnh phải được chuẩn bị và sắp xếp theo kịch bản của hiệu ứng cần tạo."@vi ;
+    ex:appearsOnPage ex:g11_page105 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 .
+
+  ex:g11_topicEict_l4_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 4 chủ đề E ICT lớp 11"@vi ;
+    ex:hasSummaryText "Các phần mềm làm video đều có chức năng dựng video, gồm tạo dự án video mới và nhập các đối tượng cho video. Animiz Animation Maker cung cấp các chức năng dựng video cơ bản và hỗ trợ nhiều mẫu video, mẫu đối tượng trực tuyến."@vi ;
+    ex:appearsOnPage ex:g11_page111 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 .
+
+  ex:g11_topicEict_l5_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 5 chủ đề E ICT lớp 11"@vi ;
+    ex:hasSummaryText "Các phần mềm làm video ngoài chức năng dựng video còn có chức năng chỉnh sửa video. Chỉnh sửa các đối tượng, tạo hiệu ứng, đưa tiêu đề và phụ đề vào video sẽ làm cho video hấp dẫn, truyền tải đầy đủ nội dung và gây được cảm xúc cho người xem."@vi ;
+    ex:appearsOnPage ex:g11_page117 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 .
+
+  ex:g11_topicEict_l6_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 6 chủ đề E ICT lớp 11"@vi ;
+    ex:hasSummaryText "Animiz Animation Maker là phần mềm hỗ trợ làm phim hoạt hình 2D đơn giản và hấp dẫn dựa vào các mẫu video với nội dung phong phú, các mẫu nhân vật và hành động đa dạng. Animiz cung cấp nhiều loại đối tượng như dạng hình học, văn bản, hình ảnh, video, ảnh động, ảnh vector, roles và các hiệu ứng sinh động."@vi ;
+    ex:appearsOnPage ex:g11_page123 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 .
+
+  ex:g11_topicEict_lesson1 ex:hasSummary ex:g11_topicEict_l1_summary .
+  ex:g11_topicEict_lesson2 ex:hasSummary ex:g11_topicEict_l2_summary .
+  ex:g11_topicEict_lesson3 ex:hasSummary ex:g11_topicEict_l3_summary .
+  ex:g11_topicEict_lesson4 ex:hasSummary ex:g11_topicEict_l4_summary .
+  ex:g11_topicEict_lesson5 ex:hasSummary ex:g11_topicEict_l5_summary .
+  ex:g11_topicEict_lesson6 ex:hasSummary ex:g11_topicEict_l6_summary .
+
+  ###########################################################################
+  # Figures
+  ###########################################################################
+
+  ex:g11_topicEict_fig_l1_zoomSelectBoundary a ex:Figure ;
+    rdfs:label "Hình 1. Phóng to ảnh để xác định chính xác đường biên của vùng chọn"@vi ;
+    ex:hasCaption "Hình 1. Phóng to ảnh để xác định chính xác đường biên của vùng chọn"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g11_page089 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptThuNhoPhongToAnh, ex:g11_conceptFreeSelectTool .
+
+  ex:g11_topicEict_fig_l1_moveTool a ex:Figure ;
+    rdfs:label "Hình 2. Ví dụ di chuyển ảnh bằng công cụ Move"@vi ;
+    ex:hasCaption "Hình 2. Ví dụ di chuyển ảnh bằng công cụ Move"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g11_page090 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptMoveTool, ex:g11_conceptDiChuyenAnh .
+
+  ex:g11_topicEict_fig_l1_cropMickey a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ cắt ảnh để lấy hình nhân vật"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ cắt ảnh để lấy hình nhân vật"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g11_page090 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCatAnh, ex:g11_conceptCropTool .
+
+  ex:g11_topicEict_fig_l1_perspectiveCorrection a ex:Figure ;
+    rdfs:label "Hình 4. Quá trình chỉnh sửa ảnh bị nghiêng"@vi ;
+    ex:hasCaption "Hình 4. Quá trình chỉnh sửa ảnh bị nghiêng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:g11_page091 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPerspectiveTool, ex:g11_conceptBienDoiAnh .
+
+  ex:g11_topicEict_fig_l1_colorShoes a ex:Figure ;
+    rdfs:label "Hình 5. Kết quả đổi màu đôi giày"@vi ;
+    ex:hasCaption "Hình 5. Kết quả đổi màu đôi giày"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:g11_page092 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHieuChinhMauSacAnh, ex:g11_conceptFreeSelectTool .
+
+  ex:g11_topicEict_fig_l1_curvesDialog a ex:Figure ;
+    rdfs:label "Hình 6. Hiệu chỉnh màu sắc ảnh bằng lệnh Curves"@vi ;
+    ex:hasCaption "Hình 6. Hiệu chỉnh màu sắc ảnh bằng lệnh Curves"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:g11_page092 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCurvesCommand, ex:g11_conceptHieuChinhMauSacAnh .
+
+  ex:g11_topicEict_fig_l1_canThoBridge a ex:Figure ;
+    rdfs:label "Hình 7. Chỉnh bức ảnh cầu Cần Thơ bị nghiêng và lật đối xứng ảnh"@vi ;
+    ex:hasCaption "Hình 7. Chỉnh bức ảnh cầu Cần Thơ bị nghiêng và lật đối xứng ảnh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:g11_page093 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPerspectiveTool, ex:g11_conceptFlipTool .
+
+  ex:g11_topicEict_fig_l1_fixTiltCrop a ex:Figure ;
+    rdfs:label "Hình 8. Sửa ảnh bị nghiêng và cắt ảnh"@vi ;
+    ex:hasCaption "Hình 8. Sửa ảnh bị nghiêng và cắt ảnh"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:g11_page093 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPerspectiveTool, ex:g11_conceptCropTool .
+
+  ex:g11_topicEict_fig_l2_drayNurScene a ex:Figure ;
+    rdfs:label "Hình 1. Cảnh thác Dray Nur, tỉnh Đắk Lắk"@vi ;
+    ex:hasCaption "Hình 1. Cảnh thác Dray Nur, tỉnh Đắk Lắk"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:g11_page094 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTayXoaAnh .
+
+  ex:g11_topicEict_fig_l2_removePositions a ex:Figure ;
+    rdfs:label "Hình 2. Các vị trí tẩy xoá"@vi ;
+    ex:hasCaption "Hình 2. Các vị trí tẩy xoá"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:g11_page094 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTayXoaAnh, ex:g11_conceptCloneTool .
+
+  ex:g11_topicEict_fig_l2_cloneParameters a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ phóng to ảnh và chọn các tham số cho công cụ Clone"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ phóng to ảnh và chọn các tham số cho công cụ Clone"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:g11_page095 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCloneTool, ex:g11_conceptThuNhoPhongToAnh .
+
+  ex:g11_topicEict_fig_l2_cloneSample a ex:Figure ;
+    rdfs:label "Hình 4. Ví dụ lấy mẫu để áp dụng cho vùng ảnh cần tẩy xoá"@vi ;
+    ex:hasCaption "Hình 4. Ví dụ lấy mẫu để áp dụng cho vùng ảnh cần tẩy xoá"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:g11_page095 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCloneTool, ex:g11_conceptVungMau, ex:g11_conceptVungDich .
+
+  ex:g11_topicEict_fig_l2_healingTrace a ex:Figure ;
+    rdfs:label "Hình 5. Ví dụ xử lí dấu vết của vùng ảnh bị tẩy xoá"@vi ;
+    ex:hasCaption "Hình 5. Ví dụ xử lí dấu vết của vùng ảnh bị tẩy xoá"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:g11_page096 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHealingTool, ex:g11_conceptTayXoaAnh .
+
+  ex:g11_topicEict_fig_l2_perspectiveCloneResult a ex:Figure ;
+    rdfs:label "Hình 6. Ví dụ xử lí vùng ảnh tẩy xoá bị lộ ra"@vi ;
+    ex:hasCaption "Hình 6. Ví dụ xử lí vùng ảnh tẩy xoá bị lộ ra"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:g11_page097 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPerspectiveCloneTool, ex:g11_conceptPhepBienDoiPhoiCanh .
+
+  ex:g11_topicEict_fig_l2_perspectiveFrame a ex:Figure ;
+    rdfs:label "Hình 7. Ví dụ khung phối cảnh xuất hiện"@vi ;
+    ex:hasCaption "Hình 7. Ví dụ khung phối cảnh xuất hiện"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:g11_page097 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPerspectiveCloneTool .
+
+  ex:g11_topicEict_fig_l2_createPerspectiveFrame a ex:Figure ;
+    rdfs:label "Hình 8. Ví dụ tạo khung phối cảnh"@vi ;
+    ex:hasCaption "Hình 8. Ví dụ tạo khung phối cảnh"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:g11_page097 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhepBienDoiPhoiCanh .
+
+  ex:g11_topicEict_fig_l2_clonePerspectiveCopy a ex:Figure ;
+    rdfs:label "Hình 9. Sao chép ảnh theo phép phối cảnh trong chế độ Perspective Clone"@vi ;
+    ex:hasCaption "Hình 9. Sao chép ảnh theo phép phối cảnh trong chế độ Perspective Clone"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:g11_page098 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPerspectiveCloneTool, ex:g11_conceptPhepBienDoiPhoiCanh .
+
+  ex:g11_topicEict_fig_l2_landPlanningPreview a ex:Figure ;
+    rdfs:label "Hình 10. Xem trước ảnh quy hoạch một khu đất"@vi ;
+    ex:hasCaption "Hình 10. Xem trước ảnh quy hoạch một khu đất"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 18 ;
+    ex:appearsOnPage ex:g11_page098 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTayXoaAnh, ex:g11_conceptPerspectiveCloneTool .
+
+  ex:g11_topicEict_fig_l2_landPerspectiveFrame a ex:Figure ;
+    rdfs:label "Hình 11. Xác định khung phối cảnh"@vi ;
+    ex:hasCaption "Hình 11. Xác định khung phối cảnh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 19 ;
+    ex:appearsOnPage ex:g11_page099 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPerspectiveCloneTool .
+
+  ex:g11_topicEict_fig_l2_landPerspectiveCopy a ex:Figure ;
+    rdfs:label "Hình 12. Sao chép mặt theo phép phối cảnh"@vi ;
+    ex:hasCaption "Hình 12. Sao chép mặt theo phép phối cảnh"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 20 ;
+    ex:appearsOnPage ex:g11_page099 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPerspectiveCloneTool, ex:g11_conceptPhepBienDoiPhoiCanh .
+
+  ex:g11_topicEict_fig_l3_butterflyLayers a ex:Figure ;
+    rdfs:label "Hình 1. Ví dụ dãy các ảnh tĩnh đan xen với ảnh nền và các lớp ảnh"@vi ;
+    ex:hasCaption "Hình 1. Ví dụ dãy các ảnh tĩnh đan xen với ảnh nền và các lớp ảnh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 21 ;
+    ex:appearsOnPage ex:g11_page100 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAnhDong, ex:g11_conceptKhungHinhAnhDong .
+
+  ex:g11_topicEict_fig_l3_animationFramesTiming a ex:Figure ;
+    rdfs:label "Hình 2. Dãy khung hình của ảnh động có quy định thời gian"@vi ;
+    ex:hasCaption "Hình 2. Dãy khung hình của ảnh động có quy định thời gian"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 22 ;
+    ex:appearsOnPage ex:g11_page101 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAnhDong, ex:g11_conceptKhungHinhAnhDong .
+
+  ex:g11_topicEict_fig_l3_skateFrames a ex:Figure ;
+    rdfs:label "Hình 3. Dãy khung hình biểu thị người trượt ván xuống dốc"@vi ;
+    ex:hasCaption "Hình 3. Dãy khung hình biểu thị người trượt ván xuống dốc"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 23 ;
+    ex:appearsOnPage ex:g11_page101 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKichBanAnhDong, ex:g11_conceptHieuUngAnhDong .
+
+  ex:g11_topicEict_fig_l3_butterflyDesign a ex:Figure ;
+    rdfs:label "Hình 4. Ảnh được thiết kế hoặc sưu tầm"@vi ;
+    ex:hasCaption "Hình 4. Ảnh được thiết kế hoặc sưu tầm"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 24 ;
+    ex:appearsOnPage ex:g11_page102 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAnhDong, ex:g11_conceptKichBanAnhDong .
+
+  ex:g11_topicEict_fig_l3_exportImageDialog a ex:Figure ;
+    rdfs:label "Hình 5. Hộp thoại Export Image"@vi ;
+    ex:hasCaption "Hình 5. Hộp thoại Export Image"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 25 ;
+    ex:appearsOnPage ex:g11_page102 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptExportAsGif .
+
+  ex:g11_topicEict_fig_l3_exportGifDialog a ex:Figure ;
+    rdfs:label "Hình 6. Xuất dãy khung hình sang tệp với định dạng ảnh động GIF"@vi ;
+    ex:hasCaption "Hình 6. Xuất dãy khung hình sang tệp với định dạng ảnh động GIF"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 26 ;
+    ex:appearsOnPage ex:g11_page103 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptExportAsGif .
+
+  ex:g11_topicEict_fig_l3_animationPlayback a ex:Figure ;
+    rdfs:label "Hình 7. Xem trước ảnh động"@vi ;
+    ex:hasCaption "Hình 7. Xem trước ảnh động"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 27 ;
+    ex:appearsOnPage ex:g11_page103 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAnimationPlayback, ex:g11_conceptAnhDong .
+
+  ex:g11_topicEict_fig_l3_mocChauFrames a ex:Figure ;
+    rdfs:label "Hình 8. Phong cảnh ở Mộc Châu, Sơn La"@vi ;
+    ex:hasCaption "Hình 8. Phong cảnh ở Mộc Châu, Sơn La"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 28 ;
+    ex:appearsOnPage ex:g11_page103 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBlendEffect, ex:g11_conceptAnhDong .
+
+  ex:g11_topicEict_fig_l3_pendulumCycle a ex:Figure ;
+    rdfs:label "Hình 9. Chu kì dao động của con lắc"@vi ;
+    ex:hasCaption "Hình 9. Chu kì dao động của con lắc"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 29 ;
+    ex:appearsOnPage ex:g11_page104 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKichBanAnhDong .
+
+  ex:g11_topicEict_fig_l3_pendulumFrames a ex:Figure ;
+    rdfs:label "Hình 10. Các khung hình của chu kì dao động của con lắc"@vi ;
+    ex:hasCaption "Hình 10. Các khung hình của chu kì dao động của con lắc"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 30 ;
+    ex:appearsOnPage ex:g11_page104 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKhungHinhAnhDong .
+
+  ex:g11_topicEict_fig_l3_layersReordered a ex:Figure ;
+    rdfs:label "Hình 11. Các lớp ảnh được sắp xếp lại"@vi ;
+    ex:hasCaption "Hình 11. Các lớp ảnh được sắp xếp lại"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 31 ;
+    ex:appearsOnPage ex:g11_page104 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKhungHinhAnhDong .
+
+  ex:g11_topicEict_fig_l3_animationFrameStack a ex:Figure ;
+    rdfs:label "Hình 12. Dãy khung hình của ảnh động"@vi ;
+    ex:hasCaption "Hình 12. Dãy khung hình của ảnh động"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 32 ;
+    ex:appearsOnPage ex:g11_page105 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKhungHinhAnhDong .
+
+  ex:g11_topicEict_fig_l3_dollFrames a ex:Figure ;
+    rdfs:label "Hình 13. Một số khung hình của hiệu ứng con lật đật lắc lư"@vi ;
+    ex:hasCaption "Hình 13. Một số khung hình của hiệu ứng con lật đật lắc lư"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 33 ;
+    ex:appearsOnPage ex:g11_page105 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAnhDong, ex:g11_conceptHieuUngAnhDong .
+
+  ex:g11_topicEict_fig_l4_haGiangVideo a ex:Figure ;
+    rdfs:label "Hình 1. Một ảnh trong video giới thiệu về du lịch Hà Giang trên VTV1"@vi ;
+    ex:hasCaption "Hình 1. Một ảnh trong video giới thiệu về du lịch Hà Giang trên VTV1"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 34 ;
+    ex:appearsOnPage ex:g11_page106 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptLamVideo .
+
+  ex:g11_topicEict_fig_l4_startInterface a ex:Figure ;
+    rdfs:label "Hình 2. Cửa sổ giao diện bắt đầu phần mềm Animiz"@vi ;
+    ex:hasCaption "Hình 2. Cửa sổ giao diện bắt đầu phần mềm Animiz"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 35 ;
+    ex:appearsOnPage ex:g11_page107 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAnimiz, ex:g11_conceptGiaoDienAnimiz .
+
+  ex:g11_topicEict_fig_l4_mainWorkspace a ex:Figure ;
+    rdfs:label "Hình 3. Màn hình làm việc chính của Animiz"@vi ;
+    ex:hasCaption "Hình 3. Màn hình làm việc chính của Animiz"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 36 ;
+    ex:appearsOnPage ex:g11_page108 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCanvas, ex:g11_conceptTimeline, ex:g11_conceptAnimiz .
+
+  ex:g11_topicEict_fig_l4_importImages a ex:Figure ;
+    rdfs:label "Hình 4. Màn hình nhập ảnh vào video"@vi ;
+    ex:hasCaption "Hình 4. Màn hình nhập ảnh vào video"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 37 ;
+    ex:appearsOnPage ex:g11_page109 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTuLieuVideo, ex:g11_conceptDuAnVideo .
+
+  ex:g11_topicEict_fig_l4_timelineObjects a ex:Figure ;
+    rdfs:label "Hình 5. Khung Timeline cho các đối tượng trong video"@vi ;
+    ex:hasCaption "Hình 5. Khung Timeline cho các đối tượng trong video"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 38 ;
+    ex:appearsOnPage ex:g11_page110 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTimeline, ex:g11_conceptDoiTuongVideo .
+
+  ex:g11_topicEict_fig_l4_sortedTimeline a ex:Figure ;
+    rdfs:label "Hình 6. Khung Timeline cho các đối tượng đã sắp xếp"@vi ;
+    ex:hasCaption "Hình 6. Khung Timeline cho các đối tượng đã sắp xếp"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 39 ;
+    ex:appearsOnPage ex:g11_page110 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTimeline, ex:g11_conceptDoiTuongVideo .
+
+  ex:g11_topicEict_fig_l4_audioTimeline a ex:Figure ;
+    rdfs:label "Hình 7. Khung Timeline cho tệp âm thanh"@vi ;
+    ex:hasCaption "Hình 7. Khung Timeline cho tệp âm thanh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 40 ;
+    ex:appearsOnPage ex:g11_page111 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTimeline, ex:g11_conceptChinhSuaAmThanh .
+
+  ex:g11_topicEict_fig_l5_editImageTimeline a ex:Figure ;
+    rdfs:label "Hình 1. Màn hình biên tập ảnh"@vi ;
+    ex:hasCaption "Hình 1. Màn hình biên tập ảnh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 41 ;
+    ex:appearsOnPage ex:g11_page113 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptChinhSuaVideo, ex:g11_conceptTimeline .
+
+  ex:g11_topicEict_fig_l5_imageEffects a ex:Figure ;
+    rdfs:label "Hình 2. Cửa sổ các hiệu ứng cho ảnh"@vi ;
+    ex:hasCaption "Hình 2. Cửa sổ các hiệu ứng cho ảnh"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 42 ;
+    ex:appearsOnPage ex:g11_page113 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHieuUngXuatHien, ex:g11_conceptChinhSuaVideo .
+
+  ex:g11_topicEict_fig_l5_audioEditor a ex:Figure ;
+    rdfs:label "Hình 3. Cửa sổ chỉnh sửa tệp âm thanh"@vi ;
+    ex:hasCaption "Hình 3. Cửa sổ chỉnh sửa tệp âm thanh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 43 ;
+    ex:appearsOnPage ex:g11_page114 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptChinhSuaAmThanh .
+
+  ex:g11_topicEict_fig_l5_transitionDialog a ex:Figure ;
+    rdfs:label "Hình 4. Cửa sổ chọn hiệu ứng chuyển cảnh"@vi ;
+    ex:hasCaption "Hình 4. Cửa sổ chọn hiệu ứng chuyển cảnh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 44 ;
+    ex:appearsOnPage ex:g11_page115 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHieuUngChuyenCanh .
+
+  ex:g11_topicEict_fig_l5_textBox a ex:Figure ;
+    rdfs:label "Hình 5. Khung nhập văn bản"@vi ;
+    ex:hasCaption "Hình 5. Khung nhập văn bản"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 45 ;
+    ex:appearsOnPage ex:g11_page115 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTieuDeVideo, ex:g11_conceptPhuDeVideo .
+
+  ex:g11_topicEict_fig_l5_subtitleTimeline a ex:Figure ;
+    rdfs:label "Hình 6. Đối tượng Subtitle trên khung Timeline"@vi ;
+    ex:hasCaption "Hình 6. Đối tượng Subtitle trên khung Timeline"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 46 ;
+    ex:appearsOnPage ex:g11_page116 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhuDeVideo, ex:g11_conceptTimeline .
+
+  ex:g11_topicEict_fig_l5_subtitleDialog a ex:Figure ;
+    rdfs:label "Hình 7. Cửa sổ nhập phụ đề"@vi ;
+    ex:hasCaption "Hình 7. Cửa sổ nhập phụ đề"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 47 ;
+    ex:appearsOnPage ex:g11_page116 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhuDeVideo .
+
+  ex:g11_topicEict_fig_l6_openingScene1 a ex:Figure ;
+    rdfs:label "Hình 1. Phân cảnh 1"@vi ;
+    ex:hasCaption "Hình 1. Phân cảnh 1"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 48 ;
+    ex:appearsOnPage ex:g11_page119 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhimHoatHinh, ex:g11_conceptScene .
+
+  ex:g11_topicEict_fig_l6_openingScene2 a ex:Figure ;
+    rdfs:label "Hình 2. Phân cảnh 2"@vi ;
+    ex:hasCaption "Hình 2. Phân cảnh 2"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 49 ;
+    ex:appearsOnPage ex:g11_page119 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhimHoatHinh, ex:g11_conceptScene .
+
+  ex:g11_topicEict_fig_l6_openingScene3 a ex:Figure ;
+    rdfs:label "Hình 3. Phân cảnh 3"@vi ;
+    ex:hasCaption "Hình 3. Phân cảnh 3"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 50 ;
+    ex:appearsOnPage ex:g11_page119 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhimHoatHinh, ex:g11_conceptScene .
+
+  ex:g11_topicEict_fig_l6_openingScene4 a ex:Figure ;
+    rdfs:label "Hình 4. Phân cảnh 4"@vi ;
+    ex:hasCaption "Hình 4. Phân cảnh 4"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 51 ;
+    ex:appearsOnPage ex:g11_page120 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhimHoatHinh, ex:g11_conceptScene .
+
+  ex:g11_topicEict_fig_l6_rolesLibrary a ex:Figure ;
+    rdfs:label "Hình 5. Các mẫu Roles trong phần mềm Animiz"@vi ;
+    ex:hasCaption "Hình 5. Các mẫu Roles trong phần mềm Animiz"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 52 ;
+    ex:appearsOnPage ex:g11_page121 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAnimizRoles, ex:g11_conceptPhimHoatHinh .
+
+  ex:g11_topicEict_fig_l6_roleEffects a ex:Figure ;
+    rdfs:label "Hình 6. Hiệu ứng cho các Roles"@vi ;
+    ex:hasCaption "Hình 6. Hiệu ứng cho các Roles"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 53 ;
+    ex:appearsOnPage ex:g11_page122 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptAnimizRoles, ex:g11_conceptHieuUngXuatHien .
+
+  ex:g11_topicEict_fig_l6_objectEffects a ex:Figure ;
+    rdfs:label "Hình 7. Hiệu ứng cho các đối tượng"@vi ;
+    ex:hasCaption "Hình 7. Hiệu ứng cho các đối tượng"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 54 ;
+    ex:appearsOnPage ex:g11_page122 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptDoiTuongVideo, ex:g11_conceptHieuUngXuatHien .
+
+  ex:g11_topicEict_fig_l6_recordDialog a ex:Figure ;
+    rdfs:label "Hình 8. Ghi âm lời thoại"@vi ;
+    ex:hasCaption "Hình 8. Ghi âm lời thoại"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 55 ;
+    ex:appearsOnPage ex:g11_page123 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHoiThoaiHoatHinh, ex:g11_conceptChinhSuaAmThanh .
+
+  ex:g11_topicEict_fig_l7_fansipanOriginals a ex:Figure ;
+    rdfs:label "Hình 1. Các ảnh được chụp tại các thời điểm khác nhau"@vi ;
+    ex:hasCaption "Hình 1. Các ảnh được chụp tại các thời điểm khác nhau"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 56 ;
+    ex:appearsOnPage ex:g11_page124 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptChinhSuaAnh .
+
+  ex:g11_topicEict_fig_l7_fansipanEdited a ex:Figure ;
+    rdfs:label "Hình 2. Các ảnh ở Hình 1 được chỉnh lại màu sắc và xoá dây cáp treo"@vi ;
+    ex:hasCaption "Hình 2. Các ảnh ở Hình 1 được chỉnh lại màu sắc và xoá dây cáp treo"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 57 ;
+    ex:appearsOnPage ex:g11_page124 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHieuChinhMauSacAnh, ex:g11_conceptTayXoaAnh .
+
+  ex:g11_topicEict_fig_l7_curvesSample a ex:Figure ;
+    rdfs:label "Hình 3. Hiệu chỉnh màu"@vi ;
+    ex:hasCaption "Hình 3. Hiệu chỉnh màu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 58 ;
+    ex:appearsOnPage ex:g11_page125 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCurvesCommand, ex:g11_conceptHieuChinhMauSacAnh .
+
+  ex:g11_topicEict_fig_l7_blendEffectDialog a ex:Figure ;
+    rdfs:label "Hình 4. Hiệu ứng Blend"@vi ;
+    ex:hasCaption "Hình 4. Hiệu ứng Blend"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 59 ;
+    ex:appearsOnPage ex:g11_page125 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBlendEffect, ex:g11_conceptAnhDong .
+
+  ex:g11_topicEict_fig_l7_animationFrames a ex:Figure ;
+    rdfs:label "Hình 5. Các khung hình của ảnh động"@vi ;
+    ex:hasCaption "Hình 5. Các khung hình của ảnh động"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 60 ;
+    ex:appearsOnPage ex:g11_page125 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKhungHinhAnhDong, ex:g11_conceptBlendEffect .
+
+  ex:g11_topicEict_fig_l7_dialogueBubble a ex:Figure ;
+    rdfs:label "Hình 6. Hội thoại văn bản"@vi ;
+    ex:hasCaption "Hình 6. Hội thoại văn bản"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 61 ;
+    ex:appearsOnPage ex:g11_page126 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHoiThoaiHoatHinh, ex:g11_conceptPhimHoatHinh .
+
+  ###########################################################################
+  # Figure-to-page links
+  ###########################################################################
+
+  ex:g11_page089 ex:hasFigure ex:g11_topicEict_fig_l1_zoomSelectBoundary .
+  ex:g11_page090 ex:hasFigure ex:g11_topicEict_fig_l1_moveTool, ex:g11_topicEict_fig_l1_cropMickey .
+  ex:g11_page091 ex:hasFigure ex:g11_topicEict_fig_l1_perspectiveCorrection .
+  ex:g11_page092 ex:hasFigure ex:g11_topicEict_fig_l1_colorShoes, ex:g11_topicEict_fig_l1_curvesDialog .
+  ex:g11_page093 ex:hasFigure ex:g11_topicEict_fig_l1_canThoBridge, ex:g11_topicEict_fig_l1_fixTiltCrop .
+  ex:g11_page094 ex:hasFigure ex:g11_topicEict_fig_l2_drayNurScene, ex:g11_topicEict_fig_l2_removePositions .
+  ex:g11_page095 ex:hasFigure ex:g11_topicEict_fig_l2_cloneParameters, ex:g11_topicEict_fig_l2_cloneSample .
+  ex:g11_page096 ex:hasFigure ex:g11_topicEict_fig_l2_healingTrace .
+  ex:g11_page097 ex:hasFigure ex:g11_topicEict_fig_l2_perspectiveCloneResult, ex:g11_topicEict_fig_l2_perspectiveFrame, ex:g11_topicEict_fig_l2_createPerspectiveFrame .
+  ex:g11_page098 ex:hasFigure ex:g11_topicEict_fig_l2_clonePerspectiveCopy, ex:g11_topicEict_fig_l2_landPlanningPreview .
+  ex:g11_page099 ex:hasFigure ex:g11_topicEict_fig_l2_landPerspectiveFrame, ex:g11_topicEict_fig_l2_landPerspectiveCopy .
+  ex:g11_page100 ex:hasFigure ex:g11_topicEict_fig_l3_butterflyLayers .
+  ex:g11_page101 ex:hasFigure ex:g11_topicEict_fig_l3_animationFramesTiming, ex:g11_topicEict_fig_l3_skateFrames .
+  ex:g11_page102 ex:hasFigure ex:g11_topicEict_fig_l3_butterflyDesign, ex:g11_topicEict_fig_l3_exportImageDialog .
+  ex:g11_page103 ex:hasFigure ex:g11_topicEict_fig_l3_exportGifDialog, ex:g11_topicEict_fig_l3_animationPlayback, ex:g11_topicEict_fig_l3_mocChauFrames .
+  ex:g11_page104 ex:hasFigure ex:g11_topicEict_fig_l3_pendulumCycle, ex:g11_topicEict_fig_l3_pendulumFrames, ex:g11_topicEict_fig_l3_layersReordered .
+  ex:g11_page105 ex:hasFigure ex:g11_topicEict_fig_l3_animationFrameStack, ex:g11_topicEict_fig_l3_dollFrames .
+  ex:g11_page106 ex:hasFigure ex:g11_topicEict_fig_l4_haGiangVideo .
+  ex:g11_page107 ex:hasFigure ex:g11_topicEict_fig_l4_startInterface .
+  ex:g11_page108 ex:hasFigure ex:g11_topicEict_fig_l4_mainWorkspace .
+  ex:g11_page109 ex:hasFigure ex:g11_topicEict_fig_l4_importImages .
+  ex:g11_page110 ex:hasFigure ex:g11_topicEict_fig_l4_timelineObjects, ex:g11_topicEict_fig_l4_sortedTimeline .
+  ex:g11_page111 ex:hasFigure ex:g11_topicEict_fig_l4_audioTimeline .
+  ex:g11_page113 ex:hasFigure ex:g11_topicEict_fig_l5_editImageTimeline, ex:g11_topicEict_fig_l5_imageEffects .
+  ex:g11_page114 ex:hasFigure ex:g11_topicEict_fig_l5_audioEditor .
+  ex:g11_page115 ex:hasFigure ex:g11_topicEict_fig_l5_transitionDialog, ex:g11_topicEict_fig_l5_textBox .
+  ex:g11_page116 ex:hasFigure ex:g11_topicEict_fig_l5_subtitleTimeline, ex:g11_topicEict_fig_l5_subtitleDialog .
+  ex:g11_page119 ex:hasFigure ex:g11_topicEict_fig_l6_openingScene1, ex:g11_topicEict_fig_l6_openingScene2, ex:g11_topicEict_fig_l6_openingScene3 .
+  ex:g11_page120 ex:hasFigure ex:g11_topicEict_fig_l6_openingScene4 .
+  ex:g11_page121 ex:hasFigure ex:g11_topicEict_fig_l6_rolesLibrary .
+  ex:g11_page122 ex:hasFigure ex:g11_topicEict_fig_l6_roleEffects, ex:g11_topicEict_fig_l6_objectEffects .
+  ex:g11_page123 ex:hasFigure ex:g11_topicEict_fig_l6_recordDialog .
+  ex:g11_page124 ex:hasFigure ex:g11_topicEict_fig_l7_fansipanOriginals, ex:g11_topicEict_fig_l7_fansipanEdited .
+  ex:g11_page125 ex:hasFigure ex:g11_topicEict_fig_l7_curvesSample, ex:g11_topicEict_fig_l7_blendEffectDialog, ex:g11_topicEict_fig_l7_animationFrames .
+  ex:g11_page126 ex:hasFigure ex:g11_topicEict_fig_l7_dialogueBubble .
+
+  ###########################################################################
+  # Figure ordering
+  ###########################################################################
+
+  ex:g11_topicEict_fig_l1_zoomSelectBoundary ex:nextFigure ex:g11_topicEict_fig_l1_moveTool .
+  ex:g11_topicEict_fig_l1_moveTool ex:previousFigure ex:g11_topicEict_fig_l1_zoomSelectBoundary ; ex:nextFigure ex:g11_topicEict_fig_l1_cropMickey .
+  ex:g11_topicEict_fig_l1_cropMickey ex:previousFigure ex:g11_topicEict_fig_l1_moveTool ; ex:nextFigure ex:g11_topicEict_fig_l1_perspectiveCorrection .
+  ex:g11_topicEict_fig_l1_perspectiveCorrection ex:previousFigure ex:g11_topicEict_fig_l1_cropMickey ; ex:nextFigure ex:g11_topicEict_fig_l1_colorShoes .
+  ex:g11_topicEict_fig_l1_colorShoes ex:previousFigure ex:g11_topicEict_fig_l1_perspectiveCorrection ; ex:nextFigure ex:g11_topicEict_fig_l1_curvesDialog .
+  ex:g11_topicEict_fig_l1_curvesDialog ex:previousFigure ex:g11_topicEict_fig_l1_colorShoes ; ex:nextFigure ex:g11_topicEict_fig_l1_canThoBridge .
+  ex:g11_topicEict_fig_l1_canThoBridge ex:previousFigure ex:g11_topicEict_fig_l1_curvesDialog ; ex:nextFigure ex:g11_topicEict_fig_l1_fixTiltCrop .
+  ex:g11_topicEict_fig_l1_fixTiltCrop ex:previousFigure ex:g11_topicEict_fig_l1_canThoBridge ; ex:nextFigure ex:g11_topicEict_fig_l2_drayNurScene .
+  ex:g11_topicEict_fig_l2_drayNurScene ex:previousFigure ex:g11_topicEict_fig_l1_fixTiltCrop ; ex:nextFigure ex:g11_topicEict_fig_l2_removePositions .
+  ex:g11_topicEict_fig_l2_removePositions ex:previousFigure ex:g11_topicEict_fig_l2_drayNurScene ; ex:nextFigure ex:g11_topicEict_fig_l2_cloneParameters .
+  ex:g11_topicEict_fig_l2_cloneParameters ex:previousFigure ex:g11_topicEict_fig_l2_removePositions ; ex:nextFigure ex:g11_topicEict_fig_l2_cloneSample .
+  ex:g11_topicEict_fig_l2_cloneSample ex:previousFigure ex:g11_topicEict_fig_l2_cloneParameters ; ex:nextFigure ex:g11_topicEict_fig_l2_healingTrace .
+  ex:g11_topicEict_fig_l2_healingTrace ex:previousFigure ex:g11_topicEict_fig_l2_cloneSample ; ex:nextFigure ex:g11_topicEict_fig_l2_perspectiveCloneResult .
+  ex:g11_topicEict_fig_l2_perspectiveCloneResult ex:previousFigure ex:g11_topicEict_fig_l2_healingTrace ; ex:nextFigure ex:g11_topicEict_fig_l2_perspectiveFrame .
+  ex:g11_topicEict_fig_l2_perspectiveFrame ex:previousFigure ex:g11_topicEict_fig_l2_perspectiveCloneResult ; ex:nextFigure ex:g11_topicEict_fig_l2_createPerspectiveFrame .
+  ex:g11_topicEict_fig_l2_createPerspectiveFrame ex:previousFigure ex:g11_topicEict_fig_l2_perspectiveFrame ; ex:nextFigure ex:g11_topicEict_fig_l2_clonePerspectiveCopy .
+  ex:g11_topicEict_fig_l2_clonePerspectiveCopy ex:previousFigure ex:g11_topicEict_fig_l2_createPerspectiveFrame ; ex:nextFigure ex:g11_topicEict_fig_l2_landPlanningPreview .
+  ex:g11_topicEict_fig_l2_landPlanningPreview ex:previousFigure ex:g11_topicEict_fig_l2_clonePerspectiveCopy ; ex:nextFigure ex:g11_topicEict_fig_l2_landPerspectiveFrame .
+  ex:g11_topicEict_fig_l2_landPerspectiveFrame ex:previousFigure ex:g11_topicEict_fig_l2_landPlanningPreview ; ex:nextFigure ex:g11_topicEict_fig_l2_landPerspectiveCopy .
+  ex:g11_topicEict_fig_l2_landPerspectiveCopy ex:previousFigure ex:g11_topicEict_fig_l2_landPerspectiveFrame ; ex:nextFigure ex:g11_topicEict_fig_l3_butterflyLayers .
+  ex:g11_topicEict_fig_l3_butterflyLayers ex:previousFigure ex:g11_topicEict_fig_l2_landPerspectiveCopy ; ex:nextFigure ex:g11_topicEict_fig_l3_animationFramesTiming .
+  ex:g11_topicEict_fig_l3_animationFramesTiming ex:previousFigure ex:g11_topicEict_fig_l3_butterflyLayers ; ex:nextFigure ex:g11_topicEict_fig_l3_skateFrames .
+  ex:g11_topicEict_fig_l3_skateFrames ex:previousFigure ex:g11_topicEict_fig_l3_animationFramesTiming ; ex:nextFigure ex:g11_topicEict_fig_l3_butterflyDesign .
+  ex:g11_topicEict_fig_l3_butterflyDesign ex:previousFigure ex:g11_topicEict_fig_l3_skateFrames ; ex:nextFigure ex:g11_topicEict_fig_l3_exportImageDialog .
+  ex:g11_topicEict_fig_l3_exportImageDialog ex:previousFigure ex:g11_topicEict_fig_l3_butterflyDesign ; ex:nextFigure ex:g11_topicEict_fig_l3_exportGifDialog .
+  ex:g11_topicEict_fig_l3_exportGifDialog ex:previousFigure ex:g11_topicEict_fig_l3_exportImageDialog ; ex:nextFigure ex:g11_topicEict_fig_l3_animationPlayback .
+  ex:g11_topicEict_fig_l3_animationPlayback ex:previousFigure ex:g11_topicEict_fig_l3_exportGifDialog ; ex:nextFigure ex:g11_topicEict_fig_l3_mocChauFrames .
+  ex:g11_topicEict_fig_l3_mocChauFrames ex:previousFigure ex:g11_topicEict_fig_l3_animationPlayback ; ex:nextFigure ex:g11_topicEict_fig_l3_pendulumCycle .
+  ex:g11_topicEict_fig_l3_pendulumCycle ex:previousFigure ex:g11_topicEict_fig_l3_mocChauFrames ; ex:nextFigure ex:g11_topicEict_fig_l3_pendulumFrames .
+  ex:g11_topicEict_fig_l3_pendulumFrames ex:previousFigure ex:g11_topicEict_fig_l3_pendulumCycle ; ex:nextFigure ex:g11_topicEict_fig_l3_layersReordered .
+  ex:g11_topicEict_fig_l3_layersReordered ex:previousFigure ex:g11_topicEict_fig_l3_pendulumFrames ; ex:nextFigure ex:g11_topicEict_fig_l3_animationFrameStack .
+  ex:g11_topicEict_fig_l3_animationFrameStack ex:previousFigure ex:g11_topicEict_fig_l3_layersReordered ; ex:nextFigure ex:g11_topicEict_fig_l3_dollFrames .
+  ex:g11_topicEict_fig_l3_dollFrames ex:previousFigure ex:g11_topicEict_fig_l3_animationFrameStack ; ex:nextFigure ex:g11_topicEict_fig_l4_haGiangVideo .
+  ex:g11_topicEict_fig_l4_haGiangVideo ex:previousFigure ex:g11_topicEict_fig_l3_dollFrames ; ex:nextFigure ex:g11_topicEict_fig_l4_startInterface .
+  ex:g11_topicEict_fig_l4_startInterface ex:previousFigure ex:g11_topicEict_fig_l4_haGiangVideo ; ex:nextFigure ex:g11_topicEict_fig_l4_mainWorkspace .
+  ex:g11_topicEict_fig_l4_mainWorkspace ex:previousFigure ex:g11_topicEict_fig_l4_startInterface ; ex:nextFigure ex:g11_topicEict_fig_l4_importImages .
+  ex:g11_topicEict_fig_l4_importImages ex:previousFigure ex:g11_topicEict_fig_l4_mainWorkspace ; ex:nextFigure ex:g11_topicEict_fig_l4_timelineObjects .
+  ex:g11_topicEict_fig_l4_timelineObjects ex:previousFigure ex:g11_topicEict_fig_l4_importImages ; ex:nextFigure ex:g11_topicEict_fig_l4_sortedTimeline .
+  ex:g11_topicEict_fig_l4_sortedTimeline ex:previousFigure ex:g11_topicEict_fig_l4_timelineObjects ; ex:nextFigure ex:g11_topicEict_fig_l4_audioTimeline .
+  ex:g11_topicEict_fig_l4_audioTimeline ex:previousFigure ex:g11_topicEict_fig_l4_sortedTimeline ; ex:nextFigure ex:g11_topicEict_fig_l5_editImageTimeline .
+  ex:g11_topicEict_fig_l5_editImageTimeline ex:previousFigure ex:g11_topicEict_fig_l4_audioTimeline ; ex:nextFigure ex:g11_topicEict_fig_l5_imageEffects .
+  ex:g11_topicEict_fig_l5_imageEffects ex:previousFigure ex:g11_topicEict_fig_l5_editImageTimeline ; ex:nextFigure ex:g11_topicEict_fig_l5_audioEditor .
+  ex:g11_topicEict_fig_l5_audioEditor ex:previousFigure ex:g11_topicEict_fig_l5_imageEffects ; ex:nextFigure ex:g11_topicEict_fig_l5_transitionDialog .
+  ex:g11_topicEict_fig_l5_transitionDialog ex:previousFigure ex:g11_topicEict_fig_l5_audioEditor ; ex:nextFigure ex:g11_topicEict_fig_l5_textBox .
+  ex:g11_topicEict_fig_l5_textBox ex:previousFigure ex:g11_topicEict_fig_l5_transitionDialog ; ex:nextFigure ex:g11_topicEict_fig_l5_subtitleTimeline .
+  ex:g11_topicEict_fig_l5_subtitleTimeline ex:previousFigure ex:g11_topicEict_fig_l5_textBox ; ex:nextFigure ex:g11_topicEict_fig_l5_subtitleDialog .
+  ex:g11_topicEict_fig_l5_subtitleDialog ex:previousFigure ex:g11_topicEict_fig_l5_subtitleTimeline ; ex:nextFigure ex:g11_topicEict_fig_l6_openingScene1 .
+  ex:g11_topicEict_fig_l6_openingScene1 ex:previousFigure ex:g11_topicEict_fig_l5_subtitleDialog ; ex:nextFigure ex:g11_topicEict_fig_l6_openingScene2 .
+  ex:g11_topicEict_fig_l6_openingScene2 ex:previousFigure ex:g11_topicEict_fig_l6_openingScene1 ; ex:nextFigure ex:g11_topicEict_fig_l6_openingScene3 .
+  ex:g11_topicEict_fig_l6_openingScene3 ex:previousFigure ex:g11_topicEict_fig_l6_openingScene2 ; ex:nextFigure ex:g11_topicEict_fig_l6_openingScene4 .
+  ex:g11_topicEict_fig_l6_openingScene4 ex:previousFigure ex:g11_topicEict_fig_l6_openingScene3 ; ex:nextFigure ex:g11_topicEict_fig_l6_rolesLibrary .
+  ex:g11_topicEict_fig_l6_rolesLibrary ex:previousFigure ex:g11_topicEict_fig_l6_openingScene4 ; ex:nextFigure ex:g11_topicEict_fig_l6_roleEffects .
+  ex:g11_topicEict_fig_l6_roleEffects ex:previousFigure ex:g11_topicEict_fig_l6_rolesLibrary ; ex:nextFigure ex:g11_topicEict_fig_l6_objectEffects .
+  ex:g11_topicEict_fig_l6_objectEffects ex:previousFigure ex:g11_topicEict_fig_l6_roleEffects ; ex:nextFigure ex:g11_topicEict_fig_l6_recordDialog .
+  ex:g11_topicEict_fig_l6_recordDialog ex:previousFigure ex:g11_topicEict_fig_l6_objectEffects ; ex:nextFigure ex:g11_topicEict_fig_l7_fansipanOriginals .
+  ex:g11_topicEict_fig_l7_fansipanOriginals ex:previousFigure ex:g11_topicEict_fig_l6_recordDialog ; ex:nextFigure ex:g11_topicEict_fig_l7_fansipanEdited .
+  ex:g11_topicEict_fig_l7_fansipanEdited ex:previousFigure ex:g11_topicEict_fig_l7_fansipanOriginals ; ex:nextFigure ex:g11_topicEict_fig_l7_curvesSample .
+  ex:g11_topicEict_fig_l7_curvesSample ex:previousFigure ex:g11_topicEict_fig_l7_fansipanEdited ; ex:nextFigure ex:g11_topicEict_fig_l7_blendEffectDialog .
+  ex:g11_topicEict_fig_l7_blendEffectDialog ex:previousFigure ex:g11_topicEict_fig_l7_curvesSample ; ex:nextFigure ex:g11_topicEict_fig_l7_animationFrames .
+  ex:g11_topicEict_fig_l7_animationFrames ex:previousFigure ex:g11_topicEict_fig_l7_blendEffectDialog ; ex:nextFigure ex:g11_topicEict_fig_l7_dialogueBubble .
+  ex:g11_topicEict_fig_l7_dialogueBubble ex:previousFigure ex:g11_topicEict_fig_l7_animationFrames .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g11_topicEict_def_crop a ex:DefinitionText ;
+    rdfs:label "Định nghĩa cắt ảnh"@vi ;
+    ex:hasDefinitionText "Cắt ảnh là chọn, giữ lại một phần bức ảnh và loại bỏ phần còn lại."@vi ;
+    ex:appearsOnPage ex:g11_page090 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCatAnh .
+
+  ex:g11_topicEict_def_cloneSampleTarget a ex:DefinitionText ;
+    rdfs:label "Vùng mẫu và vùng đích của công cụ Clone"@vi ;
+    ex:hasDefinitionText "Công cụ Clone lấy mẫu của một vùng ảnh gọi là vùng mẫu để áp dụng vào vùng cần tẩy xoá trong ảnh gọi là vùng đích."@vi ;
+    ex:appearsOnPage ex:g11_page096 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:explainsConcept ex:g11_conceptCloneTool, ex:g11_conceptVungMau, ex:g11_conceptVungDich .
+
+  ex:g11_topicEict_def_animation a ex:DefinitionText ;
+    rdfs:label "Định nghĩa ảnh động"@vi ;
+    ex:hasDefinitionText "Ảnh động được tạo từ các ảnh tĩnh; các ảnh tĩnh này được gọi là các khung hình của ảnh động. Khi ảnh động được kích hoạt, các khung hình xuất hiện trong những khoảng thời gian xác định, làm cho nội dung bên trong ảnh thay đổi liên tục và tạo cảm giác đối tượng trong ảnh cử động hoặc chuyển động."@vi ;
+    ex:appearsOnPage ex:g11_page100 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:explainsConcept ex:g11_conceptAnhDong, ex:g11_conceptKhungHinhAnhDong .
+
+  ex:g11_topicEict_def_videoWorkflow a ex:DefinitionText ;
+    rdfs:label "Các bước làm video"@vi ;
+    ex:hasDefinitionText "Các bước làm video được hỗ trợ bởi phần mềm gồm gợi ý chủ đề và kịch bản video, chuẩn bị tư liệu, tạo dự án và đưa tư liệu vào dự án, chỉnh sửa video, lưu trữ và xuất video."@vi ;
+    ex:appearsOnPage ex:g11_page106 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:explainsConcept ex:g11_conceptLamVideo, ex:g11_conceptDuAnVideo .
+
+  ex:g11_topicEict_def_videoEditing a ex:DefinitionText ;
+    rdfs:label "Định nghĩa chỉnh sửa video"@vi ;
+    ex:hasDefinitionText "Việc điều chỉnh và sắp xếp lại các cảnh, các đối tượng trong video được gọi là biên tập hay chỉnh sửa video."@vi ;
+    ex:appearsOnPage ex:g11_page112 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:explainsConcept ex:g11_conceptChinhSuaVideo .
+
+  ex:g11_topicEict_def_animationMovie a ex:DefinitionText ;
+    rdfs:label "Khái niệm phim hoạt hình"@vi ;
+    ex:hasDefinitionText "Hoạt hình cho phép kể câu chuyện theo những cách độc đáo; câu chuyện được kể khác nhau thông qua các nhân vật, đối tượng, bối cảnh và hoạt động trong phim hoạt hình."@vi ;
+    ex:appearsOnPage ex:g11_page118 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:explainsConcept ex:g11_conceptPhimHoatHinh .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g11_topicEict_p089_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1 giới thiệu một số thao tác chỉnh sửa ảnh và hỗ trợ chỉnh sửa ảnh trong GIMP. Bài học đặt vấn đề về việc muốn nhìn bao quát toàn bộ ảnh, nhìn gần một chi tiết trong ảnh hoặc quan sát hai vùng ảnh được phóng to ở vị trí xa nhau."@vi ;
+    ex:appearsOnPage ex:g11_page089 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToSection ex:g11_topicEict_l1s1 .
+
+  ex:g11_topicEict_p089_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Quá trình quan sát, thiết kế và chỉnh sửa ảnh thường cần các thao tác hỗ trợ như thu nhỏ, phóng to và di chuyển ảnh. Ví dụ khi đổi màu quần của nhân vật trong ảnh, cần phóng to và di chuyển ảnh để quan sát rõ vùng chọn, sau đó thu nhỏ để nhìn toàn bộ vùng chọn."@vi ;
+    ex:appearsOnPage ex:g11_page089 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToSection ex:g11_topicEict_l1s1 .
+
+  ex:g11_topicEict_p090_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Có ba cách thu nhỏ, phóng to ảnh: giữ phím Ctrl rồi lăn nút cuộn chuột, gõ trực tiếp giá trị vào ô tỉ lệ thu phóng, hoặc dùng công cụ Zoom. Di chuyển ảnh có thể thực hiện bằng phím Space kết hợp chuột, thanh trượt dọc và ngang, hoặc công cụ Move khi muốn di chuyển ảnh nhưng giữ cố định khung ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page090 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToSection ex:g11_topicEict_l1s1 .
+
+  ex:g11_topicEict_p090_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Cắt ảnh là chọn và giữ lại một phần bức ảnh, loại bỏ phần còn lại. Trong GIMP, có thể dùng công cụ Crop để xác định vùng hình chữ nhật cần lấy, điều chỉnh kích thước vùng cắt rồi nhấn Enter để xoá phần bên ngoài vùng đã chọn."@vi ;
+    ex:appearsOnPage ex:g11_page090 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToSection ex:g11_topicEict_l1s2 .
+
+  ex:g11_topicEict_p091_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Các thao tác biến đổi ảnh thường phát sinh khi chỉnh sửa ảnh, đặc biệt khi cắt ảnh. Các công cụ biến đổi ảnh trong GIMP gồm Scale, Rotate, Flip và Perspective, dùng để thay đổi kích thước, xoay, lật hoặc biến đổi phối cảnh ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page091 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToSection ex:g11_topicEict_l1s3 .
+
+  ex:g11_topicEict_p092_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhiệm vụ thực hành yêu cầu hiệu chỉnh màu sắc cho ảnh, chẳng hạn dùng Free Select để chọn đối tượng cần chỉnh và dùng lệnh Colors\\Curves để điều chỉnh kênh màu. Ví dụ có thể đổi đôi giày của nhân vật sang màu vàng sẫm hơn bằng cách điều chỉnh các kênh Green, Blue và Red."@vi ;
+    ex:appearsOnPage ex:g11_page092 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToSection ex:g11_topicEict_l1s4 .
+
+  ex:g11_topicEict_p093_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhiệm vụ tiếp theo yêu cầu sửa ảnh bị nghiêng và lật đối xứng ảnh. Học sinh chọn công cụ Perspective, kéo thả các điểm mốc để chỉnh ảnh hết nghiêng, dùng Crop để cắt ảnh rồi dùng Flip để lật ảnh và thay đổi hướng nhìn."@vi ;
+    ex:appearsOnPage ex:g11_page093 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:belongsToSection ex:g11_topicEict_l1s4 .
+
+  ex:g11_topicEict_p094_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 2 giới thiệu việc tẩy xoá ảnh trong GIMP. Tẩy xoá ảnh là loại bỏ những chi tiết nào đó trong ảnh, đồng thời thay chúng bằng những chi tiết khác phù hợp sao cho ảnh không để lại dấu vết đã tẩy xoá."@vi ;
+    ex:appearsOnPage ex:g11_page094 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToSection ex:g11_topicEict_l2s1 .
+
+  ex:g11_topicEict_p094_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Để tẩy xoá và phục hồi ảnh trong GIMP có thể dùng các công cụ Clone, Perspective Clone và Healing. Với công cụ Clone, cần phóng to ảnh, chọn bút lông, chọn các tham số như Size, Hardness và Force, sau đó lấy mẫu rồi thực hiện tẩy xoá dựa trên mẫu."@vi ;
+    ex:appearsOnPage ex:g11_page094 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToSection ex:g11_topicEict_l2s1 .
+
+  ex:g11_topicEict_p095_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Khi dùng Clone, nhấn giữ Ctrl và nháy vào một điểm ảnh cần lấy mẫu để áp dụng vào vùng ảnh cần tẩy xoá. Sau đó nháy chuột hoặc kéo thả chuột lên các điểm ảnh cần tẩy xoá để điểm ảnh tại đó có màu sắc như điểm ảnh mẫu."@vi ;
+    ex:appearsOnPage ex:g11_page095 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToSection ex:g11_topicEict_l2s1 .
+
+  ex:g11_topicEict_p096_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Công cụ Healing có cách dùng tương tự Clone nhưng có tác dụng hoà trộn độ sáng và sắc thái của điểm ảnh giữa vùng mẫu và vùng đích, làm cho các điểm ảnh được chỉnh sửa tự nhiên hơn và giảm dấu vết tẩy xoá."@vi ;
+    ex:appearsOnPage ex:g11_page096 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToSection ex:g11_topicEict_l2s2 .
+
+  ex:g11_topicEict_p096_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Perspective Clone hoạt động như công cụ sao chép các đối tượng mẫu, nhưng đối tượng đích là kết quả của một phép biến đổi phối cảnh từ đối tượng mẫu. Công cụ này phù hợp khi cần sao chép đối tượng nhưng vẫn giữ phối cảnh của vùng ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page096 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToSection ex:g11_topicEict_l2s3 .
+
+  ex:g11_topicEict_p097_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Khi dùng Perspective Clone, trước hết chọn công cụ và chế độ Modify Perspective để xuất hiện khung phối cảnh, sau đó kéo thả các điểm điều khiển để xác định khung phối cảnh cho đối tượng mẫu."@vi ;
+    ex:appearsOnPage ex:g11_page097 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToSection ex:g11_topicEict_l2s3 .
+
+  ex:g11_topicEict_p098_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Sau khi xác định phối cảnh, chuyển sang chế độ Perspective Clone, nhấn Ctrl để lấy mẫu, nháy hoặc kéo thả chuột trên vùng đích để tạo đối tượng đích. Nếu đối tượng đích còn chi tiết thừa hoặc bất hợp lí, dùng Clone và Healing để loại bỏ các chi tiết này."@vi ;
+    ex:appearsOnPage ex:g11_page098 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToSection ex:g11_topicEict_l2s3 .
+
+  ex:g11_topicEict_p099_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài thực hành tẩy xoá ảnh yêu cầu dùng Perspective Clone để tạo trước kết quả quy hoạch một khu đất, chọn vùng mẫu ở vị trí đã có mặt cỏ, xác định khung phối cảnh và sao chép sang vùng cần quy hoạch, sau đó dùng Clone để tẩy xoá vết cắt và thay bằng tán lá cây phù hợp."@vi ;
+    ex:appearsOnPage ex:g11_page099 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:belongsToSection ex:g11_topicEict_l2s4 .
+
+  ex:g11_topicEict_p100_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 3 giới thiệu tạo ảnh động trong GIMP. Ảnh động được tạo từ các ảnh tĩnh, các ảnh tĩnh này gọi là các khung hình. Khi ảnh động được kích hoạt, các khung hình xuất hiện trong thời gian xác định, tạo cảm giác đối tượng cử động hoặc chuyển động."@vi ;
+    ex:appearsOnPage ex:g11_page100 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToSection ex:g11_topicEict_l3s1 .
+
+  ex:g11_topicEict_p101_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Thời gian xuất hiện của mỗi khung hình có thể được quy định trong tên lớp ảnh. Kịch bản hoạt động của đối tượng trong ảnh động thể hiện qua các khung hình; hai khung hình liên tiếp biểu thị sự thay đổi của đối tượng. Càng nhiều khung hình thì chuyển động càng mềm mại."@vi ;
+    ex:appearsOnPage ex:g11_page101 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToSection ex:g11_topicEict_l3s1 .
+
+  ex:g11_topicEict_p102_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để tạo ảnh động với hiệu ứng tự thiết kế trong GIMP, trước hết chuẩn bị các ảnh tĩnh cho ảnh động, có thể tự thiết kế hoặc sưu tầm. Ảnh có sẵn thường phải được chỉnh sửa lại như tách ảnh khỏi nền, cắt ảnh, biến đổi ảnh hoặc tẩy xoá các chi tiết thừa."@vi ;
+    ex:appearsOnPage ex:g11_page102 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToSection ex:g11_topicEict_l3s2 .
+
+  ex:g11_topicEict_p102_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Sau khi xây dựng kịch bản cho hiệu ứng, cần tạo các lớp ảnh tương ứng với từng khung hình. Có thể mở các ảnh tĩnh dưới dạng các lớp bằng lệnh File\\Open As Layers, kiểm tra kích thước lớp ảnh, rồi dùng File\\Export As để xuất ảnh động dạng GIF."@vi ;
+    ex:appearsOnPage ex:g11_page102 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToSection ex:g11_topicEict_l3s2 .
+
+  ex:g11_topicEict_p103_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Hộp thoại Export Image as GIF cho phép chọn As animation để xuất dãy khung hình ra tệp ảnh động. Trước khi xuất, có thể xem trước ảnh động bằng lệnh Filters\\Animation\\Playback và dùng các lệnh Step back, Step để xem ảnh động hoặc căn chỉnh thời gian."@vi ;
+    ex:appearsOnPage ex:g11_page103 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToSection ex:g11_topicEict_l3s2 .
+
+  ex:g11_topicEict_p103_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "GIMP cung cấp một số hiệu ứng có sẵn để tạo ảnh động trong nhóm lệnh Filters\\Animation, ví dụ hiệu ứng Blend. Có thể dùng Open As Layers để mở các ảnh tĩnh dưới dạng lớp ảnh, chọn hiệu ứng, tối ưu hoá ảnh động và xuất ra định dạng GIF."@vi ;
+    ex:appearsOnPage ex:g11_page103 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToSection ex:g11_topicEict_l3s3 .
+
+  ex:g11_topicEict_p104_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài thực hành tạo hiệu ứng cho ảnh động yêu cầu tạo ảnh động biểu thị dao động của con lắc đơn. Học sinh chuẩn bị các ảnh tĩnh cho các vị trí của con lắc, xây dựng dãy khung hình nửa chu kì và sắp xếp lớp ảnh để tạo chu kì đầy đủ."@vi ;
+    ex:appearsOnPage ex:g11_page104 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToSection ex:g11_topicEict_l3s4 .
+
+  ex:g11_topicEict_p105_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Khi hoàn thiện ảnh động, có thể nhân đôi lớp ảnh và sắp xếp lại các lớp để thể hiện nửa sau chu kì dao động. Bài vận dụng yêu cầu tạo ảnh động tự thiết kế, mô phỏng hoạt động của một đối tượng hoặc hiện tượng nào đó."@vi ;
+    ex:appearsOnPage ex:g11_page105 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:belongsToSection ex:g11_topicEict_l3s4 .
+
+  ex:g11_topicEict_p106_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 4 giới thiệu phần mềm làm video Animiz. Video có khả năng truyền tải thông điệp mạnh mẽ nhờ kết hợp âm thanh và hình ảnh. Việc làm video đơn giản có thể thực hiện bằng máy chụp ảnh kĩ thuật số và phần mềm làm video."@vi ;
+    ex:appearsOnPage ex:g11_page106 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToSection ex:g11_topicEict_l4s1 .
+
+  ex:g11_topicEict_p106_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Các bước làm video gồm gợi ý chủ đề và kịch bản, chuẩn bị tư liệu, tạo dự án và đưa tư liệu vào dự án, chỉnh sửa video, lưu trữ và xuất video với nhiều định dạng hoặc chia sẻ qua Internet."@vi ;
+    ex:appearsOnPage ex:g11_page106 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToSection ex:g11_topicEict_l4s1 .
+
+  ex:g11_topicEict_p107_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Animiz Animation Maker cung cấp các tính năng tạo đoạn video, chỉnh sửa video và tạo ảnh động; có nhiều mẫu đối tượng, nhân vật, hình ảnh và video. Giao diện bắt đầu gồm các mẫu video trực tuyến, bảng chọn và thanh công cụ."@vi ;
+    ex:appearsOnPage ex:g11_page107 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToSection ex:g11_topicEict_l4s2 .
+
+  ex:g11_topicEict_p108_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Giao diện chỉnh sửa video của Animiz gồm thanh bảng chọn, thanh công cụ điều hướng, thanh công cụ tiện ích, vùng thiết đặt cảnh, khung Canvas, thanh đối tượng và khung Timeline. Timeline biểu thị khung thời gian xuất hiện của các đối tượng trong video."@vi ;
+    ex:appearsOnPage ex:g11_page108 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToSection ex:g11_topicEict_l4s2 .
+
+  ex:g11_topicEict_p109_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài thực hành tạo video yêu cầu tạo video hướng dẫn thiết kế logo bằng GIMP, gồm khoảng 10 ảnh xuất hiện lần lượt và có nhạc nền. Các bước gồm xây dựng chủ đề, chuẩn bị ảnh và nhạc, tạo dự án mới, đặt thời lượng, nhập hình ảnh vào video."@vi ;
+    ex:appearsOnPage ex:g11_page109 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToSection ex:g11_topicEict_l4s3 .
+
+  ex:g11_topicEict_p110_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Các ảnh được nhập sẽ xuất hiện ở khung Timeline, mỗi ảnh trên một dòng và mặc định xuất hiện cùng khung thời gian. Muốn các đối tượng xuất hiện lần lượt thì cần thay đổi khung thời gian của mỗi đối tượng và có thể nhập âm thanh bằng nút Add Sound."@vi ;
+    ex:appearsOnPage ex:g11_page110 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToSection ex:g11_topicEict_l4s3 .
+
+  ex:g11_topicEict_p111_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để xem trước video có thể dùng Preview, Play the current scene hoặc Play the current scene from start. Dự án video được lưu với đuôi .am, còn xuất video dùng lệnh Publish và chọn định dạng mong muốn."@vi ;
+    ex:appearsOnPage ex:g11_page111 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:belongsToSection ex:g11_topicEict_l4s3 .
+
+  ex:g11_topicEict_p112_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 5 giới thiệu chỉnh sửa video trên Animiz. Chỉnh sửa video là điều chỉnh và sắp xếp lại các cảnh, các đối tượng trong video nhằm loại bỏ chi tiết kém chất lượng, chọn hình ảnh và âm thanh tốt nhất, tạo câu chuyện, tạo sự hấp dẫn và cảm xúc."@vi ;
+    ex:appearsOnPage ex:g11_page112 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToSection ex:g11_topicEict_l5s1 .
+
+  ex:g11_topicEict_p112_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Các thao tác chính sửa hình ảnh trong video gồm thêm ảnh, xoá ảnh, thay đổi thứ tự ảnh, thay đổi thời gian xuất hiện ảnh và thay đổi hiệu ứng của ảnh; các thao tác này chủ yếu thực hiện ở khung Timeline."@vi ;
+    ex:appearsOnPage ex:g11_page112 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToSection ex:g11_topicEict_l5s2 .
+
+  ex:g11_topicEict_p113_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Trong Timeline có thể thay đổi vị trí, thứ tự, khung thời gian và hiệu ứng cho ảnh. Muốn thay đổi hiệu ứng, nháy chuột phải chọn Replace animation; muốn thêm hiệu ứng xuất hiện chọn nút thêm hiệu ứng và chọn hiệu ứng phù hợp."@vi ;
+    ex:appearsOnPage ex:g11_page113 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToSection ex:g11_topicEict_l5s2 .
+
+  ex:g11_topicEict_p114_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để biên tập âm thanh, nháy đúp vào tệp âm thanh để mở cửa sổ Audio editor. Có thể chia tệp âm thanh, cắt bỏ một phần tệp âm thanh hoặc ghép các đoạn âm thanh bằng cách kéo thả các đoạn để chúng được xếp liền nhau."@vi ;
+    ex:appearsOnPage ex:g11_page114 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToSection ex:g11_topicEict_l5s3 .
+
+  ex:g11_topicEict_p115_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Khi tạo dự án trong Animiz, mỗi cảnh được tạo và các đối tượng nhập sẽ cùng xuất hiện trong cảnh. Muốn thêm cảnh mới chọn New Scene. Có thể thêm hiệu ứng chuyển cảnh giữa hai cảnh bằng Add Transition, chọn hiệu ứng và thời lượng ở Duration."@vi ;
+    ex:appearsOnPage ex:g11_page115 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToSection ex:g11_topicEict_l5s4 .
+
+  ex:g11_topicEict_p115_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Văn bản cũng là đối tượng đưa vào video, dùng làm tiêu đề, giới thiệu mở đầu hoặc kết thúc, phụ đề hoặc đoạn dẫn chuyển tiếp. Có thể chọn Text, Add text, nhập nội dung và định dạng văn bản trên khung soạn thảo."@vi ;
+    ex:appearsOnPage ex:g11_page115 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToSection ex:g11_topicEict_l5s5 .
+
+  ex:g11_topicEict_p116_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phụ đề có thể tạo bằng đối tượng Subtitle trên khung Timeline. Trong cửa sổ nhập phụ đề có thể nhập nội dung, chọn phông chữ, cỡ chữ, màu chữ, hiệu ứng xuất hiện và hiệu ứng biến mất rồi lưu lại."@vi ;
+    ex:appearsOnPage ex:g11_page116 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToSection ex:g11_topicEict_l5s5 .
+
+  ex:g11_topicEict_p117_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài thực hành chỉnh sửa video yêu cầu điều chỉnh khung thời gian để mỗi ảnh xuất hiện trong khoảng 20 giây, thời gian nhạc khớp với thời gian ảnh, tạo hiệu ứng cho các ảnh và tạo phụ đề giới thiệu bước thực hiện trong bức ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page117 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:belongsToSection ex:g11_topicEict_l5s6 .
+
+  ex:g11_topicEict_p118_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 6 giới thiệu làm phim hoạt hình trên Animiz. Hoạt hình cho phép kể câu chuyện theo cách độc đáo; câu chuyện được thể hiện qua nhân vật, đối tượng, bối cảnh và hoạt động. Animiz là phần mềm làm phim hoạt hình 2D, hỗ trợ tạo dự án phim và cảnh phim."@vi ;
+    ex:appearsOnPage ex:g11_page118 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToSection ex:g11_topicEict_l6s1 .
+
+  ex:g11_topicEict_p119_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài thực hành tạo phim hoạt hình yêu cầu dùng Animiz tạo đoạn phim hoạt hình kể về buổi lễ khai giảng. Kịch bản gồm bốn phân cảnh: học sinh và giáo viên chào đón năm học mới, phát biểu khai mạc, chương trình văn nghệ chào mừng và kết thúc lễ khai giảng."@vi ;
+    ex:appearsOnPage ex:g11_page119 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToSection ex:g11_topicEict_l6s2 .
+
+  ex:g11_topicEict_p120_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phim hoạt hình có thể chia thành hai cảnh; cảnh 1 gồm phân cảnh 1 và 2, cảnh 2 gồm phân cảnh 3 và 4. Khi tạo dự án phim hoạt hình, cần tạo cảnh, đặt thời gian, tạo hình nền, tạo văn bản, tạo nhân vật và điều chỉnh vị trí, kích thước của đối tượng."@vi ;
+    ex:appearsOnPage ex:g11_page120 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToSection ex:g11_topicEict_l6s2 .
+
+  ex:g11_topicEict_p121_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Khi xây dựng cảnh, cần căn chỉnh thời gian xuất hiện của các nhân vật và đối tượng ở khung Timeline, thêm hiệu ứng và tạo hành động cho nhân vật. Animiz hỗ trợ đối tượng Roles với nhiều hiệu ứng hành động như nói, cười, lắc đầu."@vi ;
+    ex:appearsOnPage ex:g11_page121 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToSection ex:g11_topicEict_l6s2 .
+
+  ex:g11_topicEict_p122_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Animiz cung cấp hiệu ứng di chuyển cho đối tượng bằng cách chọn Add emphasis effect, chọn Move, chọn đường di chuyển rồi xác định vị trí xuất phát và vị trí đích trên khung Canvas. Có thể thêm hội thoại cho nhân vật bằng cách ghi âm trực tiếp."@vi ;
+    ex:appearsOnPage ex:g11_page122 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToSection ex:g11_topicEict_l6s2 .
+
+  ex:g11_topicEict_p123_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Sau khi thêm hội thoại và phụ đề, cần lưu và xuất bản dự án phim hoạt hình. Có thể xuất bản lên đám mây, xuất video lưu trên máy tính hoặc lưu dự án phim hoạt hình với định dạng ảnh động GIF."@vi ;
+    ex:appearsOnPage ex:g11_page123 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:belongsToSection ex:g11_topicEict_l6s2 .
+
+  ex:g11_topicEict_p124_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 7 là thực hành tổng hợp. Nhiệm vụ 1 yêu cầu chọn ảnh theo một chủ đề, ví dụ các ảnh chụp từ cáp treo lên đỉnh Phan Xi Păng, hiệu chỉnh màu sắc để đồng bộ và tẩy xoá chi tiết không mong đợi như dây cáp treo."@vi ;
+    ex:appearsOnPage ex:g11_page124 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToSection ex:g11_topicEict_l7s1 .
+
+  ex:g11_topicEict_p125_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Từ các ảnh đã chỉnh sửa, có thể tạo ảnh động với hiệu ứng mờ dần bằng cách tạo tệp ảnh mới, mở các tệp ảnh dưới dạng lớp ảnh, dùng Filters\\Animation và chọn Blend. Sau đó dùng Optimize for GIF để tạo dãy khung hình gắn thời gian và xuất ảnh động dạng GIF."@vi ;
+    ex:appearsOnPage ex:g11_page125 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToSection ex:g11_topicEict_l7s1 .
+
+  ex:g11_topicEict_p126_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu tạo một đoạn phim hoạt hình khoảng 3 phút kể về chuyến tham quan dã ngoại ấn tượng. Phim gồm ba cảnh, có chuyển cảnh, nhạc nền, tiêu đề, phần mở đầu và kết thúc; cảnh báo cáo có cả hội thoại âm thanh và văn bản."@vi ;
+    ex:appearsOnPage ex:g11_page126 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:belongsToSection ex:g11_topicEict_l7s2 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g11_page089 ex:hasParagraph ex:g11_topicEict_p089_01, ex:g11_topicEict_p089_02 .
+  ex:g11_page090 ex:hasParagraph ex:g11_topicEict_p090_01, ex:g11_topicEict_p090_02 .
+  ex:g11_page091 ex:hasParagraph ex:g11_topicEict_p091_01 .
+  ex:g11_page092 ex:hasParagraph ex:g11_topicEict_p092_01 .
+  ex:g11_page093 ex:hasParagraph ex:g11_topicEict_p093_01 .
+  ex:g11_page094 ex:hasParagraph ex:g11_topicEict_p094_01, ex:g11_topicEict_p094_02 .
+  ex:g11_page095 ex:hasParagraph ex:g11_topicEict_p095_01 .
+  ex:g11_page096 ex:hasParagraph ex:g11_topicEict_p096_01, ex:g11_topicEict_p096_02 .
+  ex:g11_page097 ex:hasParagraph ex:g11_topicEict_p097_01 .
+  ex:g11_page098 ex:hasParagraph ex:g11_topicEict_p098_01 .
+  ex:g11_page099 ex:hasParagraph ex:g11_topicEict_p099_01 .
+  ex:g11_page100 ex:hasParagraph ex:g11_topicEict_p100_01 .
+  ex:g11_page101 ex:hasParagraph ex:g11_topicEict_p101_01 .
+  ex:g11_page102 ex:hasParagraph ex:g11_topicEict_p102_01, ex:g11_topicEict_p102_02 .
+  ex:g11_page103 ex:hasParagraph ex:g11_topicEict_p103_01, ex:g11_topicEict_p103_02 .
+  ex:g11_page104 ex:hasParagraph ex:g11_topicEict_p104_01 .
+  ex:g11_page105 ex:hasParagraph ex:g11_topicEict_p105_01 .
+  ex:g11_page106 ex:hasParagraph ex:g11_topicEict_p106_01, ex:g11_topicEict_p106_02 .
+  ex:g11_page107 ex:hasParagraph ex:g11_topicEict_p107_01 .
+  ex:g11_page108 ex:hasParagraph ex:g11_topicEict_p108_01 .
+  ex:g11_page109 ex:hasParagraph ex:g11_topicEict_p109_01 .
+  ex:g11_page110 ex:hasParagraph ex:g11_topicEict_p110_01 .
+  ex:g11_page111 ex:hasParagraph ex:g11_topicEict_p111_01 .
+  ex:g11_page112 ex:hasParagraph ex:g11_topicEict_p112_01, ex:g11_topicEict_p112_02 .
+  ex:g11_page113 ex:hasParagraph ex:g11_topicEict_p113_01 .
+  ex:g11_page114 ex:hasParagraph ex:g11_topicEict_p114_01 .
+  ex:g11_page115 ex:hasParagraph ex:g11_topicEict_p115_01, ex:g11_topicEict_p115_02 .
+  ex:g11_page116 ex:hasParagraph ex:g11_topicEict_p116_01 .
+  ex:g11_page117 ex:hasParagraph ex:g11_topicEict_p117_01 .
+  ex:g11_page118 ex:hasParagraph ex:g11_topicEict_p118_01 .
+  ex:g11_page119 ex:hasParagraph ex:g11_topicEict_p119_01 .
+  ex:g11_page120 ex:hasParagraph ex:g11_topicEict_p120_01 .
+  ex:g11_page121 ex:hasParagraph ex:g11_topicEict_p121_01 .
+  ex:g11_page122 ex:hasParagraph ex:g11_topicEict_p122_01 .
+  ex:g11_page123 ex:hasParagraph ex:g11_topicEict_p123_01 .
+  ex:g11_page124 ex:hasParagraph ex:g11_topicEict_p124_01 .
+  ex:g11_page125 ex:hasParagraph ex:g11_topicEict_p125_01 .
+  ex:g11_page126 ex:hasParagraph ex:g11_topicEict_p126_01 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g11_topicEict_l1s1 ex:hasParagraph ex:g11_topicEict_p089_01, ex:g11_topicEict_p089_02, ex:g11_topicEict_p090_01 .
+  ex:g11_topicEict_l1s2 ex:hasParagraph ex:g11_topicEict_p090_02 .
+  ex:g11_topicEict_l1s3 ex:hasParagraph ex:g11_topicEict_p091_01 .
+  ex:g11_topicEict_l1s4 ex:hasParagraph ex:g11_topicEict_p092_01, ex:g11_topicEict_p093_01 .
+
+  ex:g11_topicEict_l2s1 ex:hasParagraph ex:g11_topicEict_p094_01, ex:g11_topicEict_p094_02, ex:g11_topicEict_p095_01 .
+  ex:g11_topicEict_l2s2 ex:hasParagraph ex:g11_topicEict_p096_01 .
+  ex:g11_topicEict_l2s3 ex:hasParagraph ex:g11_topicEict_p096_02, ex:g11_topicEict_p097_01, ex:g11_topicEict_p098_01 .
+  ex:g11_topicEict_l2s4 ex:hasParagraph ex:g11_topicEict_p099_01 .
+
+  ex:g11_topicEict_l3s1 ex:hasParagraph ex:g11_topicEict_p100_01, ex:g11_topicEict_p101_01 .
+  ex:g11_topicEict_l3s2 ex:hasParagraph ex:g11_topicEict_p102_01, ex:g11_topicEict_p102_02, ex:g11_topicEict_p103_01 .
+  ex:g11_topicEict_l3s3 ex:hasParagraph ex:g11_topicEict_p103_02 .
+  ex:g11_topicEict_l3s4 ex:hasParagraph ex:g11_topicEict_p104_01, ex:g11_topicEict_p105_01 .
+
+  ex:g11_topicEict_l4s1 ex:hasParagraph ex:g11_topicEict_p106_01, ex:g11_topicEict_p106_02 .
+  ex:g11_topicEict_l4s2 ex:hasParagraph ex:g11_topicEict_p107_01, ex:g11_topicEict_p108_01 .
+  ex:g11_topicEict_l4s3 ex:hasParagraph ex:g11_topicEict_p109_01, ex:g11_topicEict_p110_01, ex:g11_topicEict_p111_01 .
+
+  ex:g11_topicEict_l5s1 ex:hasParagraph ex:g11_topicEict_p112_01 .
+  ex:g11_topicEict_l5s2 ex:hasParagraph ex:g11_topicEict_p112_02, ex:g11_topicEict_p113_01 .
+  ex:g11_topicEict_l5s3 ex:hasParagraph ex:g11_topicEict_p114_01 .
+  ex:g11_topicEict_l5s4 ex:hasParagraph ex:g11_topicEict_p115_01 .
+  ex:g11_topicEict_l5s5 ex:hasParagraph ex:g11_topicEict_p115_02, ex:g11_topicEict_p116_01 .
+  ex:g11_topicEict_l5s6 ex:hasParagraph ex:g11_topicEict_p117_01 .
+
+  ex:g11_topicEict_l6s1 ex:hasParagraph ex:g11_topicEict_p118_01 .
+  ex:g11_topicEict_l6s2 ex:hasParagraph ex:g11_topicEict_p119_01, ex:g11_topicEict_p120_01,
+    ex:g11_topicEict_p121_01, ex:g11_topicEict_p122_01, ex:g11_topicEict_p123_01 .
+
+  ex:g11_topicEict_l7s1 ex:hasParagraph ex:g11_topicEict_p124_01, ex:g11_topicEict_p125_01 .
+  ex:g11_topicEict_l7s2 ex:hasParagraph ex:g11_topicEict_p126_01 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g11_topicEict_p089_01 ex:nextParagraph ex:g11_topicEict_p089_02 .
+  ex:g11_topicEict_p089_02 ex:previousParagraph ex:g11_topicEict_p089_01 ; ex:nextParagraph ex:g11_topicEict_p090_01 .
+  ex:g11_topicEict_p090_01 ex:previousParagraph ex:g11_topicEict_p089_02 ; ex:nextParagraph ex:g11_topicEict_p090_02 .
+  ex:g11_topicEict_p090_02 ex:previousParagraph ex:g11_topicEict_p090_01 ; ex:nextParagraph ex:g11_topicEict_p091_01 .
+  ex:g11_topicEict_p091_01 ex:previousParagraph ex:g11_topicEict_p090_02 ; ex:nextParagraph ex:g11_topicEict_p092_01 .
+  ex:g11_topicEict_p092_01 ex:previousParagraph ex:g11_topicEict_p091_01 ; ex:nextParagraph ex:g11_topicEict_p093_01 .
+  ex:g11_topicEict_p093_01 ex:previousParagraph ex:g11_topicEict_p092_01 ; ex:nextParagraph ex:g11_topicEict_p094_01 .
+  ex:g11_topicEict_p094_01 ex:previousParagraph ex:g11_topicEict_p093_01 ; ex:nextParagraph ex:g11_topicEict_p094_02 .
+  ex:g11_topicEict_p094_02 ex:previousParagraph ex:g11_topicEict_p094_01 ; ex:nextParagraph ex:g11_topicEict_p095_01 .
+  ex:g11_topicEict_p095_01 ex:previousParagraph ex:g11_topicEict_p094_02 ; ex:nextParagraph ex:g11_topicEict_p096_01 .
+  ex:g11_topicEict_p096_01 ex:previousParagraph ex:g11_topicEict_p095_01 ; ex:nextParagraph ex:g11_topicEict_p096_02 .
+  ex:g11_topicEict_p096_02 ex:previousParagraph ex:g11_topicEict_p096_01 ; ex:nextParagraph ex:g11_topicEict_p097_01 .
+  ex:g11_topicEict_p097_01 ex:previousParagraph ex:g11_topicEict_p096_02 ; ex:nextParagraph ex:g11_topicEict_p098_01 .
+  ex:g11_topicEict_p098_01 ex:previousParagraph ex:g11_topicEict_p097_01 ; ex:nextParagraph ex:g11_topicEict_p099_01 .
+  ex:g11_topicEict_p099_01 ex:previousParagraph ex:g11_topicEict_p098_01 ; ex:nextParagraph ex:g11_topicEict_p100_01 .
+  ex:g11_topicEict_p100_01 ex:previousParagraph ex:g11_topicEict_p099_01 ; ex:nextParagraph ex:g11_topicEict_p101_01 .
+  ex:g11_topicEict_p101_01 ex:previousParagraph ex:g11_topicEict_p100_01 ; ex:nextParagraph ex:g11_topicEict_p102_01 .
+  ex:g11_topicEict_p102_01 ex:previousParagraph ex:g11_topicEict_p101_01 ; ex:nextParagraph ex:g11_topicEict_p102_02 .
+  ex:g11_topicEict_p102_02 ex:previousParagraph ex:g11_topicEict_p102_01 ; ex:nextParagraph ex:g11_topicEict_p103_01 .
+  ex:g11_topicEict_p103_01 ex:previousParagraph ex:g11_topicEict_p102_02 ; ex:nextParagraph ex:g11_topicEict_p103_02 .
+  ex:g11_topicEict_p103_02 ex:previousParagraph ex:g11_topicEict_p103_01 ; ex:nextParagraph ex:g11_topicEict_p104_01 .
+  ex:g11_topicEict_p104_01 ex:previousParagraph ex:g11_topicEict_p103_02 ; ex:nextParagraph ex:g11_topicEict_p105_01 .
+  ex:g11_topicEict_p105_01 ex:previousParagraph ex:g11_topicEict_p104_01 ; ex:nextParagraph ex:g11_topicEict_p106_01 .
+  ex:g11_topicEict_p106_01 ex:previousParagraph ex:g11_topicEict_p105_01 ; ex:nextParagraph ex:g11_topicEict_p106_02 .
+  ex:g11_topicEict_p106_02 ex:previousParagraph ex:g11_topicEict_p106_01 ; ex:nextParagraph ex:g11_topicEict_p107_01 .
+  ex:g11_topicEict_p107_01 ex:previousParagraph ex:g11_topicEict_p106_02 ; ex:nextParagraph ex:g11_topicEict_p108_01 .
+  ex:g11_topicEict_p108_01 ex:previousParagraph ex:g11_topicEict_p107_01 ; ex:nextParagraph ex:g11_topicEict_p109_01 .
+  ex:g11_topicEict_p109_01 ex:previousParagraph ex:g11_topicEict_p108_01 ; ex:nextParagraph ex:g11_topicEict_p110_01 .
+  ex:g11_topicEict_p110_01 ex:previousParagraph ex:g11_topicEict_p109_01 ; ex:nextParagraph ex:g11_topicEict_p111_01 .
+  ex:g11_topicEict_p111_01 ex:previousParagraph ex:g11_topicEict_p110_01 ; ex:nextParagraph ex:g11_topicEict_p112_01 .
+  ex:g11_topicEict_p112_01 ex:previousParagraph ex:g11_topicEict_p111_01 ; ex:nextParagraph ex:g11_topicEict_p112_02 .
+  ex:g11_topicEict_p112_02 ex:previousParagraph ex:g11_topicEict_p112_01 ; ex:nextParagraph ex:g11_topicEict_p113_01 .
+  ex:g11_topicEict_p113_01 ex:previousParagraph ex:g11_topicEict_p112_02 ; ex:nextParagraph ex:g11_topicEict_p114_01 .
+  ex:g11_topicEict_p114_01 ex:previousParagraph ex:g11_topicEict_p113_01 ; ex:nextParagraph ex:g11_topicEict_p115_01 .
+  ex:g11_topicEict_p115_01 ex:previousParagraph ex:g11_topicEict_p114_01 ; ex:nextParagraph ex:g11_topicEict_p115_02 .
+  ex:g11_topicEict_p115_02 ex:previousParagraph ex:g11_topicEict_p115_01 ; ex:nextParagraph ex:g11_topicEict_p116_01 .
+  ex:g11_topicEict_p116_01 ex:previousParagraph ex:g11_topicEict_p115_02 ; ex:nextParagraph ex:g11_topicEict_p117_01 .
+  ex:g11_topicEict_p117_01 ex:previousParagraph ex:g11_topicEict_p116_01 ; ex:nextParagraph ex:g11_topicEict_p118_01 .
+  ex:g11_topicEict_p118_01 ex:previousParagraph ex:g11_topicEict_p117_01 ; ex:nextParagraph ex:g11_topicEict_p119_01 .
+  ex:g11_topicEict_p119_01 ex:previousParagraph ex:g11_topicEict_p118_01 ; ex:nextParagraph ex:g11_topicEict_p120_01 .
+  ex:g11_topicEict_p120_01 ex:previousParagraph ex:g11_topicEict_p119_01 ; ex:nextParagraph ex:g11_topicEict_p121_01 .
+  ex:g11_topicEict_p121_01 ex:previousParagraph ex:g11_topicEict_p120_01 ; ex:nextParagraph ex:g11_topicEict_p122_01 .
+  ex:g11_topicEict_p122_01 ex:previousParagraph ex:g11_topicEict_p121_01 ; ex:nextParagraph ex:g11_topicEict_p123_01 .
+  ex:g11_topicEict_p123_01 ex:previousParagraph ex:g11_topicEict_p122_01 ; ex:nextParagraph ex:g11_topicEict_p124_01 .
+  ex:g11_topicEict_p124_01 ex:previousParagraph ex:g11_topicEict_p123_01 ; ex:nextParagraph ex:g11_topicEict_p125_01 .
+  ex:g11_topicEict_p125_01 ex:previousParagraph ex:g11_topicEict_p124_01 ; ex:nextParagraph ex:g11_topicEict_p126_01 .
+  ex:g11_topicEict_p126_01 ex:previousParagraph ex:g11_topicEict_p125_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g11_topicEict_p089_01 ex:mentionsConcept ex:g11_conceptGIMP, ex:g11_conceptChinhSuaAnh .
+  ex:g11_topicEict_p089_02 ex:mentionsConcept ex:g11_conceptThuNhoPhongToAnh, ex:g11_conceptDiChuyenAnh, ex:g11_conceptFreeSelectTool .
+  ex:g11_topicEict_p090_01 ex:mentionsConcept ex:g11_conceptThuNhoPhongToAnh, ex:g11_conceptZoomTool, ex:g11_conceptMoveTool, ex:g11_conceptDiChuyenAnh .
+  ex:g11_topicEict_p090_02 ex:mentionsConcept ex:g11_conceptCatAnh, ex:g11_conceptCropTool .
+  ex:g11_topicEict_p091_01 ex:mentionsConcept ex:g11_conceptBienDoiAnh, ex:g11_conceptScaleTool, ex:g11_conceptRotateTool, ex:g11_conceptFlipTool, ex:g11_conceptPerspectiveTool .
+  ex:g11_topicEict_p092_01 ex:mentionsConcept ex:g11_conceptHieuChinhMauSacAnh, ex:g11_conceptFreeSelectTool, ex:g11_conceptCurvesCommand .
+  ex:g11_topicEict_p093_01 ex:mentionsConcept ex:g11_conceptPerspectiveTool, ex:g11_conceptCropTool, ex:g11_conceptFlipTool .
+
+  ex:g11_topicEict_p094_01 ex:mentionsConcept ex:g11_conceptTayXoaAnh .
+  ex:g11_topicEict_p094_02 ex:mentionsConcept ex:g11_conceptCloneTool, ex:g11_conceptHealingTool, ex:g11_conceptPerspectiveCloneTool .
+  ex:g11_topicEict_p095_01 ex:mentionsConcept ex:g11_conceptCloneTool, ex:g11_conceptVungMau, ex:g11_conceptVungDich .
+  ex:g11_topicEict_p096_01 ex:mentionsConcept ex:g11_conceptHealingTool, ex:g11_conceptCloneTool, ex:g11_conceptVungMau, ex:g11_conceptVungDich .
+  ex:g11_topicEict_p096_02 ex:mentionsConcept ex:g11_conceptPerspectiveCloneTool, ex:g11_conceptPhepBienDoiPhoiCanh .
+  ex:g11_topicEict_p097_01 ex:mentionsConcept ex:g11_conceptPerspectiveCloneTool, ex:g11_conceptPhepBienDoiPhoiCanh .
+  ex:g11_topicEict_p098_01 ex:mentionsConcept ex:g11_conceptPerspectiveCloneTool, ex:g11_conceptCloneTool, ex:g11_conceptHealingTool .
+  ex:g11_topicEict_p099_01 ex:mentionsConcept ex:g11_conceptPerspectiveCloneTool, ex:g11_conceptTayXoaAnh .
+
+  ex:g11_topicEict_p100_01 ex:mentionsConcept ex:g11_conceptAnhDong, ex:g11_conceptKhungHinhAnhDong .
+  ex:g11_topicEict_p101_01 ex:mentionsConcept ex:g11_conceptKhungHinhAnhDong, ex:g11_conceptKichBanAnhDong, ex:g11_conceptHieuUngAnhDong .
+  ex:g11_topicEict_p102_01 ex:mentionsConcept ex:g11_conceptAnhDong, ex:g11_conceptChinhSuaAnh, ex:g11_conceptCatAnh, ex:g11_conceptTayXoaAnh .
+  ex:g11_topicEict_p102_02 ex:mentionsConcept ex:g11_conceptKichBanAnhDong, ex:g11_conceptKhungHinhAnhDong, ex:g11_conceptExportAsGif .
+  ex:g11_topicEict_p103_01 ex:mentionsConcept ex:g11_conceptExportAsGif, ex:g11_conceptAnimationPlayback, ex:g11_conceptAnhDong .
+  ex:g11_topicEict_p103_02 ex:mentionsConcept ex:g11_conceptBlendEffect, ex:g11_conceptAnhDong .
+  ex:g11_topicEict_p104_01 ex:mentionsConcept ex:g11_conceptKichBanAnhDong, ex:g11_conceptKhungHinhAnhDong .
+  ex:g11_topicEict_p105_01 ex:mentionsConcept ex:g11_conceptAnhDong, ex:g11_conceptKhungHinhAnhDong, ex:g11_conceptHieuUngAnhDong .
+
+  ex:g11_topicEict_p106_01 ex:mentionsConcept ex:g11_conceptLamVideo .
+  ex:g11_topicEict_p106_02 ex:mentionsConcept ex:g11_conceptKichBanVideo, ex:g11_conceptTuLieuVideo, ex:g11_conceptDuAnVideo, ex:g11_conceptChinhSuaVideo, ex:g11_conceptXuatBanVideo .
+  ex:g11_topicEict_p107_01 ex:mentionsConcept ex:g11_conceptAnimiz, ex:g11_conceptGiaoDienAnimiz, ex:g11_conceptLamVideo .
+  ex:g11_topicEict_p108_01 ex:mentionsConcept ex:g11_conceptAnimiz, ex:g11_conceptCanvas, ex:g11_conceptTimeline, ex:g11_conceptDoiTuongVideo .
+  ex:g11_topicEict_p109_01 ex:mentionsConcept ex:g11_conceptDuAnVideo, ex:g11_conceptTuLieuVideo, ex:g11_conceptLamVideo .
+  ex:g11_topicEict_p110_01 ex:mentionsConcept ex:g11_conceptTimeline, ex:g11_conceptDoiTuongVideo, ex:g11_conceptChinhSuaAmThanh .
+  ex:g11_topicEict_p111_01 ex:mentionsConcept ex:g11_conceptXuatBanVideo, ex:g11_conceptDuAnVideo .
+
+  ex:g11_topicEict_p112_01 ex:mentionsConcept ex:g11_conceptChinhSuaVideo .
+  ex:g11_topicEict_p112_02 ex:mentionsConcept ex:g11_conceptChinhSuaVideo, ex:g11_conceptTimeline .
+  ex:g11_topicEict_p113_01 ex:mentionsConcept ex:g11_conceptHieuUngXuatHien, ex:g11_conceptHieuUngBienMat, ex:g11_conceptTimeline .
+  ex:g11_topicEict_p114_01 ex:mentionsConcept ex:g11_conceptChinhSuaAmThanh .
+  ex:g11_topicEict_p115_01 ex:mentionsConcept ex:g11_conceptScene, ex:g11_conceptHieuUngChuyenCanh .
+  ex:g11_topicEict_p115_02 ex:mentionsConcept ex:g11_conceptTieuDeVideo, ex:g11_conceptPhuDeVideo .
+  ex:g11_topicEict_p116_01 ex:mentionsConcept ex:g11_conceptPhuDeVideo, ex:g11_conceptTimeline, ex:g11_conceptHieuUngXuatHien, ex:g11_conceptHieuUngBienMat .
+  ex:g11_topicEict_p117_01 ex:mentionsConcept ex:g11_conceptChinhSuaVideo, ex:g11_conceptChinhSuaAmThanh, ex:g11_conceptPhuDeVideo .
+
+  ex:g11_topicEict_p118_01 ex:mentionsConcept ex:g11_conceptPhimHoatHinh, ex:g11_conceptPhimHoatHinh2D, ex:g11_conceptAnimiz .
+  ex:g11_topicEict_p119_01 ex:mentionsConcept ex:g11_conceptPhimHoatHinh, ex:g11_conceptKichBanVideo, ex:g11_conceptScene .
+  ex:g11_topicEict_p120_01 ex:mentionsConcept ex:g11_conceptScene, ex:g11_conceptDoiTuongVideo, ex:g11_conceptTimeline .
+  ex:g11_topicEict_p121_01 ex:mentionsConcept ex:g11_conceptAnimizRoles, ex:g11_conceptHieuUngXuatHien, ex:g11_conceptDoiTuongVideo .
+  ex:g11_topicEict_p122_01 ex:mentionsConcept ex:g11_conceptDoiTuongVideo, ex:g11_conceptHoiThoaiHoatHinh, ex:g11_conceptChinhSuaAmThanh .
+  ex:g11_topicEict_p123_01 ex:mentionsConcept ex:g11_conceptXuatBanVideo, ex:g11_conceptPhimHoatHinh, ex:g11_conceptExportAsGif .
+
+  ex:g11_topicEict_p124_01 ex:mentionsConcept ex:g11_conceptChinhSuaAnh, ex:g11_conceptHieuChinhMauSacAnh, ex:g11_conceptTayXoaAnh .
+  ex:g11_topicEict_p125_01 ex:mentionsConcept ex:g11_conceptAnhDong, ex:g11_conceptBlendEffect, ex:g11_conceptExportAsGif .
+  ex:g11_topicEict_p126_01 ex:mentionsConcept ex:g11_conceptPhimHoatHinh, ex:g11_conceptScene, ex:g11_conceptHieuUngChuyenCanh, ex:g11_conceptHoiThoaiHoatHinh .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g11_conceptChinhSuaAnh ex:partOf ex:g11_conceptUngDungTinHoc .
+  ex:g11_conceptGIMP ex:relatedTo ex:g11_conceptChinhSuaAnh .
+  ex:g11_conceptThuNhoPhongToAnh ex:subConceptOf ex:g11_conceptChinhSuaAnh .
+  ex:g11_conceptDiChuyenAnh ex:subConceptOf ex:g11_conceptChinhSuaAnh .
+  ex:g11_conceptZoomTool ex:relatedTo ex:g11_conceptThuNhoPhongToAnh .
+  ex:g11_conceptMoveTool ex:relatedTo ex:g11_conceptDiChuyenAnh .
+  ex:g11_conceptCropTool ex:relatedTo ex:g11_conceptCatAnh .
+  ex:g11_conceptCatAnh ex:subConceptOf ex:g11_conceptChinhSuaAnh .
+  ex:g11_conceptBienDoiAnh ex:subConceptOf ex:g11_conceptChinhSuaAnh .
+  ex:g11_conceptScaleTool ex:subConceptOf ex:g11_conceptBienDoiAnh .
+  ex:g11_conceptRotateTool ex:subConceptOf ex:g11_conceptBienDoiAnh .
+  ex:g11_conceptFlipTool ex:subConceptOf ex:g11_conceptBienDoiAnh .
+  ex:g11_conceptPerspectiveTool ex:subConceptOf ex:g11_conceptBienDoiAnh .
+  ex:g11_conceptFreeSelectTool ex:relatedTo ex:g11_conceptHieuChinhMauSacAnh .
+  ex:g11_conceptCurvesCommand ex:relatedTo ex:g11_conceptHieuChinhMauSacAnh .
+  ex:g11_conceptHieuChinhMauSacAnh ex:subConceptOf ex:g11_conceptChinhSuaAnh .
+  ex:g11_conceptTayXoaAnh ex:subConceptOf ex:g11_conceptChinhSuaAnh .
+  ex:g11_conceptCloneTool ex:subConceptOf ex:g11_conceptTayXoaAnh .
+  ex:g11_conceptHealingTool ex:subConceptOf ex:g11_conceptTayXoaAnh .
+  ex:g11_conceptPerspectiveCloneTool ex:subConceptOf ex:g11_conceptTayXoaAnh .
+  ex:g11_conceptVungMau ex:relatedTo ex:g11_conceptCloneTool .
+  ex:g11_conceptVungDich ex:relatedTo ex:g11_conceptCloneTool .
+  ex:g11_conceptPhepBienDoiPhoiCanh ex:relatedTo ex:g11_conceptPerspectiveCloneTool .
+  ex:g11_conceptAnhDong ex:partOf ex:g11_conceptUngDungTinHoc .
+  ex:g11_conceptKhungHinhAnhDong ex:partOf ex:g11_conceptAnhDong .
+  ex:g11_conceptKichBanAnhDong ex:relatedTo ex:g11_conceptAnhDong .
+  ex:g11_conceptHieuUngAnhDong ex:relatedTo ex:g11_conceptAnhDong .
+  ex:g11_conceptAnimationPlayback ex:relatedTo ex:g11_conceptAnhDong .
+  ex:g11_conceptExportAsGif ex:relatedTo ex:g11_conceptAnhDong .
+  ex:g11_conceptBlendEffect ex:subConceptOf ex:g11_conceptHieuUngAnhDong .
+  ex:g11_conceptLamVideo ex:partOf ex:g11_conceptUngDungTinHoc .
+  ex:g11_conceptAnimiz ex:relatedTo ex:g11_conceptLamVideo .
+  ex:g11_conceptDuAnVideo ex:partOf ex:g11_conceptLamVideo .
+  ex:g11_conceptKichBanVideo ex:partOf ex:g11_conceptLamVideo .
+  ex:g11_conceptTuLieuVideo ex:partOf ex:g11_conceptLamVideo .
+  ex:g11_conceptGiaoDienAnimiz ex:relatedTo ex:g11_conceptAnimiz .
+  ex:g11_conceptCanvas ex:partOf ex:g11_conceptGiaoDienAnimiz .
+  ex:g11_conceptTimeline ex:partOf ex:g11_conceptGiaoDienAnimiz .
+  ex:g11_conceptScene ex:partOf ex:g11_conceptDuAnVideo .
+  ex:g11_conceptDoiTuongVideo ex:partOf ex:g11_conceptDuAnVideo .
+  ex:g11_conceptChinhSuaVideo ex:subConceptOf ex:g11_conceptLamVideo .
+  ex:g11_conceptChinhSuaAmThanh ex:subConceptOf ex:g11_conceptChinhSuaVideo .
+  ex:g11_conceptHieuUngXuatHien ex:subConceptOf ex:g11_conceptChinhSuaVideo .
+  ex:g11_conceptHieuUngBienMat ex:subConceptOf ex:g11_conceptChinhSuaVideo .
+  ex:g11_conceptHieuUngChuyenCanh ex:subConceptOf ex:g11_conceptChinhSuaVideo .
+  ex:g11_conceptPhuDeVideo ex:subConceptOf ex:g11_conceptChinhSuaVideo .
+  ex:g11_conceptTieuDeVideo ex:subConceptOf ex:g11_conceptChinhSuaVideo .
+  ex:g11_conceptXuatBanVideo ex:partOf ex:g11_conceptLamVideo .
+  ex:g11_conceptPhimHoatHinh ex:subConceptOf ex:g11_conceptLamVideo .
+  ex:g11_conceptPhimHoatHinh2D ex:subConceptOf ex:g11_conceptPhimHoatHinh .
+  ex:g11_conceptAnimizRoles ex:relatedTo ex:g11_conceptPhimHoatHinh .
+  ex:g11_conceptHoiThoaiHoatHinh ex:partOf ex:g11_conceptPhimHoatHinh .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g11_topicEict_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Hãy cho biết tương ứng với mỗi nhu cầu sau đây, cần thực hiện thao tác nào: muốn nhìn bao quát toàn bộ ảnh; muốn nhìn gần và rõ một chi tiết trong ảnh để xử lí; muốn quan sát rõ hai vùng ảnh đã được phóng to ở vị trí xa nhau, không nhìn thấy cả hai cùng một lúc."@vi ;
+    ex:appearsOnPage ex:g11_page089 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:relatedTo ex:g11_conceptThuNhoPhongToAnh, ex:g11_conceptDiChuyenAnh .
+
+  ex:g11_topicEict_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 bài 1 - Khám phá công cụ thu nhỏ, phóng to và di chuyển ảnh"@vi ;
+    ex:hasRawText "Hãy mở một tệp ảnh trong GIMP, sau đó quan sát bảng công cụ và các thành phần xung quanh cửa sổ ảnh. Từ đó, hãy dự đoán xem những công cụ nào giúp thu nhỏ, phóng to và di chuyển ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page089 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:relatedTo ex:g11_conceptGIMP, ex:g11_conceptZoomTool, ex:g11_conceptMoveTool .
+
+  ex:g11_topicEict_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 bài 1 - Khám phá công cụ biến đổi ảnh"@vi ;
+    ex:hasRawText "Hãy khám phá một số công cụ biến đổi ảnh bằng cách thử biến đổi một ảnh theo các bước: Scale, Rotate, Flip, Perspective."@vi ;
+    ex:appearsOnPage ex:g11_page091 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:relatedTo ex:g11_conceptScaleTool, ex:g11_conceptRotateTool, ex:g11_conceptFlipTool, ex:g11_conceptPerspectiveTool .
+
+  ex:g11_topicEict_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 1 - Chỉnh sửa ảnh"@vi ;
+    ex:hasRawText "Hiệu chỉnh màu sắc cho ảnh và sửa ảnh bị nghiêng, lật đối xứng ảnh. Sử dụng Free Select, Colors\\Curves, Perspective, Crop và Flip để hoàn thiện ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page092 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:relatedTo ex:g11_conceptHieuChinhMauSacAnh, ex:g11_conceptCurvesCommand, ex:g11_conceptPerspectiveTool, ex:g11_conceptFlipTool .
+
+  ex:g11_topicEict_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 1 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Trong các khẳng định, mỗi số thứ tự biểu thị một chỗ trống cần điền bằng các từ Space, Move, Zoom, Fit Canvas to Layers: dùng phím hoặc thanh trượt để di chuyển ảnh; dùng công cụ để di chuyển ảnh trên canvas; dùng lệnh để khung ảnh khớp kích thước ảnh sau khi cắt; dùng công cụ kết hợp Ctrl để thu nhỏ hoặc phóng to ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page093 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson1 ;
+    ex:relatedTo ex:g11_conceptDiChuyenAnh, ex:g11_conceptMoveTool, ex:g11_conceptZoomTool .
+
+  ex:g11_topicEict_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Hiện trạng của khu du lịch thác Dray Nur được so sánh với ảnh minh hoạ sau chỉnh trang. Hãy chỉ ra điểm khác biệt giữa hai hình này và nêu cách tạo ra ảnh đã chỉnh trang."@vi ;
+    ex:appearsOnPage ex:g11_page094 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:relatedTo ex:g11_conceptTayXoaAnh .
+
+  ex:g11_topicEict_l2_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 bài 2 - Hạn chế của công cụ Clone"@vi ;
+    ex:hasRawText "Khi sử dụng công cụ Clone để chỉnh sửa ảnh ở các vị trí được chỉ ra, trên ảnh lộ ra khá rõ chỗ tẩy xoá. Theo em, tại sao công cụ Clone có hạn chế này?"@vi ;
+    ex:appearsOnPage ex:g11_page096 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:relatedTo ex:g11_conceptCloneTool, ex:g11_conceptHealingTool .
+
+  ex:g11_topicEict_l2_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 bài 2 - So sánh Clone và Perspective Clone"@vi ;
+    ex:hasRawText "Hai hình thể hiện kết quả sao chép hai cây từ vị trí 1 đến vị trí 2 của cùng một ảnh. Nếu sử dụng công cụ Clone thì sẽ tạo ra kết quả nào? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page096 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:relatedTo ex:g11_conceptCloneTool, ex:g11_conceptPerspectiveCloneTool .
+
+  ex:g11_topicEict_l2_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 2 - Tẩy xoá ảnh"@vi ;
+    ex:hasRawText "Sử dụng GIMP để tạo ra bức ảnh như ảnh quy hoạch trước kết quả: dùng Perspective Clone để sao chép mặt cỏ theo phối cảnh, sau đó dùng Clone để tẩy xoá vết cắt và hoàn thiện ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page098 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:relatedTo ex:g11_conceptPerspectiveCloneTool, ex:g11_conceptCloneTool, ex:g11_conceptHealingTool .
+
+  ex:g11_topicEict_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 2 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Trong bảng, hãy cho biết các công cụ Clone, Healing, Perspective Clone có tác dụng nào: sao chép và hoà trộn màu sắc điểm ảnh vùng mẫu với vùng đích; sao chép điểm ảnh theo cách xác định; sao chép nguyên văn điểm ảnh từ vùng mẫu đến vùng đích."@vi ;
+    ex:appearsOnPage ex:g11_page099 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson2 ;
+    ex:relatedTo ex:g11_conceptCloneTool, ex:g11_conceptHealingTool, ex:g11_conceptPerspectiveCloneTool .
+
+  ex:g11_topicEict_l3_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 3 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Quan sát dãy các lớp ảnh tĩnh trong GIMP gồm bướm xanh, nền vàng và các lớp xen kẽ. Hãy dự đoán khi dãy ảnh này xuất hiện liên tục thì điều gì xảy ra và tại sao phải cần lớp ảnh nền xen giữa các lớp ảnh hình con bướm."@vi ;
+    ex:appearsOnPage ex:g11_page100 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:relatedTo ex:g11_conceptAnhDong, ex:g11_conceptKhungHinhAnhDong .
+
+  ex:g11_topicEict_l3_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 bài 3 - Đề xuất kịch bản hiệu ứng ảnh động"@vi ;
+    ex:hasRawText "Tương tự kịch bản cho hiệu ứng vỗ cánh, hãy đề xuất ý tưởng kịch bản cho một hiệu ứng khác như chữ chạy, lá rơi, tải dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page101 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:relatedTo ex:g11_conceptKichBanAnhDong, ex:g11_conceptHieuUngAnhDong .
+
+  ex:g11_topicEict_l3_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 bài 3 - Khám phá hiệu ứng có sẵn trong GIMP"@vi ;
+    ex:hasRawText "Lệnh Filters\\Animation của GIMP cung cấp một số hiệu ứng để tạo ảnh động. Hãy khám phá các hiệu ứng có sẵn này trong GIMP để tạo ảnh động."@vi ;
+    ex:appearsOnPage ex:g11_page103 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:relatedTo ex:g11_conceptGIMP, ex:g11_conceptBlendEffect, ex:g11_conceptAnhDong .
+
+  ex:g11_topicEict_l3_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 3 - Tạo hiệu ứng cho ảnh động"@vi ;
+    ex:hasRawText "Tạo ảnh động biểu thị dao động của một con lắc đơn: chuẩn bị ảnh tĩnh, xây dựng kịch bản, sắp xếp các lớp ảnh và xuất ảnh động định dạng GIF."@vi ;
+    ex:appearsOnPage ex:g11_page104 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:relatedTo ex:g11_conceptAnhDong, ex:g11_conceptKhungHinhAnhDong, ex:g11_conceptExportAsGif .
+
+  ex:g11_topicEict_l3_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 3 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Đánh giá các phát biểu: nguồn ảnh tĩnh của ảnh động luôn phải tự thiết kế; có thể thiết kế ảnh động từ hiệu ứng có sẵn hoặc tự tạo; có thể xem trước và chỉnh sửa ảnh động khi xuất dạng GIF; thứ tự khung hình được sắp xếp tuỳ ý; thời gian xuất hiện của từng khung hình ảnh hưởng đến tốc độ chuyển động."@vi ;
+    ex:appearsOnPage ex:g11_page105 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson3 ;
+    ex:relatedTo ex:g11_conceptAnhDong, ex:g11_conceptKhungHinhAnhDong, ex:g11_conceptAnimationPlayback .
+
+  ex:g11_topicEict_l4_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 4 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Em đã từng sử dụng các video để hỗ trợ học tập và giải trí chưa? Hãy kể lợi ích khi sử dụng các video này. Em có biết cách tạo ra các video đó không?"@vi ;
+    ex:appearsOnPage ex:g11_page106 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:relatedTo ex:g11_conceptLamVideo .
+
+  ex:g11_topicEict_l4_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 4 - Khám phá giao diện Animiz"@vi ;
+    ex:hasRawText "Khởi động Animiz bằng cách nháy đúp chuột vào biểu tượng phần mềm. Tại giao diện bắt đầu, quan sát và tìm hiểu các thành phần trên cửa sổ giao diện này."@vi ;
+    ex:appearsOnPage ex:g11_page107 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:relatedTo ex:g11_conceptAnimiz, ex:g11_conceptGiaoDienAnimiz .
+
+  ex:g11_topicEict_l4_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 4 - Tạo video"@vi ;
+    ex:hasRawText "Tạo đoạn video hướng dẫn thiết kế logo đơn giản bằng GIMP. Video gồm khoảng 10 ảnh xuất hiện lần lượt, có nhạc nền; thực hiện các bước tạo dự án, nhập ảnh, căn chỉnh Timeline, thêm âm thanh, xem và lưu dự án."@vi ;
+    ex:appearsOnPage ex:g11_page108 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:relatedTo ex:g11_conceptLamVideo, ex:g11_conceptDuAnVideo, ex:g11_conceptTimeline, ex:g11_conceptChinhSuaAmThanh .
+
+  ex:g11_topicEict_l4_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 4 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Kiểm tra các nhận định: đối tượng trong video chỉ có ảnh và âm thanh; tất cả ảnh nên xuất hiện cùng một khung thời gian; các ảnh nên xuất hiện trong các khung thời gian liên tiếp; các đối tượng khi đưa vào video sẽ nằm trong cùng một cảnh nếu không tạo cảnh mới."@vi ;
+    ex:appearsOnPage ex:g11_page111 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson4 ;
+    ex:relatedTo ex:g11_conceptDoiTuongVideo, ex:g11_conceptTimeline, ex:g11_conceptScene .
+
+  ex:g11_topicEict_l5_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 5 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Sau khi xem đoạn video đã tạo ở phần thực hành của Bài 4, hãy liệt kê những thay đổi mà mình muốn và giải thích vì sao."@vi ;
+    ex:appearsOnPage ex:g11_page112 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:relatedTo ex:g11_conceptChinhSuaVideo .
+
+  ex:g11_topicEict_l5_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 5 - Chỉnh sửa âm thanh"@vi ;
+    ex:hasRawText "Theo em, cần thực hiện những thao tác nào để chỉnh sửa tệp âm thanh sao cho khớp với hình ảnh hiển thị trong dự án video?"@vi ;
+    ex:appearsOnPage ex:g11_page114 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:relatedTo ex:g11_conceptChinhSuaAmThanh, ex:g11_conceptTimeline .
+
+  ex:g11_topicEict_l5_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 5 - Chỉnh sửa video"@vi ;
+    ex:hasRawText "Chỉnh sửa đoạn video giới thiệu cách tạo logo ở Bài 4: điều chỉnh khung thời gian để mỗi ảnh xuất hiện trong khoảng 20 giây, chỉnh thời gian nhạc khớp với ảnh, tạo hiệu ứng cho ảnh và tạo phụ đề cho ảnh giới thiệu bước thực hiện."@vi ;
+    ex:appearsOnPage ex:g11_page117 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:relatedTo ex:g11_conceptChinhSuaVideo, ex:g11_conceptChinhSuaAmThanh, ex:g11_conceptPhuDeVideo .
+
+  ex:g11_topicEict_l5_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 5 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Kiểm tra các nhận định: có thể tạo hiệu ứng xuất hiện cho âm thanh; không thể thay đổi thứ tự xuất hiện của ảnh trong một cảnh video; vị trí phụ đề mặc định ở phía dưới ảnh và không thể thay đổi; tiêu đề video cũng có hiệu ứng xuất hiện giống như các hình ảnh."@vi ;
+    ex:appearsOnPage ex:g11_page117 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson5 ;
+    ex:relatedTo ex:g11_conceptChinhSuaVideo, ex:g11_conceptChinhSuaAmThanh, ex:g11_conceptPhuDeVideo, ex:g11_conceptTieuDeVideo .
+
+  ex:g11_topicEict_l6_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 6 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Hãy quan sát một đoạn phim hoạt hình trên máy tính và cho biết nội dung cùng những đối tượng có trong đoạn phim hoạt hình đó."@vi ;
+    ex:appearsOnPage ex:g11_page118 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:relatedTo ex:g11_conceptPhimHoatHinh .
+
+  ex:g11_topicEict_l6_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 6 - Dự đoán các bước làm phim hoạt hình bằng Animiz"@vi ;
+    ex:hasRawText "Với phần mềm Animiz, hãy dự đoán những bước nào trong làm phim hoạt hình sẽ được hỗ trợ bởi phần mềm."@vi ;
+    ex:appearsOnPage ex:g11_page118 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:relatedTo ex:g11_conceptAnimiz, ex:g11_conceptPhimHoatHinh .
+
+  ex:g11_topicEict_l6_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 6 - Tạo phim hoạt hình"@vi ;
+    ex:hasRawText "Sử dụng Animiz tạo đoạn phim hoạt hình kể về buổi lễ khai giảng năm học của trường em, gồm các phân cảnh chào đón năm học mới, phát biểu khai mạc, văn nghệ chào mừng và kết thúc lễ khai giảng."@vi ;
+    ex:appearsOnPage ex:g11_page118 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:relatedTo ex:g11_conceptPhimHoatHinh, ex:g11_conceptScene, ex:g11_conceptAnimizRoles, ex:g11_conceptHoiThoaiHoatHinh .
+
+  ex:g11_topicEict_l6_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 6 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Kiểm tra các nhận định: nên sắp xếp phân cảnh trong phim hoạt hình theo thứ tự tuỳ ý; để tạo hành động cho nhân vật trong Animiz có thể dùng hiệu ứng và hành động; Animiz hỗ trợ đưa ra ý tưởng kịch bản từ video mẫu; thiết kế nhân vật và đối tượng là bước cuối cùng trong quy trình làm phim hoạt hình."@vi ;
+    ex:appearsOnPage ex:g11_page123 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson6 ;
+    ex:relatedTo ex:g11_conceptPhimHoatHinh, ex:g11_conceptAnimizRoles, ex:g11_conceptKichBanVideo .
+
+  ex:g11_topicEict_l7_practice1 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 1 bài 7 - Chỉnh sửa ảnh và tạo ảnh động"@vi ;
+    ex:hasRawText "Chọn một số bức ảnh về một chủ đề, hiệu chỉnh màu sắc, tẩy xoá các chi tiết không mong đợi, sau đó tạo ảnh động với hiệu ứng Blend, tối ưu hoá cho GIF, xem trước và xuất ảnh động."@vi ;
+    ex:appearsOnPage ex:g11_page124 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:relatedTo ex:g11_conceptChinhSuaAnh, ex:g11_conceptTayXoaAnh, ex:g11_conceptAnhDong, ex:g11_conceptBlendEffect .
+
+  ex:g11_topicEict_l7_practice2 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2 bài 7 - Tạo phim hoạt hình"@vi ;
+    ex:hasRawText "Tạo một đoạn phim hoạt hình khoảng ba phút kể về chuyến tham quan dã ngoại ấn tượng nhất. Phim gồm ba cảnh, có chuyển cảnh, nhạc nền, tiêu đề, mở đầu, kết thúc và hội thoại âm thanh, văn bản."@vi ;
+    ex:appearsOnPage ex:g11_page126 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:relatedTo ex:g11_conceptPhimHoatHinh, ex:g11_conceptScene, ex:g11_conceptHieuUngChuyenCanh, ex:g11_conceptHoiThoaiHoatHinh .
+
+  ex:g11_topicEict_l7_review1 a ex:AppliedTask ;
+    rdfs:label "Bài tập nhóm bài 7 chủ đề E ICT lớp 11"@vi ;
+    ex:hasRawText "Mỗi nhóm gồm 5 bạn tạo một đoạn video về một trong các chủ đề: Lễ hội Trung thu; Hội diễn văn nghệ chào mừng ngày Nhà giáo Việt Nam; Giới thiệu một nhân vật lịch sử được yêu thích; Học tập trong đại dịch COVID-19; Bảo vệ môi trường và chống biến đổi khí hậu."@vi ;
+    ex:appearsOnPage ex:g11_page126 ;
+    ex:belongsToLesson ex:g11_topicEict_lesson7 ;
+    ex:relatedTo ex:g11_conceptLamVideo, ex:g11_conceptPhimHoatHinh .
+
+  ex:g11_topicEict_lesson1 ex:hasActivity ex:g11_topicEict_l1_openingActivity,
+    ex:g11_topicEict_l1_activity1, ex:g11_topicEict_l1_activity2, ex:g11_topicEict_l1_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicEict_l1_review1 .
+
+  ex:g11_topicEict_lesson2 ex:hasActivity ex:g11_topicEict_l2_openingActivity,
+    ex:g11_topicEict_l2_activity1, ex:g11_topicEict_l2_activity2, ex:g11_topicEict_l2_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicEict_l2_review1 .
+
+  ex:g11_topicEict_lesson3 ex:hasActivity ex:g11_topicEict_l3_openingActivity,
+    ex:g11_topicEict_l3_activity1, ex:g11_topicEict_l3_activity2, ex:g11_topicEict_l3_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicEict_l3_review1 .
+
+  ex:g11_topicEict_lesson4 ex:hasActivity ex:g11_topicEict_l4_openingActivity,
+    ex:g11_topicEict_l4_activity1, ex:g11_topicEict_l4_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicEict_l4_review1 .
+
+  ex:g11_topicEict_lesson5 ex:hasActivity ex:g11_topicEict_l5_openingActivity,
+    ex:g11_topicEict_l5_activity1, ex:g11_topicEict_l5_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicEict_l5_review1 .
+
+  ex:g11_topicEict_lesson6 ex:hasActivity ex:g11_topicEict_l6_openingActivity,
+    ex:g11_topicEict_l6_activity1, ex:g11_topicEict_l6_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicEict_l6_review1 .
+
+  ex:g11_topicEict_lesson7 ex:hasActivity ex:g11_topicEict_l7_practice1,
+    ex:g11_topicEict_l7_practice2 ;
+    ex:hasReviewQuestion ex:g11_topicEict_l7_review1 .
+}

@@ -1,0 +1,807 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 11 TOPIC D
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 resources.
+# Source file: Tin học (tin học ứng dụng) 11 CD-pages-4.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g11_grade11 a ex:GradeLevel ;
+    rdfs:label "Lớp 11"@vi ;
+    ex:gradeNumber 11 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g11_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 11 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 11 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g11_grade11 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicD_shared a ex:Topic ;
+    rdfs:label "Chủ đề D (dùng chung các khối)"@vi ;
+    ex:hasTitle "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi .
+
+  ex:g11_topicD a ex:Topic ;
+    rdfs:label "Chủ đề D - Đạo đức, pháp luật và văn hoá trong môi trường số"@vi ;
+    ex:hasTitle "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi ;
+    ex:hasSubtitle "Ứng xử văn hoá và an toàn trên mạng"@vi ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicD_shared ;
+    ex:topicOrder 4 ;
+    ex:hasStartPage 42 ;
+    ex:hasEndPage 46 ;
+    ex:sourceFileName "Tin học (tin học ứng dụng) 11 CD-pages-4.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g11_topicD_lesson1 ;
+    ex:hasPage ex:g11_page042, ex:g11_page043, ex:g11_page044,
+               ex:g11_page045, ex:g11_page046 .
+
+  ex:g11_tinhoc_ungdung_canhdieu ex:hasTopic ex:g11_topicD .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g11_topicD_lesson1 a ex:Lesson ;
+    rdfs:label "Phòng tránh lừa đảo và ứng xử văn hoá trên mạng"@vi ;
+    ex:hasTitle "Phòng tránh lừa đảo và ứng xử văn hoá trên mạng"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g11_topicD ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 42 ;
+    ex:hasEndPage 46 ;
+    ex:hasSection ex:g11_topicD_l1s1, ex:g11_topicD_l1s2, ex:g11_topicD_l1s3,
+                  ex:g11_topicD_l1s4, ex:g11_topicD_l1s5 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g11_topicD_l1s1 a ex:Section ;
+    rdfs:label "Lừa đảo qua mạng"@vi ;
+    ex:hasTitle "Lừa đảo qua mạng"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 .
+
+  ex:g11_topicD_l1s2 a ex:Section ;
+    rdfs:label "Một số dạng lừa đảo"@vi ;
+    ex:hasTitle "Một số dạng lừa đảo"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 .
+
+  ex:g11_topicD_l1s3 a ex:Section ;
+    rdfs:label "Dấu hiệu lừa đảo và lời khuyên phòng ngừa"@vi ;
+    ex:hasTitle "Dấu hiệu lừa đảo và lời khuyên phòng ngừa"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 .
+
+  ex:g11_topicD_l1s4 a ex:Section ;
+    rdfs:label "Nguyên tắc để hạn chế thiệt hại"@vi ;
+    ex:hasTitle "Nguyên tắc để hạn chế thiệt hại"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 .
+
+  ex:g11_topicD_l1s5 a ex:Section ;
+    rdfs:label "Văn hoá ứng xử trên mạng"@vi ;
+    ex:hasTitle "Văn hoá ứng xử trên mạng"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g11_page042 a ex:Page ;
+    ex:hasPageNumber 42 ;
+    ex:hasPrintedPageNumber 42 ;
+    ex:pdfPageIndex 1 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToTopic ex:g11_topicD ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ex:g11_page043 a ex:Page ;
+    ex:hasPageNumber 43 ;
+    ex:hasPrintedPageNumber 43 ;
+    ex:pdfPageIndex 2 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToTopic ex:g11_topicD ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ex:g11_page044 a ex:Page ;
+    ex:hasPageNumber 44 ;
+    ex:hasPrintedPageNumber 44 ;
+    ex:pdfPageIndex 3 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToTopic ex:g11_topicD ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ex:g11_page045 a ex:Page ;
+    ex:hasPageNumber 45 ;
+    ex:hasPrintedPageNumber 45 ;
+    ex:pdfPageIndex 4 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToTopic ex:g11_topicD ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ex:g11_page046 a ex:Page ;
+    ex:hasPageNumber 46 ;
+    ex:hasPrintedPageNumber 46 ;
+    ex:pdfPageIndex 5 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToTopic ex:g11_topicD ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g11_page041 ex:nextPage ex:g11_page042 .
+  ex:g11_page042 ex:previousPage ex:g11_page041 ; ex:nextPage ex:g11_page043 .
+  ex:g11_page043 ex:previousPage ex:g11_page042 ; ex:nextPage ex:g11_page044 .
+  ex:g11_page044 ex:previousPage ex:g11_page043 ; ex:nextPage ex:g11_page045 .
+  ex:g11_page045 ex:previousPage ex:g11_page044 ; ex:nextPage ex:g11_page046 .
+  ex:g11_page046 ex:previousPage ex:g11_page045 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g11_conceptDaoDucPhapLuatVanHoaSo a ex:KnowledgeConcept ;
+    rdfs:label "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi .
+
+  ex:g11_conceptUngXuVanHoaAnToanTrenMang a ex:KnowledgeConcept ;
+    rdfs:label "Ứng xử văn hoá và an toàn trên mạng"@vi .
+
+  ex:g11_conceptLuaDaoQuaMang a ex:KnowledgeConcept ;
+    rdfs:label "Lừa đảo qua mạng"@vi .
+
+  ex:g11_conceptDangLuaDaoTrenMang a ex:KnowledgeConcept ;
+    rdfs:label "Dạng lừa đảo trên mạng"@vi .
+
+  ex:g11_conceptLuaDaoTrungThuongTangQua a ex:KnowledgeConcept ;
+    rdfs:label "Lừa đảo trúng thưởng, tặng quà"@vi .
+
+  ex:g11_conceptPhiVanChuyenGia a ex:KnowledgeConcept ;
+    rdfs:label "Phí vận chuyển giả"@vi .
+
+  ex:g11_conceptLuaDaoDatCocBanHangGia a ex:KnowledgeConcept ;
+    rdfs:label "Lừa đảo chiếm tiền đặt cọc hoặc bán hàng giả"@vi .
+
+  ex:g11_conceptLayCapThongTinCaNhan a ex:KnowledgeConcept ;
+    rdfs:label "Lấy cắp thông tin cá nhân"@vi .
+
+  ex:g11_conceptPhishing a ex:KnowledgeConcept ;
+    rdfs:label "Phishing"@vi .
+
+  ex:g11_conceptTrangWebGiaMao a ex:KnowledgeConcept ;
+    rdfs:label "Trang web giả mạo"@vi .
+
+  ex:g11_conceptTenMienGiaMao a ex:KnowledgeConcept ;
+    rdfs:label "Tên miền giả mạo"@vi .
+
+  ex:g11_conceptLienKetLuaDao a ex:KnowledgeConcept ;
+    rdfs:label "Liên kết lừa đảo"@vi .
+
+  ex:g11_conceptEmailLuaDao a ex:KnowledgeConcept ;
+    rdfs:label "Email lừa đảo"@vi .
+
+  ex:g11_conceptTinNhanLuaDao a ex:KnowledgeConcept ;
+    rdfs:label "Tin nhắn lừa đảo"@vi .
+
+  ex:g11_conceptPhongNguLuaDao a ex:KnowledgeConcept ;
+    rdfs:label "Phòng ngừa lừa đảo qua mạng"@vi .
+
+  ex:g11_conceptXacMinhThongTin a ex:KnowledgeConcept ;
+    rdfs:label "Xác minh thông tin"@vi .
+
+  ex:g11_conceptBaoMatMatKhau a ex:KnowledgeConcept ;
+    rdfs:label "Bảo mật mật khẩu"@vi .
+
+  ex:g11_conceptXacMinhHaiBuoc a ex:KnowledgeConcept ;
+    rdfs:label "Xác minh hai bước"@vi .
+
+  ex:g11_conceptHanCheThietHai a ex:KnowledgeConcept ;
+    rdfs:label "Hạn chế thiệt hại khi bị lừa đảo"@vi .
+
+  ex:g11_conceptThongBaoCoQuanChucNang a ex:KnowledgeConcept ;
+    rdfs:label "Thông báo cơ quan chức năng"@vi .
+
+  ex:g11_conceptVanHoaUngXuTrenMang a ex:KnowledgeConcept ;
+    rdfs:label "Văn hoá ứng xử trên mạng"@vi .
+
+  ex:g11_conceptDaoDucTrenMang a ex:KnowledgeConcept ;
+    rdfs:label "Đạo đức trên mạng"@vi .
+
+  ex:g11_conceptPhapLuatTrenMang a ex:KnowledgeConcept ;
+    rdfs:label "Pháp luật trên mạng"@vi .
+
+  ex:g11_conceptAnhHungBanPhim a ex:KnowledgeConcept ;
+    rdfs:label "Anh hùng bàn phím"@vi .
+
+  ex:g11_conceptTheGioiAoCuocSongThuc a ex:KnowledgeConcept ;
+    rdfs:label "Thế giới ảo, cuộc sống thực"@vi .
+
+  ex:g11_conceptYThucCongDongSo a ex:KnowledgeConcept ;
+    rdfs:label "Ý thức cộng đồng số"@vi .
+
+  ex:g11_conceptQuyTacNenTang a ex:KnowledgeConcept ;
+    rdfs:label "Quy tắc nền tảng"@vi .
+
+  ex:g11_conceptDatMinhVaoViTriNguoiKhac a ex:KnowledgeConcept ;
+    rdfs:label "Đặt mình vào vị trí người khác"@vi .
+
+  ex:g11_conceptRongLuongVoiNguoiKhac a ex:KnowledgeConcept ;
+    rdfs:label "Rộng lượng với người khác"@vi .
+
+  ex:g11_conceptKhongGayChienTrenMang a ex:KnowledgeConcept ;
+    rdfs:label "Không gây chiến trên mạng"@vi .
+
+  ex:g11_conceptTonTrongVanHoaNhom a ex:KnowledgeConcept ;
+    rdfs:label "Tôn trọng văn hoá nhóm"@vi .
+
+  ex:g11_conceptTonTrongThoiGianCongSuc a ex:KnowledgeConcept ;
+    rdfs:label "Tôn trọng thời gian và công sức của người khác"@vi .
+
+  ex:g11_conceptThuRac a ex:KnowledgeConcept ;
+    rdfs:label "Thư rác"@vi .
+
+  ex:g11_conceptTonTrongQuyenRiengTu a ex:KnowledgeConcept ;
+    rdfs:label "Tôn trọng quyền riêng tư của người khác"@vi .
+
+  ex:g11_conceptKhongLoiDungViThe a ex:KnowledgeConcept ;
+    rdfs:label "Không lợi dụng vị thế của mình để làm việc xấu"@vi .
+
+  ex:g11_conceptKOL a ex:KnowledgeConcept ;
+    rdfs:label "KOL - Key Opinion Leader"@vi .
+
+  ex:g11_conceptQuyTacUngXuMangXaHoi a ex:KnowledgeConcept ;
+    rdfs:label "Quy tắc ứng xử trên mạng xã hội"@vi .
+
+  ###########################################################################
+  # Topic / lesson / section concept links
+  ###########################################################################
+
+  ex:g11_topicD ex:hasConcept ex:g11_conceptDaoDucPhapLuatVanHoaSo,
+    ex:g11_conceptUngXuVanHoaAnToanTrenMang, ex:g11_conceptLuaDaoQuaMang,
+    ex:g11_conceptPhongNguLuaDao, ex:g11_conceptVanHoaUngXuTrenMang,
+    ex:g11_conceptDaoDucTrenMang, ex:g11_conceptPhapLuatTrenMang,
+    ex:g11_conceptTonTrongQuyenRiengTu, ex:g11_conceptQuyTacUngXuMangXaHoi .
+
+  ex:g11_topicD_lesson1 ex:hasConcept ex:g11_conceptLuaDaoQuaMang,
+    ex:g11_conceptDangLuaDaoTrenMang, ex:g11_conceptLuaDaoTrungThuongTangQua,
+    ex:g11_conceptLuaDaoDatCocBanHangGia, ex:g11_conceptLayCapThongTinCaNhan,
+    ex:g11_conceptPhishing, ex:g11_conceptTrangWebGiaMao, ex:g11_conceptTenMienGiaMao,
+    ex:g11_conceptLienKetLuaDao, ex:g11_conceptEmailLuaDao, ex:g11_conceptTinNhanLuaDao,
+    ex:g11_conceptPhongNguLuaDao, ex:g11_conceptXacMinhThongTin,
+    ex:g11_conceptBaoMatMatKhau, ex:g11_conceptXacMinhHaiBuoc,
+    ex:g11_conceptHanCheThietHai, ex:g11_conceptVanHoaUngXuTrenMang,
+    ex:g11_conceptAnhHungBanPhim, ex:g11_conceptTheGioiAoCuocSongThuc,
+    ex:g11_conceptYThucCongDongSo, ex:g11_conceptDatMinhVaoViTriNguoiKhac,
+    ex:g11_conceptRongLuongVoiNguoiKhac, ex:g11_conceptKhongGayChienTrenMang,
+    ex:g11_conceptTonTrongVanHoaNhom, ex:g11_conceptTonTrongThoiGianCongSuc,
+    ex:g11_conceptThuRac, ex:g11_conceptTonTrongQuyenRiengTu,
+    ex:g11_conceptKhongLoiDungViThe, ex:g11_conceptKOL .
+
+  ex:g11_topicD_l1s1 ex:hasConcept ex:g11_conceptLuaDaoQuaMang,
+    ex:g11_conceptDangLuaDaoTrenMang .
+  ex:g11_topicD_l1s2 ex:hasConcept ex:g11_conceptLuaDaoTrungThuongTangQua,
+    ex:g11_conceptPhiVanChuyenGia, ex:g11_conceptLuaDaoDatCocBanHangGia,
+    ex:g11_conceptLayCapThongTinCaNhan, ex:g11_conceptPhishing .
+  ex:g11_topicD_l1s3 ex:hasConcept ex:g11_conceptPhongNguLuaDao,
+    ex:g11_conceptTrangWebGiaMao, ex:g11_conceptTenMienGiaMao,
+    ex:g11_conceptLienKetLuaDao, ex:g11_conceptEmailLuaDao,
+    ex:g11_conceptTinNhanLuaDao, ex:g11_conceptXacMinhThongTin .
+  ex:g11_topicD_l1s4 ex:hasConcept ex:g11_conceptHanCheThietHai,
+    ex:g11_conceptBaoMatMatKhau, ex:g11_conceptXacMinhHaiBuoc,
+    ex:g11_conceptThongBaoCoQuanChucNang .
+  ex:g11_topicD_l1s5 ex:hasConcept ex:g11_conceptVanHoaUngXuTrenMang,
+    ex:g11_conceptDaoDucTrenMang, ex:g11_conceptPhapLuatTrenMang,
+    ex:g11_conceptAnhHungBanPhim, ex:g11_conceptTheGioiAoCuocSongThuc,
+    ex:g11_conceptYThucCongDongSo, ex:g11_conceptQuyTacNenTang,
+    ex:g11_conceptDatMinhVaoViTriNguoiKhac, ex:g11_conceptRongLuongVoiNguoiKhac,
+    ex:g11_conceptKhongGayChienTrenMang, ex:g11_conceptTonTrongVanHoaNhom,
+    ex:g11_conceptTonTrongThoiGianCongSuc, ex:g11_conceptThuRac,
+    ex:g11_conceptTonTrongQuyenRiengTu, ex:g11_conceptKhongLoiDungViThe,
+    ex:g11_conceptKOL, ex:g11_conceptQuyTacUngXuMangXaHoi .
+
+  ###########################################################################
+  # Learning objectives and summary
+  ###########################################################################
+
+  ex:g11_topicD_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu chủ đề D lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Nêu được một số dạng lừa đảo phổ biến trên mạng và những biện pháp phòng tránh. Giao tiếp được trên mạng qua email, chat, mạng xã hội,... và trong môi trường số một cách văn minh, phù hợp với văn hoá ứng xử."@vi ;
+    ex:appearsOnPage ex:g11_page042 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 .
+
+  ex:g11_topicD_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Chủ đề D lớp 11"@vi ;
+    ex:hasSummaryText "Cảnh giác đề phòng lừa đảo trên mạng: thận trọng với email, tin nhắn khác thường; không vội vã, cần kiểm tra để tránh trang web giả mạo trước khi nhập thông tin cá nhân hay chuyển tiền; hành động ngay để hạn chế thiệt hại khi cần thiết. Ứng xử văn hoá và có đạo đức trên mạng: rộng lượng với người khác, không gây chiến trên mạng; tôn trọng văn hoá nhóm; tôn trọng quyền riêng tư, thời gian và công sức của người khác; không lợi dụng vị thế của mình để làm việc xấu."@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 .
+
+  ex:g11_topicD_lesson1 ex:hasSummary ex:g11_topicD_l1_summary .
+
+  ###########################################################################
+  # Figures
+  ###########################################################################
+
+  ex:g11_topicD_fig_l1_digitalCompass a ex:Figure ;
+    rdfs:label "Hình 1. Ý thức cộng đồng là kim chỉ nam cho mọi hành vi trên mạng"@vi ;
+    ex:hasCaption "Hình 1. Ý thức cộng đồng là kim chỉ nam cho mọi hành vi trên mạng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g11_page044 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptYThucCongDongSo, ex:g11_conceptVanHoaUngXuTrenMang .
+
+  ex:g11_topicD_fig_l1_spamAnnoyance a ex:Figure ;
+    rdfs:label "Hình 2. Thư rác quấy nhiễu mọi người"@vi ;
+    ex:hasCaption "Hình 2. Thư rác quấy nhiễu mọi người"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g11_page045 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptThuRac, ex:g11_conceptTonTrongThoiGianCongSuc .
+
+  ex:g11_page044 ex:hasFigure ex:g11_topicD_fig_l1_digitalCompass .
+  ex:g11_page045 ex:hasFigure ex:g11_topicD_fig_l1_spamAnnoyance .
+
+  ###########################################################################
+  # Figure ordering
+  ###########################################################################
+
+  ex:g11_topicD_fig_l1_digitalCompass ex:nextFigure ex:g11_topicD_fig_l1_spamAnnoyance .
+  ex:g11_topicD_fig_l1_spamAnnoyance ex:previousFigure ex:g11_topicD_fig_l1_digitalCompass .
+
+  ###########################################################################
+  # Definitions / note boxes
+  ###########################################################################
+
+  ex:g11_topicD_def_phishing a ex:DefinitionText ;
+    rdfs:label "Định nghĩa phishing"@vi ;
+    ex:hasDefinitionText "Trong tin học, việc lừa đảo để lấy cắp thông tin cá nhân bằng các trang web giả gọi là phishing."@vi ;
+    ex:appearsOnPage ex:g11_page043 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptPhishing, ex:g11_conceptLayCapThongTinCaNhan .
+
+  ex:g11_topicD_def_keyboardWarrior a ex:DefinitionText ;
+    rdfs:label "Giải thích anh hùng bàn phím"@vi ;
+    ex:hasDefinitionText "Anh hùng bàn phím là cách gọi những người có hành vi cực đoan, thiếu văn hoá, dễ công kích hoặc gây chiến khi giao tiếp trên mạng."@vi ;
+    ex:appearsOnPage ex:g11_page044 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptAnhHungBanPhim .
+
+  ex:g11_topicD_def_kol a ex:DefinitionText ;
+    rdfs:label "Định nghĩa KOL"@vi ;
+    ex:hasDefinitionText "KOL là viết tắt của Key Opinion Leader, chỉ những người có nhiều ảnh hưởng trong một lĩnh vực; trong không gian mạng, họ có thể điều khiển luồng dư luận theo hướng ủng hộ ý kiến của họ."@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:explainsConcept ex:g11_conceptKOL .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g11_topicD_p042_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Chủ đề D. Đạo đức, pháp luật và văn hoá trong môi trường số. Ứng xử văn hoá và an toàn trên mạng. Bài học có nội dung phòng tránh lừa đảo và ứng xử văn hoá trên mạng. Câu hỏi mở đầu: Theo em, lừa đảo trên không gian mạng dễ gặp hay hiếm thấy? Dễ tránh hay khó tránh? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page042 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s1 .
+
+  ex:g11_topicD_p042_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hoạt động 1 yêu cầu sử dụng máy tìm kiếm tìm cụm từ \"dạng lừa đảo phổ biến trên mạng\" và cho biết số kết quả trả về nhiều hay ít, có thể tính được bao nhiêu dạng lừa đảo hay không."@vi ;
+    ex:appearsOnPage ex:g11_page042 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s1 .
+
+  ex:g11_topicD_p042_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Không thể tin tưởng mọi điều nhìn thấy, nghe thấy trên mạng. Biết cách phát hiện nội dung giả mạo, lừa đảo là kĩ năng quan trọng khi sử dụng Internet. Bọn lừa đảo trên mạng dùng nhiều thủ đoạn tinh vi nhằm những mục đích khác nhau, như nhận chuột là được tiền, lừa nạp thẻ điện thoại, đền lừa tiền đặt cọc, tiền chuyển hàng hay đánh cắp thông tin cá nhân."@vi ;
+    ex:appearsOnPage ex:g11_page042 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s2 .
+
+  ex:g11_topicD_p042_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Lừa đảo trúng thưởng, tặng quà để lấy tiền phí vận chuyển thường gửi email hoặc tin nhắn qua mạng xã hội và thông báo người nhận may mắn trúng thưởng. Kèm theo là hình ảnh món quà bắt mắt, giá trị thật thấp hơn nhiều so với lời quảng cáo; nạn nhân mất tiền phí vận chuyển nhưng không nhận được gì hoặc chỉ nhận món quà giá trị thấp."@vi ;
+    ex:appearsOnPage ex:g11_page042 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s2 .
+
+  ex:g11_topicD_p043_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Lừa đảo chiếm tiền đặt cọc hoặc bán hàng giả thường lập tài khoản mạo danh các gian hàng trực tuyến uy tín để lừa khách đặt mua; sau đó yêu cầu chuyển tiền đặt cọc để chiếm đoạt hoặc bán hàng giả, chất lượng khác xa với hình ảnh quảng cáo."@vi ;
+    ex:appearsOnPage ex:g11_page043 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s2 .
+
+  ex:g11_topicD_p043_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Lừa đảo để lấy cắp thông tin cá nhân dùng thủ đoạn giống như các trường hợp trên nhưng thay vì lừa lấy tiền, kẻ lừa đảo yêu cầu nhấn vào liên kết để xác nhận sớm. Liên kết gửi kèm dẫn tới một trang web giả mạo yêu cầu cung cấp thông tin cá nhân như số tài khoản, mật khẩu để thực hiện giao dịch hoặc chiếm đoạt tài khoản."@vi ;
+    ex:appearsOnPage ex:g11_page043 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s2 .
+
+  ex:g11_topicD_p043_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Các đối tượng lừa đảo có thể mạo danh cơ quan, doanh nghiệp, người có uy tín, bạn bè hoặc người quen, thậm chí đối tác nước ngoài, để mời chào hợp tác kinh doanh, mua hàng giá rẻ và gửi kèm liên kết lừa đảo."@vi ;
+    ex:appearsOnPage ex:g11_page043 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s2 .
+
+  ex:g11_topicD_p043_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Dấu hiệu lừa đảo và lời khuyên phòng ngừa: cần nhận biết dấu hiệu lừa đảo và luôn có ý thức đề phòng để tự bảo vệ, tránh bị lừa. Các cơ quan, tổ chức, doanh nghiệp uy tín cần bảo đảm giao tiếp quan hệ công chúng với chất lượng cao, có tính chuyên nghiệp. Email, trang web có lỗi chính tả, lỗi hành văn có thể là dấu hiệu lừa đảo."@vi ;
+    ex:appearsOnPage ex:g11_page043 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s3 .
+
+  ex:g11_topicD_p043_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Tên miền gồm vài phần cách nhau bằng dấu chấm. Phần đầu viết tắt tên cơ quan, tổ chức, doanh nghiệp dễ nhớ nhưng các phần đuôi như .com, .net, .org ít được chú ý hơn. Các đuôi tên miền khác với tên miền chính thức mà cơ quan, tổ chức, doanh nghiệp vẫn dùng là dấu hiệu lừa đảo."@vi ;
+    ex:appearsOnPage ex:g11_page043 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s3 .
+
+  ex:g11_topicD_p043_06 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Cần chú ý nhận biết cách viết sai chính tả trong tên miền, ví dụ thay chữ o bằng số 0, thay m bằng r và n. Trỏ chuột vào liên kết nhưng không nháy chuột để thấy địa chỉ đích thực sự; nếu địa chỉ không khớp địa chỉ hiển thị thì đó là dấu hiệu lừa đảo. Cần cảnh giác với email, tin nhắn từ người lạ hoặc từ người quen lâu nay ít liên hệ, nhất là khi tạo ra tình huống khẩn cấp."@vi ;
+    ex:appearsOnPage ex:g11_page043 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s3 .
+
+  ex:g11_topicD_p044_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Hãy tìm cách kiểm tra lại thông tin bằng con đường khác như gọi điện thoại trực tiếp, truy cập địa chỉ trang web in trên tài liệu chính thức. Khi nghi ngờ email, tin nhắn là lừa đảo, đừng mở bất kì liên kết hoặc tệp đính kèm nào mà hãy kiểm tra địa chỉ đích thực sự để phát hiện liên kết lừa đảo."@vi ;
+    ex:appearsOnPage ex:g11_page044 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s3 .
+
+  ex:g11_topicD_p044_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nguyên tắc để hạn chế thiệt hại: nếu nghi ngờ mình đã vô tình bị lừa qua mạng, hãy lập tức thay đổi mật khẩu cho các tài khoản giao tiếp qua mạng bị ảnh hưởng, thiết lập xác minh hai bước cho tài khoản quan trọng, thông báo cho người có trách nhiệm nếu tài khoản liên quan đến nhà trường hay cơ quan, báo ngân hàng nếu đã lộ thông tin thẻ tín dụng hoặc tài khoản cá nhân, và báo cơ quan chức năng nếu đã bị thiệt hại."@vi ;
+    ex:appearsOnPage ex:g11_page044 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s4 .
+
+  ex:g11_topicD_p044_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Hoạt động 2 yêu cầu giải thích cụm từ anh hùng bàn phím, nêu ví dụ cụ thể, đồng thời suy nghĩ nếu là người có nhiều người hâm mộ trên mạng xã hội thì nên làm gì và tránh những gì."@vi ;
+    ex:appearsOnPage ex:g11_page044 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p044_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Quy tắc nền tảng: thế giới ảo, cuộc sống thực. Trên không gian mạng, các tiêu chuẩn về hành xử có đạo đức, có văn hoá, tuân thủ pháp luật cũng như trong cuộc sống thực. Khi lên mạng là đang ở giữa cộng đồng; ý thức cộng đồng là kim chỉ nam cho mọi hành vi trên mạng."@vi ;
+    ex:appearsOnPage ex:g11_page044 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p044_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Trong cuộc sống thực, hầu hết mọi người đều tuân thủ luật pháp, hành xử lịch sự, có văn hoá. Một số người hành xử trên mạng theo cách khác hẳn với khi đối mặt trực tiếp vì cho rằng trên không gian mạng yêu cầu thấp hơn về đạo đức, văn hoá trong hành xử."@vi ;
+    ex:appearsOnPage ex:g11_page044 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p045_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Một số nguyên tắc về ứng xử trên mạng: hãy đặt mình vào vị trí người khác. Trên không gian mạng, lời khuyên này được cụ thể hoá là hãy nhớ ở đầu kia mạng là những người khác, cũng có cảm xúc giống ta. Vì không nhìn thấy phản ứng trực tiếp, người ta dễ hiểu lầm nhau và khi biết thì đã muộn."@vi ;
+    ex:appearsOnPage ex:g11_page045 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p045_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Rộng lượng với người khác, không gây chiến trên mạng. Khi ai đó mắc lỗi với bạn, hãy rộng lượng; cần phản ứng lịch sự và tốt nhất là theo cách riêng tư hơn là to tiếng công khai."@vi ;
+    ex:appearsOnPage ex:g11_page045 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p045_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Có người thích thể hiện, dù sự việc không liên quan trực tiếp đến mình cũng phản ứng cực đoan. Phán xử người khác bằng ngôn từ bất lịch sự, hành vi thiếu văn hoá chỉ làm có thêm kẻ thù. Những gì nói, viết trên mạng có thể được lưu trữ ở nơi nào đó, chuyển tiếp đến bất cứ đâu và người viết không còn quyền kiểm soát nữa."@vi ;
+    ex:appearsOnPage ex:g11_page045 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p045_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Tôn trọng văn hoá nhóm. Khi tham gia một nhóm mạng mới, hãy tìm hiểu văn hoá nhóm có phù hợp với mình không. Có những điều chấp nhận được ở nơi này lại thành thô lỗ, bất lịch sự ở nơi khác. Bạn không phải là trung tâm của không gian mạng; đừng lấn át hay nói hết phần người khác trong nhóm mạng."@vi ;
+    ex:appearsOnPage ex:g11_page045 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p045_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Tôn trọng thời gian và công sức của người khác. Thật dễ nhấn nút đăng hay gửi bản sao cho nhiều người, nhưng đăng bài nhiều lần, đăng tin rác, gửi thư rác sẽ làm phiền người khác, chiếm dụng đường truyền và dung lượng lưu trữ. Người có trách nhiệm luôn ý thức rằng không lãng phí thời gian và công sức của người khác."@vi ;
+    ex:appearsOnPage ex:g11_page045 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p046_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Tôn trọng quyền riêng tư của người khác. Không tìm cách đọc email, tin nhắn của người khác; không chuyển tiếp email, tin nhắn riêng tư mà mình được chia sẻ cho người tiếp theo nếu không chắc đó là việc nên làm. Một số người thích thu thập thông tin về người nổi tiếng hoặc người có bê bối để chia sẻ; đó là xâm phạm quyền riêng tư và có thể gây áp lực lớn cho nạn nhân."@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p046_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Không lợi dụng vị thế của mình để làm việc xấu. Một số người trên không gian mạng có nhiều ảnh hưởng hơn, có thể điều khiển luồng dư luận theo hướng ủng hộ ý kiến của họ. Đó là các KOL trong một lĩnh vực, quản trị viên hệ thống, quản trị diễn đàn, nhóm tin trên mạng. Đạo đức trên mạng không cho phép lợi dụng vị thế vì mục đích xấu."@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ex:g11_topicD_p046_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Bài học nêu các câu hỏi luyện tập, vận dụng và tự kiểm tra: nêu dấu hiệu phát hiện lừa đảo qua mạng; nêu quy tắc nền tảng về văn hoá, đạo đức trên mạng; xử lí email báo trúng thưởng yêu cầu gửi tiền; tìm quy tắc ứng xử trên mạng xã hội phù hợp với các giá trị đạo đức, văn hoá truyền thống; kiểm tra liên kết trong email chưa chắc đáng tin; so sánh quy tắc ứng xử văn minh trên mạng với trong cuộc sống thực."@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:belongsToSection ex:g11_topicD_l1s5 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g11_page042 ex:hasParagraph ex:g11_topicD_p042_01, ex:g11_topicD_p042_02,
+    ex:g11_topicD_p042_03, ex:g11_topicD_p042_04 .
+
+  ex:g11_page043 ex:hasParagraph ex:g11_topicD_p043_01, ex:g11_topicD_p043_02,
+    ex:g11_topicD_p043_03, ex:g11_topicD_p043_04, ex:g11_topicD_p043_05,
+    ex:g11_topicD_p043_06 .
+
+  ex:g11_page044 ex:hasParagraph ex:g11_topicD_p044_01, ex:g11_topicD_p044_02,
+    ex:g11_topicD_p044_03, ex:g11_topicD_p044_04, ex:g11_topicD_p044_05 .
+
+  ex:g11_page045 ex:hasParagraph ex:g11_topicD_p045_01, ex:g11_topicD_p045_02,
+    ex:g11_topicD_p045_03, ex:g11_topicD_p045_04, ex:g11_topicD_p045_05 .
+
+  ex:g11_page046 ex:hasParagraph ex:g11_topicD_p046_01, ex:g11_topicD_p046_02,
+    ex:g11_topicD_p046_03 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g11_topicD_l1s1 ex:hasParagraph ex:g11_topicD_p042_01, ex:g11_topicD_p042_02 .
+  ex:g11_topicD_l1s2 ex:hasParagraph ex:g11_topicD_p042_03, ex:g11_topicD_p042_04,
+    ex:g11_topicD_p043_01, ex:g11_topicD_p043_02, ex:g11_topicD_p043_03 .
+  ex:g11_topicD_l1s3 ex:hasParagraph ex:g11_topicD_p043_04, ex:g11_topicD_p043_05,
+    ex:g11_topicD_p043_06, ex:g11_topicD_p044_01 .
+  ex:g11_topicD_l1s4 ex:hasParagraph ex:g11_topicD_p044_02 .
+  ex:g11_topicD_l1s5 ex:hasParagraph ex:g11_topicD_p044_03, ex:g11_topicD_p044_04,
+    ex:g11_topicD_p044_05, ex:g11_topicD_p045_01, ex:g11_topicD_p045_02,
+    ex:g11_topicD_p045_03, ex:g11_topicD_p045_04, ex:g11_topicD_p045_05,
+    ex:g11_topicD_p046_01, ex:g11_topicD_p046_02, ex:g11_topicD_p046_03 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g11_topicD_p042_01 ex:nextParagraph ex:g11_topicD_p042_02 .
+  ex:g11_topicD_p042_02 ex:previousParagraph ex:g11_topicD_p042_01 ; ex:nextParagraph ex:g11_topicD_p042_03 .
+  ex:g11_topicD_p042_03 ex:previousParagraph ex:g11_topicD_p042_02 ; ex:nextParagraph ex:g11_topicD_p042_04 .
+  ex:g11_topicD_p042_04 ex:previousParagraph ex:g11_topicD_p042_03 ; ex:nextParagraph ex:g11_topicD_p043_01 .
+  ex:g11_topicD_p043_01 ex:previousParagraph ex:g11_topicD_p042_04 ; ex:nextParagraph ex:g11_topicD_p043_02 .
+  ex:g11_topicD_p043_02 ex:previousParagraph ex:g11_topicD_p043_01 ; ex:nextParagraph ex:g11_topicD_p043_03 .
+  ex:g11_topicD_p043_03 ex:previousParagraph ex:g11_topicD_p043_02 ; ex:nextParagraph ex:g11_topicD_p043_04 .
+  ex:g11_topicD_p043_04 ex:previousParagraph ex:g11_topicD_p043_03 ; ex:nextParagraph ex:g11_topicD_p043_05 .
+  ex:g11_topicD_p043_05 ex:previousParagraph ex:g11_topicD_p043_04 ; ex:nextParagraph ex:g11_topicD_p043_06 .
+  ex:g11_topicD_p043_06 ex:previousParagraph ex:g11_topicD_p043_05 ; ex:nextParagraph ex:g11_topicD_p044_01 .
+  ex:g11_topicD_p044_01 ex:previousParagraph ex:g11_topicD_p043_06 ; ex:nextParagraph ex:g11_topicD_p044_02 .
+  ex:g11_topicD_p044_02 ex:previousParagraph ex:g11_topicD_p044_01 ; ex:nextParagraph ex:g11_topicD_p044_03 .
+  ex:g11_topicD_p044_03 ex:previousParagraph ex:g11_topicD_p044_02 ; ex:nextParagraph ex:g11_topicD_p044_04 .
+  ex:g11_topicD_p044_04 ex:previousParagraph ex:g11_topicD_p044_03 ; ex:nextParagraph ex:g11_topicD_p044_05 .
+  ex:g11_topicD_p044_05 ex:previousParagraph ex:g11_topicD_p044_04 ; ex:nextParagraph ex:g11_topicD_p045_01 .
+  ex:g11_topicD_p045_01 ex:previousParagraph ex:g11_topicD_p044_05 ; ex:nextParagraph ex:g11_topicD_p045_02 .
+  ex:g11_topicD_p045_02 ex:previousParagraph ex:g11_topicD_p045_01 ; ex:nextParagraph ex:g11_topicD_p045_03 .
+  ex:g11_topicD_p045_03 ex:previousParagraph ex:g11_topicD_p045_02 ; ex:nextParagraph ex:g11_topicD_p045_04 .
+  ex:g11_topicD_p045_04 ex:previousParagraph ex:g11_topicD_p045_03 ; ex:nextParagraph ex:g11_topicD_p045_05 .
+  ex:g11_topicD_p045_05 ex:previousParagraph ex:g11_topicD_p045_04 ; ex:nextParagraph ex:g11_topicD_p046_01 .
+  ex:g11_topicD_p046_01 ex:previousParagraph ex:g11_topicD_p045_05 ; ex:nextParagraph ex:g11_topicD_p046_02 .
+  ex:g11_topicD_p046_02 ex:previousParagraph ex:g11_topicD_p046_01 ; ex:nextParagraph ex:g11_topicD_p046_03 .
+  ex:g11_topicD_p046_03 ex:previousParagraph ex:g11_topicD_p046_02 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g11_topicD_p042_01 ex:mentionsConcept ex:g11_conceptDaoDucPhapLuatVanHoaSo,
+    ex:g11_conceptUngXuVanHoaAnToanTrenMang, ex:g11_conceptLuaDaoQuaMang,
+    ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_topicD_p042_02 ex:mentionsConcept ex:g11_conceptDangLuaDaoTrenMang,
+    ex:g11_conceptLuaDaoQuaMang .
+  ex:g11_topicD_p042_03 ex:mentionsConcept ex:g11_conceptLuaDaoQuaMang,
+    ex:g11_conceptDangLuaDaoTrenMang, ex:g11_conceptLayCapThongTinCaNhan .
+  ex:g11_topicD_p042_04 ex:mentionsConcept ex:g11_conceptLuaDaoTrungThuongTangQua,
+    ex:g11_conceptPhiVanChuyenGia, ex:g11_conceptEmailLuaDao, ex:g11_conceptTinNhanLuaDao .
+
+  ex:g11_topicD_p043_01 ex:mentionsConcept ex:g11_conceptLuaDaoDatCocBanHangGia .
+  ex:g11_topicD_p043_02 ex:mentionsConcept ex:g11_conceptLayCapThongTinCaNhan,
+    ex:g11_conceptLienKetLuaDao, ex:g11_conceptTrangWebGiaMao .
+  ex:g11_topicD_p043_03 ex:mentionsConcept ex:g11_conceptLuaDaoQuaMang,
+    ex:g11_conceptLienKetLuaDao .
+  ex:g11_topicD_p043_04 ex:mentionsConcept ex:g11_conceptPhongNguLuaDao,
+    ex:g11_conceptPhishing, ex:g11_conceptTrangWebGiaMao, ex:g11_conceptEmailLuaDao .
+  ex:g11_topicD_p043_05 ex:mentionsConcept ex:g11_conceptTenMienGiaMao,
+    ex:g11_conceptTrangWebGiaMao .
+  ex:g11_topicD_p043_06 ex:mentionsConcept ex:g11_conceptTenMienGiaMao,
+    ex:g11_conceptLienKetLuaDao, ex:g11_conceptEmailLuaDao, ex:g11_conceptTinNhanLuaDao .
+
+  ex:g11_topicD_p044_01 ex:mentionsConcept ex:g11_conceptXacMinhThongTin,
+    ex:g11_conceptLienKetLuaDao, ex:g11_conceptEmailLuaDao, ex:g11_conceptTinNhanLuaDao .
+  ex:g11_topicD_p044_02 ex:mentionsConcept ex:g11_conceptHanCheThietHai,
+    ex:g11_conceptBaoMatMatKhau, ex:g11_conceptXacMinhHaiBuoc,
+    ex:g11_conceptThongBaoCoQuanChucNang .
+  ex:g11_topicD_p044_03 ex:mentionsConcept ex:g11_conceptAnhHungBanPhim,
+    ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_topicD_p044_04 ex:mentionsConcept ex:g11_conceptQuyTacNenTang,
+    ex:g11_conceptTheGioiAoCuocSongThuc, ex:g11_conceptYThucCongDongSo,
+    ex:g11_conceptVanHoaUngXuTrenMang, ex:g11_conceptDaoDucTrenMang,
+    ex:g11_conceptPhapLuatTrenMang .
+  ex:g11_topicD_p044_05 ex:mentionsConcept ex:g11_conceptDaoDucTrenMang,
+    ex:g11_conceptVanHoaUngXuTrenMang .
+
+  ex:g11_topicD_p045_01 ex:mentionsConcept ex:g11_conceptDatMinhVaoViTriNguoiKhac .
+  ex:g11_topicD_p045_02 ex:mentionsConcept ex:g11_conceptRongLuongVoiNguoiKhac,
+    ex:g11_conceptKhongGayChienTrenMang .
+  ex:g11_topicD_p045_03 ex:mentionsConcept ex:g11_conceptAnhHungBanPhim,
+    ex:g11_conceptKhongGayChienTrenMang, ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_topicD_p045_04 ex:mentionsConcept ex:g11_conceptTonTrongVanHoaNhom,
+    ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_topicD_p045_05 ex:mentionsConcept ex:g11_conceptTonTrongThoiGianCongSuc,
+    ex:g11_conceptThuRac .
+
+  ex:g11_topicD_p046_01 ex:mentionsConcept ex:g11_conceptTonTrongQuyenRiengTu .
+  ex:g11_topicD_p046_02 ex:mentionsConcept ex:g11_conceptKhongLoiDungViThe,
+    ex:g11_conceptKOL, ex:g11_conceptDaoDucTrenMang .
+  ex:g11_topicD_p046_03 ex:mentionsConcept ex:g11_conceptLuaDaoQuaMang,
+    ex:g11_conceptQuyTacNenTang, ex:g11_conceptVanHoaUngXuTrenMang,
+    ex:g11_conceptQuyTacUngXuMangXaHoi, ex:g11_conceptLienKetLuaDao .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g11_conceptUngXuVanHoaAnToanTrenMang ex:subConceptOf ex:g11_conceptDaoDucPhapLuatVanHoaSo .
+  ex:g11_conceptLuaDaoQuaMang ex:relatedTo ex:g11_conceptUngXuVanHoaAnToanTrenMang .
+  ex:g11_conceptDangLuaDaoTrenMang ex:relatedTo ex:g11_conceptLuaDaoQuaMang .
+  ex:g11_conceptLuaDaoTrungThuongTangQua ex:subConceptOf ex:g11_conceptDangLuaDaoTrenMang .
+  ex:g11_conceptPhiVanChuyenGia ex:relatedTo ex:g11_conceptLuaDaoTrungThuongTangQua .
+  ex:g11_conceptLuaDaoDatCocBanHangGia ex:subConceptOf ex:g11_conceptDangLuaDaoTrenMang .
+  ex:g11_conceptLayCapThongTinCaNhan ex:subConceptOf ex:g11_conceptDangLuaDaoTrenMang .
+  ex:g11_conceptPhishing ex:relatedTo ex:g11_conceptLayCapThongTinCaNhan .
+  ex:g11_conceptTrangWebGiaMao ex:relatedTo ex:g11_conceptPhishing .
+  ex:g11_conceptTenMienGiaMao ex:relatedTo ex:g11_conceptTrangWebGiaMao .
+  ex:g11_conceptLienKetLuaDao ex:relatedTo ex:g11_conceptPhishing .
+  ex:g11_conceptEmailLuaDao ex:relatedTo ex:g11_conceptLienKetLuaDao .
+  ex:g11_conceptTinNhanLuaDao ex:relatedTo ex:g11_conceptLienKetLuaDao .
+  ex:g11_conceptPhongNguLuaDao ex:relatedTo ex:g11_conceptLuaDaoQuaMang .
+  ex:g11_conceptXacMinhThongTin ex:subConceptOf ex:g11_conceptPhongNguLuaDao .
+  ex:g11_conceptBaoMatMatKhau ex:relatedTo ex:g11_conceptHanCheThietHai .
+  ex:g11_conceptXacMinhHaiBuoc ex:relatedTo ex:g11_conceptHanCheThietHai .
+  ex:g11_conceptHanCheThietHai ex:relatedTo ex:g11_conceptLuaDaoQuaMang .
+  ex:g11_conceptThongBaoCoQuanChucNang ex:relatedTo ex:g11_conceptHanCheThietHai .
+  ex:g11_conceptVanHoaUngXuTrenMang ex:relatedTo ex:g11_conceptUngXuVanHoaAnToanTrenMang .
+  ex:g11_conceptDaoDucTrenMang ex:relatedTo ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptPhapLuatTrenMang ex:relatedTo ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptAnhHungBanPhim ex:relatedTo ex:g11_conceptKhongGayChienTrenMang .
+  ex:g11_conceptTheGioiAoCuocSongThuc ex:relatedTo ex:g11_conceptQuyTacNenTang .
+  ex:g11_conceptYThucCongDongSo ex:relatedTo ex:g11_conceptQuyTacNenTang .
+  ex:g11_conceptQuyTacNenTang ex:partOf ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptDatMinhVaoViTriNguoiKhac ex:partOf ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptRongLuongVoiNguoiKhac ex:partOf ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptKhongGayChienTrenMang ex:partOf ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptTonTrongVanHoaNhom ex:partOf ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptTonTrongThoiGianCongSuc ex:partOf ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptThuRac ex:relatedTo ex:g11_conceptTonTrongThoiGianCongSuc .
+  ex:g11_conceptTonTrongQuyenRiengTu ex:partOf ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptKhongLoiDungViThe ex:partOf ex:g11_conceptVanHoaUngXuTrenMang .
+  ex:g11_conceptKOL ex:relatedTo ex:g11_conceptKhongLoiDungViThe .
+  ex:g11_conceptQuyTacUngXuMangXaHoi ex:relatedTo ex:g11_conceptVanHoaUngXuTrenMang .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g11_topicD_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu chủ đề D lớp 11"@vi ;
+    ex:hasRawText "Theo em, lừa đảo trên không gian mạng dễ gặp hay hiếm thấy? Dễ tránh hay khó tránh? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page042 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptLuaDaoQuaMang .
+
+  ex:g11_topicD_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Tìm hiểu dạng lừa đảo phổ biến trên mạng"@vi ;
+    ex:hasRawText "Sử dụng máy tìm kiếm tìm cụm từ \"dạng lừa đảo phổ biến trên mạng\" và cho biết số kết quả trả về là nhiều hay ít, có thể tính được bao nhiêu dạng lừa đảo hay không."@vi ;
+    ex:appearsOnPage ex:g11_page042 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptLuaDaoQuaMang, ex:g11_conceptDangLuaDaoTrenMang .
+
+  ex:g11_topicD_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Anh hùng bàn phím và ứng xử trên mạng xã hội"@vi ;
+    ex:hasRawText "Theo em cụm từ \"anh hùng bàn phím\" có hàm ý gì? Hãy nêu vài ví dụ cụ thể về anh hùng bàn phím. Nếu em là người có nhiều fan hâm mộ trên mạng xã hội, em nên làm gì và tránh những gì?"@vi ;
+    ex:appearsOnPage ex:g11_page044 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptAnhHungBanPhim, ex:g11_conceptVanHoaUngXuTrenMang .
+
+  ex:g11_topicD_l1_ex1 a ex:Exercise ;
+    rdfs:label "Câu 1 luyện tập chủ đề D lớp 11 - Dấu hiệu phát hiện lừa đảo"@vi ;
+    ex:hasRawText "Hãy cho biết những dấu hiệu để phát hiện lừa đảo qua mạng."@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptLuaDaoQuaMang, ex:g11_conceptPhongNguLuaDao .
+
+  ex:g11_topicD_l1_ex2 a ex:Exercise ;
+    rdfs:label "Câu 2 luyện tập chủ đề D lớp 11 - Quy tắc nền tảng về văn hoá đạo đức trên mạng"@vi ;
+    ex:hasRawText "Hãy cho biết quy tắc nền tảng về văn hoá, đạo đức trên mạng."@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptQuyTacNenTang, ex:g11_conceptVanHoaUngXuTrenMang .
+
+  ex:g11_topicD_l1_applied1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng câu 1 chủ đề D lớp 11 - Xử lí email báo trúng thưởng"@vi ;
+    ex:hasRawText "Em sẽ làm gì khi nhận được email báo được thưởng một phần quà vì là khách hàng trung thành và phải gửi ngay một khoản tiền để nhận thưởng?"@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptEmailLuaDao, ex:g11_conceptLuaDaoTrungThuongTangQua, ex:g11_conceptPhongNguLuaDao .
+
+  ex:g11_topicD_l1_applied2 a ex:AppliedTask ;
+    rdfs:label "Vận dụng câu 2 chủ đề D lớp 11 - Bộ quy tắc ứng xử trên mạng xã hội"@vi ;
+    ex:hasRawText "Ngày 17/6/2021, Bộ Thông tin và Truyền thông ban hành Bộ Quy tắc ứng xử trên mạng xã hội, trong đó có quy định chung về Quy tắc Lành mạnh. Em hãy trích ra một số quy tắc ứng xử cho cá nhân về điều này."@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptQuyTacUngXuMangXaHoi, ex:g11_conceptVanHoaUngXuTrenMang .
+
+  ex:g11_topicD_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu 1 tự kiểm tra chủ đề D lớp 11"@vi ;
+    ex:hasRawText "Cần làm gì trước khi nháy vào một liên kết trong email từ người gửi chưa chắc chắn đáng tin?"@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptLienKetLuaDao, ex:g11_conceptEmailLuaDao, ex:g11_conceptXacMinhThongTin .
+
+  ex:g11_topicD_l1_review2 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu 2 tự kiểm tra chủ đề D lớp 11"@vi ;
+    ex:hasRawText "Quy tắc ứng xử văn minh và có đạo đức trên mạng có gì khác với trong cuộc sống thực?"@vi ;
+    ex:appearsOnPage ex:g11_page046 ;
+    ex:belongsToLesson ex:g11_topicD_lesson1 ;
+    ex:relatedTo ex:g11_conceptVanHoaUngXuTrenMang, ex:g11_conceptTheGioiAoCuocSongThuc .
+
+  ex:g11_topicD_lesson1 ex:hasActivity ex:g11_topicD_l1_openingActivity,
+    ex:g11_topicD_l1_activity1, ex:g11_topicD_l1_activity2,
+    ex:g11_topicD_l1_ex1, ex:g11_topicD_l1_ex2,
+    ex:g11_topicD_l1_applied1, ex:g11_topicD_l1_applied2 ;
+    ex:hasReviewQuestion ex:g11_topicD_l1_review1, ex:g11_topicD_l1_review2 .
+}
