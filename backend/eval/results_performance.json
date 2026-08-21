@@ -1,0 +1,27 @@
+{
+  "run_date": "2026-08-21",
+  "environment": "local (GraphDB Desktop 11.3.1 + FastAPI/uvicorn backend, repository Tin-hoc-canh-dieu, 39381 triples; client and server on the same machine, see tab:environment in the thesis)",
+  "script": "backend/eval/eval_performance.py",
+  "endpoint": "POST /api/chat/",
+  "sequential": {
+    "n": 25,
+    "note": "25 questions sampled across all 5 categories of questions_100.json, each a fresh conversation",
+    "mean_ms": 5672.63,
+    "median_ms": 5725.83,
+    "p90_ms": 6731.96,
+    "p95_ms": 7411.48,
+    "min_ms": 4006.87,
+    "max_ms": 7549.51,
+    "raw_ms": [
+      5970.25, 5697.45, 6220.25, 5725.83, 5817.58, 5295.09, 5700.64, 5957.05,
+      5809.60, 6041.47, 4532.92, 4773.25, 4557.54, 5221.88, 4006.87, 4800.97,
+      4142.58, 6122.64, 6494.75, 5610.05, 7411.48, 6110.11, 5514.15, 7549.51,
+      6731.96
+    ]
+  },
+  "concurrency": [
+    { "concurrency": 1, "n": 1, "wall_ms": 4194.57, "throughput_req_per_sec": 0.238, "ok_count": 1, "mean_ms": 4194.45, "max_ms": 4194.45 },
+    { "concurrency": 3, "n": 3, "wall_ms": 6312.48, "throughput_req_per_sec": 0.475, "ok_count": 3, "mean_ms": 5438.50, "max_ms": 6311.85 },
+    { "concurrency": 5, "n": 5, "wall_ms": 6942.17, "throughput_req_per_sec": 0.720, "ok_count": 5, "mean_ms": 5549.64, "max_ms": 6941.97 }
+  ]
+}
