@@ -1,0 +1,815 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 11 TOPIC G
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 resources.
+# Source file: Tin học (tin học ứng dụng) 11 CD-pages-6.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g11_grade11 a ex:GradeLevel ;
+    rdfs:label "Lớp 11"@vi ;
+    ex:gradeNumber 11 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g11_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 11 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 11 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g11_grade11 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicG_shared a ex:Topic ;
+    rdfs:label "Chủ đề G (dùng chung các khối)"@vi ;
+    ex:hasTitle "Hướng nghiệp với tin học"@vi .
+
+  ex:g11_topicG a ex:Topic ;
+    rdfs:label "Chủ đề G - Hướng nghiệp với tin học"@vi ;
+    ex:hasTitle "Hướng nghiệp với tin học"@vi ;
+    ex:hasSubtitle "Giới thiệu nghề quản trị cơ sở dữ liệu"@vi ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicG_shared ;
+    ex:topicOrder 7 ;
+    ex:hasStartPage 84 ;
+    ex:hasEndPage 88 ;
+    ex:sourceFileName "Tin học (tin học ứng dụng) 11 CD-pages-6.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g11_topicG_lesson1 ;
+    ex:hasPage ex:g11_page084, ex:g11_page085, ex:g11_page086, ex:g11_page087, ex:g11_page088 .
+
+  ex:g11_tinhoc_ungdung_canhdieu ex:hasTopic ex:g11_topicG .
+
+  ###########################################################################
+  # Lesson
+  ###########################################################################
+
+  ex:g11_topicG_lesson1 a ex:Lesson ;
+    rdfs:label "Nghề quản trị cơ sở dữ liệu"@vi ;
+    ex:hasTitle "Nghề quản trị cơ sở dữ liệu"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g11_topicG ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 84 ;
+    ex:hasEndPage 88 ;
+    ex:hasSection ex:g11_topicG_l1s1, ex:g11_topicG_l1s2,
+                  ex:g11_topicG_l1s3, ex:g11_topicG_l1s4 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g11_topicG_l1s1 a ex:Section ;
+    rdfs:label "Công việc chính của nhà quản trị CSDL"@vi ;
+    ex:hasTitle "Công việc chính của nhà quản trị CSDL"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 .
+
+  ex:g11_topicG_l1s2 a ex:Section ;
+    rdfs:label "Yêu cầu của nghề quản trị CSDL"@vi ;
+    ex:hasTitle "Yêu cầu của nghề quản trị CSDL"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 .
+
+  ex:g11_topicG_l1s3 a ex:Section ;
+    rdfs:label "Nhu cầu nhân lực và triển vọng phát triển"@vi ;
+    ex:hasTitle "Nhu cầu nhân lực và triển vọng phát triển"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 .
+
+  ex:g11_topicG_l1s4 a ex:Section ;
+    rdfs:label "Thực hành tìm hiểu một số ngành nghề liên quan"@vi ;
+    ex:hasTitle "Thực hành tìm hiểu một số ngành nghề liên quan"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g11_page084 a ex:Page ;
+    ex:hasPageNumber 84 ;
+    ex:hasPrintedPageNumber 84 ;
+    ex:pdfPageIndex 1 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToTopic ex:g11_topicG ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ex:g11_page085 a ex:Page ;
+    ex:hasPageNumber 85 ;
+    ex:hasPrintedPageNumber 85 ;
+    ex:pdfPageIndex 2 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToTopic ex:g11_topicG ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ex:g11_page086 a ex:Page ;
+    ex:hasPageNumber 86 ;
+    ex:hasPrintedPageNumber 86 ;
+    ex:pdfPageIndex 3 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToTopic ex:g11_topicG ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ex:g11_page087 a ex:Page ;
+    ex:hasPageNumber 87 ;
+    ex:hasPrintedPageNumber 87 ;
+    ex:pdfPageIndex 4 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToTopic ex:g11_topicG ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ex:g11_page088 a ex:Page ;
+    ex:hasPageNumber 88 ;
+    ex:hasPrintedPageNumber 88 ;
+    ex:pdfPageIndex 5 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToTopic ex:g11_topicG ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g11_page083 ex:nextPage ex:g11_page084 .
+  ex:g11_page084 ex:previousPage ex:g11_page083 ; ex:nextPage ex:g11_page085 .
+  ex:g11_page085 ex:previousPage ex:g11_page084 ; ex:nextPage ex:g11_page086 .
+  ex:g11_page086 ex:previousPage ex:g11_page085 ; ex:nextPage ex:g11_page087 .
+  ex:g11_page087 ex:previousPage ex:g11_page086 ; ex:nextPage ex:g11_page088 .
+  ex:g11_page088 ex:previousPage ex:g11_page087 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g11_conceptHuongNghiepTinHoc a ex:KnowledgeConcept ;
+    rdfs:label "Hướng nghiệp với tin học"@vi .
+
+  ex:g11_conceptNgheQuanTriCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Nghề quản trị cơ sở dữ liệu"@vi .
+
+  ex:g11_conceptNhaQuanTriCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Nhà quản trị cơ sở dữ liệu"@vi .
+
+  ex:g11_conceptDatabaseAdministrator a ex:KnowledgeConcept ;
+    rdfs:label "Database Administrator"@vi .
+
+  ex:g11_conceptCoSoDuLieu a ex:KnowledgeConcept ;
+    rdfs:label "Cơ sở dữ liệu"@vi .
+
+  ex:g11_conceptHeQuanTriCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Hệ quản trị cơ sở dữ liệu"@vi .
+
+  ex:g11_conceptBaoMatCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Bảo mật cơ sở dữ liệu"@vi .
+
+  ex:g11_conceptXacThucQuyenTruyCap a ex:KnowledgeConcept ;
+    rdfs:label "Xác thực quyền truy cập"@vi .
+
+  ex:g11_conceptKiemSoatTruyCapCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Kiểm soát truy cập cơ sở dữ liệu"@vi .
+
+  ex:g11_conceptToanVenDuLieu a ex:KnowledgeConcept ;
+    rdfs:label "Tính toàn vẹn dữ liệu"@vi .
+
+  ex:g11_conceptGiamSatHieuSuatCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Giám sát hiệu suất CSDL"@vi .
+
+  ex:g11_conceptDieuChinhCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Điều chỉnh CSDL"@vi .
+
+  ex:g11_conceptLapKeHoachPhatTrienCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Lập kế hoạch phát triển CSDL"@vi .
+
+  ex:g11_conceptSaoLuuCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Sao lưu CSDL"@vi .
+
+  ex:g11_conceptPhucHoiCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Phục hồi CSDL"@vi .
+
+  ex:g11_conceptKhacPhucSuCoCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Khắc phục sự cố CSDL"@vi .
+
+  ex:g11_conceptCaiDatBaoTriPhanMemCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Cài đặt và bảo trì phần mềm CSDL"@vi .
+
+  ex:g11_conceptNgonNguTruyVanCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Ngôn ngữ truy vấn CSDL"@vi .
+
+  ex:g11_conceptSQL a ex:KnowledgeConcept ;
+    rdfs:label "SQL"@vi .
+
+  ex:g11_conceptOracleSQL a ex:KnowledgeConcept ;
+    rdfs:label "Oracle SQL"@vi .
+
+  ex:g11_conceptDB2 a ex:KnowledgeConcept ;
+    rdfs:label "DB2"@vi .
+
+  ex:g11_conceptHeDieuHanh a ex:KnowledgeConcept ;
+    rdfs:label "Hệ điều hành"@vi .
+
+  ex:g11_conceptUnix a ex:KnowledgeConcept ;
+    rdfs:label "Unix"@vi .
+
+  ex:g11_conceptLinux a ex:KnowledgeConcept ;
+    rdfs:label "Linux"@vi .
+
+  ex:g11_conceptWindows a ex:KnowledgeConcept ;
+    rdfs:label "Windows"@vi .
+
+  ex:g11_conceptPhanCungVaMang a ex:KnowledgeConcept ;
+    rdfs:label "Phần cứng và mạng"@vi .
+
+  ex:g11_conceptKiNangPhanTichDuLieu a ex:KnowledgeConcept ;
+    rdfs:label "Kĩ năng phân tích dữ liệu"@vi .
+
+  ex:g11_conceptKiNangGiaoTiep a ex:KnowledgeConcept ;
+    rdfs:label "Kĩ năng giao tiếp"@vi .
+
+  ex:g11_conceptKiNangGiaiQuyetVanDe a ex:KnowledgeConcept ;
+    rdfs:label "Kĩ năng giải quyết vấn đề"@vi .
+
+  ex:g11_conceptKiNangToChuc a ex:KnowledgeConcept ;
+    rdfs:label "Kĩ năng tổ chức"@vi .
+
+  ex:g11_conceptCanTrongTiMi a ex:KnowledgeConcept ;
+    rdfs:label "Cẩn trọng và tỉ mỉ"@vi .
+
+  ex:g11_conceptNhuCauNhanLucCNTT a ex:KnowledgeConcept ;
+    rdfs:label "Nhu cầu nhân lực công nghệ thông tin"@vi .
+
+  ex:g11_conceptTrienVongNgheQuanTriCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Triển vọng nghề quản trị CSDL"@vi .
+
+  ex:g11_conceptNhaPhanTichCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Nhà phân tích CSDL"@vi .
+
+  ex:g11_conceptKienTrucSuCSDL a ex:KnowledgeConcept ;
+    rdfs:label "Kiến trúc sư CSDL"@vi .
+
+  ex:g11_conceptNhaQuanTriDuLieu a ex:KnowledgeConcept ;
+    rdfs:label "Nhà quản trị dữ liệu"@vi .
+
+  ex:g11_conceptThongTinHuongNghiep a ex:KnowledgeConcept ;
+    rdfs:label "Thông tin hướng nghiệp"@vi .
+
+  ex:g11_conceptTuyenDungNhanLuc a ex:KnowledgeConcept ;
+    rdfs:label "Tuyển dụng nhân lực"@vi .
+
+  ex:g11_topicG ex:hasConcept ex:g11_conceptHuongNghiepTinHoc,
+    ex:g11_conceptNgheQuanTriCSDL, ex:g11_conceptNhaQuanTriCSDL,
+    ex:g11_conceptDatabaseAdministrator, ex:g11_conceptBaoMatCSDL,
+    ex:g11_conceptGiamSatHieuSuatCSDL, ex:g11_conceptLapKeHoachPhatTrienCSDL,
+    ex:g11_conceptSaoLuuCSDL, ex:g11_conceptPhucHoiCSDL,
+    ex:g11_conceptKhacPhucSuCoCSDL, ex:g11_conceptCaiDatBaoTriPhanMemCSDL,
+    ex:g11_conceptNgonNguTruyVanCSDL, ex:g11_conceptSQL,
+    ex:g11_conceptNhuCauNhanLucCNTT, ex:g11_conceptTrienVongNgheQuanTriCSDL .
+
+  ###########################################################################
+  # Learning objectives and summary
+  ###########################################################################
+
+  ex:g11_topicG_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài học chủ đề G lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Biết được một số thông tin cơ bản về nghề quản trị CSDL: các công việc chính; yêu cầu về kiến thức, kĩ năng; các ngành học có liên quan ở các bậc học tiếp theo; nhu cầu nhân lực hiện tại và tương lai. Tự tìm kiếm và khai thác được thông tin hướng nghiệp qua các chương trình đào tạo, thông báo tuyển dụng nhân lực,... về một vài ngành nghề liên quan khác trong lĩnh vực tin học. Giao lưu được với bạn bè qua các kênh truyền thông số để tham khảo và trao đổi ý kiến về những thông tin trên."@vi ;
+    ex:appearsOnPage ex:g11_page084 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 .
+
+  ex:g11_topicG_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Chủ đề G lớp 11"@vi ;
+    ex:hasSummaryText "Nhà quản trị CSDL có vai trò rất quan trọng trong các tổ chức, doanh nghiệp vì họ chịu trách nhiệm duy trì và quản lí CSDL của tổ chức, đảm bảo sự vận hành thông suốt của hệ thống. Nhu cầu nhân lực cho ngành nghề này rất lớn, đặc biệt là trong các tổ chức sử dụng lượng dữ liệu lớn như bảo hiểm, tài chính, y tế, thương mại điện tử, giáo dục."@vi ;
+    ex:appearsOnPage ex:g11_page088 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 .
+
+  ex:g11_topicG_lesson1 ex:hasSummary ex:g11_topicG_l1_summary .
+
+  ###########################################################################
+  # Figure
+  ###########################################################################
+
+  ex:g11_topicG_fig_l1_dbaWork a ex:Figure ;
+    rdfs:label "Hình 1. Minh hoạ công việc của nhà quản trị CSDL"@vi ;
+    ex:hasCaption "Hình 1. Minh hoạ công việc của nhà quản trị CSDL"@vi ;
+    ex:hasSourceNote "Nguồn: https://www.techrepublic.com" ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g11_page085 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptNhaQuanTriCSDL, ex:g11_conceptGiamSatHieuSuatCSDL,
+                         ex:g11_conceptLapKeHoachPhatTrienCSDL .
+
+  ex:g11_page085 ex:hasFigure ex:g11_topicG_fig_l1_dbaWork .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g11_topicG_def_dba a ex:DefinitionText ;
+    rdfs:label "Định nghĩa nhà quản trị CSDL"@vi ;
+    ex:hasDefinitionText "Người làm việc quản trị CSDL, trong tiếng Anh là Database Administrator, được gọi là nhà quản trị CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page084 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:explainsConcept ex:g11_conceptNhaQuanTriCSDL, ex:g11_conceptDatabaseAdministrator .
+
+  ex:g11_topicG_def_dbAdministrationPurpose a ex:DefinitionText ;
+    rdfs:label "Mục đích quản trị CSDL"@vi ;
+    ex:hasDefinitionText "Quản trị CSDL là để đảm bảo việc khai thác thông tin trong CSDL phục vụ mọi hoạt động thường ngày của tổ chức, doanh nghiệp và chuẩn bị để ứng phó tốt nhất với các sự cố có thể xảy ra đối với CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page084 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:explainsConcept ex:g11_conceptNgheQuanTriCSDL .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g11_topicG_p084_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Chủ đề G - Hướng nghiệp với tin học giới thiệu nghề quản trị cơ sở dữ liệu. Bài học nêu các mục tiêu: biết thông tin cơ bản về nghề quản trị CSDL, tự tìm kiếm thông tin hướng nghiệp và trao đổi với bạn bè qua các kênh truyền thông số."@vi ;
+    ex:appearsOnPage ex:g11_page084 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p084_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hoạt động mở đầu yêu cầu học sinh thảo luận về quản trị CSDL là gì, nhằm mục đích gì và bản thân có muốn trở thành nhà quản trị CSDL hay không, dựa trên kiến thức đã học về hệ quản trị CSDL, tạo lập và khai thác CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page084 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p084_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Quản trị CSDL là để đảm bảo việc khai thác thông tin trong CSDL phục vụ mọi hoạt động thường ngày của tổ chức, doanh nghiệp và chuẩn bị ứng phó tốt nhất với các sự cố có thể xảy ra đối với CSDL. Người làm việc quản trị CSDL được gọi là nhà quản trị CSDL hay Database Administrator."@vi ;
+    ex:appearsOnPage ex:g11_page084 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p084_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Một nhiệm vụ chính của nhà quản trị CSDL là đảm bảo an toàn dữ liệu và xác thực quyền truy cập. Nhà quản trị CSDL cần kiểm soát và đảm bảo tính toàn vẹn, an toàn cho dữ liệu; cấp quyền, kiểm soát truy cập CSDL cho người dùng; phát triển các biện pháp bảo mật CSDL và đảm bảo dữ liệu đến từ các nguồn đáng tin cậy."@vi ;
+    ex:appearsOnPage ex:g11_page084 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p085_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhà quản trị CSDL giám sát hiệu suất CSDL và điều chỉnh CSDL. Đây là một phần của quá trình bảo trì hệ thống, nhằm giảm hiệu suất xử lí của hệ thống, thay đổi các thông số thiết lập trong phần mềm, thay phần cứng có cấu hình mạnh hơn hoặc điều chỉnh tham số CSDL như số lượng dữ liệu tối đa, số lượng khoá tối đa."@vi ;
+    ex:appearsOnPage ex:g11_page085 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p085_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nhà quản trị CSDL cần lập kế hoạch phát triển CSDL: cập nhật định kì nhu cầu mới về khai thác dữ liệu, đề xuất mở rộng và nâng cấp khả năng đáp ứng của CSDL, theo dõi xu thế phát triển CSDL và dự báo tương lai như không gian lưu trữ, công suất sử dụng để chuẩn bị tăng khả năng xử lí khi công việc cần."@vi ;
+    ex:appearsOnPage ex:g11_page085 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p085_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Hoạt động trong bài yêu cầu học sinh nêu một vài sự cố có thể xảy ra để chứng tỏ cần phải sao lưu CSDL. Đây là phần dẫn vào nhiệm vụ sao lưu, phục hồi và khắc phục sự cố của nhà quản trị CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page085 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p085_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Nhà quản trị CSDL cần có khả năng phán đoán sự cố, nhanh chóng khắc phục sự cố và khôi phục dữ liệu để giảm thiểu thiệt hại cho tổ chức, đưa hoạt động với CSDL sớm trở lại bình thường. Nhà quản trị CSDL phải sao lưu hệ thống thường xuyên để tránh mất dữ liệu khi mất điện đột ngột hoặc các thảm hoạ khác."@vi ;
+    ex:appearsOnPage ex:g11_page085 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p085_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Nhà quản trị CSDL cài đặt phần mềm CSDL, thực hiện bảo trì, cập nhật và vá lỗi. Điều này góp phần quan trọng trong đảm bảo tính toàn vẹn dữ liệu của tổ chức."@vi ;
+    ex:appearsOnPage ex:g11_page085 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s1 .
+
+  ex:g11_topicG_p085_06 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Để trở thành nhà quản trị CSDL, học sinh có thể học các chuyên ngành về quản trị CSDL, khoa học máy tính, hệ thống thông tin quản lí hoặc chuyên ngành công nghệ thông tin. Tuỳ quy mô tổ chức và mức độ phức tạp công việc, nhà quản trị CSDL có thể cần chứng chỉ về phần mềm hệ quản trị CSDL và kinh nghiệm làm việc."@vi ;
+    ex:appearsOnPage ex:g11_page085 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s2 .
+
+  ex:g11_topicG_p086_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhà quản trị CSDL cần kiến thức vững chắc về CSDL và ngôn ngữ truy vấn CSDL, nắm được một số ngôn ngữ truy vấn phổ biến như SQL, Oracle SQL và DB2; có kiến thức về hệ điều hành như Unix, Linux, Windows; hiểu biết về phần cứng, mạng và các ứng dụng liên quan đến CSDL mình quản trị."@vi ;
+    ex:appearsOnPage ex:g11_page086 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s2 .
+
+  ex:g11_topicG_p086_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nhà quản trị CSDL cần kĩ năng phân tích dữ liệu để phân tích tập dữ liệu, trích xuất thông tin hữu ích cho tổ chức và khách hàng, đồng thời cung cấp thông tin chi tiết về các cải tiến hệ thống, ra quyết định."@vi ;
+    ex:appearsOnPage ex:g11_page086 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s2 .
+
+  ex:g11_topicG_p086_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Nhà quản trị CSDL cần kĩ năng giao tiếp vì thường phải giám sát và làm việc nhóm với các chuyên viên công nghệ thông tin, đồng thời giao tiếp với người quản lí điều hành, nhà cung cấp và các chuyên gia công nghệ tại các tổ chức khác."@vi ;
+    ex:appearsOnPage ex:g11_page086 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s2 .
+
+  ex:g11_topicG_p086_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Kĩ năng giải quyết vấn đề giúp nhà quản trị CSDL xác định, kiểm tra, phát hiện vấn đề tiềm ẩn, nguyên nhân và giải pháp khắc phục sự cố. Nhà quản trị CSDL cũng cần sẵn sàng trong việc đưa ra giải pháp cho các vấn đề mới."@vi ;
+    ex:appearsOnPage ex:g11_page086 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s2 .
+
+  ex:g11_topicG_p086_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Nhà quản trị CSDL cần kĩ năng tổ chức để tổ chức dữ liệu, đưa ra quyết định về CSDL và tổ chức nhiệm vụ cho nhân viên trong bộ phận công nghệ thông tin. Ngoài ra, cần cẩn trọng và tỉ mỉ vì làm việc với khối lượng dữ liệu lớn, sai sót nhỏ cũng có thể gây lỗi nghiêm trọng."@vi ;
+    ex:appearsOnPage ex:g11_page086 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s2 .
+
+  ex:g11_topicG_p086_06 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Ở Việt Nam có nhiều trường đại học đào tạo cử nhân hoặc kĩ sư công nghệ thông tin, ví dụ Đại học Bách khoa Hà Nội, Trường Đại học Bách khoa - Đại học Quốc gia Thành phố Hồ Chí Minh, Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội, Trường Đại học Khoa học tự nhiên - Đại học Quốc gia Hà Nội, Trường Đại học Công nghệ thông tin - Đại học Quốc gia Thành phố Hồ Chí Minh."@vi ;
+    ex:appearsOnPage ex:g11_page086 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s3 .
+
+  ex:g11_topicG_p086_07 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "Các chương trình đào tạo công nghệ thông tin ở các trường đại học Việt Nam trang bị cho sinh viên cơ sở lí thuyết về hệ CSDL, thực hành với hệ quản trị cơ sở dữ liệu, an toàn hệ thống thông tin, lập trình web và phần mềm ứng dụng. Sinh viên cũng có thể học thêm các khoá học về hệ CSDL hoặc phần mềm cụ thể của Microsoft, IBM, Oracle, Altibase."@vi ;
+    ex:appearsOnPage ex:g11_page086 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s3 .
+
+  ex:g11_topicG_p086_08 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "Cơ hội việc làm và mức lương khác nhau theo vị trí công việc, quy mô và địa điểm tổ chức. Dữ liệu của Cục Thống kê Lao động Hoa Kỳ năm 2018 cho thấy nhà quản trị CSDL có mức lương trung bình hàng năm 90 070 USD; BLS dự đoán công việc quản trị CSDL tăng 9% từ năm 2018 đến 2028, còn vị trí phân tích thông tin y tế dự kiến tăng 13% vào năm 2026."@vi ;
+    ex:appearsOnPage ex:g11_page086 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s3 .
+
+  ex:g11_topicG_p087_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Các vị trí nhà quản trị CSDL, chuyên gia phân tích thông tin sức khoẻ được tuyển dụng trong nhiều tổ chức như bệnh viện, cơ sở y tế, tổ chức chăm sóc sức khoẻ, công ty bảo hiểm, công ty dược phẩm, công ty sản xuất thiết bị y tế. Các lĩnh vực giáo dục, viễn thông, bảo hiểm, ngân hàng, xuất bản phần mềm cũng sử dụng số lượng lớn nhà quản trị CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s3 .
+
+  ex:g11_topicG_p087_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Ở Việt Nam, nhu cầu nhân lực ngành công nghệ thông tin sẽ tiếp tục tăng cao trong những năm tới, đặc biệt trong thương mại điện tử, chính phủ điện tử, nền kinh tế số và xã hội số. Vì vậy, nhà quản trị CSDL ngày càng trở nên quan trọng, cần thiết trong các tổ chức chính quyền và doanh nghiệp."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s3 .
+
+  ex:g11_topicG_p087_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Nhà quản trị CSDL có thể tiếp tục học lên thạc sĩ về công nghệ thông tin, theo đuổi chứng chỉ chuyên môn thuộc lĩnh vực CSDL hoặc mở rộng sang các lĩnh vực liên quan như an ninh mạng."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s3 .
+
+  ex:g11_topicG_p087_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Phần thực hành yêu cầu học sinh chia nhóm tìm hiểu một ngành nghề liên quan như nhà phân tích CSDL, kiến trúc sư CSDL, nhà quản trị dữ liệu. Mỗi nhóm mô tả nghề bằng tệp văn bản và giới thiệu nghề bằng tệp trình chiếu."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s4 .
+
+  ex:g11_topicG_p087_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Quy trình thực hành gồm phân công nhiệm vụ, tìm kiếm thông tin qua Internet, phỏng vấn, giao lưu với khách mời qua mạng xã hội hoặc email, tổng hợp thông tin, trao đổi, thảo luận trong nhóm, cuối cùng soạn nội dung báo cáo dạng văn bản và trình chiếu."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s4 .
+
+  ex:g11_topicG_p087_06 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Gợi ý nội dung tệp văn bản gồm: giới thiệu về nghề; kiến thức, kĩ năng cần thiết cho nghề; đặc điểm lao động và yêu cầu của nghề; đào tạo và tuyển sinh; tình hình tuyển dụng, môi trường làm việc, thu nhập và phúc lợi xã hội."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s4 .
+
+  ex:g11_topicG_p088_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Gợi ý chuẩn bị tệp trình chiếu: chọn lọc nội dung tuỳ theo thời lượng trình bày, dùng bảng, hình ảnh, video minh hoạ để bài trình bày sinh động hơn; thiết kế, định dạng bài trình bày và lựa chọn hiệu ứng phù hợp. Bước cuối cùng là trình bày báo cáo."@vi ;
+    ex:appearsOnPage ex:g11_page088 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s4 .
+
+  ex:g11_topicG_p088_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phần vận dụng yêu cầu học sinh trả lời: nếu thầy, cô giáo môn Tin học được giao quản lí điểm của học sinh trong trường thì có thể gọi là nhà quản trị CSDL được không; nếu muốn trở thành nhà quản trị CSDL thì em sẽ chuẩn bị những gì."@vi ;
+    ex:appearsOnPage ex:g11_page088 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s4 .
+
+  ex:g11_topicG_p088_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Câu hỏi tự kiểm tra yêu cầu đánh giá các phát biểu về công việc của nhà quản trị CSDL, phạm vi tổ chức cần nhà quản trị CSDL, hiểu biết về ứng dụng liên quan, ngôn ngữ lập trình, ngôn ngữ truy vấn CSDL như SQL, kĩ năng phân tích và giải quyết vấn đề."@vi ;
+    ex:appearsOnPage ex:g11_page088 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:belongsToSection ex:g11_topicG_l1s4 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g11_page084 ex:hasParagraph ex:g11_topicG_p084_01, ex:g11_topicG_p084_02,
+    ex:g11_topicG_p084_03, ex:g11_topicG_p084_04 .
+
+  ex:g11_page085 ex:hasParagraph ex:g11_topicG_p085_01, ex:g11_topicG_p085_02,
+    ex:g11_topicG_p085_03, ex:g11_topicG_p085_04, ex:g11_topicG_p085_05,
+    ex:g11_topicG_p085_06 .
+
+  ex:g11_page086 ex:hasParagraph ex:g11_topicG_p086_01, ex:g11_topicG_p086_02,
+    ex:g11_topicG_p086_03, ex:g11_topicG_p086_04, ex:g11_topicG_p086_05,
+    ex:g11_topicG_p086_06, ex:g11_topicG_p086_07, ex:g11_topicG_p086_08 .
+
+  ex:g11_page087 ex:hasParagraph ex:g11_topicG_p087_01, ex:g11_topicG_p087_02,
+    ex:g11_topicG_p087_03, ex:g11_topicG_p087_04, ex:g11_topicG_p087_05,
+    ex:g11_topicG_p087_06 .
+
+  ex:g11_page088 ex:hasParagraph ex:g11_topicG_p088_01, ex:g11_topicG_p088_02,
+    ex:g11_topicG_p088_03 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g11_topicG_l1s1 ex:hasParagraph ex:g11_topicG_p084_01, ex:g11_topicG_p084_02,
+    ex:g11_topicG_p084_03, ex:g11_topicG_p084_04, ex:g11_topicG_p085_01,
+    ex:g11_topicG_p085_02, ex:g11_topicG_p085_03, ex:g11_topicG_p085_04,
+    ex:g11_topicG_p085_05 .
+
+  ex:g11_topicG_l1s2 ex:hasParagraph ex:g11_topicG_p085_06, ex:g11_topicG_p086_01,
+    ex:g11_topicG_p086_02, ex:g11_topicG_p086_03, ex:g11_topicG_p086_04,
+    ex:g11_topicG_p086_05 .
+
+  ex:g11_topicG_l1s3 ex:hasParagraph ex:g11_topicG_p086_06, ex:g11_topicG_p086_07,
+    ex:g11_topicG_p086_08, ex:g11_topicG_p087_01, ex:g11_topicG_p087_02,
+    ex:g11_topicG_p087_03 .
+
+  ex:g11_topicG_l1s4 ex:hasParagraph ex:g11_topicG_p087_04, ex:g11_topicG_p087_05,
+    ex:g11_topicG_p087_06, ex:g11_topicG_p088_01, ex:g11_topicG_p088_02,
+    ex:g11_topicG_p088_03 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g11_topicG_p084_01 ex:nextParagraph ex:g11_topicG_p084_02 .
+  ex:g11_topicG_p084_02 ex:previousParagraph ex:g11_topicG_p084_01 ; ex:nextParagraph ex:g11_topicG_p084_03 .
+  ex:g11_topicG_p084_03 ex:previousParagraph ex:g11_topicG_p084_02 ; ex:nextParagraph ex:g11_topicG_p084_04 .
+  ex:g11_topicG_p084_04 ex:previousParagraph ex:g11_topicG_p084_03 ; ex:nextParagraph ex:g11_topicG_p085_01 .
+  ex:g11_topicG_p085_01 ex:previousParagraph ex:g11_topicG_p084_04 ; ex:nextParagraph ex:g11_topicG_p085_02 .
+  ex:g11_topicG_p085_02 ex:previousParagraph ex:g11_topicG_p085_01 ; ex:nextParagraph ex:g11_topicG_p085_03 .
+  ex:g11_topicG_p085_03 ex:previousParagraph ex:g11_topicG_p085_02 ; ex:nextParagraph ex:g11_topicG_p085_04 .
+  ex:g11_topicG_p085_04 ex:previousParagraph ex:g11_topicG_p085_03 ; ex:nextParagraph ex:g11_topicG_p085_05 .
+  ex:g11_topicG_p085_05 ex:previousParagraph ex:g11_topicG_p085_04 ; ex:nextParagraph ex:g11_topicG_p085_06 .
+  ex:g11_topicG_p085_06 ex:previousParagraph ex:g11_topicG_p085_05 ; ex:nextParagraph ex:g11_topicG_p086_01 .
+  ex:g11_topicG_p086_01 ex:previousParagraph ex:g11_topicG_p085_06 ; ex:nextParagraph ex:g11_topicG_p086_02 .
+  ex:g11_topicG_p086_02 ex:previousParagraph ex:g11_topicG_p086_01 ; ex:nextParagraph ex:g11_topicG_p086_03 .
+  ex:g11_topicG_p086_03 ex:previousParagraph ex:g11_topicG_p086_02 ; ex:nextParagraph ex:g11_topicG_p086_04 .
+  ex:g11_topicG_p086_04 ex:previousParagraph ex:g11_topicG_p086_03 ; ex:nextParagraph ex:g11_topicG_p086_05 .
+  ex:g11_topicG_p086_05 ex:previousParagraph ex:g11_topicG_p086_04 ; ex:nextParagraph ex:g11_topicG_p086_06 .
+  ex:g11_topicG_p086_06 ex:previousParagraph ex:g11_topicG_p086_05 ; ex:nextParagraph ex:g11_topicG_p086_07 .
+  ex:g11_topicG_p086_07 ex:previousParagraph ex:g11_topicG_p086_06 ; ex:nextParagraph ex:g11_topicG_p086_08 .
+  ex:g11_topicG_p086_08 ex:previousParagraph ex:g11_topicG_p086_07 ; ex:nextParagraph ex:g11_topicG_p087_01 .
+  ex:g11_topicG_p087_01 ex:previousParagraph ex:g11_topicG_p086_08 ; ex:nextParagraph ex:g11_topicG_p087_02 .
+  ex:g11_topicG_p087_02 ex:previousParagraph ex:g11_topicG_p087_01 ; ex:nextParagraph ex:g11_topicG_p087_03 .
+  ex:g11_topicG_p087_03 ex:previousParagraph ex:g11_topicG_p087_02 ; ex:nextParagraph ex:g11_topicG_p087_04 .
+  ex:g11_topicG_p087_04 ex:previousParagraph ex:g11_topicG_p087_03 ; ex:nextParagraph ex:g11_topicG_p087_05 .
+  ex:g11_topicG_p087_05 ex:previousParagraph ex:g11_topicG_p087_04 ; ex:nextParagraph ex:g11_topicG_p087_06 .
+  ex:g11_topicG_p087_06 ex:previousParagraph ex:g11_topicG_p087_05 ; ex:nextParagraph ex:g11_topicG_p088_01 .
+  ex:g11_topicG_p088_01 ex:previousParagraph ex:g11_topicG_p087_06 ; ex:nextParagraph ex:g11_topicG_p088_02 .
+  ex:g11_topicG_p088_02 ex:previousParagraph ex:g11_topicG_p088_01 ; ex:nextParagraph ex:g11_topicG_p088_03 .
+  ex:g11_topicG_p088_03 ex:previousParagraph ex:g11_topicG_p088_02 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g11_topicG_p084_01 ex:mentionsConcept ex:g11_conceptHuongNghiepTinHoc,
+    ex:g11_conceptNgheQuanTriCSDL, ex:g11_conceptThongTinHuongNghiep .
+
+  ex:g11_topicG_p084_02 ex:mentionsConcept ex:g11_conceptHeQuanTriCSDL,
+    ex:g11_conceptCoSoDuLieu, ex:g11_conceptNhaQuanTriCSDL .
+
+  ex:g11_topicG_p084_03 ex:mentionsConcept ex:g11_conceptNgheQuanTriCSDL,
+    ex:g11_conceptCoSoDuLieu, ex:g11_conceptNhaQuanTriCSDL,
+    ex:g11_conceptDatabaseAdministrator .
+
+  ex:g11_topicG_p084_04 ex:mentionsConcept ex:g11_conceptBaoMatCSDL,
+    ex:g11_conceptXacThucQuyenTruyCap, ex:g11_conceptKiemSoatTruyCapCSDL,
+    ex:g11_conceptToanVenDuLieu .
+
+  ex:g11_topicG_p085_01 ex:mentionsConcept ex:g11_conceptGiamSatHieuSuatCSDL,
+    ex:g11_conceptDieuChinhCSDL .
+
+  ex:g11_topicG_p085_02 ex:mentionsConcept ex:g11_conceptLapKeHoachPhatTrienCSDL,
+    ex:g11_conceptCoSoDuLieu .
+
+  ex:g11_topicG_p085_03 ex:mentionsConcept ex:g11_conceptSaoLuuCSDL,
+    ex:g11_conceptKhacPhucSuCoCSDL .
+
+  ex:g11_topicG_p085_04 ex:mentionsConcept ex:g11_conceptSaoLuuCSDL,
+    ex:g11_conceptPhucHoiCSDL, ex:g11_conceptKhacPhucSuCoCSDL .
+
+  ex:g11_topicG_p085_05 ex:mentionsConcept ex:g11_conceptCaiDatBaoTriPhanMemCSDL,
+    ex:g11_conceptToanVenDuLieu .
+
+  ex:g11_topicG_p085_06 ex:mentionsConcept ex:g11_conceptNgheQuanTriCSDL,
+    ex:g11_conceptHeQuanTriCSDL .
+
+  ex:g11_topicG_p086_01 ex:mentionsConcept ex:g11_conceptCoSoDuLieu,
+    ex:g11_conceptNgonNguTruyVanCSDL, ex:g11_conceptSQL,
+    ex:g11_conceptOracleSQL, ex:g11_conceptDB2, ex:g11_conceptHeDieuHanh,
+    ex:g11_conceptUnix, ex:g11_conceptLinux, ex:g11_conceptWindows,
+    ex:g11_conceptPhanCungVaMang .
+
+  ex:g11_topicG_p086_02 ex:mentionsConcept ex:g11_conceptKiNangPhanTichDuLieu .
+
+  ex:g11_topicG_p086_03 ex:mentionsConcept ex:g11_conceptKiNangGiaoTiep .
+
+  ex:g11_topicG_p086_04 ex:mentionsConcept ex:g11_conceptKiNangGiaiQuyetVanDe,
+    ex:g11_conceptKhacPhucSuCoCSDL .
+
+  ex:g11_topicG_p086_05 ex:mentionsConcept ex:g11_conceptKiNangToChuc,
+    ex:g11_conceptCanTrongTiMi .
+
+  ex:g11_topicG_p086_06 ex:mentionsConcept ex:g11_conceptNhuCauNhanLucCNTT,
+    ex:g11_conceptNgheQuanTriCSDL .
+
+  ex:g11_topicG_p086_07 ex:mentionsConcept ex:g11_conceptCoSoDuLieu,
+    ex:g11_conceptHeQuanTriCSDL, ex:g11_conceptBaoMatCSDL .
+
+  ex:g11_topicG_p086_08 ex:mentionsConcept ex:g11_conceptTuyenDungNhanLuc,
+    ex:g11_conceptTrienVongNgheQuanTriCSDL, ex:g11_conceptNhuCauNhanLucCNTT .
+
+  ex:g11_topicG_p087_01 ex:mentionsConcept ex:g11_conceptNhaQuanTriCSDL,
+    ex:g11_conceptNhaPhanTichCSDL, ex:g11_conceptTuyenDungNhanLuc .
+
+  ex:g11_topicG_p087_02 ex:mentionsConcept ex:g11_conceptNhuCauNhanLucCNTT,
+    ex:g11_conceptTrienVongNgheQuanTriCSDL .
+
+  ex:g11_topicG_p087_03 ex:mentionsConcept ex:g11_conceptNgheQuanTriCSDL,
+    ex:g11_conceptBaoMatCSDL .
+
+  ex:g11_topicG_p087_04 ex:mentionsConcept ex:g11_conceptNhaPhanTichCSDL,
+    ex:g11_conceptKienTrucSuCSDL, ex:g11_conceptNhaQuanTriDuLieu,
+    ex:g11_conceptThongTinHuongNghiep .
+
+  ex:g11_topicG_p087_05 ex:mentionsConcept ex:g11_conceptThongTinHuongNghiep .
+
+  ex:g11_topicG_p087_06 ex:mentionsConcept ex:g11_conceptThongTinHuongNghiep,
+    ex:g11_conceptTuyenDungNhanLuc .
+
+  ex:g11_topicG_p088_01 ex:mentionsConcept ex:g11_conceptThongTinHuongNghiep .
+
+  ex:g11_topicG_p088_02 ex:mentionsConcept ex:g11_conceptNhaQuanTriCSDL,
+    ex:g11_conceptNgheQuanTriCSDL .
+
+  ex:g11_topicG_p088_03 ex:mentionsConcept ex:g11_conceptNhaQuanTriCSDL,
+    ex:g11_conceptSQL, ex:g11_conceptKiNangPhanTichDuLieu,
+    ex:g11_conceptKiNangGiaiQuyetVanDe .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g11_conceptNgheQuanTriCSDL ex:subConceptOf ex:g11_conceptHuongNghiepTinHoc .
+  ex:g11_conceptNhaQuanTriCSDL ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptDatabaseAdministrator ex:sameAsConcept ex:g11_conceptNhaQuanTriCSDL .
+  ex:g11_conceptCoSoDuLieu ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptHeQuanTriCSDL ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+
+  ex:g11_conceptBaoMatCSDL ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptXacThucQuyenTruyCap ex:partOf ex:g11_conceptBaoMatCSDL .
+  ex:g11_conceptKiemSoatTruyCapCSDL ex:partOf ex:g11_conceptBaoMatCSDL .
+  ex:g11_conceptToanVenDuLieu ex:relatedTo ex:g11_conceptBaoMatCSDL .
+
+  ex:g11_conceptGiamSatHieuSuatCSDL ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptDieuChinhCSDL ex:relatedTo ex:g11_conceptGiamSatHieuSuatCSDL .
+  ex:g11_conceptLapKeHoachPhatTrienCSDL ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptSaoLuuCSDL ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptPhucHoiCSDL ex:relatedTo ex:g11_conceptSaoLuuCSDL .
+  ex:g11_conceptKhacPhucSuCoCSDL ex:relatedTo ex:g11_conceptPhucHoiCSDL .
+  ex:g11_conceptCaiDatBaoTriPhanMemCSDL ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+
+  ex:g11_conceptNgonNguTruyVanCSDL ex:relatedTo ex:g11_conceptCoSoDuLieu .
+  ex:g11_conceptSQL ex:subConceptOf ex:g11_conceptNgonNguTruyVanCSDL .
+  ex:g11_conceptOracleSQL ex:subConceptOf ex:g11_conceptNgonNguTruyVanCSDL .
+  ex:g11_conceptDB2 ex:subConceptOf ex:g11_conceptNgonNguTruyVanCSDL .
+
+  ex:g11_conceptUnix ex:subConceptOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptLinux ex:subConceptOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptWindows ex:subConceptOf ex:g11_conceptHeDieuHanh .
+  ex:g11_conceptHeDieuHanh ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptPhanCungVaMang ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+
+  ex:g11_conceptKiNangPhanTichDuLieu ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptKiNangGiaoTiep ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptKiNangGiaiQuyetVanDe ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptKiNangToChuc ex:subConceptOf ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptCanTrongTiMi ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+
+  ex:g11_conceptNhuCauNhanLucCNTT ex:relatedTo ex:g11_conceptTrienVongNgheQuanTriCSDL .
+  ex:g11_conceptTrienVongNgheQuanTriCSDL ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptNhaPhanTichCSDL ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptKienTrucSuCSDL ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptNhaQuanTriDuLieu ex:relatedTo ex:g11_conceptNgheQuanTriCSDL .
+  ex:g11_conceptThongTinHuongNghiep ex:relatedTo ex:g11_conceptHuongNghiepTinHoc .
+  ex:g11_conceptTuyenDungNhanLuc ex:relatedTo ex:g11_conceptThongTinHuongNghiep .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g11_topicG_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu chủ đề G lớp 11"@vi ;
+    ex:hasRawText "Em đã được giới thiệu về hệ quản trị CSDL, đã thực hành tạo lập CSDL và khai thác thông tin trong CSDL cho một bài toán quản lí nhỏ. Hãy thảo luận nhóm và trả lời các câu hỏi: Quản trị CSDL là gì và nhằm mục đích gì? Em có muốn trở thành nhà quản trị CSDL hay không?"@vi ;
+    ex:appearsOnPage ex:g11_page084 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:relatedTo ex:g11_conceptHeQuanTriCSDL, ex:g11_conceptNgheQuanTriCSDL,
+                 ex:g11_conceptNhaQuanTriCSDL .
+
+  ex:g11_topicG_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài học - Vì sao cần sao lưu CSDL"@vi ;
+    ex:hasRawText "Em hãy nêu một vài sự cố có thể xảy ra để chứng tỏ rằng cần phải sao lưu CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page085 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:relatedTo ex:g11_conceptSaoLuuCSDL, ex:g11_conceptKhacPhucSuCoCSDL .
+
+  ex:g11_topicG_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành tìm hiểu một số ngành nghề liên quan"@vi ;
+    ex:hasRawText "Học sinh chia nhóm, mỗi nhóm lựa chọn tìm hiểu một trong các ngành nghề: nhà phân tích CSDL, kiến trúc sư CSDL, nhà quản trị dữ liệu. Mỗi nhóm mô tả nghề tìm hiểu bằng một tệp văn bản và giới thiệu nghề bằng một tệp trình chiếu."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:relatedTo ex:g11_conceptNhaPhanTichCSDL, ex:g11_conceptKienTrucSuCSDL,
+                 ex:g11_conceptNhaQuanTriDuLieu, ex:g11_conceptThongTinHuongNghiep .
+
+  ex:g11_topicG_l1_practiceSteps a ex:PracticeTask ;
+    rdfs:label "Các bước thực hành tìm hiểu nghề liên quan"@vi ;
+    ex:hasRawText "Bước 1. Phân công nhiệm vụ cho các thành viên trong nhóm. Bước 2. Tìm kiếm thông tin về ngành nghề lựa chọn qua Internet, phỏng vấn và giao lưu với khách mời qua mạng xã hội, email, tổng hợp thông tin. Bước 3. Trao đổi, thảo luận trong nhóm về các nội dung tìm hiểu được. Bước 4. Soạn nội dung báo cáo bằng tệp văn bản và trình chiếu. Bước 5. Trình bày báo cáo."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:relatedTo ex:g11_conceptThongTinHuongNghiep .
+
+  ex:g11_topicG_l1_practiceReportOutline a ex:NoteBox ;
+    rdfs:label "Gợi ý nội dung báo cáo tìm hiểu nghề"@vi ;
+    ex:hasRawText "Nội dung báo cáo nên gồm: giới thiệu về nghề; kiến thức, kĩ năng cần thiết cho nghề; đặc điểm lao động và yêu cầu của nghề; đào tạo và tuyển sinh; tình hình tuyển dụng, môi trường làm việc, thu nhập và phúc lợi xã hội."@vi ;
+    ex:appearsOnPage ex:g11_page087 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:relatedTo ex:g11_conceptThongTinHuongNghiep, ex:g11_conceptTuyenDungNhanLuc .
+
+  ex:g11_topicG_l1_appliedQuestion1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng 1 chủ đề G lớp 11"@vi ;
+    ex:hasRawText "Nếu thầy, cô giáo môn Tin học ở trường em được giao quản lí điểm của học sinh trong trường. Theo em, có thể gọi thầy, cô giáo môn Tin học này là nhà quản trị CSDL được không? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page088 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:relatedTo ex:g11_conceptNhaQuanTriCSDL, ex:g11_conceptCoSoDuLieu .
+
+  ex:g11_topicG_l1_appliedQuestion2 a ex:AppliedTask ;
+    rdfs:label "Vận dụng 2 chủ đề G lớp 11"@vi ;
+    ex:hasRawText "Nếu muốn trở thành nhà quản trị CSDL thì em sẽ chuẩn bị những gì?"@vi ;
+    ex:appearsOnPage ex:g11_page088 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:relatedTo ex:g11_conceptNgheQuanTriCSDL, ex:g11_conceptNhaQuanTriCSDL .
+
+  ex:g11_topicG_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra chủ đề G lớp 11"@vi ;
+    ex:hasRawText "Trong các câu sau, những câu nào đúng? Công việc của nhà quản trị CSDL là đảm bảo CSDL luôn sẵn sàng trong trạng thái tốt nhất và được bảo mật. Nhà quản trị CSDL chỉ cần cho các doanh nghiệp lớn. Nhà quản trị CSDL nên có hiểu biết về các ứng dụng liên quan đến CSDL mà mình quản trị. Nhà quản trị CSDL cần thành thạo các ngôn ngữ lập trình thông dụng hiện nay. Nhà quản trị CSDL có hiểu biết sâu về tất cả các ứng dụng liên quan đến CSDL. Nhà quản trị CSDL cần sử dụng thành thạo ngôn ngữ truy vấn CSDL như SQL. Nhà quản trị CSDL cần có kĩ năng phân tích và giải quyết vấn đề."@vi ;
+    ex:appearsOnPage ex:g11_page088 ;
+    ex:belongsToLesson ex:g11_topicG_lesson1 ;
+    ex:relatedTo ex:g11_conceptNhaQuanTriCSDL, ex:g11_conceptSQL,
+                 ex:g11_conceptKiNangPhanTichDuLieu, ex:g11_conceptKiNangGiaiQuyetVanDe .
+
+  ex:g11_topicG_lesson1 ex:hasActivity ex:g11_topicG_l1_openingActivity,
+    ex:g11_topicG_l1_activity1, ex:g11_topicG_l1_practice1,
+    ex:g11_topicG_l1_practiceSteps ;
+    ex:hasReviewQuestion ex:g11_topicG_l1_appliedQuestion1,
+    ex:g11_topicG_l1_appliedQuestion2, ex:g11_topicG_l1_review1 .
+}

@@ -1,0 +1,1851 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 10 TOPIC E^ICT
+# Assumes ontology/classes/properties have already been inserted.
+# Source file: Tin-hoc-10-Canh-dieu-pages-8.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:grade10 a ex:GradeLevel ;
+    rdfs:label "Lớp 10"@vi ;
+    ex:gradeNumber 10 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:tinhoc10_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 10 - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 10"@vi ;
+    ex:hasGradeLevel ex:grade10 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicEict_shared a ex:Topic ;
+    rdfs:label "Chủ đề E^ICT (dùng chung các khối)"@vi ;
+    ex:hasTitle "Ứng dụng tin học"@vi .
+
+  ex:topicEict a ex:Topic ;
+    rdfs:label "Chủ đề E^ICT - Ứng dụng tin học"@vi ;
+    ex:hasTitle "Ứng dụng tin học"@vi ;
+    ex:hasSubtitle "ICT - Phần mềm thiết kế đồ hoạ"@vi ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:sameTopicAs ex:topicEict_shared ;
+    ex:topicOrder 9 ;
+    ex:hasStartPage 147 ;
+    ex:hasEndPage 173 ;
+    ex:sourceFileName "Tin-hoc-10-Canh-dieu-pages-8.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:topicEict_lesson1, ex:topicEict_lesson2,
+                 ex:topicEict_lesson3, ex:topicEict_lesson4 ;
+    ex:hasPage ex:page147, ex:page148, ex:page149, ex:page150, ex:page151,
+               ex:page152, ex:page153, ex:page154, ex:page155, ex:page156,
+               ex:page157, ex:page158, ex:page159, ex:page160, ex:page161,
+               ex:page162, ex:page163, ex:page164, ex:page165, ex:page166,
+               ex:page167, ex:page168, ex:page169, ex:page170, ex:page171,
+               ex:page172, ex:page173 .
+
+  ex:tinhoc10_canhdieu ex:hasTopic ex:topicEict .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:topicEict_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Tạo văn bản tô màu và ghép ảnh"@vi ;
+    ex:hasTitle "Tạo văn bản tô màu và ghép ảnh"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:topicEict ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 147 ;
+    ex:hasEndPage 152 ;
+    ex:hasSection ex:topicEict_l1s1, ex:topicEict_l1s2, ex:topicEict_l1s3,
+                  ex:topicEict_l1s4, ex:topicEict_l1s5 .
+
+  ex:topicEict_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Một số kĩ thuật thiết kế sử dụng vùng chọn, đường dẫn và các lớp ảnh"@vi ;
+    ex:hasTitle "Một số kĩ thuật thiết kế sử dụng vùng chọn, đường dẫn và các lớp ảnh"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:topicEict ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 153 ;
+    ex:hasEndPage 162 ;
+    ex:hasSection ex:topicEict_l2s1, ex:topicEict_l2s2, ex:topicEict_l2s3,
+                  ex:topicEict_l2s4, ex:topicEict_l2s5, ex:topicEict_l2s6,
+                  ex:topicEict_l2s7 .
+
+  ex:topicEict_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Tách ảnh và thiết kế đồ hoạ với kênh alpha"@vi ;
+    ex:hasTitle "Tách ảnh và thiết kế đồ hoạ với kênh alpha"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:topicEict ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 163 ;
+    ex:hasEndPage 167 ;
+    ex:hasSection ex:topicEict_l3s1, ex:topicEict_l3s2, ex:topicEict_l3s3 .
+
+  ex:topicEict_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Thực hành tổng hợp"@vi ;
+    ex:hasTitle "Thực hành tổng hợp"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:topicEict ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 168 ;
+    ex:hasEndPage 173 ;
+    ex:hasSection ex:topicEict_l4s1, ex:topicEict_l4s2 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:topicEict_l1s1 a ex:Section ;
+    rdfs:label "Phần mềm thiết kế đồ hoạ và GIMP"@vi ;
+    ex:hasTitle "Phần mềm thiết kế đồ hoạ và GIMP"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicEict_lesson1 .
+
+  ex:topicEict_l1s2 a ex:Section ;
+    rdfs:label "Tạo tệp ảnh mới"@vi ;
+    ex:hasTitle "Tạo tệp ảnh mới"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicEict_lesson1 .
+
+  ex:topicEict_l1s3 a ex:Section ;
+    rdfs:label "Tô màu"@vi ;
+    ex:hasTitle "Tô màu"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicEict_lesson1 .
+
+  ex:topicEict_l1s4 a ex:Section ;
+    rdfs:label "Tạo văn bản"@vi ;
+    ex:hasTitle "Tạo văn bản"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:topicEict_lesson1 .
+
+  ex:topicEict_l1s5 a ex:Section ;
+    rdfs:label "Mở tệp ảnh và ghép ảnh"@vi ;
+    ex:hasTitle "Mở tệp ảnh và ghép ảnh"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:topicEict_lesson1 .
+
+  ex:topicEict_l2s1 a ex:Section ;
+    rdfs:label "Khám phá các lớp ảnh"@vi ;
+    ex:hasTitle "Khám phá các lớp ảnh"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l2s2 a ex:Section ;
+    rdfs:label "Một số kĩ thuật thiết kế làm việc với các lớp ảnh"@vi ;
+    ex:hasTitle "Một số kĩ thuật thiết kế làm việc với các lớp ảnh"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l2s3 a ex:Section ;
+    rdfs:label "Sử dụng vùng chọn"@vi ;
+    ex:hasTitle "Sử dụng vùng chọn"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l2s4 a ex:Section ;
+    rdfs:label "Một số kĩ thuật thiết kế sử dụng vùng chọn"@vi ;
+    ex:hasTitle "Một số kĩ thuật thiết kế sử dụng vùng chọn"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l2s5 a ex:Section ;
+    rdfs:label "Sử dụng đường dẫn"@vi ;
+    ex:hasTitle "Sử dụng đường dẫn"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l2s6 a ex:Section ;
+    rdfs:label "Kĩ thuật thiết kế Cắt xén chi tiết thừa"@vi ;
+    ex:hasTitle "Kĩ thuật thiết kế Cắt xén chi tiết thừa"@vi ;
+    ex:sectionOrder 6 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l2s7 a ex:Section ;
+    rdfs:label "Thực hành"@vi ;
+    ex:hasTitle "Thực hành"@vi ;
+    ex:sectionOrder 7 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l3s1 a ex:Section ;
+    rdfs:label "Kênh alpha và kĩ thuật tách ảnh nhờ kênh alpha"@vi ;
+    ex:hasTitle "Kênh alpha và kĩ thuật tách ảnh nhờ kênh alpha"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicEict_lesson3 .
+
+  ex:topicEict_l3s2 a ex:Section ;
+    rdfs:label "Xác định vùng chọn đối tượng từ kênh alpha trong thiết kế đồ hoạ"@vi ;
+    ex:hasTitle "Xác định vùng chọn đối tượng từ kênh alpha trong thiết kế đồ hoạ"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicEict_lesson3 .
+
+  ex:topicEict_l3s3 a ex:Section ;
+    rdfs:label "Thực hành"@vi ;
+    ex:hasTitle "Thực hành"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicEict_lesson3 .
+
+  ex:topicEict_l4s1 a ex:Section ;
+    rdfs:label "Thiết kế logo Olympic Việt Nam"@vi ;
+    ex:hasTitle "Thiết kế logo Olympic Việt Nam"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicEict_lesson4 .
+
+  ex:topicEict_l4s2 a ex:Section ;
+    rdfs:label "Thiết kế banner Câu lạc bộ Tin học ứng dụng"@vi ;
+    ex:hasTitle "Thiết kế banner Câu lạc bộ Tin học ứng dụng"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicEict_lesson4 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:page147 a ex:Page ; ex:hasPageNumber 147 ; ex:hasPrintedPageNumber 147 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:topicEict_lesson1 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page148 a ex:Page ; ex:hasPageNumber 148 ; ex:hasPrintedPageNumber 148 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:topicEict_lesson1 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page149 a ex:Page ; ex:hasPageNumber 149 ; ex:hasPrintedPageNumber 149 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:topicEict_lesson1 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page150 a ex:Page ; ex:hasPageNumber 150 ; ex:hasPrintedPageNumber 150 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:topicEict_lesson1 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page151 a ex:Page ; ex:hasPageNumber 151 ; ex:hasPrintedPageNumber 151 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:topicEict_lesson1 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page152 a ex:Page ; ex:hasPageNumber 152 ; ex:hasPrintedPageNumber 152 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:topicEict_lesson1 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page153 a ex:Page ; ex:hasPageNumber 153 ; ex:hasPrintedPageNumber 153 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page154 a ex:Page ; ex:hasPageNumber 154 ; ex:hasPrintedPageNumber 154 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page155 a ex:Page ; ex:hasPageNumber 155 ; ex:hasPrintedPageNumber 155 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page156 a ex:Page ; ex:hasPageNumber 156 ; ex:hasPrintedPageNumber 156 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page157 a ex:Page ; ex:hasPageNumber 157 ; ex:hasPrintedPageNumber 157 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page158 a ex:Page ; ex:hasPageNumber 158 ; ex:hasPrintedPageNumber 158 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page159 a ex:Page ; ex:hasPageNumber 159 ; ex:hasPrintedPageNumber 159 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page160 a ex:Page ; ex:hasPageNumber 160 ; ex:hasPrintedPageNumber 160 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page161 a ex:Page ; ex:hasPageNumber 161 ; ex:hasPrintedPageNumber 161 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page162 a ex:Page ; ex:hasPageNumber 162 ; ex:hasPrintedPageNumber 162 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:topicEict_lesson2 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page163 a ex:Page ; ex:hasPageNumber 163 ; ex:hasPrintedPageNumber 163 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:topicEict_lesson3 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page164 a ex:Page ; ex:hasPageNumber 164 ; ex:hasPrintedPageNumber 164 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:topicEict_lesson3 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page165 a ex:Page ; ex:hasPageNumber 165 ; ex:hasPrintedPageNumber 165 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:topicEict_lesson3 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page166 a ex:Page ; ex:hasPageNumber 166 ; ex:hasPrintedPageNumber 166 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:topicEict_lesson3 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page167 a ex:Page ; ex:hasPageNumber 167 ; ex:hasPrintedPageNumber 167 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:topicEict_lesson3 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page168 a ex:Page ; ex:hasPageNumber 168 ; ex:hasPrintedPageNumber 168 ; ex:pdfPageIndex 22 ; ex:belongsToLesson ex:topicEict_lesson4 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page169 a ex:Page ; ex:hasPageNumber 169 ; ex:hasPrintedPageNumber 169 ; ex:pdfPageIndex 23 ; ex:belongsToLesson ex:topicEict_lesson4 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page170 a ex:Page ; ex:hasPageNumber 170 ; ex:hasPrintedPageNumber 170 ; ex:pdfPageIndex 24 ; ex:belongsToLesson ex:topicEict_lesson4 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page171 a ex:Page ; ex:hasPageNumber 171 ; ex:hasPrintedPageNumber 171 ; ex:pdfPageIndex 25 ; ex:belongsToLesson ex:topicEict_lesson4 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page172 a ex:Page ; ex:hasPageNumber 172 ; ex:hasPrintedPageNumber 172 ; ex:pdfPageIndex 26 ; ex:belongsToLesson ex:topicEict_lesson4 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page173 a ex:Page ; ex:hasPageNumber 173 ; ex:hasPrintedPageNumber 173 ; ex:pdfPageIndex 27 ; ex:belongsToLesson ex:topicEict_lesson4 ; ex:belongsToTopic ex:topicEict ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:page146 ex:nextPage ex:page147 .
+  ex:page147 ex:previousPage ex:page146 ; ex:nextPage ex:page148 .
+  ex:page148 ex:previousPage ex:page147 ; ex:nextPage ex:page149 .
+  ex:page149 ex:previousPage ex:page148 ; ex:nextPage ex:page150 .
+  ex:page150 ex:previousPage ex:page149 ; ex:nextPage ex:page151 .
+  ex:page151 ex:previousPage ex:page150 ; ex:nextPage ex:page152 .
+  ex:page152 ex:previousPage ex:page151 ; ex:nextPage ex:page153 .
+  ex:page153 ex:previousPage ex:page152 ; ex:nextPage ex:page154 .
+  ex:page154 ex:previousPage ex:page153 ; ex:nextPage ex:page155 .
+  ex:page155 ex:previousPage ex:page154 ; ex:nextPage ex:page156 .
+  ex:page156 ex:previousPage ex:page155 ; ex:nextPage ex:page157 .
+  ex:page157 ex:previousPage ex:page156 ; ex:nextPage ex:page158 .
+  ex:page158 ex:previousPage ex:page157 ; ex:nextPage ex:page159 .
+  ex:page159 ex:previousPage ex:page158 ; ex:nextPage ex:page160 .
+  ex:page160 ex:previousPage ex:page159 ; ex:nextPage ex:page161 .
+  ex:page161 ex:previousPage ex:page160 ; ex:nextPage ex:page162 .
+  ex:page162 ex:previousPage ex:page161 ; ex:nextPage ex:page163 .
+  ex:page163 ex:previousPage ex:page162 ; ex:nextPage ex:page164 .
+  ex:page164 ex:previousPage ex:page163 ; ex:nextPage ex:page165 .
+  ex:page165 ex:previousPage ex:page164 ; ex:nextPage ex:page166 .
+  ex:page166 ex:previousPage ex:page165 ; ex:nextPage ex:page167 .
+  ex:page167 ex:previousPage ex:page166 ; ex:nextPage ex:page168 .
+  ex:page168 ex:previousPage ex:page167 ; ex:nextPage ex:page169 .
+  ex:page169 ex:previousPage ex:page168 ; ex:nextPage ex:page170 .
+  ex:page170 ex:previousPage ex:page169 ; ex:nextPage ex:page171 .
+  ex:page171 ex:previousPage ex:page170 ; ex:nextPage ex:page172 .
+  ex:page172 ex:previousPage ex:page171 ; ex:nextPage ex:page173 .
+  ex:page173 ex:previousPage ex:page172 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:conceptUngDungTinHoc a ex:KnowledgeConcept ; rdfs:label "Ứng dụng tin học"@vi .
+  ex:conceptPhanMemThietKeDoHoa a ex:KnowledgeConcept ; rdfs:label "Phần mềm thiết kế đồ hoạ"@vi .
+  ex:conceptGIMP a ex:KnowledgeConcept ; rdfs:label "GIMP"@vi .
+  ex:conceptDoHoaVector a ex:KnowledgeConcept ; rdfs:label "Đồ hoạ vector"@vi .
+  ex:conceptDoHoaRaster a ex:KnowledgeConcept ; rdfs:label "Đồ hoạ raster"@vi .
+  ex:conceptAnhBitmap a ex:KnowledgeConcept ; rdfs:label "Ảnh bitmap"@vi .
+  ex:conceptManHinhLamViecGIMP a ex:KnowledgeConcept ; rdfs:label "Màn hình làm việc của GIMP"@vi .
+  ex:conceptHopCongCu a ex:KnowledgeConcept ; rdfs:label "Hộp công cụ"@vi .
+  ex:conceptBangTuyChon a ex:KnowledgeConcept ; rdfs:label "Bảng tuỳ chọn"@vi .
+  ex:conceptLopAnh a ex:KnowledgeConcept ; rdfs:label "Lớp ảnh"@vi .
+  ex:conceptKenhMau a ex:KnowledgeConcept ; rdfs:label "Kênh màu"@vi .
+  ex:conceptDuongDan a ex:KnowledgeConcept ; rdfs:label "Đường dẫn"@vi .
+  ex:conceptTaoTepAnhMoi a ex:KnowledgeConcept ; rdfs:label "Tạo tệp ảnh mới"@vi .
+  ex:conceptDoPhanGiaiAnh a ex:KnowledgeConcept ; rdfs:label "Độ phân giải ảnh"@vi .
+  ex:conceptKhongGianMauRGB a ex:KnowledgeConcept ; rdfs:label "Không gian màu RGB"@vi .
+  ex:conceptToMau a ex:KnowledgeConcept ; rdfs:label "Tô màu"@vi .
+  ex:conceptMauTienCanh a ex:KnowledgeConcept ; rdfs:label "Màu tiền cảnh"@vi .
+  ex:conceptMauHauCanh a ex:KnowledgeConcept ; rdfs:label "Màu hậu cảnh"@vi .
+  ex:conceptBucketFill a ex:KnowledgeConcept ; rdfs:label "Công cụ Bucket Fill"@vi .
+  ex:conceptGradient a ex:KnowledgeConcept ; rdfs:label "Tô màu gradient"@vi .
+  ex:conceptTextTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Text"@vi .
+  ex:conceptMoveTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Move"@vi .
+  ex:conceptScaleTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Scale"@vi .
+  ex:conceptCropTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Crop"@vi .
+  ex:conceptGhepAnh a ex:KnowledgeConcept ; rdfs:label "Ghép ảnh"@vi .
+  ex:conceptExportAs a ex:KnowledgeConcept ; rdfs:label "Lệnh Export As"@vi .
+  ex:conceptVungChon a ex:KnowledgeConcept ; rdfs:label "Vùng chọn"@vi .
+  ex:conceptRectangleSelect a ex:KnowledgeConcept ; rdfs:label "Rectangle Select"@vi .
+  ex:conceptEllipseSelect a ex:KnowledgeConcept ; rdfs:label "Ellipse Select"@vi .
+  ex:conceptFreeSelect a ex:KnowledgeConcept ; rdfs:label "Free Select"@vi .
+  ex:conceptInvertSelection a ex:KnowledgeConcept ; rdfs:label "Đảo ngược vùng chọn"@vi .
+  ex:conceptGrowShrinkSelection a ex:KnowledgeConcept ; rdfs:label "Co hoặc giãn vùng chọn"@vi .
+  ex:conceptSelectNone a ex:KnowledgeConcept ; rdfs:label "Bỏ vùng chọn"@vi .
+  ex:conceptThietKeTrenLopBanSao a ex:KnowledgeConcept ; rdfs:label "Thiết kế trên lớp bản sao"@vi .
+  ex:conceptAnHienLop a ex:KnowledgeConcept ; rdfs:label "Ẩn hiện lớp"@vi .
+  ex:conceptSapXepLop a ex:KnowledgeConcept ; rdfs:label "Sắp xếp lớp"@vi .
+  ex:conceptTaoDuongVien a ex:KnowledgeConcept ; rdfs:label "Tạo đường viền"@vi .
+  ex:conceptLongHinh a ex:KnowledgeConcept ; rdfs:label "Lồng hình"@vi .
+  ex:conceptPathsTool a ex:KnowledgeConcept ; rdfs:label "Công cụ Paths"@vi .
+  ex:conceptStrokePath a ex:KnowledgeConcept ; rdfs:label "Stroke Path"@vi .
+  ex:conceptFillPath a ex:KnowledgeConcept ; rdfs:label "Fill Path"@vi .
+  ex:conceptSelectFromPath a ex:KnowledgeConcept ; rdfs:label "Select From Path"@vi .
+  ex:conceptToPath a ex:KnowledgeConcept ; rdfs:label "To Path"@vi .
+  ex:conceptCatXenChiTietThua a ex:KnowledgeConcept ; rdfs:label "Cắt xén chi tiết thừa"@vi .
+  ex:conceptLogo a ex:KnowledgeConcept ; rdfs:label "Logo"@vi .
+  ex:conceptBanner a ex:KnowledgeConcept ; rdfs:label "Banner"@vi .
+  ex:conceptPoster a ex:KnowledgeConcept ; rdfs:label "Poster"@vi .
+  ex:conceptKenhAlpha a ex:KnowledgeConcept ; rdfs:label "Kênh alpha"@vi .
+  ex:conceptDoTrongSuot a ex:KnowledgeConcept ; rdfs:label "Độ trong suốt"@vi .
+  ex:conceptAnhCoNenTrongSuot a ex:KnowledgeConcept ; rdfs:label "Ảnh có nền trong suốt"@vi .
+  ex:conceptTachAnh a ex:KnowledgeConcept ; rdfs:label "Tách ảnh"@vi .
+  ex:conceptAddAlphaChannel a ex:KnowledgeConcept ; rdfs:label "Add Alpha Channel"@vi .
+  ex:conceptAlphaToSelection a ex:KnowledgeConcept ; rdfs:label "Alpha to Selection"@vi .
+  ex:conceptLayerTransparency a ex:KnowledgeConcept ; rdfs:label "Layer Transparency"@vi .
+  ex:conceptThucHanhTongHop a ex:KnowledgeConcept ; rdfs:label "Thực hành tổng hợp"@vi .
+  ex:conceptOlympicVietNamLogo a ex:KnowledgeConcept ; rdfs:label "Logo Olympic Việt Nam"@vi .
+  ex:conceptBannerCLBICT a ex:KnowledgeConcept ; rdfs:label "Banner Câu lạc bộ Tin học ứng dụng"@vi .
+  ex:conceptHieuUngHoaMau a ex:KnowledgeConcept ; rdfs:label "Hiệu ứng hoà màu"@vi .
+
+  ###########################################################################
+  # Topic / lesson / section concept links
+  ###########################################################################
+
+  ex:topicEict ex:hasConcept ex:conceptUngDungTinHoc, ex:conceptPhanMemThietKeDoHoa,
+    ex:conceptGIMP, ex:conceptLopAnh, ex:conceptVungChon, ex:conceptDuongDan,
+    ex:conceptKenhAlpha, ex:conceptDoTrongSuot, ex:conceptGhepAnh, ex:conceptLogo,
+    ex:conceptBanner, ex:conceptPoster .
+
+  ex:topicEict_lesson1 ex:hasConcept ex:conceptPhanMemThietKeDoHoa, ex:conceptGIMP,
+    ex:conceptDoHoaVector, ex:conceptDoHoaRaster, ex:conceptAnhBitmap,
+    ex:conceptManHinhLamViecGIMP, ex:conceptHopCongCu, ex:conceptBangTuyChon,
+    ex:conceptLopAnh, ex:conceptKenhMau, ex:conceptDuongDan, ex:conceptTaoTepAnhMoi,
+    ex:conceptToMau, ex:conceptGradient, ex:conceptTextTool, ex:conceptGhepAnh,
+    ex:conceptCropTool, ex:conceptMoveTool, ex:conceptScaleTool, ex:conceptExportAs .
+
+  ex:topicEict_lesson2 ex:hasConcept ex:conceptLopAnh, ex:conceptVungChon,
+    ex:conceptDuongDan, ex:conceptThietKeTrenLopBanSao, ex:conceptAnHienLop,
+    ex:conceptSapXepLop, ex:conceptRectangleSelect, ex:conceptEllipseSelect,
+    ex:conceptInvertSelection, ex:conceptGrowShrinkSelection, ex:conceptSelectNone,
+    ex:conceptTaoDuongVien, ex:conceptLongHinh, ex:conceptPathsTool,
+    ex:conceptStrokePath, ex:conceptFillPath, ex:conceptSelectFromPath,
+    ex:conceptToPath, ex:conceptCatXenChiTietThua, ex:conceptLogo .
+
+  ex:topicEict_lesson3 ex:hasConcept ex:conceptKenhAlpha, ex:conceptDoTrongSuot,
+    ex:conceptAnhCoNenTrongSuot, ex:conceptTachAnh, ex:conceptFreeSelect,
+    ex:conceptAddAlphaChannel, ex:conceptLayerTransparency, ex:conceptAlphaToSelection,
+    ex:conceptBanner, ex:conceptLogo, ex:conceptPoster .
+
+  ex:topicEict_lesson4 ex:hasConcept ex:conceptThucHanhTongHop, ex:conceptLopAnh,
+    ex:conceptKenhAlpha, ex:conceptLogo, ex:conceptOlympicVietNamLogo,
+    ex:conceptBanner, ex:conceptBannerCLBICT, ex:conceptGradient,
+    ex:conceptHieuUngHoaMau, ex:conceptCatXenChiTietThua .
+
+  ex:topicEict_l1s1 ex:hasConcept ex:conceptPhanMemThietKeDoHoa, ex:conceptGIMP,
+    ex:conceptDoHoaVector, ex:conceptDoHoaRaster, ex:conceptManHinhLamViecGIMP .
+  ex:topicEict_l1s2 ex:hasConcept ex:conceptTaoTepAnhMoi, ex:conceptDoPhanGiaiAnh, ex:conceptKhongGianMauRGB .
+  ex:topicEict_l1s3 ex:hasConcept ex:conceptToMau, ex:conceptBucketFill, ex:conceptGradient, ex:conceptMauTienCanh, ex:conceptMauHauCanh .
+  ex:topicEict_l1s4 ex:hasConcept ex:conceptTextTool, ex:conceptMoveTool, ex:conceptLopAnh .
+  ex:topicEict_l1s5 ex:hasConcept ex:conceptGhepAnh, ex:conceptCropTool, ex:conceptScaleTool, ex:conceptMoveTool, ex:conceptExportAs .
+
+  ex:topicEict_l2s1 ex:hasConcept ex:conceptLopAnh .
+  ex:topicEict_l2s2 ex:hasConcept ex:conceptThietKeTrenLopBanSao, ex:conceptAnHienLop, ex:conceptSapXepLop .
+  ex:topicEict_l2s3 ex:hasConcept ex:conceptVungChon, ex:conceptRectangleSelect, ex:conceptEllipseSelect, ex:conceptInvertSelection, ex:conceptGrowShrinkSelection, ex:conceptSelectNone .
+  ex:topicEict_l2s4 ex:hasConcept ex:conceptTaoDuongVien, ex:conceptLongHinh, ex:conceptVungChon .
+  ex:topicEict_l2s5 ex:hasConcept ex:conceptDuongDan, ex:conceptPathsTool, ex:conceptStrokePath, ex:conceptFillPath, ex:conceptSelectFromPath, ex:conceptToPath .
+  ex:topicEict_l2s6 ex:hasConcept ex:conceptCatXenChiTietThua, ex:conceptDuongDan, ex:conceptVungChon .
+  ex:topicEict_l2s7 ex:hasConcept ex:conceptLongHinh, ex:conceptLogo, ex:conceptCatXenChiTietThua .
+
+  ex:topicEict_l3s1 ex:hasConcept ex:conceptKenhAlpha, ex:conceptDoTrongSuot, ex:conceptAnhCoNenTrongSuot, ex:conceptTachAnh, ex:conceptFreeSelect, ex:conceptAddAlphaChannel .
+  ex:topicEict_l3s2 ex:hasConcept ex:conceptAlphaToSelection, ex:conceptLayerTransparency, ex:conceptVungChon, ex:conceptKenhAlpha .
+  ex:topicEict_l3s3 ex:hasConcept ex:conceptTachAnh, ex:conceptBanner, ex:conceptLogo, ex:conceptPoster .
+
+  ex:topicEict_l4s1 ex:hasConcept ex:conceptOlympicVietNamLogo, ex:conceptLogo, ex:conceptLongHinh, ex:conceptCatXenChiTietThua .
+  ex:topicEict_l4s2 ex:hasConcept ex:conceptBannerCLBICT, ex:conceptBanner, ex:conceptGradient, ex:conceptHieuUngHoaMau, ex:conceptCatXenChiTietThua .
+
+  ###########################################################################
+  # Learning objectives and summary boxes
+  ###########################################################################
+
+  ex:topicEict_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Bước đầu quen được với một số thành phần chính trong màn hình làm việc của GIMP. Tạo được tệp ảnh mới, lưu được tệp ảnh và xuất tệp ảnh với định dạng chuẩn. Bước đầu nhận diện được các lớp ảnh, chọn và đổi được tên lớp ảnh. Bước đầu sử dụng được các công cụ tạo văn bản, tô màu, ghép ảnh đơn giản để tạo được các sản phẩm đồ hoạ như thiệp chúc mừng, thiệp mời, bưu thiếp."@vi ;
+    ex:appearsOnPage ex:page147 ;
+    ex:belongsToLesson ex:topicEict_lesson1 .
+
+  ex:topicEict_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề E^ICT"@vi ;
+    ex:hasSummaryText "Màn hình làm việc của một phần mềm thiết kế đồ hoạ thường có các thành phần chính là hệ thống bảng chọn, hộp công cụ, các bảng tuỳ chọn và các bảng quản lí lớp, kênh màu, đường dẫn. Có thể chỉnh sửa ảnh có sẵn, ghép vào ảnh khác để tạo thành sản phẩm đồ hoạ mới. Phần mềm thiết kế đồ hoạ cung cấp công cụ tạo văn bản, tô màu và biến đổi hình."@vi ;
+    ex:appearsOnPage ex:page152 ;
+    ex:belongsToLesson ex:topicEict_lesson1 .
+
+  ex:topicEict_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Thực hiện được các thao tác cơ bản đối với lớp, vùng chọn và đường dẫn. Biết và thực hiện được một số kĩ thuật thiết kế dựa trên lớp, vùng chọn và đường dẫn."@vi ;
+    ex:appearsOnPage ex:page153 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề E^ICT"@vi ;
+    ex:hasSummaryText "Cửa sổ ảnh hiển thị ảnh hợp thành của các lớp ảnh. Vùng chọn dùng để xử lí một vùng nào đó trên ảnh. Đường dẫn dùng để vẽ hình và có thể chuyển đổi với vùng chọn. Các kĩ thuật thiết kế cơ bản gồm sử dụng lệnh làm việc với lớp ảnh, sử dụng vùng chọn để tạo đường viền, lồng hình và sử dụng kết hợp đường dẫn với vùng chọn để cắt xén chi tiết thừa."@vi ;
+    ex:appearsOnPage ex:page162 ;
+    ex:belongsToLesson ex:topicEict_lesson2 .
+
+  ex:topicEict_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Hiểu được khái niệm độ trong suốt. Sử dụng được kênh alpha và các kĩ thuật thiết kế dựa trên vùng chọn, đường dẫn để thiết kế được banner hoặc băng rôn."@vi ;
+    ex:appearsOnPage ex:page163 ;
+    ex:belongsToLesson ex:topicEict_lesson3 .
+
+  ex:topicEict_l3_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 3 chủ đề E^ICT"@vi ;
+    ex:hasSummaryText "Độ trong suốt của điểm ảnh thể hiện mức độ rõ nét của nó. Ảnh không có nền là ảnh có lớp nền trong suốt. Các điểm ảnh trên lớp ảnh được thể hiện và lưu trữ trên các kênh màu và kênh alpha; kênh alpha thể hiện độ trong suốt của các điểm ảnh. Có hai thao tác cơ bản với kênh alpha là thêm kênh alpha vào lớp ảnh và chuyển kênh alpha của lớp ảnh vào vùng chọn."@vi ;
+    ex:appearsOnPage ex:page167 ;
+    ex:belongsToLesson ex:topicEict_lesson3 .
+
+  ex:topicEict_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Sử dụng được các lớp ảnh, kênh alpha và ôn luyện các kĩ thuật thiết kế. Làm quen với các lệnh tạo hiệu ứng. Tạo được các sản phẩm đồ hoạ đơn giản như logo, poster."@vi ;
+    ex:appearsOnPage ex:page168 ;
+    ex:belongsToLesson ex:topicEict_lesson4 .
+
+  ex:topicEict_lesson1 ex:hasSummary ex:topicEict_l1_summary .
+  ex:topicEict_lesson2 ex:hasSummary ex:topicEict_l2_summary .
+  ex:topicEict_lesson3 ex:hasSummary ex:topicEict_l3_summary .
+
+  ###########################################################################
+  # Figures
+  ###########################################################################
+
+  ex:topicEict_fig_l1_birthdayCard a ex:Figure ;
+    rdfs:label "Hình 1. Thiệp chúc mừng sinh nhật"@vi ;
+    ex:hasCaption "Hình 1. Thiệp chúc mừng sinh nhật"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:page147 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhanMemThietKeDoHoa .
+
+  ex:topicEict_fig_l1_gimpWorkspace a ex:Figure ;
+    rdfs:label "Hình 2. Màn hình làm việc của GIMP"@vi ;
+    ex:hasCaption "Hình 2. Màn hình làm việc của GIMP"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:page148 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptManHinhLamViecGIMP .
+
+  ex:topicEict_fig_l1_newImageDialog a ex:Figure ;
+    rdfs:label "Hình 3. Hộp thoại tạo tệp ảnh mới"@vi ;
+    ex:hasCaption "Hình 3. Hộp thoại tạo tệp ảnh mới"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:page149 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTaoTepAnhMoi .
+
+  ex:topicEict_fig_l1_fgBgColors a ex:Figure ;
+    rdfs:label "Hình 4. Biểu tượng cặp màu FG/BG"@vi ;
+    ex:hasCaption "Hình 4. Biểu tượng cặp màu FG/BG"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:page149 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptMauTienCanh, ex:conceptMauHauCanh .
+
+  ex:topicEict_fig_l1_bucketFill a ex:Figure ;
+    rdfs:label "Hình 5. Tô màu thuần nhất"@vi ;
+    ex:hasCaption "Hình 5. Tô màu thuần nhất"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:page150 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptBucketFill .
+
+  ex:topicEict_fig_l1_gradientFill a ex:Figure ;
+    rdfs:label "Hình 6. Tô màu gradient"@vi ;
+    ex:hasCaption "Hình 6. Tô màu gradient"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:page150 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptGradient .
+
+  ex:topicEict_fig_l1_textOptions a ex:Figure ;
+    rdfs:label "Hình 7. Bảng tuỳ chọn các thuộc tính định dạng của công cụ Text"@vi ;
+    ex:hasCaption "Hình 7. Bảng tuỳ chọn các thuộc tính định dạng của công cụ Text"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:page150 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTextTool .
+
+  ex:topicEict_fig_l1_finalCard a ex:Figure ;
+    rdfs:label "Hình 8. Thiệp chúc mừng sinh nhật"@vi ;
+    ex:hasCaption "Hình 8. Thiệp chúc mừng sinh nhật"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:page151 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptGhepAnh .
+
+  ex:topicEict_fig_l1_copySourceToTarget a ex:Figure ;
+    rdfs:label "Hình 9. Sao chép ảnh nguồn vào ảnh đích"@vi ;
+    ex:hasCaption "Hình 9. Sao chép ảnh nguồn vào ảnh đích"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:page152 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptGhepAnh, ex:conceptLopAnh .
+
+  ex:topicEict_fig_l2_layersLogo a ex:Figure ;
+    rdfs:label "Hình 1. Logo Cờ cô đồng và các lớp ảnh"@vi ;
+    ex:hasCaption "Hình 1. Logo “Cờ cô đồng” và các lớp ảnh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:page153 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLopAnh .
+
+  ex:topicEict_fig_l2_layerCommands a ex:Figure ;
+    rdfs:label "Hình 2. Các lệnh làm việc với lớp"@vi ;
+    ex:hasCaption "Hình 2. Các lệnh làm việc với lớp"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:page154 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLopAnh .
+
+  ex:topicEict_fig_l2_duplicateLayerDesign a ex:Figure ;
+    rdfs:label "Hình 3. Kết quả của thiết kế trên lớp bản sao"@vi ;
+    ex:hasCaption "Hình 3. Kết quả của thiết kế trên lớp bản sao"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:page154 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptThietKeTrenLopBanSao .
+
+  ex:topicEict_fig_l2_hideTextLayer a ex:Figure ;
+    rdfs:label "Hình 4. Ẩn lớp Text"@vi ;
+    ex:hasCaption "Hình 4. Ẩn lớp Text"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:page154 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptAnHienLop .
+
+  ex:topicEict_fig_l2_reorderLayers a ex:Figure ;
+    rdfs:label "Hình 5. Thay đổi thứ tự của các lớp"@vi ;
+    ex:hasCaption "Hình 5. Thay đổi thứ tự của các lớp"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:page155 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptSapXepLop .
+
+  ex:topicEict_fig_l2_createBorder a ex:Figure ;
+    rdfs:label "Hình 6. Tạo đường viền"@vi ;
+    ex:hasCaption "Hình 6. Tạo đường viền"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:page156 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTaoDuongVien .
+
+  ex:topicEict_fig_l2_interlaceBeforeAfter a ex:Figure ;
+    rdfs:label "Hình 7. Trước và sau khi lồng hình"@vi ;
+    ex:hasCaption "Hình 7. Trước và sau khi lồng hình"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:page156 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLongHinh .
+
+  ex:topicEict_fig_l2_maskInterlace a ex:Figure ;
+    rdfs:label "Hình 8. Tạo mảnh che hình"@vi ;
+    ex:hasCaption "Hình 8. Tạo mảnh che hình"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:page157 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLongHinh, ex:conceptVungChon .
+
+  ex:topicEict_fig_l2_pathsPanel a ex:Figure ;
+    rdfs:label "Hình 9. Đường dẫn và bảng quản lí đường dẫn"@vi ;
+    ex:hasCaption "Hình 9. Đường dẫn và bảng quản lí đường dẫn"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 18 ;
+    ex:appearsOnPage ex:page157 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDuongDan, ex:conceptPathsTool .
+
+  ex:topicEict_fig_l2_editPaths a ex:Figure ;
+    rdfs:label "Hình 10. Thiết kế và chỉnh sửa đường dẫn"@vi ;
+    ex:hasCaption "Hình 10. Thiết kế và chỉnh sửa đường dẫn"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 19 ;
+    ex:appearsOnPage ex:page158 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPathsTool, ex:conceptDuongDan .
+
+  ex:topicEict_fig_l2_cutProcess a ex:Figure ;
+    rdfs:label "Hình 11. Quá trình cắt xén"@vi ;
+    ex:hasCaption "Hình 11. Quá trình cắt xén"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 20 ;
+    ex:appearsOnPage ex:page159 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptCatXenChiTietThua .
+
+  ex:topicEict_fig_l2_concentricCircles a ex:Figure ;
+    rdfs:label "Hình 12. Ba hình tròn đồng tâm"@vi ;
+    ex:hasCaption "Hình 12. Ba hình tròn đồng tâm"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 21 ;
+    ex:appearsOnPage ex:page159 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTaoDuongVien .
+
+  ex:topicEict_fig_l2_concentricProcess a ex:Figure ;
+    rdfs:label "Hình 13. Quá trình thiết kế ba hình tròn đồng tâm"@vi ;
+    ex:hasCaption "Hình 13. Quá trình thiết kế ba hình tròn đồng tâm"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 22 ;
+    ex:appearsOnPage ex:page160 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTaoDuongVien .
+
+  ex:topicEict_fig_l2_interlacedCircleSquare a ex:Figure ;
+    rdfs:label "Hình 14. Lồng hình"@vi ;
+    ex:hasCaption "Hình 14. Lồng hình"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 23 ;
+    ex:appearsOnPage ex:page160 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLongHinh .
+
+  ex:topicEict_fig_l2_createCircleSquare a ex:Figure ;
+    rdfs:label "Hình 15. Tạo hình tròn và hình vuông"@vi ;
+    ex:hasCaption "Hình 15. Tạo hình tròn và hình vuông"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 24 ;
+    ex:appearsOnPage ex:page160 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLongHinh, ex:conceptLopAnh .
+
+  ex:topicEict_fig_l2_intersectionStep1 a ex:Figure ;
+    rdfs:label "Hình 16. Xử lí điểm giao cắt thứ nhất"@vi ;
+    ex:hasCaption "Hình 16. Xử lí điểm giao cắt thứ nhất"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 25 ;
+    ex:appearsOnPage ex:page161 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLongHinh .
+
+  ex:topicEict_fig_l2_logoRibbonLeft a ex:Figure ;
+    rdfs:label "Hình 17. Logo với dải nơ bên trái"@vi ;
+    ex:hasCaption "Hình 17. Logo với dải nơ bên trái"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 26 ;
+    ex:appearsOnPage ex:page161 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLogo, ex:conceptCatXenChiTietThua .
+
+  ex:topicEict_fig_l2_logoFinal a ex:Figure ;
+    rdfs:label "Hình 18. Logo"@vi ;
+    ex:hasCaption "Hình 18. Logo"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 27 ;
+    ex:appearsOnPage ex:page161 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLogo .
+
+  ex:topicEict_fig_l2_cutSelectionsRibbon a ex:Figure ;
+    rdfs:label "Hình 19. Các vùng chọn được xác định trong các lần cắt xén"@vi ;
+    ex:hasCaption "Hình 19. Các vùng chọn được xác định trong các lần cắt xén"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 28 ;
+    ex:appearsOnPage ex:page162 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptCatXenChiTietThua .
+
+  ex:topicEict_fig_l3_sourceComposited a ex:Figure ;
+    rdfs:label "Hình 1. Ảnh nguồn được ghép vào ảnh đích"@vi ;
+    ex:hasCaption "Hình 1. Ảnh nguồn được ghép vào ảnh đích"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 29 ;
+    ex:appearsOnPage ex:page163 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTachAnh, ex:conceptAnhCoNenTrongSuot .
+
+  ex:topicEict_fig_l3_backgroundTransparent a ex:Figure ;
+    rdfs:label "Hình 2. Ảnh không có nền và ảnh có nền"@vi ;
+    ex:hasCaption "Hình 2. Ảnh không có nền và ảnh có nền"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 30 ;
+    ex:appearsOnPage ex:page164 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptAnhCoNenTrongSuot, ex:conceptDoTrongSuot .
+
+  ex:topicEict_fig_l3_freeSelectObject a ex:Figure ;
+    rdfs:label "Hình 3. Chọn một đối tượng bằng công cụ Free Select"@vi ;
+    ex:hasCaption "Hình 3. Chọn một đối tượng bằng công cụ Free Select"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 31 ;
+    ex:appearsOnPage ex:page165 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptFreeSelect, ex:conceptTachAnh .
+
+  ex:topicEict_fig_l3_newPattern a ex:Figure ;
+    rdfs:label "Hình 4. Thiết kế hoạ tiết mới"@vi ;
+    ex:hasCaption "Hình 4. Thiết kế hoạ tiết mới"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 32 ;
+    ex:appearsOnPage ex:page165 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptAlphaToSelection .
+
+  ex:topicEict_fig_l3_recolorLayer a ex:Figure ;
+    rdfs:label "Hình 5. Tô lại màu cho một lớp"@vi ;
+    ex:hasCaption "Hình 5. Tô lại màu cho một lớp"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 33 ;
+    ex:appearsOnPage ex:page166 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptAlphaToSelection .
+
+  ex:topicEict_fig_l3_bannerICTGroup a ex:Figure ;
+    rdfs:label "Hình 6. Banner ICT GROUP 10A5"@vi ;
+    ex:hasCaption "Hình 6. Banner “ICT GROUP 10A5”"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 34 ;
+    ex:appearsOnPage ex:page166 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptBanner .
+
+  ex:topicEict_fig_l4_olympicVN a ex:Figure ;
+    rdfs:label "Hình 1. Logo Olympic Việt Nam"@vi ;
+    ex:hasCaption "Hình 1. Logo Olympic Việt Nam"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 35 ;
+    ex:appearsOnPage ex:page168 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptOlympicVietNamLogo .
+
+  ex:topicEict_fig_l4_createSelectionFill a ex:Figure ;
+    rdfs:label "Hình 2. Tạo và tô màu cho vùng chọn"@vi ;
+    ex:hasCaption "Hình 2. Tạo và tô màu cho vùng chọn"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 36 ;
+    ex:appearsOnPage ex:page168 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTaoDuongVien, ex:conceptVungChon .
+
+  ex:topicEict_fig_l4_duplicateRing a ex:Figure ;
+    rdfs:label "Hình 3. Nhân đôi lớp Xanh đậm để tạo lớp Đen chứa vòng tròn màu đen"@vi ;
+    ex:hasCaption "Hình 3. Nhân đôi lớp “Xanh đậm” để tạo lớp “Đen” chứa vòng tròn màu đen"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 37 ;
+    ex:appearsOnPage ex:page169 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptThietKeTrenLopBanSao .
+
+  ex:topicEict_fig_l4_interlaceOlympicRings a ex:Figure ;
+    rdfs:label "Hình 4. Đưa ảnh của lớp này xuống dưới ảnh lớp kia tại chỗ giao nhau"@vi ;
+    ex:hasCaption "Hình 4. Đưa ảnh của lớp này xuống dưới ảnh lớp kia tại chỗ giao nhau"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 38 ;
+    ex:appearsOnPage ex:page169 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptLongHinh .
+
+  ex:topicEict_fig_l4_bannerClub a ex:Figure ;
+    rdfs:label "Hình 5. Banner câu lạc bộ Tin học ứng dụng"@vi ;
+    ex:hasCaption "Hình 5. Banner câu lạc bộ Tin học ứng dụng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 39 ;
+    ex:appearsOnPage ex:page170 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptBannerCLBICT .
+
+  ex:topicEict_fig_l4_gradientBanner a ex:Figure ;
+    rdfs:label "Hình 6. Xác định màu gradient cho nền banner"@vi ;
+    ex:hasCaption "Hình 6. Xác định màu gradient cho nền banner"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 40 ;
+    ex:appearsOnPage ex:page170 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptGradient .
+
+  ex:topicEict_fig_l4_blendBackground a ex:Figure ;
+    rdfs:label "Hình 7. Hoà màu cho lớp Màu nền"@vi ;
+    ex:hasCaption "Hình 7. Hoà màu cho lớp Màu nền"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 41 ;
+    ex:appearsOnPage ex:page171 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptHieuUngHoaMau .
+
+  ex:topicEict_fig_l4_trianglePattern a ex:Figure ;
+    rdfs:label "Hình 8. Tóm tắt quá trình thiết kế hoạ tiết Tam giác"@vi ;
+    ex:hasCaption "Hình 8. Tóm tắt quá trình thiết kế hoạ tiết Tam giác"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 42 ;
+    ex:appearsOnPage ex:page171 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptCatXenChiTietThua .
+
+  ex:topicEict_fig_l4_duplicatePattern a ex:Figure ;
+    rdfs:label "Hình 9. Nhân đôi hoạ tiết để thiết kế hoạ tiết mới"@vi ;
+    ex:hasCaption "Hình 9. Nhân đôi hoạ tiết để thiết kế hoạ tiết mới"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 43 ;
+    ex:appearsOnPage ex:page172 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptThietKeTrenLopBanSao .
+
+  ex:topicEict_fig_l4_concentricBanner a ex:Figure ;
+    rdfs:label "Hình 10. Tóm tắt quá trình thiết kế hoạ tiết các hình tròn đồng tâm"@vi ;
+    ex:hasCaption "Hình 10. Tóm tắt quá trình thiết kế hoạ tiết các hình tròn đồng tâm"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 44 ;
+    ex:appearsOnPage ex:page172 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTaoDuongVien .
+
+  ex:topicEict_fig_l4_cutCurves a ex:Figure ;
+    rdfs:label "Hình 11. Tạo vùng chọn, tô màu và cắt xén"@vi ;
+    ex:hasCaption "Hình 11. Tạo vùng chọn, tô màu và cắt xén"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 45 ;
+    ex:appearsOnPage ex:page173 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptCatXenChiTietThua .
+
+  ex:topicEict_fig_l4_letterCircles a ex:Figure ;
+    rdfs:label "Hình 12. Sử dụng kĩ thuật thiết kế trên lớp bản sao để tạo dãy các hình tròn chứa chữ"@vi ;
+    ex:hasCaption "Hình 12. Sử dụng kĩ thuật thiết kế trên lớp bản sao để tạo dãy các hình tròn chứa chữ"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 46 ;
+    ex:appearsOnPage ex:page173 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptThietKeTrenLopBanSao .
+
+  ex:topicEict_fig_l4_finalLetters a ex:Figure ;
+    rdfs:label "Hình 13. Tạo dãy các chữ"@vi ;
+    ex:hasCaption "Hình 13. Tạo dãy các chữ"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 47 ;
+    ex:appearsOnPage ex:page173 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptBannerCLBICT .
+
+  ex:page147 ex:hasFigure ex:topicEict_fig_l1_birthdayCard .
+  ex:page148 ex:hasFigure ex:topicEict_fig_l1_gimpWorkspace .
+  ex:page149 ex:hasFigure ex:topicEict_fig_l1_newImageDialog, ex:topicEict_fig_l1_fgBgColors .
+  ex:page150 ex:hasFigure ex:topicEict_fig_l1_bucketFill, ex:topicEict_fig_l1_gradientFill, ex:topicEict_fig_l1_textOptions .
+  ex:page151 ex:hasFigure ex:topicEict_fig_l1_finalCard .
+  ex:page152 ex:hasFigure ex:topicEict_fig_l1_copySourceToTarget .
+  ex:page153 ex:hasFigure ex:topicEict_fig_l2_layersLogo .
+  ex:page154 ex:hasFigure ex:topicEict_fig_l2_layerCommands, ex:topicEict_fig_l2_duplicateLayerDesign, ex:topicEict_fig_l2_hideTextLayer .
+  ex:page155 ex:hasFigure ex:topicEict_fig_l2_reorderLayers .
+  ex:page156 ex:hasFigure ex:topicEict_fig_l2_createBorder, ex:topicEict_fig_l2_interlaceBeforeAfter .
+  ex:page157 ex:hasFigure ex:topicEict_fig_l2_maskInterlace, ex:topicEict_fig_l2_pathsPanel .
+  ex:page158 ex:hasFigure ex:topicEict_fig_l2_editPaths .
+  ex:page159 ex:hasFigure ex:topicEict_fig_l2_cutProcess, ex:topicEict_fig_l2_concentricCircles .
+  ex:page160 ex:hasFigure ex:topicEict_fig_l2_concentricProcess, ex:topicEict_fig_l2_interlacedCircleSquare, ex:topicEict_fig_l2_createCircleSquare .
+  ex:page161 ex:hasFigure ex:topicEict_fig_l2_intersectionStep1, ex:topicEict_fig_l2_logoRibbonLeft, ex:topicEict_fig_l2_logoFinal .
+  ex:page162 ex:hasFigure ex:topicEict_fig_l2_cutSelectionsRibbon .
+  ex:page163 ex:hasFigure ex:topicEict_fig_l3_sourceComposited .
+  ex:page164 ex:hasFigure ex:topicEict_fig_l3_backgroundTransparent .
+  ex:page165 ex:hasFigure ex:topicEict_fig_l3_freeSelectObject, ex:topicEict_fig_l3_newPattern .
+  ex:page166 ex:hasFigure ex:topicEict_fig_l3_recolorLayer, ex:topicEict_fig_l3_bannerICTGroup .
+  ex:page168 ex:hasFigure ex:topicEict_fig_l4_olympicVN, ex:topicEict_fig_l4_createSelectionFill .
+  ex:page169 ex:hasFigure ex:topicEict_fig_l4_duplicateRing, ex:topicEict_fig_l4_interlaceOlympicRings .
+  ex:page170 ex:hasFigure ex:topicEict_fig_l4_bannerClub, ex:topicEict_fig_l4_gradientBanner .
+  ex:page171 ex:hasFigure ex:topicEict_fig_l4_blendBackground, ex:topicEict_fig_l4_trianglePattern .
+  ex:page172 ex:hasFigure ex:topicEict_fig_l4_duplicatePattern, ex:topicEict_fig_l4_concentricBanner .
+  ex:page173 ex:hasFigure ex:topicEict_fig_l4_cutCurves, ex:topicEict_fig_l4_letterCircles, ex:topicEict_fig_l4_finalLetters .
+
+  ###########################################################################
+  # Figure ordering
+  ###########################################################################
+
+  ex:topicEict_fig_l1_birthdayCard ex:nextFigure ex:topicEict_fig_l1_gimpWorkspace .
+  ex:topicEict_fig_l1_gimpWorkspace ex:previousFigure ex:topicEict_fig_l1_birthdayCard ; ex:nextFigure ex:topicEict_fig_l1_newImageDialog .
+  ex:topicEict_fig_l1_newImageDialog ex:previousFigure ex:topicEict_fig_l1_gimpWorkspace ; ex:nextFigure ex:topicEict_fig_l1_fgBgColors .
+  ex:topicEict_fig_l1_fgBgColors ex:previousFigure ex:topicEict_fig_l1_newImageDialog ; ex:nextFigure ex:topicEict_fig_l1_bucketFill .
+  ex:topicEict_fig_l1_bucketFill ex:previousFigure ex:topicEict_fig_l1_fgBgColors ; ex:nextFigure ex:topicEict_fig_l1_gradientFill .
+  ex:topicEict_fig_l1_gradientFill ex:previousFigure ex:topicEict_fig_l1_bucketFill ; ex:nextFigure ex:topicEict_fig_l1_textOptions .
+  ex:topicEict_fig_l1_textOptions ex:previousFigure ex:topicEict_fig_l1_gradientFill ; ex:nextFigure ex:topicEict_fig_l1_finalCard .
+  ex:topicEict_fig_l1_finalCard ex:previousFigure ex:topicEict_fig_l1_textOptions ; ex:nextFigure ex:topicEict_fig_l1_copySourceToTarget .
+  ex:topicEict_fig_l1_copySourceToTarget ex:previousFigure ex:topicEict_fig_l1_finalCard ; ex:nextFigure ex:topicEict_fig_l2_layersLogo .
+  ex:topicEict_fig_l2_layersLogo ex:previousFigure ex:topicEict_fig_l1_copySourceToTarget ; ex:nextFigure ex:topicEict_fig_l2_layerCommands .
+  ex:topicEict_fig_l2_layerCommands ex:previousFigure ex:topicEict_fig_l2_layersLogo ; ex:nextFigure ex:topicEict_fig_l2_duplicateLayerDesign .
+  ex:topicEict_fig_l2_duplicateLayerDesign ex:previousFigure ex:topicEict_fig_l2_layerCommands ; ex:nextFigure ex:topicEict_fig_l2_hideTextLayer .
+  ex:topicEict_fig_l2_hideTextLayer ex:previousFigure ex:topicEict_fig_l2_duplicateLayerDesign ; ex:nextFigure ex:topicEict_fig_l2_reorderLayers .
+  ex:topicEict_fig_l2_reorderLayers ex:previousFigure ex:topicEict_fig_l2_hideTextLayer ; ex:nextFigure ex:topicEict_fig_l2_createBorder .
+  ex:topicEict_fig_l2_createBorder ex:previousFigure ex:topicEict_fig_l2_reorderLayers ; ex:nextFigure ex:topicEict_fig_l2_interlaceBeforeAfter .
+  ex:topicEict_fig_l2_interlaceBeforeAfter ex:previousFigure ex:topicEict_fig_l2_createBorder ; ex:nextFigure ex:topicEict_fig_l2_maskInterlace .
+  ex:topicEict_fig_l2_maskInterlace ex:previousFigure ex:topicEict_fig_l2_interlaceBeforeAfter ; ex:nextFigure ex:topicEict_fig_l2_pathsPanel .
+  ex:topicEict_fig_l2_pathsPanel ex:previousFigure ex:topicEict_fig_l2_maskInterlace ; ex:nextFigure ex:topicEict_fig_l2_editPaths .
+  ex:topicEict_fig_l2_editPaths ex:previousFigure ex:topicEict_fig_l2_pathsPanel ; ex:nextFigure ex:topicEict_fig_l2_cutProcess .
+  ex:topicEict_fig_l2_cutProcess ex:previousFigure ex:topicEict_fig_l2_editPaths ; ex:nextFigure ex:topicEict_fig_l2_concentricCircles .
+  ex:topicEict_fig_l2_concentricCircles ex:previousFigure ex:topicEict_fig_l2_cutProcess ; ex:nextFigure ex:topicEict_fig_l2_concentricProcess .
+  ex:topicEict_fig_l2_concentricProcess ex:previousFigure ex:topicEict_fig_l2_concentricCircles ; ex:nextFigure ex:topicEict_fig_l2_interlacedCircleSquare .
+  ex:topicEict_fig_l2_interlacedCircleSquare ex:previousFigure ex:topicEict_fig_l2_concentricProcess ; ex:nextFigure ex:topicEict_fig_l2_createCircleSquare .
+  ex:topicEict_fig_l2_createCircleSquare ex:previousFigure ex:topicEict_fig_l2_interlacedCircleSquare ; ex:nextFigure ex:topicEict_fig_l2_intersectionStep1 .
+  ex:topicEict_fig_l2_intersectionStep1 ex:previousFigure ex:topicEict_fig_l2_createCircleSquare ; ex:nextFigure ex:topicEict_fig_l2_logoRibbonLeft .
+  ex:topicEict_fig_l2_logoRibbonLeft ex:previousFigure ex:topicEict_fig_l2_intersectionStep1 ; ex:nextFigure ex:topicEict_fig_l2_logoFinal .
+  ex:topicEict_fig_l2_logoFinal ex:previousFigure ex:topicEict_fig_l2_logoRibbonLeft ; ex:nextFigure ex:topicEict_fig_l2_cutSelectionsRibbon .
+  ex:topicEict_fig_l2_cutSelectionsRibbon ex:previousFigure ex:topicEict_fig_l2_logoFinal ; ex:nextFigure ex:topicEict_fig_l3_sourceComposited .
+  ex:topicEict_fig_l3_sourceComposited ex:previousFigure ex:topicEict_fig_l2_cutSelectionsRibbon ; ex:nextFigure ex:topicEict_fig_l3_backgroundTransparent .
+  ex:topicEict_fig_l3_backgroundTransparent ex:previousFigure ex:topicEict_fig_l3_sourceComposited ; ex:nextFigure ex:topicEict_fig_l3_freeSelectObject .
+  ex:topicEict_fig_l3_freeSelectObject ex:previousFigure ex:topicEict_fig_l3_backgroundTransparent ; ex:nextFigure ex:topicEict_fig_l3_newPattern .
+  ex:topicEict_fig_l3_newPattern ex:previousFigure ex:topicEict_fig_l3_freeSelectObject ; ex:nextFigure ex:topicEict_fig_l3_recolorLayer .
+  ex:topicEict_fig_l3_recolorLayer ex:previousFigure ex:topicEict_fig_l3_newPattern ; ex:nextFigure ex:topicEict_fig_l3_bannerICTGroup .
+  ex:topicEict_fig_l3_bannerICTGroup ex:previousFigure ex:topicEict_fig_l3_recolorLayer ; ex:nextFigure ex:topicEict_fig_l4_olympicVN .
+  ex:topicEict_fig_l4_olympicVN ex:previousFigure ex:topicEict_fig_l3_bannerICTGroup ; ex:nextFigure ex:topicEict_fig_l4_createSelectionFill .
+  ex:topicEict_fig_l4_createSelectionFill ex:previousFigure ex:topicEict_fig_l4_olympicVN ; ex:nextFigure ex:topicEict_fig_l4_duplicateRing .
+  ex:topicEict_fig_l4_duplicateRing ex:previousFigure ex:topicEict_fig_l4_createSelectionFill ; ex:nextFigure ex:topicEict_fig_l4_interlaceOlympicRings .
+  ex:topicEict_fig_l4_interlaceOlympicRings ex:previousFigure ex:topicEict_fig_l4_duplicateRing ; ex:nextFigure ex:topicEict_fig_l4_bannerClub .
+  ex:topicEict_fig_l4_bannerClub ex:previousFigure ex:topicEict_fig_l4_interlaceOlympicRings ; ex:nextFigure ex:topicEict_fig_l4_gradientBanner .
+  ex:topicEict_fig_l4_gradientBanner ex:previousFigure ex:topicEict_fig_l4_bannerClub ; ex:nextFigure ex:topicEict_fig_l4_blendBackground .
+  ex:topicEict_fig_l4_blendBackground ex:previousFigure ex:topicEict_fig_l4_gradientBanner ; ex:nextFigure ex:topicEict_fig_l4_trianglePattern .
+  ex:topicEict_fig_l4_trianglePattern ex:previousFigure ex:topicEict_fig_l4_blendBackground ; ex:nextFigure ex:topicEict_fig_l4_duplicatePattern .
+  ex:topicEict_fig_l4_duplicatePattern ex:previousFigure ex:topicEict_fig_l4_trianglePattern ; ex:nextFigure ex:topicEict_fig_l4_concentricBanner .
+  ex:topicEict_fig_l4_concentricBanner ex:previousFigure ex:topicEict_fig_l4_duplicatePattern ; ex:nextFigure ex:topicEict_fig_l4_cutCurves .
+  ex:topicEict_fig_l4_cutCurves ex:previousFigure ex:topicEict_fig_l4_concentricBanner ; ex:nextFigure ex:topicEict_fig_l4_letterCircles .
+  ex:topicEict_fig_l4_letterCircles ex:previousFigure ex:topicEict_fig_l4_cutCurves ; ex:nextFigure ex:topicEict_fig_l4_finalLetters .
+  ex:topicEict_fig_l4_finalLetters ex:previousFigure ex:topicEict_fig_l4_letterCircles .
+
+  ###########################################################################
+  # Definitions / note boxes
+  ###########################################################################
+
+  ex:topicEict_def_graphicsSoftware a ex:DefinitionText ;
+    rdfs:label "Định nghĩa phần mềm thiết kế đồ hoạ"@vi ;
+    ex:hasDefinitionText "Phần mềm thiết kế đồ hoạ là phần mềm cung cấp các công cụ giúp tạo ra sản phẩm đồ hoạ như logo, banner, topic quảng cáo, băng rôn, áp phích, poster và thiệp chúc mừng."@vi ;
+    ex:appearsOnPage ex:page147 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptPhanMemThietKeDoHoa .
+
+  ex:topicEict_def_vectorRaster a ex:DefinitionText ;
+    rdfs:label "Đồ hoạ vector và đồ hoạ raster"@vi ;
+    ex:hasDefinitionText "Đồ hoạ vector sử dụng các toạ độ trong mặt phẳng và mối quan hệ vector để tạo ra đường với thuộc tính màu nét, hình dạng, độ dày. Đồ hoạ raster sử dụng ma trận các điểm ảnh với màu sắc và sắc thái khác nhau để biểu diễn hình ảnh."@vi ;
+    ex:appearsOnPage ex:page148 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptDoHoaVector, ex:conceptDoHoaRaster .
+
+  ex:topicEict_def_gimp a ex:DefinitionText ;
+    rdfs:label "Định nghĩa GIMP"@vi ;
+    ex:hasDefinitionText "GIMP là phần mềm mã nguồn mở, miễn phí, hỗ trợ hiệu quả chỉnh sửa ảnh và thiết kế đồ hoạ dựa trên đồ hoạ raster, đồng thời cũng hỗ trợ đồ hoạ vector."@vi ;
+    ex:appearsOnPage ex:page148 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:explainsConcept ex:conceptGIMP .
+
+  ex:topicEict_def_selection a ex:DefinitionText ;
+    rdfs:label "Định nghĩa vùng chọn"@vi ;
+    ex:hasDefinitionText "Vùng chọn giúp xử lí riêng biệt một vùng nào đó trên ảnh, ví dụ như tô màu hoặc vẽ hình. Vùng chọn không thuộc bất kì lớp ảnh nào nhưng các thao tác với vùng chọn tác động vào lớp ảnh đang được chọn trong phạm vi vùng chọn."@vi ;
+    ex:appearsOnPage ex:page155 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptVungChon .
+
+  ex:topicEict_def_path a ex:DefinitionText ;
+    rdfs:label "Định nghĩa đường dẫn"@vi ;
+    ex:hasDefinitionText "Đường dẫn dùng để vẽ hình có hình dạng tuỳ ý. Đường dẫn được tạo bằng công cụ Paths, gồm các điểm mốc và các đoạn nối, có thể uốn cong, di chuyển điểm mốc, thêm điểm mốc, chuyển đổi thành vùng chọn, tạo nét vẽ hoặc tô màu."@vi ;
+    ex:appearsOnPage ex:page157 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptDuongDan .
+
+  ex:topicEict_def_cutExcess a ex:DefinitionText ;
+    rdfs:label "Định nghĩa kĩ thuật cắt xén chi tiết thừa"@vi ;
+    ex:hasDefinitionText "Cắt xén chi tiết thừa là kĩ thuật thiết kế sử dụng kết hợp đường dẫn và vùng chọn, gồm xác định vùng chọn để khoanh vùng chỗ cần cắt xén, chọn lớp chứa hình ảnh và xoá vùng chọn, sau đó bỏ vùng chọn."@vi ;
+    ex:appearsOnPage ex:page159 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:explainsConcept ex:conceptCatXenChiTietThua .
+
+  ex:topicEict_def_alpha a ex:DefinitionText ;
+    rdfs:label "Định nghĩa kênh alpha"@vi ;
+    ex:hasDefinitionText "Kênh alpha là kênh trong suốt của ảnh, thể hiện độ trong suốt hay độ không nhìn rõ của các điểm ảnh. Mỗi điểm ảnh có thể không được nhìn thấy nếu nó trong suốt hoàn toàn hoặc nhìn thấy mờ nếu nó có độ trong suốt nào đó."@vi ;
+    ex:appearsOnPage ex:page164 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:explainsConcept ex:conceptKenhAlpha, ex:conceptDoTrongSuot .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:topicEict_p147_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1. Tạo văn bản tô màu và ghép ảnh. Bài học đặt vấn đề: học sinh giới thiệu một phần mềm từng dùng để tạo sản phẩm như thiệp chúc mừng, bưu thiếp hoặc áp phích."@vi ;
+    ex:appearsOnPage ex:page147 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s1 .
+
+  ex:topicEict_p147_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hình 1 minh hoạ một thiệp chúc mừng sinh nhật được tạo bởi phần mềm thiết kế đồ hoạ. Phần mềm thiết kế đồ hoạ cung cấp công cụ giúp tạo ra các sản phẩm như logo, banner, topic quảng cáo, băng rôn, áp phích, poster và thiệp chúc mừng."@vi ;
+    ex:appearsOnPage ex:page147 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s1 .
+
+  ex:topicEict_p148_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Đồ hoạ vector sử dụng các toạ độ trong mặt phẳng và mối quan hệ vector để tạo ra đường với các thuộc tính như màu nét, hình dạng, độ dày. Đồ hoạ raster sử dụng ma trận điểm ảnh với màu sắc và sắc thái khác nhau để biểu diễn hình ảnh."@vi ;
+    ex:appearsOnPage ex:page148 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s1 .
+
+  ex:topicEict_p148_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "GIMP là phần mềm mã nguồn mở, miễn phí, trợ giúp chỉnh sửa ảnh và thiết kế đồ hoạ dựa trên đồ hoạ raster, đồng thời cũng hỗ trợ đồ hoạ vector."@vi ;
+    ex:appearsOnPage ex:page148 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s1 .
+
+  ex:topicEict_p148_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Màn hình làm việc của GIMP có các thành phần như hệ thống bảng chọn, hộp công cụ, bảng tuỳ chọn, cửa sổ ảnh và các bảng quản lí lớp ảnh, kênh màu, đường dẫn."@vi ;
+    ex:appearsOnPage ex:page148 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s1 .
+
+  ex:topicEict_p149_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để tạo tệp ảnh mới, chọn File/New, GIMP đưa ra hộp thoại hỏi các tham số để tạo tệp ảnh mới. Đơn vị đo kích thước và độ phân giải ảnh được chọn tuỳ theo đặc điểm của sản phẩm đồ hoạ cần tạo."@vi ;
+    ex:appearsOnPage ex:page149 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s2 .
+
+  ex:topicEict_p149_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Khi tô màu, đối tượng được tô hoặc phủ màu có thể là hậu cảnh hoặc tiền cảnh. Để thay đổi màu, nháy chuột vào biểu tượng FG hoặc BG rồi chọn màu trong hộp thoại chọn màu."@vi ;
+    ex:appearsOnPage ex:page149 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s3 .
+
+  ex:topicEict_p150_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Có hai cách tô màu là tô màu thuần nhất và tô màu gradient. Tô màu thuần nhất phủ một màu duy nhất lên bề mặt đối tượng. Tô màu gradient phủ một dải màu chuyển dần từ màu thứ nhất sang màu thứ hai."@vi ;
+    ex:appearsOnPage ex:page150 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s3 .
+
+  ex:topicEict_p150_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Văn bản được tạo bằng công cụ Text với các thuộc tính định dạng. Khi tạo xong, một lớp mới với biểu tượng chữ T được tự động tạo ra để chứa văn bản."@vi ;
+    ex:appearsOnPage ex:page150 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s4 .
+
+  ex:topicEict_p151_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Có thể mở một hoặc nhiều tệp ảnh trong GIMP bằng lệnh File/Open. Để ghép ảnh, chọn ảnh nguồn và thực hiện xử lí cần thiết, sau đó sao chép ảnh nguồn vào ảnh đích, điều chỉnh kích thước và vị trí ảnh mới ghép cho phù hợp."@vi ;
+    ex:appearsOnPage ex:page151 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s5 .
+
+  ex:topicEict_p151_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Học sinh thực hiện ghép ảnh để thiết kế thiệp chúc mừng sinh nhật. Có thể dùng công cụ Crop để cắt phần cần lấy ở ảnh nguồn, sau đó sao chép ảnh nguồn thành một lớp mới của ảnh đích."@vi ;
+    ex:appearsOnPage ex:page151 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s5 .
+
+  ex:topicEict_p152_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Ảnh mới được ghép thường có kích thước và vị trí chưa phù hợp. Dùng công cụ Scale để thay đổi kích thước ảnh và công cụ Move để di chuyển ảnh đến vị trí phù hợp."@vi ;
+    ex:appearsOnPage ex:page152 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s5 .
+
+  ex:topicEict_p152_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài học yêu cầu tạo một thiệp chúc mừng sinh nhật, lưu sản phẩm với tên tệp Chúc mừng sinh nhật.cxf và xuất sang định dạng JPG bằng lệnh File/Export As; sau đó trả lời câu hỏi đúng sai về công cụ thiết kế đồ hoạ, tô màu, văn bản và mở nhiều tệp ảnh."@vi ;
+    ex:appearsOnPage ex:page152 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:belongsToSection ex:topicEict_l1s5 .
+
+  ex:topicEict_p153_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 2. Một số kĩ thuật thiết kế sử dụng vùng chọn, đường dẫn và các lớp ảnh. Bài học đặt vấn đề: khi thiết kế một sản phẩm đồ hoạ có nên đưa tất cả các đối tượng vào cùng một lớp ảnh hay không."@vi ;
+    ex:appearsOnPage ex:page153 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s1 .
+
+  ex:topicEict_p153_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Khi thiết kế một đối tượng đồ hoạ mới, các thành phần nên được tạo trên các lớp riêng để thuận lợi cho chỉnh sửa. GIMP cung cấp lệnh làm việc với lớp như thêm, xoá, nhân đôi, ẩn hiện và thay đổi thứ tự các lớp."@vi ;
+    ex:appearsOnPage ex:page153 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s1 .
+
+  ex:topicEict_p154_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Thiết kế trên lớp bản sao dùng lệnh nhân đôi lớp trong nhiều trường hợp. Bản sao của đối tượng có thể được chỉnh sửa lại để kết hợp với đối tượng ban đầu, ví dụ tạo bóng cho văn bản."@vi ;
+    ex:appearsOnPage ex:page154 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s2 .
+
+  ex:topicEict_p154_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bên trái tên lớp có biểu tượng hình con mắt. Nháy chuột vào đó để tắt hoặc bật con mắt, ẩn hoặc hiện lớp. Có thể cần tạm ẩn lớp ban đầu để chỉnh sửa lớp bản sao."@vi ;
+    ex:appearsOnPage ex:page154 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s2 .
+
+  ex:topicEict_p155_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Việc thay đổi thứ tự các lớp sẽ tạo ra sự thay đổi của ảnh hợp thành trong cửa sổ ảnh. Sau khi nhân đôi lớp, nếu lớp bản sao ở trên lớp gốc không phù hợp thì cần chuyển lớp bản sao xuống dưới lớp gốc."@vi ;
+    ex:appearsOnPage ex:page155 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s2 .
+
+  ex:topicEict_p155_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Vùng chọn giúp xử lí riêng biệt một vùng nào đó trên ảnh. Hai công cụ phổ biến để tạo vùng chọn hình chữ nhật và hình elip là Rectangle Select và Ellipse Select. Có thể đảo ngược, co giãn, xoá hoặc bỏ vùng chọn."@vi ;
+    ex:appearsOnPage ex:page155 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s3 .
+
+  ex:topicEict_p156_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Kĩ thuật tạo đường viền dùng một lớp mới, xác định vùng chọn hình tròn, tô màu cho vùng chọn, co vùng chọn với số pixel bằng độ dày đường viền rồi xoá vùng chọn bên trong."@vi ;
+    ex:appearsOnPage ex:page156 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s4 .
+
+  ex:topicEict_p156_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Lồng hình là kĩ thuật thiết kế để tại một số điểm giao cắt giữa hai đối tượng, một đối tượng ở trên hoặc ở dưới đối tượng kia. Cần tạo mảnh che hình bằng vùng chọn và lớp mới."@vi ;
+    ex:appearsOnPage ex:page156 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s4 .
+
+  ex:topicEict_p157_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để thực hiện lồng hình tại một điểm giao cắt, chọn lớp cần đưa hình ảnh lên trên, tạo vùng chọn bao quanh phần hình cần đưa lên, sao chép và dán thành một lớp mới rồi di chuyển lớp mới lên trên lớp đối tượng cần đưa nó xuống dưới."@vi ;
+    ex:appearsOnPage ex:page157 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s4 .
+
+  ex:topicEict_p157_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Để vẽ hình có hình dạng tuỳ ý cần sử dụng đường dẫn. Công cụ Paths cho phép nháy chuột tại các điểm mốc để tạo đường dẫn; nếu điểm mốc cuối trùng điểm đầu thì nhận được đường dẫn khép kín."@vi ;
+    ex:appearsOnPage ex:page157 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s5 .
+
+  ex:topicEict_p158_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bảng tuỳ chọn của công cụ Paths cho phép chuyển giữa chế độ thiết kế và chỉnh sửa đường dẫn. Có thể uốn cong đoạn nối, điều chỉnh tiếp tuyến, di chuyển điểm mốc và thêm điểm mốc."@vi ;
+    ex:appearsOnPage ex:page158 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s5 .
+
+  ex:topicEict_p158_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Các thao tác cơ bản với đường dẫn gồm chuyển đổi giữa đường dẫn và vùng chọn bằng Select From Path hoặc To Path, tạo nét vẽ theo đường dẫn bằng Stroke Path và tô màu vùng đường dẫn bằng Fill Path."@vi ;
+    ex:appearsOnPage ex:page158 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s5 .
+
+  ex:topicEict_p159_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Cắt xén chi tiết thừa là kĩ thuật thiết kế sử dụng kết hợp đường dẫn và vùng chọn. Các bước gồm xác định vùng chọn khoanh vùng chỗ cần cắt xén, chọn lớp chứa hình ảnh và xoá vùng chọn, rồi bỏ vùng chọn."@vi ;
+    ex:appearsOnPage ex:page159 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s6 .
+
+  ex:topicEict_p159_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài thực hành 1 yêu cầu thiết kế ba hình tròn đồng tâm bằng kĩ thuật tạo đường viền, mỗi hình tròn được tạo trên một lớp riêng."@vi ;
+    ex:appearsOnPage ex:page159 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s7 .
+
+  ex:topicEict_p160_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài thực hành 2 yêu cầu thiết kế hình tròn và hình vuông lồng nhau. Trước hết dùng kĩ thuật tạo đường viền để tạo hình tròn và hình vuông đồng tâm, sau đó dùng kĩ thuật lồng hình để xử lí các điểm giao cắt."@vi ;
+    ex:appearsOnPage ex:page160 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s7 .
+
+  ex:topicEict_p161_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài vận dụng yêu cầu thiết kế logo 10A5 ICT GROUP. Gợi ý thực hiện gồm tạo khung logo bằng hình vuông và hình tròn lồng nhau, tô màu gradient cho nền logo và chèn văn bản vào trong khung logo."@vi ;
+    ex:appearsOnPage ex:page161 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s7 .
+
+  ex:topicEict_p162_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Dải nơ bên trái logo được thiết kế từ vùng chọn hình elip trên một lớp mới và tô màu; sau đó cắt xén thành dải nơ theo kĩ thuật cắt xén. Bài học có câu hỏi đúng sai về thiết kế trên lớp, vùng chọn, đường dẫn và các lệnh làm việc với lớp ảnh."@vi ;
+    ex:appearsOnPage ex:page162 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:belongsToSection ex:topicEict_l2s7 .
+
+  ex:topicEict_p163_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 3. Tách ảnh và thiết kế đồ hoạ với kênh alpha. Bài học đặt vấn đề: khi ghép hai ảnh với nhau để tạo thành một ảnh mới, học sinh nêu điều thường gặp không như mong đợi và cách khắc phục."@vi ;
+    ex:appearsOnPage ex:page163 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToSection ex:topicEict_l3s1 .
+
+  ex:topicEict_p163_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nếu ảnh có nền trong suốt thì có thể nhìn xuyên qua ảnh đến tận vô cùng. GIMP dùng mẫu ca rô đen xám xen kẽ để biểu thị giới hạn vô cùng hay nền trong suốt."@vi ;
+    ex:appearsOnPage ex:page163 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToSection ex:topicEict_l3s1 .
+
+  ex:topicEict_p164_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Mỗi điểm ảnh sẽ không được nhìn thấy nếu nó trong suốt hoàn toàn hoặc nhìn thấy mờ nếu nó có độ trong suốt nào đó. Sự hiện diện của mỗi điểm ảnh được thể hiện qua màu sắc cùng độ trong suốt của nó."@vi ;
+    ex:appearsOnPage ex:page164 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToSection ex:topicEict_l3s1 .
+
+  ex:topicEict_p164_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "GIMP lưu trữ ba kênh màu R, B, G và có thể thêm kênh lưu độ trong suốt của tất cả điểm ảnh, gọi là kênh alpha. Khi tách ảnh, thêm kênh alpha vào lớp ảnh bằng lệnh Add Alpha Channel từ bảng chọn Layer/Transparency."@vi ;
+    ex:appearsOnPage ex:page164 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToSection ex:topicEict_l3s1 .
+
+  ex:topicEict_p165_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để chọn đối tượng cần tách ra khỏi nền ảnh, dùng công cụ Free Select, nháy chuột quanh biên đối tượng. Sau đó đảo ngược vùng chọn, xoá vùng chọn và bỏ chọn để phần nền xung quanh đối tượng bị xoá, lớp ảnh trở thành nền trong suốt."@vi ;
+    ex:appearsOnPage ex:page165 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToSection ex:topicEict_l3s1 .
+
+  ex:topicEict_p165_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Vùng chọn đối tượng được sử dụng để thiết kế, chỉnh sửa cho chính đối tượng đó hoặc cho đối tượng thuộc lớp ảnh khác. Có thể chuyển kênh alpha của một lớp sang vùng chọn bằng lệnh Alpha to Selection."@vi ;
+    ex:appearsOnPage ex:page165 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToSection ex:topicEict_l3s2 .
+
+  ex:topicEict_p166_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Sau khi chuyển kênh alpha của lớp sang vùng chọn, có thể tô lại màu cho hoạ tiết hoặc thực hiện các thao tác thiết kế khác trong phạm vi vùng chọn. Bài thực hành yêu cầu tạo thiệp chúc mừng và banner ICT GROUP 10A5."@vi ;
+    ex:appearsOnPage ex:page166 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToSection ex:topicEict_l3s3 .
+
+  ex:topicEict_p167_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài vận dụng yêu cầu thiết kế một sản phẩm đồ hoạ như áp phích, banner, băng rôn, logo theo nhu cầu và sở thích, sau đó lưu sản phẩm và xuất ra định dạng chuẩn. Bài học có câu hỏi đúng sai về độ trong suốt, tách ảnh, chuyển kênh alpha và sử dụng kĩ thuật thiết kế."@vi ;
+    ex:appearsOnPage ex:page167 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:belongsToSection ex:topicEict_l3s3 .
+
+  ex:topicEict_p168_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 4. Thực hành tổng hợp. Bài 1 yêu cầu tạo tệp ảnh mới và thiết kế logo Olympic Việt Nam, trong đó có các vòng tròn Olympic lồng nhau, lưu tệp Olympic VN.cxf và xuất ảnh Olympic VN.png."@vi ;
+    ex:appearsOnPage ex:page168 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s1 .
+
+  ex:topicEict_p168_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hướng dẫn thiết kế logo Olympic Việt Nam gồm mở tệp ảnh mới với tham số phù hợp, tạo các vòng tròn Olympic bằng kĩ thuật thiết kế trên lớp bản sao và tạo vòng tròn đầu tiên trên lớp Xanh đậm."@vi ;
+    ex:appearsOnPage ex:page168 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s1 .
+
+  ex:topicEict_p169_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Các vòng tròn Olympic còn lại được tạo bằng kĩ thuật thiết kế trên lớp bản sao, nhân đôi lớp, đổi tên, di chuyển đến vị trí phù hợp và tô màu tương ứng. Các điểm lồng nhau giữa các vòng tròn được thiết kế bằng kĩ thuật lồng hình."@vi ;
+    ex:appearsOnPage ex:page169 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s1 .
+
+  ex:topicEict_p170_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bước tiếp theo của logo Olympic Việt Nam là tạo lá cờ của logo bằng công cụ đường dẫn và vùng chọn để tạo lá cờ màu đỏ và ngôi sao màu vàng, sau đó lưu và xuất tệp ảnh."@vi ;
+    ex:appearsOnPage ex:page170 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s1 .
+
+  ex:topicEict_p170_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bài 2 yêu cầu thiết kế banner Câu lạc bộ Tin học ứng dụng của lớp 10A5. Tệp ảnh mới nên có kích thước phù hợp của banner; mỗi đối tượng được tạo trên một lớp riêng biệt và các lớp được thêm mới đều có nền trong suốt."@vi ;
+    ex:appearsOnPage ex:page170 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s2 .
+
+  ex:topicEict_p171_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Thiết kế khu vực nền banner gồm nền, khung và màu nền. Nền banner được tạo bằng vùng chọn hình chữ nhật và tô gradient. Màu nền của banner được tạo bằng cách hoà màu xanh dương với dải gradient đen xám của lớp nền bên dưới."@vi ;
+    ex:appearsOnPage ex:page171 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s2 .
+
+  ex:topicEict_p171_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Hoạ tiết Tam giác được tạo trên một lớp riêng bằng vùng chọn hình vuông, tô màu đen, quay, di chuyển hình và dùng kĩ thuật cắt xén để nhận được kết quả mong muốn. Sau đó nhân đôi lớp và tô màu gradient để tạo hoạ tiết mới."@vi ;
+    ex:appearsOnPage ex:page171 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s2 .
+
+  ex:topicEict_p172_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Hoạ tiết các hình tròn đồng tâm được tạo bằng kĩ thuật tạo đường viền trên các lớp HT1, HT2, HT3 và dùng kĩ thuật cắt xén chi tiết thừa để nhận được kết quả mong muốn. Cuối cùng tô màu các hình tròn trong cùng."@vi ;
+    ex:appearsOnPage ex:page172 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s2 .
+
+  ex:topicEict_p173_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Hai đường cong cách điệu ở trên và dưới banner được tạo trên các lớp mới bằng vùng chọn hình elip, sau đó dùng kĩ thuật cắt xén để nhận được kết quả mong muốn."@vi ;
+    ex:appearsOnPage ex:page173 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s2 .
+
+  ex:topicEict_p173_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Các lớp chứa chữ được tạo bằng cách tạo dãy kí tự L, Ớ, P, 1, 0, A, 5 trong các hình tròn đen. Mỗi hình tròn đen được tạo trên một lớp riêng biệt; hình tròn thứ nhất được tạo bằng vùng chọn và tô màu, các hình tròn còn lại tạo bằng kĩ thuật thiết kế trên lớp bản sao."@vi ;
+    ex:appearsOnPage ex:page173 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:belongsToSection ex:topicEict_l4s2 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:page147 ex:hasParagraph ex:topicEict_p147_01, ex:topicEict_p147_02 .
+  ex:page148 ex:hasParagraph ex:topicEict_p148_01, ex:topicEict_p148_02, ex:topicEict_p148_03 .
+  ex:page149 ex:hasParagraph ex:topicEict_p149_01, ex:topicEict_p149_02 .
+  ex:page150 ex:hasParagraph ex:topicEict_p150_01, ex:topicEict_p150_02 .
+  ex:page151 ex:hasParagraph ex:topicEict_p151_01, ex:topicEict_p151_02 .
+  ex:page152 ex:hasParagraph ex:topicEict_p152_01, ex:topicEict_p152_02 .
+  ex:page153 ex:hasParagraph ex:topicEict_p153_01, ex:topicEict_p153_02 .
+  ex:page154 ex:hasParagraph ex:topicEict_p154_01, ex:topicEict_p154_02 .
+  ex:page155 ex:hasParagraph ex:topicEict_p155_01, ex:topicEict_p155_02 .
+  ex:page156 ex:hasParagraph ex:topicEict_p156_01, ex:topicEict_p156_02 .
+  ex:page157 ex:hasParagraph ex:topicEict_p157_01, ex:topicEict_p157_02 .
+  ex:page158 ex:hasParagraph ex:topicEict_p158_01, ex:topicEict_p158_02 .
+  ex:page159 ex:hasParagraph ex:topicEict_p159_01, ex:topicEict_p159_02 .
+  ex:page160 ex:hasParagraph ex:topicEict_p160_01 .
+  ex:page161 ex:hasParagraph ex:topicEict_p161_01 .
+  ex:page162 ex:hasParagraph ex:topicEict_p162_01 .
+  ex:page163 ex:hasParagraph ex:topicEict_p163_01, ex:topicEict_p163_02 .
+  ex:page164 ex:hasParagraph ex:topicEict_p164_01, ex:topicEict_p164_02 .
+  ex:page165 ex:hasParagraph ex:topicEict_p165_01, ex:topicEict_p165_02 .
+  ex:page166 ex:hasParagraph ex:topicEict_p166_01 .
+  ex:page167 ex:hasParagraph ex:topicEict_p167_01 .
+  ex:page168 ex:hasParagraph ex:topicEict_p168_01, ex:topicEict_p168_02 .
+  ex:page169 ex:hasParagraph ex:topicEict_p169_01 .
+  ex:page170 ex:hasParagraph ex:topicEict_p170_01, ex:topicEict_p170_02 .
+  ex:page171 ex:hasParagraph ex:topicEict_p171_01, ex:topicEict_p171_02 .
+  ex:page172 ex:hasParagraph ex:topicEict_p172_01 .
+  ex:page173 ex:hasParagraph ex:topicEict_p173_01, ex:topicEict_p173_02 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:topicEict_l1s1 ex:hasParagraph ex:topicEict_p147_01, ex:topicEict_p147_02,
+    ex:topicEict_p148_01, ex:topicEict_p148_02, ex:topicEict_p148_03 .
+  ex:topicEict_l1s2 ex:hasParagraph ex:topicEict_p149_01 .
+  ex:topicEict_l1s3 ex:hasParagraph ex:topicEict_p149_02, ex:topicEict_p150_01 .
+  ex:topicEict_l1s4 ex:hasParagraph ex:topicEict_p150_02 .
+  ex:topicEict_l1s5 ex:hasParagraph ex:topicEict_p151_01, ex:topicEict_p151_02,
+    ex:topicEict_p152_01, ex:topicEict_p152_02 .
+
+  ex:topicEict_l2s1 ex:hasParagraph ex:topicEict_p153_01, ex:topicEict_p153_02 .
+  ex:topicEict_l2s2 ex:hasParagraph ex:topicEict_p154_01, ex:topicEict_p154_02, ex:topicEict_p155_01 .
+  ex:topicEict_l2s3 ex:hasParagraph ex:topicEict_p155_02 .
+  ex:topicEict_l2s4 ex:hasParagraph ex:topicEict_p156_01, ex:topicEict_p156_02, ex:topicEict_p157_01 .
+  ex:topicEict_l2s5 ex:hasParagraph ex:topicEict_p157_02, ex:topicEict_p158_01, ex:topicEict_p158_02 .
+  ex:topicEict_l2s6 ex:hasParagraph ex:topicEict_p159_01 .
+  ex:topicEict_l2s7 ex:hasParagraph ex:topicEict_p159_02, ex:topicEict_p160_01,
+    ex:topicEict_p161_01, ex:topicEict_p162_01 .
+
+  ex:topicEict_l3s1 ex:hasParagraph ex:topicEict_p163_01, ex:topicEict_p163_02,
+    ex:topicEict_p164_01, ex:topicEict_p164_02, ex:topicEict_p165_01 .
+  ex:topicEict_l3s2 ex:hasParagraph ex:topicEict_p165_02 .
+  ex:topicEict_l3s3 ex:hasParagraph ex:topicEict_p166_01, ex:topicEict_p167_01 .
+
+  ex:topicEict_l4s1 ex:hasParagraph ex:topicEict_p168_01, ex:topicEict_p168_02,
+    ex:topicEict_p169_01, ex:topicEict_p170_01 .
+  ex:topicEict_l4s2 ex:hasParagraph ex:topicEict_p170_02, ex:topicEict_p171_01,
+    ex:topicEict_p171_02, ex:topicEict_p172_01, ex:topicEict_p173_01, ex:topicEict_p173_02 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:topicEict_p147_01 ex:nextParagraph ex:topicEict_p147_02 .
+  ex:topicEict_p147_02 ex:previousParagraph ex:topicEict_p147_01 ; ex:nextParagraph ex:topicEict_p148_01 .
+  ex:topicEict_p148_01 ex:previousParagraph ex:topicEict_p147_02 ; ex:nextParagraph ex:topicEict_p148_02 .
+  ex:topicEict_p148_02 ex:previousParagraph ex:topicEict_p148_01 ; ex:nextParagraph ex:topicEict_p148_03 .
+  ex:topicEict_p148_03 ex:previousParagraph ex:topicEict_p148_02 ; ex:nextParagraph ex:topicEict_p149_01 .
+  ex:topicEict_p149_01 ex:previousParagraph ex:topicEict_p148_03 ; ex:nextParagraph ex:topicEict_p149_02 .
+  ex:topicEict_p149_02 ex:previousParagraph ex:topicEict_p149_01 ; ex:nextParagraph ex:topicEict_p150_01 .
+  ex:topicEict_p150_01 ex:previousParagraph ex:topicEict_p149_02 ; ex:nextParagraph ex:topicEict_p150_02 .
+  ex:topicEict_p150_02 ex:previousParagraph ex:topicEict_p150_01 ; ex:nextParagraph ex:topicEict_p151_01 .
+  ex:topicEict_p151_01 ex:previousParagraph ex:topicEict_p150_02 ; ex:nextParagraph ex:topicEict_p151_02 .
+  ex:topicEict_p151_02 ex:previousParagraph ex:topicEict_p151_01 ; ex:nextParagraph ex:topicEict_p152_01 .
+  ex:topicEict_p152_01 ex:previousParagraph ex:topicEict_p151_02 ; ex:nextParagraph ex:topicEict_p152_02 .
+  ex:topicEict_p152_02 ex:previousParagraph ex:topicEict_p152_01 ; ex:nextParagraph ex:topicEict_p153_01 .
+  ex:topicEict_p153_01 ex:previousParagraph ex:topicEict_p152_02 ; ex:nextParagraph ex:topicEict_p153_02 .
+  ex:topicEict_p153_02 ex:previousParagraph ex:topicEict_p153_01 ; ex:nextParagraph ex:topicEict_p154_01 .
+  ex:topicEict_p154_01 ex:previousParagraph ex:topicEict_p153_02 ; ex:nextParagraph ex:topicEict_p154_02 .
+  ex:topicEict_p154_02 ex:previousParagraph ex:topicEict_p154_01 ; ex:nextParagraph ex:topicEict_p155_01 .
+  ex:topicEict_p155_01 ex:previousParagraph ex:topicEict_p154_02 ; ex:nextParagraph ex:topicEict_p155_02 .
+  ex:topicEict_p155_02 ex:previousParagraph ex:topicEict_p155_01 ; ex:nextParagraph ex:topicEict_p156_01 .
+  ex:topicEict_p156_01 ex:previousParagraph ex:topicEict_p155_02 ; ex:nextParagraph ex:topicEict_p156_02 .
+  ex:topicEict_p156_02 ex:previousParagraph ex:topicEict_p156_01 ; ex:nextParagraph ex:topicEict_p157_01 .
+  ex:topicEict_p157_01 ex:previousParagraph ex:topicEict_p156_02 ; ex:nextParagraph ex:topicEict_p157_02 .
+  ex:topicEict_p157_02 ex:previousParagraph ex:topicEict_p157_01 ; ex:nextParagraph ex:topicEict_p158_01 .
+  ex:topicEict_p158_01 ex:previousParagraph ex:topicEict_p157_02 ; ex:nextParagraph ex:topicEict_p158_02 .
+  ex:topicEict_p158_02 ex:previousParagraph ex:topicEict_p158_01 ; ex:nextParagraph ex:topicEict_p159_01 .
+  ex:topicEict_p159_01 ex:previousParagraph ex:topicEict_p158_02 ; ex:nextParagraph ex:topicEict_p159_02 .
+  ex:topicEict_p159_02 ex:previousParagraph ex:topicEict_p159_01 ; ex:nextParagraph ex:topicEict_p160_01 .
+  ex:topicEict_p160_01 ex:previousParagraph ex:topicEict_p159_02 ; ex:nextParagraph ex:topicEict_p161_01 .
+  ex:topicEict_p161_01 ex:previousParagraph ex:topicEict_p160_01 ; ex:nextParagraph ex:topicEict_p162_01 .
+  ex:topicEict_p162_01 ex:previousParagraph ex:topicEict_p161_01 ; ex:nextParagraph ex:topicEict_p163_01 .
+  ex:topicEict_p163_01 ex:previousParagraph ex:topicEict_p162_01 ; ex:nextParagraph ex:topicEict_p163_02 .
+  ex:topicEict_p163_02 ex:previousParagraph ex:topicEict_p163_01 ; ex:nextParagraph ex:topicEict_p164_01 .
+  ex:topicEict_p164_01 ex:previousParagraph ex:topicEict_p163_02 ; ex:nextParagraph ex:topicEict_p164_02 .
+  ex:topicEict_p164_02 ex:previousParagraph ex:topicEict_p164_01 ; ex:nextParagraph ex:topicEict_p165_01 .
+  ex:topicEict_p165_01 ex:previousParagraph ex:topicEict_p164_02 ; ex:nextParagraph ex:topicEict_p165_02 .
+  ex:topicEict_p165_02 ex:previousParagraph ex:topicEict_p165_01 ; ex:nextParagraph ex:topicEict_p166_01 .
+  ex:topicEict_p166_01 ex:previousParagraph ex:topicEict_p165_02 ; ex:nextParagraph ex:topicEict_p167_01 .
+  ex:topicEict_p167_01 ex:previousParagraph ex:topicEict_p166_01 ; ex:nextParagraph ex:topicEict_p168_01 .
+  ex:topicEict_p168_01 ex:previousParagraph ex:topicEict_p167_01 ; ex:nextParagraph ex:topicEict_p168_02 .
+  ex:topicEict_p168_02 ex:previousParagraph ex:topicEict_p168_01 ; ex:nextParagraph ex:topicEict_p169_01 .
+  ex:topicEict_p169_01 ex:previousParagraph ex:topicEict_p168_02 ; ex:nextParagraph ex:topicEict_p170_01 .
+  ex:topicEict_p170_01 ex:previousParagraph ex:topicEict_p169_01 ; ex:nextParagraph ex:topicEict_p170_02 .
+  ex:topicEict_p170_02 ex:previousParagraph ex:topicEict_p170_01 ; ex:nextParagraph ex:topicEict_p171_01 .
+  ex:topicEict_p171_01 ex:previousParagraph ex:topicEict_p170_02 ; ex:nextParagraph ex:topicEict_p171_02 .
+  ex:topicEict_p171_02 ex:previousParagraph ex:topicEict_p171_01 ; ex:nextParagraph ex:topicEict_p172_01 .
+  ex:topicEict_p172_01 ex:previousParagraph ex:topicEict_p171_02 ; ex:nextParagraph ex:topicEict_p173_01 .
+  ex:topicEict_p173_01 ex:previousParagraph ex:topicEict_p172_01 ; ex:nextParagraph ex:topicEict_p173_02 .
+  ex:topicEict_p173_02 ex:previousParagraph ex:topicEict_p173_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:topicEict_p147_01 ex:mentionsConcept ex:conceptPhanMemThietKeDoHoa, ex:conceptPoster .
+  ex:topicEict_p147_02 ex:mentionsConcept ex:conceptPhanMemThietKeDoHoa, ex:conceptLogo, ex:conceptBanner, ex:conceptPoster .
+  ex:topicEict_p148_01 ex:mentionsConcept ex:conceptDoHoaVector, ex:conceptDoHoaRaster, ex:conceptAnhBitmap .
+  ex:topicEict_p148_02 ex:mentionsConcept ex:conceptGIMP, ex:conceptDoHoaRaster, ex:conceptDoHoaVector .
+  ex:topicEict_p148_03 ex:mentionsConcept ex:conceptManHinhLamViecGIMP, ex:conceptHopCongCu, ex:conceptLopAnh, ex:conceptKenhMau, ex:conceptDuongDan .
+  ex:topicEict_p149_01 ex:mentionsConcept ex:conceptTaoTepAnhMoi, ex:conceptDoPhanGiaiAnh, ex:conceptKhongGianMauRGB .
+  ex:topicEict_p149_02 ex:mentionsConcept ex:conceptToMau, ex:conceptMauTienCanh, ex:conceptMauHauCanh .
+  ex:topicEict_p150_01 ex:mentionsConcept ex:conceptBucketFill, ex:conceptGradient, ex:conceptToMau .
+  ex:topicEict_p150_02 ex:mentionsConcept ex:conceptTextTool, ex:conceptMoveTool, ex:conceptLopAnh .
+  ex:topicEict_p151_01 ex:mentionsConcept ex:conceptGhepAnh, ex:conceptCropTool .
+  ex:topicEict_p151_02 ex:mentionsConcept ex:conceptGhepAnh, ex:conceptCropTool, ex:conceptLopAnh .
+  ex:topicEict_p152_01 ex:mentionsConcept ex:conceptScaleTool, ex:conceptMoveTool, ex:conceptGhepAnh .
+  ex:topicEict_p152_02 ex:mentionsConcept ex:conceptExportAs, ex:conceptPhanMemThietKeDoHoa .
+  ex:topicEict_p153_01 ex:mentionsConcept ex:conceptLopAnh .
+  ex:topicEict_p153_02 ex:mentionsConcept ex:conceptLopAnh, ex:conceptAnHienLop, ex:conceptSapXepLop .
+  ex:topicEict_p154_01 ex:mentionsConcept ex:conceptThietKeTrenLopBanSao, ex:conceptLopAnh .
+  ex:topicEict_p154_02 ex:mentionsConcept ex:conceptAnHienLop, ex:conceptLopAnh .
+  ex:topicEict_p155_01 ex:mentionsConcept ex:conceptSapXepLop, ex:conceptLopAnh .
+  ex:topicEict_p155_02 ex:mentionsConcept ex:conceptVungChon, ex:conceptRectangleSelect, ex:conceptEllipseSelect, ex:conceptInvertSelection, ex:conceptGrowShrinkSelection, ex:conceptSelectNone .
+  ex:topicEict_p156_01 ex:mentionsConcept ex:conceptTaoDuongVien, ex:conceptVungChon .
+  ex:topicEict_p156_02 ex:mentionsConcept ex:conceptLongHinh, ex:conceptVungChon, ex:conceptLopAnh .
+  ex:topicEict_p157_01 ex:mentionsConcept ex:conceptLongHinh, ex:conceptVungChon, ex:conceptLopAnh .
+  ex:topicEict_p157_02 ex:mentionsConcept ex:conceptDuongDan, ex:conceptPathsTool .
+  ex:topicEict_p158_01 ex:mentionsConcept ex:conceptPathsTool, ex:conceptDuongDan .
+  ex:topicEict_p158_02 ex:mentionsConcept ex:conceptSelectFromPath, ex:conceptToPath, ex:conceptStrokePath, ex:conceptFillPath .
+  ex:topicEict_p159_01 ex:mentionsConcept ex:conceptCatXenChiTietThua, ex:conceptDuongDan, ex:conceptVungChon .
+  ex:topicEict_p159_02 ex:mentionsConcept ex:conceptTaoDuongVien .
+  ex:topicEict_p160_01 ex:mentionsConcept ex:conceptLongHinh, ex:conceptTaoDuongVien .
+  ex:topicEict_p161_01 ex:mentionsConcept ex:conceptLogo, ex:conceptLongHinh, ex:conceptGradient .
+  ex:topicEict_p162_01 ex:mentionsConcept ex:conceptCatXenChiTietThua, ex:conceptVungChon, ex:conceptDuongDan, ex:conceptLopAnh .
+  ex:topicEict_p163_01 ex:mentionsConcept ex:conceptTachAnh, ex:conceptKenhAlpha .
+  ex:topicEict_p163_02 ex:mentionsConcept ex:conceptAnhCoNenTrongSuot, ex:conceptDoTrongSuot .
+  ex:topicEict_p164_01 ex:mentionsConcept ex:conceptDoTrongSuot .
+  ex:topicEict_p164_02 ex:mentionsConcept ex:conceptKenhAlpha, ex:conceptAddAlphaChannel, ex:conceptLayerTransparency .
+  ex:topicEict_p165_01 ex:mentionsConcept ex:conceptFreeSelect, ex:conceptTachAnh, ex:conceptAnhCoNenTrongSuot .
+  ex:topicEict_p165_02 ex:mentionsConcept ex:conceptAlphaToSelection, ex:conceptKenhAlpha, ex:conceptVungChon .
+  ex:topicEict_p166_01 ex:mentionsConcept ex:conceptAlphaToSelection, ex:conceptBanner, ex:conceptTachAnh .
+  ex:topicEict_p167_01 ex:mentionsConcept ex:conceptLogo, ex:conceptBanner, ex:conceptPoster, ex:conceptKenhAlpha .
+  ex:topicEict_p168_01 ex:mentionsConcept ex:conceptOlympicVietNamLogo, ex:conceptLogo, ex:conceptLongHinh .
+  ex:topicEict_p168_02 ex:mentionsConcept ex:conceptTaoDuongVien, ex:conceptThietKeTrenLopBanSao .
+  ex:topicEict_p169_01 ex:mentionsConcept ex:conceptThietKeTrenLopBanSao, ex:conceptLongHinh .
+  ex:topicEict_p170_01 ex:mentionsConcept ex:conceptDuongDan, ex:conceptVungChon, ex:conceptCatXenChiTietThua .
+  ex:topicEict_p170_02 ex:mentionsConcept ex:conceptBannerCLBICT, ex:conceptBanner, ex:conceptLopAnh, ex:conceptAnhCoNenTrongSuot .
+  ex:topicEict_p171_01 ex:mentionsConcept ex:conceptGradient, ex:conceptHieuUngHoaMau .
+  ex:topicEict_p171_02 ex:mentionsConcept ex:conceptCatXenChiTietThua, ex:conceptThietKeTrenLopBanSao .
+  ex:topicEict_p172_01 ex:mentionsConcept ex:conceptTaoDuongVien, ex:conceptCatXenChiTietThua .
+  ex:topicEict_p173_01 ex:mentionsConcept ex:conceptCatXenChiTietThua, ex:conceptVungChon .
+  ex:topicEict_p173_02 ex:mentionsConcept ex:conceptThietKeTrenLopBanSao, ex:conceptTextTool, ex:conceptBannerCLBICT .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:conceptPhanMemThietKeDoHoa ex:relatedTo ex:conceptUngDungTinHoc .
+  ex:conceptGIMP ex:subConceptOf ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptDoHoaVector ex:relatedTo ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptDoHoaRaster ex:relatedTo ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptAnhBitmap ex:relatedTo ex:conceptDoHoaRaster .
+  ex:conceptManHinhLamViecGIMP ex:relatedTo ex:conceptGIMP .
+  ex:conceptHopCongCu ex:partOf ex:conceptManHinhLamViecGIMP .
+  ex:conceptBangTuyChon ex:partOf ex:conceptManHinhLamViecGIMP .
+  ex:conceptLopAnh ex:relatedTo ex:conceptGIMP .
+  ex:conceptKenhMau ex:relatedTo ex:conceptLopAnh .
+  ex:conceptDuongDan ex:relatedTo ex:conceptGIMP .
+  ex:conceptTaoTepAnhMoi ex:relatedTo ex:conceptGIMP .
+  ex:conceptToMau ex:relatedTo ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptMauTienCanh ex:relatedTo ex:conceptToMau .
+  ex:conceptMauHauCanh ex:relatedTo ex:conceptToMau .
+  ex:conceptBucketFill ex:subConceptOf ex:conceptToMau .
+  ex:conceptGradient ex:subConceptOf ex:conceptToMau .
+  ex:conceptTextTool ex:relatedTo ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptMoveTool ex:relatedTo ex:conceptGhepAnh .
+  ex:conceptScaleTool ex:relatedTo ex:conceptGhepAnh .
+  ex:conceptCropTool ex:relatedTo ex:conceptGhepAnh .
+  ex:conceptGhepAnh ex:relatedTo ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptVungChon ex:relatedTo ex:conceptLopAnh .
+  ex:conceptRectangleSelect ex:subConceptOf ex:conceptVungChon .
+  ex:conceptEllipseSelect ex:subConceptOf ex:conceptVungChon .
+  ex:conceptFreeSelect ex:subConceptOf ex:conceptVungChon .
+  ex:conceptInvertSelection ex:relatedTo ex:conceptVungChon .
+  ex:conceptGrowShrinkSelection ex:relatedTo ex:conceptVungChon .
+  ex:conceptSelectNone ex:relatedTo ex:conceptVungChon .
+  ex:conceptThietKeTrenLopBanSao ex:relatedTo ex:conceptLopAnh .
+  ex:conceptAnHienLop ex:relatedTo ex:conceptLopAnh .
+  ex:conceptSapXepLop ex:relatedTo ex:conceptLopAnh .
+  ex:conceptTaoDuongVien ex:relatedTo ex:conceptVungChon .
+  ex:conceptLongHinh ex:relatedTo ex:conceptVungChon .
+  ex:conceptPathsTool ex:relatedTo ex:conceptDuongDan .
+  ex:conceptStrokePath ex:relatedTo ex:conceptDuongDan .
+  ex:conceptFillPath ex:relatedTo ex:conceptDuongDan .
+  ex:conceptSelectFromPath ex:relatedTo ex:conceptDuongDan, ex:conceptVungChon .
+  ex:conceptToPath ex:relatedTo ex:conceptDuongDan, ex:conceptVungChon .
+  ex:conceptCatXenChiTietThua ex:relatedTo ex:conceptDuongDan, ex:conceptVungChon .
+  ex:conceptLogo ex:subConceptOf ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptBanner ex:subConceptOf ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptPoster ex:subConceptOf ex:conceptPhanMemThietKeDoHoa .
+  ex:conceptKenhAlpha ex:relatedTo ex:conceptLopAnh .
+  ex:conceptDoTrongSuot ex:relatedTo ex:conceptKenhAlpha .
+  ex:conceptAnhCoNenTrongSuot ex:relatedTo ex:conceptDoTrongSuot .
+  ex:conceptTachAnh ex:relatedTo ex:conceptKenhAlpha .
+  ex:conceptAddAlphaChannel ex:relatedTo ex:conceptKenhAlpha .
+  ex:conceptAlphaToSelection ex:relatedTo ex:conceptKenhAlpha, ex:conceptVungChon .
+  ex:conceptLayerTransparency ex:relatedTo ex:conceptKenhAlpha .
+  ex:conceptOlympicVietNamLogo ex:subConceptOf ex:conceptLogo .
+  ex:conceptBannerCLBICT ex:subConceptOf ex:conceptBanner .
+  ex:conceptHieuUngHoaMau ex:relatedTo ex:conceptGradient .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:topicEict_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Em đã bao giờ dùng phần mềm để tạo ra những sản phẩm như thiệp chúc mừng, bưu thiếp hay một áp phích chưa? Em hãy giới thiệu sơ lược về một phần mềm như vậy."@vi ;
+    ex:appearsOnPage ex:page147 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:relatedTo ex:conceptPhanMemThietKeDoHoa .
+
+  ex:topicEict_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Khả năng của phần mềm thiết kế bưu thiếp"@vi ;
+    ex:hasRawText "Theo em, để tạo được các bưu thiếp đẹp bằng một phần mềm thì phần mềm đó cần cung cấp những khả năng gì?"@vi ;
+    ex:appearsOnPage ex:page147 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:relatedTo ex:conceptPhanMemThietKeDoHoa .
+
+  ex:topicEict_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Biến đổi ảnh nguồn trước khi ghép"@vi ;
+    ex:hasRawText "Ảnh nguồn để ghép thường được xử lí trước khi ghép bằng các phép biến đổi ảnh. Em hãy tìm hiểu và cho biết các cách biến đổi ảnh như thay đổi kích thước, xoay, lật và biến dạng ảnh."@vi ;
+    ex:appearsOnPage ex:page151 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:relatedTo ex:conceptGhepAnh, ex:conceptScaleTool .
+
+  ex:topicEict_l1_practiceCard a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 1 - Tạo thiệp chúc mừng sinh nhật"@vi ;
+    ex:hasRawText "Em hãy tạo một thiệp chúc mừng sinh nhật bạn hoặc người thân. Lưu sản phẩm với tên tệp Chúc mừng sinh nhật.cxf và xuất sang định dạng JPG bằng lệnh File/Export As."@vi ;
+    ex:appearsOnPage ex:page152 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:relatedTo ex:conceptGhepAnh, ex:conceptExportAs .
+
+  ex:topicEict_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 1 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Em đồng ý với những phát biểu nào sau đây: có bảng công cụ thiết kế đồ hoạ như tạo văn bản, tô màu, biến đổi hình; có thể tô nền bằng một màu duy nhất hoặc hai màu chuyển dần; văn bản có các thuộc tính định dạng; không thể mở nhiều tệp ảnh để lựa chọn và sao chép sang tệp ảnh đích."@vi ;
+    ex:appearsOnPage ex:page152 ;
+    ex:belongsToLesson ex:topicEict_lesson1 ;
+    ex:relatedTo ex:conceptPhanMemThietKeDoHoa, ex:conceptToMau, ex:conceptTextTool, ex:conceptGhepAnh .
+
+  ex:topicEict_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Khi thiết kế một sản phẩm đồ hoạ có nên đưa tất cả các đối tượng vào cùng một lớp ảnh không? Tại sao?"@vi ;
+    ex:appearsOnPage ex:page153 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:relatedTo ex:conceptLopAnh .
+
+  ex:topicEict_l2_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Khám phá thứ tự các lớp ảnh"@vi ;
+    ex:hasRawText "Trong logo Cờ cô đồng, một bạn vô tình thay đổi thứ tự một lớp ảnh làm lá cờ trên logo bị biến mất. Hãy đoán bạn đó thay đổi thứ tự lớp ảnh nào và thứ tự ban đầu của nó là gì."@vi ;
+    ex:appearsOnPage ex:page153 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:relatedTo ex:conceptLopAnh, ex:conceptSapXepLop .
+
+  ex:topicEict_l2_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Các thao tác cơ bản với đường dẫn"@vi ;
+    ex:hasRawText "Hãy tìm hiểu về các thao tác cơ bản đối với đường dẫn. Từ đó cho biết trong các hình bên, em vẽ được những hình nào và trình bày cách vẽ chúng."@vi ;
+    ex:appearsOnPage ex:page158 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:relatedTo ex:conceptDuongDan, ex:conceptPathsTool .
+
+  ex:topicEict_l2_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 2 - Thiết kế các hình tròn đồng tâm"@vi ;
+    ex:hasRawText "Em hãy thiết kế ba hình tròn đồng tâm bằng kĩ thuật tạo đường viền. Mỗi hình tròn được tạo trên một lớp riêng."@vi ;
+    ex:appearsOnPage ex:page159 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:relatedTo ex:conceptTaoDuongVien, ex:conceptLopAnh .
+
+  ex:topicEict_l2_practice2 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 2 - Thiết kế hình tròn và hình vuông lồng nhau"@vi ;
+    ex:hasRawText "Em hãy thiết kế hình tròn và hình vuông lồng nhau, dùng kĩ thuật tạo đường viền và kĩ thuật lồng hình để xử lí các điểm giao cắt."@vi ;
+    ex:appearsOnPage ex:page160 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:relatedTo ex:conceptTaoDuongVien, ex:conceptLongHinh .
+
+  ex:topicEict_l2_appliedLogo a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 - Thiết kế logo 10A5 ICT GROUP"@vi ;
+    ex:hasRawText "Em hãy thiết kế logo 10A5 ICT GROUP, tạo khung logo gồm hình vuông và hình tròn lồng nhau, tô màu gradient cho nền logo và chèn các văn bản vào trong khung logo."@vi ;
+    ex:appearsOnPage ex:page161 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:relatedTo ex:conceptLogo, ex:conceptGradient, ex:conceptLongHinh .
+
+  ex:topicEict_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 2 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Em đồng ý với những phát biểu nào sau đây: nên thiết kế các đối tượng đồ hoạ trên cùng một lớp ảnh; một số chi tiết của một lớp ảnh có thể không nhìn thấy trong ảnh hợp thành; không cần có lệnh chuyển đổi giữa đường dẫn và vùng chọn; các kĩ thuật thiết kế với lệnh làm việc với lớp ảnh có thể giúp giảm thời gian thiết kế hoặc thay đổi sự hiển thị của ảnh hợp thành."@vi ;
+    ex:appearsOnPage ex:page162 ;
+    ex:belongsToLesson ex:topicEict_lesson2 ;
+    ex:relatedTo ex:conceptLopAnh, ex:conceptDuongDan, ex:conceptVungChon .
+
+  ex:topicEict_l3_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 3 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Khi ghép hai ảnh với nhau để tạo thành một ảnh mới, em thường gặp điều gì không như mong đợi và muốn khắc phục để được kết quả đẹp hơn?"@vi ;
+    ex:appearsOnPage ex:page163 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:relatedTo ex:conceptGhepAnh, ex:conceptTachAnh .
+
+  ex:topicEict_l3_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Ảnh có nền trong suốt"@vi ;
+    ex:hasRawText "Hình 1 minh hoạ hai ảnh đích được tạo thành sau khi ghép hai ảnh nguồn. Ở ảnh đích 1 các ảnh nguồn có nền không trong suốt, ở ảnh đích 2 chúng có nền trong suốt. Hãy nêu tác dụng của ảnh có nền trong suốt và mức độ nhìn rõ ảnh phụ thuộc thế nào vào độ trong suốt."@vi ;
+    ex:appearsOnPage ex:page163 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:relatedTo ex:conceptAnhCoNenTrongSuot, ex:conceptDoTrongSuot .
+
+  ex:topicEict_l3_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Thiết kế hoạ tiết mới từ kênh alpha"@vi ;
+    ex:hasRawText "Trong Hình 4a và Hình 4b, lớp Tam giác chứa duy nhất hoạ tiết màu đen. Hãy nêu cách thực hiện tạo thêm một hoạ tiết giống như vậy và chỉnh sửa để được kết quả như Hình 4c."@vi ;
+    ex:appearsOnPage ex:page165 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:relatedTo ex:conceptAlphaToSelection, ex:conceptKenhAlpha .
+
+  ex:topicEict_l3_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 3 - Tạo thiệp chúc mừng với ảnh được tách khỏi nền"@vi ;
+    ex:hasRawText "Em hãy tạo một thiệp chúc mừng sinh nhật, trong đó các ảnh nguồn như hộp quà và bó hoa được tách khỏi nền. Có thể thay đổi nội dung lời chúc và thay các ảnh nguồn bằng ảnh khác."@vi ;
+    ex:appearsOnPage ex:page166 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:relatedTo ex:conceptTachAnh, ex:conceptKenhAlpha .
+
+  ex:topicEict_l3_practice2 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 3 - Tạo banner ICT GROUP 10A5"@vi ;
+    ex:hasRawText "Em hãy tạo banner ICT GROUP 10A5, sử dụng lại sản phẩm logo của bài vận dụng thuộc bài học 2, tạo thêm dải nơ cho logo, tách logo khỏi nền nếu cần, tạo tệp ảnh mới để thiết kế banner, tạo nền banner và tô màu gradient, sao chép logo vào banner và tạo các hoạ tiết đường cong."@vi ;
+    ex:appearsOnPage ex:page166 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:relatedTo ex:conceptBanner, ex:conceptLogo, ex:conceptGradient, ex:conceptTachAnh .
+
+  ex:topicEict_l3_appliedProduct a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 3 - Thiết kế sản phẩm đồ hoạ theo nhu cầu"@vi ;
+    ex:hasRawText "Em hãy thiết kế một trong các sản phẩm đồ hoạ như áp phích, banner, băng rôn, logo theo nhu cầu và sở thích. Lưu sản phẩm và xuất ra một tệp ảnh với định dạng chuẩn."@vi ;
+    ex:appearsOnPage ex:page167 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:relatedTo ex:conceptPoster, ex:conceptBanner, ex:conceptLogo .
+
+  ex:topicEict_l3_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 3 chủ đề E^ICT"@vi ;
+    ex:hasRawText "Em đồng ý với những phát biểu nào sau đây: độ trong suốt của ảnh tỉ lệ thuận với mức độ nhìn rõ ảnh; tách ảnh khỏi nền là loại bỏ lớp nền hay tạo ra một lớp nền trong suốt; chuyển kênh alpha của một lớp ảnh vào vùng chọn giúp chọn được các đối tượng trên lớp đó; luôn chọn được đối tượng phức tạp bằng cách chuyển kênh alpha; sử dụng kĩ thuật thiết kế và kênh alpha có thể tạo sản phẩm đồ hoạ đơn giản như logo, áp phích, poster, banner hoặc băng rôn."@vi ;
+    ex:appearsOnPage ex:page167 ;
+    ex:belongsToLesson ex:topicEict_lesson3 ;
+    ex:relatedTo ex:conceptKenhAlpha, ex:conceptDoTrongSuot, ex:conceptTachAnh, ex:conceptAlphaToSelection .
+
+  ex:topicEict_l4_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành tổng hợp bài 4 - Thiết kế logo Olympic Việt Nam"@vi ;
+    ex:hasRawText "Em hãy tạo tệp ảnh mới và thiết kế logo Olympic Việt Nam, trong đó các vòng tròn Olympic lồng nhau. Lưu tệp ảnh với tên Olympic VN.cxf và xuất ảnh với tên Olympic VN.png."@vi ;
+    ex:appearsOnPage ex:page168 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:relatedTo ex:conceptOlympicVietNamLogo, ex:conceptLogo, ex:conceptLongHinh .
+
+  ex:topicEict_l4_practice2 a ex:PracticeTask ;
+    rdfs:label "Thực hành tổng hợp bài 4 - Thiết kế banner Câu lạc bộ Tin học ứng dụng"@vi ;
+    ex:hasRawText "Hãy thiết kế banner Câu lạc bộ Tin học ứng dụng của lớp 10A5. Lưu tệp ảnh và xuất tệp sang định dạng chuẩn png, tên tệp là Banner CLB ICT."@vi ;
+    ex:appearsOnPage ex:page170 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:relatedTo ex:conceptBannerCLBICT, ex:conceptBanner .
+
+  ex:topicEict_l4_appliedProduct a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 4 - Thiết kế poster hoặc logo theo chủ đề"@vi ;
+    ex:hasRawText "Em hãy thiết kế một sản phẩm đồ hoạ như poster hoặc logo theo nhu cầu, sở thích. Sau đây là một số ví dụ chủ đề: Ngày hội trường, Thông điệp 5K, Câu lạc bộ Lập trình, Robotics."@vi ;
+    ex:appearsOnPage ex:page173 ;
+    ex:belongsToLesson ex:topicEict_lesson4 ;
+    ex:relatedTo ex:conceptPoster, ex:conceptLogo, ex:conceptThucHanhTongHop .
+
+  ex:topicEict_lesson1 ex:hasActivity ex:topicEict_l1_openingActivity,
+    ex:topicEict_l1_activity1, ex:topicEict_l1_activity2,
+    ex:topicEict_l1_practiceCard ;
+    ex:hasReviewQuestion ex:topicEict_l1_review1 .
+
+  ex:topicEict_lesson2 ex:hasActivity ex:topicEict_l2_openingActivity,
+    ex:topicEict_l2_activity1, ex:topicEict_l2_activity2,
+    ex:topicEict_l2_practice1, ex:topicEict_l2_practice2,
+    ex:topicEict_l2_appliedLogo ;
+    ex:hasReviewQuestion ex:topicEict_l2_review1 .
+
+  ex:topicEict_lesson3 ex:hasActivity ex:topicEict_l3_openingActivity,
+    ex:topicEict_l3_activity1, ex:topicEict_l3_activity2,
+    ex:topicEict_l3_practice1, ex:topicEict_l3_practice2,
+    ex:topicEict_l3_appliedProduct ;
+    ex:hasReviewQuestion ex:topicEict_l3_review1 .
+
+  ex:topicEict_lesson4 ex:hasActivity ex:topicEict_l4_practice1,
+    ex:topicEict_l4_practice2, ex:topicEict_l4_appliedProduct .
+}

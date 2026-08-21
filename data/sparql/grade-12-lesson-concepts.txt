@@ -1,0 +1,39 @@
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+###############################################################################
+# Auto-generated lesson-level ex:hasConcept links (grade 12).
+# Backfills lessons that had no concepts by attaching each of the lesson's
+# topic concepts to the lesson(s) whose text mentions/illustrates it.
+# 27 lessons.
+###############################################################################
+
+INSERT DATA {
+  ex:g12_topicAICT_lesson1 ex:hasConcept ex:g12_conceptBluetooth, ex:g12_conceptBluetoothPairing, ex:g12_conceptCastToDevice, ex:g12_conceptKetNoiKhongDay, ex:g12_conceptKetNoiThietBiSo, ex:g12_conceptMayTinh, ex:g12_conceptTiViThongMinh, ex:g12_conceptTruyenTep, ex:g12_conceptWiFi, ex:g12_conceptWindows10 .
+  ex:g12_topicAICT_lesson2 ex:hasConcept ex:g12_conceptAirDroidPersonal, ex:g12_conceptAndroid, ex:g12_conceptChopTatDen, ex:g12_conceptColourMode, ex:g12_conceptCountdown, ex:g12_conceptDenThongMinh, ex:g12_conceptDienThoaiThongMinh, ex:g12_conceptDoSangDen, ex:g12_conceptDoTrangDen, ex:g12_conceptFileTransfer, ex:g12_conceptHenGioDemNguoc, ex:g12_conceptIOS, ex:g12_conceptKetNoiKhongDay, ex:g12_conceptLapLich, ex:g12_conceptMauSacDen, ex:g12_conceptMayTinh, ex:g12_conceptNhaThongMinh, ex:g12_conceptNutReset, ex:g12_conceptOcamThongMinh, ex:g12_conceptPower, ex:g12_conceptRangDongSmart, ex:g12_conceptSceneMode, ex:g12_conceptSchedule, ex:g12_conceptThietBiThongMinh, ex:g12_conceptTimer, ex:g12_conceptTruyenTep, ex:g12_conceptUngDungDieuKhien, ex:g12_conceptWhiteMode, ex:g12_conceptWiFi .
+  ex:g12_topicA_lesson1 ex:hasConcept ex:g12_conceptAI, ex:g12_conceptAIMem, ex:g12_conceptAITaoSinh, ex:g12_conceptAIYeu, ex:g12_conceptHocMay, ex:g12_conceptThiGiacMayTinh, ex:g12_conceptTriTueNhanTao, ex:g12_conceptTuringTest, ex:g12_conceptXuLiNgonNguTuNhien .
+  ex:g12_topicA_lesson2 ex:hasConcept ex:g12_conceptAI, ex:g12_conceptCanhBaoAI, ex:g12_conceptDichVuKhachHangAI, ex:g12_conceptDieuKhienTuDong, ex:g12_conceptDoDungThongMinh, ex:g12_conceptGiaoDucAI, ex:g12_conceptRobotics, ex:g12_conceptThiGiacMayTinh, ex:g12_conceptTriTueNhanTao, ex:g12_conceptXuLiNgonNguTuNhien, ex:g12_conceptYTeAI .
+  ex:g12_topicB_lesson1 ex:hasConcept ex:g12_conceptAccessPoint, ex:g12_conceptDiaChiMAC, ex:g12_conceptISP, ex:g12_conceptInternet, ex:g12_conceptKetNoiMang, ex:g12_conceptLAN, ex:g12_conceptMangMayTinh, ex:g12_conceptModem, ex:g12_conceptNIC, ex:g12_conceptRouter, ex:g12_conceptSwitch, ex:g12_conceptThietBiDauCuoi, ex:g12_conceptThietBiMang, ex:g12_conceptWAN, ex:g12_conceptWLAN .
+  ex:g12_topicB_lesson2 ex:hasConcept ex:g12_conceptDNS, ex:g12_conceptDiaChiIP, ex:g12_conceptGiaoThucMang, ex:g12_conceptIP, ex:g12_conceptIPv4, ex:g12_conceptIPv6, ex:g12_conceptInternet, ex:g12_conceptTCP, ex:g12_conceptTCPIP .
+  ex:g12_topicB_lesson3 ex:hasConcept ex:g12_conceptAccessPoint, ex:g12_conceptChiaSeDuLieu, ex:g12_conceptChiaSeMayIn, ex:g12_conceptInternet, ex:g12_conceptLAN, ex:g12_conceptSwitch, ex:g12_conceptThietLapKetNoiMang .
+  ex:g12_topicD_lesson1 ex:hasConcept ex:g12_conceptDaoDucPhapLuatVanHoaSo, ex:g12_conceptDeepfake, ex:g12_conceptGiaTriNhanVan, ex:g12_conceptGiaoTiepDongBo, ex:g12_conceptGiaoTiepKhongDongBo, ex:g12_conceptGiaoTiepQuaKhongGianMang, ex:g12_conceptHieuUngXaHoiTichCuc, ex:g12_conceptKhongGianMang, ex:g12_conceptLuaDaoQuaMang, ex:g12_conceptMatThongTinCaNhan, ex:g12_conceptNghienInternet, ex:g12_conceptRinhRapQuayRoiBatNat, ex:g12_conceptTheGioiAo, ex:g12_conceptTinhNguoi, ex:g12_conceptTinhNhanVanTheGioiAo, ex:g12_conceptUngXuNhanVan, ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_topicEICT_lesson1 ex:hasConcept ex:g12_conceptMauTrangWeb, ex:g12_conceptMobirise, ex:g12_conceptPhanMemTaoWebsite, ex:g12_conceptPublishWebsite, ex:g12_conceptResponsive, ex:g12_conceptTaoTrangWebBangPhanMem .
+  ex:g12_topicEICT_lesson2 ex:hasConcept ex:g12_conceptCauTrucWebsite, ex:g12_conceptChanTrang, ex:g12_conceptMauTrangWeb, ex:g12_conceptMobirise, ex:g12_conceptPhanDauTrang, ex:g12_conceptPhanNoiDung, ex:g12_conceptPublishWebsite, ex:g12_conceptThanhDieuHuong, ex:g12_conceptThemeWebsite, ex:g12_conceptTrangChiTiet, ex:g12_conceptTrangChu, ex:g12_conceptTrangChuyenMuc, ex:g12_conceptTrangWeb, ex:g12_conceptWebsite .
+  ex:g12_topicEICT_lesson3 ex:hasConcept ex:g12_conceptPhanDauTrang, ex:g12_conceptThanhDieuHuong .
+  ex:g12_topicEICT_lesson4 ex:hasConcept ex:g12_conceptBaiVietTrangWeb, ex:g12_conceptChanTrang, ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptVideoTrangWeb .
+  ex:g12_topicEICT_lesson5 ex:hasConcept ex:g12_conceptGallery, ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptSlider, ex:g12_conceptVideoTrangWeb .
+  ex:g12_topicEICT_lesson6 ex:hasConcept ex:g12_conceptBieuMau, ex:g12_conceptDesktopView, ex:g12_conceptFTP, ex:g12_conceptLocalDriveFolder, ex:g12_conceptMobileView, ex:g12_conceptMobirisesite, ex:g12_conceptPublishWebsite .
+  ex:g12_topicEICT_lesson7 ex:hasConcept ex:g12_conceptBieuMau, ex:g12_conceptCauTrucWebsite, ex:g12_conceptChanTrang, ex:g12_conceptHinhAnhTrangWeb, ex:g12_conceptHopTacNhom, ex:g12_conceptMobirise, ex:g12_conceptPublishWebsite, ex:g12_conceptSanPhamNhom, ex:g12_conceptThanhDieuHuong, ex:g12_conceptTieuChiDanhGiaWebsite, ex:g12_conceptUngDungTinHoc .
+  ex:g12_topicF_lesson1 ex:hasConcept ex:g12_conceptHTML, ex:g12_conceptPhanTuHTML, ex:g12_conceptTaoTrangWeb, ex:g12_conceptTheHTML, ex:g12_conceptThuocTinhHTML, ex:g12_conceptVanBanHTML, ex:g12_conceptWebsite .
+  ex:g12_topicF_lesson10 ex:hasConcept ex:g12_conceptBieuMau, ex:g12_conceptCSS, ex:g12_conceptClassSelector, ex:g12_conceptExternalCSS, ex:g12_conceptIdSelector .
+  ex:g12_topicF_lesson11 ex:hasConcept ex:g12_conceptBieuMau, ex:g12_conceptBoCucTrangWeb, ex:g12_conceptBoxModel, ex:g12_conceptCSS .
+  ex:g12_topicF_lesson12 ex:hasConcept ex:g12_conceptBoCucTrangWeb, ex:g12_conceptCSS, ex:g12_conceptClassSelector, ex:g12_conceptDuAnBaoTuong, ex:g12_conceptHTML, ex:g12_conceptIdSelector .
+  ex:g12_topicF_lesson2 ex:hasConcept ex:g12_conceptHTML, ex:g12_conceptSieuLienKet .
+  ex:g12_topicF_lesson3 ex:hasConcept ex:g12_conceptSieuLienKet, ex:g12_conceptWebsite .
+  ex:g12_topicF_lesson4 ex:hasConcept ex:g12_conceptBangHTML, ex:g12_conceptDanhSach, ex:g12_conceptThuocTinhHTML .
+  ex:g12_topicF_lesson5 ex:hasConcept ex:g12_conceptAnhWeb, ex:g12_conceptAudio, ex:g12_conceptHTML, ex:g12_conceptIframe, ex:g12_conceptVideo .
+  ex:g12_topicF_lesson6 ex:hasConcept ex:g12_conceptBieuMau, ex:g12_conceptForm .
+  ex:g12_topicF_lesson7 ex:hasConcept ex:g12_conceptBieuMau, ex:g12_conceptForm .
+  ex:g12_topicF_lesson8 ex:hasConcept ex:g12_conceptCSS, ex:g12_conceptExternalCSS, ex:g12_conceptHTML, ex:g12_conceptInternalCSS .
+  ex:g12_topicF_lesson9 ex:hasConcept ex:g12_conceptBieuMau, ex:g12_conceptCSS, ex:g12_conceptExternalCSS, ex:g12_conceptInternalCSS .
+};

@@ -1,0 +1,1172 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 11 TOPIC C
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 resources.
+# Source file: Tin học (tin học ứng dụng) 11 CD-pages-3.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g11_grade11 a ex:GradeLevel ;
+    rdfs:label "Lớp 11"@vi ;
+    ex:gradeNumber 11 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g11_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 11 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 11 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g11_grade11 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicC_shared a ex:Topic ;
+    rdfs:label "Chủ đề C (dùng chung các khối)"@vi ;
+    ex:hasTitle "Tổ chức lưu trữ, tìm kiếm và trao đổi thông tin"@vi .
+
+  ex:g11_topicC a ex:Topic ;
+    rdfs:label "Chủ đề C - Tổ chức lưu trữ, tìm kiếm và trao đổi thông tin"@vi ;
+    ex:hasTitle "Tổ chức lưu trữ, tìm kiếm và trao đổi thông tin"@vi ;
+    ex:hasSubtitle "Tìm kiếm và trao đổi thông tin trên mạng"@vi ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicC_shared ;
+    ex:topicOrder 3 ;
+    ex:hasStartPage 28 ;
+    ex:hasEndPage 41 ;
+    ex:sourceFileName "Tin học (tin học ứng dụng) 11 CD-pages-3.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g11_topicC_lesson1, ex:g11_topicC_lesson2,
+                 ex:g11_topicC_lesson3, ex:g11_topicC_lesson4 ;
+    ex:hasPage ex:g11_page028, ex:g11_page029, ex:g11_page030, ex:g11_page031,
+               ex:g11_page032, ex:g11_page033, ex:g11_page034, ex:g11_page035,
+               ex:g11_page036, ex:g11_page037, ex:g11_page038, ex:g11_page039,
+               ex:g11_page040, ex:g11_page041 .
+
+  ex:g11_tinhoc_ungdung_canhdieu ex:hasTopic ex:g11_topicC .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g11_topicC_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Lưu trữ trực tuyến"@vi ;
+    ex:hasTitle "Lưu trữ trực tuyến"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g11_topicC ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 28 ;
+    ex:hasEndPage 32 ;
+    ex:hasSection ex:g11_topicC_l1s1, ex:g11_topicC_l1s2, ex:g11_topicC_l1s3 .
+
+  ex:g11_topicC_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Thực hành một số tính năng hữu ích của máy tìm kiếm"@vi ;
+    ex:hasTitle "Thực hành một số tính năng hữu ích của máy tìm kiếm"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g11_topicC ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 33 ;
+    ex:hasEndPage 35 ;
+    ex:hasSection ex:g11_topicC_l2s1, ex:g11_topicC_l2s2 .
+
+  ex:g11_topicC_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Thực hành một số tính năng nâng cao của mạng xã hội"@vi ;
+    ex:hasTitle "Thực hành một số tính năng nâng cao của mạng xã hội"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g11_topicC ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 36 ;
+    ex:hasEndPage 38 ;
+    ex:hasSection ex:g11_topicC_l3s1, ex:g11_topicC_l3s2 .
+
+  ex:g11_topicC_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Thực hành một số tính năng hữu ích của dịch vụ thư điện tử"@vi ;
+    ex:hasTitle "Thực hành một số tính năng hữu ích của dịch vụ thư điện tử"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:g11_topicC ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 39 ;
+    ex:hasEndPage 41 ;
+    ex:hasSection ex:g11_topicC_l4s1, ex:g11_topicC_l4s2 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g11_topicC_l1s1 a ex:Section ;
+    rdfs:label "Dịch vụ lưu trữ trực tuyến"@vi ;
+    ex:hasTitle "Dịch vụ lưu trữ trực tuyến"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 .
+
+  ex:g11_topicC_l1s2 a ex:Section ;
+    rdfs:label "Thực hành lưu trữ và chia sẻ dữ liệu trên Google Drive"@vi ;
+    ex:hasTitle "Thực hành lưu trữ và chia sẻ dữ liệu trên Google Drive"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 .
+
+  ex:g11_topicC_l1s3 a ex:Section ;
+    rdfs:label "Lợi ích và lưu ý khi sử dụng lưu trữ trực tuyến"@vi ;
+    ex:hasTitle "Lợi ích và lưu ý khi sử dụng lưu trữ trực tuyến"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 .
+
+  ex:g11_topicC_l2s1 a ex:Section ;
+    rdfs:label "Sử dụng biểu thức tìm kiếm"@vi ;
+    ex:hasTitle "Sử dụng biểu thức tìm kiếm"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 .
+
+  ex:g11_topicC_l2s2 a ex:Section ;
+    rdfs:label "Tìm kiếm thông tin bằng giọng nói"@vi ;
+    ex:hasTitle "Tìm kiếm thông tin bằng giọng nói"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 .
+
+  ex:g11_topicC_l3s1 a ex:Section ;
+    rdfs:label "Cài đặt bảo mật và quyền riêng tư trên mạng xã hội"@vi ;
+    ex:hasTitle "Cài đặt bảo mật và quyền riêng tư trên mạng xã hội"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 .
+
+  ex:g11_topicC_l3s2 a ex:Section ;
+    rdfs:label "Trao đổi và chia sẻ thông tin"@vi ;
+    ex:hasTitle "Trao đổi và chia sẻ thông tin"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 .
+
+  ex:g11_topicC_l4s1 a ex:Section ;
+    rdfs:label "Phân loại thư điện tử"@vi ;
+    ex:hasTitle "Phân loại thư điện tử"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 .
+
+  ex:g11_topicC_l4s2 a ex:Section ;
+    rdfs:label "Quản lí email bằng bộ lọc và tìm kiếm email"@vi ;
+    ex:hasTitle "Quản lí email bằng bộ lọc và tìm kiếm email"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g11_page028 a ex:Page ; ex:hasPageNumber 28 ; ex:hasPrintedPageNumber 28 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g11_topicC_lesson1 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page029 a ex:Page ; ex:hasPageNumber 29 ; ex:hasPrintedPageNumber 29 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g11_topicC_lesson1 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page030 a ex:Page ; ex:hasPageNumber 30 ; ex:hasPrintedPageNumber 30 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g11_topicC_lesson1 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page031 a ex:Page ; ex:hasPageNumber 31 ; ex:hasPrintedPageNumber 31 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g11_topicC_lesson1 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page032 a ex:Page ; ex:hasPageNumber 32 ; ex:hasPrintedPageNumber 32 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g11_topicC_lesson1 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page033 a ex:Page ; ex:hasPageNumber 33 ; ex:hasPrintedPageNumber 33 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g11_topicC_lesson2 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page034 a ex:Page ; ex:hasPageNumber 34 ; ex:hasPrintedPageNumber 34 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g11_topicC_lesson2 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page035 a ex:Page ; ex:hasPageNumber 35 ; ex:hasPrintedPageNumber 35 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g11_topicC_lesson2 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page036 a ex:Page ; ex:hasPageNumber 36 ; ex:hasPrintedPageNumber 36 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g11_topicC_lesson3 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page037 a ex:Page ; ex:hasPageNumber 37 ; ex:hasPrintedPageNumber 37 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g11_topicC_lesson3 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page038 a ex:Page ; ex:hasPageNumber 38 ; ex:hasPrintedPageNumber 38 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g11_topicC_lesson3 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page039 a ex:Page ; ex:hasPageNumber 39 ; ex:hasPrintedPageNumber 39 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g11_topicC_lesson4 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page040 a ex:Page ; ex:hasPageNumber 40 ; ex:hasPrintedPageNumber 40 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g11_topicC_lesson4 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page041 a ex:Page ; ex:hasPageNumber 41 ; ex:hasPrintedPageNumber 41 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g11_topicC_lesson4 ; ex:belongsToTopic ex:g11_topicC ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g11_page027 ex:nextPage ex:g11_page028 .
+  ex:g11_page028 ex:previousPage ex:g11_page027 ; ex:nextPage ex:g11_page029 .
+  ex:g11_page029 ex:previousPage ex:g11_page028 ; ex:nextPage ex:g11_page030 .
+  ex:g11_page030 ex:previousPage ex:g11_page029 ; ex:nextPage ex:g11_page031 .
+  ex:g11_page031 ex:previousPage ex:g11_page030 ; ex:nextPage ex:g11_page032 .
+  ex:g11_page032 ex:previousPage ex:g11_page031 ; ex:nextPage ex:g11_page033 .
+  ex:g11_page033 ex:previousPage ex:g11_page032 ; ex:nextPage ex:g11_page034 .
+  ex:g11_page034 ex:previousPage ex:g11_page033 ; ex:nextPage ex:g11_page035 .
+  ex:g11_page035 ex:previousPage ex:g11_page034 ; ex:nextPage ex:g11_page036 .
+  ex:g11_page036 ex:previousPage ex:g11_page035 ; ex:nextPage ex:g11_page037 .
+  ex:g11_page037 ex:previousPage ex:g11_page036 ; ex:nextPage ex:g11_page038 .
+  ex:g11_page038 ex:previousPage ex:g11_page037 ; ex:nextPage ex:g11_page039 .
+  ex:g11_page039 ex:previousPage ex:g11_page038 ; ex:nextPage ex:g11_page040 .
+  ex:g11_page040 ex:previousPage ex:g11_page039 ; ex:nextPage ex:g11_page041 .
+  ex:g11_page041 ex:previousPage ex:g11_page040 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g11_conceptToChucLuuTruTimKiemTraoDoiThongTin a ex:KnowledgeConcept ; rdfs:label "Tổ chức lưu trữ, tìm kiếm và trao đổi thông tin"@vi .
+  ex:g11_conceptLuuTruTrucTuyen a ex:KnowledgeConcept ; rdfs:label "Lưu trữ trực tuyến"@vi .
+  ex:g11_conceptDichVuLuuTruTrucTuyen a ex:KnowledgeConcept ; rdfs:label "Dịch vụ lưu trữ trực tuyến"@vi .
+  ex:g11_conceptDienToanDamMay a ex:KnowledgeConcept ; rdfs:label "Điện toán đám mây"@vi .
+  ex:g11_conceptDongBoDuLieu a ex:KnowledgeConcept ; rdfs:label "Đồng bộ hoá dữ liệu"@vi .
+  ex:g11_conceptChiaSeTepTin a ex:KnowledgeConcept ; rdfs:label "Chia sẻ tệp tin"@vi .
+  ex:g11_conceptSaoLuuDuLieu a ex:KnowledgeConcept ; rdfs:label "Sao lưu dữ liệu"@vi .
+  ex:g11_conceptBaoMatDuLieu a ex:KnowledgeConcept ; rdfs:label "Bảo mật dữ liệu"@vi .
+  ex:g11_conceptGoogleDrive a ex:KnowledgeConcept ; rdfs:label "Google Drive"@vi .
+  ex:g11_conceptDropbox a ex:KnowledgeConcept ; rdfs:label "Dropbox"@vi .
+  ex:g11_conceptOneDrive a ex:KnowledgeConcept ; rdfs:label "OneDrive"@vi .
+  ex:g11_conceptMega a ex:KnowledgeConcept ; rdfs:label "Mega"@vi .
+  ex:g11_conceptBox a ex:KnowledgeConcept ; rdfs:label "Box"@vi .
+  ex:g11_conceptMediafire a ex:KnowledgeConcept ; rdfs:label "Mediafire"@vi .
+  ex:g11_conceptFshare a ex:KnowledgeConcept ; rdfs:label "Fshare"@vi .
+  ex:g11_conceptTaiTepLen a ex:KnowledgeConcept ; rdfs:label "Tải tệp lên"@vi .
+  ex:g11_conceptTaiTepXuong a ex:KnowledgeConcept ; rdfs:label "Tải tệp xuống"@vi .
+  ex:g11_conceptTaoThuMuc a ex:KnowledgeConcept ; rdfs:label "Tạo thư mục"@vi .
+  ex:g11_conceptChiaSeLienKet a ex:KnowledgeConcept ; rdfs:label "Chia sẻ liên kết"@vi .
+  ex:g11_conceptQuyenChiaSe a ex:KnowledgeConcept ; rdfs:label "Quyền chia sẻ"@vi .
+  ex:g11_conceptViewer a ex:KnowledgeConcept ; rdfs:label "Viewer"@vi .
+  ex:g11_conceptCommenter a ex:KnowledgeConcept ; rdfs:label "Commenter"@vi .
+  ex:g11_conceptEditor a ex:KnowledgeConcept ; rdfs:label "Editor"@vi .
+  ex:g11_conceptQuanLiPhienBan a ex:KnowledgeConcept ; rdfs:label "Quản lí phiên bản"@vi .
+  ex:g11_conceptMayTimKiem a ex:KnowledgeConcept ; rdfs:label "Máy tìm kiếm"@vi .
+  ex:g11_conceptGoogleSearch a ex:KnowledgeConcept ; rdfs:label "Google Search"@vi .
+  ex:g11_conceptBieuThucTimKiem a ex:KnowledgeConcept ; rdfs:label "Biểu thức tìm kiếm"@vi .
+  ex:g11_conceptToanTuTimKiem a ex:KnowledgeConcept ; rdfs:label "Toán tử tìm kiếm"@vi .
+  ex:g11_conceptTimKiemNangCao a ex:KnowledgeConcept ; rdfs:label "Tìm kiếm nâng cao"@vi .
+  ex:g11_conceptTuKhoaTimKiem a ex:KnowledgeConcept ; rdfs:label "Từ khoá tìm kiếm"@vi .
+  ex:g11_conceptTimKiemBangGiongNoi a ex:KnowledgeConcept ; rdfs:label "Tìm kiếm bằng giọng nói"@vi .
+  ex:g11_conceptTimKiemBangHinhAnh a ex:KnowledgeConcept ; rdfs:label "Tìm kiếm bằng hình ảnh"@vi .
+  ex:g11_conceptMangXaHoi a ex:KnowledgeConcept ; rdfs:label "Mạng xã hội"@vi .
+  ex:g11_conceptFacebook a ex:KnowledgeConcept ; rdfs:label "Facebook"@vi .
+  ex:g11_conceptBaoMatTaiKhoan a ex:KnowledgeConcept ; rdfs:label "Bảo mật tài khoản"@vi .
+  ex:g11_conceptQuyenRiengTu a ex:KnowledgeConcept ; rdfs:label "Quyền riêng tư"@vi .
+  ex:g11_conceptBaoMatHaiLop a ex:KnowledgeConcept ; rdfs:label "Bảo mật hai lớp"@vi .
+  ex:g11_conceptXacThucHaiYeuTo a ex:KnowledgeConcept ; rdfs:label "Xác thực hai yếu tố"@vi .
+  ex:g11_conceptAuthenticationApp a ex:KnowledgeConcept ; rdfs:label "Ứng dụng xác thực"@vi .
+  ex:g11_conceptTextMessageSMS a ex:KnowledgeConcept ; rdfs:label "Tin nhắn SMS xác thực"@vi .
+  ex:g11_conceptSecurityKey a ex:KnowledgeConcept ; rdfs:label "Khoá bảo mật"@vi .
+  ex:g11_conceptDoiTuongChiaSe a ex:KnowledgeConcept ; rdfs:label "Đối tượng chia sẻ"@vi .
+  ex:g11_conceptPhongHopTrucTuyen a ex:KnowledgeConcept ; rdfs:label "Phòng họp trực tuyến"@vi .
+  ex:g11_conceptFacebookRoom a ex:KnowledgeConcept ; rdfs:label "Facebook Room"@vi .
+  ex:g11_conceptSuKienMangXaHoi a ex:KnowledgeConcept ; rdfs:label "Sự kiện trên mạng xã hội"@vi .
+  ex:g11_conceptThuDienTu a ex:KnowledgeConcept ; rdfs:label "Thư điện tử"@vi .
+  ex:g11_conceptGmail a ex:KnowledgeConcept ; rdfs:label "Gmail"@vi .
+  ex:g11_conceptPhanLoaiThuDienTu a ex:KnowledgeConcept ; rdfs:label "Phân loại thư điện tử"@vi .
+  ex:g11_conceptNhanEmail a ex:KnowledgeConcept ; rdfs:label "Nhãn email"@vi .
+  ex:g11_conceptDanhDauSaoEmail a ex:KnowledgeConcept ; rdfs:label "Đánh dấu sao email"@vi .
+  ex:g11_conceptDiChuyenEmail a ex:KnowledgeConcept ; rdfs:label "Di chuyển email"@vi .
+  ex:g11_conceptBoLocEmail a ex:KnowledgeConcept ; rdfs:label "Bộ lọc email"@vi .
+  ex:g11_conceptTimKiemEmail a ex:KnowledgeConcept ; rdfs:label "Tìm kiếm email"@vi .
+  ex:g11_conceptTepDinhKemEmail a ex:KnowledgeConcept ; rdfs:label "Tệp đính kèm email"@vi .
+
+  ###########################################################################
+  # Topic / lesson / section concept links
+  ###########################################################################
+
+  ex:g11_topicC ex:hasConcept ex:g11_conceptToChucLuuTruTimKiemTraoDoiThongTin,
+    ex:g11_conceptLuuTruTrucTuyen, ex:g11_conceptDichVuLuuTruTrucTuyen,
+    ex:g11_conceptGoogleDrive, ex:g11_conceptMayTimKiem, ex:g11_conceptBieuThucTimKiem,
+    ex:g11_conceptTimKiemBangGiongNoi, ex:g11_conceptMangXaHoi, ex:g11_conceptFacebook,
+    ex:g11_conceptBaoMatTaiKhoan, ex:g11_conceptQuyenRiengTu, ex:g11_conceptThuDienTu,
+    ex:g11_conceptGmail, ex:g11_conceptBoLocEmail .
+
+  ex:g11_topicC_lesson1 ex:hasConcept ex:g11_conceptLuuTruTrucTuyen,
+    ex:g11_conceptDichVuLuuTruTrucTuyen, ex:g11_conceptDienToanDamMay,
+    ex:g11_conceptDongBoDuLieu, ex:g11_conceptChiaSeTepTin, ex:g11_conceptSaoLuuDuLieu,
+    ex:g11_conceptBaoMatDuLieu, ex:g11_conceptGoogleDrive, ex:g11_conceptDropbox,
+    ex:g11_conceptOneDrive, ex:g11_conceptMega, ex:g11_conceptBox, ex:g11_conceptMediafire,
+    ex:g11_conceptFshare, ex:g11_conceptTaiTepLen, ex:g11_conceptTaiTepXuong,
+    ex:g11_conceptTaoThuMuc, ex:g11_conceptChiaSeLienKet, ex:g11_conceptQuyenChiaSe,
+    ex:g11_conceptViewer, ex:g11_conceptCommenter, ex:g11_conceptEditor, ex:g11_conceptQuanLiPhienBan .
+
+  ex:g11_topicC_lesson2 ex:hasConcept ex:g11_conceptMayTimKiem, ex:g11_conceptGoogleSearch,
+    ex:g11_conceptBieuThucTimKiem, ex:g11_conceptToanTuTimKiem,
+    ex:g11_conceptTimKiemNangCao, ex:g11_conceptTuKhoaTimKiem,
+    ex:g11_conceptTimKiemBangGiongNoi, ex:g11_conceptTimKiemBangHinhAnh .
+
+  ex:g11_topicC_lesson3 ex:hasConcept ex:g11_conceptMangXaHoi, ex:g11_conceptFacebook,
+    ex:g11_conceptBaoMatTaiKhoan, ex:g11_conceptQuyenRiengTu, ex:g11_conceptBaoMatHaiLop,
+    ex:g11_conceptXacThucHaiYeuTo, ex:g11_conceptAuthenticationApp,
+    ex:g11_conceptTextMessageSMS, ex:g11_conceptSecurityKey, ex:g11_conceptDoiTuongChiaSe,
+    ex:g11_conceptPhongHopTrucTuyen, ex:g11_conceptFacebookRoom, ex:g11_conceptSuKienMangXaHoi .
+
+  ex:g11_topicC_lesson4 ex:hasConcept ex:g11_conceptThuDienTu, ex:g11_conceptGmail,
+    ex:g11_conceptPhanLoaiThuDienTu, ex:g11_conceptNhanEmail, ex:g11_conceptDanhDauSaoEmail,
+    ex:g11_conceptDiChuyenEmail, ex:g11_conceptBoLocEmail, ex:g11_conceptTimKiemEmail,
+    ex:g11_conceptTepDinhKemEmail .
+
+  ex:g11_topicC_l1s1 ex:hasConcept ex:g11_conceptLuuTruTrucTuyen,
+    ex:g11_conceptDichVuLuuTruTrucTuyen, ex:g11_conceptDienToanDamMay,
+    ex:g11_conceptDongBoDuLieu, ex:g11_conceptGoogleDrive, ex:g11_conceptOneDrive, ex:g11_conceptFshare .
+  ex:g11_topicC_l1s2 ex:hasConcept ex:g11_conceptGoogleDrive, ex:g11_conceptDropbox,
+    ex:g11_conceptOneDrive, ex:g11_conceptMega, ex:g11_conceptBox, ex:g11_conceptMediafire,
+    ex:g11_conceptTaoThuMuc, ex:g11_conceptTaiTepLen, ex:g11_conceptTaiTepXuong,
+    ex:g11_conceptChiaSeTepTin, ex:g11_conceptChiaSeLienKet, ex:g11_conceptQuyenChiaSe,
+    ex:g11_conceptViewer, ex:g11_conceptCommenter, ex:g11_conceptEditor, ex:g11_conceptQuanLiPhienBan .
+  ex:g11_topicC_l1s3 ex:hasConcept ex:g11_conceptLuuTruTrucTuyen,
+    ex:g11_conceptDongBoDuLieu, ex:g11_conceptChiaSeTepTin, ex:g11_conceptSaoLuuDuLieu,
+    ex:g11_conceptBaoMatDuLieu .
+
+  ex:g11_topicC_l2s1 ex:hasConcept ex:g11_conceptBieuThucTimKiem,
+    ex:g11_conceptToanTuTimKiem, ex:g11_conceptTimKiemNangCao,
+    ex:g11_conceptTuKhoaTimKiem, ex:g11_conceptGoogleSearch .
+  ex:g11_topicC_l2s2 ex:hasConcept ex:g11_conceptTimKiemBangGiongNoi,
+    ex:g11_conceptTimKiemBangHinhAnh, ex:g11_conceptGoogleSearch .
+
+  ex:g11_topicC_l3s1 ex:hasConcept ex:g11_conceptFacebook, ex:g11_conceptBaoMatTaiKhoan,
+    ex:g11_conceptQuyenRiengTu, ex:g11_conceptBaoMatHaiLop, ex:g11_conceptXacThucHaiYeuTo,
+    ex:g11_conceptAuthenticationApp, ex:g11_conceptTextMessageSMS, ex:g11_conceptSecurityKey,
+    ex:g11_conceptDoiTuongChiaSe .
+  ex:g11_topicC_l3s2 ex:hasConcept ex:g11_conceptPhongHopTrucTuyen,
+    ex:g11_conceptFacebookRoom, ex:g11_conceptSuKienMangXaHoi, ex:g11_conceptFacebook .
+
+  ex:g11_topicC_l4s1 ex:hasConcept ex:g11_conceptThuDienTu, ex:g11_conceptGmail,
+    ex:g11_conceptPhanLoaiThuDienTu, ex:g11_conceptNhanEmail,
+    ex:g11_conceptDanhDauSaoEmail, ex:g11_conceptDiChuyenEmail .
+  ex:g11_topicC_l4s2 ex:hasConcept ex:g11_conceptBoLocEmail, ex:g11_conceptTimKiemEmail,
+    ex:g11_conceptTepDinhKemEmail, ex:g11_conceptGmail, ex:g11_conceptNhanEmail .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g11_topicC_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề C lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Biết được ưu, nhược điểm cơ bản của việc lưu trữ trực tuyến. Sử dụng được một số công cụ trực tuyến như Google Drive, Dropbox,... để lưu trữ và chia sẻ tệp tin."@vi ;
+    ex:appearsOnPage ex:g11_page028 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 .
+
+  ex:g11_topicC_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề C lớp 11"@vi ;
+    ex:hasSummaryText "Lợi ích chính của lưu trữ trực tuyến là khả năng bảo mật dữ liệu, sao lưu tự động, tăng tính an toàn cho dữ liệu, truyền và chia sẻ dữ liệu cho nhiều người dùng một cách thuận lợi. Phần lớn dịch vụ lưu trữ trực tuyến đều cung cấp tính năng đồng bộ hoá dữ liệu trên các thiết bị, bảo vệ dữ liệu bằng mật khẩu, tìm kiếm, truy cập tệp dữ liệu và chỉnh sửa tệp dữ liệu trực tuyến."@vi ;
+    ex:appearsOnPage ex:g11_page032 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 .
+
+  ex:g11_topicC_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề C lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Xác định được các lựa chọn theo tiêu chí tìm kiếm để nâng cao hiệu quả tìm kiếm thông tin. Thực hành tìm kiếm thông tin bằng cách nhập từ khoá hoặc giọng nói với Google."@vi ;
+    ex:appearsOnPage ex:g11_page033 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 .
+
+  ex:g11_topicC_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề C lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Sử dụng được một số chức năng nâng cao của dịch vụ mạng xã hội. Thực hành các chức năng nâng cao trên mạng xã hội Facebook."@vi ;
+    ex:appearsOnPage ex:g11_page036 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 .
+
+  ex:g11_topicC_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề C lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Biết cách phân loại và đánh dấu thư điện tử. Thực hành phân loại và đánh dấu thư điện tử Gmail."@vi ;
+    ex:appearsOnPage ex:g11_page039 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 .
+
+  ex:g11_topicC_lesson1 ex:hasSummary ex:g11_topicC_l1_summary .
+
+  ###########################################################################
+  # Figures
+  ###########################################################################
+
+  ex:g11_topicC_fig_l1_googleApps a ex:Figure ;
+    rdfs:label "Hình 1. Cửa sổ các ứng dụng của Google"@vi ;
+    ex:hasCaption "Hình 1. Cửa sổ các ứng dụng của Google"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g11_page029 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptGoogleDrive .
+
+  ex:g11_topicC_fig_l1_driveInterface a ex:Figure ;
+    rdfs:label "Hình 2. Cửa sổ giao diện Google Drive"@vi ;
+    ex:hasCaption "Hình 2. Cửa sổ giao diện Google Drive"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g11_page030 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptGoogleDrive, ex:g11_conceptTaoThuMuc, ex:g11_conceptTaiTepLen .
+
+  ex:g11_topicC_fig_l1_driveFileActions a ex:Figure ;
+    rdfs:label "Hình 3. Các chức năng quản lí tệp trên Google Drive"@vi ;
+    ex:hasCaption "Hình 3. Các chức năng quản lí tệp trên Google Drive"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g11_page030 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptChiaSeTepTin, ex:g11_conceptTaiTepXuong .
+
+  ex:g11_topicC_fig_l1_copyLinkWindow a ex:Figure ;
+    rdfs:label "Hình 4. Cửa sổ sao chép liên kết"@vi ;
+    ex:hasCaption "Hình 4. Cửa sổ sao chép liên kết"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:g11_page031 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptChiaSeLienKet .
+
+  ex:g11_topicC_fig_l1_sharePermissionWindow a ex:Figure ;
+    rdfs:label "Hình 5. Cửa sổ quyền chia sẻ dữ liệu"@vi ;
+    ex:hasCaption "Hình 5. Cửa sổ quyền chia sẻ dữ liệu"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:g11_page031 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptQuyenChiaSe, ex:g11_conceptViewer, ex:g11_conceptCommenter, ex:g11_conceptEditor .
+
+  ex:g11_topicC_fig_l2_searchResult a ex:Figure ;
+    rdfs:label "Hình 1. Kết quả tìm kiếm theo từ khoá cá heo xanh trừ cửa hàng"@vi ;
+    ex:hasCaption "Hình 1. Kết quả tìm kiếm theo từ khoá “cá heo xanh” - “cửa hàng”"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:g11_page034 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBieuThucTimKiem, ex:g11_conceptToanTuTimKiem .
+
+  ex:g11_topicC_fig_l2_advancedSearch a ex:Figure ;
+    rdfs:label "Hình 2. Cửa sổ giao diện tìm kiếm nâng cao của Google"@vi ;
+    ex:hasCaption "Hình 2. Cửa sổ giao diện tìm kiếm nâng cao của Google"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:g11_page034 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTimKiemNangCao .
+
+  ex:g11_topicC_fig_l2_googleSearchInterface a ex:Figure ;
+    rdfs:label "Hình 3. Cửa sổ giao diện tìm kiếm của Google"@vi ;
+    ex:hasCaption "Hình 3. Cửa sổ giao diện tìm kiếm của Google"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:g11_page035 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptGoogleSearch .
+
+  ex:g11_topicC_fig_l2_voiceSearchInterface a ex:Figure ;
+    rdfs:label "Hình 4. Cửa sổ giao diện tìm kiếm bằng giọng nói"@vi ;
+    ex:hasCaption "Hình 4. Cửa sổ giao diện tìm kiếm bằng giọng nói"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:g11_page035 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTimKiemBangGiongNoi .
+
+  ex:g11_topicC_fig_l3_securityLogin a ex:Figure ;
+    rdfs:label "Hình 1. Cửa sổ Security and login"@vi ;
+    ex:hasCaption "Hình 1. Cửa sổ Security and login"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:g11_page036 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBaoMatHaiLop, ex:g11_conceptFacebook .
+
+  ex:g11_topicC_fig_l3_selectAudience a ex:Figure ;
+    rdfs:label "Hình 2. Cửa sổ chọn người chia sẻ"@vi ;
+    ex:hasCaption "Hình 2. Cửa sổ chọn người chia sẻ"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:g11_page037 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptQuyenRiengTu, ex:g11_conceptDoiTuongChiaSe .
+
+  ex:g11_topicC_fig_l3_createMenu a ex:Figure ;
+    rdfs:label "Hình 3. Cửa sổ Create"@vi ;
+    ex:hasCaption "Hình 3. Cửa sổ Create"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:g11_page038 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptFacebookRoom, ex:g11_conceptSuKienMangXaHoi .
+
+  ex:g11_topicC_fig_l3_roomSettings a ex:Figure ;
+    rdfs:label "Hình 4. Đặt tên và thời gian cho phòng họp"@vi ;
+    ex:hasCaption "Hình 4. Đặt tên và thời gian cho phòng họp"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:g11_page038 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptPhongHopTrucTuyen, ex:g11_conceptFacebookRoom .
+
+  ex:g11_topicC_fig_l4_gmailLabels a ex:Figure ;
+    rdfs:label "Hình 1. Các nhãn và phân loại mặc định trong Gmail"@vi ;
+    ex:hasCaption "Hình 1. Các nhãn và phân loại mặc định trong Gmail"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:g11_page039 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptNhanEmail, ex:g11_conceptPhanLoaiThuDienTu .
+
+  ex:g11_topicC_fig_l4_createLabel a ex:Figure ;
+    rdfs:label "Hình 2. Cửa sổ tạo nhãn mới trong Gmail"@vi ;
+    ex:hasCaption "Hình 2. Cửa sổ tạo nhãn mới trong Gmail"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:g11_page040 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptNhanEmail .
+
+  ex:g11_topicC_fig_l4_selectLabelMove a ex:Figure ;
+    rdfs:label "Hình 3. Cửa sổ chọn nhãn và di chuyển sang nhãn khác cho email được chọn"@vi ;
+    ex:hasCaption "Hình 3. Cửa sổ chọn nhãn/di chuyển sang nhãn khác cho email được chọn"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:g11_page040 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptNhanEmail, ex:g11_conceptDiChuyenEmail .
+
+  ex:g11_topicC_fig_l4_emailSearch a ex:Figure ;
+    rdfs:label "Hình 4. Cửa sổ tìm kiếm email"@vi ;
+    ex:hasCaption "Hình 4. Cửa sổ tìm kiếm email"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:g11_page041 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTimKiemEmail, ex:g11_conceptBoLocEmail, ex:g11_conceptTepDinhKemEmail .
+
+  ex:g11_page029 ex:hasFigure ex:g11_topicC_fig_l1_googleApps .
+  ex:g11_page030 ex:hasFigure ex:g11_topicC_fig_l1_driveInterface, ex:g11_topicC_fig_l1_driveFileActions .
+  ex:g11_page031 ex:hasFigure ex:g11_topicC_fig_l1_copyLinkWindow, ex:g11_topicC_fig_l1_sharePermissionWindow .
+  ex:g11_page034 ex:hasFigure ex:g11_topicC_fig_l2_searchResult, ex:g11_topicC_fig_l2_advancedSearch .
+  ex:g11_page035 ex:hasFigure ex:g11_topicC_fig_l2_googleSearchInterface, ex:g11_topicC_fig_l2_voiceSearchInterface .
+  ex:g11_page036 ex:hasFigure ex:g11_topicC_fig_l3_securityLogin .
+  ex:g11_page037 ex:hasFigure ex:g11_topicC_fig_l3_selectAudience .
+  ex:g11_page038 ex:hasFigure ex:g11_topicC_fig_l3_createMenu, ex:g11_topicC_fig_l3_roomSettings .
+  ex:g11_page039 ex:hasFigure ex:g11_topicC_fig_l4_gmailLabels .
+  ex:g11_page040 ex:hasFigure ex:g11_topicC_fig_l4_createLabel, ex:g11_topicC_fig_l4_selectLabelMove .
+  ex:g11_page041 ex:hasFigure ex:g11_topicC_fig_l4_emailSearch .
+
+  ###########################################################################
+  # Figure ordering
+  ###########################################################################
+
+  ex:g11_topicC_fig_l1_googleApps ex:nextFigure ex:g11_topicC_fig_l1_driveInterface .
+  ex:g11_topicC_fig_l1_driveInterface ex:previousFigure ex:g11_topicC_fig_l1_googleApps ; ex:nextFigure ex:g11_topicC_fig_l1_driveFileActions .
+  ex:g11_topicC_fig_l1_driveFileActions ex:previousFigure ex:g11_topicC_fig_l1_driveInterface ; ex:nextFigure ex:g11_topicC_fig_l1_copyLinkWindow .
+  ex:g11_topicC_fig_l1_copyLinkWindow ex:previousFigure ex:g11_topicC_fig_l1_driveFileActions ; ex:nextFigure ex:g11_topicC_fig_l1_sharePermissionWindow .
+  ex:g11_topicC_fig_l1_sharePermissionWindow ex:previousFigure ex:g11_topicC_fig_l1_copyLinkWindow ; ex:nextFigure ex:g11_topicC_fig_l2_searchResult .
+  ex:g11_topicC_fig_l2_searchResult ex:previousFigure ex:g11_topicC_fig_l1_sharePermissionWindow ; ex:nextFigure ex:g11_topicC_fig_l2_advancedSearch .
+  ex:g11_topicC_fig_l2_advancedSearch ex:previousFigure ex:g11_topicC_fig_l2_searchResult ; ex:nextFigure ex:g11_topicC_fig_l2_googleSearchInterface .
+  ex:g11_topicC_fig_l2_googleSearchInterface ex:previousFigure ex:g11_topicC_fig_l2_advancedSearch ; ex:nextFigure ex:g11_topicC_fig_l2_voiceSearchInterface .
+  ex:g11_topicC_fig_l2_voiceSearchInterface ex:previousFigure ex:g11_topicC_fig_l2_googleSearchInterface ; ex:nextFigure ex:g11_topicC_fig_l3_securityLogin .
+  ex:g11_topicC_fig_l3_securityLogin ex:previousFigure ex:g11_topicC_fig_l2_voiceSearchInterface ; ex:nextFigure ex:g11_topicC_fig_l3_selectAudience .
+  ex:g11_topicC_fig_l3_selectAudience ex:previousFigure ex:g11_topicC_fig_l3_securityLogin ; ex:nextFigure ex:g11_topicC_fig_l3_createMenu .
+  ex:g11_topicC_fig_l3_createMenu ex:previousFigure ex:g11_topicC_fig_l3_selectAudience ; ex:nextFigure ex:g11_topicC_fig_l3_roomSettings .
+  ex:g11_topicC_fig_l3_roomSettings ex:previousFigure ex:g11_topicC_fig_l3_createMenu ; ex:nextFigure ex:g11_topicC_fig_l4_gmailLabels .
+  ex:g11_topicC_fig_l4_gmailLabels ex:previousFigure ex:g11_topicC_fig_l3_roomSettings ; ex:nextFigure ex:g11_topicC_fig_l4_createLabel .
+  ex:g11_topicC_fig_l4_createLabel ex:previousFigure ex:g11_topicC_fig_l4_gmailLabels ; ex:nextFigure ex:g11_topicC_fig_l4_selectLabelMove .
+  ex:g11_topicC_fig_l4_selectLabelMove ex:previousFigure ex:g11_topicC_fig_l4_createLabel ; ex:nextFigure ex:g11_topicC_fig_l4_emailSearch .
+  ex:g11_topicC_fig_l4_emailSearch ex:previousFigure ex:g11_topicC_fig_l4_selectLabelMove .
+
+  ###########################################################################
+  # Definitions / glossary / note boxes
+  ###########################################################################
+
+  ex:g11_topicC_def_onlineStorage a ex:DefinitionText ;
+    rdfs:label "Định nghĩa lưu trữ trực tuyến"@vi ;
+    ex:hasDefinitionText "Lưu trữ trực tuyến là một cách tiếp cận lưu trữ cho phép người dùng sử dụng Internet lưu trữ, quản lí, sao lưu và chia sẻ dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page028 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:explainsConcept ex:g11_conceptLuuTruTrucTuyen .
+
+  ex:g11_topicC_def_searchExpression a ex:DefinitionText ;
+    rdfs:label "Định nghĩa biểu thức tìm kiếm"@vi ;
+    ex:hasDefinitionText "Biểu thức tìm kiếm là cách kết hợp từ khoá, toán tử và kí hiệu đặc biệt để máy tìm kiếm trả về kết quả nhanh hơn, phù hợp hơn với mong đợi."@vi ;
+    ex:appearsOnPage ex:g11_page033 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:explainsConcept ex:g11_conceptBieuThucTimKiem .
+
+  ex:g11_topicC_def_twoFactorAuth a ex:DefinitionText ;
+    rdfs:label "Định nghĩa bảo mật hai lớp"@vi ;
+    ex:hasDefinitionText "Bảo mật hai lớp là thêm một bước xác thực khi đăng nhập, ví dụ người dùng phải nhập dãy số được gửi đến số điện thoại đã đăng kí kèm theo tài khoản."@vi ;
+    ex:appearsOnPage ex:g11_page036 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:explainsConcept ex:g11_conceptBaoMatHaiLop, ex:g11_conceptXacThucHaiYeuTo .
+
+  ex:g11_topicC_def_emailLabel a ex:DefinitionText ;
+    rdfs:label "Định nghĩa nhãn email"@vi ;
+    ex:hasDefinitionText "Nhãn email giúp người dùng gắn thẻ và gắn nhãn vào nhóm các thư cùng sự kiện hoặc cùng loại nội dung, nhờ đó dễ tìm kiếm và quản lí thư điện tử."@vi ;
+    ex:appearsOnPage ex:g11_page039 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:explainsConcept ex:g11_conceptNhanEmail, ex:g11_conceptPhanLoaiThuDienTu .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g11_topicC_p028_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1. Lưu trữ trực tuyến. Bài học đặt vấn đề: Em đã từng dùng USB để sao lưu các tệp dữ liệu, chuyển dữ liệu từ máy tính này sang máy tính khác chưa? Em có biết cách nào khác để thực hiện việc đó không?"@vi ;
+    ex:appearsOnPage ex:g11_page028 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s1 .
+
+  ex:g11_topicC_p028_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Việc lưu trữ dữ liệu số thường được xử lí bằng các thiết bị có dung lượng lớn như ổ đĩa cứng HDD, ổ đĩa cứng thể rắn SSD và ổ đĩa USB flash. Các nhu cầu lưu trữ dữ liệu ngày nay, đặc biệt trong dữ liệu lớn, trí tuệ nhân tạo, máy học và Internet vạn vật, đặt ra yêu cầu bảo vệ dữ liệu tốt hơn, chia sẻ thuận lợi hơn và đồng bộ trên nhiều thiết bị."@vi ;
+    ex:appearsOnPage ex:g11_page028 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s1 .
+
+  ex:g11_topicC_p028_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Lưu trữ trực tuyến cho phép người dùng sử dụng Internet lưu trữ, quản lí, sao lưu và chia sẻ dữ liệu. Hầu hết nhà cung cấp dịch vụ lưu trữ trực tuyến miễn phí một phần dung lượng nhỏ và trả phí nếu dùng lượng lớn hơn. Một số dịch vụ phổ biến là Google Drive, OneDrive và Fshare."@vi ;
+    ex:appearsOnPage ex:g11_page028 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s1 .
+
+  ex:g11_topicC_p029_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhiệm vụ 1 yêu cầu tải và chia sẻ dữ liệu trên Google Drive. Học sinh tìm hiểu một dịch vụ lưu trữ trực tuyến như Dropbox, OneDrive, Mega, Box, Mediafire; tóm tắt nội dung tìm hiểu vào tệp văn bản và tệp trình chiếu, sau đó tạo thư mục trên Google Drive, tải các tệp lên, chia sẻ với giáo viên và các bạn trong lớp."@vi ;
+    ex:appearsOnPage ex:g11_page029 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s2 .
+
+  ex:g11_topicC_p029_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Để sử dụng Google Drive, người dùng phải có tài khoản Gmail. Có thể truy cập địa chỉ drive.google.com và đăng nhập tài khoản Gmail hoặc đăng nhập Gmail, chọn Google apps và chọn Drive."@vi ;
+    ex:appearsOnPage ex:g11_page029 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s2 .
+
+  ex:g11_topicC_p030_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Người dùng có thể tải thư mục hoặc tệp từ máy tính lên Google Drive. Để tạo thư mục mới, chọn New, chọn Folder, đặt tên thư mục tại ô New folder và chọn Create. Để tải dữ liệu, mở thư mục muốn tải lên, chọn New hoặc nháy chuột phải, chọn File upload hoặc Folder upload, chọn tệp hoặc thư mục trong máy tính rồi chọn Open."@vi ;
+    ex:appearsOnPage ex:g11_page030 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s2 .
+
+  ex:g11_topicC_p030_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Google Drive cho phép chia sẻ các tệp hoặc thư mục cho nhiều người dùng qua email hoặc đường liên kết. Người dùng chọn tệp hoặc thư mục muốn chia sẻ, chọn Share, nhập địa chỉ email người nhận, chọn Send; hoặc chọn Copy link để gửi liên kết chia sẻ. Các quyền chia sẻ gồm Viewer, Commenter và Editor."@vi ;
+    ex:appearsOnPage ex:g11_page030 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s2 .
+
+  ex:g11_topicC_p031_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Người được chia sẻ tệp hoặc thư mục có thể mở trực tiếp trên Google Drive để xem và sửa dữ liệu nếu được cấp quyền mà không cần tải về. Để tải xuống tệp hoặc thư mục từ Google Drive, chọn tệp hoặc thư mục cần tải, nháy chuột phải và chọn Download."@vi ;
+    ex:appearsOnPage ex:g11_page031 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s2 .
+
+  ex:g11_topicC_p031_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu tìm kiếm, truy cập và cập nhật dữ liệu. Học sinh chỉnh sửa nội dung tệp theo bình luận của giáo viên, tìm kiếm và truy cập dữ liệu trên Google Drive, mở tệp trực tiếp để sửa hoặc cập nhật phiên bản mới bằng Manage versions và Upload new version, sau đó di chuyển hoặc xoá tệp."@vi ;
+    ex:appearsOnPage ex:g11_page031 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s2 .
+
+  ex:g11_topicC_p032_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Lưu trữ trực tuyến mang lại nhiều lợi ích: truy cập dữ liệu mọi nơi mọi lúc, truyền dữ liệu và đồng bộ dữ liệu giữa các thiết bị, chia sẻ tập tin với nhiều người ở các vị trí địa lí khác nhau, sao lưu và khôi phục dữ liệu sau thảm hoạ vì dữ liệu nằm ngoài địa điểm có thiết bị vật lí."@vi ;
+    ex:appearsOnPage ex:g11_page032 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s3 .
+
+  ex:g11_topicC_p032_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Lưu trữ trực tuyến cũng có một số mặt trái: dịch vụ lưu trữ đám mây có thể có lỗ hổng bảo mật, nhà cung cấp có thể ngừng hoạt động gây lo ngại về độ tin cậy, sử dụng bộ nhớ tại chỗ nhanh hơn vì thời gian tải lên hoặc tải xuống phụ thuộc vào tốc độ đường truyền."@vi ;
+    ex:appearsOnPage ex:g11_page032 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:belongsToSection ex:g11_topicC_l1s3 .
+
+  ex:g11_topicC_p033_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 2. Thực hành một số tính năng hữu ích của máy tìm kiếm. Khi tìm kiếm thông tin Internet bằng máy tìm kiếm, có thể sử dụng một số toán tử và kí hiệu đặc biệt kết hợp với từ khoá để tạo biểu thức tìm kiếm, nhằm tìm kiếm nhanh hơn và trả về kết quả phù hợp hơn."@vi ;
+    ex:appearsOnPage ex:g11_page033 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToSection ex:g11_topicC_l2s1 .
+
+  ex:g11_topicC_p033_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nhiệm vụ 1 yêu cầu kết hợp các từ khoá tìm kiếm thành biểu thức tìm kiếm. Học sinh dùng Google tìm kiếm lần lượt các biểu thức như Cá heo xanh, \"Cá heo xanh\" + \"cửa hàng\", Cửa hàng cá heo xanh và so sánh kết quả về thời gian, số lượng trang web và nội dung kết quả."@vi ;
+    ex:appearsOnPage ex:g11_page033 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToSection ex:g11_topicC_l2s1 .
+
+  ex:g11_topicC_p033_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Google hỗ trợ các kí hiệu và toán tử tìm kiếm: dấu ngoặc kép tìm trang chứa chính xác từ khoá; dấu trừ loại trừ từ khoá; dấu cộng tìm trang chứa cả hai từ khoá không cần theo thứ tự; dấu sao thay cho một số từ liên quan; AND, OR và filetype giúp thu hẹp hoặc mở rộng kết quả theo yêu cầu."@vi ;
+    ex:appearsOnPage ex:g11_page033 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToSection ex:g11_topicC_l2s1 .
+
+  ex:g11_topicC_p034_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu điều chỉnh biểu thức tìm kiếm để nhận được kết quả phù hợp hơn. Dựa trên kết quả bài 1, học sinh dùng toán tử trừ để loại trang web về cửa hàng có tên cá heo xanh và nhập biểu thức \"cá heo xanh\" - \"cửa hàng\"."@vi ;
+    ex:appearsOnPage ex:g11_page034 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToSection ex:g11_topicC_l2s1 .
+
+  ex:g11_topicC_p034_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Một cách khác để thu hẹp kết quả tìm kiếm là sử dụng bộ lọc trên một hoặc nhiều thuộc tính dữ liệu như ở Hình 2 bằng cách truy cập trang tìm kiếm nâng cao google.com/advanced_search."@vi ;
+    ex:appearsOnPage ex:g11_page034 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToSection ex:g11_topicC_l2s1 .
+
+  ex:g11_topicC_p035_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhiệm vụ 3 yêu cầu tìm kiếm thông tin bằng giọng nói trên Google. Học sinh tìm những trường học ở quận hoặc huyện nơi mình ở bằng giọng nói trên máy tìm kiếm Google, ví dụ chọn biểu tượng micro và nói trường học ở quận Cầu Giấy."@vi ;
+    ex:appearsOnPage ex:g11_page035 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToSection ex:g11_topicC_l2s2 .
+
+  ex:g11_topicC_p035_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Tìm kiếm bằng giọng nói thuận lợi khi dùng máy tìm kiếm trên thiết bị di động hoặc thiết bị điều khiển trên ô tô. Google còn cung cấp tính năng tìm kiếm bằng hình ảnh; kết quả có thể là trang web chứa hình ảnh cần tìm, thông tin về vật thể trong hình và các hình ảnh tương tự."@vi ;
+    ex:appearsOnPage ex:g11_page035 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:belongsToSection ex:g11_topicC_l2s2 .
+
+  ex:g11_topicC_p036_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 3. Thực hành một số tính năng nâng cao của mạng xã hội. Các mạng xã hội cung cấp cơ chế bảo vệ tài khoản bằng mật khẩu mạnh và thay đổi mật khẩu thường xuyên hoặc thiết lập bảo mật hai lớp. Bảo mật hai lớp thêm một bước xác thực khi đăng nhập."@vi ;
+    ex:appearsOnPage ex:g11_page036 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToSection ex:g11_topicC_l3s1 .
+
+  ex:g11_topicC_p036_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nhiệm vụ 1 yêu cầu bảo mật hai lớp tài khoản Facebook. Học sinh đăng nhập Facebook, chọn Your Profile, chọn Settings & privacy, chọn Settings, chọn Security and login, chọn Use two-factor authentication trong mục Two-factor authentication và chọn Edit."@vi ;
+    ex:appearsOnPage ex:g11_page036 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToSection ex:g11_topicC_l3s1 .
+
+  ex:g11_topicC_p037_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Các phương án bảo mật hai lớp gồm Use Authentication App, Use Text Message (SMS) và Use security key. Nếu chọn SMS, người dùng nhập số điện thoại, chọn Continue, nhập mã xác nhận 6 số được gửi vào điện thoại và chọn Done."@vi ;
+    ex:appearsOnPage ex:g11_page037 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToSection ex:g11_topicC_l3s1 .
+
+  ex:g11_topicC_p037_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu cài đặt quyền riêng tư với thông tin chia sẻ trên Facebook. Học sinh tạo bài đăng có ảnh, chọn Specific friends để chỉ chia sẻ ảnh với người được chọn, nhập tài khoản Facebook của người muốn chia sẻ, chọn Save changes và Post."@vi ;
+    ex:appearsOnPage ex:g11_page037 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToSection ex:g11_topicC_l3s1 .
+
+  ex:g11_topicC_p037_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Facebook cung cấp tính năng thiết lập quyền chia sẻ hoạt động của người dùng cho các bài đăng trong tương lai và bài đăng đã được gắn thẻ. Người dùng có thể vào Settings, chọn Privacy, chọn Who can see your future posts trong mục Your activity và chọn đối tượng chia sẻ."@vi ;
+    ex:appearsOnPage ex:g11_page037 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToSection ex:g11_topicC_l3s1 .
+
+  ex:g11_topicC_p038_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhiệm vụ 3 yêu cầu tạo phòng họp nhóm để trao đổi thông tin trên Facebook. Học sinh đăng nhập Facebook, chọn Create room hoặc chọn Menu rồi chọn Room trong cửa sổ Create."@vi ;
+    ex:appearsOnPage ex:g11_page038 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToSection ex:g11_topicC_l3s2 .
+
+  ex:g11_topicC_p038_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Để đặt tên phòng họp và thời gian cuộc họp, tại cửa sổ Create your room chọn Room name, chọn New và nhập tên phòng họp; chọn thời điểm bắt đầu cuộc họp tại Start time, chọn Save rồi chọn Create Room. Sau đó chọn Send bên cạnh tài khoản muốn mời và chọn Join Room để tham gia."@vi ;
+    ex:appearsOnPage ex:g11_page038 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:belongsToSection ex:g11_topicC_l3s2 .
+
+  ex:g11_topicC_p039_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 4. Thực hành một số tính năng hữu ích của dịch vụ thư điện tử. Sau một thời gian sử dụng, hộp thư đến sẽ chứa nhiều email; để thuận tiện tìm kiếm, dịch vụ thư điện tử hỗ trợ quản lí bằng cách phân loại và gắn nhãn các thư đến."@vi ;
+    ex:appearsOnPage ex:g11_page039 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToSection ex:g11_topicC_l4s1 .
+
+  ex:g11_topicC_p039_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Việc phân loại cho phép người dùng dễ dàng gắn thẻ, gắn nhãn vào nhóm các thư cùng sự kiện hoặc cùng loại nội dung. Gmail có sẵn các nhóm được gắn nhãn như Inbox, Sent và Drafts."@vi ;
+    ex:appearsOnPage ex:g11_page039 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToSection ex:g11_topicC_l4s1 .
+
+  ex:g11_topicC_p039_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Nhiệm vụ 1 yêu cầu phân loại và đánh dấu email trong Gmail. Học sinh tạo nhãn Học tập cho các email về học tập, gồm email được gửi từ giáo viên và các bạn trong lớp, đồng thời đánh dấu sao cho những email do giáo viên gửi."@vi ;
+    ex:appearsOnPage ex:g11_page039 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToSection ex:g11_topicC_l4s1 .
+
+  ex:g11_topicC_p040_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để tạo nhãn trong Gmail, đăng nhập tài khoản Gmail, chọn Settings, chọn Labels, chọn Create new label, tại cửa sổ New label nhập tên nhãn và chọn Create. Có thể tạo nhãn con bằng lựa chọn Nest label under và chọn tên nhãn cha."@vi ;
+    ex:appearsOnPage ex:g11_page040 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToSection ex:g11_topicC_l4s1 .
+
+  ex:g11_topicC_p040_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Muốn gán thêm nhãn khác cho email, chọn email cần gán, chọn Labels rồi chọn nhãn muốn gán thêm. Muốn di chuyển email sang nhãn khác, chọn email, chọn Move to và chọn nhãn muốn email di chuyển đến. Để đánh dấu email quan trọng, chọn dấu sao ở cạnh email cần đánh dấu."@vi ;
+    ex:appearsOnPage ex:g11_page040 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToSection ex:g11_topicC_l4s1 .
+
+  ex:g11_topicC_p040_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu tìm kiếm và tạo bộ lọc email trong Gmail. Học sinh tìm kiếm các email do giáo viên dạy môn Tin học gửi đến và có tệp đính kèm."@vi ;
+    ex:appearsOnPage ex:g11_page040 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToSection ex:g11_topicC_l4s2 .
+
+  ex:g11_topicC_p041_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để tìm kiếm email trong Gmail, đăng nhập tài khoản Gmail, tại ô Search in mail chọn biểu tượng tìm kiếm nâng cao, chọn tiêu chí tìm kiếm như From, Has attachment và chọn Search. Có thể chọn nhiều tiêu chí tìm kiếm để thu hẹp kết quả."@vi ;
+    ex:appearsOnPage ex:g11_page041 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToSection ex:g11_topicC_l4s2 .
+
+  ex:g11_topicC_p041_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Để thuận lợi cho việc tìm kiếm và quản lí email, có thể tạo bộ lọc email. Muốn tạo bộ lọc email, chọn Create filter, chọn các tiêu chí cho bộ lọc và chọn Create filter."@vi ;
+    ex:appearsOnPage ex:g11_page041 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:belongsToSection ex:g11_topicC_l4s2 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g11_page028 ex:hasParagraph ex:g11_topicC_p028_01, ex:g11_topicC_p028_02, ex:g11_topicC_p028_03 .
+  ex:g11_page029 ex:hasParagraph ex:g11_topicC_p029_01, ex:g11_topicC_p029_02 .
+  ex:g11_page030 ex:hasParagraph ex:g11_topicC_p030_01, ex:g11_topicC_p030_02 .
+  ex:g11_page031 ex:hasParagraph ex:g11_topicC_p031_01, ex:g11_topicC_p031_02 .
+  ex:g11_page032 ex:hasParagraph ex:g11_topicC_p032_01, ex:g11_topicC_p032_02 .
+  ex:g11_page033 ex:hasParagraph ex:g11_topicC_p033_01, ex:g11_topicC_p033_02, ex:g11_topicC_p033_03 .
+  ex:g11_page034 ex:hasParagraph ex:g11_topicC_p034_01, ex:g11_topicC_p034_02 .
+  ex:g11_page035 ex:hasParagraph ex:g11_topicC_p035_01, ex:g11_topicC_p035_02 .
+  ex:g11_page036 ex:hasParagraph ex:g11_topicC_p036_01, ex:g11_topicC_p036_02 .
+  ex:g11_page037 ex:hasParagraph ex:g11_topicC_p037_01, ex:g11_topicC_p037_02, ex:g11_topicC_p037_03 .
+  ex:g11_page038 ex:hasParagraph ex:g11_topicC_p038_01, ex:g11_topicC_p038_02 .
+  ex:g11_page039 ex:hasParagraph ex:g11_topicC_p039_01, ex:g11_topicC_p039_02, ex:g11_topicC_p039_03 .
+  ex:g11_page040 ex:hasParagraph ex:g11_topicC_p040_01, ex:g11_topicC_p040_02, ex:g11_topicC_p040_03 .
+  ex:g11_page041 ex:hasParagraph ex:g11_topicC_p041_01, ex:g11_topicC_p041_02 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g11_topicC_l1s1 ex:hasParagraph ex:g11_topicC_p028_01, ex:g11_topicC_p028_02, ex:g11_topicC_p028_03 .
+  ex:g11_topicC_l1s2 ex:hasParagraph ex:g11_topicC_p029_01, ex:g11_topicC_p029_02,
+    ex:g11_topicC_p030_01, ex:g11_topicC_p030_02, ex:g11_topicC_p031_01, ex:g11_topicC_p031_02 .
+  ex:g11_topicC_l1s3 ex:hasParagraph ex:g11_topicC_p032_01, ex:g11_topicC_p032_02 .
+
+  ex:g11_topicC_l2s1 ex:hasParagraph ex:g11_topicC_p033_01, ex:g11_topicC_p033_02,
+    ex:g11_topicC_p033_03, ex:g11_topicC_p034_01, ex:g11_topicC_p034_02 .
+  ex:g11_topicC_l2s2 ex:hasParagraph ex:g11_topicC_p035_01, ex:g11_topicC_p035_02 .
+
+  ex:g11_topicC_l3s1 ex:hasParagraph ex:g11_topicC_p036_01, ex:g11_topicC_p036_02,
+    ex:g11_topicC_p037_01, ex:g11_topicC_p037_02, ex:g11_topicC_p037_03 .
+  ex:g11_topicC_l3s2 ex:hasParagraph ex:g11_topicC_p038_01, ex:g11_topicC_p038_02 .
+
+  ex:g11_topicC_l4s1 ex:hasParagraph ex:g11_topicC_p039_01, ex:g11_topicC_p039_02,
+    ex:g11_topicC_p039_03, ex:g11_topicC_p040_01, ex:g11_topicC_p040_02 .
+  ex:g11_topicC_l4s2 ex:hasParagraph ex:g11_topicC_p040_03, ex:g11_topicC_p041_01, ex:g11_topicC_p041_02 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g11_topicC_p028_01 ex:nextParagraph ex:g11_topicC_p028_02 .
+  ex:g11_topicC_p028_02 ex:previousParagraph ex:g11_topicC_p028_01 ; ex:nextParagraph ex:g11_topicC_p028_03 .
+  ex:g11_topicC_p028_03 ex:previousParagraph ex:g11_topicC_p028_02 ; ex:nextParagraph ex:g11_topicC_p029_01 .
+  ex:g11_topicC_p029_01 ex:previousParagraph ex:g11_topicC_p028_03 ; ex:nextParagraph ex:g11_topicC_p029_02 .
+  ex:g11_topicC_p029_02 ex:previousParagraph ex:g11_topicC_p029_01 ; ex:nextParagraph ex:g11_topicC_p030_01 .
+  ex:g11_topicC_p030_01 ex:previousParagraph ex:g11_topicC_p029_02 ; ex:nextParagraph ex:g11_topicC_p030_02 .
+  ex:g11_topicC_p030_02 ex:previousParagraph ex:g11_topicC_p030_01 ; ex:nextParagraph ex:g11_topicC_p031_01 .
+  ex:g11_topicC_p031_01 ex:previousParagraph ex:g11_topicC_p030_02 ; ex:nextParagraph ex:g11_topicC_p031_02 .
+  ex:g11_topicC_p031_02 ex:previousParagraph ex:g11_topicC_p031_01 ; ex:nextParagraph ex:g11_topicC_p032_01 .
+  ex:g11_topicC_p032_01 ex:previousParagraph ex:g11_topicC_p031_02 ; ex:nextParagraph ex:g11_topicC_p032_02 .
+  ex:g11_topicC_p032_02 ex:previousParagraph ex:g11_topicC_p032_01 ; ex:nextParagraph ex:g11_topicC_p033_01 .
+  ex:g11_topicC_p033_01 ex:previousParagraph ex:g11_topicC_p032_02 ; ex:nextParagraph ex:g11_topicC_p033_02 .
+  ex:g11_topicC_p033_02 ex:previousParagraph ex:g11_topicC_p033_01 ; ex:nextParagraph ex:g11_topicC_p033_03 .
+  ex:g11_topicC_p033_03 ex:previousParagraph ex:g11_topicC_p033_02 ; ex:nextParagraph ex:g11_topicC_p034_01 .
+  ex:g11_topicC_p034_01 ex:previousParagraph ex:g11_topicC_p033_03 ; ex:nextParagraph ex:g11_topicC_p034_02 .
+  ex:g11_topicC_p034_02 ex:previousParagraph ex:g11_topicC_p034_01 ; ex:nextParagraph ex:g11_topicC_p035_01 .
+  ex:g11_topicC_p035_01 ex:previousParagraph ex:g11_topicC_p034_02 ; ex:nextParagraph ex:g11_topicC_p035_02 .
+  ex:g11_topicC_p035_02 ex:previousParagraph ex:g11_topicC_p035_01 ; ex:nextParagraph ex:g11_topicC_p036_01 .
+  ex:g11_topicC_p036_01 ex:previousParagraph ex:g11_topicC_p035_02 ; ex:nextParagraph ex:g11_topicC_p036_02 .
+  ex:g11_topicC_p036_02 ex:previousParagraph ex:g11_topicC_p036_01 ; ex:nextParagraph ex:g11_topicC_p037_01 .
+  ex:g11_topicC_p037_01 ex:previousParagraph ex:g11_topicC_p036_02 ; ex:nextParagraph ex:g11_topicC_p037_02 .
+  ex:g11_topicC_p037_02 ex:previousParagraph ex:g11_topicC_p037_01 ; ex:nextParagraph ex:g11_topicC_p037_03 .
+  ex:g11_topicC_p037_03 ex:previousParagraph ex:g11_topicC_p037_02 ; ex:nextParagraph ex:g11_topicC_p038_01 .
+  ex:g11_topicC_p038_01 ex:previousParagraph ex:g11_topicC_p037_03 ; ex:nextParagraph ex:g11_topicC_p038_02 .
+  ex:g11_topicC_p038_02 ex:previousParagraph ex:g11_topicC_p038_01 ; ex:nextParagraph ex:g11_topicC_p039_01 .
+  ex:g11_topicC_p039_01 ex:previousParagraph ex:g11_topicC_p038_02 ; ex:nextParagraph ex:g11_topicC_p039_02 .
+  ex:g11_topicC_p039_02 ex:previousParagraph ex:g11_topicC_p039_01 ; ex:nextParagraph ex:g11_topicC_p039_03 .
+  ex:g11_topicC_p039_03 ex:previousParagraph ex:g11_topicC_p039_02 ; ex:nextParagraph ex:g11_topicC_p040_01 .
+  ex:g11_topicC_p040_01 ex:previousParagraph ex:g11_topicC_p039_03 ; ex:nextParagraph ex:g11_topicC_p040_02 .
+  ex:g11_topicC_p040_02 ex:previousParagraph ex:g11_topicC_p040_01 ; ex:nextParagraph ex:g11_topicC_p040_03 .
+  ex:g11_topicC_p040_03 ex:previousParagraph ex:g11_topicC_p040_02 ; ex:nextParagraph ex:g11_topicC_p041_01 .
+  ex:g11_topicC_p041_01 ex:previousParagraph ex:g11_topicC_p040_03 ; ex:nextParagraph ex:g11_topicC_p041_02 .
+  ex:g11_topicC_p041_02 ex:previousParagraph ex:g11_topicC_p041_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g11_topicC_p028_01 ex:mentionsConcept ex:g11_conceptLuuTruTrucTuyen .
+  ex:g11_topicC_p028_02 ex:mentionsConcept ex:g11_conceptLuuTruTrucTuyen, ex:g11_conceptDongBoDuLieu, ex:g11_conceptChiaSeTepTin, ex:g11_conceptBaoMatDuLieu .
+  ex:g11_topicC_p028_03 ex:mentionsConcept ex:g11_conceptDichVuLuuTruTrucTuyen, ex:g11_conceptGoogleDrive, ex:g11_conceptOneDrive, ex:g11_conceptFshare .
+  ex:g11_topicC_p029_01 ex:mentionsConcept ex:g11_conceptGoogleDrive, ex:g11_conceptDropbox, ex:g11_conceptOneDrive, ex:g11_conceptMega, ex:g11_conceptBox, ex:g11_conceptMediafire, ex:g11_conceptChiaSeTepTin .
+  ex:g11_topicC_p029_02 ex:mentionsConcept ex:g11_conceptGoogleDrive .
+  ex:g11_topicC_p030_01 ex:mentionsConcept ex:g11_conceptGoogleDrive, ex:g11_conceptTaoThuMuc, ex:g11_conceptTaiTepLen .
+  ex:g11_topicC_p030_02 ex:mentionsConcept ex:g11_conceptGoogleDrive, ex:g11_conceptChiaSeTepTin, ex:g11_conceptChiaSeLienKet, ex:g11_conceptQuyenChiaSe, ex:g11_conceptViewer, ex:g11_conceptCommenter, ex:g11_conceptEditor .
+  ex:g11_topicC_p031_01 ex:mentionsConcept ex:g11_conceptGoogleDrive, ex:g11_conceptQuyenChiaSe, ex:g11_conceptTaiTepXuong .
+  ex:g11_topicC_p031_02 ex:mentionsConcept ex:g11_conceptGoogleDrive, ex:g11_conceptQuanLiPhienBan .
+  ex:g11_topicC_p032_01 ex:mentionsConcept ex:g11_conceptLuuTruTrucTuyen, ex:g11_conceptDongBoDuLieu, ex:g11_conceptChiaSeTepTin, ex:g11_conceptSaoLuuDuLieu .
+  ex:g11_topicC_p032_02 ex:mentionsConcept ex:g11_conceptLuuTruTrucTuyen, ex:g11_conceptBaoMatDuLieu .
+  ex:g11_topicC_p033_01 ex:mentionsConcept ex:g11_conceptMayTimKiem, ex:g11_conceptBieuThucTimKiem, ex:g11_conceptToanTuTimKiem .
+  ex:g11_topicC_p033_02 ex:mentionsConcept ex:g11_conceptGoogleSearch, ex:g11_conceptBieuThucTimKiem, ex:g11_conceptTuKhoaTimKiem .
+  ex:g11_topicC_p033_03 ex:mentionsConcept ex:g11_conceptToanTuTimKiem, ex:g11_conceptBieuThucTimKiem .
+  ex:g11_topicC_p034_01 ex:mentionsConcept ex:g11_conceptToanTuTimKiem, ex:g11_conceptBieuThucTimKiem .
+  ex:g11_topicC_p034_02 ex:mentionsConcept ex:g11_conceptTimKiemNangCao, ex:g11_conceptGoogleSearch .
+  ex:g11_topicC_p035_01 ex:mentionsConcept ex:g11_conceptTimKiemBangGiongNoi, ex:g11_conceptGoogleSearch .
+  ex:g11_topicC_p035_02 ex:mentionsConcept ex:g11_conceptTimKiemBangGiongNoi, ex:g11_conceptTimKiemBangHinhAnh, ex:g11_conceptMayTimKiem .
+  ex:g11_topicC_p036_01 ex:mentionsConcept ex:g11_conceptMangXaHoi, ex:g11_conceptBaoMatTaiKhoan, ex:g11_conceptBaoMatHaiLop, ex:g11_conceptXacThucHaiYeuTo .
+  ex:g11_topicC_p036_02 ex:mentionsConcept ex:g11_conceptFacebook, ex:g11_conceptBaoMatHaiLop .
+  ex:g11_topicC_p037_01 ex:mentionsConcept ex:g11_conceptBaoMatHaiLop, ex:g11_conceptAuthenticationApp, ex:g11_conceptTextMessageSMS, ex:g11_conceptSecurityKey .
+  ex:g11_topicC_p037_02 ex:mentionsConcept ex:g11_conceptQuyenRiengTu, ex:g11_conceptDoiTuongChiaSe, ex:g11_conceptFacebook .
+  ex:g11_topicC_p037_03 ex:mentionsConcept ex:g11_conceptQuyenRiengTu, ex:g11_conceptDoiTuongChiaSe, ex:g11_conceptFacebook .
+  ex:g11_topicC_p038_01 ex:mentionsConcept ex:g11_conceptPhongHopTrucTuyen, ex:g11_conceptFacebookRoom, ex:g11_conceptFacebook .
+  ex:g11_topicC_p038_02 ex:mentionsConcept ex:g11_conceptPhongHopTrucTuyen, ex:g11_conceptFacebookRoom .
+  ex:g11_topicC_p039_01 ex:mentionsConcept ex:g11_conceptThuDienTu, ex:g11_conceptPhanLoaiThuDienTu .
+  ex:g11_topicC_p039_02 ex:mentionsConcept ex:g11_conceptNhanEmail, ex:g11_conceptGmail, ex:g11_conceptPhanLoaiThuDienTu .
+  ex:g11_topicC_p039_03 ex:mentionsConcept ex:g11_conceptGmail, ex:g11_conceptNhanEmail, ex:g11_conceptDanhDauSaoEmail .
+  ex:g11_topicC_p040_01 ex:mentionsConcept ex:g11_conceptGmail, ex:g11_conceptNhanEmail .
+  ex:g11_topicC_p040_02 ex:mentionsConcept ex:g11_conceptNhanEmail, ex:g11_conceptDiChuyenEmail, ex:g11_conceptDanhDauSaoEmail .
+  ex:g11_topicC_p040_03 ex:mentionsConcept ex:g11_conceptTimKiemEmail, ex:g11_conceptBoLocEmail, ex:g11_conceptTepDinhKemEmail .
+  ex:g11_topicC_p041_01 ex:mentionsConcept ex:g11_conceptGmail, ex:g11_conceptTimKiemEmail, ex:g11_conceptTepDinhKemEmail .
+  ex:g11_topicC_p041_02 ex:mentionsConcept ex:g11_conceptBoLocEmail, ex:g11_conceptTimKiemEmail .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g11_conceptLuuTruTrucTuyen ex:subConceptOf ex:g11_conceptToChucLuuTruTimKiemTraoDoiThongTin .
+  ex:g11_conceptDichVuLuuTruTrucTuyen ex:relatedTo ex:g11_conceptLuuTruTrucTuyen .
+  ex:g11_conceptDienToanDamMay ex:relatedTo ex:g11_conceptLuuTruTrucTuyen .
+  ex:g11_conceptDongBoDuLieu ex:relatedTo ex:g11_conceptLuuTruTrucTuyen .
+  ex:g11_conceptChiaSeTepTin ex:relatedTo ex:g11_conceptLuuTruTrucTuyen .
+  ex:g11_conceptSaoLuuDuLieu ex:relatedTo ex:g11_conceptLuuTruTrucTuyen .
+  ex:g11_conceptBaoMatDuLieu ex:relatedTo ex:g11_conceptLuuTruTrucTuyen .
+  ex:g11_conceptGoogleDrive ex:subConceptOf ex:g11_conceptDichVuLuuTruTrucTuyen .
+  ex:g11_conceptDropbox ex:subConceptOf ex:g11_conceptDichVuLuuTruTrucTuyen .
+  ex:g11_conceptOneDrive ex:subConceptOf ex:g11_conceptDichVuLuuTruTrucTuyen .
+  ex:g11_conceptMega ex:subConceptOf ex:g11_conceptDichVuLuuTruTrucTuyen .
+  ex:g11_conceptBox ex:subConceptOf ex:g11_conceptDichVuLuuTruTrucTuyen .
+  ex:g11_conceptMediafire ex:subConceptOf ex:g11_conceptDichVuLuuTruTrucTuyen .
+  ex:g11_conceptFshare ex:subConceptOf ex:g11_conceptDichVuLuuTruTrucTuyen .
+  ex:g11_conceptTaiTepLen ex:relatedTo ex:g11_conceptGoogleDrive .
+  ex:g11_conceptTaiTepXuong ex:relatedTo ex:g11_conceptGoogleDrive .
+  ex:g11_conceptTaoThuMuc ex:relatedTo ex:g11_conceptGoogleDrive .
+  ex:g11_conceptChiaSeLienKet ex:relatedTo ex:g11_conceptChiaSeTepTin .
+  ex:g11_conceptQuyenChiaSe ex:relatedTo ex:g11_conceptChiaSeTepTin .
+  ex:g11_conceptViewer ex:subConceptOf ex:g11_conceptQuyenChiaSe .
+  ex:g11_conceptCommenter ex:subConceptOf ex:g11_conceptQuyenChiaSe .
+  ex:g11_conceptEditor ex:subConceptOf ex:g11_conceptQuyenChiaSe .
+  ex:g11_conceptQuanLiPhienBan ex:relatedTo ex:g11_conceptGoogleDrive .
+  ex:g11_conceptMayTimKiem ex:subConceptOf ex:g11_conceptToChucLuuTruTimKiemTraoDoiThongTin .
+  ex:g11_conceptGoogleSearch ex:subConceptOf ex:g11_conceptMayTimKiem .
+  ex:g11_conceptBieuThucTimKiem ex:relatedTo ex:g11_conceptMayTimKiem .
+  ex:g11_conceptToanTuTimKiem ex:partOf ex:g11_conceptBieuThucTimKiem .
+  ex:g11_conceptTimKiemNangCao ex:relatedTo ex:g11_conceptGoogleSearch .
+  ex:g11_conceptTuKhoaTimKiem ex:partOf ex:g11_conceptBieuThucTimKiem .
+  ex:g11_conceptTimKiemBangGiongNoi ex:relatedTo ex:g11_conceptGoogleSearch .
+  ex:g11_conceptTimKiemBangHinhAnh ex:relatedTo ex:g11_conceptGoogleSearch .
+  ex:g11_conceptMangXaHoi ex:subConceptOf ex:g11_conceptToChucLuuTruTimKiemTraoDoiThongTin .
+  ex:g11_conceptFacebook ex:subConceptOf ex:g11_conceptMangXaHoi .
+  ex:g11_conceptBaoMatTaiKhoan ex:relatedTo ex:g11_conceptFacebook .
+  ex:g11_conceptQuyenRiengTu ex:relatedTo ex:g11_conceptFacebook .
+  ex:g11_conceptBaoMatHaiLop ex:subConceptOf ex:g11_conceptBaoMatTaiKhoan .
+  ex:g11_conceptXacThucHaiYeuTo ex:relatedTo ex:g11_conceptBaoMatHaiLop .
+  ex:g11_conceptAuthenticationApp ex:subConceptOf ex:g11_conceptXacThucHaiYeuTo .
+  ex:g11_conceptTextMessageSMS ex:subConceptOf ex:g11_conceptXacThucHaiYeuTo .
+  ex:g11_conceptSecurityKey ex:subConceptOf ex:g11_conceptXacThucHaiYeuTo .
+  ex:g11_conceptDoiTuongChiaSe ex:relatedTo ex:g11_conceptQuyenRiengTu .
+  ex:g11_conceptPhongHopTrucTuyen ex:relatedTo ex:g11_conceptMangXaHoi .
+  ex:g11_conceptFacebookRoom ex:subConceptOf ex:g11_conceptPhongHopTrucTuyen .
+  ex:g11_conceptSuKienMangXaHoi ex:relatedTo ex:g11_conceptFacebook .
+  ex:g11_conceptThuDienTu ex:subConceptOf ex:g11_conceptToChucLuuTruTimKiemTraoDoiThongTin .
+  ex:g11_conceptGmail ex:subConceptOf ex:g11_conceptThuDienTu .
+  ex:g11_conceptPhanLoaiThuDienTu ex:relatedTo ex:g11_conceptThuDienTu .
+  ex:g11_conceptNhanEmail ex:relatedTo ex:g11_conceptPhanLoaiThuDienTu .
+  ex:g11_conceptDanhDauSaoEmail ex:relatedTo ex:g11_conceptPhanLoaiThuDienTu .
+  ex:g11_conceptDiChuyenEmail ex:relatedTo ex:g11_conceptNhanEmail .
+  ex:g11_conceptBoLocEmail ex:relatedTo ex:g11_conceptTimKiemEmail .
+  ex:g11_conceptTimKiemEmail ex:relatedTo ex:g11_conceptGmail .
+  ex:g11_conceptTepDinhKemEmail ex:relatedTo ex:g11_conceptTimKiemEmail .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g11_topicC_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề C lớp 11"@vi ;
+    ex:hasRawText "Em đã từng dùng USB để sao lưu các tệp dữ liệu, chuyển dữ liệu từ máy tính này sang máy tính khác chưa? Em có biết cách nào khác để thực hiện việc đó không?"@vi ;
+    ex:appearsOnPage ex:g11_page028 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:relatedTo ex:g11_conceptLuuTruTrucTuyen .
+
+  ex:g11_topicC_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Hiểu thế nào là lưu trữ trực tuyến"@vi ;
+    ex:hasRawText "Em hiểu thế nào là lưu trữ trực tuyến?"@vi ;
+    ex:appearsOnPage ex:g11_page028 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:relatedTo ex:g11_conceptLuuTruTrucTuyen .
+
+  ex:g11_topicC_l1_task1 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 1 bài 1 - Tải và chia sẻ dữ liệu trên Google Drive"@vi ;
+    ex:hasRawText "Tìm hiểu một trong các dịch vụ lưu trữ trực tuyến Dropbox, OneDrive, Mega, Box, Mediafire; tạo tệp tóm tắt và tệp trình chiếu, tạo thư mục trên Google Drive, tải các tệp lên thư mục và chia sẻ cho giáo viên cùng các bạn trong lớp với quyền phù hợp."@vi ;
+    ex:appearsOnPage ex:g11_page029 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:relatedTo ex:g11_conceptGoogleDrive, ex:g11_conceptDichVuLuuTruTrucTuyen, ex:g11_conceptChiaSeTepTin .
+
+  ex:g11_topicC_l1_task2 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2 bài 1 - Tìm kiếm, truy cập và cập nhật dữ liệu"@vi ;
+    ex:hasRawText "Chỉnh sửa nội dung tệp theo bình luận của giáo viên, tìm kiếm và truy cập dữ liệu trên Google Drive, cập nhật dữ liệu, lưu phiên bản mới, di chuyển tệp vào thư mục nhóm và xoá tệp hoặc thư mục khi cần."@vi ;
+    ex:appearsOnPage ex:g11_page031 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:relatedTo ex:g11_conceptGoogleDrive, ex:g11_conceptQuanLiPhienBan .
+
+  ex:g11_topicC_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 1 - Mở và chia sẻ lại tệp trên Google Drive"@vi ;
+    ex:hasRawText "Em hãy mở tệp của một nhóm đã được chia sẻ trên Google Drive ở bài thực hành, bình luận hoặc sửa nội dung tệp và chia sẻ lại tệp này."@vi ;
+    ex:appearsOnPage ex:g11_page032 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:relatedTo ex:g11_conceptGoogleDrive, ex:g11_conceptChiaSeTepTin .
+
+  ex:g11_topicC_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 1 chủ đề C lớp 11"@vi ;
+    ex:hasRawText "Theo em, những trường hợp nào sau đây nên sử dụng lưu trữ trực tuyến: chia sẻ tệp dữ liệu cho nhiều người ở nhiều nơi và sao lưu dữ liệu tự động; giải phóng bộ nhớ cho máy tính; thiết bị lưu trữ dữ liệu không có kết nối Internet; truy cập tệp dữ liệu từ nhiều thiết bị."@vi ;
+    ex:appearsOnPage ex:g11_page032 ;
+    ex:belongsToLesson ex:g11_topicC_lesson1 ;
+    ex:relatedTo ex:g11_conceptLuuTruTrucTuyen, ex:g11_conceptChiaSeTepTin, ex:g11_conceptSaoLuuDuLieu .
+
+  ex:g11_topicC_l2_task1 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 1 bài 2 - Kết hợp từ khoá thành biểu thức tìm kiếm"@vi ;
+    ex:hasRawText "Sử dụng Google để tìm kiếm với các biểu thức Cá heo xanh, \"Cá heo xanh\" + \"cửa hàng\", Cửa hàng cá heo xanh; so sánh thời gian tìm kiếm, số lượng trang web trả về và nội dung kết quả."@vi ;
+    ex:appearsOnPage ex:g11_page033 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:relatedTo ex:g11_conceptBieuThucTimKiem, ex:g11_conceptGoogleSearch .
+
+  ex:g11_topicC_l2_task2 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2 bài 2 - Điều chỉnh biểu thức tìm kiếm"@vi ;
+    ex:hasRawText "Dựa trên kết quả bài 1, điều chỉnh biểu thức tìm kiếm để nhận được kết quả phù hợp hơn, ví dụ dùng toán tử trừ để loại các trang web về cửa hàng có tên cá heo xanh."@vi ;
+    ex:appearsOnPage ex:g11_page034 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:relatedTo ex:g11_conceptBieuThucTimKiem, ex:g11_conceptToanTuTimKiem .
+
+  ex:g11_topicC_l2_task3 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 3 bài 2 - Tìm kiếm thông tin bằng giọng nói trên Google"@vi ;
+    ex:hasRawText "Tìm những trường học ở quận hoặc huyện nơi em ở bằng giọng nói trên máy tìm kiếm Google; truy cập Google, chọn ngôn ngữ tiếng Việt, chọn biểu tượng micro và nói nội dung tìm kiếm."@vi ;
+    ex:appearsOnPage ex:g11_page035 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:relatedTo ex:g11_conceptTimKiemBangGiongNoi, ex:g11_conceptGoogleSearch .
+
+  ex:g11_topicC_l2_appliedSearchCareer a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 - Tìm kiếm thông tin về lĩnh vực ngành nghề"@vi ;
+    ex:hasRawText "Sử dụng máy tìm kiếm để tìm thông tin về lĩnh vực ngành nghề mà mình quan tâm; sử dụng từ khoá nhập vào ô tìm kiếm, tìm một địa điểm hoạt động trong lĩnh vực đó bằng giọng nói và tìm kiếm dựa vào hình ảnh nhân vật hoặc sự kiện nổi bật."@vi ;
+    ex:appearsOnPage ex:g11_page035 ;
+    ex:belongsToLesson ex:g11_topicC_lesson2 ;
+    ex:relatedTo ex:g11_conceptMayTimKiem, ex:g11_conceptTimKiemBangGiongNoi, ex:g11_conceptTimKiemBangHinhAnh .
+
+  ex:g11_topicC_l3_task1 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 1 bài 3 - Bảo mật hai lớp tài khoản Facebook"@vi ;
+    ex:hasRawText "Kích hoạt bảo mật hai lớp cho tài khoản Facebook bằng cách vào Settings & privacy, Settings, Security and login, chọn Use two-factor authentication, sau đó chọn một phương án xác thực như ứng dụng xác thực, tin nhắn SMS hoặc khoá bảo mật."@vi ;
+    ex:appearsOnPage ex:g11_page036 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:relatedTo ex:g11_conceptFacebook, ex:g11_conceptBaoMatHaiLop, ex:g11_conceptXacThucHaiYeuTo .
+
+  ex:g11_topicC_l3_task2 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2 bài 3 - Cài đặt quyền riêng tư với thông tin chia sẻ"@vi ;
+    ex:hasRawText "Đăng một bức ảnh chụp với bạn trên Facebook và chỉ chia sẻ bức ảnh với người bạn này; khi tạo bài đăng chọn Photo/Video, chọn Specific friends, nhập tài khoản người muốn chia sẻ, chọn Save changes và Post."@vi ;
+    ex:appearsOnPage ex:g11_page037 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:relatedTo ex:g11_conceptQuyenRiengTu, ex:g11_conceptDoiTuongChiaSe, ex:g11_conceptFacebook .
+
+  ex:g11_topicC_l3_task3 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 3 bài 3 - Tạo phòng họp nhóm trên Facebook"@vi ;
+    ex:hasRawText "Tạo phòng họp trên Facebook để trao đổi về làm bài tập nhóm; chọn Create room hoặc Menu rồi chọn Room, đặt tên phòng họp, đặt thời gian bắt đầu, tạo phòng và gửi lời mời tham gia."@vi ;
+    ex:appearsOnPage ex:g11_page038 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:relatedTo ex:g11_conceptPhongHopTrucTuyen, ex:g11_conceptFacebookRoom .
+
+  ex:g11_topicC_l3_appliedGroupEvent a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 3 - Tạo phòng họp nhóm và sự kiện thông báo"@vi ;
+    ex:hasRawText "Tạo phòng họp nhóm và hẹn mời các bạn cùng nhóm học tập thảo luận để lựa chọn thiết lập quyền riêng tư khi chia sẻ thông tin trên Facebook sao cho thuận tiện; đồng thời tạo sự kiện thông báo với các bạn trong nhóm về buổi thảo luận này."@vi ;
+    ex:appearsOnPage ex:g11_page038 ;
+    ex:belongsToLesson ex:g11_topicC_lesson3 ;
+    ex:relatedTo ex:g11_conceptPhongHopTrucTuyen, ex:g11_conceptSuKienMangXaHoi, ex:g11_conceptQuyenRiengTu .
+
+  ex:g11_topicC_l4_task1 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 1 bài 4 - Phân loại và đánh dấu email trong Gmail"@vi ;
+    ex:hasRawText "Tạo nhãn Học tập cho các email về học tập, gồm các email được gửi từ giáo viên và các bạn trong lớp; đánh dấu sao cho những email được gửi đến từ giáo viên."@vi ;
+    ex:appearsOnPage ex:g11_page039 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:relatedTo ex:g11_conceptGmail, ex:g11_conceptNhanEmail, ex:g11_conceptDanhDauSaoEmail .
+
+  ex:g11_topicC_l4_task2 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2 bài 4 - Tìm kiếm và tạo bộ lọc email trong Gmail"@vi ;
+    ex:hasRawText "Tìm kiếm các email do giáo viên dạy môn Tin học gửi đến và có tệp đính kèm; trong cửa sổ tìm kiếm chọn From và Has attachment rồi chọn Search, sau đó có thể tạo bộ lọc email bằng Create filter."@vi ;
+    ex:appearsOnPage ex:g11_page040 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:relatedTo ex:g11_conceptGmail, ex:g11_conceptTimKiemEmail, ex:g11_conceptBoLocEmail, ex:g11_conceptTepDinhKemEmail .
+
+  ex:g11_topicC_l4_appliedLabelFilter a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 4 - Tạo nhãn con và bộ lọc email quan trọng"@vi ;
+    ex:hasRawText "Tạo nhãn Tin học là nhãn con của nhãn Học tập; nhãn Tin học dành cho email được gửi từ giáo viên môn Tin học và các bạn trong nhóm làm bài tập môn Tin học. Sau đó tìm kiếm và tạo bộ lọc những email mà em cho là quan trọng."@vi ;
+    ex:appearsOnPage ex:g11_page041 ;
+    ex:belongsToLesson ex:g11_topicC_lesson4 ;
+    ex:relatedTo ex:g11_conceptNhanEmail, ex:g11_conceptBoLocEmail, ex:g11_conceptTimKiemEmail .
+
+  ex:g11_topicC_lesson1 ex:hasActivity ex:g11_topicC_l1_openingActivity,
+    ex:g11_topicC_l1_activity1, ex:g11_topicC_l1_task1, ex:g11_topicC_l1_task2,
+    ex:g11_topicC_l1_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicC_l1_review1 .
+
+  ex:g11_topicC_lesson2 ex:hasActivity ex:g11_topicC_l2_task1,
+    ex:g11_topicC_l2_task2, ex:g11_topicC_l2_task3,
+    ex:g11_topicC_l2_appliedSearchCareer .
+
+  ex:g11_topicC_lesson3 ex:hasActivity ex:g11_topicC_l3_task1,
+    ex:g11_topicC_l3_task2, ex:g11_topicC_l3_task3,
+    ex:g11_topicC_l3_appliedGroupEvent .
+
+  ex:g11_topicC_lesson4 ex:hasActivity ex:g11_topicC_l4_task1,
+    ex:g11_topicC_l4_task2, ex:g11_topicC_l4_appliedLabelFilter .
+}

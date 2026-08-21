@@ -1,0 +1,1018 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 12 TOPIC A
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 and Grade 11.
+# Source file: sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-2.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g12_grade12 a ex:GradeLevel ;
+    rdfs:label "Lớp 12"@vi ;
+    ex:gradeNumber 12 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g12_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 12 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 12 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g12_grade12 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicA_shared a ex:Topic ;
+    rdfs:label "Chủ đề A (dùng chung các khối)"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi .
+
+  ex:g12_topicA a ex:Topic ;
+    rdfs:label "Chủ đề A - Máy tính và xã hội tri thức"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi ;
+    ex:hasSubtitle "Giới thiệu trí tuệ nhân tạo"@vi ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicA_shared ;
+    ex:topicOrder 1 ;
+    ex:hasStartPage 5 ;
+    ex:hasEndPage 13 ;
+    ex:sourceFileName "sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-2.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g12_topicA_lesson1, ex:g12_topicA_lesson2 ;
+    ex:hasPage ex:g12_page005, ex:g12_page006, ex:g12_page007, ex:g12_page008,
+               ex:g12_page009, ex:g12_page010, ex:g12_page011, ex:g12_page012,
+               ex:g12_page013 .
+
+  ex:g12_tinhoc_ungdung_canhdieu ex:hasTopic ex:g12_topicA .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g12_topicA_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Giới thiệu về trí tuệ nhân tạo"@vi ;
+    ex:hasTitle "Giới thiệu về trí tuệ nhân tạo"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 5 ;
+    ex:hasEndPage 9 ;
+    ex:hasSection ex:g12_topicA_l1s1, ex:g12_topicA_l1s2 .
+
+  ex:g12_topicA_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Giới thiệu về trí tuệ nhân tạo (Tiếp theo)"@vi ;
+    ex:hasTitle "Giới thiệu về trí tuệ nhân tạo"@vi ;
+    ex:hasSubtitle "Tiếp theo"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 10 ;
+    ex:hasEndPage 13 ;
+    ex:hasSection ex:g12_topicA_l2s1, ex:g12_topicA_l2s2 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g12_topicA_l1s1 a ex:Section ;
+    rdfs:label "Khái niệm trí tuệ nhân tạo (AI)"@vi ;
+    ex:hasTitle "Khái niệm trí tuệ nhân tạo (AI)"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 .
+
+  ex:g12_topicA_l1s2 a ex:Section ;
+    rdfs:label "Một số lĩnh vực nghiên cứu phát triển AI"@vi ;
+    ex:hasTitle "Một số lĩnh vực nghiên cứu phát triển AI"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 .
+
+  ex:g12_topicA_l2s1 a ex:Section ;
+    rdfs:label "Một số lĩnh vực phát triển nhờ ứng dụng AI"@vi ;
+    ex:hasTitle "Một số lĩnh vực phát triển nhờ ứng dụng AI"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 .
+
+  ex:g12_topicA_l2s2 a ex:Section ;
+    rdfs:label "Các cảnh báo về ứng dụng AI"@vi ;
+    ex:hasTitle "Các cảnh báo về ứng dụng AI"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g12_page005 a ex:Page ;
+    ex:hasPageNumber 5 ;
+    ex:hasPrintedPageNumber 5 ;
+    ex:pdfPageIndex 1 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page006 a ex:Page ;
+    ex:hasPageNumber 6 ;
+    ex:hasPrintedPageNumber 6 ;
+    ex:pdfPageIndex 2 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page007 a ex:Page ;
+    ex:hasPageNumber 7 ;
+    ex:hasPrintedPageNumber 7 ;
+    ex:pdfPageIndex 3 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page008 a ex:Page ;
+    ex:hasPageNumber 8 ;
+    ex:hasPrintedPageNumber 8 ;
+    ex:pdfPageIndex 4 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page009 a ex:Page ;
+    ex:hasPageNumber 9 ;
+    ex:hasPrintedPageNumber 9 ;
+    ex:pdfPageIndex 5 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page010 a ex:Page ;
+    ex:hasPageNumber 10 ;
+    ex:hasPrintedPageNumber 10 ;
+    ex:pdfPageIndex 6 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page011 a ex:Page ;
+    ex:hasPageNumber 11 ;
+    ex:hasPrintedPageNumber 11 ;
+    ex:pdfPageIndex 7 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page012 a ex:Page ;
+    ex:hasPageNumber 12 ;
+    ex:hasPrintedPageNumber 12 ;
+    ex:pdfPageIndex 8 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page013 a ex:Page ;
+    ex:hasPageNumber 13 ;
+    ex:hasPrintedPageNumber 13 ;
+    ex:pdfPageIndex 9 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToTopic ex:g12_topicA ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g12_page004 ex:nextPage ex:g12_page005 .
+  ex:g12_page005 ex:previousPage ex:g12_page004 ; ex:nextPage ex:g12_page006 .
+  ex:g12_page006 ex:previousPage ex:g12_page005 ; ex:nextPage ex:g12_page007 .
+  ex:g12_page007 ex:previousPage ex:g12_page006 ; ex:nextPage ex:g12_page008 .
+  ex:g12_page008 ex:previousPage ex:g12_page007 ; ex:nextPage ex:g12_page009 .
+  ex:g12_page009 ex:previousPage ex:g12_page008 ; ex:nextPage ex:g12_page010 .
+  ex:g12_page010 ex:previousPage ex:g12_page009 ; ex:nextPage ex:g12_page011 .
+  ex:g12_page011 ex:previousPage ex:g12_page010 ; ex:nextPage ex:g12_page012 .
+  ex:g12_page012 ex:previousPage ex:g12_page011 ; ex:nextPage ex:g12_page013 .
+  ex:g12_page013 ex:previousPage ex:g12_page012 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g12_conceptMayTinhVaXaHoiTriThuc a ex:KnowledgeConcept ;
+    rdfs:label "Máy tính và xã hội tri thức"@vi .
+
+  ex:g12_conceptTriTueNhanTao a ex:KnowledgeConcept ;
+    rdfs:label "Trí tuệ nhân tạo"@vi .
+
+  ex:g12_conceptAI a ex:KnowledgeConcept ;
+    rdfs:label "AI"@vi .
+
+  ex:g12_conceptTriTueConNguoi a ex:KnowledgeConcept ;
+    rdfs:label "Trí tuệ con người"@vi .
+
+  ex:g12_conceptTuringTest a ex:KnowledgeConcept ;
+    rdfs:label "Turing Test"@vi .
+
+  ex:g12_conceptAlanTuring a ex:KnowledgeConcept ;
+    rdfs:label "Alan Turing"@vi .
+
+  ex:g12_conceptAIMem a ex:KnowledgeConcept ;
+    rdfs:label "AI mạnh"@vi .
+
+  ex:g12_conceptAIYeu a ex:KnowledgeConcept ;
+    rdfs:label "AI yếu"@vi .
+
+  ex:g12_conceptGeneralProblemSolver a ex:KnowledgeConcept ;
+    rdfs:label "GPS - General Problem Solver"@vi .
+
+  ex:g12_conceptMYCIN a ex:KnowledgeConcept ;
+    rdfs:label "MYCIN"@vi .
+
+  ex:g12_conceptAlphaGo a ex:KnowledgeConcept ;
+    rdfs:label "AlphaGo"@vi .
+
+  ex:g12_conceptChatGPT a ex:KnowledgeConcept ;
+    rdfs:label "ChatGPT"@vi .
+
+  ex:g12_conceptChatbot a ex:KnowledgeConcept ;
+    rdfs:label "Chatbot"@vi .
+
+  ex:g12_conceptTroLiAo a ex:KnowledgeConcept ;
+    rdfs:label "Trợ lí ảo"@vi .
+
+  ex:g12_conceptXeTuLai a ex:KnowledgeConcept ;
+    rdfs:label "Xe tự lái"@vi .
+
+  ex:g12_conceptNguoiMayThongMinh a ex:KnowledgeConcept ;
+    rdfs:label "Người máy thông minh"@vi .
+
+  ex:g12_conceptXoxe a ex:KnowledgeConcept ;
+    rdfs:label "Người máy Xoxe"@vi .
+
+  ex:g12_conceptKhaNangHoc a ex:KnowledgeConcept ;
+    rdfs:label "Khả năng học"@vi .
+
+  ex:g12_conceptKhaNangHieuNgonNgu a ex:KnowledgeConcept ;
+    rdfs:label "Khả năng hiểu ngôn ngữ"@vi .
+
+  ex:g12_conceptKhaNangSuyLuan a ex:KnowledgeConcept ;
+    rdfs:label "Khả năng suy luận"@vi .
+
+  ex:g12_conceptKhaNangNhanThucMoiTruong a ex:KnowledgeConcept ;
+    rdfs:label "Khả năng nhận thức môi trường xung quanh"@vi .
+
+  ex:g12_conceptKhaNangGiaiQuyetVanDe a ex:KnowledgeConcept ;
+    rdfs:label "Khả năng giải quyết vấn đề"@vi .
+
+  ex:g12_conceptHocMay a ex:KnowledgeConcept ;
+    rdfs:label "Học máy"@vi .
+
+  ex:g12_conceptXuLiNgonNguTuNhien a ex:KnowledgeConcept ;
+    rdfs:label "Xử lí ngôn ngữ tự nhiên"@vi .
+
+  ex:g12_conceptThiGiacMayTinh a ex:KnowledgeConcept ;
+    rdfs:label "Thị giác máy tính"@vi .
+
+  ex:g12_conceptAITaoSinh a ex:KnowledgeConcept ;
+    rdfs:label "AI tạo sinh"@vi .
+
+  ex:g12_conceptGPT a ex:KnowledgeConcept ;
+    rdfs:label "GPT"@vi .
+
+  ex:g12_conceptDALL_E a ex:KnowledgeConcept ;
+    rdfs:label "DALL-E"@vi .
+
+  ex:g12_conceptMidjourney a ex:KnowledgeConcept ;
+    rdfs:label "Midjourney"@vi .
+
+  ex:g12_conceptNguoiMay a ex:KnowledgeConcept ;
+    rdfs:label "Người máy"@vi .
+
+  ex:g12_conceptRobotics a ex:KnowledgeConcept ;
+    rdfs:label "Khoa học người máy"@vi .
+
+  ex:g12_conceptCobot a ex:KnowledgeConcept ;
+    rdfs:label "Cobot"@vi .
+
+  ex:g12_conceptNguoiMayGrace a ex:KnowledgeConcept ;
+    rdfs:label "Người máy Grace"@vi .
+
+  ex:g12_conceptDieuKhienTuDong a ex:KnowledgeConcept ;
+    rdfs:label "Điều khiển tự động"@vi .
+
+  ex:g12_conceptUAV a ex:KnowledgeConcept ;
+    rdfs:label "UAV"@vi .
+
+  ex:g12_conceptDoDungThongMinh a ex:KnowledgeConcept ;
+    rdfs:label "Đồ dùng thông minh"@vi .
+
+  ex:g12_conceptNhanDangVanTay a ex:KnowledgeConcept ;
+    rdfs:label "Nhận dạng vân tay"@vi .
+
+  ex:g12_conceptNhanDangKhuonMat a ex:KnowledgeConcept ;
+    rdfs:label "Nhận dạng khuôn mặt"@vi .
+
+  ex:g12_conceptOCR a ex:KnowledgeConcept ;
+    rdfs:label "OCR"@vi .
+
+  ex:g12_conceptDichVuKhachHangAI a ex:KnowledgeConcept ;
+    rdfs:label "Dịch vụ khách hàng ứng dụng AI"@vi .
+
+  ex:g12_conceptTaiChinhNganHangAI a ex:KnowledgeConcept ;
+    rdfs:label "AI trong tài chính ngân hàng"@vi .
+
+  ex:g12_conceptYTeAI a ex:KnowledgeConcept ;
+    rdfs:label "AI trong y tế và chăm sóc sức khoẻ"@vi .
+
+  ex:g12_conceptGiaoDucAI a ex:KnowledgeConcept ;
+    rdfs:label "AI trong giáo dục và đào tạo"@vi .
+
+  ex:g12_conceptCanhBaoAI a ex:KnowledgeConcept ;
+    rdfs:label "Cảnh báo về ứng dụng AI"@vi .
+
+  ex:g12_conceptMatViecLam a ex:KnowledgeConcept ;
+    rdfs:label "Áp lực mất việc làm do AI"@vi .
+
+  ex:g12_conceptDeepfake a ex:KnowledgeConcept ;
+    rdfs:label "Deepfake"@vi .
+
+  ex:g12_conceptViPhamQuyenRiengTu a ex:KnowledgeConcept ;
+    rdfs:label "Vi phạm quyền riêng tư"@vi .
+
+  ex:g12_conceptDeDoaAnNinhHeThong a ex:KnowledgeConcept ;
+    rdfs:label "Đe doạ an ninh hệ thống"@vi .
+
+  ex:g12_conceptDaoDucPhapLuatVanHoaSo a ex:KnowledgeConcept ;
+    rdfs:label "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi .
+
+  ex:g12_topicA ex:hasConcept ex:g12_conceptTriTueNhanTao, ex:g12_conceptAI,
+    ex:g12_conceptTuringTest, ex:g12_conceptAIMem, ex:g12_conceptAIYeu,
+    ex:g12_conceptHocMay, ex:g12_conceptXuLiNgonNguTuNhien,
+    ex:g12_conceptThiGiacMayTinh, ex:g12_conceptAITaoSinh,
+    ex:g12_conceptRobotics, ex:g12_conceptDieuKhienTuDong,
+    ex:g12_conceptDoDungThongMinh, ex:g12_conceptDichVuKhachHangAI,
+    ex:g12_conceptYTeAI, ex:g12_conceptGiaoDucAI, ex:g12_conceptCanhBaoAI .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g12_topicA_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Giải thích được sơ lược về khái niệm Trí tuệ nhân tạo (AI). Nêu được ví dụ để thấy một hệ thống AI có tri thức, có khả năng suy luận và khả năng học,... Biết được một số lĩnh vực nghiên cứu của AI."@vi ;
+    ex:appearsOnPage ex:g12_page005 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 .
+
+  ex:g12_topicA_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Chỉ ra được một số lĩnh vực của khoa học công nghệ, đời sống đã và đang phát triển mạnh mẽ dựa trên những thành tựu to lớn của AI. Nêu được ví dụ minh hoạ cho một số ứng dụng điển hình của AI như điều khiển tự động, chẩn đoán bệnh, nhận dạng chữ viết tay, nhận dạng tiếng nói và khuôn mặt, trợ lí ảo,... Nêu được cảnh báo về sự phát triển của AI trong tương lai."@vi ;
+    ex:appearsOnPage ex:g12_page010 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 .
+
+  ex:g12_topicA_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề A lớp 12"@vi ;
+    ex:hasSummaryText "AI làm cho máy tính có khả năng thực hiện những công việc cần có trí tuệ như của con người. Các lĩnh vực nghiên cứu phát triển AI gồm học máy, xử lí ngôn ngữ tự nhiên, thị giác máy tính và AI tạo sinh."@vi ;
+    ex:appearsOnPage ex:g12_page009 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 .
+
+  ex:g12_topicA_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề A lớp 12"@vi ;
+    ex:hasSummaryText "AI được ứng dụng hỗ trợ con người trong nhiều lĩnh vực như kinh tế, giáo dục và đào tạo, y tế, an ninh quốc phòng, giao thông vận tải,... AI có thể gây ra hậu quả khó lường như tình trạng thất nghiệp do mất việc làm, xâm phạm quyền riêng tư và đe doạ an ninh hệ thống."@vi ;
+    ex:appearsOnPage ex:g12_page013 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 .
+
+  ex:g12_topicA_lesson1 ex:hasSummary ex:g12_topicA_l1_summary .
+  ex:g12_topicA_lesson2 ex:hasSummary ex:g12_topicA_l2_summary .
+
+  ###########################################################################
+  # Figures
+  ###########################################################################
+
+  ex:g12_topicA_fig_l1_turingTest a ex:Figure ;
+    rdfs:label "Hình 1. Mô hình bài kiểm tra “Turing Test”"@vi ;
+    ex:hasCaption "Hình 1. Mô hình bài kiểm tra “Turing Test”"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g12_page005 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTuringTest, ex:g12_conceptTriTueNhanTao, ex:g12_conceptAlanTuring .
+
+  ex:g12_topicA_fig_l1_xoxe a ex:Figure ;
+    rdfs:label "Hình 2. Người máy thông minh Xoxe"@vi ;
+    ex:hasCaption "Hình 2. Người máy thông minh Xoxe"@vi ;
+    ex:hasSourceNote "Nguồn: AILife" ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g12_page007 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptNguoiMayThongMinh, ex:g12_conceptXoxe,
+                         ex:g12_conceptKhaNangHoc, ex:g12_conceptKhaNangHieuNgonNgu .
+
+  ex:g12_topicA_fig_l2_pantechGI100 a ex:Figure ;
+    rdfs:label "Hình 1. Điện thoại thông minh Pantech GI100"@vi ;
+    ex:hasCaption "Hình 1. Điện thoại thông minh Pantech GI100"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g12_page011 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDoDungThongMinh, ex:g12_conceptNhanDangVanTay .
+
+  ex:g12_page005 ex:hasFigure ex:g12_topicA_fig_l1_turingTest .
+  ex:g12_page007 ex:hasFigure ex:g12_topicA_fig_l1_xoxe .
+  ex:g12_page011 ex:hasFigure ex:g12_topicA_fig_l2_pantechGI100 .
+
+  ex:g12_topicA_fig_l1_turingTest ex:nextFigure ex:g12_topicA_fig_l1_xoxe .
+  ex:g12_topicA_fig_l1_xoxe ex:previousFigure ex:g12_topicA_fig_l1_turingTest ;
+    ex:nextFigure ex:g12_topicA_fig_l2_pantechGI100 .
+  ex:g12_topicA_fig_l2_pantechGI100 ex:previousFigure ex:g12_topicA_fig_l1_xoxe .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g12_topicA_def_ai a ex:DefinitionText ;
+    rdfs:label "Định nghĩa trí tuệ nhân tạo"@vi ;
+    ex:hasDefinitionText "Trí tuệ nhân tạo - AI (Artificial Intelligence) là khả năng của máy tính có thể làm những công việc mang tính trí tuệ con người."@vi ;
+    ex:appearsOnPage ex:g12_page005 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:explainsConcept ex:g12_conceptTriTueNhanTao, ex:g12_conceptAI .
+
+  ex:g12_topicA_def_aiStrong a ex:DefinitionText ;
+    rdfs:label "AI mạnh"@vi ;
+    ex:hasDefinitionText "AI mạnh, hay AI rộng, là hướng nghiên cứu nhằm mục đích tạo ra hệ thống AI có các khả năng như con người trong suy luận, lập kế hoạch và có trí thông minh để giải quyết bất kì loại vấn đề phức tạp nào."@vi ;
+    ex:appearsOnPage ex:g12_page006 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:explainsConcept ex:g12_conceptAIMem .
+
+  ex:g12_topicA_def_aiWeak a ex:DefinitionText ;
+    rdfs:label "AI yếu"@vi ;
+    ex:hasDefinitionText "AI yếu, hay AI hẹp, là loại AI đặt ra mục tiêu nhỏ hơn, hướng tới một số ứng dụng cụ thể và để hoạt động hiệu quả cần có sự tham gia của con người."@vi ;
+    ex:appearsOnPage ex:g12_page006 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:explainsConcept ex:g12_conceptAIYeu .
+
+  ex:g12_topicA_def_machineLearning a ex:DefinitionText ;
+    rdfs:label "Học máy"@vi ;
+    ex:hasDefinitionText "Học máy là lĩnh vực nghiên cứu làm cho máy tính có khả năng học từ dữ liệu thu được trong quá trình hoạt động để tự hoàn thiện và nâng cao năng lực nhận thức."@vi ;
+    ex:appearsOnPage ex:g12_page008 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:explainsConcept ex:g12_conceptHocMay .
+
+  ex:g12_topicA_def_nlp a ex:DefinitionText ;
+    rdfs:label "Xử lí ngôn ngữ tự nhiên"@vi ;
+    ex:hasDefinitionText "Xử lí ngôn ngữ tự nhiên là lĩnh vực nghiên cứu các mô hình ngôn ngữ và các phương pháp để máy tính và con người giao tiếp với nhau bằng ngôn ngữ tự nhiên, cả ngôn ngữ viết và tiếng nói."@vi ;
+    ex:appearsOnPage ex:g12_page008 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:explainsConcept ex:g12_conceptXuLiNgonNguTuNhien .
+
+  ex:g12_topicA_def_computerVision a ex:DefinitionText ;
+    rdfs:label "Thị giác máy tính"@vi ;
+    ex:hasDefinitionText "Thị giác máy tính là lĩnh vực nghiên cứu các phương pháp thu nhận, xử lí ảnh kĩ thuật số, phân tích và nhận dạng hình ảnh từ thế giới bên ngoài, rút ra các thông tin cần thiết trong từng tình huống cụ thể."@vi ;
+    ex:appearsOnPage ex:g12_page008 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:explainsConcept ex:g12_conceptThiGiacMayTinh .
+
+  ex:g12_topicA_def_generativeAI a ex:DefinitionText ;
+    rdfs:label "AI tạo sinh"@vi ;
+    ex:hasDefinitionText "AI tạo sinh là lĩnh vực nghiên cứu xây dựng các phương pháp để phát triển một hệ thống AI có khả năng tạo ra nội dung văn bản, hình ảnh, âm thanh,... từ dữ liệu đã có và theo yêu cầu của người sử dụng."@vi ;
+    ex:appearsOnPage ex:g12_page008 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:explainsConcept ex:g12_conceptAITaoSinh .
+
+  ex:g12_topicA_def_robotics a ex:DefinitionText ;
+    rdfs:label "Khoa học người máy"@vi ;
+    ex:hasDefinitionText "Khoa học người máy là lĩnh vực nghiên cứu thiết kế, chế tạo, vận hành và sử dụng robot."@vi ;
+    ex:appearsOnPage ex:g12_page010 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:explainsConcept ex:g12_conceptRobotics .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g12_topicA_p005_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Chủ đề A - Máy tính và xã hội tri thức giới thiệu trí tuệ nhân tạo. Bài 1 nêu mục tiêu giải thích sơ lược khái niệm AI, nêu ví dụ về hệ thống AI có tri thức, khả năng suy luận, khả năng học và biết một số lĩnh vực nghiên cứu của AI."@vi ;
+    ex:appearsOnPage ex:g12_page005 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p005_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Con người có khả năng tư duy, suy luận logic, phân tích và giải quyết vấn đề, biết học hỏi, rút kinh nghiệm, sáng tạo và điều chỉnh cảm xúc. Máy tính xử lí khối lượng dữ liệu lớn rất nhanh và chính xác, từ đó đặt ra câu hỏi có thể làm cho máy tính suy nghĩ và hành động như con người hay không."@vi ;
+    ex:appearsOnPage ex:g12_page005 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p005_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Trí tuệ nhân tạo - AI là khả năng của máy tính có thể làm những công việc mang tính trí tuệ con người. Alan Turing đã đề xuất bài kiểm tra trí tuệ máy tính, sau này gọi là Turing Test, để đánh giá khả năng máy tính thể hiện hành vi thông minh."@vi ;
+    ex:appearsOnPage ex:g12_page005 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p006_01 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Trong mô hình Turing Test, người thẩm vấn đặt câu hỏi cho người và hệ thống máy tính qua cửa sổ kín. Nếu sau một số câu hỏi, người thẩm vấn không phân biệt được người hay máy trả lời, hệ thống được coi là có trí tuệ."@vi ;
+    ex:appearsOnPage ex:g12_page006 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p006_02 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Thuật ngữ AI bắt đầu được sử dụng tại hội thảo ở Đại học Dartmouth năm 1956. Ban đầu, những người phát triển AI rất lạc quan, nhưng loại AI thể hiện được trí tuệ con người ở mức cao như vậy gọi là AI mạnh."@vi ;
+    ex:appearsOnPage ex:g12_page006 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p006_03 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "AI mạnh là hướng nghiên cứu tạo hệ thống AI có khả năng như con người trong suy luận, lập kế hoạch và giải quyết vấn đề phức tạp. GPS của Newell, Simon và Shaw là một chương trình giải quyết vấn đề tổng quát nhưng chưa có khả năng học và bị hạn chế bởi tri thức lập trình sẵn."@vi ;
+    ex:appearsOnPage ex:g12_page006 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p006_04 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "AI yếu hay AI hẹp hướng tới các ứng dụng cụ thể và hoạt động hiệu quả nhờ sự tham gia của con người. MYCIN là một hệ chuyên gia trong lĩnh vực y tế, dùng các quy tắc dạng IF...THEN... để hỗ trợ xác định một số loại vi khuẩn gây nhiễm trùng."@vi ;
+    ex:appearsOnPage ex:g12_page006 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p007_01 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "Gần đây, AI đạt nhiều thành tựu ấn tượng như AlphaGo đánh bại nhà vô địch cờ vây, ChatGPT và chatbot giao tiếp bằng ngôn ngữ tự nhiên, xe tự lái nhận thức môi trường xung quanh để chấp hành luật giao thông và tránh va chạm."@vi ;
+    ex:appearsOnPage ex:g12_page007 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p007_02 a ex:Paragraph ;
+    ex:paragraphOrder 9 ;
+    ex:hasRawText "Người máy Xoxe của công ty AILife có khả năng nghe, nhìn, nhận biết môi trường xung quanh, hiểu ngôn ngữ tự nhiên và có khả năng học. Xoxe giao tiếp được nhiều ngôn ngữ, nhận dạng khuôn mặt, cảm xúc và dự đoán một số đặc điểm của người đối thoại."@vi ;
+    ex:appearsOnPage ex:g12_page007 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p007_03 a ex:Paragraph ;
+    ex:paragraphOrder 10 ;
+    ex:hasRawText "Một số đặc trưng cơ bản của AI gồm khả năng học từ dữ liệu, khả năng hiểu ngôn ngữ tự nhiên, khả năng suy luận dựa trên tri thức đã tích luỹ, khả năng nhận thức môi trường xung quanh và khả năng giải quyết vấn đề."@vi ;
+    ex:appearsOnPage ex:g12_page007 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s1 .
+
+  ex:g12_topicA_p008_01 a ex:Paragraph ;
+    ex:paragraphOrder 11 ;
+    ex:hasRawText "Một số lĩnh vực nghiên cứu phát triển AI gồm học máy, xử lí ngôn ngữ tự nhiên, thị giác máy tính và AI tạo sinh. Các lĩnh vực này hướng tới mục tiêu nâng cao năng lực thể hiện trí tuệ của máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page008 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s2 .
+
+  ex:g12_topicA_p008_02 a ex:Paragraph ;
+    ex:paragraphOrder 12 ;
+    ex:hasRawText "Học máy nghiên cứu cách làm cho máy tính học từ dữ liệu trong quá trình hoạt động. Xử lí ngôn ngữ tự nhiên nghiên cứu mô hình và phương pháp để máy tính giao tiếp với con người bằng ngôn ngữ tự nhiên, cả ngôn ngữ viết và tiếng nói."@vi ;
+    ex:appearsOnPage ex:g12_page008 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s2 .
+
+  ex:g12_topicA_p008_03 a ex:Paragraph ;
+    ex:paragraphOrder 13 ;
+    ex:hasRawText "Thị giác máy tính nghiên cứu cách thu nhận, xử lí, phân tích và nhận dạng ảnh kĩ thuật số, góp phần phát triển hệ thống AI cho xe tự lái, hỗ trợ người lái và người máy có camera nhận dạng khuôn mặt, cảm xúc."@vi ;
+    ex:appearsOnPage ex:g12_page008 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s2 .
+
+  ex:g12_topicA_p008_04 a ex:Paragraph ;
+    ex:paragraphOrder 14 ;
+    ex:hasRawText "AI tạo sinh nghiên cứu xây dựng các phương pháp phát triển hệ thống AI có khả năng tạo ra nội dung văn bản, hình ảnh, âm thanh từ dữ liệu đã có và theo yêu cầu của người dùng. GPT là mô hình nền tảng để phát triển một số hệ thống AI tạo sinh như ChatGPT."@vi ;
+    ex:appearsOnPage ex:g12_page008 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s2 .
+
+  ex:g12_topicA_p009_01 a ex:Paragraph ;
+    ex:paragraphOrder 15 ;
+    ex:hasRawText "AI tạo sinh giúp máy tính có khả năng vẽ tranh theo mô tả, ví dụ Midjourney và DALL-E. Phần luyện tập yêu cầu đánh giá các phát biểu về Turing Test, AI yếu, AI mạnh, AI tạo sinh và khả năng tự hành động của AI."@vi ;
+    ex:appearsOnPage ex:g12_page009 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:belongsToSection ex:g12_topicA_l1s2 .
+
+  ex:g12_topicA_p010_01 a ex:Paragraph ;
+    ex:paragraphOrder 16 ;
+    ex:hasRawText "Bài 2 tiếp tục giới thiệu AI, tập trung vào các lĩnh vực khoa học công nghệ, đời sống đã và đang phát triển nhờ AI, các ứng dụng điển hình như điều khiển tự động, chẩn đoán bệnh, nhận dạng chữ viết tay, nhận dạng tiếng nói, khuôn mặt, trợ lí ảo và cảnh báo về sự phát triển của AI."@vi ;
+    ex:appearsOnPage ex:g12_page010 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p010_02 a ex:Paragraph ;
+    ex:paragraphOrder 17 ;
+    ex:hasRawText "AI đã thay đổi cách nghĩ của chúng ta về những gì máy tính có thể làm được. Trong nhiều lĩnh vực khoa học công nghệ, hoạt động kinh tế - xã hội và đời sống con người đều có dấu ấn của AI."@vi ;
+    ex:appearsOnPage ex:g12_page010 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p010_03 a ex:Paragraph ;
+    ex:paragraphOrder 18 ;
+    ex:hasRawText "Khoa học người máy nghiên cứu thiết kế, chế tạo, vận hành và sử dụng robot. AI được ứng dụng để xử lí thông tin, điều khiển robot hoạt động thông minh, hiệu quả; robot cộng tác cobot có thể hoạt động tự chủ và phối hợp với con người."@vi ;
+    ex:appearsOnPage ex:g12_page010 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p010_04 a ex:Paragraph ;
+    ex:paragraphOrder 19 ;
+    ex:hasRawText "Người máy Grace ra đời ở Hồng Kông năm 2021 trong đại dịch Covid-19, biết suy nghĩ và hành động hợp lí như điều dưỡng viên trong chăm sóc người bệnh, giao tiếp với bệnh nhân bằng tiếng Trung và tiếng Anh."@vi ;
+    ex:appearsOnPage ex:g12_page010 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p011_01 a ex:Paragraph ;
+    ex:paragraphOrder 20 ;
+    ex:hasRawText "AI giúp phát triển điều khiển tự động trong công xưởng để giám sát sử dụng nguyên vật liệu, vận hành và tối ưu hoá quá trình sản xuất. UAV ứng dụng AI kết hợp cảm biến và thị giác máy tính để tránh va chạm, xác định vị trí, theo dõi mục tiêu và ghi thông tin mặt đất."@vi ;
+    ex:appearsOnPage ex:g12_page011 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p011_02 a ex:Paragraph ;
+    ex:paragraphOrder 21 ;
+    ex:hasRawText "AI giúp phát triển sản phẩm và tiện ích thông minh như mở khoá điện thoại bằng vân tay, xác thực khuôn mặt, tìm kiếm bằng lời nói, trợ lí ảo trên điện thoại và tivi thông minh, cũng như OCR nhận dạng chữ viết tay và chuyển ảnh chữ thành văn bản."@vi ;
+    ex:appearsOnPage ex:g12_page011 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p011_03 a ex:Paragraph ;
+    ex:paragraphOrder 22 ;
+    ex:hasRawText "AI giúp phát triển dịch vụ thông qua trợ lí ảo và chatbot như Google Assistant, Cortana, Siri, Bixby, Meena và BlenderBot. Trong dịch vụ khách hàng, chatbot có thể trả lời câu hỏi thường gặp, cung cấp thông tin, hỗ trợ tìm kiếm sản phẩm, đưa ra gợi ý và thực hiện giao dịch."@vi ;
+    ex:appearsOnPage ex:g12_page011 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p012_01 a ex:Paragraph ;
+    ex:paragraphOrder 23 ;
+    ex:hasRawText "Trong tài chính ngân hàng, AI phân tích hành vi để hiểu và dự đoán hành vi, phát hiện giao dịch đáng ngờ, dấu hiệu lừa đảo và gian lận. Trong y tế, AI như DeepMind và hệ thống hỗ trợ bác sĩ X-quang giúp chẩn đoán, phát hiện bệnh chính xác và hiệu quả hơn."@vi ;
+    ex:appearsOnPage ex:g12_page012 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p012_02 a ex:Paragraph ;
+    ex:paragraphOrder 24 ;
+    ex:hasRawText "Trong giáo dục và đào tạo, hệ thống Elearning dùng AI để đưa ra khuyến nghị và hướng dẫn cá nhân hoá theo từng người học. Công ty Duolingo đã tạo hệ thống dạy học ngoại ngữ có chatbot xử lí ngôn ngữ tự nhiên và nội dung hội thoại thay đổi theo vốn từ vựng, điểm khó ngữ pháp và chủ đề người học thích thú."@vi ;
+    ex:appearsOnPage ex:g12_page012 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s1 .
+
+  ex:g12_topicA_p012_03 a ex:Paragraph ;
+    ex:paragraphOrder 25 ;
+    ex:hasRawText "Mặc dù AI có nhiều ứng dụng hữu ích, AI cũng làm xuất hiện vấn đề có thể ảnh hưởng đến con người. Các cảnh báo gồm áp lực mất việc làm khi AI thay thế một số công việc và xuất hiện các hình thức lừa đảo qua không gian mạng như deepfake."@vi ;
+    ex:appearsOnPage ex:g12_page012 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s2 .
+
+  ex:g12_topicA_p013_01 a ex:Paragraph ;
+    ex:paragraphOrder 26 ;
+    ex:hasRawText "AI có thể thu thập lượng lớn dữ liệu cá nhân, dùng phổ biến nhưng sau đó rò rỉ thông tin riêng tư, dẫn đến vi phạm quyền riêng tư trên phạm vi rộng và tiềm ẩn nguy cơ gây mất an ninh, trật tự xã hội."@vi ;
+    ex:appearsOnPage ex:g12_page013 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s2 .
+
+  ex:g12_topicA_p013_02 a ex:Paragraph ;
+    ex:paragraphOrder 27 ;
+    ex:hasRawText "AI có thể bị tin tặc lợi dụng để phát hiện điểm yếu hệ thống, khai thác lỗ hổng an ninh, tự động hoá các cuộc tấn công và đe doạ an ninh hệ thống. Vì vậy cần giáo dục đạo đức, pháp luật và văn hoá trong môi trường số, hướng dẫn sử dụng AI trong công việc và học tập."@vi ;
+    ex:appearsOnPage ex:g12_page013 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:belongsToSection ex:g12_topicA_l2s2 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g12_page005 ex:hasParagraph ex:g12_topicA_p005_01, ex:g12_topicA_p005_02,
+    ex:g12_topicA_p005_03 .
+
+  ex:g12_page006 ex:hasParagraph ex:g12_topicA_p006_01, ex:g12_topicA_p006_02,
+    ex:g12_topicA_p006_03, ex:g12_topicA_p006_04 .
+
+  ex:g12_page007 ex:hasParagraph ex:g12_topicA_p007_01, ex:g12_topicA_p007_02,
+    ex:g12_topicA_p007_03 .
+
+  ex:g12_page008 ex:hasParagraph ex:g12_topicA_p008_01, ex:g12_topicA_p008_02,
+    ex:g12_topicA_p008_03, ex:g12_topicA_p008_04 .
+
+  ex:g12_page009 ex:hasParagraph ex:g12_topicA_p009_01 .
+
+  ex:g12_page010 ex:hasParagraph ex:g12_topicA_p010_01, ex:g12_topicA_p010_02,
+    ex:g12_topicA_p010_03, ex:g12_topicA_p010_04 .
+
+  ex:g12_page011 ex:hasParagraph ex:g12_topicA_p011_01, ex:g12_topicA_p011_02,
+    ex:g12_topicA_p011_03 .
+
+  ex:g12_page012 ex:hasParagraph ex:g12_topicA_p012_01, ex:g12_topicA_p012_02,
+    ex:g12_topicA_p012_03 .
+
+  ex:g12_page013 ex:hasParagraph ex:g12_topicA_p013_01, ex:g12_topicA_p013_02 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g12_topicA_l1s1 ex:hasParagraph ex:g12_topicA_p005_01, ex:g12_topicA_p005_02,
+    ex:g12_topicA_p005_03, ex:g12_topicA_p006_01, ex:g12_topicA_p006_02,
+    ex:g12_topicA_p006_03, ex:g12_topicA_p006_04, ex:g12_topicA_p007_01,
+    ex:g12_topicA_p007_02, ex:g12_topicA_p007_03 .
+
+  ex:g12_topicA_l1s2 ex:hasParagraph ex:g12_topicA_p008_01, ex:g12_topicA_p008_02,
+    ex:g12_topicA_p008_03, ex:g12_topicA_p008_04, ex:g12_topicA_p009_01 .
+
+  ex:g12_topicA_l2s1 ex:hasParagraph ex:g12_topicA_p010_01, ex:g12_topicA_p010_02,
+    ex:g12_topicA_p010_03, ex:g12_topicA_p010_04, ex:g12_topicA_p011_01,
+    ex:g12_topicA_p011_02, ex:g12_topicA_p011_03, ex:g12_topicA_p012_01,
+    ex:g12_topicA_p012_02 .
+
+  ex:g12_topicA_l2s2 ex:hasParagraph ex:g12_topicA_p012_03, ex:g12_topicA_p013_01,
+    ex:g12_topicA_p013_02 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g12_topicA_p005_01 ex:nextParagraph ex:g12_topicA_p005_02 .
+  ex:g12_topicA_p005_02 ex:previousParagraph ex:g12_topicA_p005_01 ; ex:nextParagraph ex:g12_topicA_p005_03 .
+  ex:g12_topicA_p005_03 ex:previousParagraph ex:g12_topicA_p005_02 ; ex:nextParagraph ex:g12_topicA_p006_01 .
+  ex:g12_topicA_p006_01 ex:previousParagraph ex:g12_topicA_p005_03 ; ex:nextParagraph ex:g12_topicA_p006_02 .
+  ex:g12_topicA_p006_02 ex:previousParagraph ex:g12_topicA_p006_01 ; ex:nextParagraph ex:g12_topicA_p006_03 .
+  ex:g12_topicA_p006_03 ex:previousParagraph ex:g12_topicA_p006_02 ; ex:nextParagraph ex:g12_topicA_p006_04 .
+  ex:g12_topicA_p006_04 ex:previousParagraph ex:g12_topicA_p006_03 ; ex:nextParagraph ex:g12_topicA_p007_01 .
+  ex:g12_topicA_p007_01 ex:previousParagraph ex:g12_topicA_p006_04 ; ex:nextParagraph ex:g12_topicA_p007_02 .
+  ex:g12_topicA_p007_02 ex:previousParagraph ex:g12_topicA_p007_01 ; ex:nextParagraph ex:g12_topicA_p007_03 .
+  ex:g12_topicA_p007_03 ex:previousParagraph ex:g12_topicA_p007_02 ; ex:nextParagraph ex:g12_topicA_p008_01 .
+  ex:g12_topicA_p008_01 ex:previousParagraph ex:g12_topicA_p007_03 ; ex:nextParagraph ex:g12_topicA_p008_02 .
+  ex:g12_topicA_p008_02 ex:previousParagraph ex:g12_topicA_p008_01 ; ex:nextParagraph ex:g12_topicA_p008_03 .
+  ex:g12_topicA_p008_03 ex:previousParagraph ex:g12_topicA_p008_02 ; ex:nextParagraph ex:g12_topicA_p008_04 .
+  ex:g12_topicA_p008_04 ex:previousParagraph ex:g12_topicA_p008_03 ; ex:nextParagraph ex:g12_topicA_p009_01 .
+  ex:g12_topicA_p009_01 ex:previousParagraph ex:g12_topicA_p008_04 ; ex:nextParagraph ex:g12_topicA_p010_01 .
+  ex:g12_topicA_p010_01 ex:previousParagraph ex:g12_topicA_p009_01 ; ex:nextParagraph ex:g12_topicA_p010_02 .
+  ex:g12_topicA_p010_02 ex:previousParagraph ex:g12_topicA_p010_01 ; ex:nextParagraph ex:g12_topicA_p010_03 .
+  ex:g12_topicA_p010_03 ex:previousParagraph ex:g12_topicA_p010_02 ; ex:nextParagraph ex:g12_topicA_p010_04 .
+  ex:g12_topicA_p010_04 ex:previousParagraph ex:g12_topicA_p010_03 ; ex:nextParagraph ex:g12_topicA_p011_01 .
+  ex:g12_topicA_p011_01 ex:previousParagraph ex:g12_topicA_p010_04 ; ex:nextParagraph ex:g12_topicA_p011_02 .
+  ex:g12_topicA_p011_02 ex:previousParagraph ex:g12_topicA_p011_01 ; ex:nextParagraph ex:g12_topicA_p011_03 .
+  ex:g12_topicA_p011_03 ex:previousParagraph ex:g12_topicA_p011_02 ; ex:nextParagraph ex:g12_topicA_p012_01 .
+  ex:g12_topicA_p012_01 ex:previousParagraph ex:g12_topicA_p011_03 ; ex:nextParagraph ex:g12_topicA_p012_02 .
+  ex:g12_topicA_p012_02 ex:previousParagraph ex:g12_topicA_p012_01 ; ex:nextParagraph ex:g12_topicA_p012_03 .
+  ex:g12_topicA_p012_03 ex:previousParagraph ex:g12_topicA_p012_02 ; ex:nextParagraph ex:g12_topicA_p013_01 .
+  ex:g12_topicA_p013_01 ex:previousParagraph ex:g12_topicA_p012_03 ; ex:nextParagraph ex:g12_topicA_p013_02 .
+  ex:g12_topicA_p013_02 ex:previousParagraph ex:g12_topicA_p013_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g12_topicA_p005_01 ex:mentionsConcept ex:g12_conceptMayTinhVaXaHoiTriThuc,
+    ex:g12_conceptTriTueNhanTao, ex:g12_conceptAI, ex:g12_conceptKhaNangSuyLuan,
+    ex:g12_conceptKhaNangHoc .
+
+  ex:g12_topicA_p005_02 ex:mentionsConcept ex:g12_conceptTriTueConNguoi,
+    ex:g12_conceptTriTueNhanTao .
+
+  ex:g12_topicA_p005_03 ex:mentionsConcept ex:g12_conceptTriTueNhanTao,
+    ex:g12_conceptAI, ex:g12_conceptAlanTuring, ex:g12_conceptTuringTest .
+
+  ex:g12_topicA_p006_01 ex:mentionsConcept ex:g12_conceptTuringTest,
+    ex:g12_conceptTriTueNhanTao .
+
+  ex:g12_topicA_p006_02 ex:mentionsConcept ex:g12_conceptAI, ex:g12_conceptAIMem .
+
+  ex:g12_topicA_p006_03 ex:mentionsConcept ex:g12_conceptAIMem,
+    ex:g12_conceptKhaNangSuyLuan, ex:g12_conceptKhaNangGiaiQuyetVanDe,
+    ex:g12_conceptGeneralProblemSolver .
+
+  ex:g12_topicA_p006_04 ex:mentionsConcept ex:g12_conceptAIYeu, ex:g12_conceptMYCIN,
+    ex:g12_conceptKhaNangSuyLuan .
+
+  ex:g12_topicA_p007_01 ex:mentionsConcept ex:g12_conceptAlphaGo, ex:g12_conceptChatGPT,
+    ex:g12_conceptChatbot, ex:g12_conceptXeTuLai, ex:g12_conceptKhaNangNhanThucMoiTruong .
+
+  ex:g12_topicA_p007_02 ex:mentionsConcept ex:g12_conceptNguoiMayThongMinh,
+    ex:g12_conceptXoxe, ex:g12_conceptKhaNangHoc, ex:g12_conceptKhaNangHieuNgonNgu,
+    ex:g12_conceptNhanDangKhuonMat .
+
+  ex:g12_topicA_p007_03 ex:mentionsConcept ex:g12_conceptKhaNangHoc,
+    ex:g12_conceptKhaNangHieuNgonNgu, ex:g12_conceptKhaNangSuyLuan,
+    ex:g12_conceptKhaNangNhanThucMoiTruong, ex:g12_conceptKhaNangGiaiQuyetVanDe .
+
+  ex:g12_topicA_p008_01 ex:mentionsConcept ex:g12_conceptHocMay,
+    ex:g12_conceptXuLiNgonNguTuNhien, ex:g12_conceptThiGiacMayTinh,
+    ex:g12_conceptAITaoSinh .
+
+  ex:g12_topicA_p008_02 ex:mentionsConcept ex:g12_conceptHocMay,
+    ex:g12_conceptXuLiNgonNguTuNhien, ex:g12_conceptKhaNangHoc,
+    ex:g12_conceptKhaNangHieuNgonNgu .
+
+  ex:g12_topicA_p008_03 ex:mentionsConcept ex:g12_conceptThiGiacMayTinh,
+    ex:g12_conceptXeTuLai, ex:g12_conceptNhanDangKhuonMat .
+
+  ex:g12_topicA_p008_04 ex:mentionsConcept ex:g12_conceptAITaoSinh,
+    ex:g12_conceptGPT, ex:g12_conceptChatGPT .
+
+  ex:g12_topicA_p009_01 ex:mentionsConcept ex:g12_conceptAITaoSinh,
+    ex:g12_conceptMidjourney, ex:g12_conceptDALL_E, ex:g12_conceptTuringTest,
+    ex:g12_conceptAIYeu, ex:g12_conceptAIMem .
+
+  ex:g12_topicA_p010_01 ex:mentionsConcept ex:g12_conceptTriTueNhanTao,
+    ex:g12_conceptDieuKhienTuDong, ex:g12_conceptNhanDangKhuonMat,
+    ex:g12_conceptTroLiAo .
+
+  ex:g12_topicA_p010_02 ex:mentionsConcept ex:g12_conceptTriTueNhanTao,
+    ex:g12_conceptAI .
+
+  ex:g12_topicA_p010_03 ex:mentionsConcept ex:g12_conceptRobotics,
+    ex:g12_conceptNguoiMay, ex:g12_conceptCobot .
+
+  ex:g12_topicA_p010_04 ex:mentionsConcept ex:g12_conceptNguoiMayGrace,
+    ex:g12_conceptCobot, ex:g12_conceptNguoiMay .
+
+  ex:g12_topicA_p011_01 ex:mentionsConcept ex:g12_conceptDieuKhienTuDong,
+    ex:g12_conceptUAV, ex:g12_conceptThiGiacMayTinh .
+
+  ex:g12_topicA_p011_02 ex:mentionsConcept ex:g12_conceptDoDungThongMinh,
+    ex:g12_conceptNhanDangVanTay, ex:g12_conceptNhanDangKhuonMat,
+    ex:g12_conceptOCR, ex:g12_conceptTroLiAo .
+
+  ex:g12_topicA_p011_03 ex:mentionsConcept ex:g12_conceptDichVuKhachHangAI,
+    ex:g12_conceptTroLiAo, ex:g12_conceptChatbot .
+
+  ex:g12_topicA_p012_01 ex:mentionsConcept ex:g12_conceptTaiChinhNganHangAI,
+    ex:g12_conceptYTeAI .
+
+  ex:g12_topicA_p012_02 ex:mentionsConcept ex:g12_conceptGiaoDucAI,
+    ex:g12_conceptChatbot, ex:g12_conceptXuLiNgonNguTuNhien .
+
+  ex:g12_topicA_p012_03 ex:mentionsConcept ex:g12_conceptCanhBaoAI,
+    ex:g12_conceptMatViecLam, ex:g12_conceptDeepfake .
+
+  ex:g12_topicA_p013_01 ex:mentionsConcept ex:g12_conceptViPhamQuyenRiengTu,
+    ex:g12_conceptCanhBaoAI .
+
+  ex:g12_topicA_p013_02 ex:mentionsConcept ex:g12_conceptDeDoaAnNinhHeThong,
+    ex:g12_conceptDaoDucPhapLuatVanHoaSo, ex:g12_conceptChatGPT .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g12_conceptTriTueNhanTao ex:subConceptOf ex:g12_conceptMayTinhVaXaHoiTriThuc .
+  ex:g12_conceptAI ex:sameAsConcept ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptTriTueConNguoi ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptTuringTest ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptAlanTuring ex:relatedTo ex:g12_conceptTuringTest .
+  ex:g12_conceptAIMem ex:subConceptOf ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptAIYeu ex:subConceptOf ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptGeneralProblemSolver ex:relatedTo ex:g12_conceptAIMem .
+  ex:g12_conceptMYCIN ex:relatedTo ex:g12_conceptAIYeu .
+  ex:g12_conceptAlphaGo ex:relatedTo ex:g12_conceptKhaNangSuyLuan .
+  ex:g12_conceptChatGPT ex:relatedTo ex:g12_conceptXuLiNgonNguTuNhien, ex:g12_conceptAITaoSinh .
+  ex:g12_conceptChatbot ex:relatedTo ex:g12_conceptXuLiNgonNguTuNhien .
+  ex:g12_conceptTroLiAo ex:relatedTo ex:g12_conceptChatbot .
+  ex:g12_conceptXeTuLai ex:relatedTo ex:g12_conceptThiGiacMayTinh, ex:g12_conceptKhaNangNhanThucMoiTruong .
+  ex:g12_conceptNguoiMayThongMinh ex:relatedTo ex:g12_conceptRobotics .
+  ex:g12_conceptXoxe ex:subConceptOf ex:g12_conceptNguoiMayThongMinh .
+  ex:g12_conceptKhaNangHoc ex:relatedTo ex:g12_conceptHocMay .
+  ex:g12_conceptKhaNangHieuNgonNgu ex:relatedTo ex:g12_conceptXuLiNgonNguTuNhien .
+  ex:g12_conceptKhaNangSuyLuan ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptKhaNangNhanThucMoiTruong ex:relatedTo ex:g12_conceptThiGiacMayTinh .
+  ex:g12_conceptKhaNangGiaiQuyetVanDe ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptHocMay ex:subConceptOf ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptXuLiNgonNguTuNhien ex:subConceptOf ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptThiGiacMayTinh ex:subConceptOf ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptAITaoSinh ex:subConceptOf ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptGPT ex:relatedTo ex:g12_conceptAITaoSinh .
+  ex:g12_conceptDALL_E ex:relatedTo ex:g12_conceptAITaoSinh .
+  ex:g12_conceptMidjourney ex:relatedTo ex:g12_conceptAITaoSinh .
+  ex:g12_conceptRobotics ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptNguoiMay ex:relatedTo ex:g12_conceptRobotics .
+  ex:g12_conceptCobot ex:subConceptOf ex:g12_conceptNguoiMay .
+  ex:g12_conceptNguoiMayGrace ex:subConceptOf ex:g12_conceptCobot .
+  ex:g12_conceptDieuKhienTuDong ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptUAV ex:relatedTo ex:g12_conceptDieuKhienTuDong, ex:g12_conceptThiGiacMayTinh .
+  ex:g12_conceptDoDungThongMinh ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptNhanDangVanTay ex:relatedTo ex:g12_conceptDoDungThongMinh .
+  ex:g12_conceptNhanDangKhuonMat ex:relatedTo ex:g12_conceptDoDungThongMinh, ex:g12_conceptThiGiacMayTinh .
+  ex:g12_conceptOCR ex:relatedTo ex:g12_conceptThiGiacMayTinh .
+  ex:g12_conceptDichVuKhachHangAI ex:relatedTo ex:g12_conceptChatbot .
+  ex:g12_conceptTaiChinhNganHangAI ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptYTeAI ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptGiaoDucAI ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptCanhBaoAI ex:relatedTo ex:g12_conceptTriTueNhanTao .
+  ex:g12_conceptMatViecLam ex:subConceptOf ex:g12_conceptCanhBaoAI .
+  ex:g12_conceptDeepfake ex:subConceptOf ex:g12_conceptCanhBaoAI .
+  ex:g12_conceptViPhamQuyenRiengTu ex:subConceptOf ex:g12_conceptCanhBaoAI .
+  ex:g12_conceptDeDoaAnNinhHeThong ex:subConceptOf ex:g12_conceptCanhBaoAI .
+  ex:g12_conceptDaoDucPhapLuatVanHoaSo ex:relatedTo ex:g12_conceptCanhBaoAI .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g12_topicA_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Theo em, máy tính làm được những việc gì tốt hơn con người? Em hãy cho ví dụ một việc mà máy tính chưa làm được tốt hơn con người."@vi ;
+    ex:appearsOnPage ex:g12_page005 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:relatedTo ex:g12_conceptTriTueNhanTao, ex:g12_conceptTriTueConNguoi .
+
+  ex:g12_topicA_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 1 - Máy tính có trí tuệ"@vi ;
+    ex:hasRawText "Theo em, máy tính làm được những gì thì ta nói máy tính có trí tuệ?"@vi ;
+    ex:appearsOnPage ex:g12_page005 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:relatedTo ex:g12_conceptTriTueNhanTao, ex:g12_conceptAI .
+
+  ex:g12_topicA_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 1 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Em hãy cho biết mỗi phát biểu sau về AI là đúng hay sai: Turing Test là bài kiểm tra trí tuệ của máy tính; nhờ mở rộng phạm vi ứng dụng mà AI yếu phát triển thành AI mạnh; AI tạo sinh có thể giúp học sinh viết bài văn tả cảnh đẹp quê hương; AI có thể tự hành động một cách hợp lí."@vi ;
+    ex:appearsOnPage ex:g12_page009 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:relatedTo ex:g12_conceptTuringTest, ex:g12_conceptAIYeu, ex:g12_conceptAIMem, ex:g12_conceptAITaoSinh .
+
+  ex:g12_topicA_l1_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 1 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Năm 1997, máy tính Deep Blue của IBM đánh bại Đại kiện tướng cờ vua Garry Kasparov. Đây là lần đầu tiên một chương trình máy tính đánh bại một nhà vô địch thế giới về cờ vua. Em hãy giải thích vì sao sự kiện đó được xem là một thành tựu của trí tuệ nhân tạo."@vi ;
+    ex:appearsOnPage ex:g12_page009 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:relatedTo ex:g12_conceptTriTueNhanTao, ex:g12_conceptKhaNangSuyLuan, ex:g12_conceptKhaNangGiaiQuyetVanDe .
+
+  ex:g12_topicA_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 1 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "AI là gì? AI mạnh là gì? AI yếu là gì? Lĩnh vực nghiên cứu nào giúp máy tính có khả năng học để tự nâng cao năng lực? Đặc trưng nào của AI được thể hiện từ lĩnh vực nghiên cứu về xử lí ngôn ngữ tự nhiên? Đặc trưng nào của AI được thể hiện từ lĩnh vực nghiên cứu về thị giác máy tính?"@vi ;
+    ex:appearsOnPage ex:g12_page009 ;
+    ex:belongsToLesson ex:g12_topicA_lesson1 ;
+    ex:relatedTo ex:g12_conceptTriTueNhanTao, ex:g12_conceptAIMem, ex:g12_conceptAIYeu,
+                 ex:g12_conceptHocMay, ex:g12_conceptXuLiNgonNguTuNhien,
+                 ex:g12_conceptThiGiacMayTinh .
+
+  ex:g12_topicA_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Hãy kể tên một đồ dùng thông minh và cho biết nó có khả năng làm được những việc gì."@vi ;
+    ex:appearsOnPage ex:g12_page010 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:relatedTo ex:g12_conceptDoDungThongMinh .
+
+  ex:g12_topicA_l2_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 2 - Cảnh báo về ứng dụng AI"@vi ;
+    ex:hasRawText "Ứng dụng AI mang lại những kết quả ấn tượng nhưng cũng có thể gây ra hậu quả khó lường. Hãy nêu một ví dụ mà em biết."@vi ;
+    ex:appearsOnPage ex:g12_page012 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:relatedTo ex:g12_conceptCanhBaoAI .
+
+  ex:g12_topicA_l2_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 2 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Cobot là gì? Vì sao người máy Grace được coi là một ví dụ về cobot? Dịch vụ khách hàng đã phát triển được những tính năng nổi bật nào nhờ ứng dụng AI?"@vi ;
+    ex:appearsOnPage ex:g12_page013 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:relatedTo ex:g12_conceptCobot, ex:g12_conceptNguoiMayGrace, ex:g12_conceptDichVuKhachHangAI .
+
+  ex:g12_topicA_l2_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Cho ví dụ về một ứng dụng AI mà em biết và nêu ấn tượng của em về một trong các khả năng: học, xử lí ngôn ngữ tự nhiên, thị giác máy tính,..."@vi ;
+    ex:appearsOnPage ex:g12_page013 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:relatedTo ex:g12_conceptTriTueNhanTao, ex:g12_conceptHocMay,
+                 ex:g12_conceptXuLiNgonNguTuNhien, ex:g12_conceptThiGiacMayTinh .
+
+  ex:g12_topicA_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 2 chủ đề A lớp 12"@vi ;
+    ex:hasRawText "Các lĩnh vực khoa học người máy, điều khiển tự động, y tế và chăm sóc sức khoẻ, giáo dục và đào tạo đã ứng dụng AI để phát triển được những khả năng mới nào? Ứng dụng AI làm cho một số thiết bị, đồ dùng thể hiện sự thông minh như thế nào? Nêu một số cảnh báo về việc sử dụng AI với mục đích xấu."@vi ;
+    ex:appearsOnPage ex:g12_page013 ;
+    ex:belongsToLesson ex:g12_topicA_lesson2 ;
+    ex:relatedTo ex:g12_conceptRobotics, ex:g12_conceptDieuKhienTuDong,
+                 ex:g12_conceptYTeAI, ex:g12_conceptGiaoDucAI,
+                 ex:g12_conceptDoDungThongMinh, ex:g12_conceptCanhBaoAI .
+
+  ex:g12_topicA_lesson1 ex:hasActivity ex:g12_topicA_l1_openingActivity,
+    ex:g12_topicA_l1_activity1, ex:g12_topicA_l1_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicA_l1_appliedTask1, ex:g12_topicA_l1_review1 .
+
+  ex:g12_topicA_lesson2 ex:hasActivity ex:g12_topicA_l2_openingActivity,
+    ex:g12_topicA_l2_activity1, ex:g12_topicA_l2_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicA_l2_appliedTask1, ex:g12_topicA_l2_review1 .
+}

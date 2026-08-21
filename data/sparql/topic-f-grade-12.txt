@@ -1,0 +1,2596 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 12 TOPIC F
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 and Grade 11.
+# Source file: sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-5.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g12_grade12 a ex:GradeLevel ;
+    rdfs:label "Lớp 12"@vi ;
+    ex:gradeNumber 12 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g12_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 12 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 12 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g12_grade12 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicF_shared a ex:Topic ;
+    rdfs:label "Chủ đề F (dùng chung các khối)"@vi ;
+    ex:hasTitle "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi .
+
+  ex:g12_topicF a ex:Topic ;
+    rdfs:label "Chủ đề F - Giải quyết vấn đề với sự trợ giúp của máy tính"@vi ;
+    ex:hasTitle "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi ;
+    ex:hasSubtitle "Tạo trang web"@vi ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicF_shared ;
+    ex:topicOrder 6 ;
+    ex:hasStartPage 35 ;
+    ex:hasEndPage 91 ;
+    ex:sourceFileName "sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-5.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g12_topicF_lesson1, ex:g12_topicF_lesson2, ex:g12_topicF_lesson3,
+                 ex:g12_topicF_lesson4, ex:g12_topicF_lesson5, ex:g12_topicF_lesson6,
+                 ex:g12_topicF_lesson7, ex:g12_topicF_lesson8, ex:g12_topicF_lesson9,
+                 ex:g12_topicF_lesson10, ex:g12_topicF_lesson11, ex:g12_topicF_lesson12 ;
+    ex:hasPage ex:g12_page035, ex:g12_page036, ex:g12_page037, ex:g12_page038,
+               ex:g12_page039, ex:g12_page040, ex:g12_page041, ex:g12_page042,
+               ex:g12_page043, ex:g12_page044, ex:g12_page045, ex:g12_page046,
+               ex:g12_page047, ex:g12_page048, ex:g12_page049, ex:g12_page050,
+               ex:g12_page051, ex:g12_page052, ex:g12_page053, ex:g12_page054,
+               ex:g12_page055, ex:g12_page056, ex:g12_page057, ex:g12_page058,
+               ex:g12_page059, ex:g12_page060, ex:g12_page061, ex:g12_page062,
+               ex:g12_page063, ex:g12_page064, ex:g12_page065, ex:g12_page066,
+               ex:g12_page067, ex:g12_page068, ex:g12_page069, ex:g12_page070,
+               ex:g12_page071, ex:g12_page072, ex:g12_page073, ex:g12_page074,
+               ex:g12_page075, ex:g12_page076, ex:g12_page077, ex:g12_page078,
+               ex:g12_page079, ex:g12_page080, ex:g12_page081, ex:g12_page082,
+               ex:g12_page083, ex:g12_page084, ex:g12_page085, ex:g12_page086,
+               ex:g12_page087, ex:g12_page088, ex:g12_page089, ex:g12_page090,
+               ex:g12_page091 .
+
+  ex:g12_tinhoc_ungdung_canhdieu ex:hasTopic ex:g12_topicF .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g12_topicF_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Làm quen với ngôn ngữ đánh dấu siêu văn bản"@vi ;
+    ex:hasTitle "Làm quen với ngôn ngữ đánh dấu siêu văn bản"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 35 ;
+    ex:hasEndPage 39 ;
+    ex:hasSection ex:g12_topicF_l1s1, ex:g12_topicF_l1s2, ex:g12_topicF_l1s3 .
+
+  ex:g12_topicF_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Định dạng văn bản và tạo siêu liên kết"@vi ;
+    ex:hasTitle "Định dạng văn bản và tạo siêu liên kết"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 40 ;
+    ex:hasEndPage 45 ;
+    ex:hasSection ex:g12_topicF_l2s1, ex:g12_topicF_l2s2, ex:g12_topicF_l2s3, ex:g12_topicF_l2s4 .
+
+  ex:g12_topicF_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Thực hành định dạng văn bản và tạo siêu liên kết"@vi ;
+    ex:hasTitle "Thực hành định dạng văn bản và tạo siêu liên kết"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 46 ;
+    ex:hasEndPage 48 ;
+    ex:hasSection ex:g12_topicF_l3s1, ex:g12_topicF_l3s2, ex:g12_topicF_l3s3 .
+
+  ex:g12_topicF_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Trình bày nội dung theo dạng danh sách, bảng biểu"@vi ;
+    ex:hasTitle "Trình bày nội dung theo dạng danh sách, bảng biểu"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 49 ;
+    ex:hasEndPage 53 ;
+    ex:hasSection ex:g12_topicF_l4s1, ex:g12_topicF_l4s2, ex:g12_topicF_l4s3 .
+
+  ex:g12_topicF_lesson5 a ex:Lesson ;
+    rdfs:label "Bài 5. Chèn hình ảnh, âm thanh, video và sử dụng khung"@vi ;
+    ex:hasTitle "Chèn hình ảnh, âm thanh, video và sử dụng khung"@vi ;
+    ex:lessonNumber 5 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 54 ;
+    ex:hasEndPage 58 ;
+    ex:hasSection ex:g12_topicF_l5s1, ex:g12_topicF_l5s2, ex:g12_topicF_l5s3,
+                  ex:g12_topicF_l5s4, ex:g12_topicF_l5s5 .
+
+  ex:g12_topicF_lesson6 a ex:Lesson ;
+    rdfs:label "Bài 6. Tạo biểu mẫu"@vi ;
+    ex:hasTitle "Tạo biểu mẫu"@vi ;
+    ex:lessonNumber 6 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 59 ;
+    ex:hasEndPage 64 ;
+    ex:hasSection ex:g12_topicF_l6s1, ex:g12_topicF_l6s2, ex:g12_topicF_l6s3 .
+
+  ex:g12_topicF_lesson7 a ex:Lesson ;
+    rdfs:label "Bài 7. Thực hành tạo biểu mẫu"@vi ;
+    ex:hasTitle "Thực hành tạo biểu mẫu"@vi ;
+    ex:lessonNumber 7 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 65 ;
+    ex:hasEndPage 67 ;
+    ex:hasSection ex:g12_topicF_l7s1, ex:g12_topicF_l7s2, ex:g12_topicF_l7s3 .
+
+  ex:g12_topicF_lesson8 a ex:Lesson ;
+    rdfs:label "Bài 8. Làm quen với CSS"@vi ;
+    ex:hasTitle "Làm quen với CSS"@vi ;
+    ex:lessonNumber 8 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 68 ;
+    ex:hasEndPage 73 ;
+    ex:hasSection ex:g12_topicF_l8s1, ex:g12_topicF_l8s2, ex:g12_topicF_l8s3 .
+
+  ex:g12_topicF_lesson9 a ex:Lesson ;
+    rdfs:label "Bài 9. Thực hành định dạng một số thuộc tính CSS"@vi ;
+    ex:hasTitle "Thực hành định dạng một số thuộc tính CSS"@vi ;
+    ex:lessonNumber 9 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 74 ;
+    ex:hasEndPage 76 ;
+    ex:hasSection ex:g12_topicF_l9s1, ex:g12_topicF_l9s2, ex:g12_topicF_l9s3 .
+
+  ex:g12_topicF_lesson10 a ex:Lesson ;
+    rdfs:label "Bài 10. Bộ chọn lớp, bộ chọn định danh"@vi ;
+    ex:hasTitle "Bộ chọn lớp, bộ chọn định danh"@vi ;
+    ex:lessonNumber 10 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 77 ;
+    ex:hasEndPage 82 ;
+    ex:hasSection ex:g12_topicF_l10s1, ex:g12_topicF_l10s2, ex:g12_topicF_l10s3 .
+
+  ex:g12_topicF_lesson11 a ex:Lesson ;
+    rdfs:label "Bài 11. Mô hình hộp, bố cục trang web"@vi ;
+    ex:hasTitle "Mô hình hộp, bố cục trang web"@vi ;
+    ex:lessonNumber 11 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 83 ;
+    ex:hasEndPage 88 ;
+    ex:hasSection ex:g12_topicF_l11s1, ex:g12_topicF_l11s2, ex:g12_topicF_l11s3 .
+
+  ex:g12_topicF_lesson12 a ex:Lesson ;
+    rdfs:label "Bài 12. Dự án nhỏ: Tạo trang web báo tường"@vi ;
+    ex:hasTitle "Dự án nhỏ: Tạo trang web báo tường"@vi ;
+    ex:lessonNumber 12 ;
+    ex:belongsToTopic ex:g12_topicF ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 89 ;
+    ex:hasEndPage 91 ;
+    ex:hasSection ex:g12_topicF_l12s1, ex:g12_topicF_l12s2 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g12_topicF_l1s1 a ex:Section ; rdfs:label "Ngôn ngữ đánh dấu siêu văn bản"@vi ; ex:hasTitle "Ngôn ngữ đánh dấu siêu văn bản"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson1 .
+  ex:g12_topicF_l1s2 a ex:Section ; rdfs:label "Cấu trúc của văn bản HTML"@vi ; ex:hasTitle "Cấu trúc của văn bản HTML"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson1 .
+  ex:g12_topicF_l1s3 a ex:Section ; rdfs:label "Thực hành tạo trang web đơn giản"@vi ; ex:hasTitle "Thực hành tạo trang web đơn giản"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson1 .
+
+  ex:g12_topicF_l2s1 a ex:Section ; rdfs:label "Tổ chức các đoạn văn bản trong trang web"@vi ; ex:hasTitle "Tổ chức các đoạn văn bản trong trang web"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson2 .
+  ex:g12_topicF_l2s2 a ex:Section ; rdfs:label "Tạo tiêu đề mục"@vi ; ex:hasTitle "Tạo tiêu đề mục"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson2 .
+  ex:g12_topicF_l2s3 a ex:Section ; rdfs:label "Làm nổi bật nội dung văn bản"@vi ; ex:hasTitle "Làm nổi bật nội dung văn bản"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson2 .
+  ex:g12_topicF_l2s4 a ex:Section ; rdfs:label "Tạo siêu liên kết"@vi ; ex:hasTitle "Tạo siêu liên kết"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicF_lesson2 .
+
+  ex:g12_topicF_l3s1 a ex:Section ; rdfs:label "Nhiệm vụ 1. Tạo tiêu đề mục cho trang web giới thiệu về bản thân"@vi ; ex:hasTitle "Nhiệm vụ 1. Tạo tiêu đề mục cho trang web giới thiệu về bản thân"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson3 .
+  ex:g12_topicF_l3s2 a ex:Section ; rdfs:label "Nhiệm vụ 2. Làm nổi bật nội dung cho trang web giới thiệu về bản thân"@vi ; ex:hasTitle "Nhiệm vụ 2. Làm nổi bật nội dung cho trang web giới thiệu về bản thân"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson3 .
+  ex:g12_topicF_l3s3 a ex:Section ; rdfs:label "Nhiệm vụ 3. Tạo siêu liên kết"@vi ; ex:hasTitle "Nhiệm vụ 3. Tạo siêu liên kết"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson3 .
+
+  ex:g12_topicF_l4s1 a ex:Section ; rdfs:label "Tạo danh sách"@vi ; ex:hasTitle "Tạo danh sách"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson4 .
+  ex:g12_topicF_l4s2 a ex:Section ; rdfs:label "Tạo bảng"@vi ; ex:hasTitle "Tạo bảng"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson4 .
+  ex:g12_topicF_l4s3 a ex:Section ; rdfs:label "Thực hành tạo danh sách, tạo bảng"@vi ; ex:hasTitle "Thực hành tạo danh sách, tạo bảng"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson4 .
+
+  ex:g12_topicF_l5s1 a ex:Section ; rdfs:label "Chèn hình ảnh"@vi ; ex:hasTitle "Chèn hình ảnh"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson5 .
+  ex:g12_topicF_l5s2 a ex:Section ; rdfs:label "Chèn âm thanh"@vi ; ex:hasTitle "Chèn âm thanh"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson5 .
+  ex:g12_topicF_l5s3 a ex:Section ; rdfs:label "Chèn video"@vi ; ex:hasTitle "Chèn video"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson5 .
+  ex:g12_topicF_l5s4 a ex:Section ; rdfs:label "Sử dụng khung"@vi ; ex:hasTitle "Sử dụng khung"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g12_topicF_lesson5 .
+  ex:g12_topicF_l5s5 a ex:Section ; rdfs:label "Thực hành chèn hình ảnh, âm thanh và sử dụng khung"@vi ; ex:hasTitle "Thực hành chèn hình ảnh, âm thanh và sử dụng khung"@vi ; ex:sectionOrder 5 ; ex:belongsToLesson ex:g12_topicF_lesson5 .
+
+  ex:g12_topicF_l6s1 a ex:Section ; rdfs:label "Nhập dữ liệu thông qua biểu mẫu"@vi ; ex:hasTitle "Nhập dữ liệu thông qua biểu mẫu"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson6 .
+  ex:g12_topicF_l6s2 a ex:Section ; rdfs:label "Một số điều khiển hỗ trợ nhập dữ liệu thông dụng và nút lệnh"@vi ; ex:hasTitle "Một số điều khiển hỗ trợ nhập dữ liệu thông dụng và nút lệnh"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson6 .
+  ex:g12_topicF_l6s3 a ex:Section ; rdfs:label "Một số lưu ý trong thiết kế biểu mẫu"@vi ; ex:hasTitle "Một số lưu ý trong thiết kế biểu mẫu"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson6 .
+
+  ex:g12_topicF_l7s1 a ex:Section ; rdfs:label "Nhiệm vụ 1. Tạo biểu mẫu có ô text nhập dữ liệu"@vi ; ex:hasTitle "Nhiệm vụ 1. Tạo biểu mẫu có ô text nhập dữ liệu"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson7 .
+  ex:g12_topicF_l7s2 a ex:Section ; rdfs:label "Nhiệm vụ 2. Thêm các điều khiển nhập dữ liệu lựa chọn, gửi dữ liệu vào biểu mẫu"@vi ; ex:hasTitle "Nhiệm vụ 2. Thêm các điều khiển nhập dữ liệu lựa chọn, gửi dữ liệu vào biểu mẫu"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson7 .
+  ex:g12_topicF_l7s3 a ex:Section ; rdfs:label "Nhiệm vụ 3. Tạo trang web phản hồi khi người dùng nhấn nút gửi dữ liệu"@vi ; ex:hasTitle "Nhiệm vụ 3. Tạo trang web phản hồi khi người dùng nhấn nút gửi dữ liệu"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson7 .
+
+  ex:g12_topicF_l8s1 a ex:Section ; rdfs:label "Bảng định dạng CSS"@vi ; ex:hasTitle "Bảng định dạng CSS"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson8 .
+  ex:g12_topicF_l8s2 a ex:Section ; rdfs:label "Khai báo bộ chọn phần tử và áp dụng CSS"@vi ; ex:hasTitle "Khai báo bộ chọn phần tử và áp dụng CSS"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson8 .
+  ex:g12_topicF_l8s3 a ex:Section ; rdfs:label "Một số thuộc tính định dạng CSS"@vi ; ex:hasTitle "Một số thuộc tính định dạng CSS"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson8 .
+
+  ex:g12_topicF_l9s1 a ex:Section ; rdfs:label "Nhiệm vụ 1. Khai báo và áp dụng quy tắc định dạng internal CSS"@vi ; ex:hasTitle "Nhiệm vụ 1. Khai báo và áp dụng quy tắc định dạng internal CSS"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson9 .
+  ex:g12_topicF_l9s2 a ex:Section ; rdfs:label "Nhiệm vụ 2. Khai báo và áp dụng quy tắc định dạng external CSS"@vi ; ex:hasTitle "Nhiệm vụ 2. Khai báo và áp dụng quy tắc định dạng external CSS"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson9 .
+  ex:g12_topicF_l9s3 a ex:Section ; rdfs:label "Nhiệm vụ 3. Áp dụng bảng định dạng external CSS đã có cho văn bản HTML"@vi ; ex:hasTitle "Nhiệm vụ 3. Áp dụng bảng định dạng external CSS đã có cho văn bản HTML"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson9 .
+
+  ex:g12_topicF_l10s1 a ex:Section ; rdfs:label "Bộ chọn lớp"@vi ; ex:hasTitle "Bộ chọn lớp"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson10 .
+  ex:g12_topicF_l10s2 a ex:Section ; rdfs:label "Bộ chọn định danh"@vi ; ex:hasTitle "Bộ chọn định danh"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson10 .
+  ex:g12_topicF_l10s3 a ex:Section ; rdfs:label "Thực hành sử dụng bộ chọn lớp, bộ chọn định danh"@vi ; ex:hasTitle "Thực hành sử dụng bộ chọn lớp, bộ chọn định danh"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson10 .
+
+  ex:g12_topicF_l11s1 a ex:Section ; rdfs:label "Mô hình hộp trong trình bày phần tử HTML"@vi ; ex:hasTitle "Mô hình hộp trong trình bày phần tử HTML"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson11 .
+  ex:g12_topicF_l11s2 a ex:Section ; rdfs:label "Hiển thị phần tử theo khối, theo dòng"@vi ; ex:hasTitle "Hiển thị phần tử theo khối, theo dòng"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson11 .
+  ex:g12_topicF_l11s3 a ex:Section ; rdfs:label "Bố cục trang web"@vi ; ex:hasTitle "Bố cục trang web"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g12_topicF_lesson11 .
+
+  ex:g12_topicF_l12s1 a ex:Section ; rdfs:label "Yêu cầu chung"@vi ; ex:hasTitle "Yêu cầu chung"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g12_topicF_lesson12 .
+  ex:g12_topicF_l12s2 a ex:Section ; rdfs:label "Một số hướng dẫn gợi ý"@vi ; ex:hasTitle "Một số hướng dẫn gợi ý"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g12_topicF_lesson12 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g12_page035 a ex:Page ; ex:hasPageNumber 35 ; ex:hasPrintedPageNumber 35 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g12_topicF_lesson1 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page036 a ex:Page ; ex:hasPageNumber 36 ; ex:hasPrintedPageNumber 36 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g12_topicF_lesson1 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page037 a ex:Page ; ex:hasPageNumber 37 ; ex:hasPrintedPageNumber 37 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g12_topicF_lesson1 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page038 a ex:Page ; ex:hasPageNumber 38 ; ex:hasPrintedPageNumber 38 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g12_topicF_lesson1 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page039 a ex:Page ; ex:hasPageNumber 39 ; ex:hasPrintedPageNumber 39 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g12_topicF_lesson1 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page040 a ex:Page ; ex:hasPageNumber 40 ; ex:hasPrintedPageNumber 40 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g12_topicF_lesson2 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page041 a ex:Page ; ex:hasPageNumber 41 ; ex:hasPrintedPageNumber 41 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g12_topicF_lesson2 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page042 a ex:Page ; ex:hasPageNumber 42 ; ex:hasPrintedPageNumber 42 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g12_topicF_lesson2 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page043 a ex:Page ; ex:hasPageNumber 43 ; ex:hasPrintedPageNumber 43 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g12_topicF_lesson2 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page044 a ex:Page ; ex:hasPageNumber 44 ; ex:hasPrintedPageNumber 44 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g12_topicF_lesson2 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page045 a ex:Page ; ex:hasPageNumber 45 ; ex:hasPrintedPageNumber 45 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g12_topicF_lesson2 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page046 a ex:Page ; ex:hasPageNumber 46 ; ex:hasPrintedPageNumber 46 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g12_topicF_lesson3 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page047 a ex:Page ; ex:hasPageNumber 47 ; ex:hasPrintedPageNumber 47 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g12_topicF_lesson3 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page048 a ex:Page ; ex:hasPageNumber 48 ; ex:hasPrintedPageNumber 48 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g12_topicF_lesson3 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page049 a ex:Page ; ex:hasPageNumber 49 ; ex:hasPrintedPageNumber 49 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g12_topicF_lesson4 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page050 a ex:Page ; ex:hasPageNumber 50 ; ex:hasPrintedPageNumber 50 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:g12_topicF_lesson4 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page051 a ex:Page ; ex:hasPageNumber 51 ; ex:hasPrintedPageNumber 51 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:g12_topicF_lesson4 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page052 a ex:Page ; ex:hasPageNumber 52 ; ex:hasPrintedPageNumber 52 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:g12_topicF_lesson4 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page053 a ex:Page ; ex:hasPageNumber 53 ; ex:hasPrintedPageNumber 53 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:g12_topicF_lesson4 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page054 a ex:Page ; ex:hasPageNumber 54 ; ex:hasPrintedPageNumber 54 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:g12_topicF_lesson5 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page055 a ex:Page ; ex:hasPageNumber 55 ; ex:hasPrintedPageNumber 55 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:g12_topicF_lesson5 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page056 a ex:Page ; ex:hasPageNumber 56 ; ex:hasPrintedPageNumber 56 ; ex:pdfPageIndex 22 ; ex:belongsToLesson ex:g12_topicF_lesson5 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page057 a ex:Page ; ex:hasPageNumber 57 ; ex:hasPrintedPageNumber 57 ; ex:pdfPageIndex 23 ; ex:belongsToLesson ex:g12_topicF_lesson5 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page058 a ex:Page ; ex:hasPageNumber 58 ; ex:hasPrintedPageNumber 58 ; ex:pdfPageIndex 24 ; ex:belongsToLesson ex:g12_topicF_lesson5 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page059 a ex:Page ; ex:hasPageNumber 59 ; ex:hasPrintedPageNumber 59 ; ex:pdfPageIndex 25 ; ex:belongsToLesson ex:g12_topicF_lesson6 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page060 a ex:Page ; ex:hasPageNumber 60 ; ex:hasPrintedPageNumber 60 ; ex:pdfPageIndex 26 ; ex:belongsToLesson ex:g12_topicF_lesson6 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page061 a ex:Page ; ex:hasPageNumber 61 ; ex:hasPrintedPageNumber 61 ; ex:pdfPageIndex 27 ; ex:belongsToLesson ex:g12_topicF_lesson6 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page062 a ex:Page ; ex:hasPageNumber 62 ; ex:hasPrintedPageNumber 62 ; ex:pdfPageIndex 28 ; ex:belongsToLesson ex:g12_topicF_lesson6 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page063 a ex:Page ; ex:hasPageNumber 63 ; ex:hasPrintedPageNumber 63 ; ex:pdfPageIndex 29 ; ex:belongsToLesson ex:g12_topicF_lesson6 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page064 a ex:Page ; ex:hasPageNumber 64 ; ex:hasPrintedPageNumber 64 ; ex:pdfPageIndex 30 ; ex:belongsToLesson ex:g12_topicF_lesson6 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page065 a ex:Page ; ex:hasPageNumber 65 ; ex:hasPrintedPageNumber 65 ; ex:pdfPageIndex 31 ; ex:belongsToLesson ex:g12_topicF_lesson7 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page066 a ex:Page ; ex:hasPageNumber 66 ; ex:hasPrintedPageNumber 66 ; ex:pdfPageIndex 32 ; ex:belongsToLesson ex:g12_topicF_lesson7 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page067 a ex:Page ; ex:hasPageNumber 67 ; ex:hasPrintedPageNumber 67 ; ex:pdfPageIndex 33 ; ex:belongsToLesson ex:g12_topicF_lesson7 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page068 a ex:Page ; ex:hasPageNumber 68 ; ex:hasPrintedPageNumber 68 ; ex:pdfPageIndex 34 ; ex:belongsToLesson ex:g12_topicF_lesson8 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page069 a ex:Page ; ex:hasPageNumber 69 ; ex:hasPrintedPageNumber 69 ; ex:pdfPageIndex 35 ; ex:belongsToLesson ex:g12_topicF_lesson8 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page070 a ex:Page ; ex:hasPageNumber 70 ; ex:hasPrintedPageNumber 70 ; ex:pdfPageIndex 36 ; ex:belongsToLesson ex:g12_topicF_lesson8 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page071 a ex:Page ; ex:hasPageNumber 71 ; ex:hasPrintedPageNumber 71 ; ex:pdfPageIndex 37 ; ex:belongsToLesson ex:g12_topicF_lesson8 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page072 a ex:Page ; ex:hasPageNumber 72 ; ex:hasPrintedPageNumber 72 ; ex:pdfPageIndex 38 ; ex:belongsToLesson ex:g12_topicF_lesson8 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page073 a ex:Page ; ex:hasPageNumber 73 ; ex:hasPrintedPageNumber 73 ; ex:pdfPageIndex 39 ; ex:belongsToLesson ex:g12_topicF_lesson8 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page074 a ex:Page ; ex:hasPageNumber 74 ; ex:hasPrintedPageNumber 74 ; ex:pdfPageIndex 40 ; ex:belongsToLesson ex:g12_topicF_lesson9 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page075 a ex:Page ; ex:hasPageNumber 75 ; ex:hasPrintedPageNumber 75 ; ex:pdfPageIndex 41 ; ex:belongsToLesson ex:g12_topicF_lesson9 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page076 a ex:Page ; ex:hasPageNumber 76 ; ex:hasPrintedPageNumber 76 ; ex:pdfPageIndex 42 ; ex:belongsToLesson ex:g12_topicF_lesson9 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page077 a ex:Page ; ex:hasPageNumber 77 ; ex:hasPrintedPageNumber 77 ; ex:pdfPageIndex 43 ; ex:belongsToLesson ex:g12_topicF_lesson10 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page078 a ex:Page ; ex:hasPageNumber 78 ; ex:hasPrintedPageNumber 78 ; ex:pdfPageIndex 44 ; ex:belongsToLesson ex:g12_topicF_lesson10 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page079 a ex:Page ; ex:hasPageNumber 79 ; ex:hasPrintedPageNumber 79 ; ex:pdfPageIndex 45 ; ex:belongsToLesson ex:g12_topicF_lesson10 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page080 a ex:Page ; ex:hasPageNumber 80 ; ex:hasPrintedPageNumber 80 ; ex:pdfPageIndex 46 ; ex:belongsToLesson ex:g12_topicF_lesson10 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page081 a ex:Page ; ex:hasPageNumber 81 ; ex:hasPrintedPageNumber 81 ; ex:pdfPageIndex 47 ; ex:belongsToLesson ex:g12_topicF_lesson10 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page082 a ex:Page ; ex:hasPageNumber 82 ; ex:hasPrintedPageNumber 82 ; ex:pdfPageIndex 48 ; ex:belongsToLesson ex:g12_topicF_lesson10 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page083 a ex:Page ; ex:hasPageNumber 83 ; ex:hasPrintedPageNumber 83 ; ex:pdfPageIndex 49 ; ex:belongsToLesson ex:g12_topicF_lesson11 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page084 a ex:Page ; ex:hasPageNumber 84 ; ex:hasPrintedPageNumber 84 ; ex:pdfPageIndex 50 ; ex:belongsToLesson ex:g12_topicF_lesson11 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page085 a ex:Page ; ex:hasPageNumber 85 ; ex:hasPrintedPageNumber 85 ; ex:pdfPageIndex 51 ; ex:belongsToLesson ex:g12_topicF_lesson11 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page086 a ex:Page ; ex:hasPageNumber 86 ; ex:hasPrintedPageNumber 86 ; ex:pdfPageIndex 52 ; ex:belongsToLesson ex:g12_topicF_lesson11 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page087 a ex:Page ; ex:hasPageNumber 87 ; ex:hasPrintedPageNumber 87 ; ex:pdfPageIndex 53 ; ex:belongsToLesson ex:g12_topicF_lesson11 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page088 a ex:Page ; ex:hasPageNumber 88 ; ex:hasPrintedPageNumber 88 ; ex:pdfPageIndex 54 ; ex:belongsToLesson ex:g12_topicF_lesson11 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page089 a ex:Page ; ex:hasPageNumber 89 ; ex:hasPrintedPageNumber 89 ; ex:pdfPageIndex 55 ; ex:belongsToLesson ex:g12_topicF_lesson12 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page090 a ex:Page ; ex:hasPageNumber 90 ; ex:hasPrintedPageNumber 90 ; ex:pdfPageIndex 56 ; ex:belongsToLesson ex:g12_topicF_lesson12 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page091 a ex:Page ; ex:hasPageNumber 91 ; ex:hasPrintedPageNumber 91 ; ex:pdfPageIndex 57 ; ex:belongsToLesson ex:g12_topicF_lesson12 ; ex:belongsToTopic ex:g12_topicF ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g12_page034 ex:nextPage ex:g12_page035 .
+  ex:g12_page035 ex:previousPage ex:g12_page034 ; ex:nextPage ex:g12_page036 .
+  ex:g12_page036 ex:previousPage ex:g12_page035 ; ex:nextPage ex:g12_page037 .
+  ex:g12_page037 ex:previousPage ex:g12_page036 ; ex:nextPage ex:g12_page038 .
+  ex:g12_page038 ex:previousPage ex:g12_page037 ; ex:nextPage ex:g12_page039 .
+  ex:g12_page039 ex:previousPage ex:g12_page038 ; ex:nextPage ex:g12_page040 .
+  ex:g12_page040 ex:previousPage ex:g12_page039 ; ex:nextPage ex:g12_page041 .
+  ex:g12_page041 ex:previousPage ex:g12_page040 ; ex:nextPage ex:g12_page042 .
+  ex:g12_page042 ex:previousPage ex:g12_page041 ; ex:nextPage ex:g12_page043 .
+  ex:g12_page043 ex:previousPage ex:g12_page042 ; ex:nextPage ex:g12_page044 .
+  ex:g12_page044 ex:previousPage ex:g12_page043 ; ex:nextPage ex:g12_page045 .
+  ex:g12_page045 ex:previousPage ex:g12_page044 ; ex:nextPage ex:g12_page046 .
+  ex:g12_page046 ex:previousPage ex:g12_page045 ; ex:nextPage ex:g12_page047 .
+  ex:g12_page047 ex:previousPage ex:g12_page046 ; ex:nextPage ex:g12_page048 .
+  ex:g12_page048 ex:previousPage ex:g12_page047 ; ex:nextPage ex:g12_page049 .
+  ex:g12_page049 ex:previousPage ex:g12_page048 ; ex:nextPage ex:g12_page050 .
+  ex:g12_page050 ex:previousPage ex:g12_page049 ; ex:nextPage ex:g12_page051 .
+  ex:g12_page051 ex:previousPage ex:g12_page050 ; ex:nextPage ex:g12_page052 .
+  ex:g12_page052 ex:previousPage ex:g12_page051 ; ex:nextPage ex:g12_page053 .
+  ex:g12_page053 ex:previousPage ex:g12_page052 ; ex:nextPage ex:g12_page054 .
+  ex:g12_page054 ex:previousPage ex:g12_page053 ; ex:nextPage ex:g12_page055 .
+  ex:g12_page055 ex:previousPage ex:g12_page054 ; ex:nextPage ex:g12_page056 .
+  ex:g12_page056 ex:previousPage ex:g12_page055 ; ex:nextPage ex:g12_page057 .
+  ex:g12_page057 ex:previousPage ex:g12_page056 ; ex:nextPage ex:g12_page058 .
+  ex:g12_page058 ex:previousPage ex:g12_page057 ; ex:nextPage ex:g12_page059 .
+  ex:g12_page059 ex:previousPage ex:g12_page058 ; ex:nextPage ex:g12_page060 .
+  ex:g12_page060 ex:previousPage ex:g12_page059 ; ex:nextPage ex:g12_page061 .
+  ex:g12_page061 ex:previousPage ex:g12_page060 ; ex:nextPage ex:g12_page062 .
+  ex:g12_page062 ex:previousPage ex:g12_page061 ; ex:nextPage ex:g12_page063 .
+  ex:g12_page063 ex:previousPage ex:g12_page062 ; ex:nextPage ex:g12_page064 .
+  ex:g12_page064 ex:previousPage ex:g12_page063 ; ex:nextPage ex:g12_page065 .
+  ex:g12_page065 ex:previousPage ex:g12_page064 ; ex:nextPage ex:g12_page066 .
+  ex:g12_page066 ex:previousPage ex:g12_page065 ; ex:nextPage ex:g12_page067 .
+  ex:g12_page067 ex:previousPage ex:g12_page066 ; ex:nextPage ex:g12_page068 .
+  ex:g12_page068 ex:previousPage ex:g12_page067 ; ex:nextPage ex:g12_page069 .
+  ex:g12_page069 ex:previousPage ex:g12_page068 ; ex:nextPage ex:g12_page070 .
+  ex:g12_page070 ex:previousPage ex:g12_page069 ; ex:nextPage ex:g12_page071 .
+  ex:g12_page071 ex:previousPage ex:g12_page070 ; ex:nextPage ex:g12_page072 .
+  ex:g12_page072 ex:previousPage ex:g12_page071 ; ex:nextPage ex:g12_page073 .
+  ex:g12_page073 ex:previousPage ex:g12_page072 ; ex:nextPage ex:g12_page074 .
+  ex:g12_page074 ex:previousPage ex:g12_page073 ; ex:nextPage ex:g12_page075 .
+  ex:g12_page075 ex:previousPage ex:g12_page074 ; ex:nextPage ex:g12_page076 .
+  ex:g12_page076 ex:previousPage ex:g12_page075 ; ex:nextPage ex:g12_page077 .
+  ex:g12_page077 ex:previousPage ex:g12_page076 ; ex:nextPage ex:g12_page078 .
+  ex:g12_page078 ex:previousPage ex:g12_page077 ; ex:nextPage ex:g12_page079 .
+  ex:g12_page079 ex:previousPage ex:g12_page078 ; ex:nextPage ex:g12_page080 .
+  ex:g12_page080 ex:previousPage ex:g12_page079 ; ex:nextPage ex:g12_page081 .
+  ex:g12_page081 ex:previousPage ex:g12_page080 ; ex:nextPage ex:g12_page082 .
+  ex:g12_page082 ex:previousPage ex:g12_page081 ; ex:nextPage ex:g12_page083 .
+  ex:g12_page083 ex:previousPage ex:g12_page082 ; ex:nextPage ex:g12_page084 .
+  ex:g12_page084 ex:previousPage ex:g12_page083 ; ex:nextPage ex:g12_page085 .
+  ex:g12_page085 ex:previousPage ex:g12_page084 ; ex:nextPage ex:g12_page086 .
+  ex:g12_page086 ex:previousPage ex:g12_page085 ; ex:nextPage ex:g12_page087 .
+  ex:g12_page087 ex:previousPage ex:g12_page086 ; ex:nextPage ex:g12_page088 .
+  ex:g12_page088 ex:previousPage ex:g12_page087 ; ex:nextPage ex:g12_page089 .
+  ex:g12_page089 ex:previousPage ex:g12_page088 ; ex:nextPage ex:g12_page090 .
+  ex:g12_page090 ex:previousPage ex:g12_page089 ; ex:nextPage ex:g12_page091 .
+  ex:g12_page091 ex:previousPage ex:g12_page090 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g12_conceptTaoTrangWeb a ex:KnowledgeConcept ; rdfs:label "Tạo trang web"@vi .
+  ex:g12_conceptWebsite a ex:KnowledgeConcept ; rdfs:label "Website"@vi .
+  ex:g12_conceptTrangWebTinh a ex:KnowledgeConcept ; rdfs:label "Trang web tĩnh"@vi .
+  ex:g12_conceptTrangWebDong a ex:KnowledgeConcept ; rdfs:label "Trang web động"@vi .
+  ex:g12_conceptHTML a ex:KnowledgeConcept ; rdfs:label "HTML"@vi .
+  ex:g12_conceptPhanTuHTML a ex:KnowledgeConcept ; rdfs:label "Phần tử HTML"@vi .
+  ex:g12_conceptTheHTML a ex:KnowledgeConcept ; rdfs:label "Thẻ HTML"@vi .
+  ex:g12_conceptThuocTinhHTML a ex:KnowledgeConcept ; rdfs:label "Thuộc tính HTML"@vi .
+  ex:g12_conceptVanBanHTML a ex:KnowledgeConcept ; rdfs:label "Văn bản HTML"@vi .
+  ex:g12_conceptHead a ex:KnowledgeConcept ; rdfs:label "Phần tử head"@vi .
+  ex:g12_conceptBody a ex:KnowledgeConcept ; rdfs:label "Phần tử body"@vi .
+  ex:g12_conceptTitle a ex:KnowledgeConcept ; rdfs:label "Phần tử title"@vi .
+  ex:g12_conceptMetaCharset a ex:KnowledgeConcept ; rdfs:label "Thẻ meta charset"@vi .
+  ex:g12_conceptSublimeText a ex:KnowledgeConcept ; rdfs:label "Sublime Text"@vi .
+  ex:g12_conceptDoanVanP a ex:KnowledgeConcept ; rdfs:label "Phần tử p"@vi .
+  ex:g12_conceptTieuDeMuc a ex:KnowledgeConcept ; rdfs:label "Tiêu đề mục h1 đến h6"@vi .
+  ex:g12_conceptLamNoiBatVanBan a ex:KnowledgeConcept ; rdfs:label "Làm nổi bật văn bản"@vi .
+  ex:g12_conceptStrong a ex:KnowledgeConcept ; rdfs:label "Phần tử strong"@vi .
+  ex:g12_conceptEm a ex:KnowledgeConcept ; rdfs:label "Phần tử em"@vi .
+  ex:g12_conceptMark a ex:KnowledgeConcept ; rdfs:label "Phần tử mark"@vi .
+  ex:g12_conceptSieuLienKet a ex:KnowledgeConcept ; rdfs:label "Siêu liên kết"@vi .
+  ex:g12_conceptPhanTuA a ex:KnowledgeConcept ; rdfs:label "Phần tử a"@vi .
+  ex:g12_conceptURL a ex:KnowledgeConcept ; rdfs:label "URL"@vi .
+  ex:g12_conceptHref a ex:KnowledgeConcept ; rdfs:label "Thuộc tính href"@vi .
+  ex:g12_conceptDanhSach a ex:KnowledgeConcept ; rdfs:label "Danh sách trong HTML"@vi .
+  ex:g12_conceptOrderedList a ex:KnowledgeConcept ; rdfs:label "Danh sách xác định thứ tự ol"@vi .
+  ex:g12_conceptUnorderedList a ex:KnowledgeConcept ; rdfs:label "Danh sách không xác định thứ tự ul"@vi .
+  ex:g12_conceptListItem a ex:KnowledgeConcept ; rdfs:label "Phần tử li"@vi .
+  ex:g12_conceptBangHTML a ex:KnowledgeConcept ; rdfs:label "Bảng HTML"@vi .
+  ex:g12_conceptTableHTML a ex:KnowledgeConcept ; rdfs:label "Phần tử table"@vi .
+  ex:g12_conceptTableRow a ex:KnowledgeConcept ; rdfs:label "Phần tử tr"@vi .
+  ex:g12_conceptTableData a ex:KnowledgeConcept ; rdfs:label "Phần tử td"@vi .
+  ex:g12_conceptCaption a ex:KnowledgeConcept ; rdfs:label "Phần tử caption"@vi .
+  ex:g12_conceptAnhWeb a ex:KnowledgeConcept ; rdfs:label "Hình ảnh trên trang web"@vi .
+  ex:g12_conceptImg a ex:KnowledgeConcept ; rdfs:label "Phần tử img"@vi .
+  ex:g12_conceptAlt a ex:KnowledgeConcept ; rdfs:label "Thuộc tính alt"@vi .
+  ex:g12_conceptAudio a ex:KnowledgeConcept ; rdfs:label "Phần tử audio"@vi .
+  ex:g12_conceptVideo a ex:KnowledgeConcept ; rdfs:label "Phần tử video"@vi .
+  ex:g12_conceptIframe a ex:KnowledgeConcept ; rdfs:label "Phần tử iframe"@vi .
+  ex:g12_conceptBieuMau a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu"@vi .
+  ex:g12_conceptForm a ex:KnowledgeConcept ; rdfs:label "Phần tử form"@vi .
+  ex:g12_conceptInputText a ex:KnowledgeConcept ; rdfs:label "Ô text nhập dữ liệu"@vi .
+  ex:g12_conceptTextarea a ex:KnowledgeConcept ; rdfs:label "Phần tử textarea"@vi .
+  ex:g12_conceptLabel a ex:KnowledgeConcept ; rdfs:label "Phần tử label"@vi .
+  ex:g12_conceptPassword a ex:KnowledgeConcept ; rdfs:label "Ô password"@vi .
+  ex:g12_conceptRadioButton a ex:KnowledgeConcept ; rdfs:label "Radio button"@vi .
+  ex:g12_conceptCheckbox a ex:KnowledgeConcept ; rdfs:label "Checkbox"@vi .
+  ex:g12_conceptSubmit a ex:KnowledgeConcept ; rdfs:label "Nút submit"@vi .
+  ex:g12_conceptCSS a ex:KnowledgeConcept ; rdfs:label "CSS"@vi .
+  ex:g12_conceptInternalCSS a ex:KnowledgeConcept ; rdfs:label "Internal CSS"@vi .
+  ex:g12_conceptExternalCSS a ex:KnowledgeConcept ; rdfs:label "External CSS"@vi .
+  ex:g12_conceptBoChonPhanTu a ex:KnowledgeConcept ; rdfs:label "Bộ chọn phần tử"@vi .
+  ex:g12_conceptThuocTinhCSS a ex:KnowledgeConcept ; rdfs:label "Thuộc tính CSS"@vi .
+  ex:g12_conceptColorCSS a ex:KnowledgeConcept ; rdfs:label "Thuộc tính color"@vi .
+  ex:g12_conceptBackgroundColorCSS a ex:KnowledgeConcept ; rdfs:label "Thuộc tính background-color"@vi .
+  ex:g12_conceptFontFamilyCSS a ex:KnowledgeConcept ; rdfs:label "Thuộc tính font-family"@vi .
+  ex:g12_conceptFontSizeCSS a ex:KnowledgeConcept ; rdfs:label "Thuộc tính font-size"@vi .
+  ex:g12_conceptBorderCSS a ex:KnowledgeConcept ; rdfs:label "Thuộc tính đường viền CSS"@vi .
+  ex:g12_conceptClassSelector a ex:KnowledgeConcept ; rdfs:label "Bộ chọn lớp"@vi .
+  ex:g12_conceptIdSelector a ex:KnowledgeConcept ; rdfs:label "Bộ chọn định danh"@vi .
+  ex:g12_conceptClassAttribute a ex:KnowledgeConcept ; rdfs:label "Thuộc tính class"@vi .
+  ex:g12_conceptIdAttribute a ex:KnowledgeConcept ; rdfs:label "Thuộc tính id"@vi .
+  ex:g12_conceptBoxModel a ex:KnowledgeConcept ; rdfs:label "Mô hình hộp"@vi .
+  ex:g12_conceptMargin a ex:KnowledgeConcept ; rdfs:label "Vùng lề margin"@vi .
+  ex:g12_conceptBorder a ex:KnowledgeConcept ; rdfs:label "Vùng đường viền border"@vi .
+  ex:g12_conceptPadding a ex:KnowledgeConcept ; rdfs:label "Vùng đệm padding"@vi .
+  ex:g12_conceptContent a ex:KnowledgeConcept ; rdfs:label "Vùng nội dung content"@vi .
+  ex:g12_conceptDisplay a ex:KnowledgeConcept ; rdfs:label "Thuộc tính display"@vi .
+  ex:g12_conceptBlockDisplay a ex:KnowledgeConcept ; rdfs:label "Hiển thị theo khối"@vi .
+  ex:g12_conceptInlineDisplay a ex:KnowledgeConcept ; rdfs:label "Hiển thị theo dòng"@vi .
+  ex:g12_conceptBoCucTrangWeb a ex:KnowledgeConcept ; rdfs:label "Bố cục trang web"@vi .
+  ex:g12_conceptHeader a ex:KnowledgeConcept ; rdfs:label "Phần đầu trang header"@vi .
+  ex:g12_conceptNavigationMenu a ex:KnowledgeConcept ; rdfs:label "Thanh điều hướng"@vi .
+  ex:g12_conceptFooter a ex:KnowledgeConcept ; rdfs:label "Phần chân trang footer"@vi .
+  ex:g12_conceptDiv a ex:KnowledgeConcept ; rdfs:label "Phần tử div"@vi .
+  ex:g12_conceptDuAnBaoTuong a ex:KnowledgeConcept ; rdfs:label "Dự án trang web báo tường"@vi .
+
+  ex:g12_topicF ex:hasConcept ex:g12_conceptTaoTrangWeb, ex:g12_conceptWebsite,
+    ex:g12_conceptHTML, ex:g12_conceptCSS, ex:g12_conceptVanBanHTML,
+    ex:g12_conceptPhanTuHTML, ex:g12_conceptTheHTML, ex:g12_conceptThuocTinhHTML,
+    ex:g12_conceptSieuLienKet, ex:g12_conceptDanhSach, ex:g12_conceptBangHTML,
+    ex:g12_conceptAnhWeb, ex:g12_conceptAudio, ex:g12_conceptVideo,
+    ex:g12_conceptIframe, ex:g12_conceptBieuMau, ex:g12_conceptForm,
+    ex:g12_conceptInternalCSS, ex:g12_conceptExternalCSS,
+    ex:g12_conceptClassSelector, ex:g12_conceptIdSelector,
+    ex:g12_conceptBoxModel, ex:g12_conceptBoCucTrangWeb,
+    ex:g12_conceptDuAnBaoTuong .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g12_topicF_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ nhận biết được một số khái niệm chính của ngôn ngữ đánh dấu siêu văn bản như phần tử, thẻ mở, thẻ đóng; trình bày được cấu trúc của văn bản HTML; tạo được một trang web đơn giản bằng ngôn ngữ đánh dấu siêu văn bản."@vi ;
+    ex:appearsOnPage ex:g12_page035 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 .
+
+  ex:g12_topicF_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề F lớp 12"@vi ;
+    ex:hasSummaryText "Văn bản HTML định nghĩa các phần tử để xác định nội dung và cấu trúc của trang web. Phần tử thường được khai báo bắt đầu bằng thẻ mở và kết thúc bằng thẻ đóng. Các phần tử html, head, body là các thành phần cơ bản của văn bản HTML. Văn bản HTML dễ dàng được tạo bằng các phần mềm hỗ trợ soạn thảo văn bản."@vi ;
+    ex:appearsOnPage ex:g12_page039 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 .
+
+  ex:g12_topicF_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ trình bày được cách tạo nội dung trang web theo đoạn văn bản và cách tạo tiêu đề mục; liệt kê được một số cách làm nổi bật văn bản trên trình duyệt web; mô tả được cách tạo siêu liên kết."@vi ;
+    ex:appearsOnPage ex:g12_page040 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 .
+
+  ex:g12_topicF_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề F lớp 12"@vi ;
+    ex:hasSummaryText "Phần tử p dùng để khai báo đoạn văn bản. Các phần tử h1, h2, h3, h4, h5, h6 khai báo cỡ chữ tạo tiêu đề mục. Các phần tử strong, em, mark dùng để làm nổi bật nội dung văn bản. Phần tử a dùng để khai báo siêu liên kết; thuộc tính href trong khai báo thẻ mở a xác định địa chỉ trang web được liên kết."@vi ;
+    ex:appearsOnPage ex:g12_page045 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 .
+
+  ex:g12_topicF_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tạo được trang web đơn giản với các đoạn văn bản và các tiêu đề mục; làm nổi bật được nội dung văn bản trên màn hình trình duyệt web; tạo được siêu liên kết."@vi ;
+    ex:appearsOnPage ex:g12_page046 ;
+    ex:belongsToLesson ex:g12_topicF_lesson3 .
+
+  ex:g12_topicF_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ trình bày được nội dung dạng danh sách trên trang web và tạo được bảng biểu trên trang web."@vi ;
+    ex:appearsOnPage ex:g12_page049 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 .
+
+  ex:g12_topicF_l4_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 4 chủ đề F lớp 12"@vi ;
+    ex:hasSummaryText "Trong HTML, phần tử ol dùng để khai báo danh sách xác định thứ tự; phần tử ul dùng để khai báo danh sách không xác định thứ tự; phần tử li dùng để khai báo các mục nội dung trong danh sách. Phần tử table, tr, td là các phần tử cơ bản dùng để tạo bảng biểu."@vi ;
+    ex:appearsOnPage ex:g12_page053 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 .
+
+  ex:g12_topicF_l5_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 5 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ chèn được hình ảnh, tệp âm thanh, video vào trang web và nhúng được nội dung trang web khác vào trang web."@vi ;
+    ex:appearsOnPage ex:g12_page054 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 .
+
+  ex:g12_topicF_l5_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 5 chủ đề F lớp 12"@vi ;
+    ex:hasSummaryText "Các phần tử img, audio, video được dùng để thêm nội dung đa phương tiện như hình ảnh, âm thanh, video vào trang web. Phần tử iframe dùng để khai báo nhúng tệp HTML hoặc tài nguyên web khác vào văn bản HTML đang soạn."@vi ;
+    ex:appearsOnPage ex:g12_page058 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 .
+
+  ex:g12_topicF_l6_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 6 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ phát biểu được khái niệm biểu mẫu; mô tả được một số điều khiển hỗ trợ nhập dữ liệu trên trang web; nêu được một số quy định trong thiết kế biểu mẫu."@vi ;
+    ex:appearsOnPage ex:g12_page059 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 .
+
+  ex:g12_topicF_l6_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 6 chủ đề F lớp 12"@vi ;
+    ex:hasSummaryText "Phần tử form được sử dụng để khai báo biểu mẫu. Các điều khiển nhập dữ liệu thông dụng trong biểu mẫu gồm ô text, tích chọn radio button, hộp kiểm checkbox, nút lệnh submit. Khi thiết kế biểu mẫu, cần lựa chọn điều khiển phù hợp với thông tin cần thu thập."@vi ;
+    ex:appearsOnPage ex:g12_page064 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 .
+
+  ex:g12_topicF_l7_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 7 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tạo được biểu mẫu trên trang web; thêm được các điều khiển thông dụng vào biểu mẫu; thiết kế được biểu mẫu phù hợp với yêu cầu nhập dữ liệu."@vi ;
+    ex:appearsOnPage ex:g12_page065 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 .
+
+  ex:g12_topicF_l8_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 8 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ nêu được mục đích sử dụng CSS; mô tả được bộ chọn phần tử và cách áp dụng CSS; trình bày được một số thuộc tính định dạng CSS."@vi ;
+    ex:appearsOnPage ex:g12_page068 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 .
+
+  ex:g12_topicF_l8_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 8 chủ đề F lớp 12"@vi ;
+    ex:hasSummaryText "CSS dùng để khai báo quy tắc định dạng trình bày các phần tử HTML trên trình duyệt web. Bộ chọn phần tử thường được dùng để áp dụng CSS cho tất cả các phần tử cùng loại trong văn bản HTML nhằm tạo sự thống nhất trình bày. Hai cách khai báo CSS thường được sử dụng là internal CSS và external CSS. CSS định nghĩa một số thuộc tính để định dạng màu sắc, phông chữ, cỡ chữ, đường viền."@vi ;
+    ex:appearsOnPage ex:g12_page073 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 .
+
+  ex:g12_topicF_l9_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 9 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ khai báo được bộ chọn phần tử; sử dụng được internal CSS, external CSS; sử dụng được một số thuộc tính CSS."@vi ;
+    ex:appearsOnPage ex:g12_page074 ;
+    ex:belongsToLesson ex:g12_topicF_lesson9 .
+
+  ex:g12_topicF_l10_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 10 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ sử dụng được bộ chọn lớp, bộ chọn định danh."@vi ;
+    ex:appearsOnPage ex:g12_page077 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 .
+
+  ex:g12_topicF_l10_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 10 chủ đề F lớp 12"@vi ;
+    ex:hasSummaryText "Bộ chọn lớp thường dùng để khai báo các quy tắc định dạng được áp dụng chung cho nhiều phần tử trong văn bản HTML. Bộ chọn định danh được dùng để khai báo các quy tắc định dạng chỉ áp dụng cho một phần tử cụ thể trong văn bản HTML."@vi ;
+    ex:appearsOnPage ex:g12_page082 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 .
+
+  ex:g12_topicF_l11_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 11 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ mô tả được mô hình hộp trong trình bày phần tử HTML; trình bày được cách hiển thị phần tử theo khối, theo dòng; nhận diện được các thành phần cơ bản trong bố cục trang web."@vi ;
+    ex:appearsOnPage ex:g12_page083 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 .
+
+  ex:g12_topicF_l11_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 11 chủ đề F lớp 12"@vi ;
+    ex:hasSummaryText "CSS trình bày các phần tử HTML trên trình duyệt web theo mô hình hộp. CSS định nghĩa một số thuộc tính định dạng để tuỳ chỉnh vùng lề, đường viền, vùng đệm, vùng nội dung của mô hình hộp. Định dạng CSS cho phép hiển thị phần tử theo khối hoặc theo dòng thông qua thuộc tính display. Thông thường, bố cục của một trang web gồm phần đầu trang, thanh điều hướng, phần nội dung, phần chân trang."@vi ;
+    ex:appearsOnPage ex:g12_page088 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 .
+
+  ex:g12_topicF_l12_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 12 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ sử dụng được các phần tử HTML để tạo trang web và sử dụng được bảng định dạng CSS để tạo trang web đa dạng và sinh động."@vi ;
+    ex:appearsOnPage ex:g12_page089 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 .
+
+  ex:g12_topicF_lesson1 ex:hasSummary ex:g12_topicF_l1_summary .
+  ex:g12_topicF_lesson2 ex:hasSummary ex:g12_topicF_l2_summary .
+  ex:g12_topicF_lesson4 ex:hasSummary ex:g12_topicF_l4_summary .
+  ex:g12_topicF_lesson5 ex:hasSummary ex:g12_topicF_l5_summary .
+  ex:g12_topicF_lesson6 ex:hasSummary ex:g12_topicF_l6_summary .
+  ex:g12_topicF_lesson8 ex:hasSummary ex:g12_topicF_l8_summary .
+  ex:g12_topicF_lesson10 ex:hasSummary ex:g12_topicF_l10_summary .
+  ex:g12_topicF_lesson11 ex:hasSummary ex:g12_topicF_l11_summary .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g12_topicF_def_html a ex:DefinitionText ;
+    rdfs:label "Ngôn ngữ đánh dấu siêu văn bản HTML"@vi ;
+    ex:hasDefinitionText "Ngôn ngữ đánh dấu siêu văn bản HTML là ngôn ngữ chuyên dụng dùng để tạo trang web."@vi ;
+    ex:appearsOnPage ex:g12_page035 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:explainsConcept ex:g12_conceptHTML .
+
+  ex:g12_topicF_def_element a ex:DefinitionText ;
+    rdfs:label "Phần tử HTML"@vi ;
+    ex:hasDefinitionText "Mỗi phần tử HTML đều được đặt tên; tên phần tử được viết trong cặp kí hiệu dấu nhỏ hơn và lớn hơn để tạo nên các thẻ. Thông thường, phần tử được khai báo bắt đầu bằng thẻ mở, sau đó đến phần nội dung và kết thúc bằng thẻ đóng."@vi ;
+    ex:appearsOnPage ex:g12_page036 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:explainsConcept ex:g12_conceptPhanTuHTML, ex:g12_conceptTheHTML .
+
+  ex:g12_topicF_def_htmlStructure a ex:DefinitionText ;
+    rdfs:label "Cấu trúc văn bản HTML"@vi ;
+    ex:hasDefinitionText "Toàn bộ cấu trúc và nội dung trang web được viết trong cặp thẻ html. Nội dung trang web thường được chia thành phần đầu head và phần thân body."@vi ;
+    ex:appearsOnPage ex:g12_page036 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:explainsConcept ex:g12_conceptVanBanHTML, ex:g12_conceptHead, ex:g12_conceptBody .
+
+  ex:g12_topicF_def_paragraph a ex:DefinitionText ;
+    rdfs:label "Phần tử p"@vi ;
+    ex:hasDefinitionText "Phần tử p dùng để tạo đoạn văn bản trên trang web; khi hiển thị trên trình duyệt, đoạn văn bản thường được trình bày trên một đoạn mới và phân tách với các thành phần khác bằng khoảng trống."@vi ;
+    ex:appearsOnPage ex:g12_page040 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:explainsConcept ex:g12_conceptDoanVanP .
+
+  ex:g12_topicF_def_heading a ex:DefinitionText ;
+    rdfs:label "Tiêu đề mục HTML"@vi ;
+    ex:hasDefinitionText "HTML hỗ trợ khai báo sáu tiêu đề mục được phân cấp bởi các phần tử h1, h2, h3, h4, h5 và h6; h1 có cỡ chữ lớn nhất và cỡ chữ giảm dần đến h6."@vi ;
+    ex:appearsOnPage ex:g12_page041 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:explainsConcept ex:g12_conceptTieuDeMuc .
+
+  ex:g12_topicF_def_link a ex:DefinitionText ;
+    rdfs:label "Siêu liên kết"@vi ;
+    ex:hasDefinitionText "HTML định nghĩa phần tử a để tạo siêu liên kết, giúp kết nối trang web hiện thời với tài nguyên web khác; thuộc tính href xác định địa chỉ của tài nguyên web trên Internet."@vi ;
+    ex:appearsOnPage ex:g12_page043 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:explainsConcept ex:g12_conceptSieuLienKet, ex:g12_conceptPhanTuA, ex:g12_conceptHref .
+
+  ex:g12_topicF_def_list a ex:DefinitionText ;
+    rdfs:label "Danh sách HTML"@vi ;
+    ex:hasDefinitionText "Danh sách xác định thứ tự được khai báo bằng phần tử ol; danh sách không xác định thứ tự được khai báo bằng phần tử ul; mỗi mục nội dung trong danh sách được khai báo bằng phần tử li."@vi ;
+    ex:appearsOnPage ex:g12_page049 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:explainsConcept ex:g12_conceptDanhSach, ex:g12_conceptOrderedList, ex:g12_conceptUnorderedList, ex:g12_conceptListItem .
+
+  ex:g12_topicF_def_table a ex:DefinitionText ;
+    rdfs:label "Bảng HTML"@vi ;
+    ex:hasDefinitionText "HTML định nghĩa phần tử table để tạo bảng. Bảng được tạo bởi lần lượt các hàng, mỗi hàng được khai báo bằng phần tử tr; mỗi hàng chứa một hoặc nhiều ô dữ liệu, mỗi ô dữ liệu được khai báo bằng phần tử td."@vi ;
+    ex:appearsOnPage ex:g12_page051 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:explainsConcept ex:g12_conceptBangHTML, ex:g12_conceptTableHTML, ex:g12_conceptTableRow, ex:g12_conceptTableData .
+
+  ex:g12_topicF_def_img a ex:DefinitionText ;
+    rdfs:label "Chèn hình ảnh bằng img"@vi ;
+    ex:hasDefinitionText "Phần tử img khai báo việc chèn hình ảnh vào trang web. Thuộc tính src xác định tên tệp ảnh, thuộc tính alt xác định nội dung thay thế hiển thị khi hình ảnh gặp lỗi, các thuộc tính width và height xác định kích thước ảnh."@vi ;
+    ex:appearsOnPage ex:g12_page054 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:explainsConcept ex:g12_conceptImg, ex:g12_conceptAnhWeb, ex:g12_conceptAlt .
+
+  ex:g12_topicF_def_audioVideoIframe a ex:DefinitionText ;
+    rdfs:label "Chèn âm thanh, video và sử dụng iframe"@vi ;
+    ex:hasDefinitionText "Phần tử audio khai báo việc chèn âm thanh, phần tử video khai báo việc chèn video, phần tử iframe khai báo việc nhúng một tệp HTML hoặc tài nguyên web khác vào văn bản HTML."@vi ;
+    ex:appearsOnPage ex:g12_page055 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:explainsConcept ex:g12_conceptAudio, ex:g12_conceptVideo, ex:g12_conceptIframe .
+
+  ex:g12_topicF_def_form a ex:DefinitionText ;
+    rdfs:label "Biểu mẫu web"@vi ;
+    ex:hasDefinitionText "Biểu mẫu trên trang web là giao diện để thu nhận thông tin từ người dùng. HTML định nghĩa phần tử form để tạo biểu mẫu; thuộc tính action xác định tài nguyên web sẽ tiếp nhận và xử lí dữ liệu, thuộc tính method xác định phương thức gửi dữ liệu."@vi ;
+    ex:appearsOnPage ex:g12_page059 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:explainsConcept ex:g12_conceptBieuMau, ex:g12_conceptForm .
+
+  ex:g12_topicF_def_css a ex:DefinitionText ;
+    rdfs:label "CSS"@vi ;
+    ex:hasDefinitionText "Bảng định dạng CSS là ngôn ngữ được sử dụng để khai báo kiểu trình bày các phần tử HTML trong trang web, giúp tách biệt khai báo nội dung với định dạng và trang trí trang web."@vi ;
+    ex:appearsOnPage ex:g12_page068 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:explainsConcept ex:g12_conceptCSS .
+
+  ex:g12_topicF_def_classSelector a ex:DefinitionText ;
+    rdfs:label "Bộ chọn lớp"@vi ;
+    ex:hasDefinitionText "Bộ chọn lớp được đặt tên và thường dùng để khai báo các quy tắc định dạng được áp dụng chung cho nhiều phần tử trong văn bản HTML; để áp dụng, khai báo giá trị thuộc tính class của phần tử."@vi ;
+    ex:appearsOnPage ex:g12_page077 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:explainsConcept ex:g12_conceptClassSelector, ex:g12_conceptClassAttribute .
+
+  ex:g12_topicF_def_idSelector a ex:DefinitionText ;
+    rdfs:label "Bộ chọn định danh"@vi ;
+    ex:hasDefinitionText "Bộ chọn định danh dùng để áp dụng quy tắc định dạng cho một phần tử cụ thể được định danh trong văn bản HTML; định danh của phần tử được khai báo bằng thuộc tính id."@vi ;
+    ex:appearsOnPage ex:g12_page078 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:explainsConcept ex:g12_conceptIdSelector, ex:g12_conceptIdAttribute .
+
+  ex:g12_topicF_def_boxModel a ex:DefinitionText ;
+    rdfs:label "Mô hình hộp"@vi ;
+    ex:hasDefinitionText "Các phần tử trong văn bản HTML được trình bày trên trình duyệt web theo mô hình hộp, gồm vùng nội dung, vùng đệm, vùng đường viền và vùng lề."@vi ;
+    ex:appearsOnPage ex:g12_page083 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:explainsConcept ex:g12_conceptBoxModel, ex:g12_conceptContent, ex:g12_conceptPadding, ex:g12_conceptBorder, ex:g12_conceptMargin .
+
+  ex:g12_topicF_def_layout a ex:DefinitionText ;
+    rdfs:label "Bố cục trang web"@vi ;
+    ex:hasDefinitionText "Bố cục trang web là cách sắp xếp, bố trí các đối tượng nội dung trên trang web vào các khu vực hiển thị khác nhau để tạo nên giao diện web; thường gồm phần đầu trang, thanh điều hướng, phần nội dung và phần chân trang."@vi ;
+    ex:appearsOnPage ex:g12_page085 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:explainsConcept ex:g12_conceptBoCucTrangWeb, ex:g12_conceptHeader, ex:g12_conceptNavigationMenu, ex:g12_conceptFooter .
+
+  ###########################################################################
+  # Paragraph individuals - compact topic-level extraction by page cluster
+  ###########################################################################
+
+  ex:g12_topicF_p035_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1 giới thiệu HTML là ngôn ngữ chuyên dụng dùng để tạo trang web. Website gồm các trang web tĩnh và trang web động; thông qua các phần tử, HTML cho phép khai báo tiêu đề mục, đoạn văn, bảng biểu, hình ảnh, âm thanh và siêu liên kết."@vi ;
+    ex:appearsOnPage ex:g12_page035 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToSection ex:g12_topicF_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptHTML, ex:g12_conceptWebsite, ex:g12_conceptTrangWebTinh, ex:g12_conceptTrangWebDong .
+
+  ex:g12_topicF_p036_01 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Mỗi phần tử HTML có tên, được viết trong cặp kí hiệu tạo nên thẻ. Phần tử thường có thẻ mở, phần nội dung và thẻ đóng; một số phần tử như img, meta, input không sử dụng thẻ đóng. Thuộc tính được khai báo trong thẻ mở theo cú pháp tên thuộc tính bằng giá trị."@vi ;
+    ex:appearsOnPage ex:g12_page036 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToSection ex:g12_topicF_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptPhanTuHTML, ex:g12_conceptTheHTML, ex:g12_conceptThuocTinhHTML .
+
+  ex:g12_topicF_p037_01 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Văn bản HTML có cấu trúc với phần tử html bao toàn bộ văn bản, phần head khai báo thông tin mô tả như title, meta charset và phần body chứa nội dung sẽ hiển thị trong cửa sổ trình duyệt."@vi ;
+    ex:appearsOnPage ex:g12_page037 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToSection ex:g12_topicF_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptVanBanHTML, ex:g12_conceptHead, ex:g12_conceptBody, ex:g12_conceptTitle, ex:g12_conceptMetaCharset .
+
+  ex:g12_topicF_p038_01 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Phần thực hành bài 1 hướng dẫn cài đặt và sử dụng Sublime Text để soạn văn bản HTML đơn giản, lưu tệp trangwebdautien.html và mở bằng trình duyệt web để xem kết quả."@vi ;
+    ex:appearsOnPage ex:g12_page038 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToSection ex:g12_topicF_l1s3 ;
+    ex:mentionsConcept ex:g12_conceptSublimeText, ex:g12_conceptHTML .
+
+  ex:g12_topicF_p040_01 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Bài 2 trình bày cách tổ chức đoạn văn bản trong trang web bằng phần tử p, giúp nội dung văn bản được phân tách rõ ràng, dễ hiểu và dễ đọc hơn."@vi ;
+    ex:appearsOnPage ex:g12_page040 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToSection ex:g12_topicF_l2s1 ;
+    ex:mentionsConcept ex:g12_conceptDoanVanP, ex:g12_conceptHTML .
+
+  ex:g12_topicF_p041_01 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "HTML hỗ trợ sáu tiêu đề mục h1 đến h6. Trình duyệt hiển thị tiêu đề mục với kiểu chữ in đậm và cỡ chữ khác nhau, trong đó h1 lớn nhất và h6 nhỏ nhất."@vi ;
+    ex:appearsOnPage ex:g12_page041 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToSection ex:g12_topicF_l2s2 ;
+    ex:mentionsConcept ex:g12_conceptTieuDeMuc .
+
+  ex:g12_topicF_p042_01 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "HTML làm nổi bật nội dung văn bản bằng các phần tử strong để in đậm, em để in nghiêng, mark để tô màu vàng cho nền của nội dung cần chú ý."@vi ;
+    ex:appearsOnPage ex:g12_page042 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToSection ex:g12_topicF_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptLamNoiBatVanBan, ex:g12_conceptStrong, ex:g12_conceptEm, ex:g12_conceptMark .
+
+  ex:g12_topicF_p043_01 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "Phần tử a dùng để tạo siêu liên kết. Thuộc tính href xác định địa chỉ tài nguyên; URL gồm giao thức, tên miền và đường dẫn. Có thể tạo liên kết đến trang web khác, liên kết giữa các tệp cùng thư mục hoặc liên kết đến một phần tử trong cùng trang bằng định danh."@vi ;
+    ex:appearsOnPage ex:g12_page043 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToSection ex:g12_topicF_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptSieuLienKet, ex:g12_conceptPhanTuA, ex:g12_conceptHref, ex:g12_conceptURL, ex:g12_conceptIdAttribute .
+
+  ex:g12_topicF_p046_01 a ex:Paragraph ;
+    ex:paragraphOrder 9 ;
+    ex:hasRawText "Bài 3 hướng dẫn thực hành tạo trang web cá nhân, sử dụng các phần tử h1, h2 để trình bày tiêu đề mục, sử dụng p và em để trình bày thông tin cá nhân, sở thích và làm nổi bật nội dung."@vi ;
+    ex:appearsOnPage ex:g12_page046 ;
+    ex:belongsToLesson ex:g12_topicF_lesson3 ;
+    ex:belongsToSection ex:g12_topicF_l3s1 ;
+    ex:mentionsConcept ex:g12_conceptTieuDeMuc, ex:g12_conceptDoanVanP, ex:g12_conceptEm .
+
+  ex:g12_topicF_p048_01 a ex:Paragraph ;
+    ex:paragraphOrder 10 ;
+    ex:hasRawText "Nhiệm vụ tạo siêu liên kết yêu cầu liên kết thông tin quê quán đến cổng thông tin điện tử tỉnh hoặc thành phố, đồng thời gợi ý hoàn thành website cá nhân gồm index.html, hobbies.html và album.html."@vi ;
+    ex:appearsOnPage ex:g12_page048 ;
+    ex:belongsToLesson ex:g12_topicF_lesson3 ;
+    ex:belongsToSection ex:g12_topicF_l3s3 ;
+    ex:mentionsConcept ex:g12_conceptSieuLienKet, ex:g12_conceptPhanTuA, ex:g12_conceptWebsite .
+
+  ex:g12_topicF_p049_01 a ex:Paragraph ;
+    ex:paragraphOrder 11 ;
+    ex:hasRawText "Bài 4 giới thiệu cách tạo danh sách xác định thứ tự bằng ol và danh sách không xác định thứ tự bằng ul; các mục trong danh sách được khai báo bằng li. Có thể thay đổi kiểu thứ tự bằng thuộc tính type hoặc xác định số bắt đầu bằng thuộc tính start."@vi ;
+    ex:appearsOnPage ex:g12_page049 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToSection ex:g12_topicF_l4s1 ;
+    ex:mentionsConcept ex:g12_conceptDanhSach, ex:g12_conceptOrderedList, ex:g12_conceptUnorderedList, ex:g12_conceptListItem .
+
+  ex:g12_topicF_p051_01 a ex:Paragraph ;
+    ex:paragraphOrder 12 ;
+    ex:hasRawText "Bảng thường dùng để thể hiện thông tin có cấu trúc. Phần tử table dùng để tạo bảng, tr khai báo hàng, td khai báo ô dữ liệu; phần tử caption có thể dùng để bổ sung chú thích cho bảng."@vi ;
+    ex:appearsOnPage ex:g12_page051 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToSection ex:g12_topicF_l4s2 ;
+    ex:mentionsConcept ex:g12_conceptBangHTML, ex:g12_conceptTableHTML, ex:g12_conceptTableRow, ex:g12_conceptTableData, ex:g12_conceptCaption .
+
+  ex:g12_topicF_p054_01 a ex:Paragraph ;
+    ex:paragraphOrder 13 ;
+    ex:hasRawText "Bài 5 hướng dẫn chèn hình ảnh bằng phần tử img với các thuộc tính src, alt, width, height. Ảnh dùng trên trình duyệt web thường ở định dạng JPG, PNG, GIF; nếu không khai báo width và height thì ảnh hiển thị theo kích thước gốc."@vi ;
+    ex:appearsOnPage ex:g12_page054 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToSection ex:g12_topicF_l5s1 ;
+    ex:mentionsConcept ex:g12_conceptImg, ex:g12_conceptAnhWeb, ex:g12_conceptAlt .
+
+  ex:g12_topicF_p055_01 a ex:Paragraph ;
+    ex:paragraphOrder 14 ;
+    ex:hasRawText "Phần tử audio chèn âm thanh, phần tử video chèn video vào trang web. Thuộc tính controls hiển thị bảng điều khiển để phát, tạm dừng, tăng giảm âm lượng và các thao tác phát đa phương tiện khác."@vi ;
+    ex:appearsOnPage ex:g12_page055 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToSection ex:g12_topicF_l5s2 ;
+    ex:mentionsConcept ex:g12_conceptAudio, ex:g12_conceptVideo .
+
+  ex:g12_topicF_p056_01 a ex:Paragraph ;
+    ex:paragraphOrder 15 ;
+    ex:hasRawText "Phần tử iframe nhúng một tệp HTML hoặc tài nguyên web khác vào văn bản HTML. Khi nhúng nội dung trang web khác vào trang đang hiển thị, có thể xác định kích thước khung bằng width và height nhưng không thể điều chỉnh vị trí các thành phần bên trong trang được nhúng."@vi ;
+    ex:appearsOnPage ex:g12_page056 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToSection ex:g12_topicF_l5s4 ;
+    ex:mentionsConcept ex:g12_conceptIframe, ex:g12_conceptHTML .
+
+  ex:g12_topicF_p059_01 a ex:Paragraph ;
+    ex:paragraphOrder 16 ;
+    ex:hasRawText "Bài 6 giới thiệu biểu mẫu trên trang web là giao diện để thu nhận thông tin từ người dùng. Phần tử form có thuộc tính action để xác định tài nguyên xử lí dữ liệu và method để xác định phương thức gửi dữ liệu GET hoặc POST."@vi ;
+    ex:appearsOnPage ex:g12_page059 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToSection ex:g12_topicF_l6s1 ;
+    ex:mentionsConcept ex:g12_conceptBieuMau, ex:g12_conceptForm .
+
+  ex:g12_topicF_p060_01 a ex:Paragraph ;
+    ex:paragraphOrder 17 ;
+    ex:hasRawText "Điều khiển nhập xâu kí tự ô text được khai báo bằng phần tử input với type bằng text, name để đặt tên điều khiển và value để gán giá trị mặc định."@vi ;
+    ex:appearsOnPage ex:g12_page060 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToSection ex:g12_topicF_l6s2 ;
+    ex:mentionsConcept ex:g12_conceptInputText .
+
+  ex:g12_topicF_p061_01 a ex:Paragraph ;
+    ex:paragraphOrder 18 ;
+    ex:hasRawText "HTML cung cấp textarea để tạo ô nhập nhiều dòng, label để tạo nhãn mô tả điều khiển, password để nhập mật khẩu; radio button dùng khi người dùng chọn một mục trong danh sách."@vi ;
+    ex:appearsOnPage ex:g12_page061 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToSection ex:g12_topicF_l6s2 ;
+    ex:mentionsConcept ex:g12_conceptTextarea, ex:g12_conceptLabel, ex:g12_conceptPassword, ex:g12_conceptRadioButton .
+
+  ex:g12_topicF_p062_01 a ex:Paragraph ;
+    ex:paragraphOrder 19 ;
+    ex:hasRawText "Hộp kiểm checkbox cho phép người dùng chọn nhiều hoặc tất cả các mục trong danh sách. Nút submit gửi dữ liệu được nhập trên biểu mẫu về máy chủ web."@vi ;
+    ex:appearsOnPage ex:g12_page062 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToSection ex:g12_topicF_l6s2 ;
+    ex:mentionsConcept ex:g12_conceptCheckbox, ex:g12_conceptSubmit .
+
+  ex:g12_topicF_p063_01 a ex:Paragraph ;
+    ex:paragraphOrder 20 ;
+    ex:hasRawText "Khi thiết kế biểu mẫu, cần chọn điều khiển nhập dữ liệu phù hợp với loại thông tin cần thu thập, sắp xếp điều khiển hợp lí từ trái sang phải, từ trên xuống dưới và bố trí nút lệnh thuận tiện cho thao tác gửi dữ liệu."@vi ;
+    ex:appearsOnPage ex:g12_page063 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToSection ex:g12_topicF_l6s3 ;
+    ex:mentionsConcept ex:g12_conceptBieuMau, ex:g12_conceptSubmit .
+
+  ex:g12_topicF_p065_01 a ex:Paragraph ;
+    ex:paragraphOrder 21 ;
+    ex:hasRawText "Bài 7 thực hành tạo biểu mẫu góp ý kiến cho thư viện của nhà trường, gồm ô text nhập họ tên, địa chỉ email và ô textarea nhập ý kiến đóng góp."@vi ;
+    ex:appearsOnPage ex:g12_page065 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 ;
+    ex:belongsToSection ex:g12_topicF_l7s1 ;
+    ex:mentionsConcept ex:g12_conceptBieuMau, ex:g12_conceptInputText, ex:g12_conceptTextarea, ex:g12_conceptLabel .
+
+  ex:g12_topicF_p066_01 a ex:Paragraph ;
+    ex:paragraphOrder 22 ;
+    ex:hasRawText "Nhiệm vụ 2 bài 7 yêu cầu thêm nhóm checkbox cho các thể loại sách cần bổ sung và thêm nút submit có nhãn Góp ý."@vi ;
+    ex:appearsOnPage ex:g12_page066 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 ;
+    ex:belongsToSection ex:g12_topicF_l7s2 ;
+    ex:mentionsConcept ex:g12_conceptCheckbox, ex:g12_conceptSubmit .
+
+  ex:g12_topicF_p067_01 a ex:Paragraph ;
+    ex:paragraphOrder 23 ;
+    ex:hasRawText "Nhiệm vụ 3 bài 7 tạo trang web phản hồi khi người dùng nhấn nút Góp ý, cập nhật thuộc tính action của form để chuyển đến tệp phản hồi."@vi ;
+    ex:appearsOnPage ex:g12_page067 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 ;
+    ex:belongsToSection ex:g12_topicF_l7s3 ;
+    ex:mentionsConcept ex:g12_conceptForm, ex:g12_conceptSubmit .
+
+  ex:g12_topicF_p068_01 a ex:Paragraph ;
+    ex:paragraphOrder 24 ;
+    ex:hasRawText "Bài 8 giới thiệu CSS là ngôn ngữ dùng để khai báo kiểu trình bày các phần tử HTML trong trang web. CSS giúp tách biệt nội dung với định dạng, dễ chỉnh sửa, tái sử dụng và áp dụng cho nhiều trang web."@vi ;
+    ex:appearsOnPage ex:g12_page068 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToSection ex:g12_topicF_l8s1 ;
+    ex:mentionsConcept ex:g12_conceptCSS, ex:g12_conceptHTML .
+
+  ex:g12_topicF_p069_01 a ex:Paragraph ;
+    ex:paragraphOrder 25 ;
+    ex:hasRawText "CSS có thể khai báo bằng internal CSS trong cặp thẻ style đặt trong head hoặc external CSS trong tệp có phần mở rộng css và được tham chiếu bằng thẻ link rel stylesheet href."@vi ;
+    ex:appearsOnPage ex:g12_page069 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToSection ex:g12_topicF_l8s2 ;
+    ex:mentionsConcept ex:g12_conceptCSS, ex:g12_conceptInternalCSS, ex:g12_conceptExternalCSS, ex:g12_conceptBoChonPhanTu .
+
+  ex:g12_topicF_p071_01 a ex:Paragraph ;
+    ex:paragraphOrder 26 ;
+    ex:hasRawText "Một số thuộc tính CSS định dạng màu sắc gồm color cho màu chữ và background-color cho màu nền. Giá trị màu có thể là các tên màu phổ biến như red, green, blue, yellow."@vi ;
+    ex:appearsOnPage ex:g12_page071 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToSection ex:g12_topicF_l8s3 ;
+    ex:mentionsConcept ex:g12_conceptColorCSS, ex:g12_conceptBackgroundColorCSS .
+
+  ex:g12_topicF_p072_01 a ex:Paragraph ;
+    ex:paragraphOrder 27 ;
+    ex:hasRawText "Các thuộc tính font-family, font-size định dạng phông chữ và cỡ chữ; border-style và border-color định dạng kiểu và màu đường viền."@vi ;
+    ex:appearsOnPage ex:g12_page072 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToSection ex:g12_topicF_l8s3 ;
+    ex:mentionsConcept ex:g12_conceptFontFamilyCSS, ex:g12_conceptFontSizeCSS, ex:g12_conceptBorderCSS .
+
+  ex:g12_topicF_p074_01 a ex:Paragraph ;
+    ex:paragraphOrder 28 ;
+    ex:hasRawText "Bài 9 thực hành khai báo và áp dụng internal CSS cho biểu mẫu đã tạo, sử dụng các thuộc tính như color, font-family, font-size, font-weight và background-color cho các phần tử h2, h3, label, input, textarea."@vi ;
+    ex:appearsOnPage ex:g12_page074 ;
+    ex:belongsToLesson ex:g12_topicF_lesson9 ;
+    ex:belongsToSection ex:g12_topicF_l9s1 ;
+    ex:mentionsConcept ex:g12_conceptInternalCSS, ex:g12_conceptThuocTinhCSS, ex:g12_conceptBieuMau .
+
+  ex:g12_topicF_p075_01 a ex:Paragraph ;
+    ex:paragraphOrder 29 ;
+    ex:hasRawText "Nhiệm vụ 2 và 3 bài 9 hướng dẫn tạo tệp Bai9-NV2.css, áp dụng external CSS cho văn bản HTML bằng thẻ link và tái sử dụng bảng định dạng cho các văn bản HTML khác."@vi ;
+    ex:appearsOnPage ex:g12_page075 ;
+    ex:belongsToLesson ex:g12_topicF_lesson9 ;
+    ex:belongsToSection ex:g12_topicF_l9s2 ;
+    ex:mentionsConcept ex:g12_conceptExternalCSS, ex:g12_conceptCSS .
+
+  ex:g12_topicF_p077_01 a ex:Paragraph ;
+    ex:paragraphOrder 30 ;
+    ex:hasRawText "Bài 10 giới thiệu bộ chọn lớp, được bắt đầu bằng dấu chấm trong khai báo CSS và được áp dụng cho phần tử HTML thông qua thuộc tính class."@vi ;
+    ex:appearsOnPage ex:g12_page077 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToSection ex:g12_topicF_l10s1 ;
+    ex:mentionsConcept ex:g12_conceptClassSelector, ex:g12_conceptClassAttribute, ex:g12_conceptCSS .
+
+  ex:g12_topicF_p078_01 a ex:Paragraph ;
+    ex:paragraphOrder 31 ;
+    ex:hasRawText "Bộ chọn định danh bắt đầu bằng dấu thăng và dùng để áp dụng định dạng cho một phần tử cụ thể. Định danh của phần tử được xác định bằng thuộc tính id trong văn bản HTML."@vi ;
+    ex:appearsOnPage ex:g12_page078 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToSection ex:g12_topicF_l10s2 ;
+    ex:mentionsConcept ex:g12_conceptIdSelector, ex:g12_conceptIdAttribute .
+
+  ex:g12_topicF_p079_01 a ex:Paragraph ;
+    ex:paragraphOrder 32 ;
+    ex:hasRawText "Phần thực hành bài 10 yêu cầu khai báo các bộ chọn lớp blue, red, orangered, input.yellow, input.blue trong tệp CSS và áp dụng chúng vào văn bản HTML để định dạng trang web."@vi ;
+    ex:appearsOnPage ex:g12_page079 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToSection ex:g12_topicF_l10s3 ;
+    ex:mentionsConcept ex:g12_conceptClassSelector, ex:g12_conceptExternalCSS, ex:g12_conceptCSS .
+
+  ex:g12_topicF_p083_01 a ex:Paragraph ;
+    ex:paragraphOrder 33 ;
+    ex:hasRawText "Bài 11 giới thiệu mô hình hộp trong trình bày phần tử HTML. Mỗi phần tử gồm vùng nội dung, vùng đệm, vùng đường viền và vùng lề; các thuộc tính padding, border-style, margin, width, height điều chỉnh các vùng hiển thị này."@vi ;
+    ex:appearsOnPage ex:g12_page083 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToSection ex:g12_topicF_l11s1 ;
+    ex:mentionsConcept ex:g12_conceptBoxModel, ex:g12_conceptContent, ex:g12_conceptPadding, ex:g12_conceptBorder, ex:g12_conceptMargin .
+
+  ex:g12_topicF_p085_01 a ex:Paragraph ;
+    ex:paragraphOrder 34 ;
+    ex:hasRawText "Theo mặc định, phần tử HTML có thể hiển thị theo khối hoặc theo dòng. Phần tử hiển thị theo khối nằm trên một dòng mới, còn phần tử hiển thị theo dòng có thể nằm cùng dòng với phần tử khác. CSS cho phép thay đổi bằng thuộc tính display với giá trị block hoặc inline."@vi ;
+    ex:appearsOnPage ex:g12_page085 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToSection ex:g12_topicF_l11s2 ;
+    ex:mentionsConcept ex:g12_conceptDisplay, ex:g12_conceptBlockDisplay, ex:g12_conceptInlineDisplay .
+
+  ex:g12_topicF_p086_01 a ex:Paragraph ;
+    ex:paragraphOrder 35 ;
+    ex:hasRawText "Bố cục trang web là cách sắp xếp các đối tượng nội dung vào những khu vực hiển thị khác nhau. Một trang web thường gồm phần đầu trang, thanh điều hướng, phần nội dung và phần chân trang; có thể sử dụng phần tử div kết hợp CSS để chia bố cục."@vi ;
+    ex:appearsOnPage ex:g12_page086 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToSection ex:g12_topicF_l11s3 ;
+    ex:mentionsConcept ex:g12_conceptBoCucTrangWeb, ex:g12_conceptHeader, ex:g12_conceptNavigationMenu, ex:g12_conceptContent, ex:g12_conceptFooter, ex:g12_conceptDiv .
+
+  ex:g12_topicF_p089_01 a ex:Paragraph ;
+    ex:paragraphOrder 36 ;
+    ex:hasRawText "Bài 12 là dự án nhỏ tạo trang web báo tường điện tử của lớp. Sản phẩm gồm tệp HTML tạo nội dung trang web với phần tiêu đề, phần nội dung chính, phần chân trang; tệp CSS khai báo quy tắc định dạng; và bài trình chiếu giới thiệu kết quả thực hiện dự án."@vi ;
+    ex:appearsOnPage ex:g12_page089 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:belongsToSection ex:g12_topicF_l12s1 ;
+    ex:mentionsConcept ex:g12_conceptDuAnBaoTuong, ex:g12_conceptHTML, ex:g12_conceptCSS, ex:g12_conceptHeader, ex:g12_conceptContent, ex:g12_conceptFooter .
+
+  ex:g12_topicF_p090_01 a ex:Paragraph ;
+    ex:paragraphOrder 37 ;
+    ex:hasRawText "Tiêu chí đánh giá dự án gồm sử dụng và kết hợp các phần tử HTML để tạo trang web đa dạng kênh thông tin, áp dụng CSS để trình bày đẹp và bố cục hợp lí, bài trình chiếu đáp ứng yêu cầu, có thẩm mĩ và kĩ năng thuyết trình tốt."@vi ;
+    ex:appearsOnPage ex:g12_page090 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:belongsToSection ex:g12_topicF_l12s1 ;
+    ex:mentionsConcept ex:g12_conceptDuAnBaoTuong, ex:g12_conceptHTML, ex:g12_conceptCSS, ex:g12_conceptBoCucTrangWeb .
+
+  ex:g12_topicF_p091_01 a ex:Paragraph ;
+    ex:paragraphOrder 38 ;
+    ex:hasRawText "Dự án được thực hiện qua ba giai đoạn: lập kế hoạch, thực hiện dự án và báo cáo kết quả. Giai đoạn lập kế hoạch xác định mục tiêu, danh sách công việc, dự kiến sản phẩm và phân công; giai đoạn thực hiện gồm mỗi người làm nhiệm vụ, thảo luận và phối hợp hoàn thiện; giai đoạn báo cáo gồm trình bày kết quả và giới thiệu sản phẩm."@vi ;
+    ex:appearsOnPage ex:g12_page091 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:belongsToSection ex:g12_topicF_l12s2 ;
+    ex:mentionsConcept ex:g12_conceptDuAnBaoTuong .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g12_page035 ex:hasParagraph ex:g12_topicF_p035_01 .
+  ex:g12_page036 ex:hasParagraph ex:g12_topicF_p036_01 .
+  ex:g12_page037 ex:hasParagraph ex:g12_topicF_p037_01 .
+  ex:g12_page038 ex:hasParagraph ex:g12_topicF_p038_01 .
+  ex:g12_page040 ex:hasParagraph ex:g12_topicF_p040_01 .
+  ex:g12_page041 ex:hasParagraph ex:g12_topicF_p041_01 .
+  ex:g12_page042 ex:hasParagraph ex:g12_topicF_p042_01 .
+  ex:g12_page043 ex:hasParagraph ex:g12_topicF_p043_01 .
+  ex:g12_page046 ex:hasParagraph ex:g12_topicF_p046_01 .
+  ex:g12_page048 ex:hasParagraph ex:g12_topicF_p048_01 .
+  ex:g12_page049 ex:hasParagraph ex:g12_topicF_p049_01 .
+  ex:g12_page051 ex:hasParagraph ex:g12_topicF_p051_01 .
+  ex:g12_page054 ex:hasParagraph ex:g12_topicF_p054_01 .
+  ex:g12_page055 ex:hasParagraph ex:g12_topicF_p055_01 .
+  ex:g12_page056 ex:hasParagraph ex:g12_topicF_p056_01 .
+  ex:g12_page059 ex:hasParagraph ex:g12_topicF_p059_01 .
+  ex:g12_page060 ex:hasParagraph ex:g12_topicF_p060_01 .
+  ex:g12_page061 ex:hasParagraph ex:g12_topicF_p061_01 .
+  ex:g12_page062 ex:hasParagraph ex:g12_topicF_p062_01 .
+  ex:g12_page063 ex:hasParagraph ex:g12_topicF_p063_01 .
+  ex:g12_page065 ex:hasParagraph ex:g12_topicF_p065_01 .
+  ex:g12_page066 ex:hasParagraph ex:g12_topicF_p066_01 .
+  ex:g12_page067 ex:hasParagraph ex:g12_topicF_p067_01 .
+  ex:g12_page068 ex:hasParagraph ex:g12_topicF_p068_01 .
+  ex:g12_page069 ex:hasParagraph ex:g12_topicF_p069_01 .
+  ex:g12_page071 ex:hasParagraph ex:g12_topicF_p071_01 .
+  ex:g12_page072 ex:hasParagraph ex:g12_topicF_p072_01 .
+  ex:g12_page074 ex:hasParagraph ex:g12_topicF_p074_01 .
+  ex:g12_page075 ex:hasParagraph ex:g12_topicF_p075_01 .
+  ex:g12_page077 ex:hasParagraph ex:g12_topicF_p077_01 .
+  ex:g12_page078 ex:hasParagraph ex:g12_topicF_p078_01 .
+  ex:g12_page079 ex:hasParagraph ex:g12_topicF_p079_01 .
+  ex:g12_page083 ex:hasParagraph ex:g12_topicF_p083_01 .
+  ex:g12_page085 ex:hasParagraph ex:g12_topicF_p085_01 .
+  ex:g12_page086 ex:hasParagraph ex:g12_topicF_p086_01 .
+  ex:g12_page089 ex:hasParagraph ex:g12_topicF_p089_01 .
+  ex:g12_page090 ex:hasParagraph ex:g12_topicF_p090_01 .
+  ex:g12_page091 ex:hasParagraph ex:g12_topicF_p091_01 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g12_topicF_l1s1 ex:hasParagraph ex:g12_topicF_p035_01, ex:g12_topicF_p036_01 .
+  ex:g12_topicF_l1s2 ex:hasParagraph ex:g12_topicF_p037_01 .
+  ex:g12_topicF_l1s3 ex:hasParagraph ex:g12_topicF_p038_01 .
+
+  ex:g12_topicF_l2s1 ex:hasParagraph ex:g12_topicF_p040_01 .
+  ex:g12_topicF_l2s2 ex:hasParagraph ex:g12_topicF_p041_01 .
+  ex:g12_topicF_l2s3 ex:hasParagraph ex:g12_topicF_p042_01 .
+  ex:g12_topicF_l2s4 ex:hasParagraph ex:g12_topicF_p043_01 .
+
+  ex:g12_topicF_l3s1 ex:hasParagraph ex:g12_topicF_p046_01 .
+  ex:g12_topicF_l3s3 ex:hasParagraph ex:g12_topicF_p048_01 .
+
+  ex:g12_topicF_l4s1 ex:hasParagraph ex:g12_topicF_p049_01 .
+  ex:g12_topicF_l4s2 ex:hasParagraph ex:g12_topicF_p051_01 .
+
+  ex:g12_topicF_l5s1 ex:hasParagraph ex:g12_topicF_p054_01 .
+  ex:g12_topicF_l5s2 ex:hasParagraph ex:g12_topicF_p055_01 .
+  ex:g12_topicF_l5s4 ex:hasParagraph ex:g12_topicF_p056_01 .
+
+  ex:g12_topicF_l6s1 ex:hasParagraph ex:g12_topicF_p059_01 .
+  ex:g12_topicF_l6s2 ex:hasParagraph ex:g12_topicF_p060_01, ex:g12_topicF_p061_01, ex:g12_topicF_p062_01 .
+  ex:g12_topicF_l6s3 ex:hasParagraph ex:g12_topicF_p063_01 .
+
+  ex:g12_topicF_l7s1 ex:hasParagraph ex:g12_topicF_p065_01 .
+  ex:g12_topicF_l7s2 ex:hasParagraph ex:g12_topicF_p066_01 .
+  ex:g12_topicF_l7s3 ex:hasParagraph ex:g12_topicF_p067_01 .
+
+  ex:g12_topicF_l8s1 ex:hasParagraph ex:g12_topicF_p068_01 .
+  ex:g12_topicF_l8s2 ex:hasParagraph ex:g12_topicF_p069_01 .
+  ex:g12_topicF_l8s3 ex:hasParagraph ex:g12_topicF_p071_01, ex:g12_topicF_p072_01 .
+
+  ex:g12_topicF_l9s1 ex:hasParagraph ex:g12_topicF_p074_01 .
+  ex:g12_topicF_l9s2 ex:hasParagraph ex:g12_topicF_p075_01 .
+  ex:g12_topicF_l9s3 ex:hasParagraph ex:g12_topicF_p075_01 .
+
+  ex:g12_topicF_l10s1 ex:hasParagraph ex:g12_topicF_p077_01 .
+  ex:g12_topicF_l10s2 ex:hasParagraph ex:g12_topicF_p078_01 .
+  ex:g12_topicF_l10s3 ex:hasParagraph ex:g12_topicF_p079_01 .
+
+  ex:g12_topicF_l11s1 ex:hasParagraph ex:g12_topicF_p083_01 .
+  ex:g12_topicF_l11s2 ex:hasParagraph ex:g12_topicF_p085_01 .
+  ex:g12_topicF_l11s3 ex:hasParagraph ex:g12_topicF_p086_01 .
+
+  ex:g12_topicF_l12s1 ex:hasParagraph ex:g12_topicF_p089_01, ex:g12_topicF_p090_01 .
+  ex:g12_topicF_l12s2 ex:hasParagraph ex:g12_topicF_p091_01 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g12_topicF_p035_01 ex:nextParagraph ex:g12_topicF_p036_01 .
+  ex:g12_topicF_p036_01 ex:previousParagraph ex:g12_topicF_p035_01 ; ex:nextParagraph ex:g12_topicF_p037_01 .
+  ex:g12_topicF_p037_01 ex:previousParagraph ex:g12_topicF_p036_01 ; ex:nextParagraph ex:g12_topicF_p038_01 .
+  ex:g12_topicF_p038_01 ex:previousParagraph ex:g12_topicF_p037_01 ; ex:nextParagraph ex:g12_topicF_p040_01 .
+  ex:g12_topicF_p040_01 ex:previousParagraph ex:g12_topicF_p038_01 ; ex:nextParagraph ex:g12_topicF_p041_01 .
+  ex:g12_topicF_p041_01 ex:previousParagraph ex:g12_topicF_p040_01 ; ex:nextParagraph ex:g12_topicF_p042_01 .
+  ex:g12_topicF_p042_01 ex:previousParagraph ex:g12_topicF_p041_01 ; ex:nextParagraph ex:g12_topicF_p043_01 .
+  ex:g12_topicF_p043_01 ex:previousParagraph ex:g12_topicF_p042_01 ; ex:nextParagraph ex:g12_topicF_p046_01 .
+  ex:g12_topicF_p046_01 ex:previousParagraph ex:g12_topicF_p043_01 ; ex:nextParagraph ex:g12_topicF_p048_01 .
+  ex:g12_topicF_p048_01 ex:previousParagraph ex:g12_topicF_p046_01 ; ex:nextParagraph ex:g12_topicF_p049_01 .
+  ex:g12_topicF_p049_01 ex:previousParagraph ex:g12_topicF_p048_01 ; ex:nextParagraph ex:g12_topicF_p051_01 .
+  ex:g12_topicF_p051_01 ex:previousParagraph ex:g12_topicF_p049_01 ; ex:nextParagraph ex:g12_topicF_p054_01 .
+  ex:g12_topicF_p054_01 ex:previousParagraph ex:g12_topicF_p051_01 ; ex:nextParagraph ex:g12_topicF_p055_01 .
+  ex:g12_topicF_p055_01 ex:previousParagraph ex:g12_topicF_p054_01 ; ex:nextParagraph ex:g12_topicF_p056_01 .
+  ex:g12_topicF_p056_01 ex:previousParagraph ex:g12_topicF_p055_01 ; ex:nextParagraph ex:g12_topicF_p059_01 .
+  ex:g12_topicF_p059_01 ex:previousParagraph ex:g12_topicF_p056_01 ; ex:nextParagraph ex:g12_topicF_p060_01 .
+  ex:g12_topicF_p060_01 ex:previousParagraph ex:g12_topicF_p059_01 ; ex:nextParagraph ex:g12_topicF_p061_01 .
+  ex:g12_topicF_p061_01 ex:previousParagraph ex:g12_topicF_p060_01 ; ex:nextParagraph ex:g12_topicF_p062_01 .
+  ex:g12_topicF_p062_01 ex:previousParagraph ex:g12_topicF_p061_01 ; ex:nextParagraph ex:g12_topicF_p063_01 .
+  ex:g12_topicF_p063_01 ex:previousParagraph ex:g12_topicF_p062_01 ; ex:nextParagraph ex:g12_topicF_p065_01 .
+  ex:g12_topicF_p065_01 ex:previousParagraph ex:g12_topicF_p063_01 ; ex:nextParagraph ex:g12_topicF_p066_01 .
+  ex:g12_topicF_p066_01 ex:previousParagraph ex:g12_topicF_p065_01 ; ex:nextParagraph ex:g12_topicF_p067_01 .
+  ex:g12_topicF_p067_01 ex:previousParagraph ex:g12_topicF_p066_01 ; ex:nextParagraph ex:g12_topicF_p068_01 .
+  ex:g12_topicF_p068_01 ex:previousParagraph ex:g12_topicF_p067_01 ; ex:nextParagraph ex:g12_topicF_p069_01 .
+  ex:g12_topicF_p069_01 ex:previousParagraph ex:g12_topicF_p068_01 ; ex:nextParagraph ex:g12_topicF_p071_01 .
+  ex:g12_topicF_p071_01 ex:previousParagraph ex:g12_topicF_p069_01 ; ex:nextParagraph ex:g12_topicF_p072_01 .
+  ex:g12_topicF_p072_01 ex:previousParagraph ex:g12_topicF_p071_01 ; ex:nextParagraph ex:g12_topicF_p074_01 .
+  ex:g12_topicF_p074_01 ex:previousParagraph ex:g12_topicF_p072_01 ; ex:nextParagraph ex:g12_topicF_p075_01 .
+  ex:g12_topicF_p075_01 ex:previousParagraph ex:g12_topicF_p074_01 ; ex:nextParagraph ex:g12_topicF_p077_01 .
+  ex:g12_topicF_p077_01 ex:previousParagraph ex:g12_topicF_p075_01 ; ex:nextParagraph ex:g12_topicF_p078_01 .
+  ex:g12_topicF_p078_01 ex:previousParagraph ex:g12_topicF_p077_01 ; ex:nextParagraph ex:g12_topicF_p079_01 .
+  ex:g12_topicF_p079_01 ex:previousParagraph ex:g12_topicF_p078_01 ; ex:nextParagraph ex:g12_topicF_p083_01 .
+  ex:g12_topicF_p083_01 ex:previousParagraph ex:g12_topicF_p079_01 ; ex:nextParagraph ex:g12_topicF_p085_01 .
+  ex:g12_topicF_p085_01 ex:previousParagraph ex:g12_topicF_p083_01 ; ex:nextParagraph ex:g12_topicF_p086_01 .
+  ex:g12_topicF_p086_01 ex:previousParagraph ex:g12_topicF_p085_01 ; ex:nextParagraph ex:g12_topicF_p089_01 .
+  ex:g12_topicF_p089_01 ex:previousParagraph ex:g12_topicF_p086_01 ; ex:nextParagraph ex:g12_topicF_p090_01 .
+  ex:g12_topicF_p090_01 ex:previousParagraph ex:g12_topicF_p089_01 ; ex:nextParagraph ex:g12_topicF_p091_01 .
+  ex:g12_topicF_p091_01 ex:previousParagraph ex:g12_topicF_p090_01 .
+
+  ###########################################################################
+  # Figures and tables
+  ###########################################################################
+
+  ex:g12_topicF_fig_l1_websiteHome a ex:Figure ;
+    rdfs:label "Hình 1. Trang chủ của website https://moet.gov.vn ngày 21/9/2023"@vi ;
+    ex:hasCaption "Hình 1. Trang chủ của website https://moet.gov.vn ngày 21/9/2023"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g12_page035 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWebsite, ex:g12_conceptTaoTrangWeb .
+
+  ex:g12_topicF_fig_l1_elementStructure a ex:Figure ;
+    rdfs:label "Hình 2. Cấu trúc của một phần tử"@vi ;
+    ex:hasCaption "Hình 2. Cấu trúc của một phần tử"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g12_page036 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptPhanTuHTML, ex:g12_conceptTheHTML .
+
+  ex:g12_topicF_fig_l1_attributeExample a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ khai báo thuộc tính của phần tử"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ khai báo thuộc tính của phần tử"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g12_page036 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptThuocTinhHTML, ex:g12_conceptPhanTuA .
+
+  ex:g12_topicF_fig_l1_htmlDocument a ex:Figure ;
+    rdfs:label "Hình 4a. Một văn bản HTML"@vi ;
+    ex:hasCaption "Hình 4a. Một văn bản HTML"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:g12_page037 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptVanBanHTML, ex:g12_conceptHead, ex:g12_conceptBody .
+
+  ex:g12_topicF_fig_l1_browserResult a ex:Figure ;
+    rdfs:label "Hình 4b. Kết quả khi mở văn bản HTML trong Hình 4a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 4b. Kết quả khi mở văn bản HTML trong Hình 4a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:g12_page037 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptHTML, ex:g12_conceptBody .
+
+  ex:g12_topicF_fig_l1_sublimeIcon a ex:Figure ;
+    rdfs:label "Hình 5. Biểu tượng phần mềm Sublime Text"@vi ;
+    ex:hasCaption "Hình 5. Biểu tượng phần mềm Sublime Text"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:g12_page038 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSublimeText .
+
+  ex:g12_topicF_fig_l1_sublimeWork a ex:Figure ;
+    rdfs:label "Hình 6. Một màn hình làm việc của Sublime Text"@vi ;
+    ex:hasCaption "Hình 6. Một màn hình làm việc của Sublime Text"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:g12_page038 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSublimeText, ex:g12_conceptHTML .
+
+  ex:g12_topicF_fig_l2_paragraphCode a ex:Figure ;
+    rdfs:label "Hình 1a. Ví dụ sử dụng phần tử p để tạo đoạn văn bản cho trang web"@vi ;
+    ex:hasCaption "Hình 1a. Ví dụ sử dụng phần tử p để tạo đoạn văn bản cho trang web"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:g12_page040 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDoanVanP .
+
+  ex:g12_topicF_fig_l2_paragraphResult a ex:Figure ;
+    rdfs:label "Hình 1b. Kết quả khi mở văn bản HTML ở Hình 1a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 1b. Kết quả khi mở văn bản HTML ở Hình 1a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:g12_page041 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDoanVanP .
+
+  ex:g12_topicF_fig_l2_headingCode a ex:Figure ;
+    rdfs:label "Hình 2a. Ví dụ về khai báo tiêu đề mục"@vi ;
+    ex:hasCaption "Hình 2a. Ví dụ về khai báo tiêu đề mục"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:g12_page041 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTieuDeMuc .
+
+  ex:g12_topicF_fig_l2_headingResult a ex:Figure ;
+    rdfs:label "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:g12_page042 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTieuDeMuc .
+
+  ex:g12_topicF_table_l2_highlightElements a ex:Table ;
+    rdfs:label "Bảng 1. Một số phần tử HTML dùng để làm nổi bật nội dung văn bản"@vi ;
+    ex:hasCaption "Bảng 1. Một số phần tử HTML dùng để làm nổi bật nội dung văn bản"@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:g12_page042 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptStrong, ex:g12_conceptEm, ex:g12_conceptMark .
+
+  ex:g12_topicF_fig_l2_highlightCode a ex:Figure ;
+    rdfs:label "Hình 3a. Ví dụ sử dụng phần tử strong, em, mark làm nổi bật nội dung văn bản"@vi ;
+    ex:hasCaption "Hình 3a. Ví dụ sử dụng phần tử strong, em, mark làm nổi bật nội dung văn bản"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:g12_page043 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptStrong, ex:g12_conceptEm, ex:g12_conceptMark .
+
+  ex:g12_topicF_fig_l2_highlightResult a ex:Figure ;
+    rdfs:label "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 48 ;
+    ex:appearsOnPage ex:g12_page043 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptStrong, ex:g12_conceptEm, ex:g12_conceptMark, ex:g12_conceptLamNoiBatVanBan .
+  
+  ex:g12_topicF_fig_l2_hyperlinkCode a ex:Figure ;
+    rdfs:label "Hình 4a. Ví dụ tạo siêu liên kết bằng phần tử a"@vi ;
+    ex:hasCaption "Hình 4a. Ví dụ tạo siêu liên kết bằng phần tử a"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:g12_page044 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSieuLienKet, ex:g12_conceptPhanTuA, ex:g12_conceptHref .
+
+  ex:g12_topicF_fig_l2_hyperlinkResult a ex:Figure ;
+    rdfs:label "Hình 4b. Ví dụ siêu liên kết và nội dung hiển thị khi nháy chuột"@vi ;
+    ex:hasCaption "Hình 4b. Ví dụ siêu liên kết và nội dung hiển thị trên màn hình trình duyệt web khi nháy chuột"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:g12_page044 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSieuLienKet, ex:g12_conceptURL .
+
+  ex:g12_topicF_fig_l2_sameFolderLink a ex:Figure ;
+    rdfs:label "Hình 5. Ví dụ tạo siêu liên kết giữa các trang web trong cùng thư mục"@vi ;
+    ex:hasCaption "Hình 5. Ví dụ tạo siêu liên kết giữa các trang web trong cùng thư mục"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 49 ;
+    ex:appearsOnPage ex:g12_page044 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSieuLienKet, ex:g12_conceptPhanTuA, ex:g12_conceptHref .
+
+  ex:g12_topicF_fig_l2_anchorLink a ex:Figure ;
+    rdfs:label "Hình 6. Ví dụ tạo siêu liên kết đến một phần tử khác trong cùng một trang web"@vi ;
+    ex:hasCaption "Hình 6. Ví dụ tạo siêu liên kết đến một phần tử khác trong cùng một trang web"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 50 ;
+    ex:appearsOnPage ex:g12_page045 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSieuLienKet, ex:g12_conceptPhanTuA, ex:g12_conceptHref, ex:g12_conceptIdAttribute .
+  ex:g12_topicF_fig_l3_personalHeadings a ex:Figure ;
+    rdfs:label "Hình 1. Các tiêu đề mục trong trang web cá nhân của bạn Thanh Uyên"@vi ;
+    ex:hasCaption "Hình 1. Các tiêu đề mục trong trang web cá nhân của bạn Thanh Uyên"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:g12_page046 ;
+    ex:belongsToLesson ex:g12_topicF_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTieuDeMuc, ex:g12_conceptWebsite .
+
+  ex:g12_topicF_fig_l3_personalContent a ex:Figure ;
+    rdfs:label "Hình 2. Trang web cá nhân của bạn Thanh Uyên"@vi ;
+    ex:hasCaption "Hình 2. Trang web cá nhân của bạn Thanh Uyên"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:g12_page047 ;
+    ex:belongsToLesson ex:g12_topicF_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWebsite, ex:g12_conceptDoanVanP, ex:g12_conceptEm .
+
+  ex:g12_topicF_fig_l3_personalLink a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ siêu liên kết đến trang web khác"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ siêu liên kết đến trang web khác"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:g12_page048 ;
+    ex:belongsToLesson ex:g12_topicF_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSieuLienKet, ex:g12_conceptURL .
+
+  ex:g12_topicF_fig_l4_olExample a ex:Figure ;
+    rdfs:label "Hình 1a. Ví dụ tạo danh sách xác định thứ tự"@vi ;
+    ex:hasCaption "Hình 1a. Ví dụ tạo danh sách xác định thứ tự"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 18 ;
+    ex:appearsOnPage ex:g12_page049 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptOrderedList, ex:g12_conceptListItem .
+
+  ex:g12_topicF_fig_l4_olResult a ex:Figure ;
+    rdfs:label "Hình 1b. Kết quả khi mở văn bản HTML ở Hình 1a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 1b. Kết quả khi mở văn bản HTML ở Hình 1a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 19 ;
+    ex:appearsOnPage ex:g12_page049 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptOrderedList .
+
+  ex:g12_topicF_table_l4_listType a ex:Table ;
+    rdfs:label "Bảng 1. Một số giá trị thuộc tính type thường dùng"@vi ;
+    ex:hasCaption "Bảng 1. Một số giá trị thuộc tính type thường dùng"@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 2 ;
+    ex:appearsOnPage ex:g12_page050 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptOrderedList, ex:g12_conceptThuocTinhHTML .
+
+  ex:g12_topicF_fig_l4_ulExample a ex:Figure ;
+    rdfs:label "Hình 2a. Ví dụ tạo danh sách không xác định thứ tự"@vi ;
+    ex:hasCaption "Hình 2a. Ví dụ tạo danh sách không xác định thứ tự"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 20 ;
+    ex:appearsOnPage ex:g12_page050 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptUnorderedList, ex:g12_conceptListItem .
+
+  ex:g12_topicF_fig_l4_ulResult a ex:Figure ;
+    rdfs:label "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 51 ;
+    ex:appearsOnPage ex:g12_page050 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptUnorderedList, ex:g12_conceptListItem .
+
+  ex:g12_topicF_fig_l4_tableExample a ex:Figure ;
+    rdfs:label "Hình 3a. Ví dụ tạo bảng bằng cách kết hợp các phần tử table, tr, td"@vi ;
+    ex:hasCaption "Hình 3a. Ví dụ tạo bảng bằng cách kết hợp các phần tử table, tr, td"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 21 ;
+    ex:appearsOnPage ex:g12_page051 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTableHTML, ex:g12_conceptTableRow, ex:g12_conceptTableData .
+
+  ex:g12_topicF_fig_l4_tableResult a ex:Figure ;
+    rdfs:label "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 52 ;
+    ex:appearsOnPage ex:g12_page051 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBangHTML, ex:g12_conceptTableHTML, ex:g12_conceptTableRow, ex:g12_conceptTableData .
+
+  ex:g12_topicF_fig_l4_universityList a ex:Figure ;
+    rdfs:label "Hình 4. Danh sách các trường đại học Việt Bách cân nhắc dự tuyển"@vi ;
+    ex:hasCaption "Hình 4. Danh sách các trường đại học Việt Bách cân nhắc dự tuyển"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 53 ;
+    ex:appearsOnPage ex:g12_page052 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDanhSach, ex:g12_conceptOrderedList, ex:g12_conceptUnorderedList, ex:g12_conceptListItem .
+
+  ex:g12_topicF_fig_l4_sportTable a ex:Figure ;
+    rdfs:label "Hình 5. Thống kê số lượng học sinh tham gia hoạt động thể thao"@vi ;
+    ex:hasCaption "Hình 5. Thống kê số lượng học sinh tham gia hoạt động thể thao"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 54 ;
+    ex:appearsOnPage ex:g12_page052 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBangHTML, ex:g12_conceptTableHTML, ex:g12_conceptCaption .
+
+
+  ex:g12_topicF_fig_l5_imgExample a ex:Figure ;
+    rdfs:label "Hình 1a. Ví dụ sử dụng phần tử img chèn hình ảnh vào trang web"@vi ;
+    ex:hasCaption "Hình 1a. Ví dụ sử dụng phần tử img chèn hình ảnh vào trang web"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 22 ;
+    ex:appearsOnPage ex:g12_page054 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptImg, ex:g12_conceptAnhWeb .
+
+  ex:g12_topicF_fig_l5_imgResult a ex:Figure ;
+    rdfs:label "Hình 1b. Kết quả khi mở văn bản HTML ở Hình 1a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 1b. Kết quả khi mở văn bản HTML ở Hình 1a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 55 ;
+    ex:appearsOnPage ex:g12_page054 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptImg, ex:g12_conceptAnhWeb .
+
+  ex:g12_topicF_fig_l5_audioExample a ex:Figure ;
+    rdfs:label "Hình 2a. Ví dụ sử dụng phần tử audio chèn âm thanh vào trang web"@vi ;
+    ex:hasCaption "Hình 2a. Ví dụ sử dụng phần tử audio chèn âm thanh vào trang web"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 23 ;
+    ex:appearsOnPage ex:g12_page055 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptAudio .
+
+  ex:g12_topicF_fig_l5_audioResult a ex:Figure ;
+    rdfs:label "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 56 ;
+    ex:appearsOnPage ex:g12_page055 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptAudio .
+
+  ex:g12_topicF_fig_l5_videoExample a ex:Figure ;
+    rdfs:label "Hình 3a. Ví dụ sử dụng phần tử video chèn video vào trang web"@vi ;
+    ex:hasCaption "Hình 3a. Ví dụ sử dụng phần tử video chèn video vào trang web"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 24 ;
+    ex:appearsOnPage ex:g12_page055 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptVideo .
+
+  ex:g12_topicF_fig_l5_videoResult a ex:Figure ;
+    rdfs:label "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 57 ;
+    ex:appearsOnPage ex:g12_page055 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptVideo .
+
+  ex:g12_topicF_fig_l5_iframeExample a ex:Figure ;
+    rdfs:label "Hình 4a. Ví dụ tạo khung bằng phần tử iframe"@vi ;
+    ex:hasCaption "Hình 4a. Ví dụ tạo khung bằng phần tử iframe"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 25 ;
+    ex:appearsOnPage ex:g12_page056 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptIframe .
+
+  ex:g12_topicF_fig_l5_iframeResult a ex:Figure ;
+    rdfs:label "Hình 4b. Kết quả hiển thị khung trên màn hình trình duyệt web"@vi ;
+    ex:hasCaption "Hình 4b. Kết quả hiển thị khung trên màn hình trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 58 ;
+    ex:appearsOnPage ex:g12_page056 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptIframe .
+
+  ex:g12_topicF_fig_l6_loginForm a ex:Figure ;
+    rdfs:label "Hình 1. Biểu mẫu đăng nhập thư điện tử"@vi ;
+    ex:hasCaption "Hình 1. Biểu mẫu đăng nhập thư điện tử"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 26 ;
+    ex:appearsOnPage ex:g12_page059 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBieuMau, ex:g12_conceptInputText .
+
+  ex:g12_topicF_fig_l6_textboxCode a ex:Figure ;
+    rdfs:label "Hình 2a. Ví dụ khai báo ô text"@vi ;
+    ex:hasCaption "Hình 2a. Ví dụ khai báo ô text"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 59 ;
+    ex:appearsOnPage ex:g12_page061 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptInputText, ex:g12_conceptForm .
+
+  ex:g12_topicF_fig_l6_textboxResult a ex:Figure ;
+    rdfs:label "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 60 ;
+    ex:appearsOnPage ex:g12_page061 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptInputText .
+
+  ex:g12_topicF_table_l6_inputControls a ex:Table ;
+    rdfs:label "Bảng 1. Một số điều khiển hỗ trợ nhập dữ liệu thông dụng"@vi ;
+    ex:hasCaption "Bảng 1. Một số điều khiển hỗ trợ nhập dữ liệu thông dụng"@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 3 ;
+    ex:appearsOnPage ex:g12_page061 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTextarea, ex:g12_conceptLabel, ex:g12_conceptPassword .
+
+  ex:g12_topicF_fig_l6_radioExample a ex:Figure ;
+    rdfs:label "Hình 3a. Ví dụ khai báo danh sách các mục chọn"@vi ;
+    ex:hasCaption "Hình 3a. Ví dụ khai báo danh sách các mục chọn"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 27 ;
+    ex:appearsOnPage ex:g12_page062 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptRadioButton .
+
+  ex:g12_topicF_fig_l6_radioResult a ex:Figure ;
+    rdfs:label "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 61 ;
+    ex:appearsOnPage ex:g12_page062 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptRadioButton .
+
+  ex:g12_topicF_fig_l6_checkboxExample a ex:Figure ;
+    rdfs:label "Hình 4a. Ví dụ khai báo danh sách hộp kiểm"@vi ;
+    ex:hasCaption "Hình 4a. Ví dụ khai báo danh sách hộp kiểm"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 28 ;
+    ex:appearsOnPage ex:g12_page062 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCheckbox .
+
+  ex:g12_topicF_fig_l6_checkboxResult a ex:Figure ;
+    rdfs:label "Hình 4b. Kết quả khi mở văn bản HTML ở Hình 4a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 4b. Kết quả khi mở văn bản HTML ở Hình 4a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 62 ;
+    ex:appearsOnPage ex:g12_page062 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCheckbox .
+
+  ex:g12_topicF_fig_l6_submitExample a ex:Figure ;
+    rdfs:label "Hình 5a. Ví dụ khai báo nút lệnh gửi dữ liệu"@vi ;
+    ex:hasCaption "Hình 5a. Ví dụ khai báo nút lệnh gửi dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 29 ;
+    ex:appearsOnPage ex:g12_page063 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSubmit .
+
+  ex:g12_topicF_fig_l6_submitResult a ex:Figure ;
+    rdfs:label "Hình 5b. Kết quả khi mở văn bản HTML ở Hình 5a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 5b. Kết quả khi mở văn bản HTML ở Hình 5a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 63 ;
+    ex:appearsOnPage ex:g12_page063 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSubmit .
+
+  ex:g12_topicF_fig_l6_registrationForm a ex:Figure ;
+    rdfs:label "Hình 6. Biểu mẫu đăng kí tham gia hội thao"@vi ;
+    ex:hasCaption "Hình 6. Biểu mẫu đăng kí tham gia hội thao"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 64 ;
+    ex:appearsOnPage ex:g12_page064 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBieuMau, ex:g12_conceptInputText, ex:g12_conceptRadioButton, ex:g12_conceptCheckbox, ex:g12_conceptSubmit .
+
+
+  ex:g12_topicF_fig_l7_textForm a ex:Figure ;
+    rdfs:label "Hình 1. Một biểu mẫu có ô text nhập dữ liệu"@vi ;
+    ex:hasCaption "Hình 1. Một biểu mẫu có ô text nhập dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 30 ;
+    ex:appearsOnPage ex:g12_page065 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBieuMau, ex:g12_conceptInputText, ex:g12_conceptTextarea .
+
+  ex:g12_topicF_fig_l7_choiceControls a ex:Figure ;
+    rdfs:label "Hình 2. Ví dụ điều khiển lựa chọn, gửi dữ liệu"@vi ;
+    ex:hasCaption "Hình 2. Ví dụ điều khiển lựa chọn, gửi dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 65 ;
+    ex:appearsOnPage ex:g12_page066 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCheckbox, ex:g12_conceptSubmit, ex:g12_conceptBieuMau .
+
+  ex:g12_topicF_fig_l7_fullForm a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ một trang web minh hoạ kết quả Nhiệm vụ 2"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ một trang web minh hoạ kết quả Nhiệm vụ 2"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 31 ;
+    ex:appearsOnPage ex:g12_page066 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCheckbox, ex:g12_conceptSubmit, ex:g12_conceptBieuMau .
+
+  ex:g12_topicF_fig_l7_responsePage a ex:Figure ;
+    rdfs:label "Hình 4. Một trang web phản hồi khi người sử dụng gửi dữ liệu"@vi ;
+    ex:hasCaption "Hình 4. Một trang web phản hồi khi người sử dụng gửi dữ liệu"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 32 ;
+    ex:appearsOnPage ex:g12_page067 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptForm, ex:g12_conceptSubmit .
+
+  ex:g12_topicF_fig_l8_cssRules a ex:Figure ;
+    rdfs:label "Hình 1. Một ví dụ CSS có hai quy tắc định dạng"@vi ;
+    ex:hasCaption "Hình 1. Một ví dụ CSS có hai quy tắc định dạng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 33 ;
+    ex:appearsOnPage ex:g12_page068 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCSS, ex:g12_conceptThuocTinhCSS .
+
+  ex:g12_topicF_fig_l8_ruleStructure a ex:Figure ;
+    rdfs:label "Hình 2. Một quy tắc định dạng CSS"@vi ;
+    ex:hasCaption "Hình 2. Một quy tắc định dạng CSS"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 34 ;
+    ex:appearsOnPage ex:g12_page069 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCSS, ex:g12_conceptBoChonPhanTu .
+
+  ex:g12_topicF_fig_l8_internalCssCode a ex:Figure ;
+    rdfs:label "Hình 3a. Ví dụ khai báo internal CSS và áp dụng bộ chọn phần tử"@vi ;
+    ex:hasCaption "Hình 3a. Ví dụ khai báo internal CSS và áp dụng bộ chọn phần tử"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 66 ;
+    ex:appearsOnPage ex:g12_page069 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptInternalCSS, ex:g12_conceptBoChonPhanTu .
+
+  ex:g12_topicF_fig_l8_internalCssResult a ex:Figure ;
+    rdfs:label "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 67 ;
+    ex:appearsOnPage ex:g12_page069 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptInternalCSS, ex:g12_conceptBoChonPhanTu .
+
+  ex:g12_topicF_fig_l8_externalCss a ex:Figure ;
+    rdfs:label "Hình 4a. Ví dụ khai báo và áp dụng quy tắc định dạng external CSS; Hình 4b. Tệp external CSS được sử dụng; Hình 4c. Kết quả khi mở văn bản HTML ở hình 4a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 4a. Ví dụ khai báo và áp dụng quy tắc định dạng external CSS; Hình 4b. Tệp external CSS được sử dụng; Hình 4c. Kết quả khi mở văn bản HTML ở hình 4a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 35 ;
+    ex:appearsOnPage ex:g12_page070 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptExternalCSS .
+
+  ex:g12_topicF_fig_l8_groupSelectors a ex:Figure ;
+    rdfs:label "Hình 5. Ví dụ khai báo gộp các bộ chọn phần tử"@vi ;
+    ex:hasCaption "Hình 5. Ví dụ khai báo gộp các bộ chọn phần tử"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 70 ;
+    ex:appearsOnPage ex:g12_page070 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCSS, ex:g12_conceptBoChonPhanTu .
+
+  ex:g12_topicF_fig_l8_colorExample a ex:Figure ;
+    rdfs:label "Hình 6a. Ví dụ khai báo CSS định dạng màu cho phần tử"@vi ;
+    ex:hasCaption "Hình 6a. Ví dụ khai báo CSS định dạng màu cho phần tử"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 36 ;
+    ex:appearsOnPage ex:g12_page071 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptColorCSS .
+
+  ex:g12_topicF_fig_l8_colorResult a ex:Figure ;
+    rdfs:label "Hình 6b. Kết quả khi mở văn bản HTML ở Hình 6a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 6b. Kết quả khi mở văn bản HTML ở Hình 6a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 71 ;
+    ex:appearsOnPage ex:g12_page071 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptColorCSS .
+
+  ex:g12_topicF_fig_l8_backgroundCode a ex:Figure ;
+    rdfs:label "Hình 7a. Ví dụ khai báo CSS định dạng màu nền"@vi ;
+    ex:hasCaption "Hình 7a. Ví dụ khai báo CSS định dạng màu nền"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 72 ;
+    ex:appearsOnPage ex:g12_page071 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBackgroundColorCSS .
+
+  ex:g12_topicF_fig_l8_backgroundResult a ex:Figure ;
+    rdfs:label "Hình 7b. Kết quả khi mở văn bản HTML ở Hình 7a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 7b. Kết quả khi mở văn bản HTML ở Hình 7a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 73 ;
+    ex:appearsOnPage ex:g12_page071 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBackgroundColorCSS .
+
+  ex:g12_topicF_fig_l8_fontCode a ex:Figure ;
+    rdfs:label "Hình 8a. Ví dụ khai báo CSS định dạng phông chữ, cỡ chữ"@vi ;
+    ex:hasCaption "Hình 8a. Ví dụ khai báo CSS định dạng phông chữ, cỡ chữ"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 74 ;
+    ex:appearsOnPage ex:g12_page072 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptFontFamilyCSS, ex:g12_conceptFontSizeCSS .
+
+  ex:g12_topicF_fig_l8_fontResult a ex:Figure ;
+    rdfs:label "Hình 8b. Kết quả khi mở văn bản HTML ở Hình 8a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 8b. Kết quả khi mở văn bản HTML ở Hình 8a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 75 ;
+    ex:appearsOnPage ex:g12_page072 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptFontFamilyCSS, ex:g12_conceptFontSizeCSS .
+
+  ex:g12_topicF_fig_l8_borderExample a ex:Figure ;
+    rdfs:label "Hình 9a. Ví dụ khai báo CSS định dạng đường viền"@vi ;
+    ex:hasCaption "Hình 9a. Ví dụ khai báo CSS định dạng đường viền"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 37 ;
+    ex:appearsOnPage ex:g12_page073 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBorderCSS .
+
+  ex:g12_topicF_fig_l8_borderResult a ex:Figure ;
+    rdfs:label "Hình 9b. Kết quả khi mở văn bản HTML ở Hình 9a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 9b. Kết quả khi mở văn bản HTML ở Hình 9a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 76 ;
+    ex:appearsOnPage ex:g12_page073 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBorderCSS .
+
+  ex:g12_topicF_fig_l9_internalCssForm a ex:Figure ;
+    rdfs:label "Hình 1. Ví dụ trang web sử dụng định dạng internal CSS"@vi ;
+    ex:hasCaption "Hình 1. Ví dụ trang web sử dụng định dạng internal CSS"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 38 ;
+    ex:appearsOnPage ex:g12_page074 ;
+    ex:belongsToLesson ex:g12_topicF_lesson9 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptInternalCSS, ex:g12_conceptBieuMau .
+
+  ex:g12_topicF_fig_l9_externalCssForm a ex:Figure ;
+    rdfs:label "Hình 2. Ví dụ văn bản HTML sử dụng định dạng external CSS"@vi ;
+    ex:hasCaption "Hình 2. Ví dụ văn bản HTML sử dụng định dạng external CSS"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 39 ;
+    ex:appearsOnPage ex:g12_page075 ;
+    ex:belongsToLesson ex:g12_topicF_lesson9 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptExternalCSS .
+
+  ex:g12_topicF_fig_l9_externalCssReuse a ex:Figure ;
+    rdfs:label "Hình 3. Văn bản HTML sử dụng lại định dạng external CSS đã khai báo"@vi ;
+    ex:hasCaption "Hình 3. Văn bản HTML sử dụng lại định dạng external CSS đã khai báo"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 77 ;
+    ex:appearsOnPage ex:g12_page076 ;
+    ex:belongsToLesson ex:g12_topicF_lesson9 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptExternalCSS .
+
+  ex:g12_topicF_fig_l10_classDeclaration a ex:Figure ;
+    rdfs:label "Hình 1. Ví dụ khai báo bộ chọn lớp"@vi ;
+    ex:hasCaption "Hình 1. Ví dụ khai báo bộ chọn lớp"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 78 ;
+    ex:appearsOnPage ex:g12_page077 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptClassSelector .
+
+  ex:g12_topicF_fig_l10_classSelector a ex:Figure ;
+    rdfs:label "Hình 2a. Ví dụ khai báo và áp dụng bộ chọn lớp"@vi ;
+    ex:hasCaption "Hình 2a. Ví dụ khai báo và áp dụng bộ chọn lớp"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 40 ;
+    ex:appearsOnPage ex:g12_page077 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptClassSelector, ex:g12_conceptClassAttribute .
+
+  ex:g12_topicF_fig_l10_classResult a ex:Figure ;
+    rdfs:label "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 79 ;
+    ex:appearsOnPage ex:g12_page077 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptClassSelector, ex:g12_conceptClassAttribute .
+
+  ex:g12_topicF_fig_l10_multiClassCode a ex:Figure ;
+    rdfs:label "Hình 3a. Ví dụ khai báo và áp dụng bộ chọn lớp cho một loại phần tử"@vi ;
+    ex:hasCaption "Hình 3a. Ví dụ khai báo và áp dụng bộ chọn lớp cho một loại phần tử"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 80 ;
+    ex:appearsOnPage ex:g12_page078 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptClassSelector, ex:g12_conceptClassAttribute .
+
+  ex:g12_topicF_fig_l10_multiClassResult a ex:Figure ;
+    rdfs:label "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 81 ;
+    ex:appearsOnPage ex:g12_page078 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptClassSelector, ex:g12_conceptClassAttribute .
+
+  ex:g12_topicF_fig_l10_idSelector a ex:Figure ;
+    rdfs:label "Hình 4a. Ví dụ khai báo và áp dụng bộ chọn định danh"@vi ;
+    ex:hasCaption "Hình 4a. Ví dụ khai báo và áp dụng bộ chọn định danh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 41 ;
+    ex:appearsOnPage ex:g12_page079 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptIdSelector, ex:g12_conceptIdAttribute .
+
+  ex:g12_topicF_fig_l10_idResult a ex:Figure ;
+    rdfs:label "Hình 4b. Kết quả khi mở văn bản HTML ở Hình 4a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 4b. Kết quả khi mở văn bản HTML ở Hình 4a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 82 ;
+    ex:appearsOnPage ex:g12_page079 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptIdSelector, ex:g12_conceptIdAttribute .
+
+  ex:g12_topicF_fig_l10_classPracticeResult a ex:Figure ;
+    rdfs:label "Hình 5. Ví dụ trang web áp dụng định dạng CSS sử dụng bộ chọn lớp"@vi ;
+    ex:hasCaption "Hình 5. Ví dụ trang web áp dụng định dạng CSS sử dụng bộ chọn lớp"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 83 ;
+    ex:appearsOnPage ex:g12_page079 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptClassSelector, ex:g12_conceptCSS, ex:g12_conceptBieuMau .
+
+  ex:g12_topicF_fig_l10_questionCode a ex:Figure ;
+    rdfs:label "Hình 6a. Văn bản HTML dùng trong bài tự kiểm tra"@vi ;
+    ex:hasCaption "Hình 6a"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 84 ;
+    ex:appearsOnPage ex:g12_page081 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTieuDeMuc, ex:g12_conceptCSS .
+
+  ex:g12_topicF_fig_l10_questionResult a ex:Figure ;
+    rdfs:label "Hình 6b. Kết quả hiển thị dùng trong bài tự kiểm tra"@vi ;
+    ex:hasCaption "Hình 6b"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 85 ;
+    ex:appearsOnPage ex:g12_page081 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTieuDeMuc, ex:g12_conceptCSS, ex:g12_conceptClassSelector, ex:g12_conceptIdSelector .
+
+
+  ex:g12_topicF_fig_l11_boxModel a ex:Figure ;
+    rdfs:label "Hình 1. Cấu trúc logic của mô hình hộp trong trình bày phần tử HTML"@vi ;
+    ex:hasCaption "Hình 1. Cấu trúc logic của mô hình hộp trong trình bày phần tử HTML"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 42 ;
+    ex:appearsOnPage ex:g12_page083 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBoxModel, ex:g12_conceptMargin, ex:g12_conceptBorder, ex:g12_conceptPadding, ex:g12_conceptContent .
+
+  ex:g12_topicF_fig_l11_marginCode a ex:Figure ;
+    rdfs:label "Hình 2a. Ví dụ sử dụng mô hình hộp trình bày đoạn văn bản"@vi ;
+    ex:hasCaption "Hình 2a. Ví dụ sử dụng mô hình hộp trình bày đoạn văn bản"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 86 ;
+    ex:appearsOnPage ex:g12_page084 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBoxModel, ex:g12_conceptMargin .
+
+  ex:g12_topicF_fig_l11_marginResult a ex:Figure ;
+    rdfs:label "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 2b. Kết quả khi mở văn bản HTML ở Hình 2a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 87 ;
+    ex:appearsOnPage ex:g12_page084 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBoxModel, ex:g12_conceptMargin .
+
+  ex:g12_topicF_table_l11_boxProperties a ex:Table ;
+    rdfs:label "Bảng 1. Một số thuộc tính định dạng CSS cho các vùng hiển thị của mô hình hộp"@vi ;
+    ex:hasCaption "Bảng 1. Một số thuộc tính định dạng CSS cho các vùng hiển thị của mô hình hộp"@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 4 ;
+    ex:appearsOnPage ex:g12_page083 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptPadding, ex:g12_conceptBorderCSS, ex:g12_conceptMargin .
+
+  ex:g12_topicF_fig_l11_paddingBorderCode a ex:Figure ;
+    rdfs:label "Hình 3a. Ví dụ sử dụng thuộc tính xác định đường viền và vùng đệm trình bày đoạn văn"@vi ;
+    ex:hasCaption "Hình 3a. Ví dụ sử dụng thuộc tính xác định đường viền và vùng đệm trình bày đoạn văn"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 88 ;
+    ex:appearsOnPage ex:g12_page084 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBoxModel, ex:g12_conceptPadding, ex:g12_conceptBorderCSS .
+
+  ex:g12_topicF_fig_l11_paddingBorderResult a ex:Figure ;
+    rdfs:label "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 3b. Kết quả khi mở văn bản HTML ở Hình 3a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 89 ;
+    ex:appearsOnPage ex:g12_page084 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBoxModel, ex:g12_conceptPadding, ex:g12_conceptBorderCSS .
+
+  ex:g12_topicF_fig_l11_displayExample a ex:Figure ;
+    rdfs:label "Hình 4a. Ví dụ khai báo theo khối và theo dòng; Hình 4b. Kết quả khi mở văn bản HTML ở hình 4a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 4a. Ví dụ khai báo theo khối và theo dòng; Hình 4b. Kết quả khi mở văn bản HTML ở hình 4a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 43 ;
+    ex:appearsOnPage ex:g12_page085 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDisplay, ex:g12_conceptBlockDisplay, ex:g12_conceptInlineDisplay .
+
+  ex:g12_topicF_fig_l11_layoutExample a ex:Figure ;
+    rdfs:label "Hình 5. Ví dụ về bố cục trang web"@vi ;
+    ex:hasCaption "Hình 5. Ví dụ về bố cục trang web"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 44 ;
+    ex:appearsOnPage ex:g12_page085 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBoCucTrangWeb, ex:g12_conceptHeader, ex:g12_conceptNavigationMenu, ex:g12_conceptContent, ex:g12_conceptFooter .
+
+  ex:g12_topicF_fig_l11_divLayout a ex:Figure ;
+    rdfs:label "Hình 6a. Ví dụ chia bố cục trang web bằng phần tử div kết hợp với CSS"@vi ;
+    ex:hasCaption "Hình 6a. Ví dụ chia bố cục trang web bằng phần tử div kết hợp với CSS"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 45 ;
+    ex:appearsOnPage ex:g12_page086 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDiv, ex:g12_conceptCSS, ex:g12_conceptBoCucTrangWeb .
+
+  ex:g12_topicF_fig_l11_divLayoutResult a ex:Figure ;
+    rdfs:label "Hình 6b. Kết quả khi mở văn bản HTML ở Hình 6a bằng trình duyệt web"@vi ;
+    ex:hasCaption "Hình 6b. Kết quả khi mở văn bản HTML ở Hình 6a bằng trình duyệt web"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 91 ;
+    ex:appearsOnPage ex:g12_page086 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDiv, ex:g12_conceptCSS, ex:g12_conceptBoCucTrangWeb .
+
+  ex:g12_topicF_fig_l11_formDisplayExercise a ex:Figure ;
+    rdfs:label "Hình 7. Minh hoạ biểu mẫu trong câu hỏi tự kiểm tra"@vi ;
+    ex:hasCaption "Hình 7"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 92 ;
+    ex:appearsOnPage ex:g12_page087 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDisplay, ex:g12_conceptBieuMau, ex:g12_conceptInputText, ex:g12_conceptSubmit .
+
+
+  ex:g12_topicF_fig_l12_wallNewspaper a ex:Figure ;
+    rdfs:label "Hình 1. Trang web báo tường của lớp 12A1"@vi ;
+    ex:hasCaption "Hình 1. Trang web báo tường của lớp 12A1"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 46 ;
+    ex:appearsOnPage ex:g12_page091 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDuAnBaoTuong, ex:g12_conceptBoCucTrangWeb .
+
+  ex:g12_topicF_fig_l12_projectStages a ex:Figure ;
+    rdfs:label "Hình 2. Các giai đoạn thực hiện dự án"@vi ;
+    ex:hasCaption "Hình 2. Các giai đoạn thực hiện dự án"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 47 ;
+    ex:appearsOnPage ex:g12_page091 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDuAnBaoTuong .
+
+  ex:g12_topicF_table_l12_htmlProduct a ex:Table ;
+    rdfs:label "Bảng 1. Những nội dung chính của sản phẩm thứ nhất"@vi ;
+    ex:hasCaption "Bảng 1. Những nội dung chính của sản phẩm thứ nhất"@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 5 ;
+    ex:appearsOnPage ex:g12_page089 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptHTML, ex:g12_conceptHeader, ex:g12_conceptContent, ex:g12_conceptFooter .
+
+  ex:g12_topicF_table_l12_cssProduct a ex:Table ;
+    rdfs:label "Bảng 2. Những nội dung chính của sản phẩm thứ hai"@vi ;
+    ex:hasCaption "Bảng 2. Những nội dung chính của sản phẩm thứ hai"@vi ;
+    ex:tableOrderOnPage 2 ;
+    ex:globalTableOrder 6 ;
+    ex:appearsOnPage ex:g12_page089 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCSS, ex:g12_conceptClassSelector, ex:g12_conceptIdSelector .
+
+  ex:g12_topicF_table_l12_slideProduct a ex:Table ;
+    rdfs:label "Bảng 3. Những nội dung chính của sản phẩm thứ ba"@vi ;
+    ex:hasCaption "Bảng 3. Những nội dung chính của sản phẩm thứ ba"@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 7 ;
+    ex:appearsOnPage ex:g12_page090 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDuAnBaoTuong .
+  
+
+  ###########################################################################
+  # Page-to-figure / page-to-table links
+  ###########################################################################
+
+  ex:g12_page035 ex:hasFigure ex:g12_topicF_fig_l1_websiteHome .
+  ex:g12_page036 ex:hasFigure ex:g12_topicF_fig_l1_elementStructure, ex:g12_topicF_fig_l1_attributeExample .
+  ex:g12_page037 ex:hasFigure ex:g12_topicF_fig_l1_htmlDocument, ex:g12_topicF_fig_l1_browserResult .
+  ex:g12_page038 ex:hasFigure ex:g12_topicF_fig_l1_sublimeIcon, ex:g12_topicF_fig_l1_sublimeWork .
+  ex:g12_page040 ex:hasFigure ex:g12_topicF_fig_l2_paragraphCode .
+  ex:g12_page041 ex:hasFigure ex:g12_topicF_fig_l2_paragraphResult, ex:g12_topicF_fig_l2_headingCode .
+  ex:g12_page042 ex:hasFigure ex:g12_topicF_fig_l2_headingResult ; ex:hasTable ex:g12_topicF_table_l2_highlightElements .
+  ex:g12_page043 ex:hasFigure ex:g12_topicF_fig_l2_highlightCode .
+  ex:g12_page044 ex:hasFigure ex:g12_topicF_fig_l2_hyperlinkCode, ex:g12_topicF_fig_l2_hyperlinkResult .
+  ex:g12_page046 ex:hasFigure ex:g12_topicF_fig_l3_personalHeadings .
+  ex:g12_page047 ex:hasFigure ex:g12_topicF_fig_l3_personalContent .
+  ex:g12_page048 ex:hasFigure ex:g12_topicF_fig_l3_personalLink .
+  ex:g12_page049 ex:hasFigure ex:g12_topicF_fig_l4_olExample, ex:g12_topicF_fig_l4_olResult .
+  ex:g12_page050 ex:hasFigure ex:g12_topicF_fig_l4_ulExample ; ex:hasTable ex:g12_topicF_table_l4_listType .
+  ex:g12_page051 ex:hasFigure ex:g12_topicF_fig_l4_tableExample .
+  ex:g12_page054 ex:hasFigure ex:g12_topicF_fig_l5_imgExample .
+  ex:g12_page055 ex:hasFigure ex:g12_topicF_fig_l5_audioExample, ex:g12_topicF_fig_l5_videoExample .
+  ex:g12_page056 ex:hasFigure ex:g12_topicF_fig_l5_iframeExample .
+  ex:g12_page059 ex:hasFigure ex:g12_topicF_fig_l6_loginForm .
+  ex:g12_page061 ex:hasTable ex:g12_topicF_table_l6_inputControls .
+  ex:g12_page062 ex:hasFigure ex:g12_topicF_fig_l6_radioExample, ex:g12_topicF_fig_l6_checkboxExample .
+  ex:g12_page063 ex:hasFigure ex:g12_topicF_fig_l6_submitExample .
+  ex:g12_page065 ex:hasFigure ex:g12_topicF_fig_l7_textForm .
+  ex:g12_page066 ex:hasFigure ex:g12_topicF_fig_l7_fullForm .
+  ex:g12_page067 ex:hasFigure ex:g12_topicF_fig_l7_responsePage .
+  ex:g12_page068 ex:hasFigure ex:g12_topicF_fig_l8_cssRules .
+  ex:g12_page069 ex:hasFigure ex:g12_topicF_fig_l8_ruleStructure .
+  ex:g12_page070 ex:hasFigure ex:g12_topicF_fig_l8_externalCss .
+  ex:g12_page071 ex:hasFigure ex:g12_topicF_fig_l8_colorExample .
+  ex:g12_page073 ex:hasFigure ex:g12_topicF_fig_l8_borderExample .
+  ex:g12_page074 ex:hasFigure ex:g12_topicF_fig_l9_internalCssForm .
+  ex:g12_page075 ex:hasFigure ex:g12_topicF_fig_l9_externalCssForm .
+  ex:g12_page077 ex:hasFigure ex:g12_topicF_fig_l10_classSelector .
+  ex:g12_page079 ex:hasFigure ex:g12_topicF_fig_l10_idSelector .
+  ex:g12_page083 ex:hasFigure ex:g12_topicF_fig_l11_boxModel ; ex:hasTable ex:g12_topicF_table_l11_boxProperties .
+  ex:g12_page085 ex:hasFigure ex:g12_topicF_fig_l11_displayExample, ex:g12_topicF_fig_l11_layoutExample .
+  ex:g12_page086 ex:hasFigure ex:g12_topicF_fig_l11_divLayout .
+  ex:g12_page089 ex:hasTable ex:g12_topicF_table_l12_htmlProduct, ex:g12_topicF_table_l12_cssProduct .
+  ex:g12_page090 ex:hasTable ex:g12_topicF_table_l12_slideProduct .
+  ex:g12_page091 ex:hasFigure ex:g12_topicF_fig_l12_wallNewspaper, ex:g12_topicF_fig_l12_projectStages .
+  ex:g12_page043 ex:hasFigure ex:g12_topicF_fig_l2_highlightResult .
+  ex:g12_page044 ex:hasFigure ex:g12_topicF_fig_l2_sameFolderLink .
+  ex:g12_page045 ex:hasFigure ex:g12_topicF_fig_l2_anchorLink .
+
+  ex:g12_page050 ex:hasFigure ex:g12_topicF_fig_l4_ulResult .
+  ex:g12_page051 ex:hasFigure ex:g12_topicF_fig_l4_tableResult .
+  ex:g12_page052 ex:hasFigure ex:g12_topicF_fig_l4_universityList, ex:g12_topicF_fig_l4_sportTable .
+
+  ex:g12_page054 ex:hasFigure ex:g12_topicF_fig_l5_imgResult .
+  ex:g12_page055 ex:hasFigure ex:g12_topicF_fig_l5_audioResult, ex:g12_topicF_fig_l5_videoResult .
+  ex:g12_page056 ex:hasFigure ex:g12_topicF_fig_l5_iframeResult .
+
+  ex:g12_page061 ex:hasFigure ex:g12_topicF_fig_l6_textboxCode, ex:g12_topicF_fig_l6_textboxResult .
+  ex:g12_page062 ex:hasFigure ex:g12_topicF_fig_l6_radioResult, ex:g12_topicF_fig_l6_checkboxResult .
+  ex:g12_page063 ex:hasFigure ex:g12_topicF_fig_l6_submitResult .
+  ex:g12_page064 ex:hasFigure ex:g12_topicF_fig_l6_registrationForm .
+
+  ex:g12_page066 ex:hasFigure ex:g12_topicF_fig_l7_choiceControls .
+
+  ex:g12_page069 ex:hasFigure ex:g12_topicF_fig_l8_internalCssCode, ex:g12_topicF_fig_l8_internalCssResult .
+  ex:g12_page070 ex:hasFigure ex:g12_topicF_fig_l8_groupSelectors .
+  ex:g12_page071 ex:hasFigure ex:g12_topicF_fig_l8_colorResult, ex:g12_topicF_fig_l8_backgroundCode, ex:g12_topicF_fig_l8_backgroundResult .
+  ex:g12_page072 ex:hasFigure ex:g12_topicF_fig_l8_fontCode, ex:g12_topicF_fig_l8_fontResult .
+  ex:g12_page073 ex:hasFigure ex:g12_topicF_fig_l8_borderResult .
+
+  ex:g12_page076 ex:hasFigure ex:g12_topicF_fig_l9_externalCssReuse .
+
+  ex:g12_page077 ex:hasFigure ex:g12_topicF_fig_l10_classDeclaration, ex:g12_topicF_fig_l10_classResult .
+  ex:g12_page078 ex:hasFigure ex:g12_topicF_fig_l10_multiClassCode, ex:g12_topicF_fig_l10_multiClassResult .
+  ex:g12_page079 ex:hasFigure ex:g12_topicF_fig_l10_idResult, ex:g12_topicF_fig_l10_classPracticeResult .
+  ex:g12_page081 ex:hasFigure ex:g12_topicF_fig_l10_questionCode, ex:g12_topicF_fig_l10_questionResult .
+
+  ex:g12_page084 ex:hasFigure ex:g12_topicF_fig_l11_marginCode, ex:g12_topicF_fig_l11_marginResult,
+                                  ex:g12_topicF_fig_l11_paddingBorderCode, ex:g12_topicF_fig_l11_paddingBorderResult .
+  ex:g12_page086 ex:hasFigure ex:g12_topicF_fig_l11_divLayoutResult .
+  ex:g12_page087 ex:hasFigure ex:g12_topicF_fig_l11_formDisplayExercise .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g12_conceptTaoTrangWeb ex:subConceptOf ex:g12_conceptWebsite .
+  ex:g12_conceptHTML ex:relatedTo ex:g12_conceptTaoTrangWeb, ex:g12_conceptCSS .
+  ex:g12_conceptPhanTuHTML ex:partOf ex:g12_conceptHTML .
+  ex:g12_conceptTheHTML ex:relatedTo ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptThuocTinhHTML ex:relatedTo ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptVanBanHTML ex:relatedTo ex:g12_conceptHTML .
+  ex:g12_conceptHead ex:partOf ex:g12_conceptVanBanHTML .
+  ex:g12_conceptBody ex:partOf ex:g12_conceptVanBanHTML .
+  ex:g12_conceptTitle ex:partOf ex:g12_conceptHead .
+  ex:g12_conceptMetaCharset ex:partOf ex:g12_conceptHead .
+  ex:g12_conceptDoanVanP ex:subConceptOf ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptTieuDeMuc ex:subConceptOf ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptStrong ex:subConceptOf ex:g12_conceptLamNoiBatVanBan .
+  ex:g12_conceptEm ex:subConceptOf ex:g12_conceptLamNoiBatVanBan .
+  ex:g12_conceptMark ex:subConceptOf ex:g12_conceptLamNoiBatVanBan .
+  ex:g12_conceptSieuLienKet ex:relatedTo ex:g12_conceptPhanTuA, ex:g12_conceptHref, ex:g12_conceptURL .
+  ex:g12_conceptOrderedList ex:subConceptOf ex:g12_conceptDanhSach .
+  ex:g12_conceptUnorderedList ex:subConceptOf ex:g12_conceptDanhSach .
+  ex:g12_conceptListItem ex:partOf ex:g12_conceptDanhSach .
+  ex:g12_conceptTableHTML ex:subConceptOf ex:g12_conceptBangHTML .
+  ex:g12_conceptTableRow ex:partOf ex:g12_conceptTableHTML .
+  ex:g12_conceptTableData ex:partOf ex:g12_conceptTableRow .
+  ex:g12_conceptCaption ex:relatedTo ex:g12_conceptTableHTML .
+  ex:g12_conceptImg ex:subConceptOf ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptAudio ex:subConceptOf ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptVideo ex:subConceptOf ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptIframe ex:subConceptOf ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptForm ex:subConceptOf ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptBieuMau ex:relatedTo ex:g12_conceptForm .
+  ex:g12_conceptInputText ex:partOf ex:g12_conceptBieuMau .
+  ex:g12_conceptTextarea ex:partOf ex:g12_conceptBieuMau .
+  ex:g12_conceptLabel ex:partOf ex:g12_conceptBieuMau .
+  ex:g12_conceptPassword ex:partOf ex:g12_conceptBieuMau .
+  ex:g12_conceptRadioButton ex:partOf ex:g12_conceptBieuMau .
+  ex:g12_conceptCheckbox ex:partOf ex:g12_conceptBieuMau .
+  ex:g12_conceptSubmit ex:partOf ex:g12_conceptBieuMau .
+  ex:g12_conceptCSS ex:relatedTo ex:g12_conceptHTML .
+  ex:g12_conceptInternalCSS ex:subConceptOf ex:g12_conceptCSS .
+  ex:g12_conceptExternalCSS ex:subConceptOf ex:g12_conceptCSS .
+  ex:g12_conceptBoChonPhanTu ex:partOf ex:g12_conceptCSS .
+  ex:g12_conceptThuocTinhCSS ex:partOf ex:g12_conceptCSS .
+  ex:g12_conceptColorCSS ex:subConceptOf ex:g12_conceptThuocTinhCSS .
+  ex:g12_conceptBackgroundColorCSS ex:subConceptOf ex:g12_conceptThuocTinhCSS .
+  ex:g12_conceptFontFamilyCSS ex:subConceptOf ex:g12_conceptThuocTinhCSS .
+  ex:g12_conceptFontSizeCSS ex:subConceptOf ex:g12_conceptThuocTinhCSS .
+  ex:g12_conceptBorderCSS ex:subConceptOf ex:g12_conceptThuocTinhCSS .
+  ex:g12_conceptClassSelector ex:subConceptOf ex:g12_conceptCSS .
+  ex:g12_conceptIdSelector ex:subConceptOf ex:g12_conceptCSS .
+  ex:g12_conceptClassAttribute ex:relatedTo ex:g12_conceptClassSelector .
+  ex:g12_conceptIdAttribute ex:relatedTo ex:g12_conceptIdSelector .
+  ex:g12_conceptBoxModel ex:relatedTo ex:g12_conceptCSS .
+  ex:g12_conceptMargin ex:partOf ex:g12_conceptBoxModel .
+  ex:g12_conceptBorder ex:partOf ex:g12_conceptBoxModel .
+  ex:g12_conceptPadding ex:partOf ex:g12_conceptBoxModel .
+  ex:g12_conceptContent ex:partOf ex:g12_conceptBoxModel .
+  ex:g12_conceptDisplay ex:subConceptOf ex:g12_conceptThuocTinhCSS .
+  ex:g12_conceptBlockDisplay ex:subConceptOf ex:g12_conceptDisplay .
+  ex:g12_conceptInlineDisplay ex:subConceptOf ex:g12_conceptDisplay .
+  ex:g12_conceptBoCucTrangWeb ex:relatedTo ex:g12_conceptWebsite, ex:g12_conceptCSS, ex:g12_conceptDiv .
+  ex:g12_conceptHeader ex:partOf ex:g12_conceptBoCucTrangWeb .
+  ex:g12_conceptNavigationMenu ex:partOf ex:g12_conceptBoCucTrangWeb .
+  ex:g12_conceptFooter ex:partOf ex:g12_conceptBoCucTrangWeb .
+  ex:g12_conceptDiv ex:subConceptOf ex:g12_conceptPhanTuHTML .
+  ex:g12_conceptDuAnBaoTuong ex:relatedTo ex:g12_conceptTaoTrangWeb, ex:g12_conceptHTML, ex:g12_conceptCSS, ex:g12_conceptBoCucTrangWeb .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g12_topicF_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Theo em, có ngôn ngữ chuyên dụng dùng để tạo trang web không?"@vi ;
+    ex:appearsOnPage ex:g12_page035 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:relatedTo ex:g12_conceptHTML, ex:g12_conceptTaoTrangWeb .
+
+  ex:g12_topicF_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 1 - Thành phần trong trang chủ website"@vi ;
+    ex:hasRawText "Em hãy cho biết các thành phần trong trang chủ của website minh hoạ ở Hình 1."@vi ;
+    ex:appearsOnPage ex:g12_page035 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:relatedTo ex:g12_conceptWebsite .
+
+  ex:g12_topicF_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 1 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Hãy truy cập website trường em và cho biết cấu trúc văn bản HTML của trang chủ website này."@vi ;
+    ex:appearsOnPage ex:g12_page039 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:relatedTo ex:g12_conceptVanBanHTML, ex:g12_conceptWebsite .
+
+  ex:g12_topicF_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 1 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Kiểm tra khai báo cấu trúc văn bản HTML, mục đích sử dụng các phần tử body, head, title, html và tìm lỗi cú pháp trong một văn bản HTML."@vi ;
+    ex:appearsOnPage ex:g12_page039 ;
+    ex:belongsToLesson ex:g12_topicF_lesson1 ;
+    ex:relatedTo ex:g12_conceptVanBanHTML, ex:g12_conceptHead, ex:g12_conceptBody, ex:g12_conceptTitle .
+
+  ex:g12_topicF_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Em hãy nêu một số cách để nhận biết siêu liên kết trên trang web."@vi ;
+    ex:appearsOnPage ex:g12_page040 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:relatedTo ex:g12_conceptSieuLienKet .
+
+  ex:g12_topicF_l2_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 2 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Sử dụng các phần tử tạo tiêu đề mục và các phần tử strong, em, mark để làm nổi bật nội dung; kết hợp h1 đến h6, p và a để soạn văn bản HTML giới thiệu về trường em."@vi ;
+    ex:appearsOnPage ex:g12_page045 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:relatedTo ex:g12_conceptTieuDeMuc, ex:g12_conceptStrong, ex:g12_conceptEm, ex:g12_conceptMark, ex:g12_conceptPhanTuA .
+
+  ex:g12_topicF_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 2 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Kiểm tra khai báo siêu liên kết đúng, nhận xét các phát biểu về h1 đến h6, strong, mark và p."@vi ;
+    ex:appearsOnPage ex:g12_page045 ;
+    ex:belongsToLesson ex:g12_topicF_lesson2 ;
+    ex:relatedTo ex:g12_conceptSieuLienKet, ex:g12_conceptTieuDeMuc, ex:g12_conceptStrong, ex:g12_conceptMark, ex:g12_conceptDoanVanP .
+
+  ex:g12_topicF_l3_project1 a ex:AppliedTask ;
+    rdfs:label "Tạo website cá nhân bài 3 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Hoàn thành một website cá nhân gồm thư mục myHomepage, tệp index.html, hobbies.html, album.html; sử dụng h1 tạo tiêu đề, tạo các siêu liên kết Sở thích và Ảnh của tôi, sử dụng p để viết đoạn văn giới thiệu bản thân."@vi ;
+    ex:appearsOnPage ex:g12_page048 ;
+    ex:belongsToLesson ex:g12_topicF_lesson3 ;
+    ex:relatedTo ex:g12_conceptWebsite, ex:g12_conceptSieuLienKet, ex:g12_conceptTieuDeMuc, ex:g12_conceptDoanVanP .
+
+  ex:g12_topicF_l4_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 4 - Tạo danh sách và tạo bảng"@vi ;
+    ex:hasRawText "Tạo danh sách các trường đại học Việt Bách cân nhắc dự tuyển và tạo bảng thống kê số lượng học sinh lớp 12A1 tham gia hoạt động thể thao của trường."@vi ;
+    ex:appearsOnPage ex:g12_page052 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:relatedTo ex:g12_conceptDanhSach, ex:g12_conceptBangHTML .
+
+  ex:g12_topicF_l4_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 4 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Nhận xét đúng sai về ol, ul và chọn khai báo đúng để tạo một bảng có hai hàng, mỗi hàng gồm một ô dữ liệu."@vi ;
+    ex:appearsOnPage ex:g12_page053 ;
+    ex:belongsToLesson ex:g12_topicF_lesson4 ;
+    ex:relatedTo ex:g12_conceptOrderedList, ex:g12_conceptUnorderedList, ex:g12_conceptBangHTML .
+
+  ex:g12_topicF_l5_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 5 - Chèn hình ảnh, âm thanh và sử dụng khung"@vi ;
+    ex:hasRawText "Tạo trang web có hình ảnh giới thiệu Văn Miếu Quốc Tử Giám, chèn tệp âm thanh, dùng iframe để nhúng các tệp HTML đã có vào văn bản HTML mới."@vi ;
+    ex:appearsOnPage ex:g12_page056 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:relatedTo ex:g12_conceptImg, ex:g12_conceptAudio, ex:g12_conceptIframe .
+
+  ex:g12_topicF_l5_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 5 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Xác định thuộc tính của phần tử img dùng để hiển thị thông báo khi hình ảnh gặp lỗi; xác định thuộc tính dùng để xác định tài nguyên được nhúng khi khai báo iframe."@vi ;
+    ex:appearsOnPage ex:g12_page058 ;
+    ex:belongsToLesson ex:g12_topicF_lesson5 ;
+    ex:relatedTo ex:g12_conceptImg, ex:g12_conceptAlt, ex:g12_conceptIframe .
+
+  ex:g12_topicF_l6_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 6 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Soạn văn bản HTML để tạo biểu mẫu với các điều khiển nhập liệu; hiệu chỉnh biểu mẫu để cho phép chọn một thể thao trong danh sách các môn thể thao được gợi ý."@vi ;
+    ex:appearsOnPage ex:g12_page064 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:relatedTo ex:g12_conceptBieuMau, ex:g12_conceptInputText, ex:g12_conceptRadioButton, ex:g12_conceptCheckbox .
+
+  ex:g12_topicF_l6_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 6 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Chọn khai báo dùng để tạo điều khiển nhập dữ liệu ô text và nhận xét đúng sai về textarea, radio, submit và việc xuống dòng trong ô nhập liệu."@vi ;
+    ex:appearsOnPage ex:g12_page064 ;
+    ex:belongsToLesson ex:g12_topicF_lesson6 ;
+    ex:relatedTo ex:g12_conceptInputText, ex:g12_conceptTextarea, ex:g12_conceptRadioButton, ex:g12_conceptSubmit .
+
+  ex:g12_topicF_l7_project1 a ex:AppliedTask ;
+    rdfs:label "Tạo website cá nhân bài 7 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Tạo biểu mẫu nhận lời nhắn từ bạn bè để hoàn thiện website cá nhân, gồm ô text có nhãn Họ và tên, ô textarea có nhãn Lời nhắn và nút submit có nhãn Gửi."@vi ;
+    ex:appearsOnPage ex:g12_page067 ;
+    ex:belongsToLesson ex:g12_topicF_lesson7 ;
+    ex:relatedTo ex:g12_conceptBieuMau, ex:g12_conceptInputText, ex:g12_conceptTextarea, ex:g12_conceptSubmit .
+
+  ex:g12_topicF_l8_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 8 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Soạn văn bản HTML có hai đoạn văn bản được tạo bởi p, khai báo và áp dụng internal CSS để trang web có nền xanh lơ, đoạn văn bản có chữ màu đỏ, phông Arial, cỡ 15 pixel."@vi ;
+    ex:appearsOnPage ex:g12_page073 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:relatedTo ex:g12_conceptInternalCSS, ex:g12_conceptBackgroundColorCSS, ex:g12_conceptColorCSS, ex:g12_conceptFontFamilyCSS, ex:g12_conceptFontSizeCSS .
+
+  ex:g12_topicF_l8_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 8 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Nhận xét đúng sai về mục đích sử dụng CSS, cách áp dụng CSS, lợi ích của external CSS và cú pháp khai báo CSS."@vi ;
+    ex:appearsOnPage ex:g12_page073 ;
+    ex:belongsToLesson ex:g12_topicF_lesson8 ;
+    ex:relatedTo ex:g12_conceptCSS, ex:g12_conceptExternalCSS .
+
+  ex:g12_topicF_l9_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 9 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Khai báo và áp dụng internal CSS, tạo tệp external CSS Bai9-NV2.css, áp dụng bảng định dạng external CSS cho các văn bản HTML."@vi ;
+    ex:appearsOnPage ex:g12_page074 ;
+    ex:belongsToLesson ex:g12_topicF_lesson9 ;
+    ex:relatedTo ex:g12_conceptInternalCSS, ex:g12_conceptExternalCSS, ex:g12_conceptThuocTinhCSS .
+
+  ex:g12_topicF_l10_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 10 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Khai báo và áp dụng bộ chọn lớp, bộ chọn định danh; dùng external CSS để định dạng màu chữ, phông chữ, cỡ chữ, màu nền của các phần tử trong biểu mẫu."@vi ;
+    ex:appearsOnPage ex:g12_page079 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:relatedTo ex:g12_conceptClassSelector, ex:g12_conceptIdSelector, ex:g12_conceptExternalCSS .
+
+  ex:g12_topicF_l10_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 10 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Kiểm tra cách áp dụng định dạng CSS với bộ chọn lớp, bộ chọn định danh và phân tích các giải pháp định dạng nhiều tiêu đề mục trong cùng một trang."@vi ;
+    ex:appearsOnPage ex:g12_page081 ;
+    ex:belongsToLesson ex:g12_topicF_lesson10 ;
+    ex:relatedTo ex:g12_conceptClassSelector, ex:g12_conceptIdSelector .
+
+  ex:g12_topicF_l11_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 11 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Khai báo thêm quy tắc định dạng cho trang Bai10-NV1.html để body có khoảng cách lề, h3 có đường viền solid và vùng đệm; sử dụng div kết hợp CSS để tách trang web thành phần đầu trang và phần nội dung."@vi ;
+    ex:appearsOnPage ex:g12_page087 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:relatedTo ex:g12_conceptBoxModel, ex:g12_conceptMargin, ex:g12_conceptPadding, ex:g12_conceptBorderCSS, ex:g12_conceptDiv .
+
+  ex:g12_topicF_l11_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 11 chủ đề F lớp 12"@vi ;
+    ex:hasRawText "Tính chiều cao phần tử theo mô hình hộp và nhận xét đúng sai về thiết lập hiển thị theo dòng hoặc theo khối để tạo biểu mẫu như yêu cầu."@vi ;
+    ex:appearsOnPage ex:g12_page087 ;
+    ex:belongsToLesson ex:g12_topicF_lesson11 ;
+    ex:relatedTo ex:g12_conceptBoxModel, ex:g12_conceptDisplay, ex:g12_conceptBlockDisplay, ex:g12_conceptInlineDisplay .
+
+  ex:g12_topicF_l12_project1 a ex:ProjectTask ;
+    rdfs:label "Dự án nhỏ bài 12 - Tạo trang web báo tường"@vi ;
+    ex:hasRawText "Thiết kế trang web báo tường điện tử của lớp em. Sản phẩm gồm tệp HTML tạo nội dung trang web, tệp CSS khai báo quy tắc định dạng và bài trình chiếu giới thiệu kết quả thực hiện dự án."@vi ;
+    ex:appearsOnPage ex:g12_page089 ;
+    ex:belongsToLesson ex:g12_topicF_lesson12 ;
+    ex:relatedTo ex:g12_conceptDuAnBaoTuong, ex:g12_conceptHTML, ex:g12_conceptCSS .
+
+  ex:g12_topicF_lesson1 ex:hasActivity ex:g12_topicF_l1_openingActivity, ex:g12_topicF_l1_activity1, ex:g12_topicF_l1_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicF_l1_review1 .
+
+  ex:g12_topicF_lesson2 ex:hasActivity ex:g12_topicF_l2_openingActivity, ex:g12_topicF_l2_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicF_l2_review1 .
+
+  ex:g12_topicF_lesson3 ex:hasActivity ex:g12_topicF_l3_project1 .
+
+  ex:g12_topicF_lesson4 ex:hasActivity ex:g12_topicF_l4_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicF_l4_review1 .
+
+  ex:g12_topicF_lesson5 ex:hasActivity ex:g12_topicF_l5_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicF_l5_review1 .
+
+  ex:g12_topicF_lesson6 ex:hasActivity ex:g12_topicF_l6_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicF_l6_review1 .
+
+  ex:g12_topicF_lesson7 ex:hasActivity ex:g12_topicF_l7_project1 .
+
+  ex:g12_topicF_lesson8 ex:hasActivity ex:g12_topicF_l8_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicF_l8_review1 .
+
+  ex:g12_topicF_lesson9 ex:hasActivity ex:g12_topicF_l9_practice1 .
+
+  ex:g12_topicF_lesson10 ex:hasActivity ex:g12_topicF_l10_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicF_l10_review1 .
+
+  ex:g12_topicF_lesson11 ex:hasActivity ex:g12_topicF_l11_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicF_l11_review1 .
+
+  ex:g12_topicF_lesson12 ex:hasActivity ex:g12_topicF_l12_project1 .
+}

@@ -1,0 +1,1326 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 12 TOPIC AICT
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 and Grade 11.
+# Source file: sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-7.pdf
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g12_grade12 a ex:GradeLevel ;
+    rdfs:label "Lớp 12"@vi ;
+    ex:gradeNumber 12 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g12_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 12 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 12 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g12_grade12 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicAICT_shared a ex:Topic ;
+    rdfs:label "Chủ đề A ICT (dùng chung các khối)"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi .
+
+  ex:g12_topicAICT a ex:Topic ;
+    rdfs:label "Chủ đề A ICT - Máy tính và xã hội tri thức"@vi ;
+    ex:hasTitle "Máy tính và xã hội tri thức"@vi ;
+    ex:hasSubtitle "Thực hành kết nối thiết bị số"@vi ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicAICT_shared ;
+    ex:topicOrder 1 ;
+    ex:topicCode "AICT" ;
+    ex:hasStartPage 107 ;
+    ex:hasEndPage 122 ;
+    ex:sourceFileName "sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-7.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g12_topicAICT_lesson1, ex:g12_topicAICT_lesson2 ;
+    ex:hasPage ex:g12_page107, ex:g12_page108, ex:g12_page109, ex:g12_page110,
+               ex:g12_page111, ex:g12_page112, ex:g12_page113, ex:g12_page114,
+               ex:g12_page115, ex:g12_page116, ex:g12_page117, ex:g12_page118,
+               ex:g12_page119, ex:g12_page120, ex:g12_page121, ex:g12_page122 .
+
+  ex:g12_tinhoc_ungdung_canhdieu ex:hasTopic ex:g12_topicAICT .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g12_topicAICT_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Thực hành kết nối máy tính với ti vi thông minh"@vi ;
+    ex:hasTitle "Thực hành kết nối máy tính với ti vi thông minh"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g12_topicAICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 107 ;
+    ex:hasEndPage 111 ;
+    ex:hasSection ex:g12_topicAICT_l1s1, ex:g12_topicAICT_l1s2 .
+
+  ex:g12_topicAICT_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Thực hành theo nhóm kết nối các thiết bị không dây cho ứng dụng"@vi ;
+    ex:hasTitle "Thực hành theo nhóm kết nối các thiết bị không dây cho ứng dụng"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g12_topicAICT ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 112 ;
+    ex:hasEndPage 122 ;
+    ex:hasSection ex:g12_topicAICT_l2s1, ex:g12_topicAICT_l2s2,
+                  ex:g12_topicAICT_l2s3, ex:g12_topicAICT_l2s4,
+                  ex:g12_topicAICT_l2s5, ex:g12_topicAICT_l2s6 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g12_topicAICT_l1s1 a ex:Section ;
+    rdfs:label "Nhiệm vụ 1. Kết nối máy tính với ti vi thông minh qua Wi-Fi"@vi ;
+    ex:hasTitle "Nhiệm vụ 1. Kết nối máy tính với ti vi thông minh qua Wi-Fi"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 .
+
+  ex:g12_topicAICT_l1s2 a ex:Section ;
+    rdfs:label "Nhiệm vụ 2. Kết nối máy tính với ti vi thông minh qua Bluetooth"@vi ;
+    ex:hasTitle "Nhiệm vụ 2. Kết nối máy tính với ti vi thông minh qua Bluetooth"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 .
+
+  ex:g12_topicAICT_l2s1 a ex:Section ;
+    rdfs:label "Yêu cầu chung"@vi ;
+    ex:hasTitle "Yêu cầu chung"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 .
+
+  ex:g12_topicAICT_l2s2 a ex:Section ;
+    rdfs:label "Nhiệm vụ 1. Kết nối máy tính với điện thoại thông minh qua Wi-Fi"@vi ;
+    ex:hasTitle "Nhiệm vụ 1. Kết nối máy tính với điện thoại thông minh qua Wi-Fi"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 .
+
+  ex:g12_topicAICT_l2s3 a ex:Section ;
+    rdfs:label "Nhiệm vụ 2. Kết nối máy tính với điện thoại thông minh qua ứng dụng AirDroid Personal"@vi ;
+    ex:hasTitle "Nhiệm vụ 2. Kết nối máy tính với điện thoại thông minh qua ứng dụng AirDroid Personal"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 .
+
+  ex:g12_topicAICT_l2s4 a ex:Section ;
+    rdfs:label "Nhiệm vụ 3. Làm việc với ổ cắm thông minh"@vi ;
+    ex:hasTitle "Nhiệm vụ 3. Làm việc với ổ cắm thông minh"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 .
+
+  ex:g12_topicAICT_l2s5 a ex:Section ;
+    rdfs:label "Nhiệm vụ 4. Làm việc với đèn thông minh"@vi ;
+    ex:hasTitle "Nhiệm vụ 4. Làm việc với đèn thông minh"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 .
+
+  ex:g12_topicAICT_l2s6 a ex:Section ;
+    rdfs:label "Bài tập vận dụng"@vi ;
+    ex:hasTitle "Bài tập vận dụng"@vi ;
+    ex:sectionOrder 6 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g12_page107 a ex:Page ; ex:hasPageNumber 107 ; ex:hasPrintedPageNumber 107 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g12_topicAICT_lesson1 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page108 a ex:Page ; ex:hasPageNumber 108 ; ex:hasPrintedPageNumber 108 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g12_topicAICT_lesson1 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page109 a ex:Page ; ex:hasPageNumber 109 ; ex:hasPrintedPageNumber 109 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g12_topicAICT_lesson1 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page110 a ex:Page ; ex:hasPageNumber 110 ; ex:hasPrintedPageNumber 110 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g12_topicAICT_lesson1 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page111 a ex:Page ; ex:hasPageNumber 111 ; ex:hasPrintedPageNumber 111 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g12_topicAICT_lesson1 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page112 a ex:Page ; ex:hasPageNumber 112 ; ex:hasPrintedPageNumber 112 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page113 a ex:Page ; ex:hasPageNumber 113 ; ex:hasPrintedPageNumber 113 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page114 a ex:Page ; ex:hasPageNumber 114 ; ex:hasPrintedPageNumber 114 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page115 a ex:Page ; ex:hasPageNumber 115 ; ex:hasPrintedPageNumber 115 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page116 a ex:Page ; ex:hasPageNumber 116 ; ex:hasPrintedPageNumber 116 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page117 a ex:Page ; ex:hasPageNumber 117 ; ex:hasPrintedPageNumber 117 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page118 a ex:Page ; ex:hasPageNumber 118 ; ex:hasPrintedPageNumber 118 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page119 a ex:Page ; ex:hasPageNumber 119 ; ex:hasPrintedPageNumber 119 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page120 a ex:Page ; ex:hasPageNumber 120 ; ex:hasPrintedPageNumber 120 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page121 a ex:Page ; ex:hasPageNumber 121 ; ex:hasPrintedPageNumber 121 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page122 a ex:Page ; ex:hasPageNumber 122 ; ex:hasPrintedPageNumber 122 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:g12_topicAICT_lesson2 ; ex:belongsToTopic ex:g12_topicAICT ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g12_page106 ex:nextPage ex:g12_page107 .
+  ex:g12_page107 ex:previousPage ex:g12_page106 ; ex:nextPage ex:g12_page108 .
+  ex:g12_page108 ex:previousPage ex:g12_page107 ; ex:nextPage ex:g12_page109 .
+  ex:g12_page109 ex:previousPage ex:g12_page108 ; ex:nextPage ex:g12_page110 .
+  ex:g12_page110 ex:previousPage ex:g12_page109 ; ex:nextPage ex:g12_page111 .
+  ex:g12_page111 ex:previousPage ex:g12_page110 ; ex:nextPage ex:g12_page112 .
+  ex:g12_page112 ex:previousPage ex:g12_page111 ; ex:nextPage ex:g12_page113 .
+  ex:g12_page113 ex:previousPage ex:g12_page112 ; ex:nextPage ex:g12_page114 .
+  ex:g12_page114 ex:previousPage ex:g12_page113 ; ex:nextPage ex:g12_page115 .
+  ex:g12_page115 ex:previousPage ex:g12_page114 ; ex:nextPage ex:g12_page116 .
+  ex:g12_page116 ex:previousPage ex:g12_page115 ; ex:nextPage ex:g12_page117 .
+  ex:g12_page117 ex:previousPage ex:g12_page116 ; ex:nextPage ex:g12_page118 .
+  ex:g12_page118 ex:previousPage ex:g12_page117 ; ex:nextPage ex:g12_page119 .
+  ex:g12_page119 ex:previousPage ex:g12_page118 ; ex:nextPage ex:g12_page120 .
+  ex:g12_page120 ex:previousPage ex:g12_page119 ; ex:nextPage ex:g12_page121 .
+  ex:g12_page121 ex:previousPage ex:g12_page120 ; ex:nextPage ex:g12_page122 .
+  ex:g12_page122 ex:previousPage ex:g12_page121 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g12_conceptMayTinhXaHoiTriThuc a ex:KnowledgeConcept ; rdfs:label "Máy tính và xã hội tri thức"@vi .
+  ex:g12_conceptThietBiSo a ex:KnowledgeConcept ; rdfs:label "Thiết bị số"@vi .
+  ex:g12_conceptKetNoiThietBiSo a ex:KnowledgeConcept ; rdfs:label "Kết nối thiết bị số"@vi .
+  ex:g12_conceptKetNoiKhongDay a ex:KnowledgeConcept ; rdfs:label "Kết nối không dây"@vi .
+  ex:g12_conceptMayTinh a ex:KnowledgeConcept ; rdfs:label "Máy tính"@vi .
+  ex:g12_conceptTiViThongMinh a ex:KnowledgeConcept ; rdfs:label "Ti vi thông minh"@vi .
+  ex:g12_conceptWiFi a ex:KnowledgeConcept ; rdfs:label "Wi-Fi"@vi .
+  ex:g12_conceptBluetooth a ex:KnowledgeConcept ; rdfs:label "Bluetooth"@vi .
+  ex:g12_conceptTruyenTep a ex:KnowledgeConcept ; rdfs:label "Truyền tệp"@vi .
+  ex:g12_conceptTepHinhAnh a ex:KnowledgeConcept ; rdfs:label "Tệp hình ảnh"@vi .
+  ex:g12_conceptTepAmThanh a ex:KnowledgeConcept ; rdfs:label "Tệp âm thanh"@vi .
+  ex:g12_conceptTepVideo a ex:KnowledgeConcept ; rdfs:label "Tệp video"@vi .
+  ex:g12_conceptWindows10 a ex:KnowledgeConcept ; rdfs:label "Windows 10"@vi .
+  ex:g12_conceptCastToDevice a ex:KnowledgeConcept ; rdfs:label "Cast to Device"@vi .
+  ex:g12_conceptBluetoothPairing a ex:KnowledgeConcept ; rdfs:label "Ghép đôi Bluetooth"@vi .
+  ex:g12_conceptMaGhepDoi a ex:KnowledgeConcept ; rdfs:label "Mã ghép đôi"@vi .
+
+  ex:g12_conceptDienThoaiThongMinh a ex:KnowledgeConcept ; rdfs:label "Điện thoại thông minh"@vi .
+  ex:g12_conceptAndroid a ex:KnowledgeConcept ; rdfs:label "Android"@vi .
+  ex:g12_conceptIOS a ex:KnowledgeConcept ; rdfs:label "iOS"@vi .
+  ex:g12_conceptAirDroidPersonal a ex:KnowledgeConcept ; rdfs:label "AirDroid Personal"@vi .
+  ex:g12_conceptMyDevices a ex:KnowledgeConcept ; rdfs:label "My devices"@vi .
+  ex:g12_conceptFileTransfer a ex:KnowledgeConcept ; rdfs:label "File Transfer"@vi .
+  ex:g12_conceptGuiTepDinhKem a ex:KnowledgeConcept ; rdfs:label "Gửi tệp đính kèm"@vi .
+  ex:g12_conceptTraoDoiThongTin a ex:KnowledgeConcept ; rdfs:label "Trao đổi thông tin giữa máy tính và điện thoại"@vi .
+
+  ex:g12_conceptNhaThongMinh a ex:KnowledgeConcept ; rdfs:label "Nhà thông minh"@vi .
+  ex:g12_conceptThietBiThongMinh a ex:KnowledgeConcept ; rdfs:label "Thiết bị thông minh"@vi .
+  ex:g12_conceptOcamThongMinh a ex:KnowledgeConcept ; rdfs:label "Ổ cắm thông minh"@vi .
+  ex:g12_conceptDenThongMinh a ex:KnowledgeConcept ; rdfs:label "Đèn thông minh"@vi .
+  ex:g12_conceptUngDungDieuKhien a ex:KnowledgeConcept ; rdfs:label "Ứng dụng điều khiển thiết bị thông minh"@vi .
+  ex:g12_conceptRangDongSmart a ex:KnowledgeConcept ; rdfs:label "RangDongSmart"@vi .
+  ex:g12_conceptNutReset a ex:KnowledgeConcept ; rdfs:label "Nút Reset"@vi .
+  ex:g12_conceptThemThietBi a ex:KnowledgeConcept ; rdfs:label "Thêm thiết bị"@vi .
+  ex:g12_conceptDieuKhienTuXa a ex:KnowledgeConcept ; rdfs:label "Điều khiển từ xa"@vi .
+  ex:g12_conceptBatTatThietBi a ex:KnowledgeConcept ; rdfs:label "Bật/tắt thiết bị"@vi .
+  ex:g12_conceptPower a ex:KnowledgeConcept ; rdfs:label "Power"@vi .
+  ex:g12_conceptTimer a ex:KnowledgeConcept ; rdfs:label "Timer"@vi .
+  ex:g12_conceptCountdown a ex:KnowledgeConcept ; rdfs:label "Countdown"@vi .
+  ex:g12_conceptSchedule a ex:KnowledgeConcept ; rdfs:label "Schedule"@vi .
+  ex:g12_conceptLapLich a ex:KnowledgeConcept ; rdfs:label "Lập lịch"@vi .
+  ex:g12_conceptHenGioDemNguoc a ex:KnowledgeConcept ; rdfs:label "Hẹn giờ đếm ngược"@vi .
+  ex:g12_conceptWhiteMode a ex:KnowledgeConcept ; rdfs:label "Chế độ đèn trắng"@vi .
+  ex:g12_conceptColourMode a ex:KnowledgeConcept ; rdfs:label "Chế độ đèn màu"@vi .
+  ex:g12_conceptSceneMode a ex:KnowledgeConcept ; rdfs:label "Bối cảnh đèn thông minh"@vi .
+  ex:g12_conceptDoSangDen a ex:KnowledgeConcept ; rdfs:label "Độ sáng của đèn"@vi .
+  ex:g12_conceptDoTrangDen a ex:KnowledgeConcept ; rdfs:label "Độ trắng của đèn"@vi .
+  ex:g12_conceptMauSacDen a ex:KnowledgeConcept ; rdfs:label "Màu sắc của đèn"@vi .
+  ex:g12_conceptChopTatDen a ex:KnowledgeConcept ; rdfs:label "Chế độ chớp tắt đèn"@vi .
+
+  ex:g12_topicAICT ex:hasConcept ex:g12_conceptMayTinhXaHoiTriThuc,
+    ex:g12_conceptThietBiSo, ex:g12_conceptKetNoiThietBiSo,
+    ex:g12_conceptKetNoiKhongDay, ex:g12_conceptMayTinh,
+    ex:g12_conceptTiViThongMinh, ex:g12_conceptWiFi, ex:g12_conceptBluetooth,
+    ex:g12_conceptTruyenTep, ex:g12_conceptWindows10,
+    ex:g12_conceptCastToDevice, ex:g12_conceptBluetoothPairing,
+    ex:g12_conceptDienThoaiThongMinh, ex:g12_conceptAndroid,
+    ex:g12_conceptIOS, ex:g12_conceptAirDroidPersonal,
+    ex:g12_conceptFileTransfer, ex:g12_conceptNhaThongMinh,
+    ex:g12_conceptThietBiThongMinh, ex:g12_conceptOcamThongMinh,
+    ex:g12_conceptDenThongMinh, ex:g12_conceptUngDungDieuKhien,
+    ex:g12_conceptRangDongSmart, ex:g12_conceptNutReset,
+    ex:g12_conceptPower, ex:g12_conceptTimer, ex:g12_conceptCountdown,
+    ex:g12_conceptSchedule, ex:g12_conceptLapLich,
+    ex:g12_conceptHenGioDemNguoc, ex:g12_conceptWhiteMode,
+    ex:g12_conceptColourMode, ex:g12_conceptSceneMode,
+    ex:g12_conceptDoSangDen, ex:g12_conceptDoTrangDen,
+    ex:g12_conceptMauSacDen, ex:g12_conceptChopTatDen .
+
+  ###########################################################################
+  # Learning objectives
+  ###########################################################################
+
+  ex:g12_topicAICT_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề A ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ kết nối được máy tính với ti vi thông minh qua kết nối không dây; thực hiện truyền các tệp âm thanh, hình ảnh và video giữa máy tính và ti vi thông minh phù hợp với nhu cầu sử dụng và đạt hiệu quả tốt."@vi ;
+    ex:appearsOnPage ex:g12_page107 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 .
+
+  ex:g12_topicAICT_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề A ICT lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ kết nối được một số thiết bị thông minh; khai thác được các tính năng của các thiết bị đó."@vi ;
+    ex:appearsOnPage ex:g12_page112 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g12_topicAICT_def_smartTv a ex:DefinitionText ;
+    rdfs:label "Ti vi thông minh"@vi ;
+    ex:hasDefinitionText "Ti vi thông minh hay Smart ti vi là ti vi có khả năng chạy trên một hệ điều hành riêng để cài đặt ứng dụng, kết nối Internet và được trang bị nhiều tính năng hiện đại như điều khiển bằng cử chỉ, giọng nói."@vi ;
+    ex:appearsOnPage ex:g12_page107 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:explainsConcept ex:g12_conceptTiViThongMinh .
+
+  ex:g12_topicAICT_def_smartPlug a ex:DefinitionText ;
+    rdfs:label "Ổ cắm thông minh"@vi ;
+    ex:hasDefinitionText "Ổ cắm thông minh là ổ cắm điện có khả năng kết nối với các thiết bị điện tử thông qua Internet, thường qua Wi-Fi hay Bluetooth, giúp điều khiển từ xa các thiết bị điện tử trong nhà bằng ứng dụng trên điện thoại thông minh."@vi ;
+    ex:appearsOnPage ex:g12_page115 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:explainsConcept ex:g12_conceptOcamThongMinh, ex:g12_conceptNhaThongMinh .
+
+  ex:g12_topicAICT_def_smartLight a ex:DefinitionText ;
+    rdfs:label "Đèn thông minh"@vi ;
+    ex:hasDefinitionText "Đèn thông minh là loại đèn chiếu sáng có thể điều khiển bằng remote cầm tay từ xa, điện thoại thông minh, cảm biến hoặc giọng nói; người dùng có thể điều chỉnh màu sắc, độ sáng, đặt lịch chiếu sáng và chế độ thích ứng."@vi ;
+    ex:appearsOnPage ex:g12_page118 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:explainsConcept ex:g12_conceptDenThongMinh .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g12_topicAICT_p107_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1 thực hành kết nối máy tính với ti vi thông minh, giúp học sinh kết nối máy tính với ti vi thông minh qua kết nối không dây và truyền các tệp âm thanh, hình ảnh, video giữa máy tính và ti vi."@vi ;
+    ex:appearsOnPage ex:g12_page107 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptMayTinh, ex:g12_conceptTiViThongMinh, ex:g12_conceptKetNoiKhongDay, ex:g12_conceptTruyenTep .
+
+  ex:g12_topicAICT_p107_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Nhiệm vụ 1 yêu cầu kết nối máy tính với ti vi thông minh qua Wi-Fi và truyền một số dữ liệu như hình ảnh, âm thanh, video từ máy tính sang ti vi. Hướng dẫn minh họa kết nối máy tính Windows 10 với ti vi thông minh Sony hoặc Samsung."@vi ;
+    ex:appearsOnPage ex:g12_page107 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptWiFi, ex:g12_conceptWindows10, ex:g12_conceptTiViThongMinh, ex:g12_conceptTepHinhAnh, ex:g12_conceptTepAmThanh, ex:g12_conceptTepVideo .
+
+  ex:g12_topicAICT_p108_01 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Khi kết nối qua Wi-Fi, người dùng bật Wi-Fi trên ti vi và máy tính, dò kết nối máy tính với ti vi, chọn Everything else, chọn thiết bị ti vi trong danh sách thiết bị dùng Wi-Fi và hoàn thành kết nối khi có thông báo Your device is ready to go."@vi ;
+    ex:appearsOnPage ex:g12_page108 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptWiFi, ex:g12_conceptTiViThongMinh, ex:g12_conceptMayTinh .
+
+  ex:g12_topicAICT_p108_02 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Việc truyền tệp ảnh, video, âm thanh từ máy tính lên ti vi được thực hiện bằng cách mở Windows Explorer, chọn thư mục chứa tệp cần truyền, nháy chuột phải vào tên tệp, chọn Cast to Device và chọn ti vi đã kết nối."@vi ;
+    ex:appearsOnPage ex:g12_page108 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptTruyenTep, ex:g12_conceptCastToDevice, ex:g12_conceptTepHinhAnh, ex:g12_conceptTepAmThanh, ex:g12_conceptTepVideo .
+
+  ex:g12_topicAICT_p109_01 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Sau khi chọn Cast to Device, máy tính hiển thị danh sách các tệp được lần lượt truyền đến ti vi; màn hình ti vi hiển thị nội dung tệp hình ảnh, video hoặc phát âm thanh theo tệp đã chọn trên máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page109 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptCastToDevice, ex:g12_conceptTruyenTep, ex:g12_conceptTiViThongMinh .
+
+  ex:g12_topicAICT_p109_02 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu kết nối máy tính với ti vi thông minh thông qua Bluetooth và truyền một số dữ liệu từ máy tính sang ti vi. Người dùng bật Bluetooth trên ti vi, trên ti vi Sony chọn Settings, Bluetooth và Ghép nối phụ kiện; trên ti vi Samsung chọn Cài đặt, Tất cả cài đặt, Kết nối và Danh sách thiết bị Bluetooth."@vi ;
+    ex:appearsOnPage ex:g12_page109 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptBluetooth, ex:g12_conceptBluetoothPairing, ex:g12_conceptTiViThongMinh, ex:g12_conceptMayTinh .
+
+  ex:g12_topicAICT_p110_01 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "Trên máy tính, chọn Start, Settings, Devices, Bluetooth & other devices, Add Bluetooth or other device. Khi máy tính phát hiện thiết bị Bluetooth của ti vi, chọn tên ti vi và chuẩn bị ghép đôi; máy tính hiển thị thông báo mã ghép đôi để kết nối."@vi ;
+    ex:appearsOnPage ex:g12_page110 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptBluetooth, ex:g12_conceptBluetoothPairing, ex:g12_conceptMaGhepDoi, ex:g12_conceptWindows10 .
+
+  ex:g12_topicAICT_p111_01 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "Người dùng đồng ý kết nối ti vi với máy tính, chọn Ghép nối trên ti vi, sau đó trên máy tính chọn Connect và Done để kết thúc quá trình kết nối. Sau khi hoàn thành, máy tính có thể chia sẻ tệp cho ti vi."@vi ;
+    ex:appearsOnPage ex:g12_page111 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptBluetoothPairing, ex:g12_conceptTruyenTep, ex:g12_conceptTiViThongMinh .
+
+  ex:g12_topicAICT_p111_02 a ex:Paragraph ;
+    ex:paragraphOrder 9 ;
+    ex:hasRawText "Chú ý: truyền dữ liệu bằng Bluetooth có thể tương đối nhanh nhưng tốc độ hiện nay thường dưới 50 Mbps nên hai thiết bị gần nhau và giữa chúng không có chướng ngại vật. Truyền dữ liệu bằng Wi-Fi có thể truyền giữa các thiết bị ở khoảng cách xa hơn nhưng đòi hỏi có thiết bị chuyển tiếp như Router hoặc Access Point."@vi ;
+    ex:appearsOnPage ex:g12_page111 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToSection ex:g12_topicAICT_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptBluetooth, ex:g12_conceptWiFi, ex:g12_conceptKetNoiKhongDay .
+
+  ex:g12_topicAICT_p112_01 a ex:Paragraph ;
+    ex:paragraphOrder 10 ;
+    ex:hasRawText "Bài 2 thực hành theo nhóm kết nối các thiết bị không dây cho ứng dụng. Các nhóm chọn thực hiện hai trong bốn nhiệm vụ và báo cáo kết quả, nêu rõ những thành viên thực hiện từng phần việc và những điều nhóm thích thú khi thực hiện."@vi ;
+    ex:appearsOnPage ex:g12_page112 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s1 ;
+    ex:mentionsConcept ex:g12_conceptKetNoiKhongDay, ex:g12_conceptThietBiThongMinh .
+
+  ex:g12_topicAICT_p112_02 a ex:Paragraph ;
+    ex:paragraphOrder 11 ;
+    ex:hasRawText "Nhiệm vụ 1 yêu cầu kết nối máy tính với điện thoại thông minh qua Wi-Fi và sao chép một số dữ liệu từ điện thoại sang máy tính hoặc ngược lại. Người dùng bật Wi-Fi trên điện thoại Android hoặc iOS, chọn mạng Wi-Fi an toàn, nhập mật mã nếu cần và bật Wi-Fi trên máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page112 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s2 ;
+    ex:mentionsConcept ex:g12_conceptMayTinh, ex:g12_conceptDienThoaiThongMinh, ex:g12_conceptWiFi, ex:g12_conceptAndroid, ex:g12_conceptIOS, ex:g12_conceptTruyenTep .
+
+  ex:g12_topicAICT_p113_01 a ex:Paragraph ;
+    ex:paragraphOrder 12 ;
+    ex:hasRawText "Khi máy tính và điện thoại đã kết nối qua Wi-Fi, có thể dùng môi trường Internet để trao đổi tệp giữa hai thiết bị, chuyển tệp qua thư điện tử, tin nhắn, Zalo hoặc các dịch vụ tương tự."@vi ;
+    ex:appearsOnPage ex:g12_page113 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s2 ;
+    ex:mentionsConcept ex:g12_conceptWiFi, ex:g12_conceptTraoDoiThongTin, ex:g12_conceptTruyenTep .
+
+  ex:g12_topicAICT_p113_02 a ex:Paragraph ;
+    ex:paragraphOrder 13 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu giới thiệu, cài đặt và đăng kí tài khoản AirDroid Personal trên máy tính và điện thoại, sau đó trao đổi thông tin giữa máy tính và điện thoại qua ứng dụng này."@vi ;
+    ex:appearsOnPage ex:g12_page113 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptAirDroidPersonal, ex:g12_conceptMayTinh, ex:g12_conceptDienThoaiThongMinh, ex:g12_conceptTraoDoiThongTin .
+
+  ex:g12_topicAICT_p114_01 a ex:Paragraph ;
+    ex:paragraphOrder 14 ;
+    ex:hasRawText "AirDroid Personal cho phép làm việc trên máy tính với giao diện riêng và làm việc trên điện thoại với giao diện riêng. Khi muốn gửi dữ liệu từ máy tính đến điện thoại, chọn thiết bị sẽ chuyển đến trong My devices, chọn File Transfer, chọn tệp hoặc thư mục cần chuyển và gửi."@vi ;
+    ex:appearsOnPage ex:g12_page114 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptAirDroidPersonal, ex:g12_conceptMyDevices, ex:g12_conceptFileTransfer, ex:g12_conceptTruyenTep .
+
+  ex:g12_topicAICT_p114_02 a ex:Paragraph ;
+    ex:paragraphOrder 15 ;
+    ex:hasRawText "Để gửi dữ liệu từ điện thoại đến máy tính, trên màn hình AirDroid ở điện thoại chọn tên máy tính sẽ kết nối, chọn biểu tượng tệp đính kèm hoặc biểu tượng ảnh, chọn Send để gửi; điện thoại có thể cung cấp các loại tệp như trình ứng dụng, ảnh chụp từ camera, video, tệp nhạc và tệp trong thư mục."@vi ;
+    ex:appearsOnPage ex:g12_page114 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptAirDroidPersonal, ex:g12_conceptGuiTepDinhKem, ex:g12_conceptTruyenTep, ex:g12_conceptDienThoaiThongMinh .
+
+  ex:g12_topicAICT_p115_01 a ex:Paragraph ;
+    ex:paragraphOrder 16 ;
+    ex:hasRawText "Nhiệm vụ 3 giới thiệu và thực hành làm việc với ổ cắm thông minh. Ổ cắm thông minh có thể điều khiển từ xa thiết bị điện trong nhà bằng ứng dụng trên điện thoại, hỗ trợ bật tắt, điều chỉnh hoạt động, đặt lịch trình hoặc hẹn giờ cho thiết bị."@vi ;
+    ex:appearsOnPage ex:g12_page115 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptOcamThongMinh, ex:g12_conceptNhaThongMinh, ex:g12_conceptUngDungDieuKhien, ex:g12_conceptDieuKhienTuXa .
+
+  ex:g12_topicAICT_p115_02 a ex:Paragraph ;
+    ex:paragraphOrder 17 ;
+    ex:hasRawText "Bài học minh họa ổ cắm thông minh Rạng Đông OC.01.WF 16A, làm việc với điện áp nguồn 220 V, dòng điện tối đa 16 A, có thể kết nối không dây Wi-Fi để điều khiển từ xa qua Internet, hỗ trợ điều khiển theo kịch bản, đặt lịch và hẹn giờ."@vi ;
+    ex:appearsOnPage ex:g12_page115 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptOcamThongMinh, ex:g12_conceptRangDongSmart, ex:g12_conceptWiFi, ex:g12_conceptLapLich, ex:g12_conceptHenGioDemNguoc .
+
+  ex:g12_topicAICT_p116_01 a ex:Paragraph ;
+    ex:paragraphOrder 18 ;
+    ex:hasRawText "Để cài đặt ổ cắm thông minh, người dùng cài ứng dụng điều khiển trên điện thoại, đăng kí và đăng nhập tài khoản, reset ổ cắm nếu cần bằng nút Reset, sau đó thêm thiết bị, chọn ổ cắm Wi-Fi, nhập thông tin mạng Wi-Fi đang dùng và hoàn tất kết nối."@vi ;
+    ex:appearsOnPage ex:g12_page116 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptOcamThongMinh, ex:g12_conceptUngDungDieuKhien, ex:g12_conceptNutReset, ex:g12_conceptThemThietBi, ex:g12_conceptWiFi .
+
+  ex:g12_topicAICT_p117_01 a ex:Paragraph ;
+    ex:paragraphOrder 19 ;
+    ex:hasRawText "Sau khi kết nối thành công, người dùng có thể điều khiển bật/tắt ổ cắm thông minh bằng Power, đặt lịch bật/tắt bằng Timer và Thêm mới, hoặc thiết lập hẹn giờ đếm ngược cho ổ cắm thông minh bằng Countdown."@vi ;
+    ex:appearsOnPage ex:g12_page117 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptOcamThongMinh, ex:g12_conceptPower, ex:g12_conceptTimer, ex:g12_conceptCountdown, ex:g12_conceptLapLich, ex:g12_conceptHenGioDemNguoc .
+
+  ex:g12_topicAICT_p118_01 a ex:Paragraph ;
+    ex:paragraphOrder 20 ;
+    ex:hasRawText "Nhiệm vụ 4 giới thiệu đèn thông minh, loại đèn có thể điều khiển từ xa bằng điện thoại, cảm biến hoặc giọng nói. Người dùng có thể điều chỉnh màu sắc, độ sáng, đặt lịch chiếu sáng, đặt chế độ thích ứng với thói quen sử dụng và điều khiển chiếu sáng trong nhà theo ý muốn."@vi ;
+    ex:appearsOnPage ex:g12_page118 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s5 ;
+    ex:mentionsConcept ex:g12_conceptDenThongMinh, ex:g12_conceptDieuKhienTuXa, ex:g12_conceptMauSacDen, ex:g12_conceptDoSangDen, ex:g12_conceptLapLich .
+
+  ex:g12_topicAICT_p119_01 a ex:Paragraph ;
+    ex:paragraphOrder 21 ;
+    ex:hasRawText "Bài học minh họa đèn thông minh Rạng Đông A60.RGB.WF/9W, làm việc với điện áp nguồn 220 V, công suất 9 W, kết nối không dây Wi-Fi để điều khiển từ xa qua Internet, hỗ trợ thay đổi độ sáng, thay đổi màu, điều khiển theo kịch bản, đặt lịch và hẹn giờ."@vi ;
+    ex:appearsOnPage ex:g12_page119 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s5 ;
+    ex:mentionsConcept ex:g12_conceptDenThongMinh, ex:g12_conceptRangDongSmart, ex:g12_conceptWiFi, ex:g12_conceptDoSangDen, ex:g12_conceptMauSacDen, ex:g12_conceptLapLich .
+
+  ex:g12_topicAICT_p119_02 a ex:Paragraph ;
+    ex:paragraphOrder 22 ;
+    ex:hasRawText "Để kết nối đèn thông minh với ứng dụng điều khiển, mở ứng dụng, chọn thêm thiết bị, tại mục thêm thủ công chọn thiết bị chiếu sáng Wi-Fi, nhập thông tin mạng Wi-Fi đang sử dụng, xác nhận đèn nhấp nháy và đợi ứng dụng tìm kiếm thiết bị để hoàn thành."@vi ;
+    ex:appearsOnPage ex:g12_page119 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s5 ;
+    ex:mentionsConcept ex:g12_conceptDenThongMinh, ex:g12_conceptUngDungDieuKhien, ex:g12_conceptThemThietBi, ex:g12_conceptWiFi .
+
+  ex:g12_topicAICT_p120_01 a ex:Paragraph ;
+    ex:paragraphOrder 23 ;
+    ex:hasRawText "Giao diện làm việc chung của đèn thông minh trên điện thoại cho phép làm việc với chế độ đèn trắng, chế độ đèn màu, các bối cảnh, bật/tắt đèn trực tiếp, xem thời gian duy trì trạng thái hiện thời và lập lịch thực hiện thao tác."@vi ;
+    ex:appearsOnPage ex:g12_page120 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s5 ;
+    ex:mentionsConcept ex:g12_conceptDenThongMinh, ex:g12_conceptWhiteMode, ex:g12_conceptColourMode, ex:g12_conceptSceneMode, ex:g12_conceptPower, ex:g12_conceptSchedule .
+
+  ex:g12_topicAICT_p120_02 a ex:Paragraph ;
+    ex:paragraphOrder 24 ;
+    ex:hasRawText "Để điều khiển đèn tạo ánh sáng trắng, chọn White trên giao diện làm việc chung, thay đổi mức độ sáng và độ trắng của đèn; có thể kéo thanh ngang để thay đổi độ sáng theo phần trăm và di chuyển điểm tròn trên vòng cung để thay đổi độ trắng từ vàng sang trắng."@vi ;
+    ex:appearsOnPage ex:g12_page120 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s5 ;
+    ex:mentionsConcept ex:g12_conceptWhiteMode, ex:g12_conceptDoSangDen, ex:g12_conceptDoTrangDen .
+
+  ex:g12_topicAICT_p121_01 a ex:Paragraph ;
+    ex:paragraphOrder 25 ;
+    ex:hasRawText "Để điều khiển đèn tạo ánh sáng màu, chọn Colour trên giao diện làm việc chung, nhấn và di chuyển điểm tròn trên vòng tròn màu để thay đổi màu sắc, điều chỉnh thanh ngang cường độ sáng cho màu sáng hơn hoặc tối đi và điều chỉnh độ tươi cho màu rỡ lên hoặc mờ đi."@vi ;
+    ex:appearsOnPage ex:g12_page121 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s5 ;
+    ex:mentionsConcept ex:g12_conceptColourMode, ex:g12_conceptMauSacDen, ex:g12_conceptDoSangDen .
+
+  ex:g12_topicAICT_p121_02 a ex:Paragraph ;
+    ex:paragraphOrder 26 ;
+    ex:hasRawText "Để điều khiển đèn phù hợp với các bối cảnh làm việc, chọn Scene và chọn biểu tượng bối cảnh như Night, Read, Colourful; với một số bối cảnh có thể chọn Edit để thiết lập thêm yếu tố bối cảnh màu, chuyển màu hoặc tốc độ nhấp nháy."@vi ;
+    ex:appearsOnPage ex:g12_page121 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s5 ;
+    ex:mentionsConcept ex:g12_conceptSceneMode, ex:g12_conceptChopTatDen, ex:g12_conceptDenThongMinh .
+
+  ex:g12_topicAICT_p122_01 a ex:Paragraph ;
+    ex:paragraphOrder 27 ;
+    ex:hasRawText "Để lập lịch cho đèn thông minh, chọn Schedule để tạo kịch bản cho đèn tự động thực hiện thao tác mong muốn; trong giao diện thêm lịch, chọn thời gian hẹn, cài đặt lặp lại nếu cần, chọn Switch và ON/OFF, sau đó nhấn Lưu để hoàn thành lập lịch."@vi ;
+    ex:appearsOnPage ex:g12_page122 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s5 ;
+    ex:mentionsConcept ex:g12_conceptSchedule, ex:g12_conceptLapLich, ex:g12_conceptDenThongMinh, ex:g12_conceptBatTatThietBi .
+
+  ex:g12_topicAICT_p122_02 a ex:Paragraph ;
+    ex:paragraphOrder 28 ;
+    ex:hasRawText "Bài tập vận dụng yêu cầu thực hiện chuyển tin nhắn và các loại file khác nhau qua AirDroid Personal; đặt chế độ tắt cho ổ cắm thông minh theo lịch; chỉnh đèn sáng trắng 50% trong 15 phút; lập lịch lựa chọn bối cảnh Đêm cho đèn thông minh; chọn bối cảnh để thay đổi tốc độ đèn nhấp nháy."@vi ;
+    ex:appearsOnPage ex:g12_page122 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToSection ex:g12_topicAICT_l2s6 ;
+    ex:mentionsConcept ex:g12_conceptAirDroidPersonal, ex:g12_conceptOcamThongMinh, ex:g12_conceptDenThongMinh, ex:g12_conceptSchedule, ex:g12_conceptSceneMode, ex:g12_conceptChopTatDen .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g12_page107 ex:hasParagraph ex:g12_topicAICT_p107_01, ex:g12_topicAICT_p107_02 .
+  ex:g12_page108 ex:hasParagraph ex:g12_topicAICT_p108_01, ex:g12_topicAICT_p108_02 .
+  ex:g12_page109 ex:hasParagraph ex:g12_topicAICT_p109_01, ex:g12_topicAICT_p109_02 .
+  ex:g12_page110 ex:hasParagraph ex:g12_topicAICT_p110_01 .
+  ex:g12_page111 ex:hasParagraph ex:g12_topicAICT_p111_01, ex:g12_topicAICT_p111_02 .
+  ex:g12_page112 ex:hasParagraph ex:g12_topicAICT_p112_01, ex:g12_topicAICT_p112_02 .
+  ex:g12_page113 ex:hasParagraph ex:g12_topicAICT_p113_01, ex:g12_topicAICT_p113_02 .
+  ex:g12_page114 ex:hasParagraph ex:g12_topicAICT_p114_01, ex:g12_topicAICT_p114_02 .
+  ex:g12_page115 ex:hasParagraph ex:g12_topicAICT_p115_01, ex:g12_topicAICT_p115_02 .
+  ex:g12_page116 ex:hasParagraph ex:g12_topicAICT_p116_01 .
+  ex:g12_page117 ex:hasParagraph ex:g12_topicAICT_p117_01 .
+  ex:g12_page118 ex:hasParagraph ex:g12_topicAICT_p118_01 .
+  ex:g12_page119 ex:hasParagraph ex:g12_topicAICT_p119_01, ex:g12_topicAICT_p119_02 .
+  ex:g12_page120 ex:hasParagraph ex:g12_topicAICT_p120_01, ex:g12_topicAICT_p120_02 .
+  ex:g12_page121 ex:hasParagraph ex:g12_topicAICT_p121_01, ex:g12_topicAICT_p121_02 .
+  ex:g12_page122 ex:hasParagraph ex:g12_topicAICT_p122_01, ex:g12_topicAICT_p122_02 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g12_topicAICT_l1s1 ex:hasParagraph ex:g12_topicAICT_p107_01, ex:g12_topicAICT_p107_02,
+    ex:g12_topicAICT_p108_01, ex:g12_topicAICT_p108_02, ex:g12_topicAICT_p109_01 .
+
+  ex:g12_topicAICT_l1s2 ex:hasParagraph ex:g12_topicAICT_p109_02, ex:g12_topicAICT_p110_01,
+    ex:g12_topicAICT_p111_01, ex:g12_topicAICT_p111_02 .
+
+  ex:g12_topicAICT_l2s1 ex:hasParagraph ex:g12_topicAICT_p112_01 .
+  ex:g12_topicAICT_l2s2 ex:hasParagraph ex:g12_topicAICT_p112_02, ex:g12_topicAICT_p113_01 .
+  ex:g12_topicAICT_l2s3 ex:hasParagraph ex:g12_topicAICT_p113_02, ex:g12_topicAICT_p114_01, ex:g12_topicAICT_p114_02 .
+  ex:g12_topicAICT_l2s4 ex:hasParagraph ex:g12_topicAICT_p115_01, ex:g12_topicAICT_p115_02, ex:g12_topicAICT_p116_01, ex:g12_topicAICT_p117_01 .
+  ex:g12_topicAICT_l2s5 ex:hasParagraph ex:g12_topicAICT_p118_01, ex:g12_topicAICT_p119_01, ex:g12_topicAICT_p119_02,
+    ex:g12_topicAICT_p120_01, ex:g12_topicAICT_p120_02, ex:g12_topicAICT_p121_01, ex:g12_topicAICT_p121_02, ex:g12_topicAICT_p122_01 .
+  ex:g12_topicAICT_l2s6 ex:hasParagraph ex:g12_topicAICT_p122_02 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g12_topicAICT_p107_01 ex:nextParagraph ex:g12_topicAICT_p107_02 .
+  ex:g12_topicAICT_p107_02 ex:previousParagraph ex:g12_topicAICT_p107_01 ; ex:nextParagraph ex:g12_topicAICT_p108_01 .
+  ex:g12_topicAICT_p108_01 ex:previousParagraph ex:g12_topicAICT_p107_02 ; ex:nextParagraph ex:g12_topicAICT_p108_02 .
+  ex:g12_topicAICT_p108_02 ex:previousParagraph ex:g12_topicAICT_p108_01 ; ex:nextParagraph ex:g12_topicAICT_p109_01 .
+  ex:g12_topicAICT_p109_01 ex:previousParagraph ex:g12_topicAICT_p108_02 ; ex:nextParagraph ex:g12_topicAICT_p109_02 .
+  ex:g12_topicAICT_p109_02 ex:previousParagraph ex:g12_topicAICT_p109_01 ; ex:nextParagraph ex:g12_topicAICT_p110_01 .
+  ex:g12_topicAICT_p110_01 ex:previousParagraph ex:g12_topicAICT_p109_02 ; ex:nextParagraph ex:g12_topicAICT_p111_01 .
+  ex:g12_topicAICT_p111_01 ex:previousParagraph ex:g12_topicAICT_p110_01 ; ex:nextParagraph ex:g12_topicAICT_p111_02 .
+  ex:g12_topicAICT_p111_02 ex:previousParagraph ex:g12_topicAICT_p111_01 ; ex:nextParagraph ex:g12_topicAICT_p112_01 .
+  ex:g12_topicAICT_p112_01 ex:previousParagraph ex:g12_topicAICT_p111_02 ; ex:nextParagraph ex:g12_topicAICT_p112_02 .
+  ex:g12_topicAICT_p112_02 ex:previousParagraph ex:g12_topicAICT_p112_01 ; ex:nextParagraph ex:g12_topicAICT_p113_01 .
+  ex:g12_topicAICT_p113_01 ex:previousParagraph ex:g12_topicAICT_p112_02 ; ex:nextParagraph ex:g12_topicAICT_p113_02 .
+  ex:g12_topicAICT_p113_02 ex:previousParagraph ex:g12_topicAICT_p113_01 ; ex:nextParagraph ex:g12_topicAICT_p114_01 .
+  ex:g12_topicAICT_p114_01 ex:previousParagraph ex:g12_topicAICT_p113_02 ; ex:nextParagraph ex:g12_topicAICT_p114_02 .
+  ex:g12_topicAICT_p114_02 ex:previousParagraph ex:g12_topicAICT_p114_01 ; ex:nextParagraph ex:g12_topicAICT_p115_01 .
+  ex:g12_topicAICT_p115_01 ex:previousParagraph ex:g12_topicAICT_p114_02 ; ex:nextParagraph ex:g12_topicAICT_p115_02 .
+  ex:g12_topicAICT_p115_02 ex:previousParagraph ex:g12_topicAICT_p115_01 ; ex:nextParagraph ex:g12_topicAICT_p116_01 .
+  ex:g12_topicAICT_p116_01 ex:previousParagraph ex:g12_topicAICT_p115_02 ; ex:nextParagraph ex:g12_topicAICT_p117_01 .
+  ex:g12_topicAICT_p117_01 ex:previousParagraph ex:g12_topicAICT_p116_01 ; ex:nextParagraph ex:g12_topicAICT_p118_01 .
+  ex:g12_topicAICT_p118_01 ex:previousParagraph ex:g12_topicAICT_p117_01 ; ex:nextParagraph ex:g12_topicAICT_p119_01 .
+  ex:g12_topicAICT_p119_01 ex:previousParagraph ex:g12_topicAICT_p118_01 ; ex:nextParagraph ex:g12_topicAICT_p119_02 .
+  ex:g12_topicAICT_p119_02 ex:previousParagraph ex:g12_topicAICT_p119_01 ; ex:nextParagraph ex:g12_topicAICT_p120_01 .
+  ex:g12_topicAICT_p120_01 ex:previousParagraph ex:g12_topicAICT_p119_02 ; ex:nextParagraph ex:g12_topicAICT_p120_02 .
+  ex:g12_topicAICT_p120_02 ex:previousParagraph ex:g12_topicAICT_p120_01 ; ex:nextParagraph ex:g12_topicAICT_p121_01 .
+  ex:g12_topicAICT_p121_01 ex:previousParagraph ex:g12_topicAICT_p120_02 ; ex:nextParagraph ex:g12_topicAICT_p121_02 .
+  ex:g12_topicAICT_p121_02 ex:previousParagraph ex:g12_topicAICT_p121_01 ; ex:nextParagraph ex:g12_topicAICT_p122_01 .
+  ex:g12_topicAICT_p122_01 ex:previousParagraph ex:g12_topicAICT_p121_02 ; ex:nextParagraph ex:g12_topicAICT_p122_02 .
+  ex:g12_topicAICT_p122_02 ex:previousParagraph ex:g12_topicAICT_p122_01 .
+
+  ###########################################################################
+  # Figures - semantic IRIs, including subfigures a/b/c
+  ###########################################################################
+
+  ex:g12_topicAICT_fig_l1_networkSetting a ex:Figure ;
+    rdfs:label "Hình 1. Thiết lập kết nối mạng trên máy tính"@vi ;
+    ex:hasCaption "Hình 1. Thiết lập kết nối mạng trên máy tính"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g12_page107 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWiFi, ex:g12_conceptWindows10 .
+
+  ex:g12_topicAICT_fig_l1_addDeviceSetting a ex:Figure ;
+    rdfs:label "Hình 2. Thiết lập yêu cầu kết nối các thiết bị"@vi ;
+    ex:hasCaption "Hình 2. Thiết lập yêu cầu kết nối các thiết bị"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g12_page107 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptKetNoiThietBiSo, ex:g12_conceptBluetooth .
+
+  ex:g12_topicAICT_fig_l1_wifiDeviceScan a ex:Figure ;
+    rdfs:label "Hình 3. Chọn mục dò thiết bị dùng Wi-Fi"@vi ;
+    ex:hasCaption "Hình 3. Chọn mục dò thiết bị dùng Wi-Fi"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g12_page108 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWiFi .
+
+  ex:g12_topicAICT_fig_l1_wifiDeviceList a ex:Figure ;
+    rdfs:label "Hình 4. Danh sách các thiết bị dùng Wi-Fi"@vi ;
+    ex:hasCaption "Hình 4. Danh sách các thiết bị dùng Wi-Fi"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:g12_page108 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWiFi, ex:g12_conceptTiViThongMinh .
+
+  ex:g12_topicAICT_fig_l1_castToDevice a ex:Figure ;
+    rdfs:label "Hình 5. Lựa chọn tệp truyền lên ti vi"@vi ;
+    ex:hasCaption "Hình 5. Lựa chọn tệp truyền lên ti vi"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:g12_page108 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCastToDevice, ex:g12_conceptTruyenTep .
+
+  ex:g12_topicAICT_fig_l1_castQueueToTv a ex:Figure ;
+    rdfs:label "Hình 6. Các tệp trong danh sách trên máy tính được truyền đến ti vi"@vi ;
+    ex:hasCaption "Hình 6. Các tệp trong danh sách trên máy tính được truyền đến ti vi"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:g12_page109 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTruyenTep, ex:g12_conceptTiViThongMinh .
+
+  ex:g12_topicAICT_fig_l1_sonyBluetoothScan a ex:Figure ;
+    rdfs:label "Hình 7a. Ti vi Sony dò tìm thiết bị dùng Bluetooth"@vi ;
+    ex:hasCaption "Hình 7a. Ti vi Sony dò tìm thiết bị dùng Bluetooth"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:g12_page109 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBluetooth, ex:g12_conceptTiViThongMinh .
+
+  ex:g12_topicAICT_fig_l1_samsungBluetoothScan a ex:Figure ;
+    rdfs:label "Hình 7b. Ti vi Samsung dò tìm thiết bị dùng Bluetooth"@vi ;
+    ex:hasCaption "Hình 7b. Ti vi Samsung dò tìm thiết bị dùng Bluetooth"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:g12_page109 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBluetooth, ex:g12_conceptTiViThongMinh .
+
+  ex:g12_topicAICT_fig_l1_sonyBluetoothDeviceList a ex:Figure ;
+    rdfs:label "Hình 8a. Danh sách thiết bị Bluetooth máy tính phát hiện khi kết nối với ti vi Sony"@vi ;
+    ex:hasCaption "Hình 8a. Minh họa danh sách thiết bị Bluetooth máy tính phát hiện được khi kết nối với ti vi Sony"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:g12_page110 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBluetooth, ex:g12_conceptBluetoothPairing .
+
+  ex:g12_topicAICT_fig_l1_samsungBluetoothDeviceList a ex:Figure ;
+    rdfs:label "Hình 8b. Danh sách thiết bị Bluetooth máy tính phát hiện khi kết nối với ti vi Samsung"@vi ;
+    ex:hasCaption "Hình 8b. Minh họa danh sách thiết bị Bluetooth máy tính phát hiện được khi kết nối với ti vi Samsung"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:g12_page110 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBluetooth, ex:g12_conceptBluetoothPairing .
+
+  ex:g12_topicAICT_fig_l1_sonyPairingCode a ex:Figure ;
+    rdfs:label "Hình 9a. Thông báo mã ghép đôi để kết nối ti vi Sony với máy tính"@vi ;
+    ex:hasCaption "Hình 9a. Thông báo mã ghép đôi để kết nối ti vi Sony với máy tính"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:g12_page110 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptMaGhepDoi, ex:g12_conceptBluetoothPairing .
+
+  ex:g12_topicAICT_fig_l1_samsungPairingCode a ex:Figure ;
+    rdfs:label "Hình 9b. Thông báo mã ghép đôi để kết nối ti vi Samsung với máy tính"@vi ;
+    ex:hasCaption "Hình 9b. Thông báo mã ghép đôi để kết nối ti vi Samsung với máy tính"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:g12_page110 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptMaGhepDoi, ex:g12_conceptBluetoothPairing .
+
+  ex:g12_topicAICT_fig_l1_sonyPairRequest a ex:Figure ;
+    rdfs:label "Hình 10a. Ti vi Sony yêu cầu kết nối theo mã ghép đôi đã nhận được từ máy tính"@vi ;
+    ex:hasCaption "Hình 10a. Ti vi Sony yêu cầu kết nối theo mã ghép đôi đã nhận được từ máy tính"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:g12_page111 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBluetoothPairing, ex:g12_conceptMaGhepDoi .
+
+  ex:g12_topicAICT_fig_l1_samsungPairRequest a ex:Figure ;
+    rdfs:label "Hình 10b. Ti vi Samsung yêu cầu kết nối theo mã ghép đôi đã nhận được từ máy tính"@vi ;
+    ex:hasCaption "Hình 10b. Ti vi Samsung yêu cầu kết nối theo mã ghép đôi đã nhận được từ máy tính"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:g12_page111 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBluetoothPairing, ex:g12_conceptMaGhepDoi .
+
+  ex:g12_topicAICT_fig_l1_sonyPairComplete a ex:Figure ;
+    rdfs:label "Hình 11a. Cửa sổ để hoàn thành ghép đôi máy tính với ti vi Sony"@vi ;
+    ex:hasCaption "Hình 11a. Cửa sổ để hoàn thành ghép đôi máy tính với ti vi Sony"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:g12_page111 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBluetoothPairing .
+
+  ex:g12_topicAICT_fig_l1_samsungPairComplete a ex:Figure ;
+    rdfs:label "Hình 11b. Cửa sổ để hoàn thành ghép đôi máy tính với ti vi Samsung"@vi ;
+    ex:hasCaption "Hình 11b. Cửa sổ để hoàn thành ghép đôi máy tính với ti vi Samsung"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:g12_page111 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptBluetoothPairing .
+
+  ex:g12_topicAICT_fig_l2_androidWifiOn a ex:Figure ;
+    rdfs:label "Hình 1. Bật Wi-Fi trên hệ điều hành Android"@vi ;
+    ex:hasCaption "Hình 1. Bật Wi-Fi trên hệ điều hành Android"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:g12_page113 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWiFi, ex:g12_conceptAndroid .
+
+  ex:g12_topicAICT_fig_l2_wifiPassword a ex:Figure ;
+    rdfs:label "Hình 2. Nhập mật mã"@vi ;
+    ex:hasCaption "Hình 2. Nhập mật mã"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 18 ;
+    ex:appearsOnPage ex:g12_page113 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWiFi .
+
+  ex:g12_topicAICT_fig_l2_airdroidDownload a ex:Figure ;
+    rdfs:label "Hình 3. Tải phần mềm AirDroid Personal trên máy tính và điện thoại"@vi ;
+    ex:hasCaption "Hình 3. Tải phần mềm AirDroid Personal trên máy tính và điện thoại"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 19 ;
+    ex:appearsOnPage ex:g12_page113 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptAirDroidPersonal .
+
+  ex:g12_topicAICT_fig_l2_airdroidDesktop a ex:Figure ;
+    rdfs:label "Hình 4. Một màn hình AirDroid Personal trên máy tính"@vi ;
+    ex:hasCaption "Hình 4. Một màn hình AirDroid Personal trên máy tính"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 20 ;
+    ex:appearsOnPage ex:g12_page114 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptAirDroidPersonal, ex:g12_conceptMayTinh .
+
+  ex:g12_topicAICT_fig_l2_airdroidMobile a ex:Figure ;
+    rdfs:label "Hình 5. Một màn hình AirDroid Personal trên điện thoại"@vi ;
+    ex:hasCaption "Hình 5. Một màn hình AirDroid Personal trên điện thoại"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 21 ;
+    ex:appearsOnPage ex:g12_page114 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptAirDroidPersonal, ex:g12_conceptDienThoaiThongMinh .
+
+  ex:g12_topicAICT_fig_l2_airdroidFileTransfer a ex:Figure ;
+    rdfs:label "Hình 6. Minh họa chuyển tệp bằng chức năng Transfer"@vi ;
+    ex:hasCaption "Hình 6. Minh họa chuyển tệp bằng chức năng Transfer"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 22 ;
+    ex:appearsOnPage ex:g12_page114 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptFileTransfer, ex:g12_conceptAirDroidPersonal .
+
+  ex:g12_topicAICT_fig_l2_airdroidPhoneToPc a ex:Figure ;
+    rdfs:label "Hình 7. Trao đổi dữ liệu từ điện thoại đến máy tính"@vi ;
+    ex:hasCaption "Hình 7. Trao đổi dữ liệu từ điện thoại đến máy tính"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 23 ;
+    ex:appearsOnPage ex:g12_page114 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptGuiTepDinhKem, ex:g12_conceptTraoDoiThongTin .
+
+  ex:g12_topicAICT_fig_l2_smartPlug a ex:Figure ;
+    rdfs:label "Hình 8. Ổ cắm thông minh"@vi ;
+    ex:hasCaption "Hình 8. Ổ cắm thông minh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 24 ;
+    ex:appearsOnPage ex:g12_page115 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptOcamThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartPlugReset a ex:Figure ;
+    rdfs:label "Hình 9. Nút Reset"@vi ;
+    ex:hasCaption "Hình 9. Nút Reset"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 25 ;
+    ex:appearsOnPage ex:g12_page116 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptNutReset, ex:g12_conceptOcamThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartPlugAddDevice a ex:Figure ;
+    rdfs:label "Hình 10a. Thêm thiết bị"@vi ;
+    ex:hasCaption "Hình 10a. Thêm thiết bị"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 26 ;
+    ex:appearsOnPage ex:g12_page116 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptThemThietBi, ex:g12_conceptUngDungDieuKhien .
+
+  ex:g12_topicAICT_fig_l2_smartPlugSelectDevice a ex:Figure ;
+    rdfs:label "Hình 10b. Chọn thiết bị sẽ thêm"@vi ;
+    ex:hasCaption "Hình 10b. Chọn thiết bị sẽ thêm"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 27 ;
+    ex:appearsOnPage ex:g12_page116 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptThemThietBi, ex:g12_conceptOcamThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartPlugWifiConnect a ex:Figure ;
+    rdfs:label "Hình 10c. Tiến hành kết nối"@vi ;
+    ex:hasCaption "Hình 10c. Tiến hành kết nối"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 28 ;
+    ex:appearsOnPage ex:g12_page116 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWiFi, ex:g12_conceptUngDungDieuKhien .
+
+  ex:g12_topicAICT_fig_l2_smartPlugPowerOn a ex:Figure ;
+    rdfs:label "Hình 11a. Ổ cắm đang bật"@vi ;
+    ex:hasCaption "Hình 11a. Ổ cắm đang bật"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 29 ;
+    ex:appearsOnPage ex:g12_page117 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptPower, ex:g12_conceptBatTatThietBi, ex:g12_conceptOcamThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartPlugPowerOff a ex:Figure ;
+    rdfs:label "Hình 11b. Ổ cắm đang tắt"@vi ;
+    ex:hasCaption "Hình 11b. Ổ cắm đang tắt"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 30 ;
+    ex:appearsOnPage ex:g12_page117 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptPower, ex:g12_conceptBatTatThietBi, ex:g12_conceptOcamThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartPlugTimer a ex:Figure ;
+    rdfs:label "Hình 12a. Nhấn vào Timer"@vi ;
+    ex:hasCaption "Hình 12a. Nhấn vào Timer"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 31 ;
+    ex:appearsOnPage ex:g12_page117 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTimer, ex:g12_conceptLapLich .
+
+  ex:g12_topicAICT_fig_l2_smartPlugAddSchedule a ex:Figure ;
+    rdfs:label "Hình 12b. Thêm lịch"@vi ;
+    ex:hasCaption "Hình 12b. Thêm lịch"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 32 ;
+    ex:appearsOnPage ex:g12_page117 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTimer, ex:g12_conceptLapLich .
+
+  ex:g12_topicAICT_fig_l2_smartPlugScheduleTime a ex:Figure ;
+    rdfs:label "Hình 12c. Thời điểm thao tác"@vi ;
+    ex:hasCaption "Hình 12c. Thời điểm thao tác"@vi ;
+    ex:figureOrderOnPage 5 ;
+    ex:globalFigureOrder 33 ;
+    ex:appearsOnPage ex:g12_page117 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptLapLich, ex:g12_conceptBatTatThietBi .
+
+  ex:g12_topicAICT_fig_l2_smartPlugCountdown a ex:Figure ;
+    rdfs:label "Hình 13a. Nhấn vào Countdown"@vi ;
+    ex:hasCaption "Hình 13a. Nhấn vào Countdown"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 34 ;
+    ex:appearsOnPage ex:g12_page118 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCountdown, ex:g12_conceptHenGioDemNguoc .
+
+  ex:g12_topicAICT_fig_l2_smartPlugCountdownTime a ex:Figure ;
+    rdfs:label "Hình 13b. Đặt thời gian đếm ngược"@vi ;
+    ex:hasCaption "Hình 13b. Đặt thời gian đếm ngược"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 35 ;
+    ex:appearsOnPage ex:g12_page118 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptCountdown, ex:g12_conceptHenGioDemNguoc .
+
+  ex:g12_topicAICT_fig_l2_smartLight a ex:Figure ;
+    rdfs:label "Hình 14. Đèn thông minh"@vi ;
+    ex:hasCaption "Hình 14. Đèn thông minh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 36 ;
+    ex:appearsOnPage ex:g12_page119 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDenThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartLightAddDevice a ex:Figure ;
+    rdfs:label "Hình 15a. Thêm thiết bị"@vi ;
+    ex:hasCaption "Hình 15a. Thêm thiết bị"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 37 ;
+    ex:appearsOnPage ex:g12_page119 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptThemThietBi, ex:g12_conceptDenThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartLightSelectDevice a ex:Figure ;
+    rdfs:label "Hình 15b. Chọn thiết bị sẽ thêm"@vi ;
+    ex:hasCaption "Hình 15b. Chọn thiết bị sẽ thêm"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 38 ;
+    ex:appearsOnPage ex:g12_page119 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptThemThietBi, ex:g12_conceptDenThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartLightPairing a ex:Figure ;
+    rdfs:label "Hình 15c. Tiến hành ghép nối"@vi ;
+    ex:hasCaption "Hình 15c. Tiến hành ghép nối"@vi ;
+    ex:figureOrderOnPage 4 ;
+    ex:globalFigureOrder 39 ;
+    ex:appearsOnPage ex:g12_page119 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWiFi, ex:g12_conceptDenThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartLightMainInterface a ex:Figure ;
+    rdfs:label "Hình 16. Giao diện làm việc chung"@vi ;
+    ex:hasCaption "Hình 16. Giao diện làm việc chung"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 40 ;
+    ex:appearsOnPage ex:g12_page120 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWhiteMode, ex:g12_conceptColourMode, ex:g12_conceptSceneMode, ex:g12_conceptPower, ex:g12_conceptSchedule .
+
+  ex:g12_topicAICT_fig_l2_smartLightWhiteControl a ex:Figure ;
+    rdfs:label "Hình 17. Thay đổi độ sáng và độ trắng của đèn"@vi ;
+    ex:hasCaption "Hình 17. Thay đổi độ sáng và độ trắng của đèn"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 41 ;
+    ex:appearsOnPage ex:g12_page120 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWhiteMode, ex:g12_conceptDoSangDen, ex:g12_conceptDoTrangDen .
+
+  ex:g12_topicAICT_fig_l2_smartLightColourControl a ex:Figure ;
+    rdfs:label "Hình 18. Điều chỉnh ánh sáng màu của đèn"@vi ;
+    ex:hasCaption "Hình 18. Điều chỉnh ánh sáng màu của đèn"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 42 ;
+    ex:appearsOnPage ex:g12_page121 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptColourMode, ex:g12_conceptMauSacDen, ex:g12_conceptDoSangDen .
+
+  ex:g12_topicAICT_fig_l2_smartLightSceneControl a ex:Figure ;
+    rdfs:label "Hình 19. Thay đổi bối cảnh cho đèn"@vi ;
+    ex:hasCaption "Hình 19. Thay đổi bối cảnh cho đèn"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 43 ;
+    ex:appearsOnPage ex:g12_page121 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSceneMode, ex:g12_conceptDenThongMinh .
+
+  ex:g12_topicAICT_fig_l2_smartLightSchedule a ex:Figure ;
+    rdfs:label "Hình 20. Lập lịch cho đèn thông minh"@vi ;
+    ex:hasCaption "Hình 20. Lập lịch cho đèn thông minh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 44 ;
+    ex:appearsOnPage ex:g12_page122 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptSchedule, ex:g12_conceptLapLich, ex:g12_conceptDenThongMinh .
+
+  ###########################################################################
+  # Page-to-figure links
+  ###########################################################################
+
+  ex:g12_page107 ex:hasFigure ex:g12_topicAICT_fig_l1_networkSetting,
+                                  ex:g12_topicAICT_fig_l1_addDeviceSetting .
+
+  ex:g12_page108 ex:hasFigure ex:g12_topicAICT_fig_l1_wifiDeviceScan,
+                                  ex:g12_topicAICT_fig_l1_wifiDeviceList,
+                                  ex:g12_topicAICT_fig_l1_castToDevice .
+
+  ex:g12_page109 ex:hasFigure ex:g12_topicAICT_fig_l1_castQueueToTv,
+                                  ex:g12_topicAICT_fig_l1_sonyBluetoothScan,
+                                  ex:g12_topicAICT_fig_l1_samsungBluetoothScan .
+
+  ex:g12_page110 ex:hasFigure ex:g12_topicAICT_fig_l1_sonyBluetoothDeviceList,
+                                  ex:g12_topicAICT_fig_l1_samsungBluetoothDeviceList,
+                                  ex:g12_topicAICT_fig_l1_sonyPairingCode,
+                                  ex:g12_topicAICT_fig_l1_samsungPairingCode .
+
+  ex:g12_page111 ex:hasFigure ex:g12_topicAICT_fig_l1_sonyPairRequest,
+                                  ex:g12_topicAICT_fig_l1_samsungPairRequest,
+                                  ex:g12_topicAICT_fig_l1_sonyPairComplete,
+                                  ex:g12_topicAICT_fig_l1_samsungPairComplete .
+
+  ex:g12_page113 ex:hasFigure ex:g12_topicAICT_fig_l2_androidWifiOn,
+                                  ex:g12_topicAICT_fig_l2_wifiPassword,
+                                  ex:g12_topicAICT_fig_l2_airdroidDownload .
+
+  ex:g12_page114 ex:hasFigure ex:g12_topicAICT_fig_l2_airdroidDesktop,
+                                  ex:g12_topicAICT_fig_l2_airdroidMobile,
+                                  ex:g12_topicAICT_fig_l2_airdroidFileTransfer,
+                                  ex:g12_topicAICT_fig_l2_airdroidPhoneToPc .
+
+  ex:g12_page115 ex:hasFigure ex:g12_topicAICT_fig_l2_smartPlug .
+
+  ex:g12_page116 ex:hasFigure ex:g12_topicAICT_fig_l2_smartPlugReset,
+                                  ex:g12_topicAICT_fig_l2_smartPlugAddDevice,
+                                  ex:g12_topicAICT_fig_l2_smartPlugSelectDevice,
+                                  ex:g12_topicAICT_fig_l2_smartPlugWifiConnect .
+
+  ex:g12_page117 ex:hasFigure ex:g12_topicAICT_fig_l2_smartPlugPowerOn,
+                                  ex:g12_topicAICT_fig_l2_smartPlugPowerOff,
+                                  ex:g12_topicAICT_fig_l2_smartPlugTimer,
+                                  ex:g12_topicAICT_fig_l2_smartPlugAddSchedule,
+                                  ex:g12_topicAICT_fig_l2_smartPlugScheduleTime .
+
+  ex:g12_page118 ex:hasFigure ex:g12_topicAICT_fig_l2_smartPlugCountdown,
+                                  ex:g12_topicAICT_fig_l2_smartPlugCountdownTime .
+
+  ex:g12_page119 ex:hasFigure ex:g12_topicAICT_fig_l2_smartLight,
+                                  ex:g12_topicAICT_fig_l2_smartLightAddDevice,
+                                  ex:g12_topicAICT_fig_l2_smartLightSelectDevice,
+                                  ex:g12_topicAICT_fig_l2_smartLightPairing .
+
+  ex:g12_page120 ex:hasFigure ex:g12_topicAICT_fig_l2_smartLightMainInterface,
+                                  ex:g12_topicAICT_fig_l2_smartLightWhiteControl .
+
+  ex:g12_page121 ex:hasFigure ex:g12_topicAICT_fig_l2_smartLightColourControl,
+                                  ex:g12_topicAICT_fig_l2_smartLightSceneControl .
+
+  ex:g12_page122 ex:hasFigure ex:g12_topicAICT_fig_l2_smartLightSchedule .
+
+  ###########################################################################
+  # Figure ordering
+  ###########################################################################
+
+  ex:g12_topicAICT_fig_l1_networkSetting ex:nextFigure ex:g12_topicAICT_fig_l1_addDeviceSetting .
+  ex:g12_topicAICT_fig_l1_addDeviceSetting ex:previousFigure ex:g12_topicAICT_fig_l1_networkSetting ; ex:nextFigure ex:g12_topicAICT_fig_l1_wifiDeviceScan .
+  ex:g12_topicAICT_fig_l1_wifiDeviceScan ex:previousFigure ex:g12_topicAICT_fig_l1_addDeviceSetting ; ex:nextFigure ex:g12_topicAICT_fig_l1_wifiDeviceList .
+  ex:g12_topicAICT_fig_l1_wifiDeviceList ex:previousFigure ex:g12_topicAICT_fig_l1_wifiDeviceScan ; ex:nextFigure ex:g12_topicAICT_fig_l1_castToDevice .
+  ex:g12_topicAICT_fig_l1_castToDevice ex:previousFigure ex:g12_topicAICT_fig_l1_wifiDeviceList ; ex:nextFigure ex:g12_topicAICT_fig_l1_castQueueToTv .
+  ex:g12_topicAICT_fig_l1_castQueueToTv ex:previousFigure ex:g12_topicAICT_fig_l1_castToDevice ; ex:nextFigure ex:g12_topicAICT_fig_l1_sonyBluetoothScan .
+  ex:g12_topicAICT_fig_l1_sonyBluetoothScan ex:previousFigure ex:g12_topicAICT_fig_l1_castQueueToTv ; ex:nextFigure ex:g12_topicAICT_fig_l1_samsungBluetoothScan .
+  ex:g12_topicAICT_fig_l1_samsungBluetoothScan ex:previousFigure ex:g12_topicAICT_fig_l1_sonyBluetoothScan ; ex:nextFigure ex:g12_topicAICT_fig_l1_sonyBluetoothDeviceList .
+  ex:g12_topicAICT_fig_l1_sonyBluetoothDeviceList ex:previousFigure ex:g12_topicAICT_fig_l1_samsungBluetoothScan ; ex:nextFigure ex:g12_topicAICT_fig_l1_samsungBluetoothDeviceList .
+  ex:g12_topicAICT_fig_l1_samsungBluetoothDeviceList ex:previousFigure ex:g12_topicAICT_fig_l1_sonyBluetoothDeviceList ; ex:nextFigure ex:g12_topicAICT_fig_l1_sonyPairingCode .
+  ex:g12_topicAICT_fig_l1_sonyPairingCode ex:previousFigure ex:g12_topicAICT_fig_l1_samsungBluetoothDeviceList ; ex:nextFigure ex:g12_topicAICT_fig_l1_samsungPairingCode .
+  ex:g12_topicAICT_fig_l1_samsungPairingCode ex:previousFigure ex:g12_topicAICT_fig_l1_sonyPairingCode ; ex:nextFigure ex:g12_topicAICT_fig_l1_sonyPairRequest .
+  ex:g12_topicAICT_fig_l1_sonyPairRequest ex:previousFigure ex:g12_topicAICT_fig_l1_samsungPairingCode ; ex:nextFigure ex:g12_topicAICT_fig_l1_samsungPairRequest .
+  ex:g12_topicAICT_fig_l1_samsungPairRequest ex:previousFigure ex:g12_topicAICT_fig_l1_sonyPairRequest ; ex:nextFigure ex:g12_topicAICT_fig_l1_sonyPairComplete .
+  ex:g12_topicAICT_fig_l1_sonyPairComplete ex:previousFigure ex:g12_topicAICT_fig_l1_samsungPairRequest ; ex:nextFigure ex:g12_topicAICT_fig_l1_samsungPairComplete .
+  ex:g12_topicAICT_fig_l1_samsungPairComplete ex:previousFigure ex:g12_topicAICT_fig_l1_sonyPairComplete ; ex:nextFigure ex:g12_topicAICT_fig_l2_androidWifiOn .
+
+  ex:g12_topicAICT_fig_l2_androidWifiOn ex:previousFigure ex:g12_topicAICT_fig_l1_samsungPairComplete ; ex:nextFigure ex:g12_topicAICT_fig_l2_wifiPassword .
+  ex:g12_topicAICT_fig_l2_wifiPassword ex:previousFigure ex:g12_topicAICT_fig_l2_androidWifiOn ; ex:nextFigure ex:g12_topicAICT_fig_l2_airdroidDownload .
+  ex:g12_topicAICT_fig_l2_airdroidDownload ex:previousFigure ex:g12_topicAICT_fig_l2_wifiPassword ; ex:nextFigure ex:g12_topicAICT_fig_l2_airdroidDesktop .
+  ex:g12_topicAICT_fig_l2_airdroidDesktop ex:previousFigure ex:g12_topicAICT_fig_l2_airdroidDownload ; ex:nextFigure ex:g12_topicAICT_fig_l2_airdroidMobile .
+  ex:g12_topicAICT_fig_l2_airdroidMobile ex:previousFigure ex:g12_topicAICT_fig_l2_airdroidDesktop ; ex:nextFigure ex:g12_topicAICT_fig_l2_airdroidFileTransfer .
+  ex:g12_topicAICT_fig_l2_airdroidFileTransfer ex:previousFigure ex:g12_topicAICT_fig_l2_airdroidMobile ; ex:nextFigure ex:g12_topicAICT_fig_l2_airdroidPhoneToPc .
+  ex:g12_topicAICT_fig_l2_airdroidPhoneToPc ex:previousFigure ex:g12_topicAICT_fig_l2_airdroidFileTransfer ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlug .
+  ex:g12_topicAICT_fig_l2_smartPlug ex:previousFigure ex:g12_topicAICT_fig_l2_airdroidPhoneToPc ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugReset .
+  ex:g12_topicAICT_fig_l2_smartPlugReset ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlug ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugAddDevice .
+  ex:g12_topicAICT_fig_l2_smartPlugAddDevice ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugReset ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugSelectDevice .
+  ex:g12_topicAICT_fig_l2_smartPlugSelectDevice ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugAddDevice ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugWifiConnect .
+  ex:g12_topicAICT_fig_l2_smartPlugWifiConnect ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugSelectDevice ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugPowerOn .
+  ex:g12_topicAICT_fig_l2_smartPlugPowerOn ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugWifiConnect ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugPowerOff .
+  ex:g12_topicAICT_fig_l2_smartPlugPowerOff ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugPowerOn ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugTimer .
+  ex:g12_topicAICT_fig_l2_smartPlugTimer ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugPowerOff ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugAddSchedule .
+  ex:g12_topicAICT_fig_l2_smartPlugAddSchedule ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugTimer ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugScheduleTime .
+  ex:g12_topicAICT_fig_l2_smartPlugScheduleTime ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugAddSchedule ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugCountdown .
+  ex:g12_topicAICT_fig_l2_smartPlugCountdown ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugScheduleTime ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartPlugCountdownTime .
+  ex:g12_topicAICT_fig_l2_smartPlugCountdownTime ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugCountdown ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLight .
+  ex:g12_topicAICT_fig_l2_smartLight ex:previousFigure ex:g12_topicAICT_fig_l2_smartPlugCountdownTime ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLightAddDevice .
+  ex:g12_topicAICT_fig_l2_smartLightAddDevice ex:previousFigure ex:g12_topicAICT_fig_l2_smartLight ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLightSelectDevice .
+  ex:g12_topicAICT_fig_l2_smartLightSelectDevice ex:previousFigure ex:g12_topicAICT_fig_l2_smartLightAddDevice ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLightPairing .
+  ex:g12_topicAICT_fig_l2_smartLightPairing ex:previousFigure ex:g12_topicAICT_fig_l2_smartLightSelectDevice ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLightMainInterface .
+  ex:g12_topicAICT_fig_l2_smartLightMainInterface ex:previousFigure ex:g12_topicAICT_fig_l2_smartLightPairing ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLightWhiteControl .
+  ex:g12_topicAICT_fig_l2_smartLightWhiteControl ex:previousFigure ex:g12_topicAICT_fig_l2_smartLightMainInterface ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLightColourControl .
+  ex:g12_topicAICT_fig_l2_smartLightColourControl ex:previousFigure ex:g12_topicAICT_fig_l2_smartLightWhiteControl ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLightSceneControl .
+  ex:g12_topicAICT_fig_l2_smartLightSceneControl ex:previousFigure ex:g12_topicAICT_fig_l2_smartLightColourControl ; ex:nextFigure ex:g12_topicAICT_fig_l2_smartLightSchedule .
+  ex:g12_topicAICT_fig_l2_smartLightSchedule ex:previousFigure ex:g12_topicAICT_fig_l2_smartLightSceneControl .
+
+  ###########################################################################
+  # Practical instructions / tasks / applied exercises
+  ###########################################################################
+
+  ex:g12_topicAICT_l1_task_wifi a ex:PracticalInstruction ;
+    rdfs:label "Nhiệm vụ 1 bài 1 - Kết nối máy tính với ti vi thông minh qua Wi-Fi"@vi ;
+    ex:hasRawText "Bật Wi-Fi trên ti vi thông minh; bật Wi-Fi trên máy tính; dò và kết nối máy tính với ti vi; gửi hoặc nhận tệp hình ảnh, âm thanh, video bằng chức năng Cast to Device."@vi ;
+    ex:appearsOnPage ex:g12_page107 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptWiFi, ex:g12_conceptTiViThongMinh,
+                 ex:g12_conceptMayTinh, ex:g12_conceptCastToDevice .
+
+  ex:g12_topicAICT_l1_task_bluetooth a ex:PracticalInstruction ;
+    rdfs:label "Nhiệm vụ 2 bài 1 - Kết nối máy tính với ti vi thông minh qua Bluetooth"@vi ;
+    ex:hasRawText "Bật Bluetooth trên ti vi; trên máy tính thêm thiết bị Bluetooth; chọn ti vi trong danh sách thiết bị; xác nhận mã ghép đôi; hoàn tất kết nối và chia sẻ tệp cho ti vi."@vi ;
+    ex:appearsOnPage ex:g12_page109 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptBluetooth, ex:g12_conceptBluetoothPairing,
+                 ex:g12_conceptMaGhepDoi, ex:g12_conceptTruyenTep .
+
+  ex:g12_topicAICT_l1_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 1 - Kiểm tra kết nối Bluetooth với thiết bị khác"@vi ;
+    ex:hasRawText "Với một thiết bị nào đó dùng Bluetooth như tai nghe, bàn phím, airpod, hãy thử thực hiện kết nối máy tính với thiết bị đó và rút ra kết luận khi kết nối thành công hoặc không thành công."@vi ;
+    ex:appearsOnPage ex:g12_page111 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson1 ;
+    ex:relatedTo ex:g12_conceptBluetooth, ex:g12_conceptKetNoiThietBiSo .
+
+  ex:g12_topicAICT_l2_task_phoneWifi a ex:PracticalInstruction ;
+    rdfs:label "Nhiệm vụ 1 bài 2 - Kết nối máy tính với điện thoại thông minh qua Wi-Fi"@vi ;
+    ex:hasRawText "Kết nối máy tính với điện thoại thông minh qua Wi-Fi và sao chép một số dữ liệu từ điện thoại sang máy tính hoặc từ máy tính sang điện thoại; bật Wi-Fi trên điện thoại Android hoặc iOS, chọn mạng Wi-Fi an toàn và bật Wi-Fi trên máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page112 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptDienThoaiThongMinh, ex:g12_conceptMayTinh,
+                 ex:g12_conceptWiFi, ex:g12_conceptTruyenTep .
+
+  ex:g12_topicAICT_l2_task_airdroid a ex:PracticalInstruction ;
+    rdfs:label "Nhiệm vụ 2 bài 2 - Kết nối máy tính với điện thoại thông minh qua AirDroid Personal"@vi ;
+    ex:hasRawText "Tìm hiểu ứng dụng AirDroid Personal, cài đặt và đăng kí tài khoản trên máy tính và điện thoại, trao đổi thông tin giữa máy tính và điện thoại qua AirDroid Personal bằng File Transfer hoặc gửi tệp đính kèm."@vi ;
+    ex:appearsOnPage ex:g12_page113 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptAirDroidPersonal, ex:g12_conceptFileTransfer,
+                 ex:g12_conceptTraoDoiThongTin, ex:g12_conceptGuiTepDinhKem .
+
+  ex:g12_topicAICT_l2_task_smartPlug a ex:PracticalInstruction ;
+    rdfs:label "Nhiệm vụ 3 bài 2 - Làm việc với ổ cắm thông minh"@vi ;
+    ex:hasRawText "Cài đặt ứng dụng điều khiển ổ cắm thông minh, cài đặt ổ cắm thông minh, thực hiện điều khiển ổ cắm qua điện thoại, bật/tắt ổ cắm, đặt lịch và hẹn giờ đếm ngược."@vi ;
+    ex:appearsOnPage ex:g12_page115 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptOcamThongMinh, ex:g12_conceptUngDungDieuKhien,
+                 ex:g12_conceptPower, ex:g12_conceptTimer, ex:g12_conceptCountdown .
+
+  ex:g12_topicAICT_l2_task_smartLight a ex:PracticalInstruction ;
+    rdfs:label "Nhiệm vụ 4 bài 2 - Làm việc với đèn thông minh"@vi ;
+    ex:hasRawText "Cài đặt ứng dụng điều khiển đèn thông minh, kết nối đèn thông minh với ứng dụng, điều khiển đèn qua điện thoại, thay đổi độ sáng, độ trắng, màu sắc, bối cảnh và lập lịch cho đèn."@vi ;
+    ex:appearsOnPage ex:g12_page118 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptDenThongMinh, ex:g12_conceptWhiteMode,
+                 ex:g12_conceptColourMode, ex:g12_conceptSceneMode,
+                 ex:g12_conceptSchedule .
+
+  ex:g12_topicAICT_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi vận dụng bài 2 chủ đề A ICT lớp 12"@vi ;
+    ex:hasRawText "Câu 1. Thực hiện chuyển tin nhắn cùng các loại file khác nhau giữa điện thoại và máy tính thông qua AirDroid Personal. Câu 2. Đặt chế độ tắt cho ổ cắm thông minh khi ra khỏi nhà từ 8h00 đến 16h00 và từ thứ Hai đến thứ Sáu trong tuần. Câu 3. Chỉnh cho đèn sáng trắng 50% và duy trì trong 15 phút. Câu 4. Lập lịch lựa chọn bối cảnh Đêm cho đèn thông minh trong khoảng 20h00 đến 22h00 ngày Chủ nhật. Câu 5. Với yêu cầu của Nhiệm vụ 4, hãy chọn một bối cảnh để thay đổi tốc độ đèn nhấp nháy."@vi ;
+    ex:appearsOnPage ex:g12_page122 ;
+    ex:belongsToLesson ex:g12_topicAICT_lesson2 ;
+    ex:relatedTo ex:g12_conceptAirDroidPersonal, ex:g12_conceptOcamThongMinh,
+                 ex:g12_conceptDenThongMinh, ex:g12_conceptSchedule,
+                 ex:g12_conceptSceneMode, ex:g12_conceptChopTatDen .
+
+  ex:g12_topicAICT_lesson1 ex:hasActivity ex:g12_topicAICT_l1_task_wifi,
+    ex:g12_topicAICT_l1_task_bluetooth ;
+    ex:hasReviewQuestion ex:g12_topicAICT_l1_appliedTask1 .
+
+  ex:g12_topicAICT_lesson2 ex:hasActivity ex:g12_topicAICT_l2_task_phoneWifi,
+    ex:g12_topicAICT_l2_task_airdroid, ex:g12_topicAICT_l2_task_smartPlug,
+    ex:g12_topicAICT_l2_task_smartLight ;
+    ex:hasReviewQuestion ex:g12_topicAICT_l2_review1 .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g12_conceptKetNoiThietBiSo ex:subConceptOf ex:g12_conceptMayTinhXaHoiTriThuc .
+  ex:g12_conceptKetNoiKhongDay ex:subConceptOf ex:g12_conceptKetNoiThietBiSo .
+  ex:g12_conceptThietBiSo ex:relatedTo ex:g12_conceptKetNoiThietBiSo .
+  ex:g12_conceptMayTinh ex:relatedTo ex:g12_conceptKetNoiThietBiSo .
+  ex:g12_conceptTiViThongMinh ex:subConceptOf ex:g12_conceptThietBiSo .
+  ex:g12_conceptDienThoaiThongMinh ex:subConceptOf ex:g12_conceptThietBiSo .
+  ex:g12_conceptWiFi ex:subConceptOf ex:g12_conceptKetNoiKhongDay .
+  ex:g12_conceptBluetooth ex:subConceptOf ex:g12_conceptKetNoiKhongDay .
+  ex:g12_conceptTruyenTep ex:relatedTo ex:g12_conceptKetNoiThietBiSo .
+  ex:g12_conceptTepHinhAnh ex:subConceptOf ex:g12_conceptTruyenTep .
+  ex:g12_conceptTepAmThanh ex:subConceptOf ex:g12_conceptTruyenTep .
+  ex:g12_conceptTepVideo ex:subConceptOf ex:g12_conceptTruyenTep .
+  ex:g12_conceptCastToDevice ex:relatedTo ex:g12_conceptTruyenTep, ex:g12_conceptTiViThongMinh .
+  ex:g12_conceptBluetoothPairing ex:relatedTo ex:g12_conceptBluetooth .
+  ex:g12_conceptMaGhepDoi ex:partOf ex:g12_conceptBluetoothPairing .
+  ex:g12_conceptAndroid ex:relatedTo ex:g12_conceptDienThoaiThongMinh .
+  ex:g12_conceptIOS ex:relatedTo ex:g12_conceptDienThoaiThongMinh .
+  ex:g12_conceptAirDroidPersonal ex:relatedTo ex:g12_conceptTraoDoiThongTin, ex:g12_conceptDienThoaiThongMinh, ex:g12_conceptMayTinh .
+  ex:g12_conceptFileTransfer ex:partOf ex:g12_conceptAirDroidPersonal .
+  ex:g12_conceptMyDevices ex:partOf ex:g12_conceptAirDroidPersonal .
+  ex:g12_conceptGuiTepDinhKem ex:relatedTo ex:g12_conceptFileTransfer .
+  ex:g12_conceptNhaThongMinh ex:relatedTo ex:g12_conceptThietBiThongMinh .
+  ex:g12_conceptThietBiThongMinh ex:subConceptOf ex:g12_conceptThietBiSo .
+  ex:g12_conceptOcamThongMinh ex:subConceptOf ex:g12_conceptThietBiThongMinh .
+  ex:g12_conceptDenThongMinh ex:subConceptOf ex:g12_conceptThietBiThongMinh .
+  ex:g12_conceptUngDungDieuKhien ex:relatedTo ex:g12_conceptThietBiThongMinh .
+  ex:g12_conceptRangDongSmart ex:relatedTo ex:g12_conceptUngDungDieuKhien .
+  ex:g12_conceptNutReset ex:partOf ex:g12_conceptOcamThongMinh .
+  ex:g12_conceptThemThietBi ex:partOf ex:g12_conceptUngDungDieuKhien .
+  ex:g12_conceptDieuKhienTuXa ex:relatedTo ex:g12_conceptUngDungDieuKhien .
+  ex:g12_conceptBatTatThietBi ex:relatedTo ex:g12_conceptPower .
+  ex:g12_conceptPower ex:partOf ex:g12_conceptUngDungDieuKhien .
+  ex:g12_conceptTimer ex:partOf ex:g12_conceptUngDungDieuKhien .
+  ex:g12_conceptCountdown ex:partOf ex:g12_conceptUngDungDieuKhien .
+  ex:g12_conceptSchedule ex:partOf ex:g12_conceptUngDungDieuKhien .
+  ex:g12_conceptLapLich ex:relatedTo ex:g12_conceptTimer, ex:g12_conceptSchedule .
+  ex:g12_conceptHenGioDemNguoc ex:relatedTo ex:g12_conceptCountdown .
+  ex:g12_conceptWhiteMode ex:partOf ex:g12_conceptDenThongMinh .
+  ex:g12_conceptColourMode ex:partOf ex:g12_conceptDenThongMinh .
+  ex:g12_conceptSceneMode ex:partOf ex:g12_conceptDenThongMinh .
+  ex:g12_conceptDoSangDen ex:relatedTo ex:g12_conceptWhiteMode, ex:g12_conceptColourMode .
+  ex:g12_conceptDoTrangDen ex:relatedTo ex:g12_conceptWhiteMode .
+  ex:g12_conceptMauSacDen ex:relatedTo ex:g12_conceptColourMode .
+  ex:g12_conceptChopTatDen ex:relatedTo ex:g12_conceptSceneMode .
+}

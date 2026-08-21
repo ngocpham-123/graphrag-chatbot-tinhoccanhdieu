@@ -1,0 +1,929 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 10 TOPIC B
+# Assumes ontology/classes/properties have already been inserted.
+# Source file: Tin-hoc-10-Canh-dieu-pages-3.pdf
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:grade10 a ex:GradeLevel ;
+    rdfs:label "Lớp 10"@vi ;
+    ex:gradeNumber 10 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:tinhoc10_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 10 - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 10"@vi ;
+    ex:hasGradeLevel ex:grade10 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicB_shared a ex:Topic ;
+    rdfs:label "Chủ đề B (dùng chung các khối)"@vi ;
+    ex:hasTitle "Mạng máy tính và Internet"@vi .
+
+  ex:topicB a ex:Topic ;
+    rdfs:label "Chủ đề B - Mạng máy tính và Internet"@vi ;
+    ex:hasTitle "Mạng máy tính và Internet"@vi ;
+    ex:hasSubtitle "Internet hôm nay và ngày mai"@vi ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:sameTopicAs ex:topicB_shared ;
+    ex:hasStartPage 26 ;
+    ex:hasEndPage 39 ;
+    ex:sourceFileName "Tin-hoc-10-Canh-dieu-pages-3.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:topicB_lesson1, ex:topicB_lesson2, ex:topicB_lesson3 ;
+    ex:hasPage ex:page026, ex:page027, ex:page028, ex:page029, ex:page030,
+               ex:page031, ex:page032, ex:page033, ex:page034, ex:page035,
+               ex:page036, ex:page037, ex:page038, ex:page039 .
+
+  ex:tinhoc10_canhdieu ex:hasTopic ex:topicB .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:topicB_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Mạng máy tính với cuộc sống"@vi ;
+    ex:hasTitle "Mạng máy tính với cuộc sống"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:topicB ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 26 ;
+    ex:hasEndPage 31 ;
+    ex:hasSection ex:topicB_l1s1, ex:topicB_l1s2, ex:topicB_l1s3 .
+
+  ex:topicB_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Điện toán đám mây và Internet vạn vật"@vi ;
+    ex:hasTitle "Điện toán đám mây và Internet vạn vật"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:topicB ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 32 ;
+    ex:hasEndPage 37 ;
+    ex:hasSection ex:topicB_l2s1, ex:topicB_l2s2, ex:topicB_l2s3 .
+
+  ex:topicB_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Thực hành một số ứng dụng của mạng máy tính"@vi ;
+    ex:hasTitle "Thực hành một số ứng dụng của mạng máy tính"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:topicB ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 38 ;
+    ex:hasEndPage 39 ;
+    ex:hasSection ex:topicB_l3s1, ex:topicB_l3s2, ex:topicB_l3s3, ex:topicB_l3s4, ex:topicB_l3s5 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:topicB_l1s1 a ex:Section ;
+    rdfs:label "Mạng máy tính thay đổi thế giới"@vi ;
+    ex:hasTitle "Mạng máy tính thay đổi thế giới"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicB_lesson1 .
+
+  ex:topicB_l1s2 a ex:Section ;
+    rdfs:label "Những tác động tiêu cực của Internet"@vi ;
+    ex:hasTitle "Những tác động tiêu cực của Internet"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicB_lesson1 .
+
+  ex:topicB_l1s3 a ex:Section ;
+    rdfs:label "Lây nhiễm phần mềm độc hại từ Internet"@vi ;
+    ex:hasTitle "Lây nhiễm phần mềm độc hại từ Internet"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicB_lesson1 .
+
+  ex:topicB_l2s1 a ex:Section ;
+    rdfs:label "So sánh mạng LAN và Internet"@vi ;
+    ex:hasTitle "So sánh mạng LAN và Internet"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicB_lesson2 .
+
+  ex:topicB_l2s2 a ex:Section ;
+    rdfs:label "Điện toán đám mây"@vi ;
+    ex:hasTitle "Điện toán đám mây"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicB_lesson2 .
+
+  ex:topicB_l2s3 a ex:Section ;
+    rdfs:label "Internet vạn vật"@vi ;
+    ex:hasTitle "Internet vạn vật"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicB_lesson2 .
+
+  ex:topicB_l3s1 a ex:Section ;
+    rdfs:label "Khai thác nguồn học liệu mở trên Internet"@vi ;
+    ex:hasTitle "Khai thác nguồn học liệu mở trên Internet"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicB_lesson3 .
+
+  ex:topicB_l3s2 a ex:Section ;
+    rdfs:label "Dịch tự động trên Internet"@vi ;
+    ex:hasTitle "Dịch tự động trên Internet"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicB_lesson3 .
+
+  ex:topicB_l3s3 a ex:Section ;
+    rdfs:label "Tìm hiểu và sử dụng dịch vụ lưu trữ trên Điện toán đám mây"@vi ;
+    ex:hasTitle "Tìm hiểu và sử dụng dịch vụ lưu trữ trên Điện toán đám mây"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicB_lesson3 .
+
+  ex:topicB_l3s4 a ex:Section ;
+    rdfs:label "Phòng chống vấn nạn bắt nạt qua mạng"@vi ;
+    ex:hasTitle "Phòng chống vấn nạn bắt nạt qua mạng"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:topicB_lesson3 .
+
+  ex:topicB_l3s5 a ex:Section ;
+    rdfs:label "Sử dụng phần mềm diệt virus"@vi ;
+    ex:hasTitle "Sử dụng phần mềm diệt virus"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:topicB_lesson3 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:page026 a ex:Page ; ex:hasPageNumber 26 ; ex:hasPrintedPageNumber 26 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:topicB_lesson1 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page027 a ex:Page ; ex:hasPageNumber 27 ; ex:hasPrintedPageNumber 27 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:topicB_lesson1 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page028 a ex:Page ; ex:hasPageNumber 28 ; ex:hasPrintedPageNumber 28 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:topicB_lesson1 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page029 a ex:Page ; ex:hasPageNumber 29 ; ex:hasPrintedPageNumber 29 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:topicB_lesson1 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page030 a ex:Page ; ex:hasPageNumber 30 ; ex:hasPrintedPageNumber 30 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:topicB_lesson1 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page031 a ex:Page ; ex:hasPageNumber 31 ; ex:hasPrintedPageNumber 31 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:topicB_lesson1 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page032 a ex:Page ; ex:hasPageNumber 32 ; ex:hasPrintedPageNumber 32 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:topicB_lesson2 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page033 a ex:Page ; ex:hasPageNumber 33 ; ex:hasPrintedPageNumber 33 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:topicB_lesson2 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page034 a ex:Page ; ex:hasPageNumber 34 ; ex:hasPrintedPageNumber 34 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:topicB_lesson2 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page035 a ex:Page ; ex:hasPageNumber 35 ; ex:hasPrintedPageNumber 35 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:topicB_lesson2 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page036 a ex:Page ; ex:hasPageNumber 36 ; ex:hasPrintedPageNumber 36 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:topicB_lesson2 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page037 a ex:Page ; ex:hasPageNumber 37 ; ex:hasPrintedPageNumber 37 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:topicB_lesson2 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page038 a ex:Page ; ex:hasPageNumber 38 ; ex:hasPrintedPageNumber 38 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:topicB_lesson3 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+  ex:page039 a ex:Page ; ex:hasPageNumber 39 ; ex:hasPrintedPageNumber 39 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:topicB_lesson3 ; ex:belongsToTopic ex:topicB ; ex:belongsToGrade ex:grade10 ; ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:page025 ex:nextPage ex:page026 .
+  ex:page026 ex:previousPage ex:page025 ; ex:nextPage ex:page027 .
+  ex:page027 ex:previousPage ex:page026 ; ex:nextPage ex:page028 .
+  ex:page028 ex:previousPage ex:page027 ; ex:nextPage ex:page029 .
+  ex:page029 ex:previousPage ex:page028 ; ex:nextPage ex:page030 .
+  ex:page030 ex:previousPage ex:page029 ; ex:nextPage ex:page031 .
+  ex:page031 ex:previousPage ex:page030 ; ex:nextPage ex:page032 .
+  ex:page032 ex:previousPage ex:page031 ; ex:nextPage ex:page033 .
+  ex:page033 ex:previousPage ex:page032 ; ex:nextPage ex:page034 .
+  ex:page034 ex:previousPage ex:page033 ; ex:nextPage ex:page035 .
+  ex:page035 ex:previousPage ex:page034 ; ex:nextPage ex:page036 .
+  ex:page036 ex:previousPage ex:page035 ; ex:nextPage ex:page037 .
+  ex:page037 ex:previousPage ex:page036 ; ex:nextPage ex:page038 .
+  ex:page038 ex:previousPage ex:page037 ; ex:nextPage ex:page039 .
+  ex:page039 ex:previousPage ex:page038 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:conceptMangMayTinh a ex:KnowledgeConcept ; rdfs:label "Mạng máy tính"@vi .
+  ex:conceptInternet a ex:KnowledgeConcept ; rdfs:label "Internet"@vi .
+  ex:conceptHocTrucTuyen a ex:KnowledgeConcept ; rdfs:label "Học trực tuyến"@vi .
+  ex:conceptHocLieuMo a ex:KnowledgeConcept ; rdfs:label "Học liệu mở"@vi .
+  ex:conceptOpenCourseWare a ex:KnowledgeConcept ; rdfs:label "OpenCourseWare"@vi .
+  ex:conceptLamViecTuXa a ex:KnowledgeConcept ; rdfs:label "Làm việc từ xa"@vi .
+  ex:conceptChinhPhuDienTu a ex:KnowledgeConcept ; rdfs:label "Chính phủ điện tử"@vi .
+  ex:conceptThuongMaiDienTu a ex:KnowledgeConcept ; rdfs:label "Thương mại điện tử"@vi .
+  ex:conceptThanhToanDienTu a ex:KnowledgeConcept ; rdfs:label "Thanh toán điện tử"@vi .
+  ex:conceptECommerce a ex:KnowledgeConcept ; rdfs:label "E-Commerce"@vi .
+  ex:conceptEPayment a ex:KnowledgeConcept ; rdfs:label "E-Payment"@vi .
+  ex:conceptEBanking a ex:KnowledgeConcept ; rdfs:label "E-Banking"@vi .
+  ex:conceptBatNatQuaMang a ex:KnowledgeConcept ; rdfs:label "Bắt nạt qua mạng"@vi .
+  ex:conceptPhanMemDocHai a ex:KnowledgeConcept ; rdfs:label "Phần mềm độc hại"@vi .
+  ex:conceptVirusMayTinh a ex:KnowledgeConcept ; rdfs:label "Virus máy tính"@vi .
+  ex:conceptSauMayTinh a ex:KnowledgeConcept ; rdfs:label "Sâu máy tính"@vi .
+  ex:conceptPhanMemGianDiep a ex:KnowledgeConcept ; rdfs:label "Phần mềm gián điệp"@vi .
+  ex:conceptPhanMemQuangCao a ex:KnowledgeConcept ; rdfs:label "Phần mềm quảng cáo"@vi .
+  ex:conceptPhanMemDietVirus a ex:KnowledgeConcept ; rdfs:label "Phần mềm diệt virus"@vi .
+  ex:conceptXacThucHaiBuoc a ex:KnowledgeConcept ; rdfs:label "Xác thực hai bước"@vi .
+  ex:conceptMangLAN a ex:KnowledgeConcept ; rdfs:label "Mạng LAN"@vi .
+  ex:conceptDienToanDamMay a ex:KnowledgeConcept ; rdfs:label "Điện toán đám mây"@vi .
+  ex:conceptDichVuDamMay a ex:KnowledgeConcept ; rdfs:label "Dịch vụ đám mây"@vi .
+  ex:conceptLuuTruDamMay a ex:KnowledgeConcept ; rdfs:label "Lưu trữ đám mây"@vi .
+  ex:conceptInternetVanVat a ex:KnowledgeConcept ; rdfs:label "Internet vạn vật"@vi .
+  ex:conceptIoT a ex:KnowledgeConcept ; rdfs:label "IoT"@vi .
+  ex:conceptCamBien a ex:KnowledgeConcept ; rdfs:label "Cảm biến"@vi .
+  ex:conceptGiaoThongThongMinh a ex:KnowledgeConcept ; rdfs:label "Giao thông thông minh"@vi .
+  ex:conceptNhaThongMinh a ex:KnowledgeConcept ; rdfs:label "Nhà thông minh"@vi .
+  ex:conceptNongNghiepThongMinh a ex:KnowledgeConcept ; rdfs:label "Nông nghiệp thông minh"@vi .
+  ex:conceptYTeThongMinh a ex:KnowledgeConcept ; rdfs:label "Y tế thông minh"@vi .
+  ex:conceptDichTuDong a ex:KnowledgeConcept ; rdfs:label "Dịch tự động"@vi .
+
+  ###########################################################################
+  # Topic / lesson / section to concept links
+  ###########################################################################
+
+  ex:topicB ex:hasConcept ex:conceptMangMayTinh, ex:conceptInternet, ex:conceptHocTrucTuyen,
+    ex:conceptHocLieuMo, ex:conceptLamViecTuXa, ex:conceptBatNatQuaMang,
+    ex:conceptPhanMemDocHai, ex:conceptMangLAN, ex:conceptDienToanDamMay,
+    ex:conceptInternetVanVat, ex:conceptIoT, ex:conceptCamBien .
+
+  ex:topicB_lesson1 ex:hasConcept ex:conceptMangMayTinh, ex:conceptInternet,
+    ex:conceptHocTrucTuyen, ex:conceptHocLieuMo, ex:conceptOpenCourseWare,
+    ex:conceptLamViecTuXa, ex:conceptChinhPhuDienTu, ex:conceptThuongMaiDienTu,
+    ex:conceptThanhToanDienTu, ex:conceptBatNatQuaMang, ex:conceptPhanMemDocHai,
+    ex:conceptVirusMayTinh, ex:conceptSauMayTinh, ex:conceptPhanMemGianDiep,
+    ex:conceptPhanMemQuangCao, ex:conceptXacThucHaiBuoc, ex:conceptDichTuDong .
+
+  ex:topicB_lesson2 ex:hasConcept ex:conceptMangLAN, ex:conceptInternet,
+    ex:conceptDienToanDamMay, ex:conceptDichVuDamMay, ex:conceptLuuTruDamMay,
+    ex:conceptInternetVanVat, ex:conceptIoT, ex:conceptCamBien,
+    ex:conceptGiaoThongThongMinh, ex:conceptNhaThongMinh,
+    ex:conceptNongNghiepThongMinh, ex:conceptYTeThongMinh .
+
+  ex:topicB_lesson3 ex:hasConcept ex:conceptHocLieuMo, ex:conceptDichTuDong,
+    ex:conceptLuuTruDamMay, ex:conceptBatNatQuaMang, ex:conceptPhanMemDietVirus,
+    ex:conceptPhanMemDocHai .
+
+  ex:topicB_l1s1 ex:hasConcept ex:conceptMangMayTinh, ex:conceptInternet,
+    ex:conceptHocTrucTuyen, ex:conceptHocLieuMo, ex:conceptLamViecTuXa,
+    ex:conceptChinhPhuDienTu, ex:conceptThuongMaiDienTu, ex:conceptThanhToanDienTu .
+
+  ex:topicB_l1s2 ex:hasConcept ex:conceptInternet, ex:conceptBatNatQuaMang .
+  ex:topicB_l1s3 ex:hasConcept ex:conceptPhanMemDocHai, ex:conceptVirusMayTinh,
+    ex:conceptSauMayTinh, ex:conceptPhanMemGianDiep, ex:conceptPhanMemQuangCao,
+    ex:conceptPhanMemDietVirus, ex:conceptXacThucHaiBuoc .
+
+  ex:topicB_l2s1 ex:hasConcept ex:conceptMangLAN, ex:conceptInternet .
+  ex:topicB_l2s2 ex:hasConcept ex:conceptDienToanDamMay, ex:conceptDichVuDamMay, ex:conceptLuuTruDamMay .
+  ex:topicB_l2s3 ex:hasConcept ex:conceptInternetVanVat, ex:conceptIoT,
+    ex:conceptCamBien, ex:conceptGiaoThongThongMinh, ex:conceptNhaThongMinh,
+    ex:conceptNongNghiepThongMinh, ex:conceptYTeThongMinh .
+
+  ex:topicB_l3s1 ex:hasConcept ex:conceptHocLieuMo, ex:conceptInternet .
+  ex:topicB_l3s2 ex:hasConcept ex:conceptDichTuDong, ex:conceptInternet .
+  ex:topicB_l3s3 ex:hasConcept ex:conceptDienToanDamMay, ex:conceptLuuTruDamMay .
+  ex:topicB_l3s4 ex:hasConcept ex:conceptBatNatQuaMang .
+  ex:topicB_l3s5 ex:hasConcept ex:conceptPhanMemDietVirus, ex:conceptPhanMemDocHai .
+
+  ###########################################################################
+  # Learning objectives and summary boxes
+  ###########################################################################
+
+  ex:topicB_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề B"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Trình bày được những thay đổi về chất lượng cuộc sống, phương thức học tập và làm việc mà mạng máy tính đem lại. Nêu được những nguy cơ và tác hại mà Internet có thể gây ra. Trình bày được một số cách đề phòng những tác hại đó. Nêu được một vài cách phòng vệ khi bị bắt nạt trên mạng. Biết cách tự bảo vệ dữ liệu cá nhân. Trình bày được sơ lược về phần mềm độc hại. Sử dụng được một số công cụ thông dụng để ngăn ngừa và diệt phần mềm độc hại."@vi ;
+    ex:appearsOnPage ex:page026 ;
+    ex:belongsToLesson ex:topicB_lesson1 .
+
+  ex:topicB_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề B"@vi ;
+    ex:hasSummaryText "Mạng máy tính nâng cao chất lượng cuộc sống, cung cấp những phương thức học tập, làm việc và sinh hoạt mới hiệu quả. Mạng máy tính cũng tiềm ẩn nhiều mặt trái. Giao tiếp trên mạng có nguy cơ máy tính bị lây nhiễm phần mềm độc hại. Nếu thiếu cảnh giác có thể bị hại bởi những hành vi phạm pháp, phi đạo đức, vô văn hoá. Cần tận dụng những ưu việt của mạng máy tính và áp dụng các biện pháp hạn chế tác động tiêu cực."@vi ;
+    ex:appearsOnPage ex:page031 ;
+    ex:belongsToLesson ex:topicB_lesson1 .
+
+  ex:topicB_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề B"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: So sánh được mạng LAN và Internet. Nêu được một số dịch vụ cụ thể mà Điện toán đám mây cung cấp cho người dùng. Nêu được khái niệm Internet vạn vật. Nêu được ví dụ cụ thể về thay đổi trong cuộc sống mà IoT đem lại. Phát biểu được ý kiến cá nhân về ích lợi của IoT."@vi ;
+    ex:appearsOnPage ex:page032 ;
+    ex:belongsToLesson ex:topicB_lesson2 .
+
+  ex:topicB_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề B"@vi ;
+    ex:hasSummaryText "Mạng LAN chỉ kết nối những máy tính trong phạm vi một cơ quan hoặc gia đình, còn Internet là mạng toàn cầu. Mạng LAN thường kết nối với Internet nhưng không phụ thuộc hoàn toàn vào Internet. Điện toán đám mây cung cấp những dịch vụ thường là tốt và rẻ. Internet vạn vật là hệ thống bao gồm các thiết bị thông minh có gắn cảm biến, kết nối mạng, có khả năng thu thập dữ liệu và kết nối với nhau để phối hợp hoạt động."@vi ;
+    ex:appearsOnPage ex:page037 ;
+    ex:belongsToLesson ex:topicB_lesson2 .
+
+  ex:topicB_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề B"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Hiểu rõ hơn dịch vụ Điện toán đám mây thông qua việc sử dụng một dịch vụ đơn giản. Sử dụng được một số chức năng xử lí thông tin trên máy tính cá nhân và thiết bị số, ví dụ dịch tự động văn bản hay tiếng nói. Khai thác được một số nguồn học liệu mở trên Internet. Thực hiện được một số cách đề phòng tác hại từ Internet. Thực hiện được một vài cách thông dụng để tự bảo vệ dữ liệu cá nhân. Sử dụng được một số công cụ thông dụng để ngăn ngừa và diệt phần mềm độc hại."@vi ;
+    ex:appearsOnPage ex:page038 ;
+    ex:belongsToLesson ex:topicB_lesson3 .
+
+  ex:topicB_lesson1 ex:hasSummary ex:topicB_l1_summary .
+  ex:topicB_lesson2 ex:hasSummary ex:topicB_l2_summary .
+
+  ###########################################################################
+  # Figures/resources with PDF order
+  ###########################################################################
+
+  ex:topicB_fig_openLearningResource a ex:Figure ;
+    rdfs:label "Hình 1. Nguồn học liệu mở"@vi ;
+    ex:hasCaption "Hình 1. Nguồn học liệu mở tại địa chỉ https://igiaoduc.vn ngày 21/01/2021"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:page027 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptHocLieuMo .
+
+  ex:topicB_fig_harvardOnlineLearning a ex:Figure ;
+    rdfs:label "Hình 2. Một trang web học online miễn phí của Đại học Harvard"@vi ;
+    ex:hasCaption "Hình 2. Một trang web học online miễn phí của Đại học Harvard"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:page027 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptHocTrucTuyen .
+
+  ex:topicB_fig_googleTranslatePhone a ex:Figure ;
+    rdfs:label "Hình 2. Dịch tự động bằng điện thoại thông minh"@vi ;
+    ex:hasCaption "Hình 2. Dịch tự động bằng điện thoại thông minh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:page031 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDichTuDong .
+
+  ex:topicB_fig_smartTraffic a ex:Figure ;
+    rdfs:label "Hình 1. Giao thông thông minh"@vi ;
+    ex:hasCaption "Hình 1. Giao thông thông minh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:page035 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptGiaoThongThongMinh .
+
+  ex:topicB_fig_smartAgriculture a ex:Figure ;
+    rdfs:label "Hình 2. Nông nghiệp thông minh"@vi ;
+    ex:hasCaption "Hình 2. Nông nghiệp thông minh"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:page035 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptNongNghiepThongMinh .
+
+  ex:topicB_fig_smartWatchHealth a ex:Figure ;
+    rdfs:label "Hình 3. Đồng hồ thông minh có khả năng đo và cảnh báo nhịp tim bất thường"@vi ;
+    ex:hasCaption "Hình 3. Đồng hồ thông minh có khả năng đo và cảnh báo nhịp tim bất thường"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:page036 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptYTeThongMinh .
+
+  ex:topicB_fig_antivirusSoftware a ex:Figure ;
+    rdfs:label "Hình minh hoạ phần mềm diệt virus"@vi ;
+    ex:hasCaption "Phần mềm diệt virus"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:page039 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptPhanMemDietVirus .
+
+  ex:page027 ex:hasFigure ex:topicB_fig_openLearningResource, ex:topicB_fig_harvardOnlineLearning .
+  ex:page031 ex:hasFigure ex:topicB_fig_googleTranslatePhone .
+  ex:page035 ex:hasFigure ex:topicB_fig_smartTraffic, ex:topicB_fig_smartAgriculture .
+  ex:page036 ex:hasFigure ex:topicB_fig_smartWatchHealth .
+  ex:page039 ex:hasFigure ex:topicB_fig_antivirusSoftware .
+
+  ex:topicB_fig_openLearningResource ex:nextFigure ex:topicB_fig_harvardOnlineLearning .
+  ex:topicB_fig_harvardOnlineLearning ex:previousFigure ex:topicB_fig_openLearningResource ; ex:nextFigure ex:topicB_fig_googleTranslatePhone .
+  ex:topicB_fig_googleTranslatePhone ex:previousFigure ex:topicB_fig_harvardOnlineLearning ; ex:nextFigure ex:topicB_fig_smartTraffic .
+  ex:topicB_fig_smartTraffic ex:previousFigure ex:topicB_fig_googleTranslatePhone ; ex:nextFigure ex:topicB_fig_smartAgriculture .
+  ex:topicB_fig_smartAgriculture ex:previousFigure ex:topicB_fig_smartTraffic ; ex:nextFigure ex:topicB_fig_smartWatchHealth .
+  ex:topicB_fig_smartWatchHealth ex:previousFigure ex:topicB_fig_smartAgriculture ; ex:nextFigure ex:topicB_fig_antivirusSoftware .
+  ex:topicB_fig_antivirusSoftware ex:previousFigure ex:topicB_fig_smartWatchHealth .
+
+  ###########################################################################
+  # Definitions / glossary / notes
+  ###########################################################################
+
+  ex:topicB_def_sensor a ex:DefinitionText ;
+    rdfs:label "Định nghĩa cảm biến"@vi ;
+    ex:hasDefinitionText "Cảm biến (Sensor): thiết bị điện tử có khả năng tự động cảm nhận và giám sát những trạng thái của môi trường như: ánh sáng, nhiệt độ, độ ẩm."@vi ;
+    ex:appearsOnPage ex:page034 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptCamBien .
+
+  ex:topicB_def_iot a ex:DefinitionText ;
+    rdfs:label "Định nghĩa IoT"@vi ;
+    ex:hasDefinitionText "IoT: hệ thống liên mạng bao gồm các phương tiện và vật dụng, các thiết bị thông minh. Các thiết bị đó được gắn các cảm biến, được cài đặt phần mềm chuyên dụng giúp chúng có thể tự động kết nối, thu thập và trao đổi dữ liệu trên cơ sở hạ tầng Internet mà không nhất thiết phải có sự tương tác trực tiếp giữa con người với con người hay con người với máy tính."@vi ;
+    ex:appearsOnPage ex:page036 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:explainsConcept ex:conceptIoT .
+
+  ex:topicB_note_malwarePrevention a ex:NoteBox ;
+    rdfs:label "Biện pháp tránh phần mềm độc hại"@vi ;
+    ex:hasRawText "Để tránh phần mềm độc hại, cần sử dụng phần mềm diệt virus, thường xuyên cập nhật hệ điều hành, trình duyệt và phần mềm diệt virus, chỉ sử dụng phần mềm có nguồn gốc rõ ràng và trang web đáng tin cậy, không mở email lạ, không tải tệp đính kèm không đáng tin cậy, không truy cập đường link lạ, dùng mật khẩu mạnh và kiểm tra thiết bị nhớ ngoài trước khi sử dụng."@vi ;
+    ex:appearsOnPage ex:page030 ;
+    ex:belongsToLesson ex:topicB_lesson1 .
+
+  ex:topicB_note_dataProtection a ex:NoteBox ;
+    rdfs:label "Biện pháp bảo vệ dữ liệu cá nhân"@vi ;
+    ex:hasRawText "Để bảo vệ dữ liệu, không nên gửi thông tin cá nhân quan trọng qua thư điện tử, tránh đăng nhập tại máy tính công cộng hoặc qua Wi-Fi công cộng, sao lưu dữ liệu quan trọng và nên lựa chọn xác thực hai bước."@vi ;
+    ex:appearsOnPage ex:page030 ;
+    ex:belongsToLesson ex:topicB_lesson1 .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:topicB_p026_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1. Mạng máy tính với cuộc sống. Bài học đặt vấn đề về các lĩnh vực và công cụ hoạt động dựa trên mạng máy tính như Internet vạn vật, robot hút bụi thông minh, điện thoại thông minh, E-Learning, E-Banking, E-Government, xã hội tri thức và kinh tế tri thức."@vi ;
+    ex:appearsOnPage ex:page026 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s1 .
+
+  ex:topicB_p026_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Trong giáo dục, Internet mang lại cho học sinh một phương thức học mới và hiệu quả, đó là học trực tuyến. Bài giảng được số hoá và đưa lên mạng, nhờ đó người học có thể học ở nhà, ở thư viện hay bất kì nơi nào có kết nối Internet."@vi ;
+    ex:appearsOnPage ex:page026 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s1 .
+
+  ex:topicB_p027_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nguồn học liệu mở cung cấp cho người học bài giảng, tài liệu tham khảo, bài tập, thí nghiệm ảo, bài kiểm tra. Học liệu mở là các tài liệu học tập được số hoá và có thể truy cập miễn phí trên mạng."@vi ;
+    ex:appearsOnPage ex:page027 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s1 .
+
+  ex:topicB_p027_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Internet mở rộng phương thức làm việc. Nhờ kết nối Internet, nhiều người có thể làm việc ở nhà, ở quán cà phê hoặc khi đang di chuyển, giúp cải thiện năng suất lao động, giảm ách tắc giao thông, tiết kiệm thời gian và chi phí đi lại."@vi ;
+    ex:appearsOnPage ex:page027 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s1 .
+
+  ex:topicB_p028_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Internet là kho tri thức và thông tin khổng lồ, hỗ trợ công việc trong hầu hết ngành nghề. Internet cung cấp hạ tầng truyền thông cho chính phủ điện tử, tạo phương thức kinh doanh hiệu quả, thúc đẩy thương mại điện tử và thanh toán điện tử."@vi ;
+    ex:appearsOnPage ex:page028 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s1 .
+
+  ex:topicB_p028_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Khi phương thức trao đổi thông tin được mở rộng, hiệu quả học tập, làm việc và chất lượng cuộc sống ngày càng nâng cao. Internet giúp cập nhật tin tức nhanh chóng, giao lưu với bạn bè và cộng đồng, phát triển dịch vụ xã hội như chăm sóc sức khoẻ từ xa và cung cấp nhiều phương tiện giải trí."@vi ;
+    ex:appearsOnPage ex:page028 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s1 .
+
+  ex:topicB_p029_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Internet mang lại lợi ích to lớn nhưng cũng tiềm ẩn nhiều nguy cơ và tác hại nếu người sử dụng thiếu hiểu biết và bất cẩn, như lười suy nghĩ, nghiện Internet, bị tuyên truyền bởi thông tin xấu độc, bị tiêm nhiễm thói xấu, bị lừa đảo qua mạng hoặc bị bắt nạt qua mạng."@vi ;
+    ex:appearsOnPage ex:page029 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s2 .
+
+  ex:topicB_p029_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Bắt nạt qua mạng xảy ra khi nạn nhân bị nhiều người chế giễu, bêu xấu, miệt thị, đe doạ, gây tổn thương có chủ đích qua tin nhắn, thư điện tử, cuộc gọi điện thoại, bài đăng hay bình luận trên mạng xã hội."@vi ;
+    ex:appearsOnPage ex:page029 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s2 .
+
+  ex:topicB_p029_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Khi kết nối Internet, máy tính có thể bị lây nhiễm phần mềm độc hại. Phần mềm độc hại được tạo ra với mục đích gây hại cho máy tính, thiết bị số, phần mềm, dữ liệu và người dùng. Có nhiều loại như virus máy tính, sâu máy tính, phần mềm gián điệp, phần mềm quảng cáo."@vi ;
+    ex:appearsOnPage ex:page029 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s3 .
+
+  ex:topicB_p030_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Để tránh phần mềm độc hại, cần sử dụng phần mềm diệt virus, cập nhật hệ điều hành và trình duyệt, chỉ dùng phần mềm có nguồn gốc rõ ràng, không mở email hay đường link lạ, sử dụng mật khẩu mạnh và kiểm tra thiết bị nhớ ngoài bằng phần mềm diệt virus."@vi ;
+    ex:appearsOnPage ex:page030 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s3 .
+
+  ex:topicB_p031_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Dịch tự động bằng điện thoại thông minh giúp dịch văn bản hoặc lời nói từ một ngôn ngữ sang ngôn ngữ khác. Đây là một ví dụ về lợi ích của Internet và phần mềm hỗ trợ người dùng."@vi ;
+    ex:appearsOnPage ex:page031 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:belongsToSection ex:topicB_l1s1 .
+
+  ex:topicB_p032_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 2. Điện toán đám mây và Internet vạn vật. Mạng LAN là mạng của một cơ quan hay gia đình, chỉ kết nối máy tính trong phạm vi nội bộ. Internet là mạng toàn cầu."@vi ;
+    ex:appearsOnPage ex:page032 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s1 .
+
+  ex:topicB_p032_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Internet và mạng LAN khác nhau về quy mô địa lí, phương thức kết nối, sự sở hữu và tính ổn định. Mạng LAN kết nối trong phạm vi nhỏ và thuộc quyền sở hữu của tổ chức, còn Internet là mạng toàn cầu không thuộc quyền sở hữu của cá nhân hay tổ chức nào."@vi ;
+    ex:appearsOnPage ex:page032 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s1 .
+
+  ex:topicB_p033_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Trước đây, để cung cấp dịch vụ lưu trữ, xử lí dữ liệu, email, mỗi cơ quan phải xây dựng hệ thống mạng LAN riêng gồm máy chủ và phần mềm mạng. Cách làm này có nhược điểm như không tương thích giữa các hệ thống, tốn chi phí thiết lập và bảo trì, mất thời gian mở rộng và lãng phí công suất."@vi ;
+    ex:appearsOnPage ex:page033 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s2 .
+
+  ex:topicB_p033_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Điện toán đám mây là mô hình cung cấp dịch vụ thông qua Internet, là giải pháp giảm thiểu nhược điểm nêu trên của mạng LAN. Các công ty điện toán đám mây có sẵn nguồn tài nguyên to lớn như máy chủ, đường truyền và phần mềm mạng."@vi ;
+    ex:appearsOnPage ex:page033 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s2 .
+
+  ex:topicB_p034_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Dịch vụ được công ty điện toán đám mây cung cấp ngay khi có yêu cầu, với chi phí rẻ hơn, chất lượng dịch vụ cao hơn và có tính tương thích rộng hơn. Các dịch vụ gồm lưu trữ, thư điện tử, ứng dụng văn phòng trực tuyến, hội nghị trực tuyến và máy chủ web hosting."@vi ;
+    ex:appearsOnPage ex:page034 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s2 .
+
+  ex:topicB_p034_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Trong giao thông thông minh, hệ thống sử dụng cảm biến trên đèn giao thông, biển báo điện tử, xe tự lái, trạm cân điện tử và trạm thu phí tự động để nhận dạng biển số, chủng loại, mật độ dòng xe và chướng ngại vật."@vi ;
+    ex:appearsOnPage ex:page034 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s3 .
+
+  ex:topicB_p035_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhà thông minh thông qua hệ thống cảm biến để tự động theo dõi các điều kiện sinh hoạt trong phòng như nhiệt độ, độ ẩm, nồng độ oxygen, ánh sáng; chủ nhà có thể điều khiển trực tiếp hoặc từ xa các thiết bị gia dụng và an ninh thông minh."@vi ;
+    ex:appearsOnPage ex:page035 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s3 .
+
+  ex:topicB_p035_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Trong nông nghiệp thông minh, mạng cảm biến thu thập dữ liệu về nhiệt độ, độ ẩm, sức sống cây trồng. Dựa trên dữ liệu thu thập được, máy móc có thể tự động tưới tiêu, cho ăn, chăm sóc vật nuôi và phát hiện những cá thể bị bệnh."@vi ;
+    ex:appearsOnPage ex:page035 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s3 .
+
+  ex:topicB_p036_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Thiết bị y tế thông minh có khả năng thường xuyên theo dõi các chỉ số sức khoẻ như nhịp tim, huyết áp, năng lượng tiêu thụ và khoảng cách vận động. Đồng hồ thông minh có thể giám sát nhịp tim và gửi cảnh báo tới người nhà hoặc trung tâm y tế."@vi ;
+    ex:appearsOnPage ex:page036 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s3 .
+
+  ex:topicB_p036_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Các thiết bị thông minh như thiết bị y tế, giao thông, nhà thông minh được xây dựng trên cơ sở Internet vạn vật. IoT bao gồm những đồ vật, máy móc được gắn cảm biến để tương tác với môi trường xung quanh và được trang bị trí tuệ nhân tạo để phối hợp hoạt động qua mạng."@vi ;
+    ex:appearsOnPage ex:page036 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s3 .
+
+  ex:topicB_p037_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài học củng cố bằng câu hỏi về mạng LAN, Internet, điện toán đám mây và IoT; đồng thời yêu cầu học sinh tìm hiểu công ty Việt Nam cung cấp dịch vụ điện toán đám mây và nêu lợi ích của IoT."@vi ;
+    ex:appearsOnPage ex:page037 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:belongsToSection ex:topicB_l2s2 .
+
+  ex:topicB_p038_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 3. Thực hành một số ứng dụng của mạng máy tính. Bài thực hành yêu cầu học sinh khai thác nguồn học liệu mở trên Internet, dịch tự động trên Internet và tìm hiểu dịch vụ lưu trữ trên điện toán đám mây."@vi ;
+    ex:appearsOnPage ex:page038 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:belongsToSection ex:topicB_l3s1 .
+
+  ex:topicB_p039_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài thực hành tiếp tục với phòng chống vấn nạn bắt nạt qua mạng, sử dụng phần mềm diệt virus và tìm hiểu các doanh nghiệp Việt Nam có nền tảng đám mây đạt tiêu chuẩn."@vi ;
+    ex:appearsOnPage ex:page039 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:belongsToSection ex:topicB_l3s4 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:page026 ex:hasParagraph ex:topicB_p026_01, ex:topicB_p026_02 .
+  ex:page027 ex:hasParagraph ex:topicB_p027_01, ex:topicB_p027_02 .
+  ex:page028 ex:hasParagraph ex:topicB_p028_01, ex:topicB_p028_02 .
+  ex:page029 ex:hasParagraph ex:topicB_p029_01, ex:topicB_p029_02, ex:topicB_p029_03 .
+  ex:page030 ex:hasParagraph ex:topicB_p030_01 .
+  ex:page031 ex:hasParagraph ex:topicB_p031_01 .
+  ex:page032 ex:hasParagraph ex:topicB_p032_01, ex:topicB_p032_02 .
+  ex:page033 ex:hasParagraph ex:topicB_p033_01, ex:topicB_p033_02 .
+  ex:page034 ex:hasParagraph ex:topicB_p034_01, ex:topicB_p034_02 .
+  ex:page035 ex:hasParagraph ex:topicB_p035_01, ex:topicB_p035_02 .
+  ex:page036 ex:hasParagraph ex:topicB_p036_01, ex:topicB_p036_02 .
+  ex:page037 ex:hasParagraph ex:topicB_p037_01 .
+  ex:page038 ex:hasParagraph ex:topicB_p038_01 .
+  ex:page039 ex:hasParagraph ex:topicB_p039_01 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:topicB_l1s1 ex:hasParagraph ex:topicB_p026_01, ex:topicB_p026_02,
+    ex:topicB_p027_01, ex:topicB_p027_02, ex:topicB_p028_01, ex:topicB_p028_02,
+    ex:topicB_p031_01 .
+
+  ex:topicB_l1s2 ex:hasParagraph ex:topicB_p029_01, ex:topicB_p029_02 .
+  ex:topicB_l1s3 ex:hasParagraph ex:topicB_p029_03, ex:topicB_p030_01 .
+
+  ex:topicB_l2s1 ex:hasParagraph ex:topicB_p032_01, ex:topicB_p032_02 .
+  ex:topicB_l2s2 ex:hasParagraph ex:topicB_p033_01, ex:topicB_p033_02, ex:topicB_p034_01, ex:topicB_p037_01 .
+  ex:topicB_l2s3 ex:hasParagraph ex:topicB_p034_02, ex:topicB_p035_01, ex:topicB_p035_02,
+    ex:topicB_p036_01, ex:topicB_p036_02 .
+
+  ex:topicB_l3s1 ex:hasParagraph ex:topicB_p038_01 .
+  ex:topicB_l3s4 ex:hasParagraph ex:topicB_p039_01 .
+
+  ###########################################################################
+  # Paragraph order links
+  ###########################################################################
+
+  ex:topicB_p026_01 ex:nextParagraph ex:topicB_p026_02 .
+  ex:topicB_p026_02 ex:previousParagraph ex:topicB_p026_01 ; ex:nextParagraph ex:topicB_p027_01 .
+  ex:topicB_p027_01 ex:previousParagraph ex:topicB_p026_02 ; ex:nextParagraph ex:topicB_p027_02 .
+  ex:topicB_p027_02 ex:previousParagraph ex:topicB_p027_01 ; ex:nextParagraph ex:topicB_p028_01 .
+  ex:topicB_p028_01 ex:previousParagraph ex:topicB_p027_02 ; ex:nextParagraph ex:topicB_p028_02 .
+  ex:topicB_p028_02 ex:previousParagraph ex:topicB_p028_01 ; ex:nextParagraph ex:topicB_p029_01 .
+  ex:topicB_p029_01 ex:previousParagraph ex:topicB_p028_02 ; ex:nextParagraph ex:topicB_p029_02 .
+  ex:topicB_p029_02 ex:previousParagraph ex:topicB_p029_01 ; ex:nextParagraph ex:topicB_p029_03 .
+  ex:topicB_p029_03 ex:previousParagraph ex:topicB_p029_02 ; ex:nextParagraph ex:topicB_p030_01 .
+  ex:topicB_p030_01 ex:previousParagraph ex:topicB_p029_03 ; ex:nextParagraph ex:topicB_p031_01 .
+  ex:topicB_p031_01 ex:previousParagraph ex:topicB_p030_01 ; ex:nextParagraph ex:topicB_p032_01 .
+  ex:topicB_p032_01 ex:previousParagraph ex:topicB_p031_01 ; ex:nextParagraph ex:topicB_p032_02 .
+  ex:topicB_p032_02 ex:previousParagraph ex:topicB_p032_01 ; ex:nextParagraph ex:topicB_p033_01 .
+  ex:topicB_p033_01 ex:previousParagraph ex:topicB_p032_02 ; ex:nextParagraph ex:topicB_p033_02 .
+  ex:topicB_p033_02 ex:previousParagraph ex:topicB_p033_01 ; ex:nextParagraph ex:topicB_p034_01 .
+  ex:topicB_p034_01 ex:previousParagraph ex:topicB_p033_02 ; ex:nextParagraph ex:topicB_p034_02 .
+  ex:topicB_p034_02 ex:previousParagraph ex:topicB_p034_01 ; ex:nextParagraph ex:topicB_p035_01 .
+  ex:topicB_p035_01 ex:previousParagraph ex:topicB_p034_02 ; ex:nextParagraph ex:topicB_p035_02 .
+  ex:topicB_p035_02 ex:previousParagraph ex:topicB_p035_01 ; ex:nextParagraph ex:topicB_p036_01 .
+  ex:topicB_p036_01 ex:previousParagraph ex:topicB_p035_02 ; ex:nextParagraph ex:topicB_p036_02 .
+  ex:topicB_p036_02 ex:previousParagraph ex:topicB_p036_01 ; ex:nextParagraph ex:topicB_p037_01 .
+  ex:topicB_p037_01 ex:previousParagraph ex:topicB_p036_02 ; ex:nextParagraph ex:topicB_p038_01 .
+  ex:topicB_p038_01 ex:previousParagraph ex:topicB_p037_01 ; ex:nextParagraph ex:topicB_p039_01 .
+  ex:topicB_p039_01 ex:previousParagraph ex:topicB_p038_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:topicB_p026_01 ex:mentionsConcept ex:conceptMangMayTinh, ex:conceptInternetVanVat,
+    ex:conceptEBanking, ex:conceptChinhPhuDienTu .
+
+  ex:topicB_p026_02 ex:mentionsConcept ex:conceptInternet, ex:conceptHocTrucTuyen .
+  ex:topicB_p027_01 ex:mentionsConcept ex:conceptHocLieuMo, ex:conceptOpenCourseWare, ex:conceptInternet .
+  ex:topicB_p027_02 ex:mentionsConcept ex:conceptInternet, ex:conceptLamViecTuXa .
+  ex:topicB_p028_01 ex:mentionsConcept ex:conceptInternet, ex:conceptChinhPhuDienTu,
+    ex:conceptThuongMaiDienTu, ex:conceptThanhToanDienTu, ex:conceptECommerce, ex:conceptEPayment .
+  ex:topicB_p028_02 ex:mentionsConcept ex:conceptInternet, ex:conceptMangMayTinh .
+  ex:topicB_p029_01 ex:mentionsConcept ex:conceptInternet, ex:conceptBatNatQuaMang .
+  ex:topicB_p029_02 ex:mentionsConcept ex:conceptBatNatQuaMang .
+  ex:topicB_p029_03 ex:mentionsConcept ex:conceptInternet, ex:conceptPhanMemDocHai,
+    ex:conceptVirusMayTinh, ex:conceptSauMayTinh, ex:conceptPhanMemGianDiep, ex:conceptPhanMemQuangCao .
+  ex:topicB_p030_01 ex:mentionsConcept ex:conceptPhanMemDocHai, ex:conceptPhanMemDietVirus, ex:conceptXacThucHaiBuoc .
+  ex:topicB_p031_01 ex:mentionsConcept ex:conceptDichTuDong, ex:conceptInternet .
+  ex:topicB_p032_01 ex:mentionsConcept ex:conceptMangLAN, ex:conceptInternet .
+  ex:topicB_p032_02 ex:mentionsConcept ex:conceptMangLAN, ex:conceptInternet .
+  ex:topicB_p033_01 ex:mentionsConcept ex:conceptMangLAN, ex:conceptDichVuDamMay .
+  ex:topicB_p033_02 ex:mentionsConcept ex:conceptDienToanDamMay, ex:conceptInternet .
+  ex:topicB_p034_01 ex:mentionsConcept ex:conceptDienToanDamMay, ex:conceptDichVuDamMay, ex:conceptLuuTruDamMay .
+  ex:topicB_p034_02 ex:mentionsConcept ex:conceptGiaoThongThongMinh, ex:conceptCamBien .
+  ex:topicB_p035_01 ex:mentionsConcept ex:conceptNhaThongMinh, ex:conceptCamBien .
+  ex:topicB_p035_02 ex:mentionsConcept ex:conceptNongNghiepThongMinh, ex:conceptCamBien .
+  ex:topicB_p036_01 ex:mentionsConcept ex:conceptYTeThongMinh .
+  ex:topicB_p036_02 ex:mentionsConcept ex:conceptInternetVanVat, ex:conceptIoT, ex:conceptCamBien .
+  ex:topicB_p037_01 ex:mentionsConcept ex:conceptMangLAN, ex:conceptInternet, ex:conceptDienToanDamMay, ex:conceptIoT .
+  ex:topicB_p038_01 ex:mentionsConcept ex:conceptHocLieuMo, ex:conceptDichTuDong, ex:conceptLuuTruDamMay .
+  ex:topicB_p039_01 ex:mentionsConcept ex:conceptBatNatQuaMang, ex:conceptPhanMemDietVirus, ex:conceptDienToanDamMay .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:conceptInternet ex:relatedTo ex:conceptMangMayTinh .
+  ex:conceptHocTrucTuyen ex:relatedTo ex:conceptInternet .
+  ex:conceptHocLieuMo ex:relatedTo ex:conceptHocTrucTuyen .
+  ex:conceptOpenCourseWare ex:subConceptOf ex:conceptHocLieuMo .
+  ex:conceptLamViecTuXa ex:relatedTo ex:conceptInternet .
+  ex:conceptChinhPhuDienTu ex:relatedTo ex:conceptInternet .
+  ex:conceptThuongMaiDienTu ex:relatedTo ex:conceptInternet .
+  ex:conceptECommerce ex:subConceptOf ex:conceptThuongMaiDienTu .
+  ex:conceptThanhToanDienTu ex:relatedTo ex:conceptInternet .
+  ex:conceptEPayment ex:subConceptOf ex:conceptThanhToanDienTu .
+  ex:conceptEBanking ex:subConceptOf ex:conceptThanhToanDienTu .
+  ex:conceptBatNatQuaMang ex:relatedTo ex:conceptInternet .
+  ex:conceptPhanMemDocHai ex:relatedTo ex:conceptInternet .
+  ex:conceptVirusMayTinh ex:subConceptOf ex:conceptPhanMemDocHai .
+  ex:conceptSauMayTinh ex:subConceptOf ex:conceptPhanMemDocHai .
+  ex:conceptPhanMemGianDiep ex:subConceptOf ex:conceptPhanMemDocHai .
+  ex:conceptPhanMemQuangCao ex:subConceptOf ex:conceptPhanMemDocHai .
+  ex:conceptPhanMemDietVirus ex:relatedTo ex:conceptPhanMemDocHai .
+  ex:conceptXacThucHaiBuoc ex:relatedTo ex:conceptThanhToanDienTu .
+  ex:conceptMangLAN ex:relatedTo ex:conceptInternet .
+  ex:conceptDienToanDamMay ex:relatedTo ex:conceptInternet .
+  ex:conceptDichVuDamMay ex:subConceptOf ex:conceptDienToanDamMay .
+  ex:conceptLuuTruDamMay ex:subConceptOf ex:conceptDichVuDamMay .
+  ex:conceptInternetVanVat ex:relatedTo ex:conceptInternet .
+  ex:conceptIoT ex:subConceptOf ex:conceptInternetVanVat .
+  ex:conceptCamBien ex:relatedTo ex:conceptIoT .
+  ex:conceptGiaoThongThongMinh ex:subConceptOf ex:conceptIoT .
+  ex:conceptNhaThongMinh ex:subConceptOf ex:conceptIoT .
+  ex:conceptNongNghiepThongMinh ex:subConceptOf ex:conceptIoT .
+  ex:conceptYTeThongMinh ex:subConceptOf ex:conceptIoT .
+  ex:conceptDichTuDong ex:relatedTo ex:conceptInternet .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:topicB_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề B"@vi ;
+    ex:hasRawText "Lĩnh vực hay công cụ nào được kể ra dưới đây hoạt động dựa trên mạng máy tính: Internet vạn vật, robot hút bụi thông minh, điện thoại thông minh, E-Learning, E-Banking, E-Government, xã hội tri thức và kinh tế tri thức?"@vi ;
+    ex:appearsOnPage ex:page026 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:relatedTo ex:conceptMangMayTinh .
+
+  ex:topicB_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động học liệu mở"@vi ;
+    ex:hasRawText "Với sự hướng dẫn của giáo viên, em hãy tìm và hiển thị một trang web học liệu mở."@vi ;
+    ex:appearsOnPage ex:page026 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:relatedTo ex:conceptHocLieuMo .
+
+  ex:topicB_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động so sánh kênh thông tin và làm việc từ xa"@vi ;
+    ex:hasRawText "So sánh tốc độ cập nhật thông tin, sự đa dạng của kênh thông tin giữa sách báo điện tử và sách báo giấy, giữa đài phát thanh và truyền hình. So sánh các kênh liên lạc qua Internet với gửi thư qua bưu điện. Nêu một số công việc đặc thù có thể cho phép nhân viên làm việc tại nhà."@vi ;
+    ex:appearsOnPage ex:page028 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:relatedTo ex:conceptInternet, ex:conceptLamViecTuXa .
+
+  ex:topicB_l1_activity3 a ex:Activity ;
+    rdfs:label "Hoạt động bắt nạt qua mạng"@vi ;
+    ex:hasRawText "Em hiểu thế nào là bị bắt nạt qua mạng? Hãy nêu ví dụ."@vi ;
+    ex:appearsOnPage ex:page029 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:relatedTo ex:conceptBatNatQuaMang .
+
+  ex:topicB_l1_ex1 a ex:Exercise ;
+    rdfs:label "Bài 1 chủ đề B - Nhận biết nguy cơ phần mềm độc hại"@vi ;
+    ex:hasRawText "Những điều nào có thể khiến máy tính bị lây nhiễm phần mềm độc hại: tải phần mềm từ trang web không đáng tin cậy; dùng USB sao chép tệp mà không kiểm tra bằng phần mềm diệt virus; nháy chuột vào quảng cáo hấp dẫn rồi chuyển tới trang web lạ; không cập nhật phần mềm diệt virus; không cập nhật phiên bản Microsoft Office mới."@vi ;
+    ex:appearsOnPage ex:page030 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:relatedTo ex:conceptPhanMemDocHai .
+
+  ex:topicB_l1_practiceTranslate a ex:PracticeExercise ;
+    rdfs:label "Luyện tập dịch tự động"@vi ;
+    ex:hasRawText "Em hãy sử dụng điện thoại thông minh để dịch một đoạn văn bản, một câu hội thoại tuỳ chọn sang ngôn ngữ khác. Bài học đã đề cập đến ba nhóm lợi ích thay đổi lớn mà Internet đã đem lại. Em hãy xếp phần mềm dịch tự động vào nhóm nào? Vì sao?"@vi ;
+    ex:appearsOnPage ex:page031 ;
+    ex:belongsToLesson ex:topicB_lesson1 ;
+    ex:relatedTo ex:conceptDichTuDong .
+
+  ex:topicB_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 1 chủ đề B"@vi ;
+    ex:hasRawText "Mỗi sự việc sau đây phản ánh tác động tích cực hay tiêu cực của mạng máy tính: dùng mạng để tìm đáp án bài tập; học trực tuyến có phương pháp giúp cải thiện học lực; thanh toán trực tuyến giúp mua vé máy bay tại nhà; bị lộ thông tin cá nhân có thể bị đánh cắp tiền trong tài khoản ngân hàng."@vi ;
+    ex:appearsOnPage ex:page031 ;
+    ex:belongsToLesson ex:topicB_lesson1 .
+
+  ex:topicB_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề B"@vi ;
+    ex:hasRawText "Một công ty có các máy tính nối mạng Internet. Khi đường cáp quang ở biển xảy ra sự cố, mạng Internet không truy cập được nữa thì công ty có ngừng sử dụng mọi dịch vụ kết nối mạng nào dù chỉ gửi file cho nhau qua mạng không? Theo em, trong công ty đó có mạng LAN hay không?"@vi ;
+    ex:appearsOnPage ex:page032 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:relatedTo ex:conceptMangLAN, ex:conceptInternet .
+
+  ex:topicB_l2_activityCloudStorage a ex:Activity ;
+    rdfs:label "Hoạt động tìm hiểu dịch vụ lưu trữ đám mây"@vi ;
+    ex:hasRawText "Em hãy tìm kiếm và cho biết tên nhà cung cấp dịch vụ, dung lượng miễn phí, cách tính chi phí của một trong các dịch vụ lưu trữ của Điện toán đám mây thông dụng hiện nay như Dropbox, Google Drive, OneDrive, Box."@vi ;
+    ex:appearsOnPage ex:page033 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:relatedTo ex:conceptDienToanDamMay, ex:conceptLuuTruDamMay .
+
+  ex:topicB_l2_activitySelfDrivingCar a ex:Activity ;
+    rdfs:label "Hoạt động xe tự lái"@vi ;
+    ex:hasRawText "Giả sử em được giao nhiệm vụ thiết kế ô tô tự lái, hãy nêu những khả năng mà em muốn trang bị cho xe ngoài khả năng tự động nhận dạng chướng ngại vật."@vi ;
+    ex:appearsOnPage ex:page034 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:relatedTo ex:conceptGiaoThongThongMinh, ex:conceptCamBien .
+
+  ex:topicB_l2_activitySmartHome a ex:Activity ;
+    rdfs:label "Hoạt động nhà thông minh"@vi ;
+    ex:hasRawText "Em hãy nêu một tình huống thực tế mà khi đó: ngôi nhà thông minh phải tự động điều chỉnh nhiệt độ căn phòng; chủ nhân không ở nhà cần điều khiển từ xa để mở cửa ra vào."@vi ;
+    ex:appearsOnPage ex:page035 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:relatedTo ex:conceptNhaThongMinh .
+
+  ex:topicB_l2_ex1 a ex:Exercise ;
+    rdfs:label "Bài 2 chủ đề B - Câu đúng về LAN, Internet, IoT và điện toán đám mây"@vi ;
+    ex:hasRawText "Trong các câu sau đây, những câu nào đúng: Phạm vi kết nối và hoạt động của mạng LAN nhỏ hơn Internet; nếu mất kết nối Internet thì các máy tính trong mạng LAN vẫn liên lạc được với nhau; phải có mạng LAN mới xây dựng được IoT; điện toán đám mây cung cấp những dịch vụ tốt hơn so với những dịch vụ mà các cơ quan tự xây dựng."@vi ;
+    ex:appearsOnPage ex:page036 ;
+    ex:belongsToLesson ex:topicB_lesson2 .
+
+  ex:topicB_l2_practice1 a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 2 - Công ty Việt Nam cung cấp dịch vụ đám mây"@vi ;
+    ex:hasRawText "Em hãy tìm kiếm thông tin về những công ty Việt Nam đang cung cấp dịch vụ Điện toán đám mây."@vi ;
+    ex:appearsOnPage ex:page037 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:relatedTo ex:conceptDienToanDamMay .
+
+  ex:topicB_l2_practice2 a ex:PracticeExercise ;
+    rdfs:label "Luyện tập bài 2 - Lợi ích IoT"@vi ;
+    ex:hasRawText "Theo em, IoT đem lại những lợi ích gì?"@vi ;
+    ex:appearsOnPage ex:page037 ;
+    ex:belongsToLesson ex:topicB_lesson2 ;
+    ex:relatedTo ex:conceptIoT .
+
+  ex:topicB_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu 1 bài 2 chủ đề B"@vi ;
+    ex:hasRawText "Nếu mỗi cơ quan tự xây dựng hệ thống cung cấp dịch vụ ứng dụng công nghệ thông tin theo cách riêng thì có thể dẫn tới hạn chế nào: nhân viên không thể truy cập trang web của cơ quan khác; tốn kém thời gian, chi phí xây dựng và bảo trì; lãng phí tài nguyên thiết bị số và đường truyền; dịch vụ không tương thích với nhau."@vi ;
+    ex:appearsOnPage ex:page037 ;
+    ex:belongsToLesson ex:topicB_lesson2 .
+
+  ex:topicB_l2_review2 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu 2 bài 2 chủ đề B"@vi ;
+    ex:hasRawText "Điện toán đám mây không thể cung cấp những dịch vụ nào trong các dịch vụ: dịch vụ ứng dụng lưu trữ, dịch vụ thư tín điện tử, dịch vụ bảo trì phần cứng và phần mềm tại gia đình, dịch vụ cung cấp máy chủ, dịch vụ cung cấp các ứng dụng văn phòng."@vi ;
+    ex:appearsOnPage ex:page037 ;
+    ex:belongsToLesson ex:topicB_lesson2 .
+
+  ex:topicB_l3_task1 a ex:PracticeTask ;
+    rdfs:label "Bài 3 chủ đề B - Khai thác nguồn học liệu mở trên Internet"@vi ;
+    ex:hasRawText "Tìm kiếm, truy cập và sử dụng ít nhất hai nguồn học liệu mở trên Internet. Mô tả tên cơ quan cung cấp, lĩnh vực kiến thức, ngôn ngữ giao diện, dạng học liệu, bài tập, kiểm tra và mức độ miễn phí."@vi ;
+    ex:appearsOnPage ex:page038 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:relatedTo ex:conceptHocLieuMo .
+
+  ex:topicB_l3_task2 a ex:PracticeTask ;
+    rdfs:label "Bài 3 chủ đề B - Dịch tự động trên Internet"@vi ;
+    ex:hasRawText "Truy cập một ứng dụng dịch tự động trên Internet, dịch một đoạn văn bản hoặc câu hội thoại sang ngôn ngữ khác và nhận xét độ chính xác của câu vừa dịch."@vi ;
+    ex:appearsOnPage ex:page038 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:relatedTo ex:conceptDichTuDong .
+
+  ex:topicB_l3_task3 a ex:PracticeTask ;
+    rdfs:label "Bài 3 chủ đề B - Sử dụng dịch vụ lưu trữ trên điện toán đám mây"@vi ;
+    ex:hasRawText "Tìm hiểu và sử dụng một dịch vụ lưu trữ trên điện toán đám mây như Google Drive, OneDrive, Dropbox, Box. Mô tả tên công ty cung cấp, ưu điểm, nhược điểm và giới hạn lưu trữ miễn phí."@vi ;
+    ex:appearsOnPage ex:page038 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:relatedTo ex:conceptLuuTruDamMay .
+
+  ex:topicB_l3_task4 a ex:PracticeTask ;
+    rdfs:label "Bài 3 chủ đề B - Phòng chống bắt nạt qua mạng"@vi ;
+    ex:hasRawText "Sau một lần An tranh cãi với bạn trong lớp, xuất hiện nhiều bình luận ác ý về An trên mạng xã hội và tin nhắn miệt thị gửi tới điện thoại. Hãy cho An lời khuyên để giải quyết vấn đề này và ngăn ngừa tái diễn."@vi ;
+    ex:appearsOnPage ex:page039 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:relatedTo ex:conceptBatNatQuaMang .
+
+  ex:topicB_l3_task5 a ex:PracticeTask ;
+    rdfs:label "Bài 3 chủ đề B - Sử dụng phần mềm diệt virus"@vi ;
+    ex:hasRawText "Tìm kiếm, tải xuống và cài đặt một phần mềm diệt virus miễn phí như BKAV, Microsoft Security Essential Antivirus. Sau khi sử dụng, cho biết phần mềm đó có chế độ diệt virus không cần hỏi người dùng hay không."@vi ;
+    ex:appearsOnPage ex:page039 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:relatedTo ex:conceptPhanMemDietVirus .
+
+  ex:topicB_l3_applied1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 3 chủ đề B - Nền tảng đám mây Việt Nam"@vi ;
+    ex:hasRawText "Ngày 2/12/2020 Bộ Thông tin và Truyền thông đã công bố và trao chứng nhận cho năm doanh nghiệp Việt Nam có nền tảng đám mây đạt tiêu chuẩn. Hãy tìm hiểu đó là những doanh nghiệp nào, quy mô tài nguyên của năm nền tảng đám mây ra sao và các trung tâm dữ liệu được đặt ở đâu."@vi ;
+    ex:appearsOnPage ex:page039 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:relatedTo ex:conceptDienToanDamMay .
+
+  ex:topicB_l3_applied2 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 3 chủ đề B - Nhận xét trang web học trực tuyến"@vi ;
+    ex:hasRawText "Truy cập một trang web học trực tuyến và nêu nhận xét về số lượng môn học, hình thức kiểm tra, đánh giá, mức độ dễ sử dụng, sự đa dạng và hữu ích của video và ảnh minh hoạ."@vi ;
+    ex:appearsOnPage ex:page039 ;
+    ex:belongsToLesson ex:topicB_lesson3 ;
+    ex:relatedTo ex:conceptHocTrucTuyen .
+
+  ex:topicB_lesson1 ex:hasActivity ex:topicB_l1_openingActivity, ex:topicB_l1_activity1,
+    ex:topicB_l1_activity2, ex:topicB_l1_activity3 ;
+    ex:hasReviewQuestion ex:topicB_l1_review1 .
+
+  ex:topicB_lesson2 ex:hasActivity ex:topicB_l2_openingActivity, ex:topicB_l2_activityCloudStorage,
+    ex:topicB_l2_activitySelfDrivingCar, ex:topicB_l2_activitySmartHome ;
+    ex:hasReviewQuestion ex:topicB_l2_review1, ex:topicB_l2_review2 .
+
+  ex:topicB_lesson3 ex:hasActivity ex:topicB_l3_task1, ex:topicB_l3_task2,
+    ex:topicB_l3_task3, ex:topicB_l3_task4, ex:topicB_l3_task5 .
+}

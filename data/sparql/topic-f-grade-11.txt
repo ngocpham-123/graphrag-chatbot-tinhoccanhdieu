@@ -1,0 +1,1394 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 11 TOPIC F
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 resources.
+# Source file: Tin học (tin học ứng dụng) 11 CD-pages-5.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g11_grade11 a ex:GradeLevel ;
+    rdfs:label "Lớp 11"@vi ;
+    ex:gradeNumber 11 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g11_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 11 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 11 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g11_grade11 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicF_shared a ex:Topic ;
+    rdfs:label "Chủ đề F (dùng chung các khối)"@vi ;
+    ex:hasTitle "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi .
+
+  ex:g11_topicF a ex:Topic ;
+    rdfs:label "Chủ đề F - Giải quyết vấn đề với sự trợ giúp của máy tính"@vi ;
+    ex:hasTitle "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi ;
+    ex:hasSubtitle "Giới thiệu các hệ cơ sở dữ liệu"@vi ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicF_shared ;
+    ex:topicOrder 6 ;
+    ex:hasStartPage 47 ;
+    ex:hasEndPage 83 ;
+    ex:sourceFileName "Tin học (tin học ứng dụng) 11 CD-pages-5.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g11_topicF_lesson1, ex:g11_topicF_lesson2,
+                 ex:g11_topicF_lesson3, ex:g11_topicF_lesson4,
+                 ex:g11_topicF_lesson5, ex:g11_topicF_lesson6,
+                 ex:g11_topicF_lesson7, ex:g11_topicF_lesson8 ;
+    ex:hasPage ex:g11_page047, ex:g11_page048, ex:g11_page049, ex:g11_page050,
+               ex:g11_page051, ex:g11_page052, ex:g11_page053, ex:g11_page054,
+               ex:g11_page055, ex:g11_page056, ex:g11_page057, ex:g11_page058,
+               ex:g11_page059, ex:g11_page060, ex:g11_page061, ex:g11_page062,
+               ex:g11_page063, ex:g11_page064, ex:g11_page065, ex:g11_page066,
+               ex:g11_page067, ex:g11_page068, ex:g11_page069, ex:g11_page070,
+               ex:g11_page071, ex:g11_page072, ex:g11_page073, ex:g11_page074,
+               ex:g11_page075, ex:g11_page076, ex:g11_page077, ex:g11_page078,
+               ex:g11_page079, ex:g11_page080, ex:g11_page081, ex:g11_page082,
+               ex:g11_page083 .
+
+  ex:g11_tinhoc_ungdung_canhdieu ex:hasTopic ex:g11_topicF .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g11_topicF_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Bài toán quản lí và cơ sở dữ liệu"@vi ;
+    ex:hasTitle "Bài toán quản lí và cơ sở dữ liệu"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g11_topicF ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 47 ;
+    ex:hasEndPage 51 ;
+    ex:hasSection ex:g11_topicF_l1s1, ex:g11_topicF_l1s2, ex:g11_topicF_l1s3, ex:g11_topicF_l1s4 .
+
+  ex:g11_topicF_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Bảng và khoá chính trong cơ sở dữ liệu quan hệ"@vi ;
+    ex:hasTitle "Bảng và khoá chính trong cơ sở dữ liệu quan hệ"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g11_topicF ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 52 ;
+    ex:hasEndPage 56 ;
+    ex:hasSection ex:g11_topicF_l2s1, ex:g11_topicF_l2s2, ex:g11_topicF_l2s3, ex:g11_topicF_l2s4 .
+
+  ex:g11_topicF_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Quan hệ giữa các bảng và khoá ngoài trong cơ sở dữ liệu quan hệ"@vi ;
+    ex:hasTitle "Quan hệ giữa các bảng và khoá ngoài trong cơ sở dữ liệu quan hệ"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g11_topicF ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 57 ;
+    ex:hasEndPage 61 ;
+    ex:hasSection ex:g11_topicF_l3s1, ex:g11_topicF_l3s2, ex:g11_topicF_l3s3, ex:g11_topicF_l3s4 .
+
+  ex:g11_topicF_lesson4 a ex:Lesson ;
+    rdfs:label "Bài 4. Các biểu mẫu cho xem và cập nhật dữ liệu"@vi ;
+    ex:hasTitle "Các biểu mẫu cho xem và cập nhật dữ liệu"@vi ;
+    ex:lessonNumber 4 ;
+    ex:belongsToTopic ex:g11_topicF ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 62 ;
+    ex:hasEndPage 66 ;
+    ex:hasSection ex:g11_topicF_l4s1, ex:g11_topicF_l4s2, ex:g11_topicF_l4s3, ex:g11_topicF_l4s4 .
+
+  ex:g11_topicF_lesson5 a ex:Lesson ;
+    rdfs:label "Bài 5. Truy vấn trong cơ sở dữ liệu quan hệ"@vi ;
+    ex:hasTitle "Truy vấn trong cơ sở dữ liệu quan hệ"@vi ;
+    ex:lessonNumber 5 ;
+    ex:belongsToTopic ex:g11_topicF ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 67 ;
+    ex:hasEndPage 70 ;
+    ex:hasSection ex:g11_topicF_l5s1, ex:g11_topicF_l5s2, ex:g11_topicF_l5s3 .
+
+  ex:g11_topicF_lesson6 a ex:Lesson ;
+    rdfs:label "Bài 6. Truy vấn trong cơ sở dữ liệu quan hệ (tiếp theo)"@vi ;
+    ex:hasTitle "Truy vấn trong cơ sở dữ liệu quan hệ (tiếp theo)"@vi ;
+    ex:lessonNumber 6 ;
+    ex:belongsToTopic ex:g11_topicF ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 71 ;
+    ex:hasEndPage 75 ;
+    ex:hasSection ex:g11_topicF_l6s1, ex:g11_topicF_l6s2, ex:g11_topicF_l6s3 .
+
+  ex:g11_topicF_lesson7 a ex:Lesson ;
+    rdfs:label "Bài 7. Các loại kiến trúc của hệ cơ sở dữ liệu"@vi ;
+    ex:hasTitle "Các loại kiến trúc của hệ cơ sở dữ liệu"@vi ;
+    ex:lessonNumber 7 ;
+    ex:belongsToTopic ex:g11_topicF ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 76 ;
+    ex:hasEndPage 80 ;
+    ex:hasSection ex:g11_topicF_l7s1, ex:g11_topicF_l7s2 .
+
+  ex:g11_topicF_lesson8 a ex:Lesson ;
+    rdfs:label "Bài 8. Bảo vệ sự an toàn của hệ cơ sở dữ liệu và bảo mật thông tin trong cơ sở dữ liệu"@vi ;
+    ex:hasTitle "Bảo vệ sự an toàn của hệ cơ sở dữ liệu và bảo mật thông tin trong cơ sở dữ liệu"@vi ;
+    ex:lessonNumber 8 ;
+    ex:belongsToTopic ex:g11_topicF ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 81 ;
+    ex:hasEndPage 83 ;
+    ex:hasSection ex:g11_topicF_l8s1, ex:g11_topicF_l8s2, ex:g11_topicF_l8s3 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g11_topicF_l1s1 a ex:Section ; rdfs:label "Bài toán quản lí"@vi ; ex:hasTitle "Bài toán quản lí"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicF_lesson1 .
+  ex:g11_topicF_l1s2 a ex:Section ; rdfs:label "Xử lí thông tin trong bài toán quản lí"@vi ; ex:hasTitle "Xử lí thông tin trong bài toán quản lí"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicF_lesson1 .
+  ex:g11_topicF_l1s3 a ex:Section ; rdfs:label "Cơ sở dữ liệu và phần mềm hệ quản trị cơ sở dữ liệu"@vi ; ex:hasTitle "Cơ sở dữ liệu và phần mềm hệ quản trị cơ sở dữ liệu"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicF_lesson1 .
+  ex:g11_topicF_l1s4 a ex:Section ; rdfs:label "Thực hành tìm hiểu yêu cầu của một bài toán quản lí và cơ sở dữ liệu phục vụ bài toán đó"@vi ; ex:hasTitle "Thực hành tìm hiểu yêu cầu của một bài toán quản lí và cơ sở dữ liệu phục vụ bài toán đó"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicF_lesson1 .
+
+  ex:g11_topicF_l2s1 a ex:Section ; rdfs:label "Tổ chức dữ liệu trong cơ sở dữ liệu quan hệ và các thao tác trên dữ liệu"@vi ; ex:hasTitle "Tổ chức dữ liệu trong CSDL quan hệ và các thao tác trên dữ liệu"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicF_lesson2 .
+  ex:g11_topicF_l2s2 a ex:Section ; rdfs:label "Khoá của một bảng"@vi ; ex:hasTitle "Khoá của một bảng"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicF_lesson2 .
+  ex:g11_topicF_l2s3 a ex:Section ; rdfs:label "Hệ quản trị CSDL đảm bảo ràng buộc khoá"@vi ; ex:hasTitle "Hệ quản trị CSDL đảm bảo ràng buộc khoá"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicF_lesson2 .
+  ex:g11_topicF_l2s4 a ex:Section ; rdfs:label "Thực hành với khoá của bảng trong CSDL"@vi ; ex:hasTitle "Thực hành với khoá của bảng trong CSDL"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicF_lesson2 .
+
+  ex:g11_topicF_l3s1 a ex:Section ; rdfs:label "Tính dư thừa dữ liệu"@vi ; ex:hasTitle "Tính dư thừa dữ liệu"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicF_lesson3 .
+  ex:g11_topicF_l3s2 a ex:Section ; rdfs:label "Liên kết giữa các bảng và khoá ngoài"@vi ; ex:hasTitle "Liên kết giữa các bảng và khoá ngoài"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicF_lesson3 .
+  ex:g11_topicF_l3s3 a ex:Section ; rdfs:label "Hệ quản trị CSDL đảm bảo ràng buộc khoá ngoài"@vi ; ex:hasTitle "Hệ quản trị CSDL đảm bảo ràng buộc khoá ngoài"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicF_lesson3 .
+  ex:g11_topicF_l3s4 a ex:Section ; rdfs:label "Thực hành về bảng với khoá ngoài"@vi ; ex:hasTitle "Thực hành về bảng với khoá ngoài"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicF_lesson3 .
+
+  ex:g11_topicF_l4s1 a ex:Section ; rdfs:label "Khái niệm và chức năng của biểu mẫu"@vi ; ex:hasTitle "Khái niệm và chức năng của biểu mẫu"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicF_lesson4 .
+  ex:g11_topicF_l4s2 a ex:Section ; rdfs:label "Biểu mẫu cho xem dữ liệu"@vi ; ex:hasTitle "Biểu mẫu cho xem dữ liệu"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicF_lesson4 .
+  ex:g11_topicF_l4s3 a ex:Section ; rdfs:label "Biểu mẫu cho cập nhật dữ liệu"@vi ; ex:hasTitle "Biểu mẫu cho cập nhật dữ liệu"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicF_lesson4 .
+  ex:g11_topicF_l4s4 a ex:Section ; rdfs:label "Thực hành tạo biểu mẫu và cập nhật dữ liệu"@vi ; ex:hasTitle "Thực hành tạo biểu mẫu và cập nhật dữ liệu"@vi ; ex:sectionOrder 4 ; ex:belongsToLesson ex:g11_topicF_lesson4 .
+
+  ex:g11_topicF_l5s1 a ex:Section ; rdfs:label "Khái niệm truy vấn CSDL"@vi ; ex:hasTitle "Khái niệm truy vấn CSDL"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicF_lesson5 .
+  ex:g11_topicF_l5s2 a ex:Section ; rdfs:label "Khai thác CSDL bằng câu truy vấn SQL đơn giản"@vi ; ex:hasTitle "Khai thác CSDL bằng câu truy vấn SQL đơn giản"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicF_lesson5 .
+  ex:g11_topicF_l5s3 a ex:Section ; rdfs:label "Ngôn ngữ truy vấn QBE"@vi ; ex:hasTitle "Ngôn ngữ truy vấn QBE"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicF_lesson5 .
+
+  ex:g11_topicF_l6s1 a ex:Section ; rdfs:label "Câu lệnh truy vấn SQL với liên kết các bảng"@vi ; ex:hasTitle "Câu lệnh truy vấn SQL với liên kết các bảng"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicF_lesson6 .
+  ex:g11_topicF_l6s2 a ex:Section ; rdfs:label "Kết xuất thông tin bằng báo cáo"@vi ; ex:hasTitle "Kết xuất thông tin bằng báo cáo"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicF_lesson6 .
+  ex:g11_topicF_l6s3 a ex:Section ; rdfs:label "Thực hành truy vấn trong CSDL quan hệ"@vi ; ex:hasTitle "Thực hành truy vấn trong CSDL quan hệ"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicF_lesson6 .
+
+  ex:g11_topicF_l7s1 a ex:Section ; rdfs:label "Cơ sở dữ liệu tập trung và cơ sở dữ liệu phân tán"@vi ; ex:hasTitle "Cơ sở dữ liệu tập trung và cơ sở dữ liệu phân tán"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicF_lesson7 .
+  ex:g11_topicF_l7s2 a ex:Section ; rdfs:label "Các loại kiến trúc của các hệ cơ sở dữ liệu"@vi ; ex:hasTitle "Các loại kiến trúc của các hệ cơ sở dữ liệu"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicF_lesson7 .
+
+  ex:g11_topicF_l8s1 a ex:Section ; rdfs:label "Tầm quan trọng của việc bảo vệ sự an toàn của hệ CSDL và bảo mật thông tin trong CSDL"@vi ; ex:hasTitle "Tầm quan trọng của việc bảo vệ sự an toàn của hệ CSDL và bảo mật thông tin trong CSDL"@vi ; ex:sectionOrder 1 ; ex:belongsToLesson ex:g11_topicF_lesson8 .
+  ex:g11_topicF_l8s2 a ex:Section ; rdfs:label "Một số biện pháp bảo vệ sự an toàn của hệ CSDL và bảo mật thông tin trong CSDL"@vi ; ex:hasTitle "Một số biện pháp bảo vệ sự an toàn của hệ CSDL và bảo mật thông tin trong CSDL"@vi ; ex:sectionOrder 2 ; ex:belongsToLesson ex:g11_topicF_lesson8 .
+  ex:g11_topicF_l8s3 a ex:Section ; rdfs:label "Mã hoá dữ liệu và nén dữ liệu"@vi ; ex:hasTitle "Mã hoá dữ liệu và nén dữ liệu"@vi ; ex:sectionOrder 3 ; ex:belongsToLesson ex:g11_topicF_lesson8 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g11_page047 a ex:Page ; ex:hasPageNumber 47 ; ex:hasPrintedPageNumber 47 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page048 a ex:Page ; ex:hasPageNumber 48 ; ex:hasPrintedPageNumber 48 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page049 a ex:Page ; ex:hasPageNumber 49 ; ex:hasPrintedPageNumber 49 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page050 a ex:Page ; ex:hasPageNumber 50 ; ex:hasPrintedPageNumber 50 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page051 a ex:Page ; ex:hasPageNumber 51 ; ex:hasPrintedPageNumber 51 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page052 a ex:Page ; ex:hasPageNumber 52 ; ex:hasPrintedPageNumber 52 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page053 a ex:Page ; ex:hasPageNumber 53 ; ex:hasPrintedPageNumber 53 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page054 a ex:Page ; ex:hasPageNumber 54 ; ex:hasPrintedPageNumber 54 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page055 a ex:Page ; ex:hasPageNumber 55 ; ex:hasPrintedPageNumber 55 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page056 a ex:Page ; ex:hasPageNumber 56 ; ex:hasPrintedPageNumber 56 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page057 a ex:Page ; ex:hasPageNumber 57 ; ex:hasPrintedPageNumber 57 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page058 a ex:Page ; ex:hasPageNumber 58 ; ex:hasPrintedPageNumber 58 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page059 a ex:Page ; ex:hasPageNumber 59 ; ex:hasPrintedPageNumber 59 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page060 a ex:Page ; ex:hasPageNumber 60 ; ex:hasPrintedPageNumber 60 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page061 a ex:Page ; ex:hasPageNumber 61 ; ex:hasPrintedPageNumber 61 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page062 a ex:Page ; ex:hasPageNumber 62 ; ex:hasPrintedPageNumber 62 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page063 a ex:Page ; ex:hasPageNumber 63 ; ex:hasPrintedPageNumber 63 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page064 a ex:Page ; ex:hasPageNumber 64 ; ex:hasPrintedPageNumber 64 ; ex:pdfPageIndex 18 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page065 a ex:Page ; ex:hasPageNumber 65 ; ex:hasPrintedPageNumber 65 ; ex:pdfPageIndex 19 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page066 a ex:Page ; ex:hasPageNumber 66 ; ex:hasPrintedPageNumber 66 ; ex:pdfPageIndex 20 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page067 a ex:Page ; ex:hasPageNumber 67 ; ex:hasPrintedPageNumber 67 ; ex:pdfPageIndex 21 ; ex:belongsToLesson ex:g11_topicF_lesson5 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page068 a ex:Page ; ex:hasPageNumber 68 ; ex:hasPrintedPageNumber 68 ; ex:pdfPageIndex 22 ; ex:belongsToLesson ex:g11_topicF_lesson5 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page069 a ex:Page ; ex:hasPageNumber 69 ; ex:hasPrintedPageNumber 69 ; ex:pdfPageIndex 23 ; ex:belongsToLesson ex:g11_topicF_lesson5 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page070 a ex:Page ; ex:hasPageNumber 70 ; ex:hasPrintedPageNumber 70 ; ex:pdfPageIndex 24 ; ex:belongsToLesson ex:g11_topicF_lesson5 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page071 a ex:Page ; ex:hasPageNumber 71 ; ex:hasPrintedPageNumber 71 ; ex:pdfPageIndex 25 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page072 a ex:Page ; ex:hasPageNumber 72 ; ex:hasPrintedPageNumber 72 ; ex:pdfPageIndex 26 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page073 a ex:Page ; ex:hasPageNumber 73 ; ex:hasPrintedPageNumber 73 ; ex:pdfPageIndex 27 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page074 a ex:Page ; ex:hasPageNumber 74 ; ex:hasPrintedPageNumber 74 ; ex:pdfPageIndex 28 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page075 a ex:Page ; ex:hasPageNumber 75 ; ex:hasPrintedPageNumber 75 ; ex:pdfPageIndex 29 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page076 a ex:Page ; ex:hasPageNumber 76 ; ex:hasPrintedPageNumber 76 ; ex:pdfPageIndex 30 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page077 a ex:Page ; ex:hasPageNumber 77 ; ex:hasPrintedPageNumber 77 ; ex:pdfPageIndex 31 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page078 a ex:Page ; ex:hasPageNumber 78 ; ex:hasPrintedPageNumber 78 ; ex:pdfPageIndex 32 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page079 a ex:Page ; ex:hasPageNumber 79 ; ex:hasPrintedPageNumber 79 ; ex:pdfPageIndex 33 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page080 a ex:Page ; ex:hasPageNumber 80 ; ex:hasPrintedPageNumber 80 ; ex:pdfPageIndex 34 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page081 a ex:Page ; ex:hasPageNumber 81 ; ex:hasPrintedPageNumber 81 ; ex:pdfPageIndex 35 ; ex:belongsToLesson ex:g11_topicF_lesson8 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page082 a ex:Page ; ex:hasPageNumber 82 ; ex:hasPrintedPageNumber 82 ; ex:pdfPageIndex 36 ; ex:belongsToLesson ex:g11_topicF_lesson8 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+  ex:g11_page083 a ex:Page ; ex:hasPageNumber 83 ; ex:hasPrintedPageNumber 83 ; ex:pdfPageIndex 37 ; ex:belongsToLesson ex:g11_topicF_lesson8 ; ex:belongsToTopic ex:g11_topicF ; ex:belongsToGrade ex:g11_grade11 ; ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g11_page046 ex:nextPage ex:g11_page047 .
+  ex:g11_page047 ex:previousPage ex:g11_page046 ; ex:nextPage ex:g11_page048 .
+  ex:g11_page048 ex:previousPage ex:g11_page047 ; ex:nextPage ex:g11_page049 .
+  ex:g11_page049 ex:previousPage ex:g11_page048 ; ex:nextPage ex:g11_page050 .
+  ex:g11_page050 ex:previousPage ex:g11_page049 ; ex:nextPage ex:g11_page051 .
+  ex:g11_page051 ex:previousPage ex:g11_page050 ; ex:nextPage ex:g11_page052 .
+  ex:g11_page052 ex:previousPage ex:g11_page051 ; ex:nextPage ex:g11_page053 .
+  ex:g11_page053 ex:previousPage ex:g11_page052 ; ex:nextPage ex:g11_page054 .
+  ex:g11_page054 ex:previousPage ex:g11_page053 ; ex:nextPage ex:g11_page055 .
+  ex:g11_page055 ex:previousPage ex:g11_page054 ; ex:nextPage ex:g11_page056 .
+  ex:g11_page056 ex:previousPage ex:g11_page055 ; ex:nextPage ex:g11_page057 .
+  ex:g11_page057 ex:previousPage ex:g11_page056 ; ex:nextPage ex:g11_page058 .
+  ex:g11_page058 ex:previousPage ex:g11_page057 ; ex:nextPage ex:g11_page059 .
+  ex:g11_page059 ex:previousPage ex:g11_page058 ; ex:nextPage ex:g11_page060 .
+  ex:g11_page060 ex:previousPage ex:g11_page059 ; ex:nextPage ex:g11_page061 .
+  ex:g11_page061 ex:previousPage ex:g11_page060 ; ex:nextPage ex:g11_page062 .
+  ex:g11_page062 ex:previousPage ex:g11_page061 ; ex:nextPage ex:g11_page063 .
+  ex:g11_page063 ex:previousPage ex:g11_page062 ; ex:nextPage ex:g11_page064 .
+  ex:g11_page064 ex:previousPage ex:g11_page063 ; ex:nextPage ex:g11_page065 .
+  ex:g11_page065 ex:previousPage ex:g11_page064 ; ex:nextPage ex:g11_page066 .
+  ex:g11_page066 ex:previousPage ex:g11_page065 ; ex:nextPage ex:g11_page067 .
+  ex:g11_page067 ex:previousPage ex:g11_page066 ; ex:nextPage ex:g11_page068 .
+  ex:g11_page068 ex:previousPage ex:g11_page067 ; ex:nextPage ex:g11_page069 .
+  ex:g11_page069 ex:previousPage ex:g11_page068 ; ex:nextPage ex:g11_page070 .
+  ex:g11_page070 ex:previousPage ex:g11_page069 ; ex:nextPage ex:g11_page071 .
+  ex:g11_page071 ex:previousPage ex:g11_page070 ; ex:nextPage ex:g11_page072 .
+  ex:g11_page072 ex:previousPage ex:g11_page071 ; ex:nextPage ex:g11_page073 .
+  ex:g11_page073 ex:previousPage ex:g11_page072 ; ex:nextPage ex:g11_page074 .
+  ex:g11_page074 ex:previousPage ex:g11_page073 ; ex:nextPage ex:g11_page075 .
+  ex:g11_page075 ex:previousPage ex:g11_page074 ; ex:nextPage ex:g11_page076 .
+  ex:g11_page076 ex:previousPage ex:g11_page075 ; ex:nextPage ex:g11_page077 .
+  ex:g11_page077 ex:previousPage ex:g11_page076 ; ex:nextPage ex:g11_page078 .
+  ex:g11_page078 ex:previousPage ex:g11_page077 ; ex:nextPage ex:g11_page079 .
+  ex:g11_page079 ex:previousPage ex:g11_page078 ; ex:nextPage ex:g11_page080 .
+  ex:g11_page080 ex:previousPage ex:g11_page079 ; ex:nextPage ex:g11_page081 .
+  ex:g11_page081 ex:previousPage ex:g11_page080 ; ex:nextPage ex:g11_page082 .
+  ex:g11_page082 ex:previousPage ex:g11_page081 ; ex:nextPage ex:g11_page083 .
+  ex:g11_page083 ex:previousPage ex:g11_page082 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g11_conceptGiaiQuyetVanDeVoiMayTinh a ex:KnowledgeConcept ; rdfs:label "Giải quyết vấn đề với sự trợ giúp của máy tính"@vi .
+  ex:g11_conceptHeCoSoDuLieu a ex:KnowledgeConcept ; rdfs:label "Hệ cơ sở dữ liệu"@vi .
+  ex:g11_conceptBaiToanQuanLi a ex:KnowledgeConcept ; rdfs:label "Bài toán quản lí"@vi .
+  ex:g11_conceptHoSo a ex:KnowledgeConcept ; rdfs:label "Hồ sơ"@vi .
+  ex:g11_conceptDuLieuQuanLi a ex:KnowledgeConcept ; rdfs:label "Dữ liệu quản lí"@vi .
+  ex:g11_conceptXuLiThongTinQuanLi a ex:KnowledgeConcept ; rdfs:label "Xử lí thông tin trong bài toán quản lí"@vi .
+  ex:g11_conceptTaoLapHoSo a ex:KnowledgeConcept ; rdfs:label "Tạo lập hồ sơ"@vi .
+  ex:g11_conceptCapNhatDuLieu a ex:KnowledgeConcept ; rdfs:label "Cập nhật dữ liệu"@vi .
+  ex:g11_conceptKhaiThacThongTin a ex:KnowledgeConcept ; rdfs:label "Khai thác thông tin"@vi .
+  ex:g11_conceptTimKiemDuLieu a ex:KnowledgeConcept ; rdfs:label "Tìm kiếm dữ liệu"@vi .
+  ex:g11_conceptThongKeDuLieu a ex:KnowledgeConcept ; rdfs:label "Thống kê dữ liệu"@vi .
+  ex:g11_conceptLapBaoCao a ex:KnowledgeConcept ; rdfs:label "Lập báo cáo"@vi .
+  ex:g11_conceptCoSoDuLieu a ex:KnowledgeConcept ; rdfs:label "Cơ sở dữ liệu"@vi .
+  ex:g11_conceptHeQuanTriCSDL a ex:KnowledgeConcept ; rdfs:label "Hệ quản trị cơ sở dữ liệu"@vi .
+  ex:g11_conceptCSDLQuanHe a ex:KnowledgeConcept ; rdfs:label "Cơ sở dữ liệu quan hệ"@vi .
+  ex:g11_conceptBangDuLieu a ex:KnowledgeConcept ; rdfs:label "Bảng dữ liệu"@vi .
+  ex:g11_conceptTruongDuLieu a ex:KnowledgeConcept ; rdfs:label "Trường dữ liệu"@vi .
+  ex:g11_conceptBanGhi a ex:KnowledgeConcept ; rdfs:label "Bản ghi"@vi .
+  ex:g11_conceptGiaTriDuLieu a ex:KnowledgeConcept ; rdfs:label "Giá trị dữ liệu"@vi .
+  ex:g11_conceptRangBuocDuLieu a ex:KnowledgeConcept ; rdfs:label "Ràng buộc dữ liệu"@vi .
+  ex:g11_conceptRangBuocToanVen a ex:KnowledgeConcept ; rdfs:label "Ràng buộc toàn vẹn dữ liệu"@vi .
+  ex:g11_conceptKhoaBang a ex:KnowledgeConcept ; rdfs:label "Khoá của một bảng"@vi .
+  ex:g11_conceptKhoaChinh a ex:KnowledgeConcept ; rdfs:label "Khoá chính"@vi .
+  ex:g11_conceptRangBuocKhoa a ex:KnowledgeConcept ; rdfs:label "Ràng buộc khoá"@vi .
+  ex:g11_conceptDuThuaDuLieu a ex:KnowledgeConcept ; rdfs:label "Dư thừa dữ liệu"@vi .
+  ex:g11_conceptLienKetBang a ex:KnowledgeConcept ; rdfs:label "Liên kết giữa các bảng"@vi .
+  ex:g11_conceptKhoaNgoai a ex:KnowledgeConcept ; rdfs:label "Khoá ngoài"@vi .
+  ex:g11_conceptBangThamChieu a ex:KnowledgeConcept ; rdfs:label "Bảng tham chiếu"@vi .
+  ex:g11_conceptBangDuocThamChieu a ex:KnowledgeConcept ; rdfs:label "Bảng được tham chiếu"@vi .
+  ex:g11_conceptRangBuocKhoaNgoai a ex:KnowledgeConcept ; rdfs:label "Ràng buộc khoá ngoài"@vi .
+  ex:g11_conceptBieuMau a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu"@vi .
+  ex:g11_conceptBieuMauXemDuLieu a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu cho xem dữ liệu"@vi .
+  ex:g11_conceptBieuMauCapNhatDuLieu a ex:KnowledgeConcept ; rdfs:label "Biểu mẫu cho cập nhật dữ liệu"@vi .
+  ex:g11_conceptTruyVanCSDL a ex:KnowledgeConcept ; rdfs:label "Truy vấn CSDL"@vi .
+  ex:g11_conceptSQL a ex:KnowledgeConcept ; rdfs:label "SQL"@vi .
+  ex:g11_conceptSelectFromWhere a ex:KnowledgeConcept ; rdfs:label "SELECT FROM WHERE"@vi .
+  ex:g11_conceptQBE a ex:KnowledgeConcept ; rdfs:label "QBE - Query By Example"@vi .
+  ex:g11_conceptNoSQL a ex:KnowledgeConcept ; rdfs:label "NoSQL"@vi .
+  ex:g11_conceptJoin a ex:KnowledgeConcept ; rdfs:label "JOIN"@vi .
+  ex:g11_conceptInnerJoin a ex:KnowledgeConcept ; rdfs:label "INNER JOIN"@vi .
+  ex:g11_conceptBaoCaoCSDL a ex:KnowledgeConcept ; rdfs:label "Báo cáo CSDL"@vi .
+  ex:g11_conceptKetXuatThongTin a ex:KnowledgeConcept ; rdfs:label "Kết xuất thông tin"@vi .
+  ex:g11_conceptCSDLTapTrung a ex:KnowledgeConcept ; rdfs:label "Cơ sở dữ liệu tập trung"@vi .
+  ex:g11_conceptCSDLPhanTan a ex:KnowledgeConcept ; rdfs:label "Cơ sở dữ liệu phân tán"@vi .
+  ex:g11_conceptKienTrucHeCSDL a ex:KnowledgeConcept ; rdfs:label "Kiến trúc hệ cơ sở dữ liệu"@vi .
+  ex:g11_conceptClientServer a ex:KnowledgeConcept ; rdfs:label "Kiến trúc khách - chủ"@vi .
+  ex:g11_conceptOneTierArchitecture a ex:KnowledgeConcept ; rdfs:label "Kiến trúc 1 tầng"@vi .
+  ex:g11_conceptTwoTierArchitecture a ex:KnowledgeConcept ; rdfs:label "Kiến trúc 2 tầng"@vi .
+  ex:g11_conceptThreeTierArchitecture a ex:KnowledgeConcept ; rdfs:label "Kiến trúc 3 tầng"@vi .
+  ex:g11_conceptPeerToPeer a ex:KnowledgeConcept ; rdfs:label "Kiến trúc ngang hàng"@vi .
+  ex:g11_conceptAnToanHeCSDL a ex:KnowledgeConcept ; rdfs:label "An toàn hệ cơ sở dữ liệu"@vi .
+  ex:g11_conceptBaoMatThongTinCSDL a ex:KnowledgeConcept ; rdfs:label "Bảo mật thông tin trong CSDL"@vi .
+  ex:g11_conceptXacThucNguoiTruyCap a ex:KnowledgeConcept ; rdfs:label "Xác thực người truy cập"@vi .
+  ex:g11_conceptKiemSoatTruyCap a ex:KnowledgeConcept ; rdfs:label "Kiểm soát truy cập"@vi .
+  ex:g11_conceptTuongLua a ex:KnowledgeConcept ; rdfs:label "Tường lửa"@vi .
+  ex:g11_conceptSaoLuuDuPhong a ex:KnowledgeConcept ; rdfs:label "Sao lưu dự phòng"@vi .
+  ex:g11_conceptNhatKiHeThong a ex:KnowledgeConcept ; rdfs:label "Nhật kí hệ thống"@vi .
+  ex:g11_conceptMaHoaDuLieu a ex:KnowledgeConcept ; rdfs:label "Mã hoá dữ liệu"@vi .
+  ex:g11_conceptGiaiMaDuLieu a ex:KnowledgeConcept ; rdfs:label "Giải mã dữ liệu"@vi .
+  ex:g11_conceptNenDuLieu a ex:KnowledgeConcept ; rdfs:label "Nén dữ liệu"@vi .
+
+  ex:g11_topicF ex:hasConcept ex:g11_conceptGiaiQuyetVanDeVoiMayTinh, ex:g11_conceptHeCoSoDuLieu,
+    ex:g11_conceptBaiToanQuanLi, ex:g11_conceptCoSoDuLieu, ex:g11_conceptHeQuanTriCSDL,
+    ex:g11_conceptCSDLQuanHe, ex:g11_conceptKhoaChinh, ex:g11_conceptKhoaNgoai,
+    ex:g11_conceptBieuMau, ex:g11_conceptTruyVanCSDL, ex:g11_conceptSQL,
+    ex:g11_conceptBaoCaoCSDL, ex:g11_conceptCSDLTapTrung, ex:g11_conceptCSDLPhanTan,
+    ex:g11_conceptAnToanHeCSDL, ex:g11_conceptBaoMatThongTinCSDL .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g11_topicF_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Nhận biết được nhu cầu lưu trữ dữ liệu và khai thác thông tin cho bài toán quản lí. Diễn đạt được khái niệm hệ cơ sở dữ liệu, nêu được ví dụ minh hoạ."@vi ;
+    ex:appearsOnPage ex:g11_page047 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 .
+
+  ex:g11_topicF_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Diễn đạt được khái niệm quan hệ (bảng) và khoá của một quan hệ; giải thích được ràng buộc khoá; biết được các phần mềm quản trị CSDL có cơ chế kiểm soát cập nhật dữ liệu để đảm bảo ràng buộc khoá."@vi ;
+    ex:appearsOnPage ex:g11_page052 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 .
+
+  ex:g11_topicF_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Diễn đạt được khái niệm khoá ngoài của một bảng và mối liên kết giữa các bảng; giải thích được các khái niệm đó qua ví dụ minh hoạ; giải thích được ràng buộc khoá ngoài; biết được các phần mềm quản trị CSDL có cơ chế kiểm soát cập nhật dữ liệu để đảm bảo ràng buộc khoá ngoài."@vi ;
+    ex:appearsOnPage ex:g11_page057 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 .
+
+  ex:g11_topicF_l4_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 4 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Diễn đạt được khái niệm biểu mẫu trong các CSDL và ứng dụng CSDL. Giải thích được những ưu điểm khi người dùng xem và cập nhật dữ liệu cho CSDL thông qua biểu mẫu."@vi ;
+    ex:appearsOnPage ex:g11_page062 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 .
+
+  ex:g11_topicF_l5_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 5 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Diễn đạt được khái niệm truy vấn CSDL. Giải thích được cấu trúc cơ bản SELECT...FROM...WHERE... của câu lệnh SQL. Nêu được một vài ví dụ minh hoạ việc dùng truy vấn để tổng hợp, tìm kiếm dữ liệu trên một bảng."@vi ;
+    ex:appearsOnPage ex:g11_page067 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 .
+
+  ex:g11_topicF_l6_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 6 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Đưa ra được một vài ví dụ minh hoạ cho việc dùng truy vấn để tổng hợp, tìm kiếm dữ liệu trên hơn một bảng."@vi ;
+    ex:appearsOnPage ex:g11_page071 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 .
+
+  ex:g11_topicF_l7_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 7 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Phân biệt được CSDL tập trung và CSDL phân tán. Biết được một số kiến trúc thường gặp của hai loại hệ CSDL tập trung và hệ CSDL phân tán."@vi ;
+    ex:appearsOnPage ex:g11_page076 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 .
+
+  ex:g11_topicF_l8_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 8 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Nêu được tầm quan trọng của an toàn và bảo mật hệ CSDL. Nêu được một số biện pháp bảo vệ sự an toàn và bảo mật hệ CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page081 ;
+    ex:belongsToLesson ex:g11_topicF_lesson8 .
+
+  ex:g11_topicF_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề F lớp 11"@vi ;
+    ex:hasSummaryText "Các tổ chức hoạt động trong xã hội đều có nhu cầu lưu trữ dữ liệu và khai thác thông tin cho bài toán quản lí. Muốn máy tính hỗ trợ đắc lực cho công tác quản lí, dữ liệu của một đơn vị phải được tổ chức trong một CSDL với tính đầy đủ và đúng đắn. Phần mềm quản trị CSDL tạo môi trường thuận lợi để tạo lập, cập nhật CSDL, cập nhật cho CSDL theo cách đúng đắn, đồng thời kiểm soát truy cập, bảo đảm tính chính xác và sự an toàn của dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page051 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 .
+
+  ex:g11_topicF_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề F lớp 11"@vi ;
+    ex:hasSummaryText "Một CSDL quan hệ là một tập hợp các bảng dữ liệu có liên quan với nhau. Mỗi bảng trong CSDL đều phải có khoá, là tập hợp gồm một hay một số trường cho phép xác định duy nhất một bản ghi trong bảng. Dữ liệu trong bảng phải thoả mãn ràng buộc khoá: không có hai bản ghi giống nhau ở giá trị khoá. Mọi hệ quản trị CSDL quan hệ đều có cơ chế kiểm soát việc cập nhật dữ liệu để không xảy ra vi phạm ràng buộc khoá."@vi ;
+    ex:appearsOnPage ex:g11_page056 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 .
+
+  ex:g11_topicF_l3_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 3 chủ đề F lớp 11"@vi ;
+    ex:hasSummaryText "CSDL quan hệ có thể gồm một số bảng, trong đó có những bảng có mối liên kết với nhau. Nếu hai bảng có chung một trường và trường này là khoá của một bảng thì trường đó là khoá ngoài của bảng còn lại. Dữ liệu trong hai bảng liên kết với nhau qua khoá ngoài cần thoả mãn ràng buộc khoá ngoài: mọi giá trị khoá ngoài đều phải xuất hiện trong trường khoá ở bảng được tham chiếu."@vi ;
+    ex:appearsOnPage ex:g11_page061 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 .
+
+  ex:g11_topicF_l4_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 4 chủ đề F lớp 11"@vi ;
+    ex:hasSummaryText "Biểu mẫu là một loại giao diện cho người dùng CSDL tương tác với dữ liệu nguồn trong việc xem và cập nhật dữ liệu. Biểu mẫu đem lại sự thuận tiện cho các nhóm người dùng làm việc với CSDL và giúp hạn chế những vi phạm trong cập nhật nhằm tăng cường sự đảm bảo tính đúng đắn của dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page066 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 .
+
+  ex:g11_topicF_l5_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 5 chủ đề F lớp 11"@vi ;
+    ex:hasSummaryText "Đối với các hệ CSDL quan hệ, có hai loại truy vấn dữ liệu: truy vấn cập nhật dữ liệu và truy vấn khai thác dữ liệu. Ngôn ngữ truy vấn phổ biến nhất trong các hệ quản trị CSDL quan hệ là SQL. Câu truy vấn khai thác dữ liệu của SQL có cấu trúc cơ bản SELECT...FROM...WHERE... Mệnh đề SELECT xác định thông tin muốn hiển thị, FROM xác định dữ liệu lấy từ đâu, WHERE xác định điều kiện lọc dữ liệu. Một số hệ quản trị CSDL còn hỗ trợ truy vấn bằng QBE."@vi ;
+    ex:appearsOnPage ex:g11_page070 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 .
+
+  ex:g11_topicF_l6_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 6 chủ đề F lớp 11"@vi ;
+    ex:hasSummaryText "Để trích rút dữ liệu trong một CSDL quan hệ, có những truy vấn đòi hỏi phải thực hiện kết nối dữ liệu của các bảng. Mệnh đề FROM có thể chứa từ khoá chỉ định kiểu JOIN để kết nối các bảng ghi ở các bảng khác nhau, trong đó INNER JOIN là kiểu kết nối phổ biến. Các hệ quản trị CSDL đều cung cấp công cụ tạo báo cáo tự động và người dùng có thể điều chỉnh bố cục, định dạng báo cáo để nâng cao chất lượng trình bày thông tin."@vi ;
+    ex:appearsOnPage ex:g11_page075 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 .
+
+  ex:g11_topicF_l7_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 7 chủ đề F lớp 11"@vi ;
+    ex:hasSummaryText "Điểm khác biệt quan trọng giữa CSDL tập trung và CSDL phân tán là: CSDL tập trung lưu trữ toàn bộ dữ liệu trên một máy tính, còn CSDL phân tán lưu trữ dữ liệu phân tán trên các máy tính khác nhau của mạng máy tính. Kiến trúc khách - chủ là kiến trúc phổ biến của hệ CSDL tập trung, có thể theo mô hình 1 tầng, 2 tầng hay nhiều tầng. Có nhiều loại mô hình kiến trúc phổ biến của hệ CSDL phân tán như khách - chủ và ngang hàng."@vi ;
+    ex:appearsOnPage ex:g11_page080 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 .
+
+  ex:g11_topicF_l8_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 8 chủ đề F lớp 11"@vi ;
+    ex:hasSummaryText "Cần thiết phải bảo vệ hệ CSDL và bảo mật thông tin trong CSDL khỏi các mối đe doạ như phá hoại hoạt động của hệ thống, thay đổi dữ liệu, lấy cắp dữ liệu, làm lộ bí mật thông tin. Một số biện pháp phổ biến là xác thực người truy cập, kiểm soát truy cập, sử dụng tường lửa, sao lưu dự phòng và duy trì biên bản hệ thống. Mã hoá và nén dữ liệu cũng là những biện pháp thường dùng để bảo mật thông tin và tăng cường bảo vệ hệ CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page083 ;
+    ex:belongsToLesson ex:g11_topicF_lesson8 .
+
+  ex:g11_topicF_lesson1 ex:hasSummary ex:g11_topicF_l1_summary .
+  ex:g11_topicF_lesson2 ex:hasSummary ex:g11_topicF_l2_summary .
+  ex:g11_topicF_lesson3 ex:hasSummary ex:g11_topicF_l3_summary .
+  ex:g11_topicF_lesson4 ex:hasSummary ex:g11_topicF_l4_summary .
+  ex:g11_topicF_lesson5 ex:hasSummary ex:g11_topicF_l5_summary .
+  ex:g11_topicF_lesson6 ex:hasSummary ex:g11_topicF_l6_summary .
+  ex:g11_topicF_lesson7 ex:hasSummary ex:g11_topicF_l7_summary .
+  ex:g11_topicF_lesson8 ex:hasSummary ex:g11_topicF_l8_summary .
+
+  ###########################################################################
+  # Figures and tables
+  ###########################################################################
+
+  ex:g11_topicF_table_l1_studentRecords a ex:Table ;
+    rdfs:label "Bảng 1. Ví dụ về hồ sơ học sinh của một lớp"@vi ;
+    ex:hasCaption "Bảng 1. Ví dụ về hồ sơ học sinh của một lớp"@vi ;
+    ex:hasRawText "Bảng hồ sơ học sinh gồm các trường STT, Mã định danh, Họ và tên, Ngày sinh, Giới tính, Đoàn viên, Địa chỉ, Toán, Ngữ văn, Tin học và các dữ liệu minh hoạ."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:g11_page048 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptHoSo, ex:g11_conceptDuLieuQuanLi .
+
+  ex:g11_topicF_fig_l2_studentRelation a ex:Figure ;
+    rdfs:label "Hình 1. Một phần bảng HỌC SINH 11 của một cơ sở dữ liệu quan hệ"@vi ;
+    ex:hasCaption "Hình 1. Một phần bảng HỌC SINH 11 của một cơ sở dữ liệu quan hệ"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g11_page052 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCSDLQuanHe, ex:g11_conceptBangDuLieu .
+
+  ex:g11_topicF_fig_l2_employeeTable a ex:Figure ;
+    rdfs:label "Hình 2. Bảng NHÂN VIÊN trong một CSDL của một công ty"@vi ;
+    ex:hasCaption "Hình 2. Bảng NHÂN VIÊN trong một CSDL của một công ty"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g11_page054 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKhoaBang, ex:g11_conceptKhoaChinh .
+
+  ex:g11_topicF_fig_l2_primaryKeyAccess a ex:Figure ;
+    rdfs:label "Hình 3. Chỉ định khoá chính"@vi ;
+    ex:hasCaption "Hình 3. Chỉ định khoá chính"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g11_page055 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKhoaChinh, ex:g11_conceptHeQuanTriCSDL .
+
+  ex:g11_topicF_fig_l3_singleTableStructure a ex:Figure ;
+    rdfs:label "Hình 1. Cấu trúc bảng SÁCH-NGƯỜI ĐỌC-MƯỢN-TRẢ"@vi ;
+    ex:hasCaption "Hình 1. Cấu trúc bảng SÁCH-NGƯỜI ĐỌC-MƯỢN-TRẢ"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:g11_page057 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptDuThuaDuLieu .
+
+  ex:g11_topicF_fig_l3_threeTables a ex:Figure ;
+    rdfs:label "Hình 2. Một CSDL gồm 3 bảng"@vi ;
+    ex:hasCaption "Hình 2. Một CSDL gồm 3 bảng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:g11_page058 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptLienKetBang, ex:g11_conceptBangDuLieu .
+
+  ex:g11_topicF_fig_l3_foreignKeyViolation a ex:Figure ;
+    rdfs:label "Hình 3. Dự kiến bổ sung một bản ghi vào bảng MƯỢN-TRẢ"@vi ;
+    ex:hasCaption "Hình 3. Dự kiến bổ sung một bản ghi vào bảng MƯỢN-TRẢ"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:g11_page059 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptKhoaNgoai, ex:g11_conceptRangBuocKhoaNgoai .
+
+  ex:g11_topicF_fig_l3_relationshipsAccess a ex:Figure ;
+    rdfs:label "Hình 4. Kết quả của việc khai báo thành công hai liên kết giữa 3 bảng"@vi ;
+    ex:hasCaption "Hình 4. Kết quả của việc khai báo thành công hai liên kết giữa 3 bảng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:g11_page060 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptLienKetBang, ex:g11_conceptKhoaNgoai .
+
+  ex:g11_topicF_fig_l4_contactForm a ex:Figure ;
+    rdfs:label "Hình 1. Một biểu mẫu cho xem dữ liệu ở một số trường của một bảng"@vi ;
+    ex:hasCaption "Hình 1. Một biểu mẫu cho xem dữ liệu ở một số trường của một bảng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:g11_page063 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBieuMauXemDuLieu .
+
+  ex:g11_topicF_fig_l4_libraryForm a ex:Figure ;
+    rdfs:label "Hình 2. Một biểu mẫu của CSDL Thư viện"@vi ;
+    ex:hasCaption "Hình 2. Một biểu mẫu của CSDL Thư viện"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:g11_page064 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBieuMauXemDuLieu .
+
+  ex:g11_topicF_fig_l4_scoreEntryForm a ex:Figure ;
+    rdfs:label "Hình 3. Một biểu mẫu nhập điểm cho học sinh"@vi ;
+    ex:hasCaption "Hình 3. Một biểu mẫu nhập điểm cho học sinh"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:g11_page064 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBieuMauCapNhatDuLieu .
+
+  ex:g11_topicF_fig_l4_comboForm a ex:Figure ;
+    rdfs:label "Hình 4a. Biểu mẫu cho chọn Số thẻ TV trong danh sách"@vi ;
+    ex:hasCaption "Hình 4a. Biểu mẫu cho chọn Số thẻ TV trong danh sách"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:g11_page065 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBieuMauCapNhatDuLieu .
+
+  ex:g11_topicF_fig_l4_datePickerForm a ex:Figure ;
+    rdfs:label "Hình 4b. Biểu mẫu cho chọn dữ liệu kiểu ngày tháng trong lịch"@vi ;
+    ex:hasCaption "Hình 4b. Biểu mẫu cho chọn dữ liệu kiểu ngày tháng trong lịch"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:g11_page065 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBieuMauCapNhatDuLieu .
+
+  ex:g11_topicF_fig_l4_formToolsAccess a ex:Figure ;
+    rdfs:label "Hình 5. Các công cụ tạo lập biểu mẫu trong Access"@vi ;
+    ex:hasCaption "Hình 5. Các công cụ tạo lập biểu mẫu trong Access"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:g11_page066 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBieuMau, ex:g11_conceptHeQuanTriCSDL .
+
+  ex:g11_topicF_fig_l5_sqlStructure a ex:Diagram ;
+    rdfs:label "Hình 1a. Mẫu câu truy vấn thông dụng của SQL"@vi ;
+    ex:hasCaption "Hình 1a. Mẫu câu truy vấn thông dụng của SQL"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:g11_page068 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSQL, ex:g11_conceptSelectFromWhere .
+
+  ex:g11_topicF_fig_l5_sqlExample a ex:Diagram ;
+    rdfs:label "Hình 1b. Một câu truy vấn SQL"@vi ;
+    ex:hasCaption "Hình 1b. Một câu truy vấn SQL"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:g11_page068 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSQL, ex:g11_conceptSelectFromWhere .
+
+  ex:g11_topicF_table_l5_hocsinh11 a ex:Table ;
+    rdfs:label "Hình 2. Bảng HỌC SINH 11"@vi ;
+    ex:hasCaption "Hình 2. Bảng HỌC SINH 11"@vi ;
+    ex:hasRawText "Bảng HỌC SINH 11 gồm Mã định danh, Họ và tên, Ngày sinh, Giới tính, Đoàn viên, Địa chỉ, Toán, Ngữ văn, Tin học và các dòng dữ liệu minh hoạ."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 2 ;
+    ex:appearsOnPage ex:g11_page068 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBangDuLieu, ex:g11_conceptSQL .
+
+  ex:g11_topicF_table_l5_queryResult a ex:Table ;
+    rdfs:label "Hình 3. Kết quả của câu truy vấn ở Hình 1b với bảng HỌC SINH 11"@vi ;
+    ex:hasCaption "Hình 3. Kết quả của câu truy vấn ở Hình 1b với bảng HỌC SINH 11"@vi ;
+    ex:hasRawText "Bảng kết quả truy vấn hiển thị Mã định danh, Họ và tên, Toán, Ngữ văn của các học sinh có điểm Ngữ văn từ 7.0 trở lên."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 3 ;
+    ex:appearsOnPage ex:g11_page069 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptTruyVanCSDL, ex:g11_conceptSQL .
+
+  ex:g11_topicF_fig_l5_qbeQuery a ex:Diagram ;
+    rdfs:label "Hình 4. Một truy vấn trên bằng QBE"@vi ;
+    ex:hasCaption "Hình 4. Một truy vấn trên bằng QBE"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:g11_page069 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptQBE, ex:g11_conceptTruyVanCSDL .
+
+  ex:g11_topicF_fig_l6_relationshipOverview a ex:Diagram ;
+    rdfs:label "Hình 1. Mối quan hệ giữa ba bảng trong CSDL Thư viện"@vi ;
+    ex:hasCaption "Hình 1. Mối quan hệ giữa ba bảng trong CSDL Thư viện"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:g11_page071 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptLienKetBang, ex:g11_conceptJoin .
+
+  ex:g11_topicF_fig_l6_joinTables a ex:Diagram ;
+    rdfs:label "Hình 2. Kết nối bảng NGƯỜI ĐỌC và bảng MƯỢN-TRẢ với điều kiện Số thẻ TV trùng nhau"@vi ;
+    ex:hasCaption "Hình 2. Kết nối bảng NGƯỜI ĐỌC và bảng MƯỢN-TRẢ với điều kiện Số thẻ TV trùng nhau"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 18 ;
+    ex:appearsOnPage ex:g11_page072 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptJoin, ex:g11_conceptInnerJoin .
+
+  ex:g11_topicF_fig_l6_joinSql a ex:Diagram ;
+    rdfs:label "Hình 3. Một câu truy vấn dùng kết nối hai bảng"@vi ;
+    ex:hasCaption "Hình 3. Một câu truy vấn dùng kết nối hai bảng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 19 ;
+    ex:appearsOnPage ex:g11_page073 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptSQL, ex:g11_conceptInnerJoin .
+
+  ex:g11_topicF_fig_l6_reportScores a ex:Figure ;
+    rdfs:label "Hình 4. Một báo cáo kết quả học tập"@vi ;
+    ex:hasCaption "Hình 4. Một báo cáo kết quả học tập"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 20 ;
+    ex:appearsOnPage ex:g11_page074 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBaoCaoCSDL, ex:g11_conceptKetXuatThongTin .
+
+  ex:g11_topicF_fig_l6_reportSales a ex:Figure ;
+    rdfs:label "Hình 5. Một báo cáo tổng hợp thông tin theo mặt hàng"@vi ;
+    ex:hasCaption "Hình 5. Một báo cáo tổng hợp thông tin theo mặt hàng"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 21 ;
+    ex:appearsOnPage ex:g11_page074 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptBaoCaoCSDL, ex:g11_conceptKetXuatThongTin .
+
+  ex:g11_topicF_fig_l7_centralizedDb a ex:Diagram ;
+    rdfs:label "Hình 1. Hệ cơ sở dữ liệu tập trung"@vi ;
+    ex:hasCaption "Hình 1. Hệ cơ sở dữ liệu tập trung"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 22 ;
+    ex:appearsOnPage ex:g11_page076 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCSDLTapTrung .
+
+  ex:g11_topicF_fig_l7_distributedDb a ex:Diagram ;
+    rdfs:label "Hình 2. Hệ cơ sở dữ liệu phân tán"@vi ;
+    ex:hasCaption "Hình 2. Hệ cơ sở dữ liệu phân tán"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 23 ;
+    ex:appearsOnPage ex:g11_page077 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCSDLPhanTan .
+
+  ex:g11_topicF_fig_l7_clientServer2Tier a ex:Diagram ;
+    rdfs:label "Hình 3. Mô hình Khách - Chủ 2 tầng của CSDL tập trung"@vi ;
+    ex:hasCaption "Hình 3. Mô hình Khách - Chủ 2 tầng của CSDL tập trung"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 24 ;
+    ex:appearsOnPage ex:g11_page079 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptClientServer, ex:g11_conceptTwoTierArchitecture .
+
+  ex:g11_topicF_fig_l7_distributedClientServer a ex:Diagram ;
+    rdfs:label "Hình 4. Mô hình khách - chủ 2 tầng của CSDL phân tán với nhiều máy chủ và nhiều máy khách"@vi ;
+    ex:hasCaption "Hình 4. Mô hình khách - chủ 2 tầng của CSDL phân tán với nhiều máy chủ và nhiều máy khách"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 25 ;
+    ex:appearsOnPage ex:g11_page080 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptCSDLPhanTan, ex:g11_conceptClientServer .
+
+  ex:g11_topicF_fig_l8_encryptDecrypt a ex:Diagram ;
+    rdfs:label "Hình 1. Mã hoá dữ liệu và giải mã"@vi ;
+    ex:hasCaption "Hình 1. Mã hoá dữ liệu và giải mã"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 26 ;
+    ex:appearsOnPage ex:g11_page083 ;
+    ex:belongsToLesson ex:g11_topicF_lesson8 ;
+    ex:belongsToGrade ex:g11_grade11 ;
+    ex:belongsToTextbook ex:g11_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g11_conceptMaHoaDuLieu, ex:g11_conceptGiaiMaDuLieu .
+
+  ex:g11_page048 ex:hasTable ex:g11_topicF_table_l1_studentRecords .
+  ex:g11_page052 ex:hasFigure ex:g11_topicF_fig_l2_studentRelation .
+  ex:g11_page054 ex:hasFigure ex:g11_topicF_fig_l2_employeeTable .
+  ex:g11_page055 ex:hasFigure ex:g11_topicF_fig_l2_primaryKeyAccess .
+  ex:g11_page057 ex:hasFigure ex:g11_topicF_fig_l3_singleTableStructure .
+  ex:g11_page058 ex:hasFigure ex:g11_topicF_fig_l3_threeTables .
+  ex:g11_page059 ex:hasFigure ex:g11_topicF_fig_l3_foreignKeyViolation .
+  ex:g11_page060 ex:hasFigure ex:g11_topicF_fig_l3_relationshipsAccess .
+  ex:g11_page063 ex:hasFigure ex:g11_topicF_fig_l4_contactForm .
+  ex:g11_page064 ex:hasFigure ex:g11_topicF_fig_l4_libraryForm, ex:g11_topicF_fig_l4_scoreEntryForm .
+  ex:g11_page065 ex:hasFigure ex:g11_topicF_fig_l4_comboForm, ex:g11_topicF_fig_l4_datePickerForm .
+  ex:g11_page066 ex:hasFigure ex:g11_topicF_fig_l4_formToolsAccess .
+  ex:g11_page068 ex:hasFigure ex:g11_topicF_fig_l5_sqlStructure, ex:g11_topicF_fig_l5_sqlExample ; ex:hasTable ex:g11_topicF_table_l5_hocsinh11 .
+  ex:g11_page069 ex:hasFigure ex:g11_topicF_fig_l5_qbeQuery ; ex:hasTable ex:g11_topicF_table_l5_queryResult .
+  ex:g11_page071 ex:hasFigure ex:g11_topicF_fig_l6_relationshipOverview .
+  ex:g11_page072 ex:hasFigure ex:g11_topicF_fig_l6_joinTables .
+  ex:g11_page073 ex:hasFigure ex:g11_topicF_fig_l6_joinSql .
+  ex:g11_page074 ex:hasFigure ex:g11_topicF_fig_l6_reportScores, ex:g11_topicF_fig_l6_reportSales .
+  ex:g11_page076 ex:hasFigure ex:g11_topicF_fig_l7_centralizedDb .
+  ex:g11_page077 ex:hasFigure ex:g11_topicF_fig_l7_distributedDb .
+  ex:g11_page079 ex:hasFigure ex:g11_topicF_fig_l7_clientServer2Tier .
+  ex:g11_page080 ex:hasFigure ex:g11_topicF_fig_l7_distributedClientServer .
+  ex:g11_page083 ex:hasFigure ex:g11_topicF_fig_l8_encryptDecrypt .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g11_topicF_def_database a ex:DefinitionText ;
+    rdfs:label "Định nghĩa cơ sở dữ liệu"@vi ;
+    ex:hasDefinitionText "Cơ sở dữ liệu là tập hợp dữ liệu được tổ chức sao cho máy tính có thể lưu trữ, truy cập, cập nhật và xử lí để phục vụ cho hoạt động của một đơn vị nào đó."@vi ;
+    ex:appearsOnPage ex:g11_page049 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 ;
+    ex:explainsConcept ex:g11_conceptCoSoDuLieu .
+
+  ex:g11_topicF_def_dbms a ex:DefinitionText ;
+    rdfs:label "Định nghĩa hệ quản trị CSDL"@vi ;
+    ex:hasDefinitionText "Hệ quản trị CSDL là phần mềm cung cấp môi trường thuận lợi và hiệu quả để tạo lập, lưu trữ và khai thác dữ liệu của CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page050 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 ;
+    ex:explainsConcept ex:g11_conceptHeQuanTriCSDL .
+
+  ex:g11_topicF_def_primaryKey a ex:DefinitionText ;
+    rdfs:label "Định nghĩa khoá của một bảng"@vi ;
+    ex:hasDefinitionText "Khoá của một bảng là tập hợp các trường mà mỗi bộ giá trị của các trường đó xác định duy nhất một bản ghi ở trong bảng và không thể bỏ đi trường nào khỏi tập hợp mà vẫn còn tính chất xác định duy nhất một bản ghi."@vi ;
+    ex:appearsOnPage ex:g11_page054 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 ;
+    ex:explainsConcept ex:g11_conceptKhoaBang .
+
+  ex:g11_topicF_def_foreignKey a ex:DefinitionText ;
+    rdfs:label "Định nghĩa khoá ngoài của một bảng"@vi ;
+    ex:hasDefinitionText "Khoá ngoài của một bảng là một trường hoặc một số trường của bảng này và đồng thời là khoá của một bảng khác."@vi ;
+    ex:appearsOnPage ex:g11_page059 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:explainsConcept ex:g11_conceptKhoaNgoai .
+
+  ex:g11_topicF_def_form a ex:DefinitionText ;
+    rdfs:label "Định nghĩa biểu mẫu"@vi ;
+    ex:hasDefinitionText "Biểu mẫu là một loại giao diện cho người dùng CSDL tương tác với dữ liệu nguồn trong việc xem và cập nhật dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page062 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:explainsConcept ex:g11_conceptBieuMau .
+
+  ex:g11_topicF_def_query a ex:DefinitionText ;
+    rdfs:label "Định nghĩa truy vấn CSDL"@vi ;
+    ex:hasDefinitionText "Truy vấn CSDL là phát biểu thể hiện yêu cầu của người dùng đối với CSDL, có thể là thao tác trên dữ liệu hoặc khai thác dữ liệu đã lưu trữ."@vi ;
+    ex:appearsOnPage ex:g11_page067 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:explainsConcept ex:g11_conceptTruyVanCSDL .
+
+  ex:g11_topicF_def_distributedDb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa cơ sở dữ liệu phân tán"@vi ;
+    ex:hasDefinitionText "Cơ sở dữ liệu phân tán là tập hợp dữ liệu được phân tán trên các máy tính khác nhau của một mạng máy tính. Mỗi nơi của mạng có khả năng xử lí độc lập và thực hiện các ứng dụng cục bộ, đồng thời tham gia ít nhất một ứng dụng toàn cục yêu cầu truy xuất dữ liệu tại nhiều nơi bằng hệ thống truyền thông con."@vi ;
+    ex:appearsOnPage ex:g11_page077 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 ;
+    ex:explainsConcept ex:g11_conceptCSDLPhanTan .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g11_topicF_p047_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 1. Bài toán quản lí và cơ sở dữ liệu. Bài học đặt vấn đề bằng các cụm từ quen thuộc như quản lí học sinh, quản lí nhân sự, quản lí chi tiêu cá nhân, từ đó hỏi việc quản lí có liên quan đến lưu trữ và xử lí dữ liệu hay không."@vi ; ex:appearsOnPage ex:g11_page047 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s1 .
+  ex:g11_topicF_p047_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Có rất nhiều bài toán quản lí cho các tổ chức lớn nhỏ với mức độ phức tạp khác nhau. Quản lí thường gắn với dữ liệu phản ánh hoạt động của tổ chức và đòi hỏi dữ liệu chính xác, kết quả xử lí thông tin đáng tin cậy để có quyết định đúng đắn."@vi ; ex:appearsOnPage ex:g11_page047 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s1 .
+  ex:g11_topicF_p047_03 a ex:Paragraph ; ex:paragraphOrder 3 ; ex:hasRawText "Các bài toán quản lí đều có chung đặc điểm là lưu trữ và xử lí dữ liệu về hoạt động của một tổ chức. Xử lí thông tin trong bài toán quản lí gồm tạo lập hồ sơ, cập nhật và khai thác thông tin."@vi ; ex:appearsOnPage ex:g11_page047 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s2 .
+
+  ex:g11_topicF_p048_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Tạo lập hồ sơ là xác định đầy đủ dữ liệu cần lưu trữ, đồng thời dữ liệu nhập vào phải đúng đắn. Ví dụ hồ sơ học sinh của một lớp có thể được tổ chức dạng bảng với các cột mã định danh, họ tên, ngày sinh, giới tính, đoàn viên, địa chỉ và điểm các môn."@vi ; ex:appearsOnPage ex:g11_page048 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s2 .
+  ex:g11_topicF_p048_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Dữ liệu được lưu trữ cần được cập nhật để phản ánh kịp thời thay đổi thực tế. Cập nhật dữ liệu gồm thêm, sửa, xoá dữ liệu; toàn bộ dữ liệu sau cập nhật vẫn phải thoả mãn tính đầy đủ và đúng đắn."@vi ; ex:appearsOnPage ex:g11_page048 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s2 .
+
+  ex:g11_topicF_p049_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Khai thác thông tin nhằm phục vụ điều hành công việc và ra quyết định. Các việc khai thác thường gặp là tìm kiếm dữ liệu, thống kê và lập báo cáo; dữ liệu cần được xử lí nhanh chóng, chính xác và thông tin kết xuất phải dễ hiểu."@vi ; ex:appearsOnPage ex:g11_page049 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s2 .
+  ex:g11_topicF_p049_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Cơ sở dữ liệu là tập hợp dữ liệu được tổ chức sao cho máy tính có thể lưu trữ, truy cập, cập nhật và xử lí để phục vụ hoạt động của một đơn vị. Để tạo lập, cập nhật và khai thác CSDL cần có hệ quản trị CSDL."@vi ; ex:appearsOnPage ex:g11_page049 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s3 .
+
+  ex:g11_topicF_p050_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Hệ quản trị CSDL giúp người dùng tương tác với CSDL qua giao diện dễ hiểu, cung cấp các biểu mẫu, báo cáo và cơ chế kiểm soát để đảm bảo tính đúng đắn khi cập nhật và khai thác dữ liệu."@vi ; ex:appearsOnPage ex:g11_page050 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s3 .
+  ex:g11_topicF_p050_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Bài thực hành yêu cầu hình dung việc quản lí thư viện trường học, mô tả hoạt động, liệt kê dữ liệu cần có trong CSDL và nêu ví dụ về cập nhật, tìm kiếm, thống kê và báo cáo."@vi ; ex:appearsOnPage ex:g11_page050 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s4 .
+
+  ex:g11_topicF_p051_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài luyện tập yêu cầu chỉ ra điều kiện đảm bảo tính chính xác của dữ liệu trong bảng và đánh giá phần mềm bảng tính có tự động kiểm soát các cập nhật dữ liệu hay không. Câu hỏi tự kiểm tra nêu các nhận định về CSDL, hệ CSDL, giá trị dữ liệu trong CSDL và hệ quản trị CSDL."@vi ; ex:appearsOnPage ex:g11_page051 ; ex:belongsToLesson ex:g11_topicF_lesson1 ; ex:belongsToSection ex:g11_topicF_l1s4 .
+
+  ex:g11_topicF_p052_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 2. Bảng và khoá chính trong cơ sở dữ liệu quan hệ. Cơ sở dữ liệu quan hệ là tập hợp các bảng dữ liệu có liên quan với nhau. Mỗi hàng trong bảng được gọi là một bản ghi; mỗi cột được gọi là một trường."@vi ; ex:appearsOnPage ex:g11_page052 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToSection ex:g11_topicF_l2s1 .
+  ex:g11_topicF_p053_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Cập nhật dữ liệu trong bảng gồm thêm, sửa và xoá dữ liệu. Dữ liệu lưu trong CSDL quan hệ được khai thác bằng truy vấn CSDL. Dữ liệu phải thoả mãn các ràng buộc toàn vẹn để đảm bảo tính xác định và đúng đắn."@vi ; ex:appearsOnPage ex:g11_page053 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToSection ex:g11_topicF_l2s1 .
+  ex:g11_topicF_p053_02 a ex:Paragraph ; ex:paragraphOrder 2 ; ex:hasRawText "Trong một bảng, mỗi bản ghi thể hiện thông tin về một đối tượng nên không thể có hai bản ghi giống nhau hoàn toàn. Một số trường hoặc tập hợp trường có thể xác định duy nhất một bản ghi, dẫn tới khái niệm khoá của bảng."@vi ; ex:appearsOnPage ex:g11_page053 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToSection ex:g11_topicF_l2s2 .
+  ex:g11_topicF_p054_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Khoá của một bảng là tập hợp một số trường mà mỗi bộ giá trị xác định duy nhất một bản ghi và không thể bỏ trường nào khỏi tập hợp đó mà vẫn giữ tính xác định duy nhất. Khi có hơn một khoá, người ta chọn một khoá làm khoá chính."@vi ; ex:appearsOnPage ex:g11_page054 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToSection ex:g11_topicF_l2s2 .
+  ex:g11_topicF_p055_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Hệ quản trị CSDL có cơ chế kiểm soát, ngăn chặn các vi phạm ràng buộc khoá đối với việc cập nhật dữ liệu. Bài thực hành sử dụng Microsoft Access 365 tạo bảng SÁCH, chỉ định trường Mã sách làm khoá chính và nhập dữ liệu để kiểm tra ràng buộc khoá."@vi ; ex:appearsOnPage ex:g11_page055 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToSection ex:g11_topicF_l2s3 .
+  ex:g11_topicF_p056_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Câu hỏi vận dụng yêu cầu xác định cấu trúc bảng NGƯỜI ĐỌC, chọn trường làm khoá chính và nêu ví dụ nhập dữ liệu vi phạm ràng buộc khoá. Câu hỏi tự kiểm tra đánh giá các phát biểu về số khoá của bảng, khoá là một trường, giá trị khoá của hai bản ghi và cơ chế kiểm tra ràng buộc khoá."@vi ; ex:appearsOnPage ex:g11_page056 ; ex:belongsToLesson ex:g11_topicF_lesson2 ; ex:belongsToSection ex:g11_topicF_l2s4 .
+
+  ex:g11_topicF_p057_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 3. Quan hệ giữa các bảng và khoá ngoài trong cơ sở dữ liệu quan hệ. Nếu chỉ dùng một bảng cho nhiều thông tin quản lí thư viện, dữ liệu có thể bị dư thừa và dẫn đến không nhất quán khi cập nhật."@vi ; ex:appearsOnPage ex:g11_page057 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToSection ex:g11_topicF_l3s1 .
+  ex:g11_topicF_p058_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Để tránh dư thừa dữ liệu, CSDL quan hệ thường được thiết kế gồm nhiều bảng, mỗi bảng chứa dữ liệu riêng về một đối tượng cần quản lí và các bảng liên quan đến nhau. Ví dụ CSDL thư viện gồm bảng SÁCH, NGƯỜI ĐỌC và MƯỢN-TRẢ."@vi ; ex:appearsOnPage ex:g11_page058 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToSection ex:g11_topicF_l3s1 .
+  ex:g11_topicF_p059_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Để trích xuất thông tin từ CSDL quan hệ có thể cần dữ liệu ở nhiều bảng và phải ghép nối dữ liệu giữa các bảng. Trường ở một bảng vừa là trường của bảng đó vừa là khoá của bảng khác được gọi là khoá ngoài."@vi ; ex:appearsOnPage ex:g11_page059 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToSection ex:g11_topicF_l3s2 .
+  ex:g11_topicF_p060_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Ràng buộc khoá ngoài yêu cầu mọi giá trị của khoá ngoài trong bảng tham chiếu phải xuất hiện trong giá trị khoá ở bảng được tham chiếu. Hệ quản trị CSDL căn cứ vào liên kết giữa các bảng để kiểm soát cập nhật, tránh vi phạm ràng buộc khoá ngoài."@vi ; ex:appearsOnPage ex:g11_page060 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToSection ex:g11_topicF_l3s3 .
+  ex:g11_topicF_p061_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài thực hành yêu cầu khai báo liên kết giữa các bảng trong Access, đánh dấu hộp kiểm Enforce Referential Integrity, thử thêm bản ghi vi phạm ràng buộc khoá ngoài và thử xoá bản ghi được tham chiếu để quan sát báo lỗi."@vi ; ex:appearsOnPage ex:g11_page061 ; ex:belongsToLesson ex:g11_topicF_lesson3 ; ex:belongsToSection ex:g11_topicF_l3s4 .
+
+  ex:g11_topicF_p062_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 4. Các biểu mẫu cho xem và cập nhật dữ liệu. Biểu mẫu là giao diện thuận tiện để người dùng tương tác với CSDL khi xem dữ liệu, nhập và sửa dữ liệu, hạn chế lỗi và tránh vi phạm ràng buộc khi cập nhật."@vi ; ex:appearsOnPage ex:g11_page062 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToSection ex:g11_topicF_l4s1 .
+  ex:g11_topicF_p063_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Biểu mẫu cho xem dữ liệu không cho người xem sửa đổi dữ liệu. Biểu mẫu có thể chỉ hiện dữ liệu được phép xem, sắp xếp theo trường, lọc theo tiêu chí và lọc dần nhiều bước."@vi ; ex:appearsOnPage ex:g11_page063 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToSection ex:g11_topicF_l4s2 .
+  ex:g11_topicF_p064_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Biểu mẫu cho cập nhật dữ liệu cho phép nhập mới hoặc sửa dữ liệu trong những ô được phép. Việc thiết kế biểu mẫu giúp cập nhật dữ liệu tiện lợi hơn, hạn chế sai sót như vi phạm ràng buộc khoá, khoá ngoài hoặc miền giá trị."@vi ; ex:appearsOnPage ex:g11_page064 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToSection ex:g11_topicF_l4s3 .
+  ex:g11_topicF_p065_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Biểu mẫu cập nhật có thể dùng danh sách thả xuống để chọn giá trị phù hợp và dùng lịch để chọn ngày tháng. Bài thực hành yêu cầu mở CSDL Thư viện, dùng biểu mẫu nhập dữ liệu MƯỢN-TRẢ SÁCH và kiểm tra kết quả trong bảng."@vi ; ex:appearsOnPage ex:g11_page065 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToSection ex:g11_topicF_l4s4 .
+  ex:g11_topicF_p066_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Học sinh khám phá công cụ tạo biểu mẫu trong Access, chọn Form Wizard, chọn các trường cho biểu mẫu, kiểu biểu mẫu, đặt tên và hoàn thành biểu mẫu. Câu hỏi tự kiểm tra đánh giá các nhận định về phạm vi sử dụng biểu mẫu, biểu mẫu chỉ xem dữ liệu, vai trò của biểu mẫu khi cập nhật và kiểm soát truy cập."@vi ; ex:appearsOnPage ex:g11_page066 ; ex:belongsToLesson ex:g11_topicF_lesson4 ; ex:belongsToSection ex:g11_topicF_l4s4 .
+
+  ex:g11_topicF_p067_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 5. Truy vấn trong cơ sở dữ liệu quan hệ. Truy vấn CSDL là phát biểu thể hiện yêu cầu của người dùng đối với CSDL, có thể là thao tác cập nhật hoặc khai thác dữ liệu. SQL là ngôn ngữ truy vấn phổ biến của các hệ quản trị CSDL quan hệ."@vi ; ex:appearsOnPage ex:g11_page067 ; ex:belongsToLesson ex:g11_topicF_lesson5 ; ex:belongsToSection ex:g11_topicF_l5s1 .
+  ex:g11_topicF_p068_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Câu truy vấn SQL khai thác dữ liệu có cấu trúc cơ bản SELECT...FROM...WHERE... SELECT xác định các trường kết quả, FROM xác định bảng nguồn và WHERE xác định điều kiện lọc dữ liệu."@vi ; ex:appearsOnPage ex:g11_page068 ; ex:belongsToLesson ex:g11_topicF_lesson5 ; ex:belongsToSection ex:g11_topicF_l5s2 .
+  ex:g11_topicF_p069_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Một số hệ quản trị CSDL cho phép truy vấn bằng cách điền vào ô trống trong bảng thiết kế mẫu, thể hiện truy vấn không cần ngôn ngữ lệnh; cách này gọi là Query By Example - QBE."@vi ; ex:appearsOnPage ex:g11_page069 ; ex:belongsToLesson ex:g11_topicF_lesson5 ; ex:belongsToSection ex:g11_topicF_l5s3 .
+  ex:g11_topicF_p070_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài học tìm hiểu thêm về CSDL NoSQL, còn gọi là Not Only SQL. NoSQL ra đời để lưu trữ và xử lí dữ liệu tăng rất nhanh trong các ứng dụng, đặc biệt là ứng dụng web, và hỗ trợ nhiều kiểu lưu trữ dữ liệu khác nhau."@vi ; ex:appearsOnPage ex:g11_page070 ; ex:belongsToLesson ex:g11_topicF_lesson5 ; ex:belongsToSection ex:g11_topicF_l5s3 .
+
+  ex:g11_topicF_p071_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 6. Truy vấn trong cơ sở dữ liệu quan hệ tiếp theo. Khi cần tìm thông tin kết hợp từ nhiều bảng trong CSDL quan hệ, có thể dùng truy vấn SQL với liên kết các bảng."@vi ; ex:appearsOnPage ex:g11_page071 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToSection ex:g11_topicF_l6s1 .
+  ex:g11_topicF_p072_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Khi khai thác CSDL quan hệ, nhiều tình huống cần kết hợp dữ liệu ở hai hoặc nhiều bảng. Kiểu kết hợp thường gặp là ghép nối các bản ghi của hai bảng nếu thoả mãn điều kiện kết nối, ví dụ Số thẻ TV trong hai bảng phải trùng nhau."@vi ; ex:appearsOnPage ex:g11_page072 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToSection ex:g11_topicF_l6s1 .
+  ex:g11_topicF_p073_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "SQL sử dụng từ khoá JOIN trong mệnh đề FROM để kết nối các bản ghi. INNER JOIN là kiểu kết nối phổ biến, với từ khoá ON đứng trước điều kiện kết nối. Từ khoá DISTINCT có thể dùng để loại bỏ các dòng kết quả trùng nhau."@vi ; ex:appearsOnPage ex:g11_page073 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToSection ex:g11_topicF_l6s1 .
+  ex:g11_topicF_p074_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Báo cáo CSDL là văn bản trình bày thông tin kết xuất từ CSDL, có thể xem trực tiếp trên màn hình hoặc in ra. Dữ liệu đưa vào báo cáo được lấy từ một hay nhiều bảng và truy vấn; báo cáo trình bày dữ liệu trực quan, nổi bật mục quan trọng và theo mẫu quy định."@vi ; ex:appearsOnPage ex:g11_page074 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToSection ex:g11_topicF_l6s2 .
+  ex:g11_topicF_p075_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài thực hành yêu cầu xem các truy vấn có sẵn trong CSDL Thư viện, chạy thử để biết kết quả và xác định truy vấn nào trả lời câu hỏi các quyển sách AI-Trí tuệ nhân tạo đã được những người nào mượn đọc."@vi ; ex:appearsOnPage ex:g11_page075 ; ex:belongsToLesson ex:g11_topicF_lesson6 ; ex:belongsToSection ex:g11_topicF_l6s3 .
+
+  ex:g11_topicF_p076_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 7. Các loại kiến trúc của hệ cơ sở dữ liệu. Một CSDL tập trung được lưu trữ trên một máy tính; người dùng có thể khai thác trực tiếp trên máy chứa CSDL hoặc thông qua kết nối mạng."@vi ; ex:appearsOnPage ex:g11_page076 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToSection ex:g11_topicF_l7s1 .
+  ex:g11_topicF_p077_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Một CSDL phân tán là tập hợp dữ liệu được phân tán trên các máy tính khác nhau của một mạng máy tính. Ví dụ ngân hàng nhiều chi nhánh hoặc hệ thống tìm kiếm Google có thể sử dụng CSDL phân tán."@vi ; ex:appearsOnPage ex:g11_page077 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToSection ex:g11_topicF_l7s1 .
+  ex:g11_topicF_p078_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "CSDL phân tán có ưu điểm về sự phù hợp với tổ chức phân bố địa lí, sẵn sàng và tin cậy cao, mở rộng linh hoạt; nhưng có hạn chế như chi phí cao, hệ thống phức tạp, khó đảm bảo nhất quán dữ liệu và khó có cái nhìn thống nhất cho người dùng."@vi ; ex:appearsOnPage ex:g11_page078 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToSection ex:g11_topicF_l7s1 .
+  ex:g11_topicF_p079_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Mỗi hệ CSDL gồm ba lớp: lớp CSDL, lớp hệ quản trị CSDL và lớp các ứng dụng CSDL. Kiến trúc phổ biến của hệ CSDL tập trung là kiến trúc khách - chủ, có thể ở dạng 1 tầng, 2 tầng hoặc 3 tầng."@vi ; ex:appearsOnPage ex:g11_page079 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToSection ex:g11_topicF_l7s2 .
+  ex:g11_topicF_p080_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Hệ CSDL phân tán có một số mô hình kiến trúc phổ biến như ngang hàng và khách - chủ. Kiến trúc khách - chủ cho hệ CSDL phân tán khác với hệ CSDL tập trung ở chỗ hệ phân tán có nhiều máy chủ CSDL."@vi ; ex:appearsOnPage ex:g11_page080 ; ex:belongsToLesson ex:g11_topicF_lesson7 ; ex:belongsToSection ex:g11_topicF_l7s2 .
+
+  ex:g11_topicF_p081_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Bài 8. Bảo vệ sự an toàn của hệ cơ sở dữ liệu và bảo mật thông tin trong CSDL. Bảo vệ sự an toàn hệ CSDL nhằm bảo vệ hệ khỏi các mối đe doạ có thể phá vỡ hoạt động hoặc làm mất an toàn dữ liệu. Bảo mật thông tin trong CSDL nhằm kiểm soát quyền xem dữ liệu và bảo vệ bí mật của thông tin riêng tư, thương mại hoặc quan trọng."@vi ; ex:appearsOnPage ex:g11_page081 ; ex:belongsToLesson ex:g11_topicF_lesson8 ; ex:belongsToSection ex:g11_topicF_l8s1 .
+  ex:g11_topicF_p082_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Một số biện pháp bảo vệ sự an toàn của hệ CSDL gồm xác thực người truy cập, kiểm soát truy cập tài khoản, sử dụng tường lửa, sao lưu dự phòng và duy trì biên bản hệ thống. Các biện pháp bảo vệ an toàn hệ thống cũng góp phần tăng cường bảo mật thông tin trong CSDL."@vi ; ex:appearsOnPage ex:g11_page082 ; ex:belongsToLesson ex:g11_topicF_lesson8 ; ex:belongsToSection ex:g11_topicF_l8s2 .
+  ex:g11_topicF_p083_01 a ex:Paragraph ; ex:paragraphOrder 1 ; ex:hasRawText "Mã hoá dữ liệu là biện pháp bảo mật dữ liệu trong CSDL, chuyển đổi dữ liệu sang dạng khác gọi là bản mã; chỉ người dùng được uỷ quyền có khoá giải mã mới truy cập được thông tin. Nén dữ liệu cũng góp phần tăng cường bảo mật dữ liệu ngoài mục đích giảm dung lượng lưu trữ."@vi ; ex:appearsOnPage ex:g11_page083 ; ex:belongsToLesson ex:g11_topicF_lesson8 ; ex:belongsToSection ex:g11_topicF_l8s3 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g11_page047 ex:hasParagraph ex:g11_topicF_p047_01, ex:g11_topicF_p047_02, ex:g11_topicF_p047_03 .
+  ex:g11_page048 ex:hasParagraph ex:g11_topicF_p048_01, ex:g11_topicF_p048_02 .
+  ex:g11_page049 ex:hasParagraph ex:g11_topicF_p049_01, ex:g11_topicF_p049_02 .
+  ex:g11_page050 ex:hasParagraph ex:g11_topicF_p050_01, ex:g11_topicF_p050_02 .
+  ex:g11_page051 ex:hasParagraph ex:g11_topicF_p051_01 .
+  ex:g11_page052 ex:hasParagraph ex:g11_topicF_p052_01 .
+  ex:g11_page053 ex:hasParagraph ex:g11_topicF_p053_01, ex:g11_topicF_p053_02 .
+  ex:g11_page054 ex:hasParagraph ex:g11_topicF_p054_01 .
+  ex:g11_page055 ex:hasParagraph ex:g11_topicF_p055_01 .
+  ex:g11_page056 ex:hasParagraph ex:g11_topicF_p056_01 .
+  ex:g11_page057 ex:hasParagraph ex:g11_topicF_p057_01 .
+  ex:g11_page058 ex:hasParagraph ex:g11_topicF_p058_01 .
+  ex:g11_page059 ex:hasParagraph ex:g11_topicF_p059_01 .
+  ex:g11_page060 ex:hasParagraph ex:g11_topicF_p060_01 .
+  ex:g11_page061 ex:hasParagraph ex:g11_topicF_p061_01 .
+  ex:g11_page062 ex:hasParagraph ex:g11_topicF_p062_01 .
+  ex:g11_page063 ex:hasParagraph ex:g11_topicF_p063_01 .
+  ex:g11_page064 ex:hasParagraph ex:g11_topicF_p064_01 .
+  ex:g11_page065 ex:hasParagraph ex:g11_topicF_p065_01 .
+  ex:g11_page066 ex:hasParagraph ex:g11_topicF_p066_01 .
+  ex:g11_page067 ex:hasParagraph ex:g11_topicF_p067_01 .
+  ex:g11_page068 ex:hasParagraph ex:g11_topicF_p068_01 .
+  ex:g11_page069 ex:hasParagraph ex:g11_topicF_p069_01 .
+  ex:g11_page070 ex:hasParagraph ex:g11_topicF_p070_01 .
+  ex:g11_page071 ex:hasParagraph ex:g11_topicF_p071_01 .
+  ex:g11_page072 ex:hasParagraph ex:g11_topicF_p072_01 .
+  ex:g11_page073 ex:hasParagraph ex:g11_topicF_p073_01 .
+  ex:g11_page074 ex:hasParagraph ex:g11_topicF_p074_01 .
+  ex:g11_page075 ex:hasParagraph ex:g11_topicF_p075_01 .
+  ex:g11_page076 ex:hasParagraph ex:g11_topicF_p076_01 .
+  ex:g11_page077 ex:hasParagraph ex:g11_topicF_p077_01 .
+  ex:g11_page078 ex:hasParagraph ex:g11_topicF_p078_01 .
+  ex:g11_page079 ex:hasParagraph ex:g11_topicF_p079_01 .
+  ex:g11_page080 ex:hasParagraph ex:g11_topicF_p080_01 .
+  ex:g11_page081 ex:hasParagraph ex:g11_topicF_p081_01 .
+  ex:g11_page082 ex:hasParagraph ex:g11_topicF_p082_01 .
+  ex:g11_page083 ex:hasParagraph ex:g11_topicF_p083_01 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g11_topicF_l1s1 ex:hasParagraph ex:g11_topicF_p047_01, ex:g11_topicF_p047_02 .
+  ex:g11_topicF_l1s2 ex:hasParagraph ex:g11_topicF_p047_03, ex:g11_topicF_p048_01, ex:g11_topicF_p048_02, ex:g11_topicF_p049_01 .
+  ex:g11_topicF_l1s3 ex:hasParagraph ex:g11_topicF_p049_02, ex:g11_topicF_p050_01 .
+  ex:g11_topicF_l1s4 ex:hasParagraph ex:g11_topicF_p050_02, ex:g11_topicF_p051_01 .
+
+  ex:g11_topicF_l2s1 ex:hasParagraph ex:g11_topicF_p052_01, ex:g11_topicF_p053_01 .
+  ex:g11_topicF_l2s2 ex:hasParagraph ex:g11_topicF_p053_02, ex:g11_topicF_p054_01 .
+  ex:g11_topicF_l2s3 ex:hasParagraph ex:g11_topicF_p055_01 .
+  ex:g11_topicF_l2s4 ex:hasParagraph ex:g11_topicF_p056_01 .
+
+  ex:g11_topicF_l3s1 ex:hasParagraph ex:g11_topicF_p057_01, ex:g11_topicF_p058_01 .
+  ex:g11_topicF_l3s2 ex:hasParagraph ex:g11_topicF_p059_01 .
+  ex:g11_topicF_l3s3 ex:hasParagraph ex:g11_topicF_p060_01 .
+  ex:g11_topicF_l3s4 ex:hasParagraph ex:g11_topicF_p061_01 .
+
+  ex:g11_topicF_l4s1 ex:hasParagraph ex:g11_topicF_p062_01 .
+  ex:g11_topicF_l4s2 ex:hasParagraph ex:g11_topicF_p063_01 .
+  ex:g11_topicF_l4s3 ex:hasParagraph ex:g11_topicF_p064_01 .
+  ex:g11_topicF_l4s4 ex:hasParagraph ex:g11_topicF_p065_01, ex:g11_topicF_p066_01 .
+
+  ex:g11_topicF_l5s1 ex:hasParagraph ex:g11_topicF_p067_01 .
+  ex:g11_topicF_l5s2 ex:hasParagraph ex:g11_topicF_p068_01 .
+  ex:g11_topicF_l5s3 ex:hasParagraph ex:g11_topicF_p069_01, ex:g11_topicF_p070_01 .
+
+  ex:g11_topicF_l6s1 ex:hasParagraph ex:g11_topicF_p071_01, ex:g11_topicF_p072_01, ex:g11_topicF_p073_01 .
+  ex:g11_topicF_l6s2 ex:hasParagraph ex:g11_topicF_p074_01 .
+  ex:g11_topicF_l6s3 ex:hasParagraph ex:g11_topicF_p075_01 .
+
+  ex:g11_topicF_l7s1 ex:hasParagraph ex:g11_topicF_p076_01, ex:g11_topicF_p077_01, ex:g11_topicF_p078_01 .
+  ex:g11_topicF_l7s2 ex:hasParagraph ex:g11_topicF_p079_01, ex:g11_topicF_p080_01 .
+
+  ex:g11_topicF_l8s1 ex:hasParagraph ex:g11_topicF_p081_01 .
+  ex:g11_topicF_l8s2 ex:hasParagraph ex:g11_topicF_p082_01 .
+  ex:g11_topicF_l8s3 ex:hasParagraph ex:g11_topicF_p083_01 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g11_topicF_p047_01 ex:nextParagraph ex:g11_topicF_p047_02 .
+  ex:g11_topicF_p047_02 ex:previousParagraph ex:g11_topicF_p047_01 ; ex:nextParagraph ex:g11_topicF_p047_03 .
+  ex:g11_topicF_p047_03 ex:previousParagraph ex:g11_topicF_p047_02 ; ex:nextParagraph ex:g11_topicF_p048_01 .
+  ex:g11_topicF_p048_01 ex:previousParagraph ex:g11_topicF_p047_03 ; ex:nextParagraph ex:g11_topicF_p048_02 .
+  ex:g11_topicF_p048_02 ex:previousParagraph ex:g11_topicF_p048_01 ; ex:nextParagraph ex:g11_topicF_p049_01 .
+  ex:g11_topicF_p049_01 ex:previousParagraph ex:g11_topicF_p048_02 ; ex:nextParagraph ex:g11_topicF_p049_02 .
+  ex:g11_topicF_p049_02 ex:previousParagraph ex:g11_topicF_p049_01 ; ex:nextParagraph ex:g11_topicF_p050_01 .
+  ex:g11_topicF_p050_01 ex:previousParagraph ex:g11_topicF_p049_02 ; ex:nextParagraph ex:g11_topicF_p050_02 .
+  ex:g11_topicF_p050_02 ex:previousParagraph ex:g11_topicF_p050_01 ; ex:nextParagraph ex:g11_topicF_p051_01 .
+  ex:g11_topicF_p051_01 ex:previousParagraph ex:g11_topicF_p050_02 ; ex:nextParagraph ex:g11_topicF_p052_01 .
+  ex:g11_topicF_p052_01 ex:previousParagraph ex:g11_topicF_p051_01 ; ex:nextParagraph ex:g11_topicF_p053_01 .
+  ex:g11_topicF_p053_01 ex:previousParagraph ex:g11_topicF_p052_01 ; ex:nextParagraph ex:g11_topicF_p053_02 .
+  ex:g11_topicF_p053_02 ex:previousParagraph ex:g11_topicF_p053_01 ; ex:nextParagraph ex:g11_topicF_p054_01 .
+  ex:g11_topicF_p054_01 ex:previousParagraph ex:g11_topicF_p053_02 ; ex:nextParagraph ex:g11_topicF_p055_01 .
+  ex:g11_topicF_p055_01 ex:previousParagraph ex:g11_topicF_p054_01 ; ex:nextParagraph ex:g11_topicF_p056_01 .
+  ex:g11_topicF_p056_01 ex:previousParagraph ex:g11_topicF_p055_01 ; ex:nextParagraph ex:g11_topicF_p057_01 .
+  ex:g11_topicF_p057_01 ex:previousParagraph ex:g11_topicF_p056_01 ; ex:nextParagraph ex:g11_topicF_p058_01 .
+  ex:g11_topicF_p058_01 ex:previousParagraph ex:g11_topicF_p057_01 ; ex:nextParagraph ex:g11_topicF_p059_01 .
+  ex:g11_topicF_p059_01 ex:previousParagraph ex:g11_topicF_p058_01 ; ex:nextParagraph ex:g11_topicF_p060_01 .
+  ex:g11_topicF_p060_01 ex:previousParagraph ex:g11_topicF_p059_01 ; ex:nextParagraph ex:g11_topicF_p061_01 .
+  ex:g11_topicF_p061_01 ex:previousParagraph ex:g11_topicF_p060_01 ; ex:nextParagraph ex:g11_topicF_p062_01 .
+  ex:g11_topicF_p062_01 ex:previousParagraph ex:g11_topicF_p061_01 ; ex:nextParagraph ex:g11_topicF_p063_01 .
+  ex:g11_topicF_p063_01 ex:previousParagraph ex:g11_topicF_p062_01 ; ex:nextParagraph ex:g11_topicF_p064_01 .
+  ex:g11_topicF_p064_01 ex:previousParagraph ex:g11_topicF_p063_01 ; ex:nextParagraph ex:g11_topicF_p065_01 .
+  ex:g11_topicF_p065_01 ex:previousParagraph ex:g11_topicF_p064_01 ; ex:nextParagraph ex:g11_topicF_p066_01 .
+  ex:g11_topicF_p066_01 ex:previousParagraph ex:g11_topicF_p065_01 ; ex:nextParagraph ex:g11_topicF_p067_01 .
+  ex:g11_topicF_p067_01 ex:previousParagraph ex:g11_topicF_p066_01 ; ex:nextParagraph ex:g11_topicF_p068_01 .
+  ex:g11_topicF_p068_01 ex:previousParagraph ex:g11_topicF_p067_01 ; ex:nextParagraph ex:g11_topicF_p069_01 .
+  ex:g11_topicF_p069_01 ex:previousParagraph ex:g11_topicF_p068_01 ; ex:nextParagraph ex:g11_topicF_p070_01 .
+  ex:g11_topicF_p070_01 ex:previousParagraph ex:g11_topicF_p069_01 ; ex:nextParagraph ex:g11_topicF_p071_01 .
+  ex:g11_topicF_p071_01 ex:previousParagraph ex:g11_topicF_p070_01 ; ex:nextParagraph ex:g11_topicF_p072_01 .
+  ex:g11_topicF_p072_01 ex:previousParagraph ex:g11_topicF_p071_01 ; ex:nextParagraph ex:g11_topicF_p073_01 .
+  ex:g11_topicF_p073_01 ex:previousParagraph ex:g11_topicF_p072_01 ; ex:nextParagraph ex:g11_topicF_p074_01 .
+  ex:g11_topicF_p074_01 ex:previousParagraph ex:g11_topicF_p073_01 ; ex:nextParagraph ex:g11_topicF_p075_01 .
+  ex:g11_topicF_p075_01 ex:previousParagraph ex:g11_topicF_p074_01 ; ex:nextParagraph ex:g11_topicF_p076_01 .
+  ex:g11_topicF_p076_01 ex:previousParagraph ex:g11_topicF_p075_01 ; ex:nextParagraph ex:g11_topicF_p077_01 .
+  ex:g11_topicF_p077_01 ex:previousParagraph ex:g11_topicF_p076_01 ; ex:nextParagraph ex:g11_topicF_p078_01 .
+  ex:g11_topicF_p078_01 ex:previousParagraph ex:g11_topicF_p077_01 ; ex:nextParagraph ex:g11_topicF_p079_01 .
+  ex:g11_topicF_p079_01 ex:previousParagraph ex:g11_topicF_p078_01 ; ex:nextParagraph ex:g11_topicF_p080_01 .
+  ex:g11_topicF_p080_01 ex:previousParagraph ex:g11_topicF_p079_01 ; ex:nextParagraph ex:g11_topicF_p081_01 .
+  ex:g11_topicF_p081_01 ex:previousParagraph ex:g11_topicF_p080_01 ; ex:nextParagraph ex:g11_topicF_p082_01 .
+  ex:g11_topicF_p082_01 ex:previousParagraph ex:g11_topicF_p081_01 ; ex:nextParagraph ex:g11_topicF_p083_01 .
+  ex:g11_topicF_p083_01 ex:previousParagraph ex:g11_topicF_p082_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g11_topicF_p047_01 ex:mentionsConcept ex:g11_conceptBaiToanQuanLi, ex:g11_conceptDuLieuQuanLi .
+  ex:g11_topicF_p047_02 ex:mentionsConcept ex:g11_conceptBaiToanQuanLi, ex:g11_conceptDuLieuQuanLi .
+  ex:g11_topicF_p047_03 ex:mentionsConcept ex:g11_conceptXuLiThongTinQuanLi, ex:g11_conceptTaoLapHoSo, ex:g11_conceptCapNhatDuLieu, ex:g11_conceptKhaiThacThongTin .
+  ex:g11_topicF_p048_01 ex:mentionsConcept ex:g11_conceptHoSo, ex:g11_conceptTaoLapHoSo, ex:g11_conceptDuLieuQuanLi .
+  ex:g11_topicF_p048_02 ex:mentionsConcept ex:g11_conceptCapNhatDuLieu .
+  ex:g11_topicF_p049_01 ex:mentionsConcept ex:g11_conceptKhaiThacThongTin, ex:g11_conceptTimKiemDuLieu, ex:g11_conceptThongKeDuLieu, ex:g11_conceptLapBaoCao .
+  ex:g11_topicF_p049_02 ex:mentionsConcept ex:g11_conceptCoSoDuLieu, ex:g11_conceptHeQuanTriCSDL .
+  ex:g11_topicF_p050_01 ex:mentionsConcept ex:g11_conceptHeQuanTriCSDL, ex:g11_conceptBieuMau, ex:g11_conceptLapBaoCao .
+  ex:g11_topicF_p050_02 ex:mentionsConcept ex:g11_conceptBaiToanQuanLi, ex:g11_conceptCoSoDuLieu .
+  ex:g11_topicF_p051_01 ex:mentionsConcept ex:g11_conceptCoSoDuLieu, ex:g11_conceptHeQuanTriCSDL .
+
+  ex:g11_topicF_p052_01 ex:mentionsConcept ex:g11_conceptCSDLQuanHe, ex:g11_conceptBangDuLieu, ex:g11_conceptTruongDuLieu, ex:g11_conceptBanGhi .
+  ex:g11_topicF_p053_01 ex:mentionsConcept ex:g11_conceptCapNhatDuLieu, ex:g11_conceptTruyVanCSDL, ex:g11_conceptRangBuocToanVen .
+  ex:g11_topicF_p053_02 ex:mentionsConcept ex:g11_conceptKhoaBang, ex:g11_conceptBanGhi .
+  ex:g11_topicF_p054_01 ex:mentionsConcept ex:g11_conceptKhoaBang, ex:g11_conceptKhoaChinh .
+  ex:g11_topicF_p055_01 ex:mentionsConcept ex:g11_conceptHeQuanTriCSDL, ex:g11_conceptRangBuocKhoa, ex:g11_conceptKhoaChinh .
+  ex:g11_topicF_p056_01 ex:mentionsConcept ex:g11_conceptRangBuocKhoa, ex:g11_conceptKhoaChinh .
+
+  ex:g11_topicF_p057_01 ex:mentionsConcept ex:g11_conceptDuThuaDuLieu, ex:g11_conceptBangDuLieu .
+  ex:g11_topicF_p058_01 ex:mentionsConcept ex:g11_conceptCSDLQuanHe, ex:g11_conceptBangDuLieu, ex:g11_conceptLienKetBang .
+  ex:g11_topicF_p059_01 ex:mentionsConcept ex:g11_conceptLienKetBang, ex:g11_conceptKhoaNgoai, ex:g11_conceptBangThamChieu, ex:g11_conceptBangDuocThamChieu .
+  ex:g11_topicF_p060_01 ex:mentionsConcept ex:g11_conceptRangBuocKhoaNgoai, ex:g11_conceptHeQuanTriCSDL, ex:g11_conceptLienKetBang .
+  ex:g11_topicF_p061_01 ex:mentionsConcept ex:g11_conceptKhoaNgoai, ex:g11_conceptRangBuocKhoaNgoai .
+
+  ex:g11_topicF_p062_01 ex:mentionsConcept ex:g11_conceptBieuMau, ex:g11_conceptBieuMauXemDuLieu, ex:g11_conceptBieuMauCapNhatDuLieu .
+  ex:g11_topicF_p063_01 ex:mentionsConcept ex:g11_conceptBieuMauXemDuLieu .
+  ex:g11_topicF_p064_01 ex:mentionsConcept ex:g11_conceptBieuMauCapNhatDuLieu, ex:g11_conceptRangBuocKhoa, ex:g11_conceptRangBuocKhoaNgoai .
+  ex:g11_topicF_p065_01 ex:mentionsConcept ex:g11_conceptBieuMauCapNhatDuLieu, ex:g11_conceptCapNhatDuLieu .
+  ex:g11_topicF_p066_01 ex:mentionsConcept ex:g11_conceptBieuMau, ex:g11_conceptHeQuanTriCSDL .
+
+  ex:g11_topicF_p067_01 ex:mentionsConcept ex:g11_conceptTruyVanCSDL, ex:g11_conceptSQL .
+  ex:g11_topicF_p068_01 ex:mentionsConcept ex:g11_conceptSQL, ex:g11_conceptSelectFromWhere .
+  ex:g11_topicF_p069_01 ex:mentionsConcept ex:g11_conceptQBE, ex:g11_conceptTruyVanCSDL .
+  ex:g11_topicF_p070_01 ex:mentionsConcept ex:g11_conceptNoSQL, ex:g11_conceptSQL .
+
+  ex:g11_topicF_p071_01 ex:mentionsConcept ex:g11_conceptTruyVanCSDL, ex:g11_conceptSQL, ex:g11_conceptLienKetBang .
+  ex:g11_topicF_p072_01 ex:mentionsConcept ex:g11_conceptJoin, ex:g11_conceptLienKetBang .
+  ex:g11_topicF_p073_01 ex:mentionsConcept ex:g11_conceptSQL, ex:g11_conceptJoin, ex:g11_conceptInnerJoin .
+  ex:g11_topicF_p074_01 ex:mentionsConcept ex:g11_conceptBaoCaoCSDL, ex:g11_conceptKetXuatThongTin, ex:g11_conceptTruyVanCSDL .
+  ex:g11_topicF_p075_01 ex:mentionsConcept ex:g11_conceptTruyVanCSDL, ex:g11_conceptJoin .
+
+  ex:g11_topicF_p076_01 ex:mentionsConcept ex:g11_conceptCSDLTapTrung .
+  ex:g11_topicF_p077_01 ex:mentionsConcept ex:g11_conceptCSDLPhanTan .
+  ex:g11_topicF_p078_01 ex:mentionsConcept ex:g11_conceptCSDLPhanTan, ex:g11_conceptCSDLTapTrung .
+  ex:g11_topicF_p079_01 ex:mentionsConcept ex:g11_conceptKienTrucHeCSDL, ex:g11_conceptClientServer, ex:g11_conceptOneTierArchitecture, ex:g11_conceptTwoTierArchitecture, ex:g11_conceptThreeTierArchitecture .
+  ex:g11_topicF_p080_01 ex:mentionsConcept ex:g11_conceptCSDLPhanTan, ex:g11_conceptPeerToPeer, ex:g11_conceptClientServer .
+
+  ex:g11_topicF_p081_01 ex:mentionsConcept ex:g11_conceptAnToanHeCSDL, ex:g11_conceptBaoMatThongTinCSDL .
+  ex:g11_topicF_p082_01 ex:mentionsConcept ex:g11_conceptXacThucNguoiTruyCap, ex:g11_conceptKiemSoatTruyCap, ex:g11_conceptTuongLua, ex:g11_conceptSaoLuuDuPhong, ex:g11_conceptNhatKiHeThong .
+  ex:g11_topicF_p083_01 ex:mentionsConcept ex:g11_conceptMaHoaDuLieu, ex:g11_conceptGiaiMaDuLieu, ex:g11_conceptNenDuLieu, ex:g11_conceptBaoMatThongTinCSDL .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g11_conceptHeCoSoDuLieu ex:subConceptOf ex:g11_conceptGiaiQuyetVanDeVoiMayTinh .
+  ex:g11_conceptCoSoDuLieu ex:partOf ex:g11_conceptHeCoSoDuLieu .
+  ex:g11_conceptHeQuanTriCSDL ex:partOf ex:g11_conceptHeCoSoDuLieu .
+  ex:g11_conceptBaiToanQuanLi ex:relatedTo ex:g11_conceptDuLieuQuanLi, ex:g11_conceptCoSoDuLieu .
+  ex:g11_conceptHoSo ex:relatedTo ex:g11_conceptDuLieuQuanLi .
+  ex:g11_conceptTaoLapHoSo ex:partOf ex:g11_conceptXuLiThongTinQuanLi .
+  ex:g11_conceptCapNhatDuLieu ex:partOf ex:g11_conceptXuLiThongTinQuanLi .
+  ex:g11_conceptKhaiThacThongTin ex:partOf ex:g11_conceptXuLiThongTinQuanLi .
+  ex:g11_conceptTimKiemDuLieu ex:subConceptOf ex:g11_conceptKhaiThacThongTin .
+  ex:g11_conceptThongKeDuLieu ex:subConceptOf ex:g11_conceptKhaiThacThongTin .
+  ex:g11_conceptLapBaoCao ex:subConceptOf ex:g11_conceptKhaiThacThongTin .
+  ex:g11_conceptCSDLQuanHe ex:subConceptOf ex:g11_conceptCoSoDuLieu .
+  ex:g11_conceptBangDuLieu ex:partOf ex:g11_conceptCSDLQuanHe .
+  ex:g11_conceptTruongDuLieu ex:partOf ex:g11_conceptBangDuLieu .
+  ex:g11_conceptBanGhi ex:partOf ex:g11_conceptBangDuLieu .
+  ex:g11_conceptKhoaChinh ex:subConceptOf ex:g11_conceptKhoaBang .
+  ex:g11_conceptRangBuocKhoa ex:relatedTo ex:g11_conceptKhoaChinh .
+  ex:g11_conceptKhoaNgoai ex:relatedTo ex:g11_conceptLienKetBang .
+  ex:g11_conceptRangBuocKhoaNgoai ex:relatedTo ex:g11_conceptKhoaNgoai .
+  ex:g11_conceptBangThamChieu ex:relatedTo ex:g11_conceptKhoaNgoai .
+  ex:g11_conceptBangDuocThamChieu ex:relatedTo ex:g11_conceptKhoaNgoai .
+  ex:g11_conceptDuThuaDuLieu ex:relatedTo ex:g11_conceptLienKetBang .
+  ex:g11_conceptBieuMauXemDuLieu ex:subConceptOf ex:g11_conceptBieuMau .
+  ex:g11_conceptBieuMauCapNhatDuLieu ex:subConceptOf ex:g11_conceptBieuMau .
+  ex:g11_conceptSQL ex:relatedTo ex:g11_conceptTruyVanCSDL .
+  ex:g11_conceptSelectFromWhere ex:partOf ex:g11_conceptSQL .
+  ex:g11_conceptQBE ex:relatedTo ex:g11_conceptTruyVanCSDL .
+  ex:g11_conceptNoSQL ex:relatedTo ex:g11_conceptCoSoDuLieu .
+  ex:g11_conceptJoin ex:partOf ex:g11_conceptSQL .
+  ex:g11_conceptInnerJoin ex:subConceptOf ex:g11_conceptJoin .
+  ex:g11_conceptBaoCaoCSDL ex:relatedTo ex:g11_conceptKetXuatThongTin .
+  ex:g11_conceptCSDLTapTrung ex:subConceptOf ex:g11_conceptCoSoDuLieu .
+  ex:g11_conceptCSDLPhanTan ex:subConceptOf ex:g11_conceptCoSoDuLieu .
+  ex:g11_conceptClientServer ex:subConceptOf ex:g11_conceptKienTrucHeCSDL .
+  ex:g11_conceptOneTierArchitecture ex:subConceptOf ex:g11_conceptKienTrucHeCSDL .
+  ex:g11_conceptTwoTierArchitecture ex:subConceptOf ex:g11_conceptKienTrucHeCSDL .
+  ex:g11_conceptThreeTierArchitecture ex:subConceptOf ex:g11_conceptKienTrucHeCSDL .
+  ex:g11_conceptPeerToPeer ex:subConceptOf ex:g11_conceptKienTrucHeCSDL .
+  ex:g11_conceptAnToanHeCSDL ex:relatedTo ex:g11_conceptBaoMatThongTinCSDL .
+  ex:g11_conceptXacThucNguoiTruyCap ex:subConceptOf ex:g11_conceptAnToanHeCSDL .
+  ex:g11_conceptKiemSoatTruyCap ex:subConceptOf ex:g11_conceptAnToanHeCSDL .
+  ex:g11_conceptTuongLua ex:subConceptOf ex:g11_conceptAnToanHeCSDL .
+  ex:g11_conceptSaoLuuDuPhong ex:subConceptOf ex:g11_conceptAnToanHeCSDL .
+  ex:g11_conceptNhatKiHeThong ex:subConceptOf ex:g11_conceptAnToanHeCSDL .
+  ex:g11_conceptMaHoaDuLieu ex:subConceptOf ex:g11_conceptBaoMatThongTinCSDL .
+  ex:g11_conceptGiaiMaDuLieu ex:relatedTo ex:g11_conceptMaHoaDuLieu .
+  ex:g11_conceptNenDuLieu ex:relatedTo ex:g11_conceptBaoMatThongTinCSDL .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g11_topicF_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Có một số cụm từ mà em đã từng nghe và có thể đã từng dùng như quản lí học sinh, quản lí nhân sự, quản lí chi tiêu cá nhân. Theo em, việc quản lí có liên quan đến việc lưu trữ và xử lí dữ liệu không? Hãy nêu một việc em đã làm để quản lí một hoạt động nào đó của mình."@vi ;
+    ex:appearsOnPage ex:g11_page047 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 ;
+    ex:relatedTo ex:g11_conceptBaiToanQuanLi .
+
+  ex:g11_topicF_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 1 - Tìm hiểu cơ sở dữ liệu và hệ quản trị CSDL"@vi ;
+    ex:hasRawText "Theo em, có nên dùng phần mềm soạn thảo văn bản hay phần mềm bảng tính để tạo lập hồ sơ, cập nhật và khai thác thông tin trong hồ sơ phục vụ công tác quản lí của một tổ chức hay không? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page049 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 ;
+    ex:relatedTo ex:g11_conceptCoSoDuLieu, ex:g11_conceptHeQuanTriCSDL .
+
+  ex:g11_topicF_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 1 - Tìm hiểu yêu cầu của bài toán quản lí thư viện"@vi ;
+    ex:hasRawText "Hình dung việc quản lí thư viện của một trường học; mô tả hoạt động của thư viện, liệt kê dữ liệu cần có trong CSDL và nêu ví dụ về cập nhật dữ liệu, tìm kiếm dữ liệu, thống kê và báo cáo."@vi ;
+    ex:appearsOnPage ex:g11_page050 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 ;
+    ex:relatedTo ex:g11_conceptBaiToanQuanLi, ex:g11_conceptCoSoDuLieu .
+
+  ex:g11_topicF_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 1 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Trong các câu sau, những câu nào đúng về CSDL, hệ CSDL, giá trị dữ liệu trong CSDL và hệ quản trị CSDL? Theo em, những ứng dụng như quản lí bán vé máy bay, quản lí chi tiêu cá nhân, quản lí cước phí điện thoại, quản lí mạng xã hội có cần CSDL hay không?"@vi ;
+    ex:appearsOnPage ex:g11_page051 ;
+    ex:belongsToLesson ex:g11_topicF_lesson1 ;
+    ex:relatedTo ex:g11_conceptCoSoDuLieu, ex:g11_conceptHeQuanTriCSDL .
+
+  ex:g11_topicF_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Hồ sơ học sinh một lớp được tổ chức theo dạng bảng: mỗi hàng chứa dữ liệu về một học sinh, mỗi cột chứa dữ liệu về một thuộc tính. Theo em, cách tổ chức như vậy có ưu điểm gì trong quản lí thông tin học sinh của lớp?"@vi ;
+    ex:appearsOnPage ex:g11_page052 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 ;
+    ex:relatedTo ex:g11_conceptBangDuLieu, ex:g11_conceptCSDLQuanHe .
+
+  ex:g11_topicF_l2_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 2 - Mã định danh của học sinh"@vi ;
+    ex:hasRawText "Theo em, mỗi học sinh cần phải có riêng một Mã định danh để đưa vào hồ sơ quản lí hay không? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page053 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 ;
+    ex:relatedTo ex:g11_conceptKhoaBang, ex:g11_conceptKhoaChinh .
+
+  ex:g11_topicF_l2_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 2 - Khoá của bảng trong CSDL"@vi ;
+    ex:hasRawText "Sử dụng Microsoft Access 365 tạo bảng SÁCH, chỉ định trường Mã sách làm khoá chính và nhập nhiều hơn 5 bản ghi cho bảng; thử nhập trùng giá trị khoá để quan sát báo lỗi vi phạm ràng buộc khoá."@vi ;
+    ex:appearsOnPage ex:g11_page055 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 ;
+    ex:relatedTo ex:g11_conceptKhoaChinh, ex:g11_conceptRangBuocKhoa .
+
+  ex:g11_topicF_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 2 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Trong CSDL quan hệ, mỗi bảng chỉ có một khoá hay không? Khoá có nhất thiết chỉ là một trường không? Nếu hai bản ghi khác nhau thì giá trị khoá của chúng có phải khác nhau không? Hệ quản trị CSDL quan hệ có tự động kiểm tra ràng buộc khoá hay không?"@vi ;
+    ex:appearsOnPage ex:g11_page056 ;
+    ex:belongsToLesson ex:g11_topicF_lesson2 ;
+    ex:relatedTo ex:g11_conceptKhoaBang, ex:g11_conceptKhoaChinh, ex:g11_conceptRangBuocKhoa .
+
+  ex:g11_topicF_l3_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 3 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Để quản lí sách, người đọc và việc mượn/trả sách của thư viện, nếu đưa tất cả dữ liệu vào trong một bảng thì cách đó có ưu điểm và nhược điểm gì?"@vi ;
+    ex:appearsOnPage ex:g11_page057 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:relatedTo ex:g11_conceptDuThuaDuLieu, ex:g11_conceptBangDuLieu .
+
+  ex:g11_topicF_l3_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 3 - Ràng buộc khoá ngoài"@vi ;
+    ex:hasRawText "Xét CSDL Thư viện có bảng MƯỢN-TRẢ liên kết với bảng NGƯỜI ĐỌC qua khoá ngoài Số thẻ TV. Nếu thêm bản ghi có Số thẻ TV chưa tồn tại trong bảng NGƯỜI ĐỌC thì cập nhật đó có hợp lí không? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page059 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:relatedTo ex:g11_conceptKhoaNgoai, ex:g11_conceptRangBuocKhoaNgoai .
+
+  ex:g11_topicF_l3_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 3 - Bảng với khoá ngoài"@vi ;
+    ex:hasRawText "Khám phá cách khai báo liên kết giữa các bảng trong Microsoft Access, đánh dấu Enforce Referential Integrity, tạo bản ghi vi phạm ràng buộc khoá ngoài và xoá bản ghi đang được tham chiếu để quan sát báo lỗi."@vi ;
+    ex:appearsOnPage ex:g11_page060 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:relatedTo ex:g11_conceptLienKetBang, ex:g11_conceptKhoaNgoai, ex:g11_conceptRangBuocKhoaNgoai .
+
+  ex:g11_topicF_l3_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 3 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Các câu hỏi kiểm tra nhận biết khoá ngoài, tập trường khoá ngoài, cơ chế kiểm tra ràng buộc khoá ngoài và vai trò của hệ quản trị CSDL trong việc chỉ chấp nhận cập nhật thoả mãn ràng buộc khoá ngoài."@vi ;
+    ex:appearsOnPage ex:g11_page061 ;
+    ex:belongsToLesson ex:g11_topicF_lesson3 ;
+    ex:relatedTo ex:g11_conceptKhoaNgoai, ex:g11_conceptRangBuocKhoaNgoai .
+
+  ex:g11_topicF_l4_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 4 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Khi nhập dữ liệu vào một bảng của CSDL quan hệ, theo em có thể gặp những lỗi nào? Em hãy cho ví dụ."@vi ;
+    ex:appearsOnPage ex:g11_page062 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:relatedTo ex:g11_conceptCapNhatDuLieu, ex:g11_conceptBieuMau .
+
+  ex:g11_topicF_l4_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 4 - Lỗi khi cập nhật trực tiếp bảng"@vi ;
+    ex:hasRawText "Theo em, có những bất lợi nào trong việc mở một bảng của CSDL quan hệ rồi trực tiếp cập nhật dữ liệu trong đó?"@vi ;
+    ex:appearsOnPage ex:g11_page064 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:relatedTo ex:g11_conceptBieuMauCapNhatDuLieu, ex:g11_conceptCapNhatDuLieu .
+
+  ex:g11_topicF_l4_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 4 - Tạo biểu mẫu và cập nhật dữ liệu"@vi ;
+    ex:hasRawText "Sử dụng biểu mẫu NHẬP DỮ LIỆU MƯỢN-TRẢ SÁCH để nhập ba bản ghi mới; mở biểu mẫu xem thông tin mượn-trả sách để kiểm tra; sau đó khám phá công cụ Form Wizard trong Access để tạo biểu mẫu."@vi ;
+    ex:appearsOnPage ex:g11_page065 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:relatedTo ex:g11_conceptBieuMau, ex:g11_conceptBieuMauCapNhatDuLieu .
+
+  ex:g11_topicF_l4_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 4 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Câu hỏi kiểm tra các nhận định về việc dùng chung biểu mẫu, biểu mẫu chỉ xem dữ liệu, vai trò của biểu mẫu khi cập nhật dữ liệu và biểu mẫu như giao diện được thiết kế để kiểm soát truy cập của người dùng đến dữ liệu trong CSDL."@vi ;
+    ex:appearsOnPage ex:g11_page066 ;
+    ex:belongsToLesson ex:g11_topicF_lesson4 ;
+    ex:relatedTo ex:g11_conceptBieuMau, ex:g11_conceptBieuMauXemDuLieu, ex:g11_conceptBieuMauCapNhatDuLieu .
+
+  ex:g11_topicF_l5_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 5 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Em hãy nêu một vài ví dụ cụ thể về khai thác thông tin trong một CSDL mà em biết."@vi ;
+    ex:appearsOnPage ex:g11_page067 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:relatedTo ex:g11_conceptTruyVanCSDL, ex:g11_conceptKhaiThacThongTin .
+
+  ex:g11_topicF_l5_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 5 - Viết truy vấn SQL đơn giản"@vi ;
+    ex:hasRawText "Quan sát mẫu câu truy vấn ở Hình 1a và ví dụ ở Hình 1b; nếu muốn tìm Họ và tên, Ngày sinh, điểm Toán và điểm Ngữ văn của những học sinh có điểm Toán trên 7.0 thì dùng câu truy vấn SQL như thế nào?"@vi ;
+    ex:appearsOnPage ex:g11_page068 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:relatedTo ex:g11_conceptSQL, ex:g11_conceptSelectFromWhere .
+
+  ex:g11_topicF_l5_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 5 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Viết câu truy vấn SQL tìm điểm môn Ngữ văn của những học sinh là Đoàn viên trong bảng HỌC SINH 11; giải thích một truy vấn SQL tìm dữ liệu trong CSDL Thư viện; nêu yêu cầu tìm thông tin trong bảng HỌC SINH 11 và viết câu truy vấn SQL tương ứng."@vi ;
+    ex:appearsOnPage ex:g11_page069 ;
+    ex:belongsToLesson ex:g11_topicF_lesson5 ;
+    ex:relatedTo ex:g11_conceptSQL, ex:g11_conceptTruyVanCSDL .
+
+  ex:g11_topicF_l6_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 6 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Theo em, việc khai báo liên kết giữa một số bảng trong một CSDL quan hệ có ý nghĩa gì?"@vi ;
+    ex:appearsOnPage ex:g11_page071 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:relatedTo ex:g11_conceptLienKetBang, ex:g11_conceptJoin .
+
+  ex:g11_topicF_l6_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 bài 6 - Tìm thông tin từ nhiều bảng"@vi ;
+    ex:hasRawText "Xét CSDL mô tả ở Hình 1. Nếu cần biết tên quyển sách mà người có thẻ HS-001 đã mượn vào ngày 02/10/2022, ta có thể dùng câu truy vấn trên một bảng được không? Nếu tra cứu thủ công thì làm thế nào?"@vi ;
+    ex:appearsOnPage ex:g11_page071 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:relatedTo ex:g11_conceptJoin, ex:g11_conceptLienKetBang .
+
+  ex:g11_topicF_l6_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 bài 6 - Báo cáo kết quả học tập"@vi ;
+    ex:hasRawText "Em đã biết có thể truy vấn CSDL Quản lí học tập 11 để có thông tin về kết quả học tập của học sinh lớp 11 ở một số môn học. Theo em, với công cụ truy vấn có được dữ liệu trình bày như Hình 4 hay không?"@vi ;
+    ex:appearsOnPage ex:g11_page073 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:relatedTo ex:g11_conceptBaoCaoCSDL, ex:g11_conceptKetXuatThongTin .
+
+  ex:g11_topicF_l6_practice1 a ex:PracticeTask ;
+    rdfs:label "Thực hành bài 6 - Truy vấn trong CSDL quan hệ"@vi ;
+    ex:hasRawText "Trong CSDL Thư viện được tạo bởi Access, xem các truy vấn đã chuẩn bị, chạy thử để biết kết quả và xác định truy vấn nào trả lời câu hỏi các quyển sách AI-Trí tuệ nhân tạo đã được những người nào mượn đọc."@vi ;
+    ex:appearsOnPage ex:g11_page075 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:relatedTo ex:g11_conceptTruyVanCSDL, ex:g11_conceptSQL, ex:g11_conceptJoin .
+
+  ex:g11_topicF_l6_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 6 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Câu hỏi kiểm tra các nhận định về truy vấn SQL trên một bảng, từ khoá kết nối trong mệnh đề FROM, điều kiện kết nối bằng giá trị trường chung và dữ liệu đưa vào báo cáo được lấy từ một hay nhiều bảng và truy vấn."@vi ;
+    ex:appearsOnPage ex:g11_page075 ;
+    ex:belongsToLesson ex:g11_topicF_lesson6 ;
+    ex:relatedTo ex:g11_conceptSQL, ex:g11_conceptJoin, ex:g11_conceptBaoCaoCSDL .
+
+  ex:g11_topicF_l7_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 7 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Theo em, CSDL của trường em được đặt trong một máy tính hay trong tất cả các máy tính có sử dụng CSDL đó? CSDL của một ngân hàng được đặt trong một máy tính hay nhiều máy tính?"@vi ;
+    ex:appearsOnPage ex:g11_page076 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 ;
+    ex:relatedTo ex:g11_conceptCSDLTapTrung, ex:g11_conceptCSDLPhanTan .
+
+  ex:g11_topicF_l7_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 7 - CSDL phân tán cho thư điện tử"@vi ;
+    ex:hasRawText "Theo em, các hệ thống thư điện tử trên Internet có thể sử dụng hệ CSDL tập trung không? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g11_page077 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 ;
+    ex:relatedTo ex:g11_conceptCSDLTapTrung, ex:g11_conceptCSDLPhanTan .
+
+  ex:g11_topicF_l7_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 7 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Nêu đặc điểm quan trọng nhất để phân biệt một hệ CSDL tập trung với một hệ CSDL phân tán; lựa chọn mô hình CSDL theo quy mô và đặc điểm tổ chức; kiểm tra các nhận định về lưu trữ dữ liệu, quản lí, cập nhật, sự cố máy chủ và chi phí của hệ phân tán."@vi ;
+    ex:appearsOnPage ex:g11_page080 ;
+    ex:belongsToLesson ex:g11_topicF_lesson7 ;
+    ex:relatedTo ex:g11_conceptCSDLTapTrung, ex:g11_conceptCSDLPhanTan, ex:g11_conceptKienTrucHeCSDL .
+
+  ex:g11_topicF_l8_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 8 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Hệ CSDL của một tổ chức thường có nhiều người dùng truy cập, do vậy có những nguy cơ đe doạ sự an toàn của hệ CSDL. Em hãy cho một vài ví dụ về những nguy cơ đó và hậu quả có thể xảy ra."@vi ;
+    ex:appearsOnPage ex:g11_page081 ;
+    ex:belongsToLesson ex:g11_topicF_lesson8 ;
+    ex:relatedTo ex:g11_conceptAnToanHeCSDL, ex:g11_conceptBaoMatThongTinCSDL .
+
+  ex:g11_topicF_l8_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 8 - Liên hệ an toàn và bảo mật"@vi ;
+    ex:hasRawText "Theo em, sự an toàn của hệ CSDL và bảo mật thông tin trong CSDL có liên quan đến nhau không? Em hãy giải thích ý kiến của mình."@vi ;
+    ex:appearsOnPage ex:g11_page082 ;
+    ex:belongsToLesson ex:g11_topicF_lesson8 ;
+    ex:relatedTo ex:g11_conceptAnToanHeCSDL, ex:g11_conceptBaoMatThongTinCSDL .
+
+  ex:g11_topicF_l8_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 8 chủ đề F lớp 11"@vi ;
+    ex:hasRawText "Nêu một trường hợp cụ thể về hệ CSDL không được an toàn hoặc lộ bí mật thông tin và đề xuất biện pháp tăng cường bảo vệ; giải thích vì sao cần đảm bảo an toàn hệ CSDL và bảo mật thông tin trong CSDL; nêu các biện pháp thông dụng bảo vệ sự an toàn cho hệ CSDL và mục đích của mã hoá dữ liệu."@vi ;
+    ex:appearsOnPage ex:g11_page083 ;
+    ex:belongsToLesson ex:g11_topicF_lesson8 ;
+    ex:relatedTo ex:g11_conceptAnToanHeCSDL, ex:g11_conceptBaoMatThongTinCSDL, ex:g11_conceptMaHoaDuLieu .
+
+  ex:g11_topicF_lesson1 ex:hasActivity ex:g11_topicF_l1_openingActivity, ex:g11_topicF_l1_activity1, ex:g11_topicF_l1_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicF_l1_review1 .
+  ex:g11_topicF_lesson2 ex:hasActivity ex:g11_topicF_l2_openingActivity, ex:g11_topicF_l2_activity1, ex:g11_topicF_l2_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicF_l2_review1 .
+  ex:g11_topicF_lesson3 ex:hasActivity ex:g11_topicF_l3_openingActivity, ex:g11_topicF_l3_activity1, ex:g11_topicF_l3_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicF_l3_review1 .
+  ex:g11_topicF_lesson4 ex:hasActivity ex:g11_topicF_l4_openingActivity, ex:g11_topicF_l4_activity1, ex:g11_topicF_l4_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicF_l4_review1 .
+  ex:g11_topicF_lesson5 ex:hasActivity ex:g11_topicF_l5_openingActivity, ex:g11_topicF_l5_activity1 ;
+    ex:hasReviewQuestion ex:g11_topicF_l5_review1 .
+  ex:g11_topicF_lesson6 ex:hasActivity ex:g11_topicF_l6_openingActivity, ex:g11_topicF_l6_activity1, ex:g11_topicF_l6_activity2, ex:g11_topicF_l6_practice1 ;
+    ex:hasReviewQuestion ex:g11_topicF_l6_review1 .
+  ex:g11_topicF_lesson7 ex:hasActivity ex:g11_topicF_l7_openingActivity, ex:g11_topicF_l7_activity1 ;
+    ex:hasReviewQuestion ex:g11_topicF_l7_review1 .
+  ex:g11_topicF_lesson8 ex:hasActivity ex:g11_topicF_l8_openingActivity, ex:g11_topicF_l8_activity1 ;
+    ex:hasReviewQuestion ex:g11_topicF_l8_review1 .
+}

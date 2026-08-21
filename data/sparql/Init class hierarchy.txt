@@ -1,0 +1,382 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# 0. ONTOLOGY HEADER
+###############################################################################
+
+INSERT DATA {
+  ex:Ontology a owl:Ontology ;
+    rdfs:label "Ontology for Informatics textbook ingestion"@en ;
+    rdfs:label "Bản thể cho nhập dữ liệu sách giáo khoa Tin học"@vi .
+};
+
+###############################################################################
+# 1. CLASS HIERARCHY
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # TOP-LEVEL CLASSES
+  ###########################################################################
+  ex:CurriculumEntity a owl:Class .
+  ex:DocumentUnit a owl:Class .
+  ex:LearningResource a owl:Class .
+  ex:KnowledgeConcept a owl:Class .
+  ex:AssessmentItem a owl:Class .
+  ex:GradeLevel a owl:Class .
+  ex:Textbook a owl:Class .
+  ex:Publisher a owl:Class .
+  ex:Author a owl:Class .
+
+  ###########################################################################
+  # CURRICULUM ENTITY HIERARCHY
+  ###########################################################################
+  ex:Topic a owl:Class ; rdfs:subClassOf ex:CurriculumEntity .
+  ex:Lesson a owl:Class ; rdfs:subClassOf ex:CurriculumEntity .
+  ex:Section a owl:Class ; rdfs:subClassOf ex:CurriculumEntity .
+  ex:Subsection a owl:Class ; rdfs:subClassOf ex:CurriculumEntity .
+  ex:Activity a owl:Class ; rdfs:subClassOf ex:CurriculumEntity .
+  ex:PracticeTask a owl:Class ; rdfs:subClassOf ex:CurriculumEntity .
+  ex:SummaryBox a owl:Class ; rdfs:subClassOf ex:CurriculumEntity .
+
+  ###########################################################################
+  # DOCUMENT UNIT HIERARCHY
+  ###########################################################################
+  ex:Page a owl:Class ; rdfs:subClassOf ex:DocumentUnit .
+  ex:Paragraph a owl:Class ; rdfs:subClassOf ex:DocumentUnit .
+  ex:Sentence a owl:Class ; rdfs:subClassOf ex:DocumentUnit .
+  ex:BulletItem a owl:Class ; rdfs:subClassOf ex:DocumentUnit .
+  ex:CaptionText a owl:Class ; rdfs:subClassOf ex:DocumentUnit .
+
+  ###########################################################################
+  # LEARNING RESOURCE HIERARCHY
+  ###########################################################################
+  ex:ImageResource a owl:Class ; rdfs:subClassOf ex:LearningResource .
+  ex:TextResource a owl:Class ; rdfs:subClassOf ex:LearningResource .
+  ex:CodeResource a owl:Class ; rdfs:subClassOf ex:LearningResource .
+  ex:AssessmentResource a owl:Class ; rdfs:subClassOf ex:LearningResource .
+  ex:Table a owl:Class ; rdfs:subClassOf ex:LearningResource .
+
+  ###########################################################################
+  # IMAGE RESOURCE HIERARCHY
+  ###########################################################################
+  ex:Figure a owl:Class ; rdfs:subClassOf ex:ImageResource .
+  ex:Diagram a owl:Class ; rdfs:subClassOf ex:ImageResource .
+  ex:Illustration a owl:Class ; rdfs:subClassOf ex:ImageResource .
+
+  ###########################################################################
+  # TEXT RESOURCE HIERARCHY
+  ###########################################################################
+  ex:DefinitionText a owl:Class ; rdfs:subClassOf ex:TextResource .
+  ex:ExampleText a owl:Class ; rdfs:subClassOf ex:TextResource .
+  ex:GlossaryEntry a owl:Class ; rdfs:subClassOf ex:TextResource .
+  ex:NoteBox a owl:Class ; rdfs:subClassOf ex:TextResource .
+  ex:SummaryText a owl:Class ; rdfs:subClassOf ex:TextResource .
+
+  ###########################################################################
+  # CODE RESOURCE HIERARCHY
+  ###########################################################################
+  ex:CodeSnippet a owl:Class ; rdfs:subClassOf ex:CodeResource .
+  ex:InputOutputExample a owl:Class ; rdfs:subClassOf ex:CodeResource .
+  ex:WorkedProgram a owl:Class ; rdfs:subClassOf ex:CodeResource .
+
+  ###########################################################################
+  # ASSESSMENT RESOURCE HIERARCHY
+  ###########################################################################
+  ex:ExerciseStatement a owl:Class ; rdfs:subClassOf ex:AssessmentResource .
+  ex:PracticalInstruction a owl:Class ; rdfs:subClassOf ex:AssessmentResource .
+  ex:ProjectTask a owl:Class ; rdfs:subClassOf ex:AssessmentResource .
+  ex:QuizItem a owl:Class ; rdfs:subClassOf ex:AssessmentResource .
+
+  ###########################################################################
+  # ASSESSMENT ITEM HIERARCHY
+  ###########################################################################
+  ex:Exercise a owl:Class ; rdfs:subClassOf ex:AssessmentItem .
+  ex:AppliedTask a owl:Class ; rdfs:subClassOf ex:AssessmentItem .
+  ex:PracticeExercise a owl:Class ; rdfs:subClassOf ex:AssessmentItem .
+  ex:QuizQuestion a owl:Class ; rdfs:subClassOf ex:AssessmentItem .
+  ex:ReviewQuestionItem a owl:Class ; rdfs:subClassOf ex:AssessmentItem .
+};
+
+###############################################################################
+# 2. OBJECT PROPERTIES
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # STRUCTURE / OWNERSHIP
+  ###########################################################################
+  ex:belongsToTopic a owl:ObjectProperty ;
+    rdfs:domain ex:CurriculumEntity ;
+    rdfs:range ex:Topic .
+
+  ex:hasTopic a owl:ObjectProperty ;
+    rdfs:domain ex:Textbook ;
+    rdfs:range ex:Topic .
+
+  ex:hasLesson a owl:ObjectProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range ex:Lesson .
+
+  ex:belongsToLesson a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ex:Lesson .
+
+  ex:hasSection a owl:ObjectProperty ;
+    rdfs:domain ex:Lesson ;
+    rdfs:range ex:Section .
+
+  ex:hasSubsection a owl:ObjectProperty ;
+    rdfs:domain ex:Section ;
+    rdfs:range ex:Subsection .
+
+  ex:belongsToSection a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ex:Section .
+
+  ex:hasPage a owl:ObjectProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range ex:Page .
+
+  ex:appearsOnPage a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ex:Page .
+
+  ex:hasParagraph a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ex:Paragraph .
+
+  ex:hasSentence a owl:ObjectProperty ;
+    rdfs:domain ex:Paragraph ;
+    rdfs:range ex:Sentence .
+
+  ex:hasBulletItem a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ex:BulletItem .
+
+  ex:hasFigure a owl:ObjectProperty ;
+    rdfs:domain ex:Page ;
+    rdfs:range ex:Figure .
+
+  ex:hasTable a owl:ObjectProperty ;
+    rdfs:domain ex:Page ;
+    rdfs:range ex:Table .
+
+  ex:hasSummary a owl:ObjectProperty ;
+    rdfs:domain ex:Lesson ;
+    rdfs:range ex:NoteBox .
+
+  ex:hasActivity a owl:ObjectProperty ;
+    rdfs:domain ex:Lesson ;
+    rdfs:range ex:Activity .
+
+  ex:hasReviewQuestion a owl:ObjectProperty ;
+    rdfs:domain ex:Lesson ;
+    rdfs:range ex:AssessmentItem .
+
+  ###########################################################################
+  # GRADE / TEXTBOOK MIGRATION MODEL
+  ###########################################################################
+  ex:belongsToGrade a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ex:GradeLevel .
+
+  ex:belongsToTextbook a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ex:Textbook .
+
+  ex:hasGradeLevel a owl:ObjectProperty ;
+    rdfs:domain ex:Textbook ;
+    rdfs:range ex:GradeLevel .
+
+  ex:publishedBy a owl:ObjectProperty ;
+    rdfs:domain ex:Textbook ;
+    rdfs:range ex:Publisher .
+
+  ex:hasAuthor a owl:ObjectProperty ;
+    rdfs:domain ex:Textbook ;
+    rdfs:range ex:Author .
+
+  ex:sameTopicAs a owl:ObjectProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range ex:Topic .
+
+  ###########################################################################
+  # KNOWLEDGE LINKS
+  ###########################################################################
+  ex:hasConcept a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range ex:KnowledgeConcept .
+
+  ex:mentionsConcept a owl:ObjectProperty ;
+    rdfs:domain ex:Paragraph ;
+    rdfs:range ex:KnowledgeConcept .
+
+  ex:illustratesConcept a owl:ObjectProperty ;
+    rdfs:domain ex:LearningResource ;
+    rdfs:range ex:KnowledgeConcept .
+
+  ex:explainsConcept a owl:ObjectProperty ;
+    rdfs:domain ex:TextResource ;
+    rdfs:range ex:KnowledgeConcept .
+
+  ###########################################################################
+  # SEMANTIC RELATIONS
+  ###########################################################################
+  ex:relatedTo a owl:ObjectProperty ;
+    rdfs:domain ex:KnowledgeConcept ;
+    rdfs:range ex:KnowledgeConcept .
+
+  ex:subConceptOf a owl:ObjectProperty ;
+    rdfs:domain ex:KnowledgeConcept ;
+    rdfs:range ex:KnowledgeConcept .
+
+  ex:partOf a owl:ObjectProperty ;
+    rdfs:domain ex:KnowledgeConcept ;
+    rdfs:range ex:KnowledgeConcept .
+
+  ###########################################################################
+  # ORDERING / SEQUENCE
+  ###########################################################################
+  ex:nextPage a owl:ObjectProperty ;
+    rdfs:domain ex:Page ;
+    rdfs:range ex:Page .
+
+  ex:previousPage a owl:ObjectProperty ;
+    rdfs:domain ex:Page ;
+    rdfs:range ex:Page .
+
+  ex:nextParagraph a owl:ObjectProperty ;
+    rdfs:domain ex:Paragraph ;
+    rdfs:range ex:Paragraph .
+
+  ex:previousParagraph a owl:ObjectProperty ;
+    rdfs:domain ex:Paragraph ;
+    rdfs:range ex:Paragraph .
+
+  ex:nextFigure a owl:ObjectProperty ;
+    rdfs:domain ex:Figure ;
+    rdfs:range ex:Figure .
+
+  ex:previousFigure a owl:ObjectProperty ;
+    rdfs:domain ex:Figure ;
+    rdfs:range ex:Figure .
+
+  ex:nextTable a owl:ObjectProperty ;
+    rdfs:domain ex:Table ;
+    rdfs:range ex:Table .
+
+  ex:previousTable a owl:ObjectProperty ;
+    rdfs:domain ex:Table ;
+    rdfs:range ex:Table .
+};
+
+###############################################################################
+# 3. DATA PROPERTIES
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # LABEL / TEXT
+  ###########################################################################
+  ex:hasTitle a owl:DatatypeProperty ;
+    rdfs:range rdf:langString .
+
+  ex:hasSubtitle a owl:DatatypeProperty ;
+    rdfs:range rdf:langString .
+
+  ex:hasCaption a owl:DatatypeProperty ;
+    rdfs:range rdf:langString .
+
+  ex:hasSummaryText a owl:DatatypeProperty ;
+    rdfs:range rdf:langString .
+
+  ex:hasDefinitionText a owl:DatatypeProperty ;
+    rdfs:range rdf:langString .
+
+  ex:hasRawText a owl:DatatypeProperty ;
+    rdfs:range rdf:langString .
+
+  ###########################################################################
+  # PAGE / ORDER / NUMBER
+  ###########################################################################
+  ex:hasStartPage a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:hasEndPage a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:lessonNumber a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:sectionOrder a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:hasPageNumber a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:hasPrintedPageNumber a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:pdfPageIndex a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:paragraphOrder a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:figureOrderOnPage a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:tableOrderOnPage a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:globalFigureOrder a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:globalTableOrder a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ###########################################################################
+  # GRADE / TEXTBOOK METADATA
+  ###########################################################################
+  ex:gradeNumber a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:authorOrder a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+  ex:sourceFileName a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+  ex:sourceFileType a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+  ex:sourceLanguage a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+};
+
+###############################################################################
+# 4. OPTIONAL LABELS FOR COMMONLY USED CLASSES / PROPERTIES
+###############################################################################
+
+INSERT DATA {
+  ex:CurriculumEntity rdfs:label "Curriculum Entity"@en .
+  ex:DocumentUnit rdfs:label "Document Unit"@en .
+  ex:LearningResource rdfs:label "Learning Resource"@en .
+  ex:KnowledgeConcept rdfs:label "Knowledge Concept"@en .
+  ex:AssessmentItem rdfs:label "Assessment Item"@en .
+  ex:GradeLevel rdfs:label "Grade Level"@en .
+  ex:Textbook rdfs:label "Textbook"@en .
+
+  ex:belongsToGrade rdfs:label "belongs to grade"@en .
+  ex:belongsToTextbook rdfs:label "belongs to textbook"@en .
+  ex:sameTopicAs rdfs:label "same topic as"@en .
+  ex:hasConcept rdfs:label "has concept"@en .
+  ex:mentionsConcept rdfs:label "mentions concept"@en .
+  ex:illustratesConcept rdfs:label "illustrates concept"@en .
+  ex:explainsConcept rdfs:label "explains concept"@en .
+};

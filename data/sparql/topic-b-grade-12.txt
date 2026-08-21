@@ -1,0 +1,1276 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 12 TOPIC B
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 and Grade 11.
+# Source file: sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-3.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g12_grade12 a ex:GradeLevel ;
+    rdfs:label "Lớp 12"@vi ;
+    ex:gradeNumber 12 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g12_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 12 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 12 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g12_grade12 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicB_shared a ex:Topic ;
+    rdfs:label "Chủ đề B (dùng chung các khối)"@vi ;
+    ex:hasTitle "Mạng máy tính và Internet"@vi .
+
+  ex:g12_topicB a ex:Topic ;
+    rdfs:label "Chủ đề B - Mạng máy tính và Internet"@vi ;
+    ex:hasTitle "Mạng máy tính và Internet"@vi ;
+    ex:hasSubtitle "Kết nối mạng"@vi ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicB_shared ;
+    ex:topicOrder 2 ;
+    ex:hasStartPage 14 ;
+    ex:hasEndPage 30 ;
+    ex:sourceFileName "sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-3.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g12_topicB_lesson1, ex:g12_topicB_lesson2, ex:g12_topicB_lesson3 ;
+    ex:hasPage ex:g12_page014, ex:g12_page015, ex:g12_page016, ex:g12_page017,
+               ex:g12_page018, ex:g12_page019, ex:g12_page020, ex:g12_page021,
+               ex:g12_page022, ex:g12_page023, ex:g12_page024, ex:g12_page025,
+               ex:g12_page026, ex:g12_page027, ex:g12_page028, ex:g12_page029,
+               ex:g12_page030 .
+
+  ex:g12_tinhoc_ungdung_canhdieu ex:hasTopic ex:g12_topicB .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g12_topicB_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Cơ sở về mạng máy tính"@vi ;
+    ex:hasTitle "Cơ sở về mạng máy tính"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g12_topicB ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 14 ;
+    ex:hasEndPage 19 ;
+    ex:hasSection ex:g12_topicB_l1s1, ex:g12_topicB_l1s2, ex:g12_topicB_l1s3 .
+
+  ex:g12_topicB_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Các giao thức mạng"@vi ;
+    ex:hasTitle "Các giao thức mạng"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g12_topicB ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 20 ;
+    ex:hasEndPage 24 ;
+    ex:hasSection ex:g12_topicB_l2s1, ex:g12_topicB_l2s2, ex:g12_topicB_l2s3 .
+
+  ex:g12_topicB_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Thực hành thiết lập kết nối và sử dụng mạng"@vi ;
+    ex:hasTitle "Thực hành thiết lập kết nối và sử dụng mạng"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g12_topicB ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 25 ;
+    ex:hasEndPage 30 ;
+    ex:hasSection ex:g12_topicB_l3s1, ex:g12_topicB_l3s2, ex:g12_topicB_l3s3,
+                  ex:g12_topicB_l3s4, ex:g12_topicB_l3s5 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g12_topicB_l1s1 a ex:Section ;
+    rdfs:label "Một số khái niệm mở đầu"@vi ;
+    ex:hasTitle "Một số khái niệm mở đầu"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 .
+
+  ex:g12_topicB_l1s2 a ex:Section ;
+    rdfs:label "Mạng cục bộ"@vi ;
+    ex:hasTitle "Mạng cục bộ"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 .
+
+  ex:g12_topicB_l1s3 a ex:Section ;
+    rdfs:label "Mạng diện rộng và Internet"@vi ;
+    ex:hasTitle "Mạng diện rộng và Internet"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 .
+
+  ex:g12_topicB_l2s1 a ex:Section ;
+    rdfs:label "Giao thức mạng"@vi ;
+    ex:hasTitle "Giao thức mạng"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 .
+
+  ex:g12_topicB_l2s2 a ex:Section ;
+    rdfs:label "Giao thức TCP"@vi ;
+    ex:hasTitle "Giao thức TCP"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 .
+
+  ex:g12_topicB_l2s3 a ex:Section ;
+    rdfs:label "Giao thức IP"@vi ;
+    ex:hasTitle "Giao thức IP"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 .
+
+  ex:g12_topicB_l3s1 a ex:Section ;
+    rdfs:label "Nhiệm vụ 1. Kết nối máy tính với Access Point"@vi ;
+    ex:hasTitle "Nhiệm vụ 1. Kết nối máy tính với Access Point"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 .
+
+  ex:g12_topicB_l3s2 a ex:Section ;
+    rdfs:label "Nhiệm vụ 2. Kết nối máy tính với Switch"@vi ;
+    ex:hasTitle "Nhiệm vụ 2. Kết nối máy tính với Switch"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 .
+
+  ex:g12_topicB_l3s3 a ex:Section ;
+    rdfs:label "Nhiệm vụ 3. Kết nối thiết bị thông minh vào mạng máy tính"@vi ;
+    ex:hasTitle "Nhiệm vụ 3. Kết nối thiết bị thông minh vào mạng máy tính"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 .
+
+  ex:g12_topicB_l3s4 a ex:Section ;
+    rdfs:label "Nhiệm vụ 4. Chia sẻ dữ liệu"@vi ;
+    ex:hasTitle "Nhiệm vụ 4. Chia sẻ dữ liệu"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 .
+
+  ex:g12_topicB_l3s5 a ex:Section ;
+    rdfs:label "Nhiệm vụ 5. Chia sẻ máy in"@vi ;
+    ex:hasTitle "Nhiệm vụ 5. Chia sẻ máy in"@vi ;
+    ex:sectionOrder 5 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g12_page014 a ex:Page ; ex:hasPageNumber 14 ; ex:hasPrintedPageNumber 14 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g12_topicB_lesson1 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page015 a ex:Page ; ex:hasPageNumber 15 ; ex:hasPrintedPageNumber 15 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g12_topicB_lesson1 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page016 a ex:Page ; ex:hasPageNumber 16 ; ex:hasPrintedPageNumber 16 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g12_topicB_lesson1 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page017 a ex:Page ; ex:hasPageNumber 17 ; ex:hasPrintedPageNumber 17 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g12_topicB_lesson1 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page018 a ex:Page ; ex:hasPageNumber 18 ; ex:hasPrintedPageNumber 18 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g12_topicB_lesson1 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page019 a ex:Page ; ex:hasPageNumber 19 ; ex:hasPrintedPageNumber 19 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g12_topicB_lesson1 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page020 a ex:Page ; ex:hasPageNumber 20 ; ex:hasPrintedPageNumber 20 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g12_topicB_lesson2 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page021 a ex:Page ; ex:hasPageNumber 21 ; ex:hasPrintedPageNumber 21 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g12_topicB_lesson2 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page022 a ex:Page ; ex:hasPageNumber 22 ; ex:hasPrintedPageNumber 22 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g12_topicB_lesson2 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page023 a ex:Page ; ex:hasPageNumber 23 ; ex:hasPrintedPageNumber 23 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g12_topicB_lesson2 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page024 a ex:Page ; ex:hasPageNumber 24 ; ex:hasPrintedPageNumber 24 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g12_topicB_lesson2 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page025 a ex:Page ; ex:hasPageNumber 25 ; ex:hasPrintedPageNumber 25 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g12_topicB_lesson3 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page026 a ex:Page ; ex:hasPageNumber 26 ; ex:hasPrintedPageNumber 26 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g12_topicB_lesson3 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page027 a ex:Page ; ex:hasPageNumber 27 ; ex:hasPrintedPageNumber 27 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g12_topicB_lesson3 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page028 a ex:Page ; ex:hasPageNumber 28 ; ex:hasPrintedPageNumber 28 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g12_topicB_lesson3 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page029 a ex:Page ; ex:hasPageNumber 29 ; ex:hasPrintedPageNumber 29 ; ex:pdfPageIndex 16 ; ex:belongsToLesson ex:g12_topicB_lesson3 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page030 a ex:Page ; ex:hasPageNumber 30 ; ex:hasPrintedPageNumber 30 ; ex:pdfPageIndex 17 ; ex:belongsToLesson ex:g12_topicB_lesson3 ; ex:belongsToTopic ex:g12_topicB ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g12_page013 ex:nextPage ex:g12_page014 .
+  ex:g12_page014 ex:previousPage ex:g12_page013 ; ex:nextPage ex:g12_page015 .
+  ex:g12_page015 ex:previousPage ex:g12_page014 ; ex:nextPage ex:g12_page016 .
+  ex:g12_page016 ex:previousPage ex:g12_page015 ; ex:nextPage ex:g12_page017 .
+  ex:g12_page017 ex:previousPage ex:g12_page016 ; ex:nextPage ex:g12_page018 .
+  ex:g12_page018 ex:previousPage ex:g12_page017 ; ex:nextPage ex:g12_page019 .
+  ex:g12_page019 ex:previousPage ex:g12_page018 ; ex:nextPage ex:g12_page020 .
+  ex:g12_page020 ex:previousPage ex:g12_page019 ; ex:nextPage ex:g12_page021 .
+  ex:g12_page021 ex:previousPage ex:g12_page020 ; ex:nextPage ex:g12_page022 .
+  ex:g12_page022 ex:previousPage ex:g12_page021 ; ex:nextPage ex:g12_page023 .
+  ex:g12_page023 ex:previousPage ex:g12_page022 ; ex:nextPage ex:g12_page024 .
+  ex:g12_page024 ex:previousPage ex:g12_page023 ; ex:nextPage ex:g12_page025 .
+  ex:g12_page025 ex:previousPage ex:g12_page024 ; ex:nextPage ex:g12_page026 .
+  ex:g12_page026 ex:previousPage ex:g12_page025 ; ex:nextPage ex:g12_page027 .
+  ex:g12_page027 ex:previousPage ex:g12_page026 ; ex:nextPage ex:g12_page028 .
+  ex:g12_page028 ex:previousPage ex:g12_page027 ; ex:nextPage ex:g12_page029 .
+  ex:g12_page029 ex:previousPage ex:g12_page028 ; ex:nextPage ex:g12_page030 .
+  ex:g12_page030 ex:previousPage ex:g12_page029 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g12_conceptMangMayTinhInternet a ex:KnowledgeConcept ; rdfs:label "Mạng máy tính và Internet"@vi .
+  ex:g12_conceptKetNoiMang a ex:KnowledgeConcept ; rdfs:label "Kết nối mạng"@vi .
+  ex:g12_conceptMangMayTinh a ex:KnowledgeConcept ; rdfs:label "Mạng máy tính"@vi .
+  ex:g12_conceptCapMang a ex:KnowledgeConcept ; rdfs:label "Cáp mạng"@vi .
+  ex:g12_conceptCapQuang a ex:KnowledgeConcept ; rdfs:label "Cáp quang"@vi .
+  ex:g12_conceptThietBiDauCuoi a ex:KnowledgeConcept ; rdfs:label "Thiết bị đầu cuối"@vi .
+  ex:g12_conceptThietBiMang a ex:KnowledgeConcept ; rdfs:label "Thiết bị mạng"@vi .
+  ex:g12_conceptNIC a ex:KnowledgeConcept ; rdfs:label "Bộ giao tiếp mạng"@vi .
+  ex:g12_conceptNetworkInterfaceCard a ex:KnowledgeConcept ; rdfs:label "Network Interface Card"@vi .
+  ex:g12_conceptDiaChiMAC a ex:KnowledgeConcept ; rdfs:label "Địa chỉ MAC"@vi .
+  ex:g12_conceptMangCucBo a ex:KnowledgeConcept ; rdfs:label "Mạng cục bộ"@vi .
+  ex:g12_conceptLAN a ex:KnowledgeConcept ; rdfs:label "Mạng LAN"@vi .
+  ex:g12_conceptSwitch a ex:KnowledgeConcept ; rdfs:label "Switch"@vi .
+  ex:g12_conceptGoiTin a ex:KnowledgeConcept ; rdfs:label "Gói tin"@vi .
+  ex:g12_conceptWLAN a ex:KnowledgeConcept ; rdfs:label "Mạng WLAN"@vi .
+  ex:g12_conceptWiFi a ex:KnowledgeConcept ; rdfs:label "Wi-Fi"@vi .
+  ex:g12_conceptAccessPoint a ex:KnowledgeConcept ; rdfs:label "Access Point"@vi .
+  ex:g12_conceptMangDienRong a ex:KnowledgeConcept ; rdfs:label "Mạng diện rộng"@vi .
+  ex:g12_conceptWAN a ex:KnowledgeConcept ; rdfs:label "Mạng WAN"@vi .
+  ex:g12_conceptInternet a ex:KnowledgeConcept ; rdfs:label "Internet"@vi .
+  ex:g12_conceptRouter a ex:KnowledgeConcept ; rdfs:label "Router"@vi .
+  ex:g12_conceptModem a ex:KnowledgeConcept ; rdfs:label "Modem"@vi .
+  ex:g12_conceptISP a ex:KnowledgeConcept ; rdfs:label "ISP - Internet Service Provider"@vi .
+  ex:g12_conceptGiaoThucMang a ex:KnowledgeConcept ; rdfs:label "Giao thức mạng"@vi .
+  ex:g12_conceptTCPIP a ex:KnowledgeConcept ; rdfs:label "Bộ giao thức TCP/IP"@vi .
+  ex:g12_conceptIP a ex:KnowledgeConcept ; rdfs:label "Giao thức IP"@vi .
+  ex:g12_conceptTCP a ex:KnowledgeConcept ; rdfs:label "Giao thức TCP"@vi .
+  ex:g12_conceptUDP a ex:KnowledgeConcept ; rdfs:label "Giao thức UDP"@vi .
+  ex:g12_conceptHTTP a ex:KnowledgeConcept ; rdfs:label "Giao thức HTTP"@vi .
+  ex:g12_conceptFTP a ex:KnowledgeConcept ; rdfs:label "Giao thức FTP"@vi .
+  ex:g12_conceptSMTP a ex:KnowledgeConcept ; rdfs:label "Giao thức SMTP"@vi .
+  ex:g12_conceptDinhDangChuanHoa a ex:KnowledgeConcept ; rdfs:label "Định dạng và chuẩn hoá"@vi .
+  ex:g12_conceptDinhTuyenChuyenTiep a ex:KnowledgeConcept ; rdfs:label "Định tuyến và chuyển tiếp"@vi .
+  ex:g12_conceptQuanLiLuuLuongMang a ex:KnowledgeConcept ; rdfs:label "Quản lí lưu lượng mạng"@vi .
+  ex:g12_conceptBaoMatDoTinCay a ex:KnowledgeConcept ; rdfs:label "Bảo mật và độ tin cậy"@vi .
+  ex:g12_conceptDiaChiIP a ex:KnowledgeConcept ; rdfs:label "Địa chỉ IP"@vi .
+  ex:g12_conceptIPv4 a ex:KnowledgeConcept ; rdfs:label "IPv4"@vi .
+  ex:g12_conceptIPv6 a ex:KnowledgeConcept ; rdfs:label "IPv6"@vi .
+  ex:g12_conceptNetworkID a ex:KnowledgeConcept ; rdfs:label "Network ID"@vi .
+  ex:g12_conceptHostID a ex:KnowledgeConcept ; rdfs:label "Host ID"@vi .
+  ex:g12_conceptTenMien a ex:KnowledgeConcept ; rdfs:label "Tên miền"@vi .
+  ex:g12_conceptDNS a ex:KnowledgeConcept ; rdfs:label "DNS - Domain Name System"@vi .
+  ex:g12_conceptThietLapKetNoiMang a ex:KnowledgeConcept ; rdfs:label "Thiết lập kết nối mạng"@vi .
+  ex:g12_conceptKetNoiMayTinhAP a ex:KnowledgeConcept ; rdfs:label "Kết nối máy tính với Access Point"@vi .
+  ex:g12_conceptKetNoiMayTinhSwitch a ex:KnowledgeConcept ; rdfs:label "Kết nối máy tính với Switch"@vi .
+  ex:g12_conceptKetNoiThietBiThongMinh a ex:KnowledgeConcept ; rdfs:label "Kết nối thiết bị thông minh vào mạng máy tính"@vi .
+  ex:g12_conceptDuLieuDiDong a ex:KnowledgeConcept ; rdfs:label "Dữ liệu di động"@vi .
+  ex:g12_conceptChiaSeDuLieu a ex:KnowledgeConcept ; rdfs:label "Chia sẻ dữ liệu"@vi .
+  ex:g12_conceptChiaSeMayIn a ex:KnowledgeConcept ; rdfs:label "Chia sẻ máy in"@vi .
+  ex:g12_conceptWindows10 a ex:KnowledgeConcept ; rdfs:label "Windows 10"@vi .
+  ex:g12_conceptControlPanel a ex:KnowledgeConcept ; rdfs:label "Control Panel"@vi .
+  ex:g12_conceptDevicesAndPrinters a ex:KnowledgeConcept ; rdfs:label "Devices and Printers"@vi .
+  ex:g12_conceptNetworkAndSharingCenter a ex:KnowledgeConcept ; rdfs:label "Network and Sharing Center"@vi .
+
+  ex:g12_topicB ex:hasConcept ex:g12_conceptMangMayTinh, ex:g12_conceptKetNoiMang,
+    ex:g12_conceptThietBiMang, ex:g12_conceptThietBiDauCuoi, ex:g12_conceptNIC,
+    ex:g12_conceptDiaChiMAC, ex:g12_conceptLAN, ex:g12_conceptWLAN,
+    ex:g12_conceptWAN, ex:g12_conceptInternet, ex:g12_conceptAccessPoint,
+    ex:g12_conceptSwitch, ex:g12_conceptRouter, ex:g12_conceptModem,
+    ex:g12_conceptISP, ex:g12_conceptGiaoThucMang, ex:g12_conceptTCPIP,
+    ex:g12_conceptTCP, ex:g12_conceptIP, ex:g12_conceptDiaChiIP,
+    ex:g12_conceptIPv4, ex:g12_conceptIPv6, ex:g12_conceptDNS,
+    ex:g12_conceptThietLapKetNoiMang, ex:g12_conceptChiaSeDuLieu,
+    ex:g12_conceptChiaSeMayIn .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g12_topicB_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ nêu được chức năng chính của một số thiết bị mạng thông dụng: Access Point, Switch, Modem, Router."@vi ;
+    ex:appearsOnPage ex:g12_page014 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 .
+
+  ex:g12_topicB_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ mô tả sơ lược được vai trò và chức năng của giao thức mạng nói chung và giao thức TCP/IP nói riêng."@vi ;
+    ex:appearsOnPage ex:g12_page020 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 .
+
+  ex:g12_topicB_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ kết nối được máy tính với các thiết bị Access Point, Switch; kết nối được thiết bị di động vào mạng máy tính; sử dụng được các chức năng mạng của hệ điều hành để chia sẻ tài nguyên."@vi ;
+    ex:appearsOnPage ex:g12_page025 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 .
+
+  ex:g12_topicB_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề B lớp 12"@vi ;
+    ex:hasSummaryText "Switch dùng để kết nối các thiết bị đầu cuối của người dùng với nhau và tạo thành mạng cục bộ. Router dùng để kết nối các mạng LAN với nhau, giữa mạng LAN và Internet. Access Point cung cấp kết nối mạng không dây. Modem kết nối các thiết bị mạng tới nhà cung cấp dịch vụ Internet để người dùng truy cập Internet."@vi ;
+    ex:appearsOnPage ex:g12_page019 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 .
+
+  ex:g12_topicB_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề B lớp 12"@vi ;
+    ex:hasSummaryText "Giao thức mạng là tập hợp quy tắc điều khiển truyền thông và trao đổi dữ liệu giữa các thiết bị. Một số giao thức Internet quan trọng gồm IP, TCP, UDP, HTTP, FTP, SMTP. TCP đảm bảo độ tin cậy khi kết nối và truyền dữ liệu; IP định dạng, định danh gói tin qua địa chỉ IP; địa chỉ IP gồm IPv4 và IPv6."@vi ;
+    ex:appearsOnPage ex:g12_page024 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 .
+
+  ex:g12_topicB_lesson1 ex:hasSummary ex:g12_topicB_l1_summary .
+  ex:g12_topicB_lesson2 ex:hasSummary ex:g12_topicB_l2_summary .
+
+  ###########################################################################
+  # Figures
+  ###########################################################################
+
+  ex:g12_topicB_fig_l1_networkAdapters a ex:Figure ;
+    rdfs:label "Hình 1. Một số bộ giao tiếp mạng"@vi ;
+    ex:hasCaption "Hình 1. Một số bộ giao tiếp mạng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g12_page014 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptNIC, ex:g12_conceptNetworkInterfaceCard .
+
+  ex:g12_topicB_fig_l1_connectionDetails a ex:Figure ;
+    rdfs:label "Hình 2. Thông tin kết nối mạng"@vi ;
+    ex:hasCaption "Hình 2. Thông tin kết nối mạng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g12_page015 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDiaChiMAC, ex:g12_conceptNIC .
+
+  ex:g12_topicB_fig_l1_lanExample a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ một mạng LAN"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ một mạng LAN"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g12_page016 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptLAN, ex:g12_conceptSwitch, ex:g12_conceptThietBiDauCuoi .
+
+  ex:g12_topicB_fig_l1_wlanExample a ex:Figure ;
+    rdfs:label "Hình 4. Ví dụ một mạng WLAN"@vi ;
+    ex:hasCaption "Hình 4. Ví dụ một mạng WLAN"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:g12_page017 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptWLAN, ex:g12_conceptWiFi, ex:g12_conceptAccessPoint .
+
+  ex:g12_topicB_fig_l1_routerForwarding a ex:Figure ;
+    rdfs:label "Hình 5. Ví dụ một định tuyến chuyển tiếp gói tin của Router"@vi ;
+    ex:hasCaption "Hình 5. Ví dụ một định tuyến chuyển tiếp gói tin của Router"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 5 ;
+    ex:appearsOnPage ex:g12_page018 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptRouter, ex:g12_conceptDinhTuyenChuyenTiep, ex:g12_conceptWAN .
+
+  ex:g12_topicB_fig_l1_internetConnection a ex:Figure ;
+    rdfs:label "Hình 6. Ví dụ một sơ đồ kết nối Internet"@vi ;
+    ex:hasCaption "Hình 6. Ví dụ một sơ đồ kết nối Internet"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 6 ;
+    ex:appearsOnPage ex:g12_page018 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptRouter, ex:g12_conceptModem, ex:g12_conceptISP, ex:g12_conceptInternet .
+
+  ex:g12_topicB_fig_l2_tcpExchange a ex:Figure ;
+    rdfs:label "Hình 1. Quá trình trao đổi dữ liệu theo giao thức TCP"@vi ;
+    ex:hasCaption "Hình 1. Quá trình trao đổi dữ liệu theo giao thức TCP"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 7 ;
+    ex:appearsOnPage ex:g12_page022 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTCP .
+
+  ex:g12_topicB_fig_l2_ipv4Structure a ex:Figure ;
+    rdfs:label "Hình 2. Ví dụ cấu trúc của một địa chỉ IPv4"@vi ;
+    ex:hasCaption "Hình 2. Ví dụ cấu trúc của một địa chỉ IPv4"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 8 ;
+    ex:appearsOnPage ex:g12_page023 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptIPv4, ex:g12_conceptNetworkID, ex:g12_conceptHostID .
+
+  ex:g12_topicB_fig_l2_domainStructure a ex:Figure ;
+    rdfs:label "Hình 3. Ví dụ cấu trúc của một tên miền"@vi ;
+    ex:hasCaption "Hình 3. Ví dụ cấu trúc của một tên miền"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 9 ;
+    ex:appearsOnPage ex:g12_page023 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTenMien, ex:g12_conceptDNS .
+
+  ex:g12_topicB_fig_l3_enableWifiPhone a ex:Figure ;
+    rdfs:label "Hình 1. Kích hoạt tính năng mạng Wi-Fi trên điện thoại thông minh"@vi ;
+    ex:hasCaption "Hình 1. Kích hoạt tính năng mạng Wi-Fi trên điện thoại thông minh"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 10 ;
+    ex:appearsOnPage ex:g12_page026 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptKetNoiThietBiThongMinh, ex:g12_conceptWiFi .
+
+  ex:g12_topicB_fig_l3_chooseWifiPassword a ex:Figure ;
+    rdfs:label "Hình 2. Chọn mạng Wi-Fi và nhập mật khẩu"@vi ;
+    ex:hasCaption "Hình 2. Chọn mạng Wi-Fi và nhập mật khẩu"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 11 ;
+    ex:appearsOnPage ex:g12_page026 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptKetNoiThietBiThongMinh, ex:g12_conceptWiFi .
+
+  ex:g12_topicB_fig_l3_mobileData a ex:Figure ;
+    rdfs:label "Hình 3. Truy cập Internet thông qua mạng di động"@vi ;
+    ex:hasCaption "Hình 3. Truy cập Internet thông qua mạng di động"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 12 ;
+    ex:appearsOnPage ex:g12_page027 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDuLieuDiDong, ex:g12_conceptInternet .
+
+  ex:g12_topicB_fig_l3_shareDriveDialog a ex:Figure ;
+    rdfs:label "Hình 4. Mở hộp thoại chia sẻ ổ D"@vi ;
+    ex:hasCaption "Hình 4. Mở hộp thoại chia sẻ ổ D"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 13 ;
+    ex:appearsOnPage ex:g12_page028 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptChiaSeDuLieu, ex:g12_conceptWindows10 .
+
+  ex:g12_topicB_fig_l3_permissionsEveryone a ex:Figure ;
+    rdfs:label "Hình 5. Cấp quyền truy cập cho mọi người"@vi ;
+    ex:hasCaption "Hình 5. Cấp quyền truy cập cho mọi người"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 14 ;
+    ex:appearsOnPage ex:g12_page028 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptChiaSeDuLieu .
+
+  ex:g12_topicB_fig_l3_devicesPrinters a ex:Figure ;
+    rdfs:label "Hình 6. Hiển thị máy in trong Devices and Printers"@vi ;
+    ex:hasCaption "Hình 6. Hiển thị máy in trong Devices and Printers"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 15 ;
+    ex:appearsOnPage ex:g12_page029 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptDevicesAndPrinters, ex:g12_conceptChiaSeMayIn .
+
+  ex:g12_topicB_fig_l3_sharePrinterSettings a ex:Figure ;
+    rdfs:label "Hình 7. Cài đặt chia sẻ máy in"@vi ;
+    ex:hasCaption "Hình 7. Cài đặt chia sẻ máy in"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 16 ;
+    ex:appearsOnPage ex:g12_page029 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptChiaSeMayIn .
+
+  ex:g12_topicB_fig_l3_addPrinterWindow a ex:Figure ;
+    rdfs:label "Hình 8. Cửa sổ thêm máy in"@vi ;
+    ex:hasCaption "Hình 8. Cửa sổ thêm máy in"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 17 ;
+    ex:appearsOnPage ex:g12_page029 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptChiaSeMayIn .
+
+  ex:g12_topicB_fig_l3_findSharedPrinter a ex:Figure ;
+    rdfs:label "Hình 9. Tìm máy in đã được chia sẻ"@vi ;
+    ex:hasCaption "Hình 9. Tìm máy in đã được chia sẻ"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 18 ;
+    ex:appearsOnPage ex:g12_page030 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptChiaSeMayIn .
+
+  ex:g12_topicB_fig_l3_selectSharedComputer a ex:Figure ;
+    rdfs:label "Hình 10a. Chọn máy tính đã chia sẻ"@vi ;
+    ex:hasCaption "Hình 10a. Chọn máy tính đã chia sẻ"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 19 ;
+    ex:appearsOnPage ex:g12_page030 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptChiaSeMayIn, ex:g12_conceptChiaSeDuLieu .
+
+  ex:g12_topicB_fig_l3_selectSharedPrinter a ex:Figure ;
+    rdfs:label "Hình 10b. Chọn máy in đã chia sẻ"@vi ;
+    ex:hasCaption "Hình 10b. Chọn máy in đã chia sẻ"@vi ;
+    ex:figureOrderOnPage 3 ;
+    ex:globalFigureOrder 20 ;
+    ex:appearsOnPage ex:g12_page030 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptChiaSeMayIn .
+
+  ex:g12_page014 ex:hasFigure ex:g12_topicB_fig_l1_networkAdapters .
+  ex:g12_page015 ex:hasFigure ex:g12_topicB_fig_l1_connectionDetails .
+  ex:g12_page016 ex:hasFigure ex:g12_topicB_fig_l1_lanExample .
+  ex:g12_page017 ex:hasFigure ex:g12_topicB_fig_l1_wlanExample .
+  ex:g12_page018 ex:hasFigure ex:g12_topicB_fig_l1_routerForwarding, ex:g12_topicB_fig_l1_internetConnection .
+  ex:g12_page022 ex:hasFigure ex:g12_topicB_fig_l2_tcpExchange .
+  ex:g12_page023 ex:hasFigure ex:g12_topicB_fig_l2_ipv4Structure, ex:g12_topicB_fig_l2_domainStructure .
+  ex:g12_page026 ex:hasFigure ex:g12_topicB_fig_l3_enableWifiPhone, ex:g12_topicB_fig_l3_chooseWifiPassword .
+  ex:g12_page027 ex:hasFigure ex:g12_topicB_fig_l3_mobileData .
+  ex:g12_page028 ex:hasFigure ex:g12_topicB_fig_l3_shareDriveDialog, ex:g12_topicB_fig_l3_permissionsEveryone .
+  ex:g12_page029 ex:hasFigure ex:g12_topicB_fig_l3_devicesPrinters, ex:g12_topicB_fig_l3_sharePrinterSettings, ex:g12_topicB_fig_l3_addPrinterWindow .
+  ex:g12_page030 ex:hasFigure ex:g12_topicB_fig_l3_findSharedPrinter, ex:g12_topicB_fig_l3_selectSharedComputer, ex:g12_topicB_fig_l3_selectSharedPrinter .
+
+  ###########################################################################
+  # Figure ordering
+  ###########################################################################
+
+  ex:g12_topicB_fig_l1_networkAdapters ex:nextFigure ex:g12_topicB_fig_l1_connectionDetails .
+  ex:g12_topicB_fig_l1_connectionDetails ex:previousFigure ex:g12_topicB_fig_l1_networkAdapters ; ex:nextFigure ex:g12_topicB_fig_l1_lanExample .
+  ex:g12_topicB_fig_l1_lanExample ex:previousFigure ex:g12_topicB_fig_l1_connectionDetails ; ex:nextFigure ex:g12_topicB_fig_l1_wlanExample .
+  ex:g12_topicB_fig_l1_wlanExample ex:previousFigure ex:g12_topicB_fig_l1_lanExample ; ex:nextFigure ex:g12_topicB_fig_l1_routerForwarding .
+  ex:g12_topicB_fig_l1_routerForwarding ex:previousFigure ex:g12_topicB_fig_l1_wlanExample ; ex:nextFigure ex:g12_topicB_fig_l1_internetConnection .
+  ex:g12_topicB_fig_l1_internetConnection ex:previousFigure ex:g12_topicB_fig_l1_routerForwarding ; ex:nextFigure ex:g12_topicB_fig_l2_tcpExchange .
+  ex:g12_topicB_fig_l2_tcpExchange ex:previousFigure ex:g12_topicB_fig_l1_internetConnection ; ex:nextFigure ex:g12_topicB_fig_l2_ipv4Structure .
+  ex:g12_topicB_fig_l2_ipv4Structure ex:previousFigure ex:g12_topicB_fig_l2_tcpExchange ; ex:nextFigure ex:g12_topicB_fig_l2_domainStructure .
+  ex:g12_topicB_fig_l2_domainStructure ex:previousFigure ex:g12_topicB_fig_l2_ipv4Structure ; ex:nextFigure ex:g12_topicB_fig_l3_enableWifiPhone .
+  ex:g12_topicB_fig_l3_enableWifiPhone ex:previousFigure ex:g12_topicB_fig_l2_domainStructure ; ex:nextFigure ex:g12_topicB_fig_l3_chooseWifiPassword .
+  ex:g12_topicB_fig_l3_chooseWifiPassword ex:previousFigure ex:g12_topicB_fig_l3_enableWifiPhone ; ex:nextFigure ex:g12_topicB_fig_l3_mobileData .
+  ex:g12_topicB_fig_l3_mobileData ex:previousFigure ex:g12_topicB_fig_l3_chooseWifiPassword ; ex:nextFigure ex:g12_topicB_fig_l3_shareDriveDialog .
+  ex:g12_topicB_fig_l3_shareDriveDialog ex:previousFigure ex:g12_topicB_fig_l3_mobileData ; ex:nextFigure ex:g12_topicB_fig_l3_permissionsEveryone .
+  ex:g12_topicB_fig_l3_permissionsEveryone ex:previousFigure ex:g12_topicB_fig_l3_shareDriveDialog ; ex:nextFigure ex:g12_topicB_fig_l3_devicesPrinters .
+  ex:g12_topicB_fig_l3_devicesPrinters ex:previousFigure ex:g12_topicB_fig_l3_permissionsEveryone ; ex:nextFigure ex:g12_topicB_fig_l3_sharePrinterSettings .
+  ex:g12_topicB_fig_l3_sharePrinterSettings ex:previousFigure ex:g12_topicB_fig_l3_devicesPrinters ; ex:nextFigure ex:g12_topicB_fig_l3_addPrinterWindow .
+  ex:g12_topicB_fig_l3_addPrinterWindow ex:previousFigure ex:g12_topicB_fig_l3_sharePrinterSettings ; ex:nextFigure ex:g12_topicB_fig_l3_findSharedPrinter .
+  ex:g12_topicB_fig_l3_findSharedPrinter ex:previousFigure ex:g12_topicB_fig_l3_addPrinterWindow ; ex:nextFigure ex:g12_topicB_fig_l3_selectSharedComputer .
+  ex:g12_topicB_fig_l3_selectSharedComputer ex:previousFigure ex:g12_topicB_fig_l3_findSharedPrinter ; ex:nextFigure ex:g12_topicB_fig_l3_selectSharedPrinter .
+  ex:g12_topicB_fig_l3_selectSharedPrinter ex:previousFigure ex:g12_topicB_fig_l3_selectSharedComputer .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g12_topicB_def_computerNetwork a ex:DefinitionText ;
+    rdfs:label "Mạng máy tính"@vi ;
+    ex:hasDefinitionText "Mạng máy tính là một hệ thống các thiết bị số được kết nối với nhau để truyền dữ liệu và trao đổi thông tin."@vi ;
+    ex:appearsOnPage ex:g12_page014 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptMangMayTinh .
+
+  ex:g12_topicB_def_networkCable a ex:DefinitionText ;
+    rdfs:label "Cáp mạng"@vi ;
+    ex:hasDefinitionText "Cáp mạng là một loại dây dẫn có vỏ bọc bảo vệ bên ngoài và bên trong có dây dẫn kim loại để truyền tín hiệu điện; cáp quang dùng dây dẫn trong suốt bằng nhựa hoặc thuỷ tinh để truyền tín hiệu ánh sáng."@vi ;
+    ex:appearsOnPage ex:g12_page014 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptCapMang, ex:g12_conceptCapQuang .
+
+  ex:g12_topicB_def_endDevice a ex:DefinitionText ;
+    rdfs:label "Thiết bị đầu cuối"@vi ;
+    ex:hasDefinitionText "Thiết bị đầu cuối bao gồm máy tính cá nhân, điện thoại thông minh, máy tính bảng, máy in và các thiết bị mà người dùng kết nối tới mạng."@vi ;
+    ex:appearsOnPage ex:g12_page014 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptThietBiDauCuoi .
+
+  ex:g12_topicB_def_nic a ex:DefinitionText ;
+    rdfs:label "Bộ giao tiếp mạng"@vi ;
+    ex:hasDefinitionText "Bộ giao tiếp mạng là thành phần không thể thiếu trong thiết bị số muốn kết nối với mạng máy tính, dùng để truyền và nhận dữ liệu qua cáp mạng hoặc sóng vô tuyến."@vi ;
+    ex:appearsOnPage ex:g12_page015 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptNIC, ex:g12_conceptNetworkInterfaceCard .
+
+  ex:g12_topicB_def_mac a ex:DefinitionText ;
+    rdfs:label "Địa chỉ MAC"@vi ;
+    ex:hasDefinitionText "Địa chỉ MAC là địa chỉ duy nhất gắn với mỗi bộ giao tiếp mạng, dùng để đảm bảo tính duy nhất và định danh thiết bị trong mạng máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page015 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptDiaChiMAC .
+
+  ex:g12_topicB_def_lan a ex:DefinitionText ;
+    rdfs:label "Mạng LAN"@vi ;
+    ex:hasDefinitionText "Mạng LAN là mạng cục bộ kết nối máy tính và các thiết bị số trong phạm vi nhỏ như toà nhà, cơ quan, trường học hoặc nhà riêng."@vi ;
+    ex:appearsOnPage ex:g12_page016 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptLAN, ex:g12_conceptMangCucBo .
+
+  ex:g12_topicB_def_switch a ex:DefinitionText ;
+    rdfs:label "Switch"@vi ;
+    ex:hasDefinitionText "Switch là bộ chuyển mạch có nhiều cổng mạng dùng để kết nối và chuyển tiếp dữ liệu giữa các thiết bị trong cùng một mạng LAN."@vi ;
+    ex:appearsOnPage ex:g12_page016 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptSwitch .
+
+  ex:g12_topicB_def_wlan a ex:DefinitionText ;
+    rdfs:label "Mạng WLAN"@vi ;
+    ex:hasDefinitionText "Mạng WLAN là mạng cục bộ không dây sử dụng công nghệ không dây, cho phép các thiết bị kết nối với mạng và truy cập tài nguyên mạng mà không cần dùng dây cáp."@vi ;
+    ex:appearsOnPage ex:g12_page016 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptWLAN, ex:g12_conceptWiFi .
+
+  ex:g12_topicB_def_accessPoint a ex:DefinitionText ;
+    rdfs:label "Access Point"@vi ;
+    ex:hasDefinitionText "Access Point là điểm truy cập không dây dùng để cung cấp kết nối không dây cho các thiết bị trong mạng cục bộ; một số AP có thể kết nối có dây và hoạt động tương tự Switch nhưng có thêm khả năng truyền nhận dữ liệu không dây."@vi ;
+    ex:appearsOnPage ex:g12_page017 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptAccessPoint .
+
+  ex:g12_topicB_def_wan a ex:DefinitionText ;
+    rdfs:label "Mạng WAN"@vi ;
+    ex:hasDefinitionText "Mạng diện rộng WAN là mạng máy tính có phạm vi địa lí lớn, kết nối và truyền tải dữ liệu giữa các mạng LAN với các thiết bị khác nhau trong khu vực lớn như thành phố, quốc gia hoặc nhiều quốc gia."@vi ;
+    ex:appearsOnPage ex:g12_page017 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptWAN, ex:g12_conceptMangDienRong .
+
+  ex:g12_topicB_def_internet a ex:DefinitionText ;
+    rdfs:label "Internet"@vi ;
+    ex:hasDefinitionText "Internet là một mạng WAN đặc biệt cho phép các máy tính và thiết bị khác truy cập và trao đổi thông tin với nhau trên toàn thế giới."@vi ;
+    ex:appearsOnPage ex:g12_page017 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptInternet .
+
+  ex:g12_topicB_def_router a ex:DefinitionText ;
+    rdfs:label "Router"@vi ;
+    ex:hasDefinitionText "Router là thiết bị quan trọng trong mạng WAN, có chức năng chuyển tiếp dữ liệu giữa các mạng LAN khác nhau và xác định đường đi đúng để đưa gói tin đến địa chỉ đích."@vi ;
+    ex:appearsOnPage ex:g12_page018 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptRouter .
+
+  ex:g12_topicB_def_modem a ex:DefinitionText ;
+    rdfs:label "Modem"@vi ;
+    ex:hasDefinitionText "Modem là bộ điều chế và giải điều chế, dùng để biến đổi tín hiệu số thành tín hiệu tương tự và ngược lại, hỗ trợ truy cập Internet qua nhà cung cấp dịch vụ Internet."@vi ;
+    ex:appearsOnPage ex:g12_page018 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptModem .
+
+  ex:g12_topicB_def_isp a ex:DefinitionText ;
+    rdfs:label "ISP"@vi ;
+    ex:hasDefinitionText "ISP là nhà cung cấp dịch vụ truy cập Internet cho người dùng kết nối các thiết bị mạng với Internet và cung cấp các dịch vụ liên quan đến Internet."@vi ;
+    ex:appearsOnPage ex:g12_page019 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:explainsConcept ex:g12_conceptISP .
+
+  ex:g12_topicB_def_networkProtocol a ex:DefinitionText ;
+    rdfs:label "Giao thức mạng"@vi ;
+    ex:hasDefinitionText "Giao thức mạng là tập hợp các quy tắc được sử dụng để điều khiển truyền thông và trao đổi dữ liệu giữa các thiết bị trong mạng máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page020 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:explainsConcept ex:g12_conceptGiaoThucMang .
+
+  ex:g12_topicB_def_tcp a ex:DefinitionText ;
+    rdfs:label "Giao thức TCP"@vi ;
+    ex:hasDefinitionText "Giao thức TCP đảm bảo việc truyền dữ liệu ổn định và đúng thứ tự giữa các ứng dụng trên mạng, có cơ chế kiểm tra lỗi, khôi phục và điều chỉnh tốc độ truyền dữ liệu."@vi ;
+    ex:appearsOnPage ex:g12_page021 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:explainsConcept ex:g12_conceptTCP .
+
+  ex:g12_topicB_def_ip a ex:DefinitionText ;
+    rdfs:label "Giao thức IP"@vi ;
+    ex:hasDefinitionText "Giao thức IP là giao thức định tuyến và định danh các gói tin để có thể chuyển tiếp gói tin qua các mạng đến đúng địa chỉ máy nhận."@vi ;
+    ex:appearsOnPage ex:g12_page022 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:explainsConcept ex:g12_conceptIP .
+
+  ex:g12_topicB_def_ipAddress a ex:DefinitionText ;
+    rdfs:label "Địa chỉ IP"@vi ;
+    ex:hasDefinitionText "Địa chỉ IP là địa chỉ số được gán cho mỗi thiết bị khi kết nối vào mạng máy tính, dùng để định danh thiết bị trong mạng."@vi ;
+    ex:appearsOnPage ex:g12_page022 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:explainsConcept ex:g12_conceptDiaChiIP .
+
+  ex:g12_topicB_def_dns a ex:DefinitionText ;
+    rdfs:label "DNS"@vi ;
+    ex:hasDefinitionText "Hệ thống tên miền DNS định danh các máy tính trong mạng bằng những chữ gợi nhớ, tạo thuận lợi cho người dùng Internet."@vi ;
+    ex:appearsOnPage ex:g12_page023 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:explainsConcept ex:g12_conceptDNS, ex:g12_conceptTenMien .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g12_topicB_p014_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Chủ đề B - Mạng máy tính và Internet có nội dung Kết nối mạng. Bài 1 giới thiệu cơ sở về mạng máy tính và yêu cầu học sinh nêu được chức năng chính của Access Point, Switch, Modem và Router."@vi ;
+    ex:appearsOnPage ex:g12_page014 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s1 .
+
+  ex:g12_topicB_p014_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Mạng máy tính là hệ thống các thiết bị số được kết nối để truyền dữ liệu và trao đổi thông tin. Thiết bị có thể kết nối bằng cáp mạng có dây hoặc bằng sóng vô tuyến. Thiết bị trong mạng có thể chia thành thiết bị mạng và thiết bị đầu cuối."@vi ;
+    ex:appearsOnPage ex:g12_page014 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s1 .
+
+  ex:g12_topicB_p015_01 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Để kết nối mạng, máy tính hoặc thiết bị số cần có bộ giao tiếp mạng NIC. Mỗi bộ giao tiếp mạng có một địa chỉ MAC duy nhất, thường biểu diễn bằng sáu cặp số hệ thập lục phân, dùng để định danh thiết bị trong mạng."@vi ;
+    ex:appearsOnPage ex:g12_page015 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s1 .
+
+  ex:g12_topicB_p016_01 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Mạng LAN là mạng cục bộ kết nối máy tính và thiết bị số trong phạm vi nhỏ như toà nhà, cơ quan, trường học hoặc nhà riêng. Switch là bộ chuyển mạch dùng để kết nối và chuyển tiếp dữ liệu giữa các thiết bị trong cùng một mạng LAN."@vi ;
+    ex:appearsOnPage ex:g12_page016 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s2 .
+
+  ex:g12_topicB_p016_02 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Khi dữ liệu truyền qua mạng máy tính, dữ liệu được chia thành các gói tin. Switch xây dựng bảng dữ liệu các tên cổng và địa chỉ MAC của máy tính tương ứng để chuyển tiếp gói tin tới đúng thiết bị nhận."@vi ;
+    ex:appearsOnPage ex:g12_page016 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s2 .
+
+  ex:g12_topicB_p016_03 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Mạng WLAN là mạng cục bộ không dây, sử dụng công nghệ không dây để cho phép các thiết bị như máy tính, điện thoại thông minh, máy tính bảng và thiết bị thông minh khác kết nối vào mạng và truy cập tài nguyên mạng."@vi ;
+    ex:appearsOnPage ex:g12_page016 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s2 .
+
+  ex:g12_topicB_p017_01 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "Access Point là điểm truy cập không dây dùng để cung cấp kết nối không dây cho thiết bị trong mạng cục bộ. Một số AP có cổng kết nối có dây, có thể cung cấp mạng LAN cho cả thiết bị có dây và không dây."@vi ;
+    ex:appearsOnPage ex:g12_page017 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s2 .
+
+  ex:g12_topicB_p017_02 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "Mạng diện rộng WAN là mạng máy tính có phạm vi địa lí lớn, kết nối và truyền dữ liệu giữa các mạng LAN trong khu vực lớn như thành phố, quốc gia hoặc nhiều quốc gia. Internet là một mạng WAN đặc biệt cho phép các thiết bị trao đổi thông tin trên toàn thế giới."@vi ;
+    ex:appearsOnPage ex:g12_page017 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s3 .
+
+  ex:g12_topicB_p018_01 a ex:Paragraph ;
+    ex:paragraphOrder 9 ;
+    ex:hasRawText "Router là thiết bị quan trọng trong mạng WAN, có chức năng chuyển tiếp dữ liệu giữa các mạng LAN khác nhau và xác định đường đi đúng để đưa gói tin đến địa chỉ đích. Router tính toán đường đi tối ưu dựa trên độ trễ, băng thông, chi phí, khoảng cách và các tiêu chí khác."@vi ;
+    ex:appearsOnPage ex:g12_page018 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s3 .
+
+  ex:g12_topicB_p018_02 a ex:Paragraph ;
+    ex:paragraphOrder 10 ;
+    ex:hasRawText "Modem là bộ điều chế và giải điều chế để biến đổi tín hiệu số thành tín hiệu tương tự và ngược lại. Modem được sử dụng để truy cập Internet thông qua nhà cung cấp dịch vụ Internet."@vi ;
+    ex:appearsOnPage ex:g12_page018 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s3 .
+
+  ex:g12_topicB_p019_01 a ex:Paragraph ;
+    ex:paragraphOrder 11 ;
+    ex:hasRawText "Ngày nay, nhà cung cấp dịch vụ Internet thường cung cấp thiết bị kết hợp chức năng Modem, Router và Access Point cho gia đình khi đăng kí thuê bao Internet. ISP là nhà cung cấp dịch vụ truy cập Internet và các dịch vụ liên quan."@vi ;
+    ex:appearsOnPage ex:g12_page019 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:belongsToSection ex:g12_topicB_l1s3 .
+
+  ex:g12_topicB_p020_01 a ex:Paragraph ;
+    ex:paragraphOrder 12 ;
+    ex:hasRawText "Bài 2 giới thiệu các giao thức mạng, trong đó học sinh cần mô tả được vai trò và chức năng của giao thức mạng nói chung và giao thức TCP/IP nói riêng."@vi ;
+    ex:appearsOnPage ex:g12_page020 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s1 .
+
+  ex:g12_topicB_p020_02 a ex:Paragraph ;
+    ex:paragraphOrder 13 ;
+    ex:hasRawText "Giao thức mạng là tập hợp các quy tắc dùng để điều khiển truyền thông và trao đổi dữ liệu giữa các thiết bị trong mạng. Các yêu cầu gồm định dạng và chuẩn hoá, định tuyến và chuyển tiếp, quản lí lưu lượng mạng, đảm bảo bảo mật và độ tin cậy, tích hợp dịch vụ và ứng dụng."@vi ;
+    ex:appearsOnPage ex:g12_page020 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s1 .
+
+  ex:g12_topicB_p021_01 a ex:Paragraph ;
+    ex:paragraphOrder 14 ;
+    ex:hasRawText "Một số giao thức mạng quan trọng gồm IP, TCP, UDP, HTTP, FTP và SMTP. IP là giao thức cốt lõi trong TCP/IP; TCP và UDP thuộc nhóm giao thức vận chuyển; HTTP dùng cho truyền tải trang web; FTP dùng truyền tải tệp; SMTP dùng gửi và nhận thư điện tử."@vi ;
+    ex:appearsOnPage ex:g12_page021 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s1 .
+
+  ex:g12_topicB_p021_02 a ex:Paragraph ;
+    ex:paragraphOrder 15 ;
+    ex:hasRawText "TCP đảm bảo việc truyền dữ liệu ổn định và đúng thứ tự giữa các ứng dụng trên mạng, có cơ chế kiểm tra lỗi, khôi phục và điều chỉnh tốc độ truyền dữ liệu. TCP phù hợp truyền thông tin như hình ảnh tĩnh, tệp dữ liệu và trang web."@vi ;
+    ex:appearsOnPage ex:g12_page021 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s2 .
+
+  ex:g12_topicB_p022_01 a ex:Paragraph ;
+    ex:paragraphOrder 16 ;
+    ex:hasRawText "Quá trình trao đổi dữ liệu theo TCP gồm thiết lập kết nối, trao đổi dữ liệu và kết thúc kết nối. Dữ liệu được chia thành các gói tin, có số thứ tự và số xác nhận để bảo đảm dữ liệu được truyền tin cậy."@vi ;
+    ex:appearsOnPage ex:g12_page022 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s2 .
+
+  ex:g12_topicB_p022_02 a ex:Paragraph ;
+    ex:paragraphOrder 17 ;
+    ex:hasRawText "Giao thức IP định tuyến và định danh các gói tin để chuyển tiếp qua các mạng đến đúng địa chỉ máy nhận. Trước khi gửi, gói tin được gắn thêm địa chỉ IP của máy gửi và máy nhận."@vi ;
+    ex:appearsOnPage ex:g12_page022 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s3 .
+
+  ex:g12_topicB_p022_03 a ex:Paragraph ;
+    ex:paragraphOrder 18 ;
+    ex:hasRawText "Địa chỉ IP là địa chỉ số được gán cho mỗi thiết bị khi kết nối vào mạng máy tính. Hiện nay, địa chỉ IP có hai phiên bản chính là IPv4 và IPv6."@vi ;
+    ex:appearsOnPage ex:g12_page022 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s3 .
+
+  ex:g12_topicB_p023_01 a ex:Paragraph ;
+    ex:paragraphOrder 19 ;
+    ex:hasRawText "IPv4 là phiên bản phổ biến, địa chỉ IPv4 là chuỗi 32 bit nhị phân chia thành bốn cụm 8 bit, thường biểu diễn dưới dạng thập phân và ngăn cách bằng dấu chấm. IPv6 là phiên bản mới hơn, dài 128 bit và thường biểu diễn ở dạng thập lục phân."@vi ;
+    ex:appearsOnPage ex:g12_page023 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s3 .
+
+  ex:g12_topicB_p023_02 a ex:Paragraph ;
+    ex:paragraphOrder 20 ;
+    ex:hasRawText "Một địa chỉ IPv4 gồm hai phần là địa chỉ mạng Network ID và địa chỉ máy Host ID. Địa chỉ mạng xác định mạng mà thiết bị đang kết nối, còn địa chỉ máy xác định thiết bị cụ thể trong mạng."@vi ;
+    ex:appearsOnPage ex:g12_page023 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s3 .
+
+  ex:g12_topicB_p023_03 a ex:Paragraph ;
+    ex:paragraphOrder 21 ;
+    ex:hasRawText "Mỗi trang web tương ứng với một địa chỉ IP trong mạng Internet. Vì người dùng khó nhớ địa chỉ IP, hệ thống tên miền DNS định danh máy tính trong mạng bằng các chữ gợi nhớ. Tên miền được phân thành các cấp và viết cách nhau bằng dấu chấm."@vi ;
+    ex:appearsOnPage ex:g12_page023 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s3 .
+
+  ex:g12_topicB_p024_01 a ex:Paragraph ;
+    ex:paragraphOrder 22 ;
+    ex:hasRawText "Tên miền cấp ba đứng trước tên miền cấp hai, còn tên miền phụ là phần thông tin mở rộng được thêm vào đầu tên miền của mỗi trang web. Bài học kết thúc bằng câu hỏi về giao thức mạng, TCP, IP, địa chỉ IP và phần tóm tắt kiến thức."@vi ;
+    ex:appearsOnPage ex:g12_page024 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:belongsToSection ex:g12_topicB_l2s3 .
+
+  ex:g12_topicB_p025_01 a ex:Paragraph ;
+    ex:paragraphOrder 23 ;
+    ex:hasRawText "Bài 3 là bài thực hành thiết lập kết nối và sử dụng mạng. Học sinh cần kết nối máy tính với Access Point và Switch, kết nối thiết bị di động vào mạng máy tính và sử dụng chức năng mạng của hệ điều hành để chia sẻ tài nguyên."@vi ;
+    ex:appearsOnPage ex:g12_page025 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s1 .
+
+  ex:g12_topicB_p025_02 a ex:Paragraph ;
+    ex:paragraphOrder 24 ;
+    ex:hasRawText "Nhiệm vụ 1 yêu cầu kết nối máy tính với Access Point để truy cập Internet. Học sinh xác định tên và mật khẩu Wi-Fi, dùng biểu tượng mạng trên Windows 10 để chọn mạng Wi-Fi, nhập khoá bảo mật, kiểm tra địa chỉ IP và thử truy cập web."@vi ;
+    ex:appearsOnPage ex:g12_page025 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s1 .
+
+  ex:g12_topicB_p025_03 a ex:Paragraph ;
+    ex:paragraphOrder 25 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu kết nối máy tính với Switch bằng dây cáp mạng RJ45, cắm hai đầu dây vào cổng LAN của máy tính và Switch, quan sát đèn báo hiệu kết nối rồi kiểm tra truy cập Internet."@vi ;
+    ex:appearsOnPage ex:g12_page025 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s2 .
+
+  ex:g12_topicB_p026_01 a ex:Paragraph ;
+    ex:paragraphOrder 26 ;
+    ex:hasRawText "Nhiệm vụ 3 yêu cầu kết nối thiết bị thông minh chạy Android vào mạng máy tính. Cách thứ nhất là kết nối điện thoại với Access Point: bật Wi-Fi trong Cài đặt, chọn mạng cần kết nối, nhập mật khẩu và hoàn tất kết nối."@vi ;
+    ex:appearsOnPage ex:g12_page026 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s3 .
+
+  ex:g12_topicB_p027_01 a ex:Paragraph ;
+    ex:paragraphOrder 27 ;
+    ex:hasRawText "Cách thứ hai là kết nối Internet trên điện thoại thông minh bằng mạng di động: vào Cài đặt, chọn Kết nối, chọn Sử dụng dữ liệu và bật Dữ liệu di động, sau đó kiểm tra kết quả bằng trình duyệt web."@vi ;
+    ex:appearsOnPage ex:g12_page027 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s3 .
+
+  ex:g12_topicB_p027_02 a ex:Paragraph ;
+    ex:paragraphOrder 28 ;
+    ex:hasRawText "Bối cảnh cho Nhiệm vụ 4 và Nhiệm vụ 5: các máy tính PC-A và PC-B trong phòng thực hành được cài đặt kết nối tới cùng một mạng LAN, dùng Windows 10 và có lưu trữ tài liệu học tập trong ổ D; PC-A còn kết nối với máy in qua cổng USB."@vi ;
+    ex:appearsOnPage ex:g12_page027 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s4 .
+
+  ex:g12_topicB_p027_03 a ex:Paragraph ;
+    ex:paragraphOrder 29 ;
+    ex:hasRawText "Nhiệm vụ 4 yêu cầu trên máy tính PC-A cài đặt chia sẻ dữ liệu từ ổ D để các máy tính khác trong cùng mạng LAN có thể xem tài liệu học tập lưu trong ổ D. Các bước gồm mở Properties, vào Sharing, chọn Advanced Sharing, chia sẻ thư mục và cấp quyền truy cập."@vi ;
+    ex:appearsOnPage ex:g12_page027 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s4 .
+
+  ex:g12_topicB_p028_01 a ex:Paragraph ;
+    ex:paragraphOrder 30 ;
+    ex:hasRawText "Trong hộp thoại Permissions, chọn Everyone và cấp các quyền Full Control, Change, Read rồi chọn OK. Trên máy tính PC-B, mở This PC, chọn Network và mở biểu tượng máy PC-A để truy cập thư mục có dữ liệu được chia sẻ."@vi ;
+    ex:appearsOnPage ex:g12_page028 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s4 .
+
+  ex:g12_topicB_p029_01 a ex:Paragraph ;
+    ex:paragraphOrder 31 ;
+    ex:hasRawText "Nhiệm vụ 5 yêu cầu cài đặt chia sẻ máy in trên PC-A để PC-B cùng mạng LAN có thể kết nối tới máy in và dùng để in tài liệu. Học sinh mở Control Panel, chọn Hardware and Sound, Devices and Printers, mở Properties của máy in, bật Share this printer và đặt tên chia sẻ."@vi ;
+    ex:appearsOnPage ex:g12_page029 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s5 .
+
+  ex:g12_topicB_p030_01 a ex:Paragraph ;
+    ex:paragraphOrder 32 ;
+    ex:hasRawText "Trên PC-B, mở Control Panel, chọn Hardware and Sound, Devices and Printers, Add a printer. Nếu không tìm thấy máy in chia sẻ, chọn The printer that I want isn't listed, chọn Select a shared printer by name, Browse, chọn máy tính chia sẻ và chọn máy in được chia sẻ."@vi ;
+    ex:appearsOnPage ex:g12_page030 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:belongsToSection ex:g12_topicB_l3s5 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g12_page014 ex:hasParagraph ex:g12_topicB_p014_01, ex:g12_topicB_p014_02 .
+  ex:g12_page015 ex:hasParagraph ex:g12_topicB_p015_01 .
+  ex:g12_page016 ex:hasParagraph ex:g12_topicB_p016_01, ex:g12_topicB_p016_02, ex:g12_topicB_p016_03 .
+  ex:g12_page017 ex:hasParagraph ex:g12_topicB_p017_01, ex:g12_topicB_p017_02 .
+  ex:g12_page018 ex:hasParagraph ex:g12_topicB_p018_01, ex:g12_topicB_p018_02 .
+  ex:g12_page019 ex:hasParagraph ex:g12_topicB_p019_01 .
+  ex:g12_page020 ex:hasParagraph ex:g12_topicB_p020_01, ex:g12_topicB_p020_02 .
+  ex:g12_page021 ex:hasParagraph ex:g12_topicB_p021_01, ex:g12_topicB_p021_02 .
+  ex:g12_page022 ex:hasParagraph ex:g12_topicB_p022_01, ex:g12_topicB_p022_02, ex:g12_topicB_p022_03 .
+  ex:g12_page023 ex:hasParagraph ex:g12_topicB_p023_01, ex:g12_topicB_p023_02, ex:g12_topicB_p023_03 .
+  ex:g12_page024 ex:hasParagraph ex:g12_topicB_p024_01 .
+  ex:g12_page025 ex:hasParagraph ex:g12_topicB_p025_01, ex:g12_topicB_p025_02, ex:g12_topicB_p025_03 .
+  ex:g12_page026 ex:hasParagraph ex:g12_topicB_p026_01 .
+  ex:g12_page027 ex:hasParagraph ex:g12_topicB_p027_01, ex:g12_topicB_p027_02, ex:g12_topicB_p027_03 .
+  ex:g12_page028 ex:hasParagraph ex:g12_topicB_p028_01 .
+  ex:g12_page029 ex:hasParagraph ex:g12_topicB_p029_01 .
+  ex:g12_page030 ex:hasParagraph ex:g12_topicB_p030_01 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g12_topicB_l1s1 ex:hasParagraph ex:g12_topicB_p014_01, ex:g12_topicB_p014_02, ex:g12_topicB_p015_01 .
+  ex:g12_topicB_l1s2 ex:hasParagraph ex:g12_topicB_p016_01, ex:g12_topicB_p016_02, ex:g12_topicB_p016_03, ex:g12_topicB_p017_01 .
+  ex:g12_topicB_l1s3 ex:hasParagraph ex:g12_topicB_p017_02, ex:g12_topicB_p018_01, ex:g12_topicB_p018_02, ex:g12_topicB_p019_01 .
+  ex:g12_topicB_l2s1 ex:hasParagraph ex:g12_topicB_p020_01, ex:g12_topicB_p020_02, ex:g12_topicB_p021_01 .
+  ex:g12_topicB_l2s2 ex:hasParagraph ex:g12_topicB_p021_02, ex:g12_topicB_p022_01 .
+  ex:g12_topicB_l2s3 ex:hasParagraph ex:g12_topicB_p022_02, ex:g12_topicB_p022_03, ex:g12_topicB_p023_01, ex:g12_topicB_p023_02, ex:g12_topicB_p023_03, ex:g12_topicB_p024_01 .
+  ex:g12_topicB_l3s1 ex:hasParagraph ex:g12_topicB_p025_01, ex:g12_topicB_p025_02 .
+  ex:g12_topicB_l3s2 ex:hasParagraph ex:g12_topicB_p025_03 .
+  ex:g12_topicB_l3s3 ex:hasParagraph ex:g12_topicB_p026_01, ex:g12_topicB_p027_01 .
+  ex:g12_topicB_l3s4 ex:hasParagraph ex:g12_topicB_p027_02, ex:g12_topicB_p027_03, ex:g12_topicB_p028_01 .
+  ex:g12_topicB_l3s5 ex:hasParagraph ex:g12_topicB_p029_01, ex:g12_topicB_p030_01 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g12_topicB_p014_01 ex:nextParagraph ex:g12_topicB_p014_02 .
+  ex:g12_topicB_p014_02 ex:previousParagraph ex:g12_topicB_p014_01 ; ex:nextParagraph ex:g12_topicB_p015_01 .
+  ex:g12_topicB_p015_01 ex:previousParagraph ex:g12_topicB_p014_02 ; ex:nextParagraph ex:g12_topicB_p016_01 .
+  ex:g12_topicB_p016_01 ex:previousParagraph ex:g12_topicB_p015_01 ; ex:nextParagraph ex:g12_topicB_p016_02 .
+  ex:g12_topicB_p016_02 ex:previousParagraph ex:g12_topicB_p016_01 ; ex:nextParagraph ex:g12_topicB_p016_03 .
+  ex:g12_topicB_p016_03 ex:previousParagraph ex:g12_topicB_p016_02 ; ex:nextParagraph ex:g12_topicB_p017_01 .
+  ex:g12_topicB_p017_01 ex:previousParagraph ex:g12_topicB_p016_03 ; ex:nextParagraph ex:g12_topicB_p017_02 .
+  ex:g12_topicB_p017_02 ex:previousParagraph ex:g12_topicB_p017_01 ; ex:nextParagraph ex:g12_topicB_p018_01 .
+  ex:g12_topicB_p018_01 ex:previousParagraph ex:g12_topicB_p017_02 ; ex:nextParagraph ex:g12_topicB_p018_02 .
+  ex:g12_topicB_p018_02 ex:previousParagraph ex:g12_topicB_p018_01 ; ex:nextParagraph ex:g12_topicB_p019_01 .
+  ex:g12_topicB_p019_01 ex:previousParagraph ex:g12_topicB_p018_02 ; ex:nextParagraph ex:g12_topicB_p020_01 .
+  ex:g12_topicB_p020_01 ex:previousParagraph ex:g12_topicB_p019_01 ; ex:nextParagraph ex:g12_topicB_p020_02 .
+  ex:g12_topicB_p020_02 ex:previousParagraph ex:g12_topicB_p020_01 ; ex:nextParagraph ex:g12_topicB_p021_01 .
+  ex:g12_topicB_p021_01 ex:previousParagraph ex:g12_topicB_p020_02 ; ex:nextParagraph ex:g12_topicB_p021_02 .
+  ex:g12_topicB_p021_02 ex:previousParagraph ex:g12_topicB_p021_01 ; ex:nextParagraph ex:g12_topicB_p022_01 .
+  ex:g12_topicB_p022_01 ex:previousParagraph ex:g12_topicB_p021_02 ; ex:nextParagraph ex:g12_topicB_p022_02 .
+  ex:g12_topicB_p022_02 ex:previousParagraph ex:g12_topicB_p022_01 ; ex:nextParagraph ex:g12_topicB_p022_03 .
+  ex:g12_topicB_p022_03 ex:previousParagraph ex:g12_topicB_p022_02 ; ex:nextParagraph ex:g12_topicB_p023_01 .
+  ex:g12_topicB_p023_01 ex:previousParagraph ex:g12_topicB_p022_03 ; ex:nextParagraph ex:g12_topicB_p023_02 .
+  ex:g12_topicB_p023_02 ex:previousParagraph ex:g12_topicB_p023_01 ; ex:nextParagraph ex:g12_topicB_p023_03 .
+  ex:g12_topicB_p023_03 ex:previousParagraph ex:g12_topicB_p023_02 ; ex:nextParagraph ex:g12_topicB_p024_01 .
+  ex:g12_topicB_p024_01 ex:previousParagraph ex:g12_topicB_p023_03 ; ex:nextParagraph ex:g12_topicB_p025_01 .
+  ex:g12_topicB_p025_01 ex:previousParagraph ex:g12_topicB_p024_01 ; ex:nextParagraph ex:g12_topicB_p025_02 .
+  ex:g12_topicB_p025_02 ex:previousParagraph ex:g12_topicB_p025_01 ; ex:nextParagraph ex:g12_topicB_p025_03 .
+  ex:g12_topicB_p025_03 ex:previousParagraph ex:g12_topicB_p025_02 ; ex:nextParagraph ex:g12_topicB_p026_01 .
+  ex:g12_topicB_p026_01 ex:previousParagraph ex:g12_topicB_p025_03 ; ex:nextParagraph ex:g12_topicB_p027_01 .
+  ex:g12_topicB_p027_01 ex:previousParagraph ex:g12_topicB_p026_01 ; ex:nextParagraph ex:g12_topicB_p027_02 .
+  ex:g12_topicB_p027_02 ex:previousParagraph ex:g12_topicB_p027_01 ; ex:nextParagraph ex:g12_topicB_p027_03 .
+  ex:g12_topicB_p027_03 ex:previousParagraph ex:g12_topicB_p027_02 ; ex:nextParagraph ex:g12_topicB_p028_01 .
+  ex:g12_topicB_p028_01 ex:previousParagraph ex:g12_topicB_p027_03 ; ex:nextParagraph ex:g12_topicB_p029_01 .
+  ex:g12_topicB_p029_01 ex:previousParagraph ex:g12_topicB_p028_01 ; ex:nextParagraph ex:g12_topicB_p030_01 .
+  ex:g12_topicB_p030_01 ex:previousParagraph ex:g12_topicB_p029_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g12_topicB_p014_01 ex:mentionsConcept ex:g12_conceptMangMayTinhInternet, ex:g12_conceptKetNoiMang, ex:g12_conceptAccessPoint, ex:g12_conceptSwitch, ex:g12_conceptModem, ex:g12_conceptRouter .
+  ex:g12_topicB_p014_02 ex:mentionsConcept ex:g12_conceptMangMayTinh, ex:g12_conceptCapMang, ex:g12_conceptThietBiMang, ex:g12_conceptThietBiDauCuoi .
+  ex:g12_topicB_p015_01 ex:mentionsConcept ex:g12_conceptNIC, ex:g12_conceptNetworkInterfaceCard, ex:g12_conceptDiaChiMAC .
+  ex:g12_topicB_p016_01 ex:mentionsConcept ex:g12_conceptLAN, ex:g12_conceptMangCucBo, ex:g12_conceptSwitch .
+  ex:g12_topicB_p016_02 ex:mentionsConcept ex:g12_conceptGoiTin, ex:g12_conceptSwitch, ex:g12_conceptDiaChiMAC .
+  ex:g12_topicB_p016_03 ex:mentionsConcept ex:g12_conceptWLAN, ex:g12_conceptWiFi, ex:g12_conceptThietBiDauCuoi .
+  ex:g12_topicB_p017_01 ex:mentionsConcept ex:g12_conceptAccessPoint, ex:g12_conceptWLAN, ex:g12_conceptWiFi, ex:g12_conceptSwitch .
+  ex:g12_topicB_p017_02 ex:mentionsConcept ex:g12_conceptWAN, ex:g12_conceptMangDienRong, ex:g12_conceptLAN, ex:g12_conceptInternet .
+  ex:g12_topicB_p018_01 ex:mentionsConcept ex:g12_conceptRouter, ex:g12_conceptWAN, ex:g12_conceptLAN, ex:g12_conceptGoiTin, ex:g12_conceptDinhTuyenChuyenTiep .
+  ex:g12_topicB_p018_02 ex:mentionsConcept ex:g12_conceptModem, ex:g12_conceptInternet, ex:g12_conceptISP .
+  ex:g12_topicB_p019_01 ex:mentionsConcept ex:g12_conceptModem, ex:g12_conceptRouter, ex:g12_conceptAccessPoint, ex:g12_conceptISP, ex:g12_conceptInternet .
+  ex:g12_topicB_p020_01 ex:mentionsConcept ex:g12_conceptGiaoThucMang, ex:g12_conceptTCPIP .
+  ex:g12_topicB_p020_02 ex:mentionsConcept ex:g12_conceptGiaoThucMang, ex:g12_conceptDinhDangChuanHoa, ex:g12_conceptDinhTuyenChuyenTiep, ex:g12_conceptQuanLiLuuLuongMang, ex:g12_conceptBaoMatDoTinCay .
+  ex:g12_topicB_p021_01 ex:mentionsConcept ex:g12_conceptIP, ex:g12_conceptTCP, ex:g12_conceptUDP, ex:g12_conceptHTTP, ex:g12_conceptFTP, ex:g12_conceptSMTP, ex:g12_conceptTCPIP .
+  ex:g12_topicB_p021_02 ex:mentionsConcept ex:g12_conceptTCP, ex:g12_conceptBaoMatDoTinCay .
+  ex:g12_topicB_p022_01 ex:mentionsConcept ex:g12_conceptTCP, ex:g12_conceptGoiTin .
+  ex:g12_topicB_p022_02 ex:mentionsConcept ex:g12_conceptIP, ex:g12_conceptDinhTuyenChuyenTiep, ex:g12_conceptGoiTin .
+  ex:g12_topicB_p022_03 ex:mentionsConcept ex:g12_conceptDiaChiIP, ex:g12_conceptIPv4, ex:g12_conceptIPv6 .
+  ex:g12_topicB_p023_01 ex:mentionsConcept ex:g12_conceptIPv4, ex:g12_conceptIPv6, ex:g12_conceptDiaChiIP .
+  ex:g12_topicB_p023_02 ex:mentionsConcept ex:g12_conceptIPv4, ex:g12_conceptNetworkID, ex:g12_conceptHostID .
+  ex:g12_topicB_p023_03 ex:mentionsConcept ex:g12_conceptTenMien, ex:g12_conceptDNS, ex:g12_conceptDiaChiIP, ex:g12_conceptInternet .
+  ex:g12_topicB_p024_01 ex:mentionsConcept ex:g12_conceptTenMien, ex:g12_conceptGiaoThucMang, ex:g12_conceptTCP, ex:g12_conceptIP, ex:g12_conceptDiaChiIP .
+  ex:g12_topicB_p025_01 ex:mentionsConcept ex:g12_conceptThietLapKetNoiMang, ex:g12_conceptAccessPoint, ex:g12_conceptSwitch, ex:g12_conceptChiaSeDuLieu, ex:g12_conceptChiaSeMayIn .
+  ex:g12_topicB_p025_02 ex:mentionsConcept ex:g12_conceptKetNoiMayTinhAP, ex:g12_conceptAccessPoint, ex:g12_conceptWiFi, ex:g12_conceptWindows10, ex:g12_conceptNetworkAndSharingCenter .
+  ex:g12_topicB_p025_03 ex:mentionsConcept ex:g12_conceptKetNoiMayTinhSwitch, ex:g12_conceptSwitch, ex:g12_conceptCapMang, ex:g12_conceptInternet .
+  ex:g12_topicB_p026_01 ex:mentionsConcept ex:g12_conceptKetNoiThietBiThongMinh, ex:g12_conceptWiFi, ex:g12_conceptAccessPoint .
+  ex:g12_topicB_p027_01 ex:mentionsConcept ex:g12_conceptDuLieuDiDong, ex:g12_conceptInternet, ex:g12_conceptKetNoiThietBiThongMinh .
+  ex:g12_topicB_p027_02 ex:mentionsConcept ex:g12_conceptLAN, ex:g12_conceptWindows10, ex:g12_conceptChiaSeDuLieu, ex:g12_conceptChiaSeMayIn .
+  ex:g12_topicB_p027_03 ex:mentionsConcept ex:g12_conceptChiaSeDuLieu, ex:g12_conceptWindows10 .
+  ex:g12_topicB_p028_01 ex:mentionsConcept ex:g12_conceptChiaSeDuLieu, ex:g12_conceptLAN .
+  ex:g12_topicB_p029_01 ex:mentionsConcept ex:g12_conceptChiaSeMayIn, ex:g12_conceptControlPanel, ex:g12_conceptDevicesAndPrinters .
+  ex:g12_topicB_p030_01 ex:mentionsConcept ex:g12_conceptChiaSeMayIn, ex:g12_conceptControlPanel, ex:g12_conceptDevicesAndPrinters, ex:g12_conceptLAN .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g12_conceptKetNoiMang ex:subConceptOf ex:g12_conceptMangMayTinhInternet .
+  ex:g12_conceptMangMayTinh ex:subConceptOf ex:g12_conceptMangMayTinhInternet .
+  ex:g12_conceptCapMang ex:relatedTo ex:g12_conceptMangMayTinh .
+  ex:g12_conceptCapQuang ex:subConceptOf ex:g12_conceptCapMang .
+  ex:g12_conceptThietBiDauCuoi ex:partOf ex:g12_conceptMangMayTinh .
+  ex:g12_conceptThietBiMang ex:partOf ex:g12_conceptMangMayTinh .
+  ex:g12_conceptNIC ex:partOf ex:g12_conceptThietBiDauCuoi .
+  ex:g12_conceptNetworkInterfaceCard ex:sameAsConcept ex:g12_conceptNIC .
+  ex:g12_conceptDiaChiMAC ex:relatedTo ex:g12_conceptNIC .
+  ex:g12_conceptMangCucBo ex:subConceptOf ex:g12_conceptMangMayTinh .
+  ex:g12_conceptLAN ex:sameAsConcept ex:g12_conceptMangCucBo .
+  ex:g12_conceptSwitch ex:subConceptOf ex:g12_conceptThietBiMang .
+  ex:g12_conceptSwitch ex:relatedTo ex:g12_conceptLAN, ex:g12_conceptDiaChiMAC, ex:g12_conceptGoiTin .
+  ex:g12_conceptGoiTin ex:relatedTo ex:g12_conceptMangMayTinh .
+  ex:g12_conceptWLAN ex:subConceptOf ex:g12_conceptMangCucBo .
+  ex:g12_conceptWiFi ex:relatedTo ex:g12_conceptWLAN .
+  ex:g12_conceptAccessPoint ex:subConceptOf ex:g12_conceptThietBiMang .
+  ex:g12_conceptAccessPoint ex:relatedTo ex:g12_conceptWLAN, ex:g12_conceptWiFi .
+  ex:g12_conceptMangDienRong ex:subConceptOf ex:g12_conceptMangMayTinh .
+  ex:g12_conceptWAN ex:sameAsConcept ex:g12_conceptMangDienRong .
+  ex:g12_conceptInternet ex:subConceptOf ex:g12_conceptWAN .
+  ex:g12_conceptRouter ex:subConceptOf ex:g12_conceptThietBiMang .
+  ex:g12_conceptRouter ex:relatedTo ex:g12_conceptWAN, ex:g12_conceptLAN, ex:g12_conceptDinhTuyenChuyenTiep .
+  ex:g12_conceptModem ex:subConceptOf ex:g12_conceptThietBiMang .
+  ex:g12_conceptModem ex:relatedTo ex:g12_conceptISP, ex:g12_conceptInternet .
+  ex:g12_conceptISP ex:relatedTo ex:g12_conceptInternet .
+  ex:g12_conceptGiaoThucMang ex:subConceptOf ex:g12_conceptMangMayTinhInternet .
+  ex:g12_conceptTCPIP ex:subConceptOf ex:g12_conceptGiaoThucMang .
+  ex:g12_conceptIP ex:subConceptOf ex:g12_conceptTCPIP .
+  ex:g12_conceptTCP ex:subConceptOf ex:g12_conceptTCPIP .
+  ex:g12_conceptUDP ex:subConceptOf ex:g12_conceptTCPIP .
+  ex:g12_conceptHTTP ex:subConceptOf ex:g12_conceptGiaoThucMang .
+  ex:g12_conceptFTP ex:subConceptOf ex:g12_conceptGiaoThucMang .
+  ex:g12_conceptSMTP ex:subConceptOf ex:g12_conceptGiaoThucMang .
+  ex:g12_conceptDinhDangChuanHoa ex:partOf ex:g12_conceptGiaoThucMang .
+  ex:g12_conceptDinhTuyenChuyenTiep ex:partOf ex:g12_conceptGiaoThucMang .
+  ex:g12_conceptQuanLiLuuLuongMang ex:partOf ex:g12_conceptGiaoThucMang .
+  ex:g12_conceptBaoMatDoTinCay ex:partOf ex:g12_conceptGiaoThucMang .
+  ex:g12_conceptDiaChiIP ex:relatedTo ex:g12_conceptIP .
+  ex:g12_conceptIPv4 ex:subConceptOf ex:g12_conceptDiaChiIP .
+  ex:g12_conceptIPv6 ex:subConceptOf ex:g12_conceptDiaChiIP .
+  ex:g12_conceptNetworkID ex:partOf ex:g12_conceptIPv4 .
+  ex:g12_conceptHostID ex:partOf ex:g12_conceptIPv4 .
+  ex:g12_conceptTenMien ex:relatedTo ex:g12_conceptDiaChiIP .
+  ex:g12_conceptDNS ex:relatedTo ex:g12_conceptTenMien, ex:g12_conceptInternet .
+  ex:g12_conceptThietLapKetNoiMang ex:subConceptOf ex:g12_conceptKetNoiMang .
+  ex:g12_conceptKetNoiMayTinhAP ex:subConceptOf ex:g12_conceptThietLapKetNoiMang .
+  ex:g12_conceptKetNoiMayTinhSwitch ex:subConceptOf ex:g12_conceptThietLapKetNoiMang .
+  ex:g12_conceptKetNoiThietBiThongMinh ex:subConceptOf ex:g12_conceptThietLapKetNoiMang .
+  ex:g12_conceptDuLieuDiDong ex:relatedTo ex:g12_conceptInternet .
+  ex:g12_conceptChiaSeDuLieu ex:subConceptOf ex:g12_conceptKetNoiMang .
+  ex:g12_conceptChiaSeMayIn ex:subConceptOf ex:g12_conceptKetNoiMang .
+  ex:g12_conceptWindows10 ex:relatedTo ex:g12_conceptThietLapKetNoiMang .
+  ex:g12_conceptControlPanel ex:relatedTo ex:g12_conceptWindows10 .
+  ex:g12_conceptDevicesAndPrinters ex:partOf ex:g12_conceptControlPanel .
+  ex:g12_conceptNetworkAndSharingCenter ex:partOf ex:g12_conceptWindows10 .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g12_topicB_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Dựa theo kiến thức đã học, em hãy liệt kê những loại mạng máy tính mà em biết."@vi ;
+    ex:appearsOnPage ex:g12_page014 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:relatedTo ex:g12_conceptMangMayTinh, ex:g12_conceptLAN, ex:g12_conceptWLAN, ex:g12_conceptWAN .
+
+  ex:g12_topicB_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 bài 1 - Thông tin kết nối mạng"@vi ;
+    ex:hasRawText "Nội dung trong khung chữ nhật màu đỏ ở Hình 2 cho em biết thông tin gì?"@vi ;
+    ex:appearsOnPage ex:g12_page015 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:relatedTo ex:g12_conceptDiaChiMAC, ex:g12_conceptNIC .
+
+  ex:g12_topicB_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 bài 1 - Phương thức kết nối mạng"@vi ;
+    ex:hasRawText "Em hãy tìm hiểu phương thức kết nối mạng của một máy tính trong phòng thực hành Tin học và cho biết máy tính đó đang sử dụng cáp mạng hay Wi-Fi để truy cập mạng máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page015 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:relatedTo ex:g12_conceptCapMang, ex:g12_conceptWiFi, ex:g12_conceptMangMayTinh .
+
+  ex:g12_topicB_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 1 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Hãy liệt kê các loại mạng có quy mô từ nhỏ tới lớn. Hãy mô tả những chức năng của Access Point, Switch, Router, Modem trong mạng máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page019 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:relatedTo ex:g12_conceptLAN, ex:g12_conceptWLAN, ex:g12_conceptWAN,
+                 ex:g12_conceptAccessPoint, ex:g12_conceptSwitch, ex:g12_conceptRouter, ex:g12_conceptModem .
+
+  ex:g12_topicB_l1_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 1 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Em hãy tìm hiểu một số thiết bị Access Point của các nhà cung cấp dịch vụ Internet tại Việt Nam."@vi ;
+    ex:appearsOnPage ex:g12_page019 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:relatedTo ex:g12_conceptAccessPoint, ex:g12_conceptISP .
+
+  ex:g12_topicB_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 1 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Trong các câu sau, câu nào sai? Switch và Router là hai thiết bị mạng có cùng chức năng, chọn thiết bị nào cũng được. Router có khả năng xác định đường đi tốt nhất để gửi tin nhắn từ máy gửi đến máy đích. Modem thực hiện việc biến đổi tín hiệu giữa thiết bị người dùng và nhà cung cấp dịch vụ Internet. Access Point hoạt động tương tự như Switch nhưng được trang bị thêm khả năng truyền/nhận dữ liệu bằng kết nối không dây."@vi ;
+    ex:appearsOnPage ex:g12_page019 ;
+    ex:belongsToLesson ex:g12_topicB_lesson1 ;
+    ex:relatedTo ex:g12_conceptSwitch, ex:g12_conceptRouter, ex:g12_conceptModem, ex:g12_conceptAccessPoint .
+
+  ex:g12_topicB_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Em hãy liệt kê những yêu cầu cần thiết để em và bạn em có thể trao đổi tin nhắn được với nhau."@vi ;
+    ex:appearsOnPage ex:g12_page020 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:relatedTo ex:g12_conceptGiaoThucMang .
+
+  ex:g12_topicB_l2_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 bài 2 - Liên tưởng gửi thư và truyền tệp"@vi ;
+    ex:hasRawText "Em hãy liên tưởng đến quá trình gửi thư qua bưu điện và đưa ra các bước cần thiết để gửi một tệp dữ liệu từ máy tính thứ nhất đến máy tính thứ hai trong một mạng máy tính."@vi ;
+    ex:appearsOnPage ex:g12_page020 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:relatedTo ex:g12_conceptGiaoThucMang, ex:g12_conceptGoiTin .
+
+  ex:g12_topicB_l2_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 bài 2 - Tìm địa chỉ IPv4"@vi ;
+    ex:hasRawText "Em hãy tìm địa chỉ IPv4 của máy tính em đang được sử dụng với sự hướng dẫn của giáo viên."@vi ;
+    ex:appearsOnPage ex:g12_page023 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:relatedTo ex:g12_conceptIPv4, ex:g12_conceptDiaChiIP .
+
+  ex:g12_topicB_l2_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập bài 2 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Giao thức mạng là gì? Em hãy mô tả chức năng của giao thức TCP và IP. Theo em, giao thức TCP có được sử dụng cho vận chuyển dữ liệu thư điện tử hay không?"@vi ;
+    ex:appearsOnPage ex:g12_page024 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:relatedTo ex:g12_conceptGiaoThucMang, ex:g12_conceptTCP, ex:g12_conceptIP, ex:g12_conceptSMTP .
+
+  ex:g12_topicB_l2_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Em hãy xác định và ghi lại địa chỉ IP của 5 máy tính được kết nối mạng trong lớp học. Sau đó, em hãy cho biết điểm giống nhau và khác nhau của 5 địa chỉ này."@vi ;
+    ex:appearsOnPage ex:g12_page024 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:relatedTo ex:g12_conceptDiaChiIP, ex:g12_conceptIPv4, ex:g12_conceptNetworkID, ex:g12_conceptHostID .
+
+  ex:g12_topicB_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 2 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Em hãy cho biết mỗi câu sau là đúng hay sai: Giao thức TCP thường được sử dụng cho các ứng dụng truyền tải dữ liệu thời gian thực. Máy tính khi kết nối tới AP sẽ được cung cấp một địa chỉ IP. Địa chỉ IPv4 bao gồm 48 bit. Địa chỉ IPv6 bao gồm 128 bit."@vi ;
+    ex:appearsOnPage ex:g12_page024 ;
+    ex:belongsToLesson ex:g12_topicB_lesson2 ;
+    ex:relatedTo ex:g12_conceptTCP, ex:g12_conceptAccessPoint, ex:g12_conceptDiaChiIP,
+                 ex:g12_conceptIPv4, ex:g12_conceptIPv6 .
+
+  ex:g12_topicB_l3_task1 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 1 bài 3 - Kết nối máy tính với Access Point"@vi ;
+    ex:hasRawText "Kết nối máy tính với Access Point để truy cập Internet: xác định tên và mật khẩu Wi-Fi, chọn mạng trên Windows 10, nhập khoá bảo mật, kiểm tra địa chỉ IP và kiểm tra kết quả kết nối bằng trình duyệt web."@vi ;
+    ex:appearsOnPage ex:g12_page025 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:relatedTo ex:g12_conceptKetNoiMayTinhAP, ex:g12_conceptAccessPoint,
+                 ex:g12_conceptWiFi, ex:g12_conceptDiaChiIP .
+
+  ex:g12_topicB_l3_task2 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 2 bài 3 - Kết nối máy tính với Switch"@vi ;
+    ex:hasRawText "Kết nối máy tính với Switch để truy cập Internet: chuẩn bị dây cáp mạng RJ45, cắm dây vào cổng LAN trên máy tính và Switch, quan sát đèn báo hiệu kết nối và kiểm tra truy cập web."@vi ;
+    ex:appearsOnPage ex:g12_page025 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:relatedTo ex:g12_conceptKetNoiMayTinhSwitch, ex:g12_conceptSwitch,
+                 ex:g12_conceptCapMang, ex:g12_conceptInternet .
+
+  ex:g12_topicB_l3_task3 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 3 bài 3 - Kết nối thiết bị thông minh vào mạng máy tính"@vi ;
+    ex:hasRawText "Kết nối điện thoại thông minh Android vào Internet bằng Wi-Fi qua Access Point hoặc bằng dữ liệu di động, sau đó kiểm tra kết quả bằng cách mở trình duyệt và truy cập trang web bất kì."@vi ;
+    ex:appearsOnPage ex:g12_page026 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:relatedTo ex:g12_conceptKetNoiThietBiThongMinh, ex:g12_conceptWiFi,
+                 ex:g12_conceptAccessPoint, ex:g12_conceptDuLieuDiDong .
+
+  ex:g12_topicB_l3_task4 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 4 bài 3 - Chia sẻ dữ liệu"@vi ;
+    ex:hasRawText "Trên máy tính PC-A, cài đặt chia sẻ dữ liệu từ ổ D để các máy tính khác trong cùng mạng LAN có thể xem tài liệu học tập lưu trữ trong ổ D; trên PC-B truy cập qua Network để mở thư mục được chia sẻ."@vi ;
+    ex:appearsOnPage ex:g12_page027 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:relatedTo ex:g12_conceptChiaSeDuLieu, ex:g12_conceptLAN, ex:g12_conceptWindows10 .
+
+  ex:g12_topicB_l3_task5 a ex:PracticeTask ;
+    rdfs:label "Nhiệm vụ 5 bài 3 - Chia sẻ máy in"@vi ;
+    ex:hasRawText "Cài đặt chia sẻ máy in trên PC-A để PC-B cùng mạng LAN có thể kết nối tới máy in và sử dụng để in tài liệu học tập; nếu không tìm thấy máy in được chia sẻ, dùng tùy chọn Select a shared printer by name để tìm máy tính và máy in trong mạng LAN."@vi ;
+    ex:appearsOnPage ex:g12_page029 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:relatedTo ex:g12_conceptChiaSeMayIn, ex:g12_conceptLAN,
+                 ex:g12_conceptControlPanel, ex:g12_conceptDevicesAndPrinters .
+
+  ex:g12_topicB_l3_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng 1 bài 3 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Sử dụng máy tính đã kết nối Internet qua Access Point, hãy tạo một tệp văn bản chứa nội dung học tập và chia sẻ tệp đó với máy tính của một người bạn trong lớp đang kết nối cùng Access Point với em."@vi ;
+    ex:appearsOnPage ex:g12_page030 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:relatedTo ex:g12_conceptAccessPoint, ex:g12_conceptChiaSeDuLieu .
+
+  ex:g12_topicB_l3_appliedTask2 a ex:AppliedTask ;
+    rdfs:label "Vận dụng 2 bài 3 chủ đề B lớp 12"@vi ;
+    ex:hasRawText "Sử dụng thiết bị thông minh đã kết nối Internet qua Access Point, hãy chia sẻ một video tới bạn của em qua thư điện tử Gmail bằng dịch vụ mạng di động."@vi ;
+    ex:appearsOnPage ex:g12_page030 ;
+    ex:belongsToLesson ex:g12_topicB_lesson3 ;
+    ex:relatedTo ex:g12_conceptKetNoiThietBiThongMinh, ex:g12_conceptAccessPoint,
+                 ex:g12_conceptInternet, ex:g12_conceptDuLieuDiDong .
+
+  ex:g12_topicB_lesson1 ex:hasActivity ex:g12_topicB_l1_openingActivity,
+    ex:g12_topicB_l1_activity1, ex:g12_topicB_l1_activity2, ex:g12_topicB_l1_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicB_l1_appliedTask1, ex:g12_topicB_l1_review1 .
+
+  ex:g12_topicB_lesson2 ex:hasActivity ex:g12_topicB_l2_openingActivity,
+    ex:g12_topicB_l2_activity1, ex:g12_topicB_l2_activity2, ex:g12_topicB_l2_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicB_l2_appliedTask1, ex:g12_topicB_l2_review1 .
+
+  ex:g12_topicB_lesson3 ex:hasActivity ex:g12_topicB_l3_task1,
+    ex:g12_topicB_l3_task2, ex:g12_topicB_l3_task3, ex:g12_topicB_l3_task4,
+    ex:g12_topicB_l3_task5 ;
+    ex:hasReviewQuestion ex:g12_topicB_l3_appliedTask1, ex:g12_topicB_l3_appliedTask2 .
+}

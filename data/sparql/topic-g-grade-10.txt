@@ -1,0 +1,925 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 10 TOPIC G
+# Assumes ontology/classes/properties have already been inserted.
+# Source file: Tin-hoc-10-Canh-dieu-pages-6.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:grade10 a ex:GradeLevel ;
+    rdfs:label "Lớp 10"@vi ;
+    ex:gradeNumber 10 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:tinhoc10_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 10 - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 10"@vi ;
+    ex:hasGradeLevel ex:grade10 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicG_shared a ex:Topic ;
+    rdfs:label "Chủ đề G (dùng chung các khối)"@vi ;
+    ex:hasTitle "Hướng nghiệp với tin học"@vi .
+
+  ex:topicG a ex:Topic ;
+    rdfs:label "Chủ đề G - Hướng nghiệp với tin học"@vi ;
+    ex:hasTitle "Hướng nghiệp với tin học"@vi ;
+    ex:hasSubtitle "Giới thiệu nhóm nghề thiết kế và lập trình"@vi ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:sameTopicAs ex:topicG_shared ;
+    ex:topicOrder 7 ;
+    ex:hasStartPage 124 ;
+    ex:hasEndPage 131 ;
+    ex:sourceFileName "Tin-hoc-10-Canh-dieu-pages-6.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:topicG_lesson1, ex:topicG_lesson2 ;
+    ex:hasPage ex:page124, ex:page125, ex:page126, ex:page127,
+               ex:page128, ex:page129, ex:page130, ex:page131 .
+
+  ex:tinhoc10_canhdieu ex:hasTopic ex:topicG .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:topicG_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Nhóm nghề thiết kế và lập trình"@vi ;
+    ex:hasTitle "Nhóm nghề thiết kế và lập trình"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 124 ;
+    ex:hasEndPage 129 ;
+    ex:hasSection ex:topicG_l1s1, ex:topicG_l1s2, ex:topicG_l1s3 .
+
+  ex:topicG_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Dự án nhỏ: Tìm hiểu về nghề lập trình web, lập trình trò chơi và lập trình cho thiết bị di động"@vi ;
+    ex:hasTitle "Dự án nhỏ: Tìm hiểu về nghề lập trình web, lập trình trò chơi và lập trình cho thiết bị di động"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:hasStartPage 130 ;
+    ex:hasEndPage 131 ;
+    ex:hasSection ex:topicG_l2s1, ex:topicG_l2s2, ex:topicG_l2s3 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:topicG_l1s1 a ex:Section ;
+    rdfs:label "Mô tả nhóm nghề thiết kế và lập trình"@vi ;
+    ex:hasTitle "Mô tả nhóm nghề thiết kế và lập trình"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicG_lesson1 .
+
+  ex:topicG_l1s2 a ex:Section ;
+    rdfs:label "Đặc điểm lao động, yêu cầu đối với nhóm nghề thiết kế và lập trình"@vi ;
+    ex:hasTitle "Đặc điểm lao động, yêu cầu đối với nhóm nghề thiết kế và lập trình"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicG_lesson1 .
+
+  ex:topicG_l1s3 a ex:Section ;
+    rdfs:label "Đào tạo và việc làm"@vi ;
+    ex:hasTitle "Đào tạo và việc làm"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicG_lesson1 .
+
+  ex:topicG_l2s1 a ex:Section ;
+    rdfs:label "Mục đích của dự án"@vi ;
+    ex:hasTitle "Mục đích của dự án"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:topicG_lesson2 .
+
+  ex:topicG_l2s2 a ex:Section ;
+    rdfs:label "Yêu cầu chung"@vi ;
+    ex:hasTitle "Yêu cầu chung"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:topicG_lesson2 .
+
+  ex:topicG_l2s3 a ex:Section ;
+    rdfs:label "Một số hướng dẫn và gợi ý thực hiện dự án"@vi ;
+    ex:hasTitle "Một số hướng dẫn và gợi ý thực hiện dự án"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:topicG_lesson2 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:page124 a ex:Page ;
+    ex:hasPageNumber 124 ;
+    ex:hasPrintedPageNumber 124 ;
+    ex:pdfPageIndex 1 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ex:page125 a ex:Page ;
+    ex:hasPageNumber 125 ;
+    ex:hasPrintedPageNumber 125 ;
+    ex:pdfPageIndex 2 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ex:page126 a ex:Page ;
+    ex:hasPageNumber 126 ;
+    ex:hasPrintedPageNumber 126 ;
+    ex:pdfPageIndex 3 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ex:page127 a ex:Page ;
+    ex:hasPageNumber 127 ;
+    ex:hasPrintedPageNumber 127 ;
+    ex:pdfPageIndex 4 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ex:page128 a ex:Page ;
+    ex:hasPageNumber 128 ;
+    ex:hasPrintedPageNumber 128 ;
+    ex:pdfPageIndex 5 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ex:page129 a ex:Page ;
+    ex:hasPageNumber 129 ;
+    ex:hasPrintedPageNumber 129 ;
+    ex:pdfPageIndex 6 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ex:page130 a ex:Page ;
+    ex:hasPageNumber 130 ;
+    ex:hasPrintedPageNumber 130 ;
+    ex:pdfPageIndex 7 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ex:page131 a ex:Page ;
+    ex:hasPageNumber 131 ;
+    ex:hasPrintedPageNumber 131 ;
+    ex:pdfPageIndex 8 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToTopic ex:topicG ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:page123 ex:nextPage ex:page124 .
+  ex:page124 ex:previousPage ex:page123 ; ex:nextPage ex:page125 .
+  ex:page125 ex:previousPage ex:page124 ; ex:nextPage ex:page126 .
+  ex:page126 ex:previousPage ex:page125 ; ex:nextPage ex:page127 .
+  ex:page127 ex:previousPage ex:page126 ; ex:nextPage ex:page128 .
+  ex:page128 ex:previousPage ex:page127 ; ex:nextPage ex:page129 .
+  ex:page129 ex:previousPage ex:page128 ; ex:nextPage ex:page130 .
+  ex:page130 ex:previousPage ex:page129 ; ex:nextPage ex:page131 .
+  ex:page131 ex:previousPage ex:page130 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:conceptHuongNghiepTinHoc a ex:KnowledgeConcept ;
+    rdfs:label "Hướng nghiệp với tin học"@vi .
+
+  ex:conceptNhomNgheThietKeLapTrinh a ex:KnowledgeConcept ;
+    rdfs:label "Nhóm nghề thiết kế và lập trình"@vi .
+
+  ex:conceptNgheLapTrinhVien a ex:KnowledgeConcept ;
+    rdfs:label "Lập trình viên"@vi .
+
+  ex:conceptPhatTrienPhanMem a ex:KnowledgeConcept ;
+    rdfs:label "Phát triển phần mềm"@vi .
+
+  ex:conceptPhanTichHeThong a ex:KnowledgeConcept ;
+    rdfs:label "Phân tích hệ thống"@vi .
+
+  ex:conceptThietKePhanMem a ex:KnowledgeConcept ;
+    rdfs:label "Thiết kế phần mềm"@vi .
+
+  ex:conceptLapTrinhPhanMem a ex:KnowledgeConcept ;
+    rdfs:label "Lập trình phần mềm"@vi .
+
+  ex:conceptKiemThuPhanMem a ex:KnowledgeConcept ;
+    rdfs:label "Kiểm thử phần mềm"@vi .
+
+  ex:conceptPhanMemUngDungWeb a ex:KnowledgeConcept ;
+    rdfs:label "Phần mềm ứng dụng web"@vi .
+
+  ex:conceptThuongMaiDienTu a ex:KnowledgeConcept ;
+    rdfs:label "Thương mại điện tử"@vi .
+
+  ex:conceptLapTrinhTroChoi a ex:KnowledgeConcept ;
+    rdfs:label "Lập trình trò chơi"@vi .
+
+  ex:conceptThietKeGame a ex:KnowledgeConcept ;
+    rdfs:label "Thiết kế game"@vi .
+
+  ex:conceptLapTrinhThietBiDiDong a ex:KnowledgeConcept ;
+    rdfs:label "Lập trình cho thiết bị di động"@vi .
+
+  ex:conceptNguonNhanLucCNTT a ex:KnowledgeConcept ;
+    rdfs:label "Nguồn nhân lực công nghệ thông tin"@vi .
+
+  ex:conceptDaoTaoCNTT a ex:KnowledgeConcept ;
+    rdfs:label "Đào tạo công nghệ thông tin"@vi .
+
+  ex:conceptKyThuatPhanMem a ex:KnowledgeConcept ;
+    rdfs:label "Kĩ thuật phần mềm"@vi .
+
+  ex:conceptCoHoiViecLamCNTT a ex:KnowledgeConcept ;
+    rdfs:label "Cơ hội việc làm công nghệ thông tin"@vi .
+
+  ex:conceptCongTyPhanMem a ex:KnowledgeConcept ;
+    rdfs:label "Công ty phần mềm"@vi .
+
+  ex:conceptCoQuanNhaNuoc a ex:KnowledgeConcept ;
+    rdfs:label "Cơ quan Nhà nước"@vi .
+
+  ex:conceptDoanhNghiepTaiChinhNganHang a ex:KnowledgeConcept ;
+    rdfs:label "Doanh nghiệp tài chính - ngân hàng"@vi .
+
+  ex:conceptDuAnHuongNghiep a ex:KnowledgeConcept ;
+    rdfs:label "Dự án hướng nghiệp"@vi .
+
+  ex:conceptTimKiemThongTinNgheNghiep a ex:KnowledgeConcept ;
+    rdfs:label "Tìm kiếm thông tin nghề nghiệp"@vi .
+
+  ex:conceptBaoCaoKetQuaDuAn a ex:KnowledgeConcept ;
+    rdfs:label "Báo cáo kết quả dự án"@vi .
+
+  ex:conceptSanPhamDuAn a ex:KnowledgeConcept ;
+    rdfs:label "Sản phẩm dự án"@vi .
+
+  ex:conceptTieuChiDanhGiaDuAn a ex:KnowledgeConcept ;
+    rdfs:label "Tiêu chí đánh giá dự án"@vi .
+
+  ###########################################################################
+  # Topic / lesson / section concept links
+  ###########################################################################
+
+  ex:topicG ex:hasConcept ex:conceptHuongNghiepTinHoc, ex:conceptNhomNgheThietKeLapTrinh,
+    ex:conceptNgheLapTrinhVien, ex:conceptPhatTrienPhanMem, ex:conceptPhanTichHeThong,
+    ex:conceptThietKePhanMem, ex:conceptLapTrinhPhanMem, ex:conceptKiemThuPhanMem,
+    ex:conceptPhanMemUngDungWeb, ex:conceptThuongMaiDienTu, ex:conceptLapTrinhTroChoi,
+    ex:conceptLapTrinhThietBiDiDong, ex:conceptNguonNhanLucCNTT, ex:conceptDaoTaoCNTT,
+    ex:conceptCoHoiViecLamCNTT, ex:conceptDuAnHuongNghiep .
+
+  ex:topicG_lesson1 ex:hasConcept ex:conceptHuongNghiepTinHoc,
+    ex:conceptNhomNgheThietKeLapTrinh, ex:conceptNgheLapTrinhVien,
+    ex:conceptPhatTrienPhanMem, ex:conceptPhanTichHeThong, ex:conceptThietKePhanMem,
+    ex:conceptLapTrinhPhanMem, ex:conceptKiemThuPhanMem, ex:conceptPhanMemUngDungWeb,
+    ex:conceptThuongMaiDienTu, ex:conceptLapTrinhTroChoi, ex:conceptThietKeGame,
+    ex:conceptNguonNhanLucCNTT, ex:conceptDaoTaoCNTT, ex:conceptKyThuatPhanMem,
+    ex:conceptCoHoiViecLamCNTT, ex:conceptCongTyPhanMem, ex:conceptCoQuanNhaNuoc,
+    ex:conceptDoanhNghiepTaiChinhNganHang .
+
+  ex:topicG_lesson2 ex:hasConcept ex:conceptDuAnHuongNghiep,
+    ex:conceptTimKiemThongTinNgheNghiep, ex:conceptNgheLapTrinhVien,
+    ex:conceptPhanMemUngDungWeb, ex:conceptLapTrinhTroChoi,
+    ex:conceptLapTrinhThietBiDiDong, ex:conceptBaoCaoKetQuaDuAn,
+    ex:conceptSanPhamDuAn, ex:conceptTieuChiDanhGiaDuAn .
+
+  ex:topicG_l1s1 ex:hasConcept ex:conceptNhomNgheThietKeLapTrinh,
+    ex:conceptPhatTrienPhanMem, ex:conceptPhanTichHeThong, ex:conceptThietKePhanMem,
+    ex:conceptLapTrinhPhanMem, ex:conceptKiemThuPhanMem, ex:conceptPhanMemUngDungWeb,
+    ex:conceptThuongMaiDienTu, ex:conceptLapTrinhTroChoi .
+
+  ex:topicG_l1s2 ex:hasConcept ex:conceptNhomNgheThietKeLapTrinh,
+    ex:conceptNguonNhanLucCNTT, ex:conceptCoHoiViecLamCNTT .
+
+  ex:topicG_l1s3 ex:hasConcept ex:conceptDaoTaoCNTT, ex:conceptKyThuatPhanMem,
+    ex:conceptCoHoiViecLamCNTT, ex:conceptCongTyPhanMem, ex:conceptCoQuanNhaNuoc,
+    ex:conceptDoanhNghiepTaiChinhNganHang .
+
+  ex:topicG_l2s1 ex:hasConcept ex:conceptDuAnHuongNghiep,
+    ex:conceptTimKiemThongTinNgheNghiep, ex:conceptPhanMemUngDungWeb,
+    ex:conceptLapTrinhTroChoi, ex:conceptLapTrinhThietBiDiDong .
+
+  ex:topicG_l2s2 ex:hasConcept ex:conceptDuAnHuongNghiep,
+    ex:conceptTimKiemThongTinNgheNghiep .
+
+  ex:topicG_l2s3 ex:hasConcept ex:conceptDuAnHuongNghiep,
+    ex:conceptSanPhamDuAn, ex:conceptBaoCaoKetQuaDuAn, ex:conceptTieuChiDanhGiaDuAn .
+
+  ###########################################################################
+  # Learning objectives and summary boxes
+  ###########################################################################
+
+  ex:topicG_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề G"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Nêu được một số thông tin cơ bản về nhóm nghề thiết kế và lập trình: Sơ lược về các công việc chính. Yêu cầu chính về kiến thức và kĩ năng. Các ngành học có liên quan ở các bậc học tiếp theo. Nhu cầu nhân lực hiện tại và tương lai."@vi ;
+    ex:appearsOnPage ex:page124 ;
+    ex:belongsToLesson ex:topicG_lesson1 .
+
+  ex:topicG_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề G"@vi ;
+    ex:hasSummaryText "Có nhiều lĩnh vực liên quan đến thiết kế và lập trình như: phát triển ứng dụng phần mềm và web, thương mại điện tử, lập trình ứng dụng trên thiết bị di động, lập trình trò chơi. Nhu cầu nhân lực cho các lĩnh vực này rất lớn, đặc biệt là phát triển phần mềm tài chính, phần mềm chính phủ. Đào tạo nguồn nhân lực thiết kế và lập trình được coi là lĩnh vực đào tạo mũi nhọn hướng đến sự phát triển của công nghệ và khoa học kĩ thuật trong thời đại số."@vi ;
+    ex:appearsOnPage ex:page129 ;
+    ex:belongsToLesson ex:topicG_lesson1 .
+
+  ex:topicG_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục đích dự án nhỏ chủ đề G"@vi ;
+    ex:hasRawText "Sau khi hoàn thành xong dự án, em có khả năng: Tìm kiếm và khai thác được thông tin khái quát về nghề thiết kế và lập trình web, thiết kế và lập trình trò chơi, phát triển ứng dụng trên thiết bị di động và các ngành nghề khác. Giao lưu được với bạn bè qua các kênh truyền thông tin số để tham khảo và trao đổi thông tin hướng nghiệp. Trình bày, giới thiệu về một vài nghề trong nhóm nghề thiết kế và lập trình."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 .
+
+  ex:topicG_lesson1 ex:hasSummary ex:topicG_l1_summary .
+
+  ###########################################################################
+  # Figures and tables
+  ###########################################################################
+
+  ex:topicG_fig_careerTree a ex:Diagram ;
+    rdfs:label "Hình 1. Cây nghề nghiệp"@vi ;
+    ex:hasCaption "Hình 1. Cây nghề nghiệp"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:page124 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptHuongNghiepTinHoc .
+
+  ex:topicG_fig_projectGroupTopics a ex:Figure ;
+    rdfs:label "Hình 1. Đề tài của mỗi nhóm"@vi ;
+    ex:hasCaption "Hình 1. Đề tài của mỗi nhóm"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDuAnHuongNghiep .
+
+  ex:topicG_fig_projectStages a ex:Diagram ;
+    rdfs:label "Hình 2. Các giai đoạn thực hiện dự án"@vi ;
+    ex:hasCaption "Hình 2. Các giai đoạn thực hiện dự án"@vi ;
+    ex:figureOrderOnPage 2 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptDuAnHuongNghiep .
+
+  ex:topicG_fig_projectEvaluationCriteria a ex:Diagram ;
+    rdfs:label "Hai tiêu chí đánh giá dự án"@vi ;
+    ex:hasCaption "Hai tiêu chí đánh giá"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 4 ;
+    ex:appearsOnPage ex:page131 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptTieuChiDanhGiaDuAn .
+
+  ex:page124 ex:hasFigure ex:topicG_fig_careerTree .
+  ex:page130 ex:hasFigure ex:topicG_fig_projectGroupTopics, ex:topicG_fig_projectStages .
+  ex:page131 ex:hasFigure ex:topicG_fig_projectEvaluationCriteria .
+
+  ex:topicG_fig_careerTree ex:nextFigure ex:topicG_fig_projectGroupTopics .
+  ex:topicG_fig_projectGroupTopics ex:previousFigure ex:topicG_fig_careerTree ;
+    ex:nextFigure ex:topicG_fig_projectStages .
+  ex:topicG_fig_projectStages ex:previousFigure ex:topicG_fig_projectGroupTopics ;
+    ex:nextFigure ex:topicG_fig_projectEvaluationCriteria .
+  ex:topicG_fig_projectEvaluationCriteria ex:previousFigure ex:topicG_fig_projectStages .
+
+  ex:topicG_table_projectProductContent a ex:Table ;
+    rdfs:label "Bảng 1. Những nội dung chính của sản phẩm thứ nhất"@vi ;
+    ex:hasCaption "Bảng 1. Những nội dung chính của sản phẩm thứ nhất"@vi ;
+    ex:hasRawText "1. Giới thiệu khái quát nghề, công cụ, phương tiện lao động của nghề. 2. Tên nghề nghiệp, các chuyên môn chủ yếu. 3. Đặc điểm lao động và yêu cầu của nghề, sản phẩm chính là gì. 4. Đào tạo và tuyển sinh: nơi đào tạo uy tín; số lượng tuyển sinh hằng năm. 5. Cơ hội, môi trường làm việc và thu nhập, phúc lợi xã hội: tình hình tuyển dụng nhân lực; môi trường làm việc, thu nhập, tính ổn định và cơ hội phát triển, thăng tiến."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:page131 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToGrade ex:grade10 ;
+    ex:belongsToTextbook ex:tinhoc10_canhdieu ;
+    ex:illustratesConcept ex:conceptSanPhamDuAn .
+
+  ex:page131 ex:hasTable ex:topicG_table_projectProductContent .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:topicG_p124_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 1. Nhóm nghề thiết kế và lập trình. Bài học đặt vấn đề: Theo em, vì sao nghề thiết kế và lập trình đang được nhiều bạn trẻ yêu thích tin học ưu tiên lựa chọn?"@vi ;
+    ex:appearsOnPage ex:page124 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p124_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Định hướng, lựa chọn nghề nghiệp cho tương lai là việc rất quan trọng đối với mỗi học sinh cấp trung học phổ thông. Dựa trên khả năng, cá tính, sở thích và nguyện vọng của bản thân kết hợp với đặc điểm ngành nghề, cơ hội được đào tạo và việc làm, mỗi em sẽ định hướng và lựa chọn cho bản thân ngành nghề trong tương lai."@vi ;
+    ex:appearsOnPage ex:page124 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p125_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Mục mô tả nhóm nghề thiết kế và lập trình bắt đầu bằng hoạt động: Em đã nghe tới cụm từ lập trình viên chưa? Em hãy trình bày những hiểu biết, suy nghĩ, cảm nhận của em về lập trình viên."@vi ;
+    ex:appearsOnPage ex:page125 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p125_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phát triển phần mềm là công việc của nhóm nghề thiết kế và lập trình, đó là quá trình tạo ra sản phẩm phần mềm máy tính để đáp ứng nhu cầu của một cộng đồng người dùng."@vi ;
+    ex:appearsOnPage ex:page125 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p125_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Các công đoạn chính của phát triển phần mềm gồm phân tích hệ thống, thiết kế phần mềm, lập trình và kiểm thử phần mềm. Phân tích hệ thống xác định nhu cầu, vai trò phần mềm, thông tin đầu vào và đầu ra. Thiết kế phần mềm chuyển yêu cầu thành bản thiết kế. Lập trình chuyển mô tả thiết kế thành lệnh máy tính thực hiện được. Kiểm thử phần mềm thử nghiệm sản phẩm để kiểm tra xem có khiếm khuyết kĩ thuật hay không."@vi ;
+    ex:appearsOnPage ex:page125 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p125_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Khi thực hiện phát triển một phần mềm, số lượng người và sự chuyên biệt hoá công việc phụ thuộc vào quy mô và công nghệ sử dụng. Với phần mềm nhỏ, một người có thể làm tất cả các công đoạn; với hệ thống phần mềm lớn, mỗi công đoạn do nhóm chuyên biệt thực hiện."@vi ;
+    ex:appearsOnPage ex:page125 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p125_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Hai tình huống điển hình cần thiết phải có nguồn nhân lực phát triển phần mềm là: tổ chức hoặc doanh nghiệp muốn áp dụng công nghệ số để phục vụ quản lí, sản xuất, kinh doanh; và công nghệ phát triển, thay đổi làm cho các tổ chức, doanh nghiệp phải cập nhật theo xu hướng mới để tồn tại và phát triển."@vi ;
+    ex:appearsOnPage ex:page125 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p126_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Phát triển phần mềm ứng dụng web là lĩnh vực sôi động và phát triển nhanh. Nhu cầu phát triển ứng dụng trực tuyến tăng trưởng mạnh và ứng dụng web được triển khai trên nhiều lĩnh vực như chính phủ điện tử, quản trị doanh nghiệp điện tử, thanh toán điện tử, giải trí điện tử, công dân điện tử, y tế điện tử, mạng xã hội, giáo dục trực tuyến."@vi ;
+    ex:appearsOnPage ex:page126 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p126_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Phát triển thương mại điện tử: thương mại điện tử đã trở thành một phần không thể thiếu trong hoạt động kinh doanh của các doanh nghiệp, cả nhỏ lẻ và các nhóm lớn. Chất lượng ứng dụng thương mại điện tử vào kinh doanh là yếu tố quyết định giá trị cạnh tranh."@vi ;
+    ex:appearsOnPage ex:page126 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p126_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Thiết kế và lập trình trò chơi, còn gọi là lập trình game, là ngành công nghiệp mà ở nước ta trước đây chủ yếu dừng ở mức phân phối phát hành và gia công game nước ngoài. Gần đây nhiều doanh nghiệp thành lập studio riêng để phát triển sản xuất game thuần Việt, kéo theo sự tăng trưởng lớn về nhu cầu nhân lực ở các khâu như thiết kế đồ hoạ game, lập trình game và âm thanh."@vi ;
+    ex:appearsOnPage ex:page126 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s1 .
+
+  ex:topicG_p126_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Với nghề thiết kế và lập trình, người lao động có rất nhiều lựa chọn việc làm. Họ có thể làm việc cho cơ quan nhà nước, doanh nghiệp tư nhân, công ty chuyên về IT, công ty sản xuất phần mềm hoặc làm trong bộ phận công nghệ thông tin phục vụ hoạt động của một đơn vị."@vi ;
+    ex:appearsOnPage ex:page126 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s2 .
+
+  ex:topicG_p126_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Nhiều đơn vị, ngành nghề như ngân hàng, thương mại, công nghiệp, viễn thông, xây dựng, hàng không, văn hoá, dịch vụ đều có nhu cầu nguồn nhân lực thiết kế và lập trình. Phát triển phần mềm không chỉ là sản xuất của các tổ chức gia công phần mềm trong nước mà còn là sản xuất, kinh doanh của nhiều tổ chức liên doanh với nước ngoài hoặc của nước ngoài."@vi ;
+    ex:appearsOnPage ex:page126 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s2 .
+
+  ex:topicG_p127_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Nhóm nghề thiết kế và lập trình tạo ra những sản phẩm công nghệ thông tin đáp ứng nhu cầu phát triển xã hội, phục vụ sinh hoạt, giải trí của con người. Nghề thiết kế và lập trình đang thu hút nguồn nhân lực với số lượng lớn và mức thu nhập cao."@vi ;
+    ex:appearsOnPage ex:page127 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s2 .
+
+  ex:topicG_p127_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Theo thống kê từ TopDev, trang chuyên tuyển dụng nhân lực về công nghệ phần mềm, Việt Nam luôn trong tình trạng thiếu hụt ứng viên cả về số lượng và chất lượng. Năm 2020 ngành công nghệ thông tin cần khoảng 400 000 nhân sự, thiếu khoảng 100 000 nhân sự; năm 2021 cần 500 000 nhân sự, thiếu khoảng 190 000 nhân sự. Dự báo nhân lực ngành công nghệ thông tin sẽ tiếp tục thiếu trong các năm tiếp theo."@vi ;
+    ex:appearsOnPage ex:page127 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s2 .
+
+  ex:topicG_p127_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Người theo nghề thiết kế và lập trình cần có các đặc điểm: kiên trì, đam mê; tư duy logic và chính xác; khả năng tự học, sáng tạo; khả năng đọc hiểu tiếng Anh. Phát triển phần mềm đòi hỏi thực hành và trao đổi thường xuyên, chương trình phải logic, chính xác, đáp ứng đúng nhu cầu người dùng và người làm nghề phải thường xuyên cập nhật kiến thức, kĩ năng mới."@vi ;
+    ex:appearsOnPage ex:page127 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s2 .
+
+  ex:topicG_p127_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Mục đào tạo và việc làm mở đầu bằng hoạt động: Theo em những nghề thuộc nhóm thiết kế và lập trình có thể làm ở những cơ quan, tổ chức nào?"@vi ;
+    ex:appearsOnPage ex:page127 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p128_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Trong giai đoạn từ năm 2015 đến năm 2020, ngành công nghệ thông tin là một trong những ngành có số lượng tuyển sinh cao nhất hằng năm. Tính đến năm 2020, trong cả nước có khoảng gần 200 khoa đào tạo công nghệ thông tin bậc cao đẳng và đại học."@vi ;
+    ex:appearsOnPage ex:page128 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p128_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Một số trường đại học có thương hiệu đào tạo chất lượng cao về công nghệ thông tin gồm Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội, Trường Đại học Bách khoa Hà Nội, Trường Đại học Bách khoa và Trường Đại học Khoa học Tự nhiên - Đại học Quốc gia Thành phố Hồ Chí Minh."@vi ;
+    ex:appearsOnPage ex:page128 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p128_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Nhu cầu phát triển phần mềm trong thời đại số hoá rất lớn, do đó đào tạo chuyên ngành kĩ thuật phần mềm được xem là một mũi nhọn của đào tạo nhân lực công nghệ thông tin. Sinh viên được trang bị kiến thức nền tảng khoa học cơ bản và kiến thức chuyên sâu về quy trình phát triển phần mềm, phân tích, thiết kế, phát triển, kiểm thử, bảo trì phần mềm và quản lí dự án phần mềm."@vi ;
+    ex:appearsOnPage ex:page128 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p128_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Sinh viên tốt nghiệp có thể hội nhập vào môi trường làm việc hiện đại với nhiều vị trí như chuyên viên phân tích thiết kế hệ thống phần mềm, lập trình viên, kiểm thử viên phần mềm, nhà quản trị hệ thống công nghệ thông tin, cán bộ nghiên cứu, cán bộ giảng dạy về công nghệ thông tin tại các trường, viện nghiên cứu và cơ sở đào tạo."@vi ;
+    ex:appearsOnPage ex:page128 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p128_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Công ty phần mềm có nhiều quy mô khác nhau, sản xuất các loại sản phẩm phần mềm khác nhau. Bên cạnh một số công ty lớn và nổi tiếng sản xuất phần mềm thương mại, có nhiều công ty nhỏ hơn sản xuất phần mềm phục vụ các công ty và doanh nghiệp khác. Một số công ty chuyên làm phần mềm phục vụ một lĩnh vực như ngân hàng - tài chính, viễn thông, quản trị kinh doanh."@vi ;
+    ex:appearsOnPage ex:page128 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p128_06 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Ngày nay hệ thống phần mềm quản lí hành chính cho các cấp chính quyền rất được coi trọng và đầu tư. Các hệ thống lớn này đòi hỏi nhiều nhân lực thiết kế, phát triển, vận hành và bảo trì. Các nhà thiết kế và lập trình viên có cơ hội lớn làm việc ở nhiều vị trí trong các cấp chính quyền và cấp bộ ngành, chính phủ."@vi ;
+    ex:appearsOnPage ex:page128 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p129_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Hệ thống tài chính là một trong những hệ thống thiết yếu, phức tạp, hằng ngày phải phân tích, thống kê, xử lí khối lượng dữ liệu rất lớn. Các doanh nghiệp tài chính - ngân hàng của Nhà nước hay tư nhân đều phải sử dụng những hệ thống phần mềm phức tạp, có tính nghiệp vụ cao, yêu cầu bảo mật nghiêm ngặt."@vi ;
+    ex:appearsOnPage ex:page129 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p129_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Tính tự động hoá của công việc ở lĩnh vực tài chính - ngân hàng tạo nên áp lực cao nhưng đồng thời mở ra nhiều cơ hội lớn cho những người thiết kế và lập trình."@vi ;
+    ex:appearsOnPage ex:page129 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p129_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Bài học đưa ra câu hỏi luyện tập: nếu giáo viên dạy môn Tin học ở trường viết phần mềm quản lí điểm cho trường thì có thể gọi giáo viên đó là lập trình viên được không; học sinh có dự định làm việc trong lĩnh vực thiết kế và lập trình không; và chọn các câu đúng về công việc lập trình viên, phần mềm ứng dụng, yêu cầu nghề, cung cầu nhân lực, cơ hội việc làm trong lĩnh vực tài chính."@vi ;
+    ex:appearsOnPage ex:page129 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:belongsToSection ex:topicG_l1s3 .
+
+  ex:topicG_p130_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Bài 2 là dự án nhỏ: Tìm hiểu về nghề lập trình web, lập trình trò chơi và lập trình cho thiết bị di động. Sau khi hoàn thành dự án, học sinh có khả năng tìm kiếm và khai thác thông tin khái quát về các nghề trong nhóm thiết kế và lập trình, giao lưu qua kênh truyền thông tin số và trình bày, giới thiệu về một vài nghề."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToSection ex:topicG_l2s1 .
+
+  ex:topicG_p130_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Yêu cầu chung của dự án là chia lớp thành ba nhóm, mỗi nhóm thực hiện một đề tài. Nhóm 1 tìm hiểu nghề thiết kế và lập trình web; nhóm 2 tìm hiểu nghề thiết kế và lập trình trò chơi; nhóm 3 tìm hiểu nghề phát triển ứng dụng trên thiết bị di động."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToSection ex:topicG_l2s2 .
+
+  ex:topicG_p130_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Thời gian thực hiện dự án là 2 tuần, trong đó có 2 tiết học trên lớp. Giáo viên quy định nhiệm vụ của 2 tiết trên lớp, đồng thời các nhóm học sinh chủ động thực hiện dự án ngoài giờ học trên lớp."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToSection ex:topicG_l2s2 .
+
+  ex:topicG_p130_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Các giai đoạn thực hiện dự án gồm giai đoạn 1 lập kế hoạch với các việc xác định mục tiêu dự án, lập danh sách công việc cụ thể, dự kiến sản phẩm, phân chia công việc và lên lịch triển khai; giai đoạn 2 thực hiện dự án với các việc mỗi người thực hiện nhiệm vụ được phân công, nhóm thảo luận, đề xuất, đóng góp ý kiến, phối hợp chuẩn bị và hoàn thiện sản phẩm; giai đoạn 3 báo cáo kết quả với các việc trình bày báo cáo kết quả thực hiện dự án và giới thiệu sản phẩm của nhóm."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToSection ex:topicG_l2s3 .
+
+  ex:topicG_p131_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Các nhóm cần thực hiện dự án theo ba giai đoạn với những nhiệm vụ chính của từng giai đoạn như trong Hình 2. Gợi ý việc cần làm gồm tìm kiếm thông tin qua mạng, phỏng vấn, giao lưu khách mời, tổng hợp biên tập thông tin, chuẩn bị sản phẩm và báo cáo kết quả dự án."@vi ;
+    ex:appearsOnPage ex:page131 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToSection ex:topicG_l2s3 .
+
+  ex:topicG_p131_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Gợi ý sản phẩm thứ nhất là bản mô tả nghề, chuẩn bị bằng tệp văn bản, gồm các nội dung chính như giới thiệu khái quát nghề, tên nghề nghiệp và chuyên môn chủ yếu, đặc điểm lao động và yêu cầu của nghề, đào tạo và tuyển sinh, cơ hội và môi trường làm việc, thu nhập, phúc lợi xã hội."@vi ;
+    ex:appearsOnPage ex:page131 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToSection ex:topicG_l2s3 .
+
+  ex:topicG_p131_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Gợi ý sản phẩm thứ hai là bài trình bày, giới thiệu về nghề được nhóm tìm hiểu, chuẩn bị bằng phần mềm trình chiếu với thời gian trình bày tuỳ theo quy định của giáo viên. Hai tiêu chí đánh giá là nội dung cung cấp được những thông tin cơ bản về nghề mà nhóm tìm hiểu và hình thức có tính thẩm mĩ, ngắn gọn, hấp dẫn."@vi ;
+    ex:appearsOnPage ex:page131 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToSection ex:topicG_l2s3 .
+
+  ex:topicG_p131_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Chất lượng nội dung và hình thức phụ thuộc nhiều vào khả năng tìm kiếm, giao lưu và chia sẻ thông tin hướng nghiệp. Các kĩ năng ứng dụng công nghệ thông tin cần được khai thác tốt để có được sản phẩm đáp ứng yêu cầu dự án."@vi ;
+    ex:appearsOnPage ex:page131 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:belongsToSection ex:topicG_l2s3 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:page124 ex:hasParagraph ex:topicG_p124_01, ex:topicG_p124_02 .
+  ex:page125 ex:hasParagraph ex:topicG_p125_01, ex:topicG_p125_02,
+                              ex:topicG_p125_03, ex:topicG_p125_04,
+                              ex:topicG_p125_05 .
+  ex:page126 ex:hasParagraph ex:topicG_p126_01, ex:topicG_p126_02,
+                              ex:topicG_p126_03, ex:topicG_p126_04,
+                              ex:topicG_p126_05 .
+  ex:page127 ex:hasParagraph ex:topicG_p127_01, ex:topicG_p127_02,
+                              ex:topicG_p127_03, ex:topicG_p127_04 .
+  ex:page128 ex:hasParagraph ex:topicG_p128_01, ex:topicG_p128_02,
+                              ex:topicG_p128_03, ex:topicG_p128_04,
+                              ex:topicG_p128_05, ex:topicG_p128_06 .
+  ex:page129 ex:hasParagraph ex:topicG_p129_01, ex:topicG_p129_02,
+                              ex:topicG_p129_03 .
+  ex:page130 ex:hasParagraph ex:topicG_p130_01, ex:topicG_p130_02,
+                              ex:topicG_p130_03, ex:topicG_p130_04 .
+  ex:page131 ex:hasParagraph ex:topicG_p131_01, ex:topicG_p131_02,
+                              ex:topicG_p131_03, ex:topicG_p131_04 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:topicG_l1s1 ex:hasParagraph ex:topicG_p124_01, ex:topicG_p124_02,
+    ex:topicG_p125_01, ex:topicG_p125_02, ex:topicG_p125_03,
+    ex:topicG_p125_04, ex:topicG_p125_05, ex:topicG_p126_01,
+    ex:topicG_p126_02, ex:topicG_p126_03 .
+
+  ex:topicG_l1s2 ex:hasParagraph ex:topicG_p126_04, ex:topicG_p126_05,
+    ex:topicG_p127_01, ex:topicG_p127_02, ex:topicG_p127_03 .
+
+  ex:topicG_l1s3 ex:hasParagraph ex:topicG_p127_04, ex:topicG_p128_01,
+    ex:topicG_p128_02, ex:topicG_p128_03, ex:topicG_p128_04,
+    ex:topicG_p128_05, ex:topicG_p128_06, ex:topicG_p129_01,
+    ex:topicG_p129_02, ex:topicG_p129_03 .
+
+  ex:topicG_l2s1 ex:hasParagraph ex:topicG_p130_01 .
+  ex:topicG_l2s2 ex:hasParagraph ex:topicG_p130_02, ex:topicG_p130_03 .
+  ex:topicG_l2s3 ex:hasParagraph ex:topicG_p130_04, ex:topicG_p131_01,
+    ex:topicG_p131_02, ex:topicG_p131_03, ex:topicG_p131_04 .
+
+  ###########################################################################
+  # Paragraph order links
+  ###########################################################################
+
+  ex:topicG_p124_01 ex:nextParagraph ex:topicG_p124_02 .
+  ex:topicG_p124_02 ex:previousParagraph ex:topicG_p124_01 ; ex:nextParagraph ex:topicG_p125_01 .
+  ex:topicG_p125_01 ex:previousParagraph ex:topicG_p124_02 ; ex:nextParagraph ex:topicG_p125_02 .
+  ex:topicG_p125_02 ex:previousParagraph ex:topicG_p125_01 ; ex:nextParagraph ex:topicG_p125_03 .
+  ex:topicG_p125_03 ex:previousParagraph ex:topicG_p125_02 ; ex:nextParagraph ex:topicG_p125_04 .
+  ex:topicG_p125_04 ex:previousParagraph ex:topicG_p125_03 ; ex:nextParagraph ex:topicG_p125_05 .
+  ex:topicG_p125_05 ex:previousParagraph ex:topicG_p125_04 ; ex:nextParagraph ex:topicG_p126_01 .
+  ex:topicG_p126_01 ex:previousParagraph ex:topicG_p125_05 ; ex:nextParagraph ex:topicG_p126_02 .
+  ex:topicG_p126_02 ex:previousParagraph ex:topicG_p126_01 ; ex:nextParagraph ex:topicG_p126_03 .
+  ex:topicG_p126_03 ex:previousParagraph ex:topicG_p126_02 ; ex:nextParagraph ex:topicG_p126_04 .
+  ex:topicG_p126_04 ex:previousParagraph ex:topicG_p126_03 ; ex:nextParagraph ex:topicG_p126_05 .
+  ex:topicG_p126_05 ex:previousParagraph ex:topicG_p126_04 ; ex:nextParagraph ex:topicG_p127_01 .
+  ex:topicG_p127_01 ex:previousParagraph ex:topicG_p126_05 ; ex:nextParagraph ex:topicG_p127_02 .
+  ex:topicG_p127_02 ex:previousParagraph ex:topicG_p127_01 ; ex:nextParagraph ex:topicG_p127_03 .
+  ex:topicG_p127_03 ex:previousParagraph ex:topicG_p127_02 ; ex:nextParagraph ex:topicG_p127_04 .
+  ex:topicG_p127_04 ex:previousParagraph ex:topicG_p127_03 ; ex:nextParagraph ex:topicG_p128_01 .
+  ex:topicG_p128_01 ex:previousParagraph ex:topicG_p127_04 ; ex:nextParagraph ex:topicG_p128_02 .
+  ex:topicG_p128_02 ex:previousParagraph ex:topicG_p128_01 ; ex:nextParagraph ex:topicG_p128_03 .
+  ex:topicG_p128_03 ex:previousParagraph ex:topicG_p128_02 ; ex:nextParagraph ex:topicG_p128_04 .
+  ex:topicG_p128_04 ex:previousParagraph ex:topicG_p128_03 ; ex:nextParagraph ex:topicG_p128_05 .
+  ex:topicG_p128_05 ex:previousParagraph ex:topicG_p128_04 ; ex:nextParagraph ex:topicG_p128_06 .
+  ex:topicG_p128_06 ex:previousParagraph ex:topicG_p128_05 ; ex:nextParagraph ex:topicG_p129_01 .
+  ex:topicG_p129_01 ex:previousParagraph ex:topicG_p128_06 ; ex:nextParagraph ex:topicG_p129_02 .
+  ex:topicG_p129_02 ex:previousParagraph ex:topicG_p129_01 ; ex:nextParagraph ex:topicG_p129_03 .
+  ex:topicG_p129_03 ex:previousParagraph ex:topicG_p129_02 ; ex:nextParagraph ex:topicG_p130_01 .
+  ex:topicG_p130_01 ex:previousParagraph ex:topicG_p129_03 ; ex:nextParagraph ex:topicG_p130_02 .
+  ex:topicG_p130_02 ex:previousParagraph ex:topicG_p130_01 ; ex:nextParagraph ex:topicG_p130_03 .
+  ex:topicG_p130_03 ex:previousParagraph ex:topicG_p130_02 ; ex:nextParagraph ex:topicG_p130_04 .
+  ex:topicG_p130_04 ex:previousParagraph ex:topicG_p130_03 ; ex:nextParagraph ex:topicG_p131_01 .
+  ex:topicG_p131_01 ex:previousParagraph ex:topicG_p130_04 ; ex:nextParagraph ex:topicG_p131_02 .
+  ex:topicG_p131_02 ex:previousParagraph ex:topicG_p131_01 ; ex:nextParagraph ex:topicG_p131_03 .
+  ex:topicG_p131_03 ex:previousParagraph ex:topicG_p131_02 ; ex:nextParagraph ex:topicG_p131_04 .
+  ex:topicG_p131_04 ex:previousParagraph ex:topicG_p131_03 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:topicG_p124_01 ex:mentionsConcept ex:conceptNhomNgheThietKeLapTrinh, ex:conceptNgheLapTrinhVien .
+  ex:topicG_p124_02 ex:mentionsConcept ex:conceptHuongNghiepTinHoc .
+  ex:topicG_p125_01 ex:mentionsConcept ex:conceptNgheLapTrinhVien .
+  ex:topicG_p125_02 ex:mentionsConcept ex:conceptPhatTrienPhanMem, ex:conceptNhomNgheThietKeLapTrinh .
+  ex:topicG_p125_03 ex:mentionsConcept ex:conceptPhatTrienPhanMem, ex:conceptPhanTichHeThong,
+    ex:conceptThietKePhanMem, ex:conceptLapTrinhPhanMem, ex:conceptKiemThuPhanMem .
+  ex:topicG_p125_04 ex:mentionsConcept ex:conceptPhatTrienPhanMem .
+  ex:topicG_p125_05 ex:mentionsConcept ex:conceptNguonNhanLucCNTT, ex:conceptPhatTrienPhanMem .
+  ex:topicG_p126_01 ex:mentionsConcept ex:conceptPhanMemUngDungWeb .
+  ex:topicG_p126_02 ex:mentionsConcept ex:conceptThuongMaiDienTu .
+  ex:topicG_p126_03 ex:mentionsConcept ex:conceptLapTrinhTroChoi, ex:conceptThietKeGame .
+  ex:topicG_p126_04 ex:mentionsConcept ex:conceptNhomNgheThietKeLapTrinh, ex:conceptCoHoiViecLamCNTT .
+  ex:topicG_p126_05 ex:mentionsConcept ex:conceptNguonNhanLucCNTT, ex:conceptCoHoiViecLamCNTT .
+  ex:topicG_p127_01 ex:mentionsConcept ex:conceptNhomNgheThietKeLapTrinh, ex:conceptNguonNhanLucCNTT .
+  ex:topicG_p127_02 ex:mentionsConcept ex:conceptNguonNhanLucCNTT .
+  ex:topicG_p127_03 ex:mentionsConcept ex:conceptNhomNgheThietKeLapTrinh .
+  ex:topicG_p127_04 ex:mentionsConcept ex:conceptCoHoiViecLamCNTT .
+  ex:topicG_p128_01 ex:mentionsConcept ex:conceptDaoTaoCNTT .
+  ex:topicG_p128_02 ex:mentionsConcept ex:conceptDaoTaoCNTT .
+  ex:topicG_p128_03 ex:mentionsConcept ex:conceptKyThuatPhanMem, ex:conceptPhatTrienPhanMem .
+  ex:topicG_p128_04 ex:mentionsConcept ex:conceptCoHoiViecLamCNTT, ex:conceptNgheLapTrinhVien,
+    ex:conceptKiemThuPhanMem .
+  ex:topicG_p128_05 ex:mentionsConcept ex:conceptCongTyPhanMem .
+  ex:topicG_p128_06 ex:mentionsConcept ex:conceptCoQuanNhaNuoc, ex:conceptCoHoiViecLamCNTT .
+  ex:topicG_p129_01 ex:mentionsConcept ex:conceptDoanhNghiepTaiChinhNganHang .
+  ex:topicG_p129_02 ex:mentionsConcept ex:conceptDoanhNghiepTaiChinhNganHang, ex:conceptCoHoiViecLamCNTT .
+  ex:topicG_p129_03 ex:mentionsConcept ex:conceptNgheLapTrinhVien, ex:conceptCoHoiViecLamCNTT .
+  ex:topicG_p130_01 ex:mentionsConcept ex:conceptDuAnHuongNghiep, ex:conceptPhanMemUngDungWeb,
+    ex:conceptLapTrinhTroChoi, ex:conceptLapTrinhThietBiDiDong .
+  ex:topicG_p130_02 ex:mentionsConcept ex:conceptDuAnHuongNghiep, ex:conceptPhanMemUngDungWeb,
+    ex:conceptLapTrinhTroChoi, ex:conceptLapTrinhThietBiDiDong .
+  ex:topicG_p130_03 ex:mentionsConcept ex:conceptDuAnHuongNghiep .
+  ex:topicG_p130_04 ex:mentionsConcept ex:conceptDuAnHuongNghiep, ex:conceptSanPhamDuAn,
+    ex:conceptBaoCaoKetQuaDuAn .
+  ex:topicG_p131_01 ex:mentionsConcept ex:conceptDuAnHuongNghiep, ex:conceptTimKiemThongTinNgheNghiep .
+  ex:topicG_p131_02 ex:mentionsConcept ex:conceptSanPhamDuAn, ex:conceptCoHoiViecLamCNTT .
+  ex:topicG_p131_03 ex:mentionsConcept ex:conceptSanPhamDuAn, ex:conceptBaoCaoKetQuaDuAn,
+    ex:conceptTieuChiDanhGiaDuAn .
+  ex:topicG_p131_04 ex:mentionsConcept ex:conceptTimKiemThongTinNgheNghiep, ex:conceptDuAnHuongNghiep .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:conceptNhomNgheThietKeLapTrinh ex:relatedTo ex:conceptHuongNghiepTinHoc .
+  ex:conceptNgheLapTrinhVien ex:subConceptOf ex:conceptNhomNgheThietKeLapTrinh .
+  ex:conceptPhatTrienPhanMem ex:relatedTo ex:conceptNhomNgheThietKeLapTrinh .
+  ex:conceptPhanTichHeThong ex:partOf ex:conceptPhatTrienPhanMem .
+  ex:conceptThietKePhanMem ex:partOf ex:conceptPhatTrienPhanMem .
+  ex:conceptLapTrinhPhanMem ex:partOf ex:conceptPhatTrienPhanMem .
+  ex:conceptKiemThuPhanMem ex:partOf ex:conceptPhatTrienPhanMem .
+  ex:conceptPhanMemUngDungWeb ex:subConceptOf ex:conceptPhatTrienPhanMem .
+  ex:conceptThuongMaiDienTu ex:relatedTo ex:conceptPhanMemUngDungWeb .
+  ex:conceptLapTrinhTroChoi ex:subConceptOf ex:conceptPhatTrienPhanMem .
+  ex:conceptThietKeGame ex:relatedTo ex:conceptLapTrinhTroChoi .
+  ex:conceptLapTrinhThietBiDiDong ex:subConceptOf ex:conceptPhatTrienPhanMem .
+  ex:conceptNguonNhanLucCNTT ex:relatedTo ex:conceptNhomNgheThietKeLapTrinh .
+  ex:conceptDaoTaoCNTT ex:relatedTo ex:conceptNguonNhanLucCNTT .
+  ex:conceptKyThuatPhanMem ex:relatedTo ex:conceptPhatTrienPhanMem .
+  ex:conceptCoHoiViecLamCNTT ex:relatedTo ex:conceptNguonNhanLucCNTT .
+  ex:conceptCongTyPhanMem ex:relatedTo ex:conceptCoHoiViecLamCNTT .
+  ex:conceptCoQuanNhaNuoc ex:relatedTo ex:conceptCoHoiViecLamCNTT .
+  ex:conceptDoanhNghiepTaiChinhNganHang ex:relatedTo ex:conceptCoHoiViecLamCNTT .
+  ex:conceptDuAnHuongNghiep ex:relatedTo ex:conceptHuongNghiepTinHoc .
+  ex:conceptTimKiemThongTinNgheNghiep ex:relatedTo ex:conceptDuAnHuongNghiep .
+  ex:conceptSanPhamDuAn ex:partOf ex:conceptDuAnHuongNghiep .
+  ex:conceptBaoCaoKetQuaDuAn ex:partOf ex:conceptDuAnHuongNghiep .
+  ex:conceptTieuChiDanhGiaDuAn ex:relatedTo ex:conceptDuAnHuongNghiep .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:topicG_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề G"@vi ;
+    ex:hasRawText "Theo em, vì sao nghề thiết kế và lập trình đang được nhiều bạn trẻ yêu thích tin học ưu tiên lựa chọn?"@vi ;
+    ex:appearsOnPage ex:page124 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:relatedTo ex:conceptNhomNgheThietKeLapTrinh, ex:conceptHuongNghiepTinHoc .
+
+  ex:topicG_l1_activityProgrammer a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Tìm hiểu lập trình viên"@vi ;
+    ex:hasRawText "Em đã nghe tới cụm từ lập trình viên chưa? Em hãy trình bày những hiểu biết, suy nghĩ, cảm nhận của em về lập trình viên."@vi ;
+    ex:appearsOnPage ex:page125 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:relatedTo ex:conceptNgheLapTrinhVien .
+
+  ex:topicG_l1_activityWorkplaces a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Cơ quan, tổ chức làm việc của nhóm nghề thiết kế và lập trình"@vi ;
+    ex:hasRawText "Theo em những nghề thuộc nhóm thiết kế và lập trình có thể làm ở những cơ quan, tổ chức nào?"@vi ;
+    ex:appearsOnPage ex:page127 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:relatedTo ex:conceptCoHoiViecLamCNTT .
+
+  ex:topicG_l1_practiceTeacherProgrammer a ex:PracticeExercise ;
+    rdfs:label "Luyện tập - Giáo viên viết phần mềm quản lí điểm"@vi ;
+    ex:hasRawText "Nếu giáo viên dạy môn Tin học ở trường em viết phần mềm quản lí điểm cho trường thì em có thể gọi giáo viên đó là lập trình viên được không? Vì sao?"@vi ;
+    ex:appearsOnPage ex:page129 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:relatedTo ex:conceptNgheLapTrinhVien, ex:conceptPhatTrienPhanMem .
+
+  ex:topicG_l1_practiceCareerIntention a ex:PracticeExercise ;
+    rdfs:label "Luyện tập - Dự định làm việc trong lĩnh vực thiết kế và lập trình"@vi ;
+    ex:hasRawText "Em có dự định sẽ làm việc trong các lĩnh vực thiết kế và lập trình không? Vì sao?"@vi ;
+    ex:appearsOnPage ex:page129 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:relatedTo ex:conceptHuongNghiepTinHoc, ex:conceptNhomNgheThietKeLapTrinh .
+
+  ex:topicG_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi bài 1 chủ đề G"@vi ;
+    ex:hasRawText "Trong các câu sau đây, những câu nào đúng? 1) Công việc của lập trình viên là viết các dòng lệnh bằng một ngôn ngữ lập trình. 2) Phần mềm ứng dụng cần nâng cấp, chỉnh sửa để đáp ứng sự thay đổi mới của công nghệ số. 3) Để thiết kế và lập trình cần rất giỏi Toán và thành thạo tiếng Anh. 4) Số lượng cung cầu về lập trình viên ở Việt Nam đã cân bằng, do vậy nhiều sinh viên tốt nghiệp ngành lập trình trong những năm tới rất khó tìm kiếm việc làm. 5) Sinh viên tốt nghiệp ngành công nghệ thông tin không có cơ hội tìm kiếm việc làm trong lĩnh vực tài chính."@vi ;
+    ex:appearsOnPage ex:page129 ;
+    ex:belongsToLesson ex:topicG_lesson1 ;
+    ex:relatedTo ex:conceptNgheLapTrinhVien, ex:conceptCoHoiViecLamCNTT .
+
+  ex:topicG_l2_project a ex:Project ;
+    rdfs:label "Dự án nhỏ chủ đề G - Tìm hiểu nghề lập trình web, lập trình trò chơi và lập trình cho thiết bị di động"@vi ;
+    ex:hasRawText "Dự án nhỏ yêu cầu học sinh tìm hiểu về nghề lập trình web, lập trình trò chơi và lập trình cho thiết bị di động, chia lớp thành ba nhóm, thực hiện trong hai tuần, tìm kiếm thông tin, chuẩn bị sản phẩm và báo cáo kết quả."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:relatedTo ex:conceptDuAnHuongNghiep, ex:conceptPhanMemUngDungWeb,
+                 ex:conceptLapTrinhTroChoi, ex:conceptLapTrinhThietBiDiDong .
+
+  ex:topicG_l2_taskGroup1 a ex:PracticeTask ;
+    rdfs:label "Nhóm 1 - Tìm hiểu nghề thiết kế và lập trình web"@vi ;
+    ex:hasRawText "Nhóm 1 tìm hiểu nghề thiết kế và lập trình web."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:relatedTo ex:conceptPhanMemUngDungWeb .
+
+  ex:topicG_l2_taskGroup2 a ex:PracticeTask ;
+    rdfs:label "Nhóm 2 - Tìm hiểu nghề thiết kế và lập trình trò chơi"@vi ;
+    ex:hasRawText "Nhóm 2 tìm hiểu nghề thiết kế và lập trình trò chơi."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:relatedTo ex:conceptLapTrinhTroChoi, ex:conceptThietKeGame .
+
+  ex:topicG_l2_taskGroup3 a ex:PracticeTask ;
+    rdfs:label "Nhóm 3 - Tìm hiểu nghề phát triển ứng dụng trên thiết bị di động"@vi ;
+    ex:hasRawText "Nhóm 3 tìm hiểu nghề phát triển ứng dụng trên thiết bị di động."@vi ;
+    ex:appearsOnPage ex:page130 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:relatedTo ex:conceptLapTrinhThietBiDiDong .
+
+  ex:topicG_l2_product1 a ex:AppliedTask ;
+    rdfs:label "Sản phẩm thứ nhất - Bản mô tả nghề"@vi ;
+    ex:hasRawText "Bản mô tả nghề chuẩn bị bằng tệp văn bản, gồm giới thiệu khái quát nghề, tên nghề nghiệp và chuyên môn chủ yếu, đặc điểm lao động và yêu cầu của nghề, đào tạo và tuyển sinh, cơ hội và môi trường làm việc, thu nhập, phúc lợi xã hội."@vi ;
+    ex:appearsOnPage ex:page131 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:relatedTo ex:conceptSanPhamDuAn .
+
+  ex:topicG_l2_product2 a ex:AppliedTask ;
+    rdfs:label "Sản phẩm thứ hai - Bài trình bày giới thiệu nghề"@vi ;
+    ex:hasRawText "Bài trình bày, giới thiệu về nghề được nhóm tìm hiểu, chuẩn bị bằng phần mềm trình chiếu, thời gian trình bày tuỳ theo quy định của giáo viên."@vi ;
+    ex:appearsOnPage ex:page131 ;
+    ex:belongsToLesson ex:topicG_lesson2 ;
+    ex:relatedTo ex:conceptBaoCaoKetQuaDuAn, ex:conceptSanPhamDuAn .
+
+  ex:topicG_lesson1 ex:hasActivity ex:topicG_l1_openingActivity,
+    ex:topicG_l1_activityProgrammer, ex:topicG_l1_activityWorkplaces ;
+    ex:hasReviewQuestion ex:topicG_l1_review1 .
+
+  ex:topicG_lesson2 ex:hasActivity ex:topicG_l2_project,
+    ex:topicG_l2_taskGroup1, ex:topicG_l2_taskGroup2, ex:topicG_l2_taskGroup3,
+    ex:topicG_l2_product1, ex:topicG_l2_product2 .
+}

@@ -1,0 +1,1076 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 12 TOPIC G
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 and Grade 11.
+# Source file: sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-6.pdf
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g12_grade12 a ex:GradeLevel ;
+    rdfs:label "Lớp 12"@vi ;
+    ex:gradeNumber 12 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g12_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 12 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 12 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g12_grade12 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicG_shared a ex:Topic ;
+    rdfs:label "Chủ đề G (dùng chung các khối)"@vi ;
+    ex:hasTitle "Hướng nghiệp với Tin học"@vi .
+
+  ex:g12_topicG a ex:Topic ;
+    rdfs:label "Chủ đề G - Hướng nghiệp với Tin học"@vi ;
+    ex:hasTitle "Hướng nghiệp với Tin học"@vi ;
+    ex:hasSubtitle "Giới thiệu nhóm nghề dịch vụ và quản trị; một số nghề ứng dụng tin học và một số ngành thuộc lĩnh vực tin học"@vi ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicG_shared ;
+    ex:topicOrder 7 ;
+    ex:hasStartPage 92 ;
+    ex:hasEndPage 106 ;
+    ex:sourceFileName "sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-6.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g12_topicG_lesson1, ex:g12_topicG_lesson2, ex:g12_topicG_lesson3 ;
+    ex:hasPage ex:g12_page092, ex:g12_page093, ex:g12_page094, ex:g12_page095,
+               ex:g12_page096, ex:g12_page097, ex:g12_page098, ex:g12_page099,
+               ex:g12_page100, ex:g12_page101, ex:g12_page102, ex:g12_page103,
+               ex:g12_page104, ex:g12_page105, ex:g12_page106 .
+
+  ex:g12_tinhoc_ungdung_canhdieu ex:hasTopic ex:g12_topicG .
+
+  ###########################################################################
+  # Lessons
+  ###########################################################################
+
+  ex:g12_topicG_lesson1 a ex:Lesson ;
+    rdfs:label "Bài 1. Giới thiệu nhóm nghề dịch vụ và quản trị trong ngành Công nghệ thông tin"@vi ;
+    ex:hasTitle "Giới thiệu nhóm nghề dịch vụ và quản trị trong ngành Công nghệ thông tin"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g12_topicG ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 92 ;
+    ex:hasEndPage 97 ;
+    ex:hasSection ex:g12_topicG_l1s1, ex:g12_topicG_l1s2, ex:g12_topicG_l1s3 .
+
+  ex:g12_topicG_lesson2 a ex:Lesson ;
+    rdfs:label "Bài 2. Một số nghề khác trong ngành Công nghệ thông tin và một số nghề ứng dụng công nghệ thông tin"@vi ;
+    ex:hasTitle "Một số nghề khác trong ngành Công nghệ thông tin và một số nghề ứng dụng công nghệ thông tin"@vi ;
+    ex:lessonNumber 2 ;
+    ex:belongsToTopic ex:g12_topicG ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 98 ;
+    ex:hasEndPage 103 ;
+    ex:hasSection ex:g12_topicG_l2s1, ex:g12_topicG_l2s2, ex:g12_topicG_l2s3, ex:g12_topicG_l2s4 .
+
+  ex:g12_topicG_lesson3 a ex:Lesson ;
+    rdfs:label "Bài 3. Dự án nhỏ: Tìm hiểu thông tin tuyển sinh và hướng nghiệp về lĩnh vực đào tạo Máy tính và Công nghệ thông tin ở Việt Nam"@vi ;
+    ex:hasTitle "Dự án nhỏ: Tìm hiểu thông tin tuyển sinh và hướng nghiệp về lĩnh vực đào tạo Máy tính và Công nghệ thông tin ở Việt Nam"@vi ;
+    ex:lessonNumber 3 ;
+    ex:belongsToTopic ex:g12_topicG ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 104 ;
+    ex:hasEndPage 106 ;
+    ex:hasSection ex:g12_topicG_l3s1, ex:g12_topicG_l3s2, ex:g12_topicG_l3s3 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g12_topicG_l1s1 a ex:Section ;
+    rdfs:label "Nhóm nghề dịch vụ trong ngành Công nghệ thông tin"@vi ;
+    ex:hasTitle "Nhóm nghề dịch vụ trong ngành Công nghệ thông tin"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 .
+
+  ex:g12_topicG_l1s2 a ex:Section ;
+    rdfs:label "Nhóm nghề quản trị trong ngành Công nghệ thông tin"@vi ;
+    ex:hasTitle "Nhóm nghề quản trị trong ngành Công nghệ thông tin"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 .
+
+  ex:g12_topicG_l1s3 a ex:Section ;
+    rdfs:label "Thực hành tìm hiểu nhu cầu nhân lực và tuyển dụng"@vi ;
+    ex:hasTitle "Thực hành tìm hiểu nhu cầu nhân lực và tuyển dụng"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 .
+
+  ex:g12_topicG_l2s1 a ex:Section ;
+    rdfs:label "Một số nghề trong ngành Công nghiệp phần mềm"@vi ;
+    ex:hasTitle "Một số nghề trong ngành Công nghiệp phần mềm"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 .
+
+  ex:g12_topicG_l2s2 a ex:Section ;
+    rdfs:label "Chuyển đổi số và một số nghề liên quan trong ngành Công nghệ thông tin"@vi ;
+    ex:hasTitle "Chuyển đổi số và một số nghề liên quan trong ngành Công nghệ thông tin"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 .
+
+  ex:g12_topicG_l2s3 a ex:Section ;
+    rdfs:label "Một số nghề ứng dụng công nghệ thông tin trong ngành Truyền thông đa phương tiện"@vi ;
+    ex:hasTitle "Một số nghề ứng dụng công nghệ thông tin trong ngành Truyền thông đa phương tiện"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 .
+
+  ex:g12_topicG_l2s4 a ex:Section ;
+    rdfs:label "Một số nghề ứng dụng công nghệ thông tin trong các ngành khác"@vi ;
+    ex:hasTitle "Một số nghề ứng dụng công nghệ thông tin trong các ngành khác"@vi ;
+    ex:sectionOrder 4 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 .
+
+  ex:g12_topicG_l3s1 a ex:Section ;
+    rdfs:label "Yêu cầu chung"@vi ;
+    ex:hasTitle "Yêu cầu chung"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 .
+
+  ex:g12_topicG_l3s2 a ex:Section ;
+    rdfs:label "Một số hướng dẫn gợi ý"@vi ;
+    ex:hasTitle "Một số hướng dẫn gợi ý"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 .
+
+  ex:g12_topicG_l3s3 a ex:Section ;
+    rdfs:label "Bảng nội dung sản phẩm và chú ý trao đổi đánh giá"@vi ;
+    ex:hasTitle "Bảng nội dung sản phẩm và chú ý trao đổi đánh giá"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g12_page092 a ex:Page ; ex:hasPageNumber 92 ; ex:hasPrintedPageNumber 92 ; ex:pdfPageIndex 1 ; ex:belongsToLesson ex:g12_topicG_lesson1 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page093 a ex:Page ; ex:hasPageNumber 93 ; ex:hasPrintedPageNumber 93 ; ex:pdfPageIndex 2 ; ex:belongsToLesson ex:g12_topicG_lesson1 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page094 a ex:Page ; ex:hasPageNumber 94 ; ex:hasPrintedPageNumber 94 ; ex:pdfPageIndex 3 ; ex:belongsToLesson ex:g12_topicG_lesson1 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page095 a ex:Page ; ex:hasPageNumber 95 ; ex:hasPrintedPageNumber 95 ; ex:pdfPageIndex 4 ; ex:belongsToLesson ex:g12_topicG_lesson1 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page096 a ex:Page ; ex:hasPageNumber 96 ; ex:hasPrintedPageNumber 96 ; ex:pdfPageIndex 5 ; ex:belongsToLesson ex:g12_topicG_lesson1 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page097 a ex:Page ; ex:hasPageNumber 97 ; ex:hasPrintedPageNumber 97 ; ex:pdfPageIndex 6 ; ex:belongsToLesson ex:g12_topicG_lesson1 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page098 a ex:Page ; ex:hasPageNumber 98 ; ex:hasPrintedPageNumber 98 ; ex:pdfPageIndex 7 ; ex:belongsToLesson ex:g12_topicG_lesson2 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page099 a ex:Page ; ex:hasPageNumber 99 ; ex:hasPrintedPageNumber 99 ; ex:pdfPageIndex 8 ; ex:belongsToLesson ex:g12_topicG_lesson2 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page100 a ex:Page ; ex:hasPageNumber 100 ; ex:hasPrintedPageNumber 100 ; ex:pdfPageIndex 9 ; ex:belongsToLesson ex:g12_topicG_lesson2 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page101 a ex:Page ; ex:hasPageNumber 101 ; ex:hasPrintedPageNumber 101 ; ex:pdfPageIndex 10 ; ex:belongsToLesson ex:g12_topicG_lesson2 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page102 a ex:Page ; ex:hasPageNumber 102 ; ex:hasPrintedPageNumber 102 ; ex:pdfPageIndex 11 ; ex:belongsToLesson ex:g12_topicG_lesson2 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page103 a ex:Page ; ex:hasPageNumber 103 ; ex:hasPrintedPageNumber 103 ; ex:pdfPageIndex 12 ; ex:belongsToLesson ex:g12_topicG_lesson2 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page104 a ex:Page ; ex:hasPageNumber 104 ; ex:hasPrintedPageNumber 104 ; ex:pdfPageIndex 13 ; ex:belongsToLesson ex:g12_topicG_lesson3 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page105 a ex:Page ; ex:hasPageNumber 105 ; ex:hasPrintedPageNumber 105 ; ex:pdfPageIndex 14 ; ex:belongsToLesson ex:g12_topicG_lesson3 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+  ex:g12_page106 a ex:Page ; ex:hasPageNumber 106 ; ex:hasPrintedPageNumber 106 ; ex:pdfPageIndex 15 ; ex:belongsToLesson ex:g12_topicG_lesson3 ; ex:belongsToTopic ex:g12_topicG ; ex:belongsToGrade ex:g12_grade12 ; ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g12_page091 ex:nextPage ex:g12_page092 .
+  ex:g12_page092 ex:previousPage ex:g12_page091 ; ex:nextPage ex:g12_page093 .
+  ex:g12_page093 ex:previousPage ex:g12_page092 ; ex:nextPage ex:g12_page094 .
+  ex:g12_page094 ex:previousPage ex:g12_page093 ; ex:nextPage ex:g12_page095 .
+  ex:g12_page095 ex:previousPage ex:g12_page094 ; ex:nextPage ex:g12_page096 .
+  ex:g12_page096 ex:previousPage ex:g12_page095 ; ex:nextPage ex:g12_page097 .
+  ex:g12_page097 ex:previousPage ex:g12_page096 ; ex:nextPage ex:g12_page098 .
+  ex:g12_page098 ex:previousPage ex:g12_page097 ; ex:nextPage ex:g12_page099 .
+  ex:g12_page099 ex:previousPage ex:g12_page098 ; ex:nextPage ex:g12_page100 .
+  ex:g12_page100 ex:previousPage ex:g12_page099 ; ex:nextPage ex:g12_page101 .
+  ex:g12_page101 ex:previousPage ex:g12_page100 ; ex:nextPage ex:g12_page102 .
+  ex:g12_page102 ex:previousPage ex:g12_page101 ; ex:nextPage ex:g12_page103 .
+  ex:g12_page103 ex:previousPage ex:g12_page102 ; ex:nextPage ex:g12_page104 .
+  ex:g12_page104 ex:previousPage ex:g12_page103 ; ex:nextPage ex:g12_page105 .
+  ex:g12_page105 ex:previousPage ex:g12_page104 ; ex:nextPage ex:g12_page106 .
+  ex:g12_page106 ex:previousPage ex:g12_page105 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g12_conceptHuongNghiepTinHoc a ex:KnowledgeConcept ; rdfs:label "Hướng nghiệp với Tin học"@vi .
+  ex:g12_conceptNhomNgheDichVuQuanTriCNTT a ex:KnowledgeConcept ; rdfs:label "Nhóm nghề dịch vụ và quản trị trong Công nghệ thông tin"@vi .
+  ex:g12_conceptCongNgheThongTin a ex:KnowledgeConcept ; rdfs:label "Công nghệ thông tin"@vi .
+  ex:g12_conceptDichVuCNTT a ex:KnowledgeConcept ; rdfs:label "Dịch vụ trong ngành Công nghệ thông tin"@vi .
+  ex:g12_conceptQuanTriCNTT a ex:KnowledgeConcept ; rdfs:label "Quản trị trong ngành Công nghệ thông tin"@vi .
+  ex:g12_conceptKiThuatVienCNTT a ex:KnowledgeConcept ; rdfs:label "Kĩ thuật viên công nghệ thông tin"@vi .
+  ex:g12_conceptSuaChuaBaoTriMayTinh a ex:KnowledgeConcept ; rdfs:label "Sửa chữa và bảo trì máy tính"@vi .
+  ex:g12_conceptTuVanKhachHangCNTT a ex:KnowledgeConcept ; rdfs:label "Tư vấn khách hàng mua máy tính, nâng cấp phần cứng, phần mềm"@vi .
+  ex:g12_conceptMangMayTinhLAN a ex:KnowledgeConcept ; rdfs:label "Mạng LAN"@vi .
+  ex:g12_conceptKiSuAnToanThongTin a ex:KnowledgeConcept ; rdfs:label "Kĩ sư an toàn thông tin"@vi .
+  ex:g12_conceptAnToanThongTin a ex:KnowledgeConcept ; rdfs:label "An toàn thông tin"@vi .
+  ex:g12_conceptBaoMatThongTin a ex:KnowledgeConcept ; rdfs:label "Bảo mật thông tin"@vi .
+  ex:g12_conceptGiaiPhapAnToanDuLieu a ex:KnowledgeConcept ; rdfs:label "Giải pháp an toàn dữ liệu"@vi .
+  ex:g12_conceptUngPhoSuCoAnToan a ex:KnowledgeConcept ; rdfs:label "Ứng phó sự cố an toàn thông tin"@vi .
+  ex:g12_conceptQuanTriMang a ex:KnowledgeConcept ; rdfs:label "Quản trị mạng"@vi .
+  ex:g12_conceptKiSuQuanTriMang a ex:KnowledgeConcept ; rdfs:label "Kĩ sư quản trị mạng"@vi .
+  ex:g12_conceptVanHanhMang a ex:KnowledgeConcept ; rdfs:label "Vận hành mạng"@vi .
+  ex:g12_conceptBaoVeMang a ex:KnowledgeConcept ; rdfs:label "Bảo vệ mạng"@vi .
+  ex:g12_conceptKhacPhucSuCoMang a ex:KnowledgeConcept ; rdfs:label "Khắc phục sự cố mạng"@vi .
+  ex:g12_conceptQuanTriBaoTriHeThong a ex:KnowledgeConcept ; rdfs:label "Quản trị và bảo trì hệ thống"@vi .
+  ex:g12_conceptHeThongThongTin a ex:KnowledgeConcept ; rdfs:label "Hệ thống thông tin"@vi .
+  ex:g12_conceptBaoTriHeThong a ex:KnowledgeConcept ; rdfs:label "Bảo trì hệ thống"@vi ;
+    ex:altLabel "Bảo trì hệ thống thông tin"@vi .
+  ex:g12_conceptNhuCauNhanLucCNTT a ex:KnowledgeConcept ; rdfs:label "Nhu cầu nhân lực công nghệ thông tin"@vi .
+  ex:g12_conceptTuyenDungCNTT a ex:KnowledgeConcept ; rdfs:label "Tuyển dụng công nghệ thông tin"@vi .
+
+  ex:g12_conceptCongNghiepPhanMem a ex:KnowledgeConcept ; rdfs:label "Công nghiệp phần mềm"@vi .
+  ex:g12_conceptKiemThuVien a ex:KnowledgeConcept ; rdfs:label "Kiểm thử viên"@vi .
+  ex:g12_conceptNguoiQuanLiKiemThu a ex:KnowledgeConcept ; rdfs:label "Người quản lí kiểm thử"@vi .
+  ex:g12_conceptThietKeGiaoDienNguoiDung a ex:KnowledgeConcept ; rdfs:label "Nhà thiết kế giao diện người dùng"@vi .
+  ex:g12_conceptThietKeTraiNghiemNguoiDung a ex:KnowledgeConcept ; rdfs:label "Nhà thiết kế trải nghiệm người dùng"@vi .
+  ex:g12_conceptUI a ex:KnowledgeConcept ; rdfs:label "UI - User Interface"@vi .
+  ex:g12_conceptUX a ex:KnowledgeConcept ; rdfs:label "UX - User Experience"@vi .
+  ex:g12_conceptChuyenDoiSo a ex:KnowledgeConcept ; rdfs:label "Chuyển đổi số"@vi .
+  ex:g12_conceptDienToanDamMay a ex:KnowledgeConcept ; rdfs:label "Điện toán đám mây"@vi .
+  ex:g12_conceptKiSuDienToanDamMay a ex:KnowledgeConcept ; rdfs:label "Kĩ sư điện toán đám mây"@vi .
+  ex:g12_conceptIoT a ex:KnowledgeConcept ; rdfs:label "IoT - Internet of Things"@vi .
+  ex:g12_conceptKiSuIoT a ex:KnowledgeConcept ; rdfs:label "Kĩ sư IoT"@vi .
+  ex:g12_conceptTriTueNhanTao a ex:KnowledgeConcept ; rdfs:label "Trí tuệ nhân tạo"@vi .
+  ex:g12_conceptKiSuTriTueNhanTao a ex:KnowledgeConcept ; rdfs:label "Kĩ sư trí tuệ nhân tạo"@vi .
+
+  ex:g12_conceptTruyenThongDaPhuongTien a ex:KnowledgeConcept ; rdfs:label "Truyền thông đa phương tiện"@vi .
+  ex:g12_conceptThietKeDoHoa a ex:KnowledgeConcept ; rdfs:label "Thiết kế đồ họa"@vi .
+  ex:g12_conceptChuyenVienThietKeDoHoa a ex:KnowledgeConcept ; rdfs:label "Chuyên viên thiết kế đồ họa"@vi .
+  ex:g12_conceptChuyenVienThietKeTruyenThongDaPhuongTien a ex:KnowledgeConcept ; rdfs:label "Chuyên viên thiết kế truyền thông đa phương tiện"@vi .
+  ex:g12_conceptNhaPhatTrienTrangWeb a ex:KnowledgeConcept ; rdfs:label "Nhà phát triển trang web"@vi .
+  ex:g12_conceptKiXaoDienAnh a ex:KnowledgeConcept ; rdfs:label "Kĩ xảo điện ảnh"@vi .
+  ex:g12_conceptChuyenVienKiXaoDienAnh a ex:KnowledgeConcept ; rdfs:label "Chuyên viên kĩ xảo điện ảnh"@vi .
+
+  ex:g12_conceptUngDungCNTTTrongNganhKhac a ex:KnowledgeConcept ; rdfs:label "Ứng dụng công nghệ thông tin trong các ngành khác"@vi .
+  ex:g12_conceptPhanTichDuLieu a ex:KnowledgeConcept ; rdfs:label "Phân tích dữ liệu"@vi .
+  ex:g12_conceptNhaPhanTichDuLieu a ex:KnowledgeConcept ; rdfs:label "Nhà phân tích dữ liệu"@vi .
+  ex:g12_conceptNhaKhoaHocDuLieu a ex:KnowledgeConcept ; rdfs:label "Nhà khoa học dữ liệu"@vi .
+  ex:g12_conceptGIS a ex:KnowledgeConcept ; rdfs:label "GIS - Hệ thống thông tin địa lí"@vi .
+  ex:g12_conceptKiSuGIS a ex:KnowledgeConcept ; rdfs:label "Kĩ sư GIS"@vi .
+  ex:g12_conceptBanDoSo a ex:KnowledgeConcept ; rdfs:label "Bản đồ số"@vi .
+  ex:g12_conceptCongNgheTaiChinh a ex:KnowledgeConcept ; rdfs:label "Công nghệ tài chính"@vi .
+  ex:g12_conceptFintech a ex:KnowledgeConcept ; rdfs:label "Fintech - Financial Technology"@vi .
+  ex:g12_conceptThongTinTuyenSinh a ex:KnowledgeConcept ; rdfs:label "Thông tin tuyển sinh"@vi .
+  ex:g12_conceptLinhVucMayTinhCNTT a ex:KnowledgeConcept ; rdfs:label "Lĩnh vực đào tạo Máy tính và Công nghệ thông tin"@vi .
+  ex:g12_conceptBaoCaoHuongNghiep a ex:KnowledgeConcept ; rdfs:label "Báo cáo hướng nghiệp"@vi .
+
+  ex:g12_topicG ex:hasConcept ex:g12_conceptHuongNghiepTinHoc,
+    ex:g12_conceptNhomNgheDichVuQuanTriCNTT, ex:g12_conceptCongNgheThongTin,
+    ex:g12_conceptDichVuCNTT, ex:g12_conceptQuanTriCNTT,
+    ex:g12_conceptKiThuatVienCNTT, ex:g12_conceptKiSuAnToanThongTin,
+    ex:g12_conceptQuanTriMang, ex:g12_conceptQuanTriBaoTriHeThong,
+    ex:g12_conceptNhuCauNhanLucCNTT, ex:g12_conceptTuyenDungCNTT,
+    ex:g12_conceptCongNghiepPhanMem, ex:g12_conceptKiemThuVien,
+    ex:g12_conceptNguoiQuanLiKiemThu, ex:g12_conceptThietKeGiaoDienNguoiDung,
+    ex:g12_conceptThietKeTraiNghiemNguoiDung, ex:g12_conceptChuyenDoiSo,
+    ex:g12_conceptKiSuDienToanDamMay, ex:g12_conceptKiSuIoT,
+    ex:g12_conceptKiSuTriTueNhanTao, ex:g12_conceptTruyenThongDaPhuongTien,
+    ex:g12_conceptChuyenVienThietKeDoHoa,
+    ex:g12_conceptChuyenVienThietKeTruyenThongDaPhuongTien,
+    ex:g12_conceptNhaPhatTrienTrangWeb, ex:g12_conceptChuyenVienKiXaoDienAnh,
+    ex:g12_conceptNhaPhanTichDuLieu, ex:g12_conceptNhaKhoaHocDuLieu,
+    ex:g12_conceptKiSuGIS, ex:g12_conceptCongNgheTaiChinh,
+    ex:g12_conceptThongTinTuyenSinh, ex:g12_conceptLinhVucMayTinhCNTT .
+
+  ###########################################################################
+  # Learning objectives and summaries
+  ###########################################################################
+
+  ex:g12_topicG_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 1 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ trình bày được thông tin hướng nghiệp nhóm nghề dịch vụ và quản trị: sửa chữa và bảo trì máy tính, quản trị mạng, quản trị và bảo trì hệ thống, bảo mật hệ thống thông tin; tự tìm kiếm và khai thác được thông tin hướng nghiệp về một số nghề trong nhóm nghề dịch vụ và quản trị ngành Công nghệ thông tin."@vi ;
+    ex:appearsOnPage ex:g12_page092 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 .
+
+  ex:g12_topicG_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 1 chủ đề G lớp 12"@vi ;
+    ex:hasSummaryText "Kĩ thuật viên công nghệ thông tin là nghề dịch vụ đa dạng và có nhu cầu cao; kĩ sư an toàn thông tin xây dựng và duy trì các giải pháp an toàn dữ liệu, bảo mật thông tin. Những tổ chức, doanh nghiệp có hệ thống thông tin và mạng máy tính cần nhân lực về quản trị mạng, quản trị và bảo trì hệ thống để đảm bảo hệ thống hoạt động hiệu quả và tin cậy."@vi ;
+    ex:appearsOnPage ex:g12_page097 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 .
+
+  ex:g12_topicG_l2_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 2 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ nêu được tên một số nghề trong ngành Công nghiệp phần mềm hoặc trong chuyển đổi số; nêu được tên một số nghề ứng dụng công nghệ thông tin trong ngành Truyền thông đa phương tiện hoặc các lĩnh vực khác; giải thích được vai trò và công việc của những nghề này."@vi ;
+    ex:appearsOnPage ex:g12_page098 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 .
+
+  ex:g12_topicG_l2_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Bài 2 chủ đề G lớp 12"@vi ;
+    ex:hasSummaryText "Một số nghề trong ngành Công nghiệp phần mềm không cần kĩ năng lập trình như kiểm thử viên, người quản lí kiểm thử, nhà thiết kế giao diện người dùng, nhà thiết kế trải nghiệm người dùng. Chuyển đổi số cần nhân lực ứng dụng công nghệ số tiên tiến như kĩ sư điện toán đám mây, kĩ sư IoT, kĩ sư trí tuệ nhân tạo. Truyền thông đa phương tiện và nhiều ngành kinh tế - xã hội khác cũng cần nhân lực có kiến thức về công nghệ thông tin."@vi ;
+    ex:appearsOnPage ex:g12_page103 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 .
+
+  ex:g12_topicG_l3_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài 3 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ tìm hiểu và trình bày được thông tin tuyển sinh và hướng nghiệp một số ngành đào tạo thuộc lĩnh vực đào tạo Máy tính và Công nghệ thông tin; trình bày được vai trò và công việc của chuyên viên công nghệ thông tin trong một số ngành nghề có nhiều ứng dụng công nghệ thông tin; giao lưu được với bạn bè qua kênh truyền thông số để tham khảo và trao đổi ý kiến về những thông tin trên."@vi ;
+    ex:appearsOnPage ex:g12_page104 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 .
+
+  ex:g12_topicG_lesson1 ex:hasSummary ex:g12_topicG_l1_summary .
+  ex:g12_topicG_lesson2 ex:hasSummary ex:g12_topicG_l2_summary .
+
+  ###########################################################################
+  # Figures and tables
+  ###########################################################################
+
+  ex:g12_topicG_fig_l1_networkAdminWork a ex:Figure ;
+    rdfs:label "Hình 1. Công việc của kĩ sư quản trị mạng"@vi ;
+    ex:hasCaption "Hình 1. Công việc của kĩ sư quản trị mạng"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 1 ;
+    ex:appearsOnPage ex:g12_page095 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptKiSuQuanTriMang, ex:g12_conceptQuanTriMang, ex:g12_conceptBaoVeMang, ex:g12_conceptVanHanhMang, ex:g12_conceptKhacPhucSuCoMang .
+
+  ex:g12_topicG_fig_l2_multimedia a ex:Figure ;
+    rdfs:label "Hình 1. Minh họa truyền thông đa phương tiện"@vi ;
+    ex:hasCaption "Hình 1. Minh họa truyền thông đa phương tiện"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 2 ;
+    ex:appearsOnPage ex:g12_page100 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptTruyenThongDaPhuongTien, ex:g12_conceptChuyenVienThietKeTruyenThongDaPhuongTien .
+
+  ex:g12_topicG_fig_l2_digitalMap a ex:Figure ;
+    rdfs:label "Hình 2. Một phần của bản đồ số"@vi ;
+    ex:hasCaption "Hình 2. Một phần của bản đồ số"@vi ;
+    ex:figureOrderOnPage 1 ;
+    ex:globalFigureOrder 3 ;
+    ex:appearsOnPage ex:g12_page101 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptGIS, ex:g12_conceptKiSuGIS, ex:g12_conceptBanDoSo .
+
+  ex:g12_topicG_table_l3_productA a ex:Table ;
+    rdfs:label "Bảng 1. Những nội dung chính của sản phẩm thuộc danh sách A"@vi ;
+    ex:hasCaption "Bảng 1. Những nội dung chính của sản phẩm thuộc danh sách A"@vi ;
+    ex:hasRawText "Bảng 1 gồm các nội dung chính của sản phẩm thuộc danh sách A: giới thiệu khái quát về cơ sở đào tạo; giới thiệu khái quát về lĩnh vực đào tạo Máy tính và Công nghệ thông tin của cơ sở đào tạo; chọn giới thiệu chi tiết về một ngành thuộc lĩnh vực này, gồm thông tin tuyển sinh, kiến thức kĩ năng nghề nghiệp, cơ hội việc làm và nhu cầu nhân lực."@vi ;
+    ex:tableOrderOnPage 1 ;
+    ex:globalTableOrder 1 ;
+    ex:appearsOnPage ex:g12_page106 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptThongTinTuyenSinh, ex:g12_conceptLinhVucMayTinhCNTT, ex:g12_conceptBaoCaoHuongNghiep .
+
+  ex:g12_topicG_table_l3_productB a ex:Table ;
+    rdfs:label "Bảng 2. Những nội dung chính của sản phẩm thuộc danh sách B"@vi ;
+    ex:hasCaption "Bảng 2. Những nội dung chính của sản phẩm thuộc danh sách B"@vi ;
+    ex:hasRawText "Bảng 2 gồm các nội dung chính của sản phẩm thuộc danh sách B: giới thiệu khái quát về công việc chính của ngành; vai nét lịch sử; thông tin cập nhật về tình hình hiện tại; những việc có ứng dụng công nghệ thông tin; chọn giới thiệu một số công việc chính mà chuyên viên công nghệ thông tin đảm nhận, kiến thức kĩ năng cần có, cơ hội việc làm và nhu cầu nhân lực của ngành."@vi ;
+    ex:tableOrderOnPage 2 ;
+    ex:globalTableOrder 2 ;
+    ex:appearsOnPage ex:g12_page106 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:illustratesConcept ex:g12_conceptUngDungCNTTTrongNganhKhac, ex:g12_conceptBaoCaoHuongNghiep, ex:g12_conceptTuyenDungCNTT .
+
+  ex:g12_topicG_table_l3_productA ex:nextTable ex:g12_topicG_table_l3_productB .
+  ex:g12_topicG_table_l3_productB ex:previousTable ex:g12_topicG_table_l3_productA .
+
+  ex:g12_page095 ex:hasFigure ex:g12_topicG_fig_l1_networkAdminWork .
+  ex:g12_page100 ex:hasFigure ex:g12_topicG_fig_l2_multimedia .
+  ex:g12_page101 ex:hasFigure ex:g12_topicG_fig_l2_digitalMap .
+  ex:g12_page106 ex:hasTable ex:g12_topicG_table_l3_productA, ex:g12_topicG_table_l3_productB .
+
+  ex:g12_topicG_fig_l1_networkAdminWork ex:nextFigure ex:g12_topicG_fig_l2_multimedia .
+  ex:g12_topicG_fig_l2_multimedia ex:previousFigure ex:g12_topicG_fig_l1_networkAdminWork ; ex:nextFigure ex:g12_topicG_fig_l2_digitalMap .
+  ex:g12_topicG_fig_l2_digitalMap ex:previousFigure ex:g12_topicG_fig_l2_multimedia .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g12_topicG_p092_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Chủ đề G - Hướng nghiệp với Tin học giới thiệu nhóm nghề dịch vụ và quản trị; một số nghề ứng dụng tin học và một số ngành thuộc lĩnh vực tin học. Bài 1 giới thiệu nhóm nghề dịch vụ và quản trị trong ngành Công nghệ thông tin."@vi ;
+    ex:appearsOnPage ex:g12_page092 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptHuongNghiepTinHoc, ex:g12_conceptNhomNgheDichVuQuanTriCNTT, ex:g12_conceptCongNgheThongTin .
+
+  ex:g12_topicG_p092_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Luật Công nghệ thông tin số 67/2006/QH11 đề cập đến các loại hình dịch vụ công nghệ thông tin như tích hợp hệ thống, chạy thử, dịch vụ quản lí ứng dụng, cập nhật bảo mật; thiết kế, lưu trữ, duy trì trang thông tin điện tử; bảo hành, bảo trì, bảo đảm an toàn mạng và thông tin; cập nhật, tìm kiếm, lưu trữ, xử lí dữ liệu và khai thác cơ sở dữ liệu."@vi ;
+    ex:appearsOnPage ex:g12_page092 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptDichVuCNTT, ex:g12_conceptBaoMatThongTin, ex:g12_conceptAnToanThongTin .
+
+  ex:g12_topicG_p092_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Nhóm nghề dịch vụ và quản trị trong ngành Công nghệ thông tin được trình bày dựa trên các văn bản như Quyết định 34/2020/QĐ-TTg, tài liệu những điều cần biết về nghề Công nghệ thông tin, thông tư về danh mục thống kê ngành đào tạo giáo dục đại học và danh mục ngành nghề đào tạo trung cấp, cao đẳng."@vi ;
+    ex:appearsOnPage ex:g12_page092 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptCongNgheThongTin, ex:g12_conceptHuongNghiepTinHoc .
+
+  ex:g12_topicG_p093_01 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Kĩ thuật viên công nghệ thông tin là tên gọi chung, thường được hiểu là người làm công việc cần đến kiến thức và kĩ năng về công nghệ thông tin, có thể gồm cả phần cứng và phần mềm, trong các tổ chức và doanh nghiệp."@vi ;
+    ex:appearsOnPage ex:g12_page093 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptKiThuatVienCNTT, ex:g12_conceptCongNgheThongTin .
+
+  ex:g12_topicG_p093_02 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Kĩ thuật viên công nghệ thông tin có thể khắc phục lỗi, sửa chữa máy tính cho khách hàng; tư vấn khách hàng mua máy tính hoặc nâng cấp phần cứng, phần mềm; lắp đặt thiết bị phần cứng, thiết lập kết nối mạng, thiết lập truy cập nội dung số và khắc phục lỗi dịch vụ."@vi ;
+    ex:appearsOnPage ex:g12_page093 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptKiThuatVienCNTT, ex:g12_conceptSuaChuaBaoTriMayTinh, ex:g12_conceptTuVanKhachHangCNTT .
+
+  ex:g12_topicG_p093_03 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Trong các tổ chức, kĩ thuật viên công nghệ thông tin duy trì hoạt động của máy tính và thiết bị kĩ thuật số, mạng LAN; quản lí máy tính, thiết bị mạng, thiết bị ngoại vi; kiểm tra, chẩn đoán và khắc phục sự cố; thiết lập cấu hình máy tính, cài đặt hoặc nâng cấp phần mềm; hướng dẫn sử dụng thiết bị và phần mềm mới."@vi ;
+    ex:appearsOnPage ex:g12_page093 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptKiThuatVienCNTT, ex:g12_conceptMangMayTinhLAN, ex:g12_conceptSuaChuaBaoTriMayTinh .
+
+  ex:g12_topicG_p094_01 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "Ứng dụng công nghệ thông tin ngày càng phát triển, máy tính có mặt ở nhiều gia đình và công sở; do vậy vị trí kĩ thuật viên công nghệ thông tin luôn có nhu cầu tuyển dụng cao và người mới vào nghề vẫn có cơ hội được tuyển dụng."@vi ;
+    ex:appearsOnPage ex:g12_page094 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptKiThuatVienCNTT, ex:g12_conceptNhuCauNhanLucCNTT, ex:g12_conceptTuyenDungCNTT .
+
+  ex:g12_topicG_p094_02 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "An toàn thông tin là bảo vệ thông tin số trong các hệ thống thông tin trước rủi ro truy cập và sử dụng dữ liệu bất hợp pháp, đánh cắp, phá huỷ dữ liệu. Kĩ sư an toàn thông tin xây dựng và duy trì giải pháp an toàn dữ liệu, bảo mật thông tin và khôi phục hệ thống khi có sự cố."@vi ;
+    ex:appearsOnPage ex:g12_page094 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptAnToanThongTin, ex:g12_conceptBaoMatThongTin, ex:g12_conceptKiSuAnToanThongTin, ex:g12_conceptGiaiPhapAnToanDuLieu, ex:g12_conceptUngPhoSuCoAnToan .
+
+  ex:g12_topicG_p094_03 a ex:Paragraph ;
+    ex:paragraphOrder 9 ;
+    ex:hasRawText "Công việc chính của kĩ sư an toàn thông tin gồm thiết lập và hướng dẫn công cụ định an toàn thông tin, theo dõi và báo động tín hiệu đáng ngờ, cập nhật giải pháp an toàn thông tin, lập và triển khai kế hoạch xử lí sự cố, sửa lỗ hổng an toàn và tư vấn an toàn thông tin."@vi ;
+    ex:appearsOnPage ex:g12_page094 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s1 ;
+    ex:mentionsConcept ex:g12_conceptKiSuAnToanThongTin, ex:g12_conceptAnToanThongTin, ex:g12_conceptUngPhoSuCoAnToan .
+
+  ex:g12_topicG_p095_01 a ex:Paragraph ;
+    ex:paragraphOrder 10 ;
+    ex:hasRawText "Nhóm nghề quản trị trong ngành Công nghệ thông tin gồm các nghề quản trị khác ngoài quản trị cơ sở dữ liệu đã học ở lớp 11, trong đó có quản trị mạng và quản trị, bảo trì hệ thống."@vi ;
+    ex:appearsOnPage ex:g12_page095 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptQuanTriCNTT, ex:g12_conceptQuanTriMang, ex:g12_conceptQuanTriBaoTriHeThong .
+
+  ex:g12_topicG_p095_02 a ex:Paragraph ;
+    ex:paragraphOrder 11 ;
+    ex:hasRawText "Quản trị mạng là đảm bảo hệ thống mạng máy tính luôn thông suốt và hoạt động an toàn. Công việc của kĩ sư quản trị mạng gồm quản lí thiết bị mạng, vận hành mạng, thiết lập mạng theo yêu cầu, cấu hình và điều chỉnh hiệu năng mạng, bảo vệ mạng trước nguy cơ tấn công hoặc truy cập bất hợp pháp và khắc phục sự cố mạng."@vi ;
+    ex:appearsOnPage ex:g12_page095 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptQuanTriMang, ex:g12_conceptKiSuQuanTriMang, ex:g12_conceptVanHanhMang, ex:g12_conceptBaoVeMang, ex:g12_conceptKhacPhucSuCoMang .
+
+  ex:g12_topicG_p095_03 a ex:Paragraph ;
+    ex:paragraphOrder 12 ;
+    ex:hasRawText "Quản trị và bảo trì hệ thống là công việc quản lí phần mềm và phần cứng liên quan đến vận hành hệ thống mạng máy tính và truyền thông dữ liệu của tổ chức, bao gồm bảo đảm an ninh hệ thống và bảo mật thông tin."@vi ;
+    ex:appearsOnPage ex:g12_page095 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptQuanTriBaoTriHeThong, ex:g12_conceptBaoTriHeThong, ex:g12_conceptHeThongThongTin, ex:g12_conceptBaoMatThongTin .
+
+  ex:g12_topicG_p096_01 a ex:Paragraph ;
+    ex:paragraphOrder 13 ;
+    ex:hasRawText "Công việc chính của nhà quản trị và bảo trì hệ thống gồm phân tích và xác định nhu cầu về hệ thống thông tin, cài đặt phần cứng và phần mềm cho hệ thống mạng, tối ưu hoá và thường xuyên đánh giá hoạt động của hệ thống, bồi dưỡng người dùng và giải quyết vấn đề do người dùng hoặc hệ thống giám sát cảnh báo."@vi ;
+    ex:appearsOnPage ex:g12_page096 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s2 ;
+    ex:mentionsConcept ex:g12_conceptQuanTriBaoTriHeThong, ex:g12_conceptHeThongThongTin, ex:g12_conceptBaoTriHeThong .
+
+  ex:g12_topicG_p096_02 a ex:Paragraph ;
+    ex:paragraphOrder 14 ;
+    ex:hasRawText "Thực hành bài 1 yêu cầu học sinh chia nhóm, tìm hiểu nhu cầu nhân lực hiện tại và tương lai gần về nhóm nghề Dịch vụ và Quản trị trong ngành Công nghệ thông tin; tìm kiếm thông tin tuyển dụng các nghề được đề cập trong bài học."@vi ;
+    ex:appearsOnPage ex:g12_page096 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s3 ;
+    ex:mentionsConcept ex:g12_conceptNhuCauNhanLucCNTT, ex:g12_conceptTuyenDungCNTT, ex:g12_conceptDichVuCNTT, ex:g12_conceptQuanTriCNTT .
+
+  ex:g12_topicG_p097_01 a ex:Paragraph ;
+    ex:paragraphOrder 15 ;
+    ex:hasRawText "Nhiệm vụ 2 yêu cầu tìm hiểu thực tế về tuyển dụng các nghề được đề cập trong bài học; học sinh thu thập thông tin về tổ chức doanh nghiệp tuyển dụng, tên vị trí công việc, mô tả công việc và yêu cầu kiến thức, kĩ năng đối với ứng viên."@vi ;
+    ex:appearsOnPage ex:g12_page097 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:belongsToSection ex:g12_topicG_l1s3 ;
+    ex:mentionsConcept ex:g12_conceptTuyenDungCNTT, ex:g12_conceptNhuCauNhanLucCNTT .
+
+  ex:g12_topicG_p098_01 a ex:Paragraph ;
+    ex:paragraphOrder 16 ;
+    ex:hasRawText "Bài 2 giới thiệu một số nghề khác trong ngành Công nghệ thông tin và một số nghề ứng dụng công nghệ thông tin. Bài học mở đầu bằng câu hỏi về sản phẩm của ngành Công nghiệp phần mềm và yêu cầu làm việc trong ngành này có bắt buộc biết lập trình hay không."@vi ;
+    ex:appearsOnPage ex:g12_page098 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s1 ;
+    ex:mentionsConcept ex:g12_conceptCongNgheThongTin, ex:g12_conceptCongNghiepPhanMem .
+
+  ex:g12_topicG_p098_02 a ex:Paragraph ;
+    ex:paragraphOrder 17 ;
+    ex:hasRawText "Kiểm thử viên là người chạy thử phần mềm để xác nhận phần mềm đáp ứng đúng yêu cầu thiết kế, xây dựng và vận hành. Kiểm thử viên chạy thử phần mềm với các dữ liệu và phương án thử nghiệm khác nhau, tìm lỗi và báo cáo lỗi cho nhóm phát triển phần mềm."@vi ;
+    ex:appearsOnPage ex:g12_page098 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s1 ;
+    ex:mentionsConcept ex:g12_conceptKiemThuVien, ex:g12_conceptCongNghiepPhanMem .
+
+  ex:g12_topicG_p098_03 a ex:Paragraph ;
+    ex:paragraphOrder 18 ;
+    ex:hasRawText "Người quản lí kiểm thử lập quy trình kiểm thử, viết các kịch bản chạy thử, lập kế hoạch kiểm thử và phân công công việc cho các kiểm thử viên thực hiện. Người quản lí kiểm thử và kiểm thử viên là nhân sự chuyên môn không thể thiếu của công ty phần mềm."@vi ;
+    ex:appearsOnPage ex:g12_page098 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s1 ;
+    ex:mentionsConcept ex:g12_conceptNguoiQuanLiKiemThu, ex:g12_conceptKiemThuVien, ex:g12_conceptCongNghiepPhanMem .
+
+  ex:g12_topicG_p098_04 a ex:Paragraph ;
+    ex:paragraphOrder 19 ;
+    ex:hasRawText "Giao diện người dùng là các yếu tố người dùng nhìn thấy và thao tác khi sử dụng phần mềm. Trải nghiệm người dùng là cách người dùng tương tác và trải nghiệm khi sử dụng một sản phẩm hoặc dịch vụ. Nhà thiết kế giao diện người dùng và nhà thiết kế trải nghiệm người dùng làm cho sản phẩm phần mềm thân thiện, hấp dẫn và dễ sử dụng."@vi ;
+    ex:appearsOnPage ex:g12_page098 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s1 ;
+    ex:mentionsConcept ex:g12_conceptUI, ex:g12_conceptUX, ex:g12_conceptThietKeGiaoDienNguoiDung, ex:g12_conceptThietKeTraiNghiemNguoiDung .
+
+  ex:g12_topicG_p099_01 a ex:Paragraph ;
+    ex:paragraphOrder 20 ;
+    ex:hasRawText "Chuyển đổi số ở cấp độ quốc gia nói đến chính phủ điện tử, kinh tế số và xã hội số; ở cấp độ doanh nghiệp, chuyển đổi số là áp dụng công nghệ số để thay thế quy trình thủ công, tạo quy trình mới và thay đổi mô hình kinh doanh, cách tương tác với khách hàng."@vi ;
+    ex:appearsOnPage ex:g12_page099 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s2 ;
+    ex:mentionsConcept ex:g12_conceptChuyenDoiSo, ex:g12_conceptCongNgheThongTin .
+
+  ex:g12_topicG_p099_02 a ex:Paragraph ;
+    ex:paragraphOrder 21 ;
+    ex:hasRawText "Kĩ sư điện toán đám mây chịu trách nhiệm thiết kế, phát triển, bảo trì và khắc phục sự cố cơ sở hạ tầng đám mây. Kĩ sư IoT thiết kế, phát triển, triển khai và bảo trì hệ thống IoT. Kĩ sư trí tuệ nhân tạo xây dựng mô hình AI, giúp quản lí sản phẩm hiểu kết quả, quản lí quy trình phát triển AI và triển khai mô hình AI vào sản xuất."@vi ;
+    ex:appearsOnPage ex:g12_page099 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s2 ;
+    ex:mentionsConcept ex:g12_conceptKiSuDienToanDamMay, ex:g12_conceptDienToanDamMay, ex:g12_conceptKiSuIoT, ex:g12_conceptIoT, ex:g12_conceptKiSuTriTueNhanTao, ex:g12_conceptTriTueNhanTao .
+
+  ex:g12_topicG_p100_01 a ex:Paragraph ;
+    ex:paragraphOrder 22 ;
+    ex:hasRawText "Truyền thông đa phương tiện là kết hợp truyền thông đại chúng, mĩ thuật ứng dụng và công nghệ thông tin để sáng tạo, thiết kế và làm ra sản phẩm nội dung số trong truyền thông, giải trí và quảng cáo."@vi ;
+    ex:appearsOnPage ex:g12_page100 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptTruyenThongDaPhuongTien, ex:g12_conceptCongNgheThongTin .
+
+  ex:g12_topicG_p100_02 a ex:Paragraph ;
+    ex:paragraphOrder 23 ;
+    ex:hasRawText "Chuyên viên thiết kế đồ họa là người chọn kiểu chữ, màu chữ, hình khối, hình ảnh và bài trí tổng thể sản phẩm đồ họa bằng phần mềm máy tính, nhằm tạo ra sản phẩm có tính mĩ thuật và hấp dẫn."@vi ;
+    ex:appearsOnPage ex:g12_page100 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptChuyenVienThietKeDoHoa, ex:g12_conceptThietKeDoHoa .
+
+  ex:g12_topicG_p100_03 a ex:Paragraph ;
+    ex:paragraphOrder 24 ;
+    ex:hasRawText "Chuyên viên thiết kế truyền thông đa phương tiện là người thiết kế, xử lí và biên tập âm thanh, hình ảnh cho sản phẩm số, bảo đảm tính mĩ thuật bằng cách ứng dụng công nghệ thông tin; cần kĩ năng kiến thức đa phương tiện, xử lí hình ảnh, âm thanh, truyền thông đại chúng, quản lí dự án, giao tiếp và thuyết trình."@vi ;
+    ex:appearsOnPage ex:g12_page100 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptChuyenVienThietKeTruyenThongDaPhuongTien, ex:g12_conceptTruyenThongDaPhuongTien .
+
+  ex:g12_topicG_p101_01 a ex:Paragraph ;
+    ex:paragraphOrder 25 ;
+    ex:hasRawText "Nhà phát triển trang web thiết kế giao diện người dùng và menu điều hướng, lập trình các trang web để trình bày nội dung đa phương tiện, kiểm tra hoạt động của trang web, khắc phục sự cố về hiệu suất hoặc trải nghiệm người dùng."@vi ;
+    ex:appearsOnPage ex:g12_page101 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptNhaPhatTrienTrangWeb, ex:g12_conceptTruyenThongDaPhuongTien, ex:g12_conceptThietKeGiaoDienNguoiDung, ex:g12_conceptUX .
+
+  ex:g12_topicG_p101_02 a ex:Paragraph ;
+    ex:paragraphOrder 26 ;
+    ex:hasRawText "Chuyên viên kĩ xảo điện ảnh đảm bảo hiệu ứng âm thanh, hình ảnh mang lại cảm xúc thật nhất cho người xem và truyền tải đúng thông điệp, nội dung của sản phẩm nghe nhìn; cần sử dụng được một số phần mềm công cụ xử lí âm thanh, hình ảnh."@vi ;
+    ex:appearsOnPage ex:g12_page101 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s3 ;
+    ex:mentionsConcept ex:g12_conceptChuyenVienKiXaoDienAnh, ex:g12_conceptKiXaoDienAnh .
+
+  ex:g12_topicG_p101_03 a ex:Paragraph ;
+    ex:paragraphOrder 27 ;
+    ex:hasRawText "Một số nghề ứng dụng công nghệ thông tin trong các ngành khác gồm nhà phân tích dữ liệu, nhà khoa học dữ liệu, kĩ sư GIS và nghề công nghệ tài chính. Công việc phân tích dữ liệu là phân tích tập dữ liệu để xác định xu hướng chung, phát hiện ngoại lệ, bất thường và tri thức tiềm ẩn, hỗ trợ ra quyết định và lập kế hoạch."@vi ;
+    ex:appearsOnPage ex:g12_page101 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptUngDungCNTTTrongNganhKhac, ex:g12_conceptPhanTichDuLieu, ex:g12_conceptNhaPhanTichDuLieu, ex:g12_conceptNhaKhoaHocDuLieu .
+
+  ex:g12_topicG_p101_04 a ex:Paragraph ;
+    ex:paragraphOrder 28 ;
+    ex:hasRawText "Hệ thống thông tin địa lí GIS tạo ra các bản đồ số tuỳ theo mục đích sử dụng như quản lí tài nguyên, lập kế hoạch đô thị, dẫn đường trong giao thông đô thị, hoạt động quân sự và quốc phòng."@vi ;
+    ex:appearsOnPage ex:g12_page101 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptGIS, ex:g12_conceptKiSuGIS, ex:g12_conceptBanDoSo .
+
+  ex:g12_topicG_p102_01 a ex:Paragraph ;
+    ex:paragraphOrder 29 ;
+    ex:hasRawText "Công việc của kĩ sư GIS gồm xây dựng bản đồ số với dữ liệu địa lí kết hợp với các nguồn dữ liệu của lĩnh vực ứng dụng, duy trì và cập nhật cơ sở dữ liệu bản đồ số, phân tích dữ liệu bằng các công cụ phần mềm GIS."@vi ;
+    ex:appearsOnPage ex:g12_page102 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptKiSuGIS, ex:g12_conceptGIS, ex:g12_conceptBanDoSo .
+
+  ex:g12_topicG_p102_02 a ex:Paragraph ;
+    ex:paragraphOrder 30 ;
+    ex:hasRawText "Công nghệ tài chính hay Fintech đề cập đến việc áp dụng công nghệ tiên tiến để cải thiện, nâng cao chất lượng dịch vụ tài chính. Người làm nghề công nghệ tài chính ứng dụng điện toán đám mây, phần mềm phân tích dữ liệu, khai phá dữ liệu hoặc AI nhằm nâng cao hiệu quả hoạt động tài chính, ngân hàng và đầu tư."@vi ;
+    ex:appearsOnPage ex:g12_page102 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptCongNgheTaiChinh, ex:g12_conceptFintech, ex:g12_conceptDienToanDamMay, ex:g12_conceptPhanTichDuLieu, ex:g12_conceptTriTueNhanTao .
+
+  ex:g12_topicG_p102_03 a ex:Paragraph ;
+    ex:paragraphOrder 31 ;
+    ex:hasRawText "Thực hành bài 2 yêu cầu mỗi nhóm chọn một nghề hoặc nhóm nghề đã đề cập trong bài học, tìm trên Internet thông tin tuyển dụng liên quan, thảo luận nhóm và viết báo cáo tóm tắt thông tin tuyển dụng nghề."@vi ;
+    ex:appearsOnPage ex:g12_page102 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptTuyenDungCNTT, ex:g12_conceptBaoCaoHuongNghiep .
+
+  ex:g12_topicG_p103_01 a ex:Paragraph ;
+    ex:paragraphOrder 32 ;
+    ex:hasRawText "Bài 2 kết thúc bằng câu hỏi về nghề trong ngành Công nghệ thông tin mà học sinh hướng đến, các câu hỏi tự kiểm tra về nghề trong Công nghiệp phần mềm, chuyển đổi số, Truyền thông đa phương tiện và kĩ sư GIS."@vi ;
+    ex:appearsOnPage ex:g12_page103 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:belongsToSection ex:g12_topicG_l2s4 ;
+    ex:mentionsConcept ex:g12_conceptCongNghiepPhanMem, ex:g12_conceptChuyenDoiSo, ex:g12_conceptTruyenThongDaPhuongTien, ex:g12_conceptKiSuGIS .
+
+  ex:g12_topicG_p104_01 a ex:Paragraph ;
+    ex:paragraphOrder 33 ;
+    ex:hasRawText "Bài 3 là dự án nhỏ tìm hiểu thông tin tuyển sinh và hướng nghiệp về lĩnh vực đào tạo Máy tính và Công nghệ thông tin ở Việt Nam. Mỗi nhóm học sinh thực hiện hai nhiệm vụ: tìm hiểu một ngành học thuộc lĩnh vực đào tạo Máy tính và Công nghệ thông tin của một cơ sở đào tạo, và tìm hiểu một ngành có nhiều ứng dụng công nghệ thông tin."@vi ;
+    ex:appearsOnPage ex:g12_page104 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s1 ;
+    ex:mentionsConcept ex:g12_conceptThongTinTuyenSinh, ex:g12_conceptLinhVucMayTinhCNTT, ex:g12_conceptUngDungCNTTTrongNganhKhac .
+
+  ex:g12_topicG_p104_02 a ex:Paragraph ;
+    ex:paragraphOrder 34 ;
+    ex:hasRawText "Danh sách A gồm lựa chọn một khoa Công nghệ thông tin của trường đại học ở Việt Nam, một khoa Công nghệ thông tin có chương trình liên kết với nước ngoài, một cơ sở đào tạo Máy tính và Công nghệ thông tin gần nơi học sinh sinh sống nhất hoặc một cơ sở đào tạo do nhóm đề xuất và được giáo viên đồng ý."@vi ;
+    ex:appearsOnPage ex:g12_page104 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s1 ;
+    ex:mentionsConcept ex:g12_conceptThongTinTuyenSinh, ex:g12_conceptLinhVucMayTinhCNTT .
+
+  ex:g12_topicG_p105_01 a ex:Paragraph ;
+    ex:paragraphOrder 35 ;
+    ex:hasRawText "Danh sách B gồm các lựa chọn như ngành Tài chính - Ngân hàng, Giao thông vận tải, Quân sự - Quốc phòng hoặc một ngành mà nhóm quan tâm và được giáo viên đồng ý. Thời gian thực hiện dự án là hai tuần với ba tiết học trên lớp; sản phẩm dự án gồm bài trình bày kết quả và bản tự đánh giá kết quả thực hiện nhiệm vụ của nhóm."@vi ;
+    ex:appearsOnPage ex:g12_page105 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s1 ;
+    ex:mentionsConcept ex:g12_conceptUngDungCNTTTrongNganhKhac, ex:g12_conceptBaoCaoHuongNghiep, ex:g12_conceptCongNgheTaiChinh .
+
+  ex:g12_topicG_p105_02 a ex:Paragraph ;
+    ex:paragraphOrder 36 ;
+    ex:hasRawText "Tiêu chuẩn đánh giá sản phẩm dự án gồm nội dung thông tin đáp ứng đúng yêu cầu, có tính mới, được cập nhật, nguồn thông tin đáng tin cậy; hình thức trình bày có tính thẩm mĩ, ngắn gọn và thuyết trình hấp dẫn trong thời gian quy định."@vi ;
+    ex:appearsOnPage ex:g12_page105 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s1 ;
+    ex:mentionsConcept ex:g12_conceptBaoCaoHuongNghiep .
+
+  ex:g12_topicG_p105_03 a ex:Paragraph ;
+    ex:paragraphOrder 37 ;
+    ex:hasRawText "Giai đoạn 1 của dự án yêu cầu mỗi nhóm lập danh sách chi tiết các công việc cụ thể, phân công sao cho mỗi việc đều có người thực hiện, xác định thời hạn hoàn thành và họp nhóm để thảo luận, đóng góp ý kiến."@vi ;
+    ex:appearsOnPage ex:g12_page105 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s2 ;
+    ex:mentionsConcept ex:g12_conceptBaoCaoHuongNghiep .
+
+  ex:g12_topicG_p105_04 a ex:Paragraph ;
+    ex:paragraphOrder 38 ;
+    ex:hasRawText "Giai đoạn 2 của dự án yêu cầu các nhóm chủ động thực hiện ở tiết học thứ hai và ngoài giờ học trên lớp, tìm kiếm thông tin từ nhiều nguồn, tổng hợp thông tin, giao lưu với bạn bè và chuyên gia công nghệ thông tin, hoàn thiện sản phẩm, phân công trình bày và giới thiệu kết quả dự án."@vi ;
+    ex:appearsOnPage ex:g12_page105 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s2 ;
+    ex:mentionsConcept ex:g12_conceptBaoCaoHuongNghiep, ex:g12_conceptCongNgheThongTin .
+
+  ex:g12_topicG_p106_01 a ex:Paragraph ;
+    ex:paragraphOrder 39 ;
+    ex:hasRawText "Bảng 1 nêu những nội dung chính của sản phẩm thuộc danh sách A, gồm giới thiệu cơ sở đào tạo, giới thiệu lĩnh vực đào tạo Máy tính và Công nghệ thông tin và giới thiệu chi tiết một ngành thuộc lĩnh vực này."@vi ;
+    ex:appearsOnPage ex:g12_page106 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s3 ;
+    ex:mentionsConcept ex:g12_conceptThongTinTuyenSinh, ex:g12_conceptLinhVucMayTinhCNTT, ex:g12_conceptBaoCaoHuongNghiep .
+
+  ex:g12_topicG_p106_02 a ex:Paragraph ;
+    ex:paragraphOrder 40 ;
+    ex:hasRawText "Bảng 2 nêu những nội dung chính của sản phẩm thuộc danh sách B, gồm giới thiệu công việc chính của ngành, các việc có ứng dụng công nghệ thông tin, công việc chuyên viên công nghệ thông tin đảm nhận, yêu cầu kiến thức kĩ năng, cơ hội việc làm và nhu cầu nhân lực."@vi ;
+    ex:appearsOnPage ex:g12_page106 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s3 ;
+    ex:mentionsConcept ex:g12_conceptUngDungCNTTTrongNganhKhac, ex:g12_conceptCongNgheThongTin, ex:g12_conceptNhuCauNhanLucCNTT .
+
+  ex:g12_topicG_p106_03 a ex:Paragraph ;
+    ex:paragraphOrder 41 ;
+    ex:hasRawText "Chú ý cho giai đoạn 3: thành viên của mỗi nhóm có thể tham gia hỏi và trao đổi kết quả thực hiện dự án với nhóm khác; mỗi thành viên có thể được yêu cầu giải thích báo cáo do nhóm thực hiện; mỗi nhóm có thể tham gia đánh giá kết quả thực hiện dự án của nhóm khác."@vi ;
+    ex:appearsOnPage ex:g12_page106 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:belongsToSection ex:g12_topicG_l3s3 ;
+    ex:mentionsConcept ex:g12_conceptBaoCaoHuongNghiep .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g12_page092 ex:hasParagraph ex:g12_topicG_p092_01, ex:g12_topicG_p092_02, ex:g12_topicG_p092_03 .
+  ex:g12_page093 ex:hasParagraph ex:g12_topicG_p093_01, ex:g12_topicG_p093_02, ex:g12_topicG_p093_03 .
+  ex:g12_page094 ex:hasParagraph ex:g12_topicG_p094_01, ex:g12_topicG_p094_02, ex:g12_topicG_p094_03 .
+  ex:g12_page095 ex:hasParagraph ex:g12_topicG_p095_01, ex:g12_topicG_p095_02, ex:g12_topicG_p095_03 .
+  ex:g12_page096 ex:hasParagraph ex:g12_topicG_p096_01, ex:g12_topicG_p096_02 .
+  ex:g12_page097 ex:hasParagraph ex:g12_topicG_p097_01 .
+  ex:g12_page098 ex:hasParagraph ex:g12_topicG_p098_01, ex:g12_topicG_p098_02, ex:g12_topicG_p098_03, ex:g12_topicG_p098_04 .
+  ex:g12_page099 ex:hasParagraph ex:g12_topicG_p099_01, ex:g12_topicG_p099_02 .
+  ex:g12_page100 ex:hasParagraph ex:g12_topicG_p100_01, ex:g12_topicG_p100_02, ex:g12_topicG_p100_03 .
+  ex:g12_page101 ex:hasParagraph ex:g12_topicG_p101_01, ex:g12_topicG_p101_02, ex:g12_topicG_p101_03, ex:g12_topicG_p101_04 .
+  ex:g12_page102 ex:hasParagraph ex:g12_topicG_p102_01, ex:g12_topicG_p102_02, ex:g12_topicG_p102_03 .
+  ex:g12_page103 ex:hasParagraph ex:g12_topicG_p103_01 .
+  ex:g12_page104 ex:hasParagraph ex:g12_topicG_p104_01, ex:g12_topicG_p104_02 .
+  ex:g12_page105 ex:hasParagraph ex:g12_topicG_p105_01, ex:g12_topicG_p105_02, ex:g12_topicG_p105_03, ex:g12_topicG_p105_04 .
+  ex:g12_page106 ex:hasParagraph ex:g12_topicG_p106_01, ex:g12_topicG_p106_02, ex:g12_topicG_p106_03 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g12_topicG_l1s1 ex:hasParagraph ex:g12_topicG_p092_01, ex:g12_topicG_p092_02, ex:g12_topicG_p092_03,
+    ex:g12_topicG_p093_01, ex:g12_topicG_p093_02, ex:g12_topicG_p093_03,
+    ex:g12_topicG_p094_01, ex:g12_topicG_p094_02, ex:g12_topicG_p094_03 .
+
+  ex:g12_topicG_l1s2 ex:hasParagraph ex:g12_topicG_p095_01, ex:g12_topicG_p095_02,
+    ex:g12_topicG_p095_03, ex:g12_topicG_p096_01 .
+
+  ex:g12_topicG_l1s3 ex:hasParagraph ex:g12_topicG_p096_02, ex:g12_topicG_p097_01 .
+
+  ex:g12_topicG_l2s1 ex:hasParagraph ex:g12_topicG_p098_01, ex:g12_topicG_p098_02,
+    ex:g12_topicG_p098_03, ex:g12_topicG_p098_04 .
+
+  ex:g12_topicG_l2s2 ex:hasParagraph ex:g12_topicG_p099_01, ex:g12_topicG_p099_02 .
+
+  ex:g12_topicG_l2s3 ex:hasParagraph ex:g12_topicG_p100_01, ex:g12_topicG_p100_02,
+    ex:g12_topicG_p100_03, ex:g12_topicG_p101_01, ex:g12_topicG_p101_02 .
+
+  ex:g12_topicG_l2s4 ex:hasParagraph ex:g12_topicG_p101_03, ex:g12_topicG_p101_04,
+    ex:g12_topicG_p102_01, ex:g12_topicG_p102_02, ex:g12_topicG_p102_03, ex:g12_topicG_p103_01 .
+
+  ex:g12_topicG_l3s1 ex:hasParagraph ex:g12_topicG_p104_01, ex:g12_topicG_p104_02,
+    ex:g12_topicG_p105_01, ex:g12_topicG_p105_02 .
+
+  ex:g12_topicG_l3s2 ex:hasParagraph ex:g12_topicG_p105_03, ex:g12_topicG_p105_04 .
+
+  ex:g12_topicG_l3s3 ex:hasParagraph ex:g12_topicG_p106_01, ex:g12_topicG_p106_02, ex:g12_topicG_p106_03 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g12_topicG_p092_01 ex:nextParagraph ex:g12_topicG_p092_02 .
+  ex:g12_topicG_p092_02 ex:previousParagraph ex:g12_topicG_p092_01 ; ex:nextParagraph ex:g12_topicG_p092_03 .
+  ex:g12_topicG_p092_03 ex:previousParagraph ex:g12_topicG_p092_02 ; ex:nextParagraph ex:g12_topicG_p093_01 .
+  ex:g12_topicG_p093_01 ex:previousParagraph ex:g12_topicG_p092_03 ; ex:nextParagraph ex:g12_topicG_p093_02 .
+  ex:g12_topicG_p093_02 ex:previousParagraph ex:g12_topicG_p093_01 ; ex:nextParagraph ex:g12_topicG_p093_03 .
+  ex:g12_topicG_p093_03 ex:previousParagraph ex:g12_topicG_p093_02 ; ex:nextParagraph ex:g12_topicG_p094_01 .
+  ex:g12_topicG_p094_01 ex:previousParagraph ex:g12_topicG_p093_03 ; ex:nextParagraph ex:g12_topicG_p094_02 .
+  ex:g12_topicG_p094_02 ex:previousParagraph ex:g12_topicG_p094_01 ; ex:nextParagraph ex:g12_topicG_p094_03 .
+  ex:g12_topicG_p094_03 ex:previousParagraph ex:g12_topicG_p094_02 ; ex:nextParagraph ex:g12_topicG_p095_01 .
+  ex:g12_topicG_p095_01 ex:previousParagraph ex:g12_topicG_p094_03 ; ex:nextParagraph ex:g12_topicG_p095_02 .
+  ex:g12_topicG_p095_02 ex:previousParagraph ex:g12_topicG_p095_01 ; ex:nextParagraph ex:g12_topicG_p095_03 .
+  ex:g12_topicG_p095_03 ex:previousParagraph ex:g12_topicG_p095_02 ; ex:nextParagraph ex:g12_topicG_p096_01 .
+  ex:g12_topicG_p096_01 ex:previousParagraph ex:g12_topicG_p095_03 ; ex:nextParagraph ex:g12_topicG_p096_02 .
+  ex:g12_topicG_p096_02 ex:previousParagraph ex:g12_topicG_p096_01 ; ex:nextParagraph ex:g12_topicG_p097_01 .
+  ex:g12_topicG_p097_01 ex:previousParagraph ex:g12_topicG_p096_02 ; ex:nextParagraph ex:g12_topicG_p098_01 .
+  ex:g12_topicG_p098_01 ex:previousParagraph ex:g12_topicG_p097_01 ; ex:nextParagraph ex:g12_topicG_p098_02 .
+  ex:g12_topicG_p098_02 ex:previousParagraph ex:g12_topicG_p098_01 ; ex:nextParagraph ex:g12_topicG_p098_03 .
+  ex:g12_topicG_p098_03 ex:previousParagraph ex:g12_topicG_p098_02 ; ex:nextParagraph ex:g12_topicG_p098_04 .
+  ex:g12_topicG_p098_04 ex:previousParagraph ex:g12_topicG_p098_03 ; ex:nextParagraph ex:g12_topicG_p099_01 .
+  ex:g12_topicG_p099_01 ex:previousParagraph ex:g12_topicG_p098_04 ; ex:nextParagraph ex:g12_topicG_p099_02 .
+  ex:g12_topicG_p099_02 ex:previousParagraph ex:g12_topicG_p099_01 ; ex:nextParagraph ex:g12_topicG_p100_01 .
+  ex:g12_topicG_p100_01 ex:previousParagraph ex:g12_topicG_p099_02 ; ex:nextParagraph ex:g12_topicG_p100_02 .
+  ex:g12_topicG_p100_02 ex:previousParagraph ex:g12_topicG_p100_01 ; ex:nextParagraph ex:g12_topicG_p100_03 .
+  ex:g12_topicG_p100_03 ex:previousParagraph ex:g12_topicG_p100_02 ; ex:nextParagraph ex:g12_topicG_p101_01 .
+  ex:g12_topicG_p101_01 ex:previousParagraph ex:g12_topicG_p100_03 ; ex:nextParagraph ex:g12_topicG_p101_02 .
+  ex:g12_topicG_p101_02 ex:previousParagraph ex:g12_topicG_p101_01 ; ex:nextParagraph ex:g12_topicG_p101_03 .
+  ex:g12_topicG_p101_03 ex:previousParagraph ex:g12_topicG_p101_02 ; ex:nextParagraph ex:g12_topicG_p101_04 .
+  ex:g12_topicG_p101_04 ex:previousParagraph ex:g12_topicG_p101_03 ; ex:nextParagraph ex:g12_topicG_p102_01 .
+  ex:g12_topicG_p102_01 ex:previousParagraph ex:g12_topicG_p101_04 ; ex:nextParagraph ex:g12_topicG_p102_02 .
+  ex:g12_topicG_p102_02 ex:previousParagraph ex:g12_topicG_p102_01 ; ex:nextParagraph ex:g12_topicG_p102_03 .
+  ex:g12_topicG_p102_03 ex:previousParagraph ex:g12_topicG_p102_02 ; ex:nextParagraph ex:g12_topicG_p103_01 .
+  ex:g12_topicG_p103_01 ex:previousParagraph ex:g12_topicG_p102_03 ; ex:nextParagraph ex:g12_topicG_p104_01 .
+  ex:g12_topicG_p104_01 ex:previousParagraph ex:g12_topicG_p103_01 ; ex:nextParagraph ex:g12_topicG_p104_02 .
+  ex:g12_topicG_p104_02 ex:previousParagraph ex:g12_topicG_p104_01 ; ex:nextParagraph ex:g12_topicG_p105_01 .
+  ex:g12_topicG_p105_01 ex:previousParagraph ex:g12_topicG_p104_02 ; ex:nextParagraph ex:g12_topicG_p105_02 .
+  ex:g12_topicG_p105_02 ex:previousParagraph ex:g12_topicG_p105_01 ; ex:nextParagraph ex:g12_topicG_p105_03 .
+  ex:g12_topicG_p105_03 ex:previousParagraph ex:g12_topicG_p105_02 ; ex:nextParagraph ex:g12_topicG_p105_04 .
+  ex:g12_topicG_p105_04 ex:previousParagraph ex:g12_topicG_p105_03 ; ex:nextParagraph ex:g12_topicG_p106_01 .
+  ex:g12_topicG_p106_01 ex:previousParagraph ex:g12_topicG_p105_04 ; ex:nextParagraph ex:g12_topicG_p106_02 .
+  ex:g12_topicG_p106_02 ex:previousParagraph ex:g12_topicG_p106_01 ; ex:nextParagraph ex:g12_topicG_p106_03 .
+  ex:g12_topicG_p106_03 ex:previousParagraph ex:g12_topicG_p106_02 .
+
+  ###########################################################################
+  # Definitions
+  ###########################################################################
+
+  ex:g12_topicG_def_itTechnician a ex:DefinitionText ;
+    rdfs:label "Kĩ thuật viên công nghệ thông tin"@vi ;
+    ex:hasDefinitionText "Kĩ thuật viên công nghệ thông tin là người làm những công việc cần đến kiến thức và kĩ năng về công nghệ thông tin, có thể gồm phần cứng và phần mềm, trong tổ chức và doanh nghiệp."@vi ;
+    ex:appearsOnPage ex:g12_page093 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:explainsConcept ex:g12_conceptKiThuatVienCNTT .
+
+  ex:g12_topicG_def_informationSecurity a ex:DefinitionText ;
+    rdfs:label "An toàn thông tin"@vi ;
+    ex:hasDefinitionText "An toàn thông tin là bảo vệ thông tin số trong các hệ thống thông tin trước rủi ro truy cập và sử dụng dữ liệu bất hợp pháp, đánh cắp hoặc phá huỷ dữ liệu."@vi ;
+    ex:appearsOnPage ex:g12_page094 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:explainsConcept ex:g12_conceptAnToanThongTin .
+
+  ex:g12_topicG_def_networkAdministration a ex:DefinitionText ;
+    rdfs:label "Quản trị mạng"@vi ;
+    ex:hasDefinitionText "Quản trị mạng là đảm bảo hệ thống mạng máy tính luôn thông suốt và hoạt động an toàn."@vi ;
+    ex:appearsOnPage ex:g12_page095 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:explainsConcept ex:g12_conceptQuanTriMang .
+
+  ex:g12_topicG_def_systemAdministration a ex:DefinitionText ;
+    rdfs:label "Quản trị và bảo trì hệ thống"@vi ;
+    ex:hasDefinitionText "Quản trị và bảo trì hệ thống là công việc quản lí phần mềm và phần cứng liên quan đến việc vận hành hệ thống mạng máy tính và truyền thông dữ liệu của tổ chức, bao gồm bảo đảm an ninh hệ thống và bảo mật thông tin."@vi ;
+    ex:appearsOnPage ex:g12_page095 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:explainsConcept ex:g12_conceptQuanTriBaoTriHeThong .
+
+  ex:g12_topicG_def_tester a ex:DefinitionText ;
+    rdfs:label "Kiểm thử viên"@vi ;
+    ex:hasDefinitionText "Kiểm thử viên là người chạy thử phần mềm để xác nhận phần mềm đáp ứng đúng yêu cầu thiết kế, xây dựng và vận hành."@vi ;
+    ex:appearsOnPage ex:g12_page098 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:explainsConcept ex:g12_conceptKiemThuVien .
+
+  ex:g12_topicG_def_uiUx a ex:DefinitionText ;
+    rdfs:label "UI và UX"@vi ;
+    ex:hasDefinitionText "Giao diện người dùng là các yếu tố mà người dùng nhìn thấy và thao tác khi sử dụng phần mềm. Trải nghiệm người dùng là cách người dùng tương tác và trải nghiệm khi sử dụng một sản phẩm hoặc dịch vụ."@vi ;
+    ex:appearsOnPage ex:g12_page098 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:explainsConcept ex:g12_conceptUI, ex:g12_conceptUX .
+
+  ex:g12_topicG_def_digitalTransformation a ex:DefinitionText ;
+    rdfs:label "Chuyển đổi số"@vi ;
+    ex:hasDefinitionText "Chuyển đổi số là việc áp dụng công nghệ số để thay thế các quy trình thủ công hoặc công nghệ số lỗi thời bằng công nghệ số tiên tiến, tạo quy trình mới, tạo thuận lợi cho sản phẩm và dịch vụ mới."@vi ;
+    ex:appearsOnPage ex:g12_page099 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:explainsConcept ex:g12_conceptChuyenDoiSo .
+
+  ex:g12_topicG_def_cloudComputing a ex:DefinitionText ;
+    rdfs:label "Điện toán đám mây"@vi ;
+    ex:hasDefinitionText "Điện toán đám mây sử dụng các máy chủ trên Internet như cơ sở hạ tầng đám mây để tạo thuận lợi cho lưu trữ, quản lí, xử lí, phân tích và sao lưu dữ liệu."@vi ;
+    ex:appearsOnPage ex:g12_page099 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:explainsConcept ex:g12_conceptDienToanDamMay .
+
+  ex:g12_topicG_def_multimedia a ex:DefinitionText ;
+    rdfs:label "Truyền thông đa phương tiện"@vi ;
+    ex:hasDefinitionText "Truyền thông đa phương tiện là sự kết hợp giữa truyền thông đại chúng, mĩ thuật ứng dụng và công nghệ thông tin để sáng tạo, thiết kế và làm ra sản phẩm nội dung số trong truyền thông, giải trí hoặc quảng cáo."@vi ;
+    ex:appearsOnPage ex:g12_page100 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:explainsConcept ex:g12_conceptTruyenThongDaPhuongTien .
+
+  ex:g12_topicG_def_gis a ex:DefinitionText ;
+    rdfs:label "GIS"@vi ;
+    ex:hasDefinitionText "Hệ thống thông tin địa lí GIS tạo ra các bản đồ số tuỳ theo mục đích cụ thể và được ứng dụng trong nhiều lĩnh vực như quản lí tài nguyên, lập kế hoạch đô thị, giao thông, quân sự và quốc phòng."@vi ;
+    ex:appearsOnPage ex:g12_page101 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:explainsConcept ex:g12_conceptGIS .
+
+  ex:g12_topicG_def_fintech a ex:DefinitionText ;
+    rdfs:label "Công nghệ tài chính"@vi ;
+    ex:hasDefinitionText "Công nghệ tài chính hay Fintech đề cập đến việc áp dụng công nghệ tiên tiến để cải thiện, nâng cao chất lượng dịch vụ tài chính."@vi ;
+    ex:appearsOnPage ex:g12_page102 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:explainsConcept ex:g12_conceptCongNgheTaiChinh, ex:g12_conceptFintech .
+
+  ###########################################################################
+  # Activities / practical tasks / project tasks / review questions
+  ###########################################################################
+
+  ex:g12_topicG_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 1 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Điều 52 của Luật Công nghệ thông tin đề cập đến các loại hình dịch vụ công nghệ thông tin. Em hãy nêu tên một chủ đề tin học đã học và cho biết loại hình dịch vụ nào trên đây cần những kiến thức, kĩ năng trong chủ đề đó."@vi ;
+    ex:appearsOnPage ex:g12_page092 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:relatedTo ex:g12_conceptDichVuCNTT, ex:g12_conceptCongNgheThongTin .
+
+  ex:g12_topicG_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 1 - Công việc của kĩ sư quản trị mạng"@vi ;
+    ex:hasRawText "Quan sát hình minh hoạ công việc của kĩ sư quản trị mạng và trả lời: để làm kĩ sư quản trị mạng có bắt buộc phải giỏi lập trình hay không; trong lĩnh vực Công nghệ thông tin có thể chọn nghề gì nếu không giỏi lập trình."@vi ;
+    ex:appearsOnPage ex:g12_page095 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:relatedTo ex:g12_conceptKiSuQuanTriMang, ex:g12_conceptQuanTriMang, ex:g12_conceptCongNgheThongTin .
+
+  ex:g12_topicG_l1_practicalTask1 a ex:PracticalInstruction ;
+    rdfs:label "Nhiệm vụ 1 bài 1 - Tìm hiểu nhu cầu nhân lực nhóm nghề Dịch vụ và Quản trị"@vi ;
+    ex:hasRawText "Tìm hiểu nhu cầu nhân lực trong hiện tại và tương lai gần về nhóm nghề Dịch vụ và Quản trị trong ngành Công nghệ thông tin; sử dụng máy tìm kiếm, chọn nguồn đáng tin cậy, đọc và trích ra thông tin cần thiết."@vi ;
+    ex:appearsOnPage ex:g12_page096 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:relatedTo ex:g12_conceptNhuCauNhanLucCNTT, ex:g12_conceptDichVuCNTT, ex:g12_conceptQuanTriCNTT .
+
+  ex:g12_topicG_l1_practicalTask2 a ex:PracticalInstruction ;
+    rdfs:label "Nhiệm vụ 2 bài 1 - Tìm hiểu thực tế tuyển dụng các nghề"@vi ;
+    ex:hasRawText "Tìm hiểu thực tế về tuyển dụng các nghề trong bài học; thu thập thông tin về tổ chức, doanh nghiệp tuyển dụng, vị trí công việc, mô tả công việc và yêu cầu kiến thức, kĩ năng đối với ứng viên."@vi ;
+    ex:appearsOnPage ex:g12_page097 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:relatedTo ex:g12_conceptTuyenDungCNTT, ex:g12_conceptNhuCauNhanLucCNTT .
+
+  ex:g12_topicG_l1_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 1 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Nếu chọn nhóm nghề quản trị, em sẽ chọn Quản trị mạng hay Quản trị và bảo trì hệ thống? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g12_page097 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:relatedTo ex:g12_conceptQuanTriMang, ex:g12_conceptQuanTriBaoTriHeThong .
+
+  ex:g12_topicG_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 1 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Câu 1. Kĩ thuật viên công nghệ thông tin làm những việc gì? Câu 2. Kĩ sư quản trị mạng làm những việc gì? Câu 3. Kĩ sư an toàn thông tin làm những việc gì? Câu 4. Công việc quản trị mạng khác với quản trị và bảo trì hệ thống ở những điểm nào?"@vi ;
+    ex:appearsOnPage ex:g12_page097 ;
+    ex:belongsToLesson ex:g12_topicG_lesson1 ;
+    ex:relatedTo ex:g12_conceptKiThuatVienCNTT, ex:g12_conceptKiSuQuanTriMang,
+                 ex:g12_conceptKiSuAnToanThongTin, ex:g12_conceptQuanTriBaoTriHeThong .
+
+  ex:g12_topicG_l2_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu bài 2 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Theo em, sản phẩm của ngành Công nghiệp phần mềm là những gì? Để làm việc trong ngành này có bắt buộc phải biết lập trình hay không?"@vi ;
+    ex:appearsOnPage ex:g12_page098 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:relatedTo ex:g12_conceptCongNghiepPhanMem .
+
+  ex:g12_topicG_l2_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động bài 2 - Sản phẩm truyền thông đa phương tiện"@vi ;
+    ex:hasRawText "Em hãy nêu tên một số sản phẩm truyền thông đa phương tiện và cho biết chủ đề tin học nào đã học góp phần phát triển năng lực để trong tương lai em có thể làm ra những sản phẩm này."@vi ;
+    ex:appearsOnPage ex:g12_page100 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:relatedTo ex:g12_conceptTruyenThongDaPhuongTien, ex:g12_conceptCongNgheThongTin .
+
+  ex:g12_topicG_l2_practicalTask1 a ex:PracticalInstruction ;
+    rdfs:label "Thực hành bài 2 - Tìm hiểu thông tin tuyển dụng nghề"@vi ;
+    ex:hasRawText "Mỗi nhóm chọn một nghề hoặc nhóm nghề trong bài học, tìm trên Internet thông tin tuyển dụng liên quan, thảo luận nhóm và viết báo cáo tóm tắt thông tin tuyển dụng nghề."@vi ;
+    ex:appearsOnPage ex:g12_page102 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:relatedTo ex:g12_conceptTuyenDungCNTT, ex:g12_conceptBaoCaoHuongNghiep .
+
+  ex:g12_topicG_l2_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng bài 2 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Nếu chọn nghề trong ngành Công nghệ thông tin, em sẽ hướng đến nghề nào? Vì sao? Xem xét các yêu cầu công việc và đối chiếu với điểm mạnh, sở thích của bản thân."@vi ;
+    ex:appearsOnPage ex:g12_page103 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:relatedTo ex:g12_conceptCongNgheThongTin, ex:g12_conceptHuongNghiepTinHoc .
+
+  ex:g12_topicG_l2_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra bài 2 chủ đề G lớp 12"@vi ;
+    ex:hasRawText "Câu 1. Hãy kể tên một số nghề trong ngành Công nghiệp phần mềm mà không phải lập trình. Câu 2. Chuyển đổi số làm tăng nhu cầu nhân lực công nghệ thông tin của những nghề gì? Câu 3. Ngành Truyền thông đa phương tiện tuyển dụng nhân lực làm những nghề gì cần đến kĩ năng công nghệ thông tin? Câu 4. Kĩ sư GIS làm gì và những lĩnh vực nào có nhu cầu tuyển kĩ sư GIS?"@vi ;
+    ex:appearsOnPage ex:g12_page103 ;
+    ex:belongsToLesson ex:g12_topicG_lesson2 ;
+    ex:relatedTo ex:g12_conceptCongNghiepPhanMem, ex:g12_conceptChuyenDoiSo,
+                 ex:g12_conceptTruyenThongDaPhuongTien, ex:g12_conceptKiSuGIS .
+
+  ex:g12_topicG_l3_projectTask1 a ex:ProjectTask ;
+    rdfs:label "Dự án nhỏ bài 3 - Tìm hiểu thông tin tuyển sinh và hướng nghiệp"@vi ;
+    ex:hasRawText "Tìm hiểu thông tin tuyển sinh và hướng nghiệp về lĩnh vực đào tạo Máy tính và Công nghệ thông tin ở Việt Nam; tìm hiểu một ngành có nhiều ứng dụng công nghệ thông tin; trình bày kết quả, tự đánh giá và trao đổi với nhóm khác."@vi ;
+    ex:appearsOnPage ex:g12_page104 ;
+    ex:belongsToLesson ex:g12_topicG_lesson3 ;
+    ex:relatedTo ex:g12_conceptThongTinTuyenSinh, ex:g12_conceptLinhVucMayTinhCNTT,
+                 ex:g12_conceptUngDungCNTTTrongNganhKhac, ex:g12_conceptBaoCaoHuongNghiep .
+
+  ###########################################################################
+  # Lesson activity links
+  ###########################################################################
+
+  ex:g12_topicG_lesson1 ex:hasActivity ex:g12_topicG_l1_openingActivity,
+    ex:g12_topicG_l1_activity1, ex:g12_topicG_l1_practicalTask1,
+    ex:g12_topicG_l1_practicalTask2 ;
+    ex:hasReviewQuestion ex:g12_topicG_l1_appliedTask1, ex:g12_topicG_l1_review1 .
+
+  ex:g12_topicG_lesson2 ex:hasActivity ex:g12_topicG_l2_openingActivity,
+    ex:g12_topicG_l2_activity1, ex:g12_topicG_l2_practicalTask1 ;
+    ex:hasReviewQuestion ex:g12_topicG_l2_appliedTask1, ex:g12_topicG_l2_review1 .
+
+  ex:g12_topicG_lesson3 ex:hasActivity ex:g12_topicG_l3_projectTask1 .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g12_conceptNhomNgheDichVuQuanTriCNTT ex:subConceptOf ex:g12_conceptHuongNghiepTinHoc .
+  ex:g12_conceptDichVuCNTT ex:subConceptOf ex:g12_conceptNhomNgheDichVuQuanTriCNTT .
+  ex:g12_conceptQuanTriCNTT ex:subConceptOf ex:g12_conceptNhomNgheDichVuQuanTriCNTT .
+  ex:g12_conceptKiThuatVienCNTT ex:subConceptOf ex:g12_conceptDichVuCNTT .
+  ex:g12_conceptSuaChuaBaoTriMayTinh ex:relatedTo ex:g12_conceptKiThuatVienCNTT .
+  ex:g12_conceptTuVanKhachHangCNTT ex:relatedTo ex:g12_conceptKiThuatVienCNTT .
+  ex:g12_conceptMangMayTinhLAN ex:relatedTo ex:g12_conceptKiThuatVienCNTT .
+  ex:g12_conceptKiSuAnToanThongTin ex:subConceptOf ex:g12_conceptDichVuCNTT .
+  ex:g12_conceptAnToanThongTin ex:relatedTo ex:g12_conceptKiSuAnToanThongTin .
+  ex:g12_conceptBaoMatThongTin ex:relatedTo ex:g12_conceptAnToanThongTin .
+  ex:g12_conceptGiaiPhapAnToanDuLieu ex:partOf ex:g12_conceptAnToanThongTin .
+  ex:g12_conceptUngPhoSuCoAnToan ex:relatedTo ex:g12_conceptKiSuAnToanThongTin .
+  ex:g12_conceptQuanTriMang ex:subConceptOf ex:g12_conceptQuanTriCNTT .
+  ex:g12_conceptKiSuQuanTriMang ex:relatedTo ex:g12_conceptQuanTriMang .
+  ex:g12_conceptVanHanhMang ex:partOf ex:g12_conceptQuanTriMang .
+  ex:g12_conceptBaoVeMang ex:partOf ex:g12_conceptQuanTriMang .
+  ex:g12_conceptKhacPhucSuCoMang ex:partOf ex:g12_conceptQuanTriMang .
+  ex:g12_conceptQuanTriBaoTriHeThong ex:subConceptOf ex:g12_conceptQuanTriCNTT .
+  ex:g12_conceptBaoTriHeThong ex:relatedTo ex:g12_conceptQuanTriBaoTriHeThong .
+  ex:g12_conceptHeThongThongTin ex:relatedTo ex:g12_conceptQuanTriBaoTriHeThong .
+  ex:g12_conceptNhuCauNhanLucCNTT ex:relatedTo ex:g12_conceptHuongNghiepTinHoc .
+  ex:g12_conceptTuyenDungCNTT ex:relatedTo ex:g12_conceptNhuCauNhanLucCNTT .
+
+  ex:g12_conceptCongNghiepPhanMem ex:subConceptOf ex:g12_conceptCongNgheThongTin .
+  ex:g12_conceptKiemThuVien ex:subConceptOf ex:g12_conceptCongNghiepPhanMem .
+  ex:g12_conceptNguoiQuanLiKiemThu ex:subConceptOf ex:g12_conceptCongNghiepPhanMem .
+  ex:g12_conceptNguoiQuanLiKiemThu ex:relatedTo ex:g12_conceptKiemThuVien .
+  ex:g12_conceptThietKeGiaoDienNguoiDung ex:subConceptOf ex:g12_conceptCongNghiepPhanMem .
+  ex:g12_conceptThietKeTraiNghiemNguoiDung ex:subConceptOf ex:g12_conceptCongNghiepPhanMem .
+  ex:g12_conceptUI ex:relatedTo ex:g12_conceptThietKeGiaoDienNguoiDung .
+  ex:g12_conceptUX ex:relatedTo ex:g12_conceptThietKeTraiNghiemNguoiDung .
+  ex:g12_conceptChuyenDoiSo ex:relatedTo ex:g12_conceptCongNgheThongTin .
+  ex:g12_conceptKiSuDienToanDamMay ex:subConceptOf ex:g12_conceptChuyenDoiSo .
+  ex:g12_conceptDienToanDamMay ex:relatedTo ex:g12_conceptKiSuDienToanDamMay .
+  ex:g12_conceptKiSuIoT ex:subConceptOf ex:g12_conceptChuyenDoiSo .
+  ex:g12_conceptIoT ex:relatedTo ex:g12_conceptKiSuIoT .
+  ex:g12_conceptKiSuTriTueNhanTao ex:subConceptOf ex:g12_conceptChuyenDoiSo .
+  ex:g12_conceptTriTueNhanTao ex:relatedTo ex:g12_conceptKiSuTriTueNhanTao .
+
+  ex:g12_conceptTruyenThongDaPhuongTien ex:relatedTo ex:g12_conceptCongNgheThongTin .
+  ex:g12_conceptChuyenVienThietKeDoHoa ex:subConceptOf ex:g12_conceptTruyenThongDaPhuongTien .
+  ex:g12_conceptThietKeDoHoa ex:relatedTo ex:g12_conceptChuyenVienThietKeDoHoa .
+  ex:g12_conceptChuyenVienThietKeTruyenThongDaPhuongTien ex:subConceptOf ex:g12_conceptTruyenThongDaPhuongTien .
+  ex:g12_conceptNhaPhatTrienTrangWeb ex:subConceptOf ex:g12_conceptTruyenThongDaPhuongTien .
+  ex:g12_conceptChuyenVienKiXaoDienAnh ex:subConceptOf ex:g12_conceptTruyenThongDaPhuongTien .
+  ex:g12_conceptKiXaoDienAnh ex:relatedTo ex:g12_conceptChuyenVienKiXaoDienAnh .
+
+  ex:g12_conceptUngDungCNTTTrongNganhKhac ex:relatedTo ex:g12_conceptCongNgheThongTin .
+  ex:g12_conceptNhaPhanTichDuLieu ex:subConceptOf ex:g12_conceptUngDungCNTTTrongNganhKhac .
+  ex:g12_conceptNhaKhoaHocDuLieu ex:subConceptOf ex:g12_conceptUngDungCNTTTrongNganhKhac .
+  ex:g12_conceptPhanTichDuLieu ex:relatedTo ex:g12_conceptNhaPhanTichDuLieu, ex:g12_conceptNhaKhoaHocDuLieu .
+  ex:g12_conceptKiSuGIS ex:subConceptOf ex:g12_conceptUngDungCNTTTrongNganhKhac .
+  ex:g12_conceptGIS ex:relatedTo ex:g12_conceptKiSuGIS, ex:g12_conceptBanDoSo .
+  ex:g12_conceptCongNgheTaiChinh ex:subConceptOf ex:g12_conceptUngDungCNTTTrongNganhKhac .
+  ex:g12_conceptFintech ex:sameAsConcept ex:g12_conceptCongNgheTaiChinh .
+  ex:g12_conceptThongTinTuyenSinh ex:relatedTo ex:g12_conceptHuongNghiepTinHoc .
+  ex:g12_conceptLinhVucMayTinhCNTT ex:relatedTo ex:g12_conceptThongTinTuyenSinh, ex:g12_conceptCongNgheThongTin .
+  ex:g12_conceptBaoCaoHuongNghiep ex:relatedTo ex:g12_conceptThongTinTuyenSinh, ex:g12_conceptHuongNghiepTinHoc .
+}

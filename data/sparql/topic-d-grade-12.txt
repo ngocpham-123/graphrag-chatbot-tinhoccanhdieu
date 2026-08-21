@@ -1,0 +1,641 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+
+###############################################################################
+# DATA-ONLY INGEST FOR GRADE 12 TOPIC D
+# Uses grade-prefixed IRIs to avoid conflicts with Grade 10 and Grade 11.
+# Source file: sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-4.pdf :contentReference[oaicite:0]{index=0}
+###############################################################################
+
+INSERT DATA {
+  ###########################################################################
+  # Grade / textbook metadata
+  ###########################################################################
+
+  ex:g12_grade12 a ex:GradeLevel ;
+    rdfs:label "Lớp 12"@vi ;
+    ex:gradeNumber 12 .
+
+  ex:canhDieuPublisher a ex:Publisher ;
+    rdfs:label "Cánh Diều"@vi .
+
+  ex:g12_tinhoc_ungdung_canhdieu a ex:Textbook ;
+    rdfs:label "Tin học 12 - Tin học ứng dụng - Cánh Diều"@vi ;
+    ex:hasTitle "Tin học 12 - Tin học ứng dụng"@vi ;
+    ex:hasGradeLevel ex:g12_grade12 ;
+    ex:publishedBy ex:canhDieuPublisher ;
+    ex:sourceLanguage "vi" .
+
+  ###########################################################################
+  # Topic
+  ###########################################################################
+
+  ex:topicD_shared a ex:Topic ;
+    rdfs:label "Chủ đề D (dùng chung các khối)"@vi ;
+    ex:hasTitle "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi .
+
+  ex:g12_topicD a ex:Topic ;
+    rdfs:label "Chủ đề D - Đạo đức, pháp luật và văn hoá trong môi trường số"@vi ;
+    ex:hasTitle "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi ;
+    ex:hasSubtitle "Giữ gìn tính nhân văn trong thế giới ảo"@vi ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:sameTopicAs ex:topicD_shared ;
+    ex:topicOrder 4 ;
+    ex:hasStartPage 31 ;
+    ex:hasEndPage 34 ;
+    ex:sourceFileName "sach-giao-khoa-tin-hoc-12-thud-canh-dieu-pages-4.pdf" ;
+    ex:sourceFileType "application/pdf" ;
+    ex:hasLesson ex:g12_topicD_lesson1 ;
+    ex:hasPage ex:g12_page031, ex:g12_page032, ex:g12_page033, ex:g12_page034 .
+
+  ex:g12_tinhoc_ungdung_canhdieu ex:hasTopic ex:g12_topicD .
+
+  ###########################################################################
+  # Lesson
+  ###########################################################################
+
+  ex:g12_topicD_lesson1 a ex:Lesson ;
+    rdfs:label "Giữ gìn tính nhân văn trong thế giới ảo"@vi ;
+    ex:hasTitle "Giữ gìn tính nhân văn trong thế giới ảo"@vi ;
+    ex:lessonNumber 1 ;
+    ex:belongsToTopic ex:g12_topicD ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu ;
+    ex:hasStartPage 31 ;
+    ex:hasEndPage 34 ;
+    ex:hasSection ex:g12_topicD_l1s1, ex:g12_topicD_l1s2, ex:g12_topicD_l1s3 .
+
+  ###########################################################################
+  # Sections
+  ###########################################################################
+
+  ex:g12_topicD_l1s1 a ex:Section ;
+    rdfs:label "Ưu điểm của giao tiếp qua không gian mạng"@vi ;
+    ex:hasTitle "Ưu điểm của giao tiếp qua không gian mạng"@vi ;
+    ex:sectionOrder 1 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 .
+
+  ex:g12_topicD_l1s2 a ex:Section ;
+    rdfs:label "Một số vấn đề tiềm ẩn của giao tiếp qua không gian mạng"@vi ;
+    ex:hasTitle "Một số vấn đề tiềm ẩn của giao tiếp qua không gian mạng"@vi ;
+    ex:sectionOrder 2 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 .
+
+  ex:g12_topicD_l1s3 a ex:Section ;
+    rdfs:label "Ứng xử nhân văn trên không gian mạng"@vi ;
+    ex:hasTitle "Ứng xử nhân văn trên không gian mạng"@vi ;
+    ex:sectionOrder 3 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 .
+
+  ###########################################################################
+  # Pages
+  ###########################################################################
+
+  ex:g12_page031 a ex:Page ;
+    ex:hasPageNumber 31 ;
+    ex:hasPrintedPageNumber 31 ;
+    ex:pdfPageIndex 1 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToTopic ex:g12_topicD ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page032 a ex:Page ;
+    ex:hasPageNumber 32 ;
+    ex:hasPrintedPageNumber 32 ;
+    ex:pdfPageIndex 2 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToTopic ex:g12_topicD ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page033 a ex:Page ;
+    ex:hasPageNumber 33 ;
+    ex:hasPrintedPageNumber 33 ;
+    ex:pdfPageIndex 3 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToTopic ex:g12_topicD ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ex:g12_page034 a ex:Page ;
+    ex:hasPageNumber 34 ;
+    ex:hasPrintedPageNumber 34 ;
+    ex:pdfPageIndex 4 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToTopic ex:g12_topicD ;
+    ex:belongsToGrade ex:g12_grade12 ;
+    ex:belongsToTextbook ex:g12_tinhoc_ungdung_canhdieu .
+
+  ###########################################################################
+  # Page ordering
+  ###########################################################################
+
+  ex:g12_page030 ex:nextPage ex:g12_page031 .
+  ex:g12_page031 ex:previousPage ex:g12_page030 ; ex:nextPage ex:g12_page032 .
+  ex:g12_page032 ex:previousPage ex:g12_page031 ; ex:nextPage ex:g12_page033 .
+  ex:g12_page033 ex:previousPage ex:g12_page032 ; ex:nextPage ex:g12_page034 .
+  ex:g12_page034 ex:previousPage ex:g12_page033 .
+
+  ###########################################################################
+  # Knowledge concepts
+  ###########################################################################
+
+  ex:g12_conceptDaoDucPhapLuatVanHoaSo a ex:KnowledgeConcept ;
+    rdfs:label "Đạo đức, pháp luật và văn hoá trong môi trường số"@vi .
+
+  ex:g12_conceptTinhNhanVanTheGioiAo a ex:KnowledgeConcept ;
+    rdfs:label "Tính nhân văn trong thế giới ảo"@vi .
+
+  ex:g12_conceptKhongGianMang a ex:KnowledgeConcept ;
+    rdfs:label "Không gian mạng"@vi .
+
+  ex:g12_conceptTheGioiAo a ex:KnowledgeConcept ;
+    rdfs:label "Thế giới ảo"@vi .
+
+  ex:g12_conceptGiaoTiepQuaKhongGianMang a ex:KnowledgeConcept ;
+    rdfs:label "Giao tiếp qua không gian mạng"@vi .
+
+  ex:g12_conceptGiaoTiepDongBo a ex:KnowledgeConcept ;
+    rdfs:label "Giao tiếp đồng bộ"@vi .
+
+  ex:g12_conceptGiaoTiepKhongDongBo a ex:KnowledgeConcept ;
+    rdfs:label "Giao tiếp không đồng bộ"@vi .
+
+  ex:g12_conceptEmail a ex:KnowledgeConcept ;
+    rdfs:label "Email"@vi .
+
+  ex:g12_conceptMangXaHoi a ex:KnowledgeConcept ;
+    rdfs:label "Mạng xã hội"@vi .
+
+  ex:g12_conceptChatTrucTuyen a ex:KnowledgeConcept ;
+    rdfs:label "Chat trực tuyến"@vi .
+
+  ex:g12_conceptHopTrucTuyen a ex:KnowledgeConcept ;
+    rdfs:label "Họp trực tuyến"@vi .
+
+  ex:g12_conceptLuuTruThongTinMang a ex:KnowledgeConcept ;
+    rdfs:label "Lưu trữ thông tin trên mạng"@vi .
+
+  ex:g12_conceptXoaBoMacCam a ex:KnowledgeConcept ;
+    rdfs:label "Xoá bỏ mặc cảm trong giao tiếp"@vi .
+
+  ex:g12_conceptHoTroNguoiKhuyetTat a ex:KnowledgeConcept ;
+    rdfs:label "Hỗ trợ người khuyết tật giao tiếp"@vi .
+
+  ex:g12_conceptVanDeTiemAnMang a ex:KnowledgeConcept ;
+    rdfs:label "Vấn đề tiềm ẩn của giao tiếp qua không gian mạng"@vi .
+
+  ex:g12_conceptThieuNgonNguHinhThe a ex:KnowledgeConcept ;
+    rdfs:label "Thiếu ngôn ngữ hình thể"@vi .
+
+  ex:g12_conceptHieuLamTinNhan a ex:KnowledgeConcept ;
+    rdfs:label "Hiểu lầm qua tin nhắn"@vi .
+
+  ex:g12_conceptKiNangVietKem a ex:KnowledgeConcept ;
+    rdfs:label "Kĩ năng viết kém"@vi .
+
+  ex:g12_conceptBienGioiThoiGianRiengTu a ex:KnowledgeConcept ;
+    rdfs:label "Ranh giới thời gian riêng tư bị phá vỡ"@vi .
+
+  ex:g12_conceptNghienInternet a ex:KnowledgeConcept ;
+    rdfs:label "Nghiện Internet"@vi .
+
+  ex:g12_conceptRinhRapQuayRoiBatNat a ex:KnowledgeConcept ;
+    rdfs:label "Rình rập, quấy rối, bắt nạt trên mạng"@vi .
+
+  ex:g12_conceptMatThongTinCaNhan a ex:KnowledgeConcept ;
+    rdfs:label "Lộ hoặc mất thông tin cá nhân"@vi .
+
+  ex:g12_conceptMatKetNoiMang a ex:KnowledgeConcept ;
+    rdfs:label "Mất kết nối mạng"@vi .
+
+  ex:g12_conceptAnToanOnDinhMang a ex:KnowledgeConcept ;
+    rdfs:label "An toàn và ổn định của mạng"@vi .
+
+  ex:g12_conceptUngXuNhanVan a ex:KnowledgeConcept ;
+    rdfs:label "Ứng xử nhân văn"@vi .
+
+  ex:g12_conceptTinhNguoi a ex:KnowledgeConcept ;
+    rdfs:label "Tình người"@vi .
+
+  ex:g12_conceptTinhNguoiNoiRong a ex:KnowledgeConcept ;
+    rdfs:label "Tính người"@vi .
+
+  ex:g12_conceptTinhXaHoiLoaiNguoi a ex:KnowledgeConcept ;
+    rdfs:label "Tính xã hội loài người"@vi .
+
+  ex:g12_conceptChongKeXauViecXau a ex:KnowledgeConcept ;
+    rdfs:label "Chống kẻ xấu, việc xấu"@vi .
+
+  ex:g12_conceptBatNatQuaMang a ex:KnowledgeConcept ;
+    rdfs:label "Bắt nạt qua mạng"@vi .
+
+  ex:g12_conceptQuayRoiQuaMang a ex:KnowledgeConcept ;
+    rdfs:label "Quấy rối qua mạng"@vi .
+
+  ex:g12_conceptLuaDaoQuaMang a ex:KnowledgeConcept ;
+    rdfs:label "Lừa đảo qua mạng"@vi .
+
+  ex:g12_conceptBaiting a ex:KnowledgeConcept ;
+    rdfs:label "Baiting"@vi .
+
+  ex:g12_conceptDeepfake a ex:KnowledgeConcept ;
+    rdfs:label "Deepfake"@vi .
+
+  ex:g12_conceptSuDongCam a ex:KnowledgeConcept ;
+    rdfs:label "Sự đồng cảm"@vi .
+
+  ex:g12_conceptUngHoViecTot a ex:KnowledgeConcept ;
+    rdfs:label "Ủng hộ việc tốt"@vi .
+
+  ex:g12_conceptPhanDoiViecXau a ex:KnowledgeConcept ;
+    rdfs:label "Phản đối việc xấu"@vi .
+
+  ex:g12_conceptHieuUngXaHoiTichCuc a ex:KnowledgeConcept ;
+    rdfs:label "Hiệu ứng xã hội tích cực"@vi .
+
+  ex:g12_conceptGiaTriNhanVan a ex:KnowledgeConcept ;
+    rdfs:label "Giá trị nhân văn"@vi .
+
+  ex:g12_conceptVanDongUngHoThamHoa a ex:KnowledgeConcept ;
+    rdfs:label "Vận động ủng hộ đồng bào bị thiên tai, thảm hoạ"@vi .
+
+  ex:g12_conceptDuaTinChanThuc a ex:KnowledgeConcept ;
+    rdfs:label "Đưa tin phản ánh chân thực"@vi .
+
+  ex:g12_conceptPhePhanCoVanHoa a ex:KnowledgeConcept ;
+    rdfs:label "Phê phán có văn hoá và đạo đức"@vi .
+
+  ex:g12_topicD ex:hasConcept ex:g12_conceptDaoDucPhapLuatVanHoaSo,
+    ex:g12_conceptTinhNhanVanTheGioiAo, ex:g12_conceptKhongGianMang,
+    ex:g12_conceptTheGioiAo, ex:g12_conceptGiaoTiepQuaKhongGianMang,
+    ex:g12_conceptGiaoTiepDongBo, ex:g12_conceptGiaoTiepKhongDongBo,
+    ex:g12_conceptVanDeTiemAnMang, ex:g12_conceptNghienInternet,
+    ex:g12_conceptRinhRapQuayRoiBatNat, ex:g12_conceptMatThongTinCaNhan,
+    ex:g12_conceptUngXuNhanVan, ex:g12_conceptTinhNguoi,
+    ex:g12_conceptLuaDaoQuaMang, ex:g12_conceptDeepfake,
+    ex:g12_conceptHieuUngXaHoiTichCuc, ex:g12_conceptGiaTriNhanVan .
+
+  ###########################################################################
+  # Learning objectives and summary
+  ###########################################################################
+
+  ex:g12_topicD_l1_objectives a ex:NoteBox ;
+    rdfs:label "Mục tiêu bài học chủ đề D lớp 12"@vi ;
+    ex:hasRawText "Học xong bài này, em sẽ: Phân tích được ưu và nhược điểm về giao tiếp trong thế giới ảo qua các ví dụ cụ thể. Phân tích được tính nhân văn trong ứng xử ở một số tình huống tham gia thế giới ảo."@vi ;
+    ex:appearsOnPage ex:g12_page031 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 .
+
+  ex:g12_topicD_l1_summary a ex:SummaryBox ;
+    rdfs:label "Tóm tắt bài học - Chủ đề D lớp 12"@vi ;
+    ex:hasSummaryText "Giao tiếp qua không gian mạng mang lại nhiều tiện lợi nhưng cũng có những nhược điểm và tiềm ẩn khả năng gây ra một số vấn đề về lâu dài. Ứng xử nhân văn trên không gian mạng là thể hiện tình người, ủng hộ và thực hiện việc tốt, phản đối và tránh làm việc xấu, góp phần tạo ra hiệu ứng xã hội tích cực, lan toả những giá trị nhân văn."@vi ;
+    ex:appearsOnPage ex:g12_page034 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 .
+
+  ex:g12_topicD_lesson1 ex:hasSummary ex:g12_topicD_l1_summary .
+
+  ###########################################################################
+  # Paragraph individuals
+  ###########################################################################
+
+  ex:g12_topicD_p031_01 a ex:Paragraph ;
+    ex:paragraphOrder 1 ;
+    ex:hasRawText "Chủ đề D - Đạo đức, pháp luật và văn hoá trong môi trường số có bài học Giữ gìn tính nhân văn trong thế giới ảo. Bài học yêu cầu học sinh phân tích ưu, nhược điểm của giao tiếp trong thế giới ảo và phân tích tính nhân văn trong ứng xử khi tham gia thế giới ảo."@vi ;
+    ex:appearsOnPage ex:g12_page031 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s1 .
+
+  ex:g12_topicD_p031_02 a ex:Paragraph ;
+    ex:paragraphOrder 2 ;
+    ex:hasRawText "Không gian mạng là phần bổ sung thêm của thế giới thực nhờ các phương tiện kĩ thuật số. Trong bối cảnh nói về tính nhân văn trong thế giới ảo thì không gian mạng đồng nghĩa với thế giới ảo."@vi ;
+    ex:appearsOnPage ex:g12_page031 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s1 .
+
+  ex:g12_topicD_p031_03 a ex:Paragraph ;
+    ex:paragraphOrder 3 ;
+    ex:hasRawText "Giao tiếp qua không gian mạng được thực hiện bằng các phương tiện kĩ thuật số như email, mạng xã hội, chat trực tuyến, giúp giữ liên lạc với người thân, bạn bè và đồng nghiệp dù ở xa."@vi ;
+    ex:appearsOnPage ex:g12_page031 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s1 .
+
+  ex:g12_topicD_p031_04 a ex:Paragraph ;
+    ex:paragraphOrder 4 ;
+    ex:hasRawText "Giao tiếp qua không gian mạng có thể là đồng bộ hoặc không đồng bộ. Giao tiếp đồng bộ diễn ra trong thời gian thực, các bên tham gia cùng lúc; giao tiếp không đồng bộ là người gửi tin có thể không nhận được phản hồi ngay, ví dụ email, nhắn tin trên Facebook hoặc Zalo."@vi ;
+    ex:appearsOnPage ex:g12_page031 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s1 .
+
+  ex:g12_topicD_p031_05 a ex:Paragraph ;
+    ex:paragraphOrder 5 ;
+    ex:hasRawText "Giao tiếp qua không gian mạng có nhiều ưu điểm: không phụ thuộc vào thời gian và địa điểm, cho phép nhiều người cùng tham gia cùng lúc không bị giới hạn bởi không gian, không ảnh hưởng đến việc gửi và nhận tin."@vi ;
+    ex:appearsOnPage ex:g12_page031 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s1 .
+
+  ex:g12_topicD_p032_01 a ex:Paragraph ;
+    ex:paragraphOrder 6 ;
+    ex:hasRawText "Giao tiếp qua không gian mạng tạo điều kiện thuận lợi cho việc lưu trữ thông tin. Nội dung trò chuyện có thể được lưu trữ để tham khảo trong tương lai, giúp giáo viên chia sẻ hướng dẫn làm bài tập từng bước và học sinh xem lại khi cần."@vi ;
+    ex:appearsOnPage ex:g12_page032 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s1 .
+
+  ex:g12_topicD_p032_02 a ex:Paragraph ;
+    ex:paragraphOrder 7 ;
+    ex:hasRawText "Giao tiếp qua không gian mạng góp phần xoá bỏ mặc cảm, giảm nhẹ rào cản ban đầu khi giao tiếp; cung cấp nền tảng giúp người khiếm khuyết ngoại hình, khiếm thính hoặc khiếm ngôn dễ dàng giao tiếp mà không cần người hỗ trợ."@vi ;
+    ex:appearsOnPage ex:g12_page032 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s1 .
+
+  ex:g12_topicD_p032_03 a ex:Paragraph ;
+    ex:paragraphOrder 8 ;
+    ex:hasRawText "Giao tiếp qua không gian mạng cũng làm mất đi nhiều ưu điểm của giao tiếp trực tiếp và tiềm ẩn khả năng gây ra một số vấn đề. Thiếu ngôn ngữ hình thể và tín hiệu cảm xúc khiến tin nhắn văn bản dễ bị hiểu lầm về diễn giải và ngữ cảnh."@vi ;
+    ex:appearsOnPage ex:g12_page032 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s2 .
+
+  ex:g12_topicD_p032_04 a ex:Paragraph ;
+    ex:paragraphOrder 9 ;
+    ex:hasRawText "Sự dễ dãi khi viết tin nhắn có thể dẫn đến kĩ năng viết kém như lỗi chính tả, sai ngữ pháp và sử dụng từ viết tắt tuỳ tiện. Ranh giới thời gian riêng tư cũng có nguy cơ bị phá vỡ, ví dụ gửi tin nhắn đến người ở ngay cùng phòng thay vì đến gần để trò chuyện."@vi ;
+    ex:appearsOnPage ex:g12_page032 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s2 .
+
+  ex:g12_topicD_p032_05 a ex:Paragraph ;
+    ex:paragraphOrder 10 ;
+    ex:hasRawText "Người dùng có nguy cơ nghiện Internet, dành quá nhiều thời gian trên không gian mạng với các mối quan hệ, trở nên ngây ngô trong cuộc sống thực và không biết gì về sự kiện gần gũi xung quanh."@vi ;
+    ex:appearsOnPage ex:g12_page032 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s2 .
+
+  ex:g12_topicD_p032_06 a ex:Paragraph ;
+    ex:paragraphOrder 11 ;
+    ex:hasRawText "Một số nguy cơ khác như bị rình rập, quấy rối, bắt nạt, bị lộ hoặc mất thông tin cá nhân, bị mất kết nối. Những rủi ro này đòi hỏi sự chú ý trong quản lí tài nguyên mạng và quản lí kĩ thuật chặt chẽ để đảm bảo an toàn, ổn định của mạng."@vi ;
+    ex:appearsOnPage ex:g12_page032 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s2 .
+
+  ex:g12_topicD_p033_01 a ex:Paragraph ;
+    ex:paragraphOrder 12 ;
+    ex:hasRawText "Nhân văn là văn hoá của xã hội loài người. Con người ứng xử nhân văn thể hiện ở tình người như chân thành, đồng cảm, thấu hiểu, độ lượng, vị tha và khoan dung; ở tính người như yêu cái tốt, thích cái đẹp, ghét cái xấu, chống cái ác, ủng hộ công bằng và lẽ phải, giúp đỡ kẻ yếu; và ở tính xã hội loài người như mong muốn xã hội thịnh vượng, người người hạnh phúc."@vi ;
+    ex:appearsOnPage ex:g12_page033 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s3 .
+
+  ex:g12_topicD_p033_02 a ex:Paragraph ;
+    ex:paragraphOrder 13 ;
+    ex:hasRawText "Tính nhân văn là nền tảng của mối quan hệ tốt đẹp giữa con người với con người, con người với môi trường xung quanh và rộng hơn là môi trường sống trên Trái Đất của toàn nhân loại. Trong không gian mạng, tình huống ứng xử phong phú hơn nhưng vẫn cần phản ánh nền tảng văn hoá tốt và nhân cách đẹp."@vi ;
+    ex:appearsOnPage ex:g12_page033 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s3 .
+
+  ex:g12_topicD_p033_03 a ex:Paragraph ;
+    ex:paragraphOrder 14 ;
+    ex:hasRawText "Người nhân văn trên không gian mạng không làm việc xấu, tích cực chống người xấu, việc xấu; không mạo danh hoặc giả làm người khác với bất kì mục đích gì, kể cả vui đùa; không tiếp tay cho kẻ bắt nạt, quấy rối và không phát tán nội dung bắt nạt, quấy rối."@vi ;
+    ex:appearsOnPage ex:g12_page033 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s3 .
+
+  ex:g12_topicD_p033_04 a ex:Paragraph ;
+    ex:paragraphOrder 15 ;
+    ex:hasRawText "Bày tỏ không đồng tình và phê phán đối với việc bắt nạt, quấy rối là biểu hiện ứng xử nhân văn. Người dùng cũng cần thận trọng trước các chiêu trò lừa đảo như mồi baiting, hứa hẹn vật phẩm hoặc phần thưởng để dò mật khẩu, lừa tiền, lừa công sức lao động hay đánh cắp dữ liệu; cũng như công cụ làm giả deepfake."@vi ;
+    ex:appearsOnPage ex:g12_page033 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s3 .
+
+  ex:g12_topicD_p034_01 a ex:Paragraph ;
+    ex:paragraphOrder 16 ;
+    ex:hasRawText "Ứng xử nhân văn trên không gian mạng nhằm góp phần tạo hiệu ứng xã hội tích cực, lan toả những giá trị nhân văn. Có thể bày tỏ thái độ bằng lời văn, tiếng nói hoặc biểu tượng, thể hiện sự đồng cảm trước thiên tai thảm hoạ, sự ủng hộ với việc tích cực, người tốt, việc tốt và sự không đồng tình, phản đối, phê phán việc tiêu cực, người xấu, việc xấu."@vi ;
+    ex:appearsOnPage ex:g12_page034 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s3 .
+
+  ex:g12_topicD_p034_02 a ex:Paragraph ;
+    ex:paragraphOrder 17 ;
+    ex:hasRawText "Tích cực hơn, ứng xử nhân văn trên không gian mạng là tham gia trực tiếp vào các hoạt động vì giá trị nhân văn như vận động ủng hộ đồng bào bị thiệt hại do thiên tai, thảm hoạ, đưa tin phản ánh chân thực và ca ngợi người tốt, việc tốt, phát hiện và phê phán sự việc tiêu cực theo cách có văn hoá và đạo đức."@vi ;
+    ex:appearsOnPage ex:g12_page034 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:belongsToSection ex:g12_topicD_l1s3 .
+
+  ###########################################################################
+  # Page-to-paragraph links
+  ###########################################################################
+
+  ex:g12_page031 ex:hasParagraph ex:g12_topicD_p031_01, ex:g12_topicD_p031_02,
+    ex:g12_topicD_p031_03, ex:g12_topicD_p031_04, ex:g12_topicD_p031_05 .
+
+  ex:g12_page032 ex:hasParagraph ex:g12_topicD_p032_01, ex:g12_topicD_p032_02,
+    ex:g12_topicD_p032_03, ex:g12_topicD_p032_04, ex:g12_topicD_p032_05,
+    ex:g12_topicD_p032_06 .
+
+  ex:g12_page033 ex:hasParagraph ex:g12_topicD_p033_01, ex:g12_topicD_p033_02,
+    ex:g12_topicD_p033_03, ex:g12_topicD_p033_04 .
+
+  ex:g12_page034 ex:hasParagraph ex:g12_topicD_p034_01, ex:g12_topicD_p034_02 .
+
+  ###########################################################################
+  # Section-to-paragraph links
+  ###########################################################################
+
+  ex:g12_topicD_l1s1 ex:hasParagraph ex:g12_topicD_p031_01, ex:g12_topicD_p031_02,
+    ex:g12_topicD_p031_03, ex:g12_topicD_p031_04, ex:g12_topicD_p031_05,
+    ex:g12_topicD_p032_01, ex:g12_topicD_p032_02 .
+
+  ex:g12_topicD_l1s2 ex:hasParagraph ex:g12_topicD_p032_03, ex:g12_topicD_p032_04,
+    ex:g12_topicD_p032_05, ex:g12_topicD_p032_06 .
+
+  ex:g12_topicD_l1s3 ex:hasParagraph ex:g12_topicD_p033_01, ex:g12_topicD_p033_02,
+    ex:g12_topicD_p033_03, ex:g12_topicD_p033_04, ex:g12_topicD_p034_01,
+    ex:g12_topicD_p034_02 .
+
+  ###########################################################################
+  # Paragraph ordering
+  ###########################################################################
+
+  ex:g12_topicD_p031_01 ex:nextParagraph ex:g12_topicD_p031_02 .
+  ex:g12_topicD_p031_02 ex:previousParagraph ex:g12_topicD_p031_01 ; ex:nextParagraph ex:g12_topicD_p031_03 .
+  ex:g12_topicD_p031_03 ex:previousParagraph ex:g12_topicD_p031_02 ; ex:nextParagraph ex:g12_topicD_p031_04 .
+  ex:g12_topicD_p031_04 ex:previousParagraph ex:g12_topicD_p031_03 ; ex:nextParagraph ex:g12_topicD_p031_05 .
+  ex:g12_topicD_p031_05 ex:previousParagraph ex:g12_topicD_p031_04 ; ex:nextParagraph ex:g12_topicD_p032_01 .
+  ex:g12_topicD_p032_01 ex:previousParagraph ex:g12_topicD_p031_05 ; ex:nextParagraph ex:g12_topicD_p032_02 .
+  ex:g12_topicD_p032_02 ex:previousParagraph ex:g12_topicD_p032_01 ; ex:nextParagraph ex:g12_topicD_p032_03 .
+  ex:g12_topicD_p032_03 ex:previousParagraph ex:g12_topicD_p032_02 ; ex:nextParagraph ex:g12_topicD_p032_04 .
+  ex:g12_topicD_p032_04 ex:previousParagraph ex:g12_topicD_p032_03 ; ex:nextParagraph ex:g12_topicD_p032_05 .
+  ex:g12_topicD_p032_05 ex:previousParagraph ex:g12_topicD_p032_04 ; ex:nextParagraph ex:g12_topicD_p032_06 .
+  ex:g12_topicD_p032_06 ex:previousParagraph ex:g12_topicD_p032_05 ; ex:nextParagraph ex:g12_topicD_p033_01 .
+  ex:g12_topicD_p033_01 ex:previousParagraph ex:g12_topicD_p032_06 ; ex:nextParagraph ex:g12_topicD_p033_02 .
+  ex:g12_topicD_p033_02 ex:previousParagraph ex:g12_topicD_p033_01 ; ex:nextParagraph ex:g12_topicD_p033_03 .
+  ex:g12_topicD_p033_03 ex:previousParagraph ex:g12_topicD_p033_02 ; ex:nextParagraph ex:g12_topicD_p033_04 .
+  ex:g12_topicD_p033_04 ex:previousParagraph ex:g12_topicD_p033_03 ; ex:nextParagraph ex:g12_topicD_p034_01 .
+  ex:g12_topicD_p034_01 ex:previousParagraph ex:g12_topicD_p033_04 ; ex:nextParagraph ex:g12_topicD_p034_02 .
+  ex:g12_topicD_p034_02 ex:previousParagraph ex:g12_topicD_p034_01 .
+
+  ###########################################################################
+  # Paragraph-to-concept mentions
+  ###########################################################################
+
+  ex:g12_topicD_p031_01 ex:mentionsConcept ex:g12_conceptDaoDucPhapLuatVanHoaSo,
+    ex:g12_conceptTinhNhanVanTheGioiAo, ex:g12_conceptTheGioiAo,
+    ex:g12_conceptGiaoTiepQuaKhongGianMang .
+
+  ex:g12_topicD_p031_02 ex:mentionsConcept ex:g12_conceptKhongGianMang,
+    ex:g12_conceptTheGioiAo, ex:g12_conceptTinhNhanVanTheGioiAo .
+
+  ex:g12_topicD_p031_03 ex:mentionsConcept ex:g12_conceptGiaoTiepQuaKhongGianMang,
+    ex:g12_conceptEmail, ex:g12_conceptMangXaHoi, ex:g12_conceptChatTrucTuyen .
+
+  ex:g12_topicD_p031_04 ex:mentionsConcept ex:g12_conceptGiaoTiepQuaKhongGianMang,
+    ex:g12_conceptGiaoTiepDongBo, ex:g12_conceptGiaoTiepKhongDongBo,
+    ex:g12_conceptEmail, ex:g12_conceptMangXaHoi .
+
+  ex:g12_topicD_p031_05 ex:mentionsConcept ex:g12_conceptGiaoTiepQuaKhongGianMang,
+    ex:g12_conceptHopTrucTuyen .
+
+  ex:g12_topicD_p032_01 ex:mentionsConcept ex:g12_conceptGiaoTiepQuaKhongGianMang,
+    ex:g12_conceptLuuTruThongTinMang .
+
+  ex:g12_topicD_p032_02 ex:mentionsConcept ex:g12_conceptGiaoTiepQuaKhongGianMang,
+    ex:g12_conceptXoaBoMacCam, ex:g12_conceptHoTroNguoiKhuyetTat .
+
+  ex:g12_topicD_p032_03 ex:mentionsConcept ex:g12_conceptGiaoTiepQuaKhongGianMang,
+    ex:g12_conceptVanDeTiemAnMang, ex:g12_conceptThieuNgonNguHinhThe,
+    ex:g12_conceptHieuLamTinNhan .
+
+  ex:g12_topicD_p032_04 ex:mentionsConcept ex:g12_conceptKiNangVietKem,
+    ex:g12_conceptBienGioiThoiGianRiengTu .
+
+  ex:g12_topicD_p032_05 ex:mentionsConcept ex:g12_conceptNghienInternet,
+    ex:g12_conceptKhongGianMang .
+
+  ex:g12_topicD_p032_06 ex:mentionsConcept ex:g12_conceptRinhRapQuayRoiBatNat,
+    ex:g12_conceptMatThongTinCaNhan, ex:g12_conceptMatKetNoiMang,
+    ex:g12_conceptAnToanOnDinhMang .
+
+  ex:g12_topicD_p033_01 ex:mentionsConcept ex:g12_conceptUngXuNhanVan,
+    ex:g12_conceptTinhNguoi, ex:g12_conceptTinhNguoiNoiRong,
+    ex:g12_conceptTinhXaHoiLoaiNguoi .
+
+  ex:g12_topicD_p033_02 ex:mentionsConcept ex:g12_conceptTinhNhanVanTheGioiAo,
+    ex:g12_conceptKhongGianMang, ex:g12_conceptTheGioiAo .
+
+  ex:g12_topicD_p033_03 ex:mentionsConcept ex:g12_conceptUngXuNhanVan,
+    ex:g12_conceptChongKeXauViecXau, ex:g12_conceptBatNatQuaMang,
+    ex:g12_conceptQuayRoiQuaMang .
+
+  ex:g12_topicD_p033_04 ex:mentionsConcept ex:g12_conceptUngXuNhanVan,
+    ex:g12_conceptBatNatQuaMang, ex:g12_conceptQuayRoiQuaMang,
+    ex:g12_conceptLuaDaoQuaMang, ex:g12_conceptBaiting, ex:g12_conceptDeepfake .
+
+  ex:g12_topicD_p034_01 ex:mentionsConcept ex:g12_conceptUngXuNhanVan,
+    ex:g12_conceptHieuUngXaHoiTichCuc, ex:g12_conceptGiaTriNhanVan,
+    ex:g12_conceptSuDongCam, ex:g12_conceptUngHoViecTot, ex:g12_conceptPhanDoiViecXau .
+
+  ex:g12_topicD_p034_02 ex:mentionsConcept ex:g12_conceptUngXuNhanVan,
+    ex:g12_conceptGiaTriNhanVan, ex:g12_conceptVanDongUngHoThamHoa,
+    ex:g12_conceptDuaTinChanThuc, ex:g12_conceptPhePhanCoVanHoa .
+
+  ###########################################################################
+  # Semantic concept relations
+  ###########################################################################
+
+  ex:g12_conceptTinhNhanVanTheGioiAo ex:subConceptOf ex:g12_conceptDaoDucPhapLuatVanHoaSo .
+  ex:g12_conceptKhongGianMang ex:relatedTo ex:g12_conceptTheGioiAo .
+  ex:g12_conceptTheGioiAo ex:relatedTo ex:g12_conceptTinhNhanVanTheGioiAo .
+  ex:g12_conceptGiaoTiepQuaKhongGianMang ex:relatedTo ex:g12_conceptKhongGianMang .
+  ex:g12_conceptGiaoTiepDongBo ex:subConceptOf ex:g12_conceptGiaoTiepQuaKhongGianMang .
+  ex:g12_conceptGiaoTiepKhongDongBo ex:subConceptOf ex:g12_conceptGiaoTiepQuaKhongGianMang .
+  ex:g12_conceptEmail ex:relatedTo ex:g12_conceptGiaoTiepKhongDongBo .
+  ex:g12_conceptMangXaHoi ex:relatedTo ex:g12_conceptGiaoTiepQuaKhongGianMang .
+  ex:g12_conceptChatTrucTuyen ex:relatedTo ex:g12_conceptGiaoTiepDongBo .
+  ex:g12_conceptHopTrucTuyen ex:relatedTo ex:g12_conceptGiaoTiepDongBo .
+  ex:g12_conceptLuuTruThongTinMang ex:relatedTo ex:g12_conceptGiaoTiepQuaKhongGianMang .
+  ex:g12_conceptXoaBoMacCam ex:relatedTo ex:g12_conceptGiaoTiepQuaKhongGianMang .
+  ex:g12_conceptHoTroNguoiKhuyetTat ex:relatedTo ex:g12_conceptGiaoTiepQuaKhongGianMang .
+  ex:g12_conceptVanDeTiemAnMang ex:relatedTo ex:g12_conceptGiaoTiepQuaKhongGianMang .
+  ex:g12_conceptThieuNgonNguHinhThe ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptHieuLamTinNhan ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptKiNangVietKem ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptBienGioiThoiGianRiengTu ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptNghienInternet ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptRinhRapQuayRoiBatNat ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptMatThongTinCaNhan ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptMatKetNoiMang ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptAnToanOnDinhMang ex:relatedTo ex:g12_conceptMatKetNoiMang .
+  ex:g12_conceptUngXuNhanVan ex:subConceptOf ex:g12_conceptTinhNhanVanTheGioiAo .
+  ex:g12_conceptTinhNguoi ex:partOf ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptTinhNguoiNoiRong ex:partOf ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptTinhXaHoiLoaiNguoi ex:partOf ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptChongKeXauViecXau ex:partOf ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptBatNatQuaMang ex:relatedTo ex:g12_conceptRinhRapQuayRoiBatNat .
+  ex:g12_conceptQuayRoiQuaMang ex:relatedTo ex:g12_conceptRinhRapQuayRoiBatNat .
+  ex:g12_conceptLuaDaoQuaMang ex:subConceptOf ex:g12_conceptVanDeTiemAnMang .
+  ex:g12_conceptBaiting ex:subConceptOf ex:g12_conceptLuaDaoQuaMang .
+  ex:g12_conceptDeepfake ex:subConceptOf ex:g12_conceptLuaDaoQuaMang .
+  ex:g12_conceptSuDongCam ex:partOf ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptUngHoViecTot ex:partOf ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptPhanDoiViecXau ex:partOf ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptHieuUngXaHoiTichCuc ex:relatedTo ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptGiaTriNhanVan ex:relatedTo ex:g12_conceptUngXuNhanVan .
+  ex:g12_conceptVanDongUngHoThamHoa ex:subConceptOf ex:g12_conceptGiaTriNhanVan .
+  ex:g12_conceptDuaTinChanThuc ex:subConceptOf ex:g12_conceptGiaTriNhanVan .
+  ex:g12_conceptPhePhanCoVanHoa ex:subConceptOf ex:g12_conceptGiaTriNhanVan .
+
+  ###########################################################################
+  # Activities / exercises / assessment items
+  ###########################################################################
+
+  ex:g12_topicD_l1_openingActivity a ex:Activity ;
+    rdfs:label "Hoạt động mở đầu chủ đề D lớp 12"@vi ;
+    ex:hasRawText "Theo em, tính nhân văn trong thế giới ảo có khác với tính nhân văn trong thế giới thực hay không? Em hãy giải thích rõ thêm."@vi ;
+    ex:appearsOnPage ex:g12_page031 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:relatedTo ex:g12_conceptTinhNhanVanTheGioiAo, ex:g12_conceptTheGioiAo .
+
+  ex:g12_topicD_l1_activity1 a ex:Activity ;
+    rdfs:label "Hoạt động 1 - Mặt trái của giao tiếp qua không gian mạng"@vi ;
+    ex:hasRawText "Giao tiếp qua không gian mạng có rất nhiều ưu điểm. Theo em, giao tiếp qua không gian mạng có mặt trái hay không? Việc dạy và học hoàn toàn qua mạng mà không cần đến lớp học trực tiếp có nhược điểm gì không?"@vi ;
+    ex:appearsOnPage ex:g12_page032 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:relatedTo ex:g12_conceptGiaoTiepQuaKhongGianMang, ex:g12_conceptVanDeTiemAnMang .
+
+  ex:g12_topicD_l1_activity2 a ex:Activity ;
+    rdfs:label "Hoạt động 2 - Ứng xử nhân văn trên không gian mạng"@vi ;
+    ex:hasRawText "Ở các lớp dưới, những bài học thuộc chủ đề Đạo đức, pháp luật và văn hoá trong môi trường số đã đề cập đến việc giao tiếp qua mạng một cách văn minh, phù hợp với các quy tắc và văn hoá ứng xử. Theo em, ứng xử nhân văn trên không gian mạng có gì khác?"@vi ;
+    ex:appearsOnPage ex:g12_page033 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:relatedTo ex:g12_conceptDaoDucPhapLuatVanHoaSo, ex:g12_conceptUngXuNhanVan,
+                 ex:g12_conceptKhongGianMang .
+
+  ex:g12_topicD_l1_practice1 a ex:PracticeTask ;
+    rdfs:label "Luyện tập chủ đề D lớp 12"@vi ;
+    ex:hasRawText "Câu 1. Vì sao giao tiếp qua không gian mạng vừa có ưu điểm, vừa có mặt trái tiềm ẩn? Câu 2. Theo em, ứng xử nhân văn trên không gian mạng dễ hơn hay khó hơn khi đối mặt trực tiếp? Vì sao?"@vi ;
+    ex:appearsOnPage ex:g12_page034 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:relatedTo ex:g12_conceptGiaoTiepQuaKhongGianMang, ex:g12_conceptVanDeTiemAnMang,
+                 ex:g12_conceptUngXuNhanVan .
+
+  ex:g12_topicD_l1_appliedTask1 a ex:AppliedTask ;
+    rdfs:label "Vận dụng chủ đề D lớp 12"@vi ;
+    ex:hasRawText "Em hãy kể lại một tình huống đáng nhớ về ứng xử nhân văn trên không gian mạng. Điều ấn tượng nào khiến em nhớ về tình huống đó?"@vi ;
+    ex:appearsOnPage ex:g12_page034 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:relatedTo ex:g12_conceptUngXuNhanVan, ex:g12_conceptKhongGianMang .
+
+  ex:g12_topicD_l1_review1 a ex:ReviewQuestionItem ;
+    rdfs:label "Câu hỏi tự kiểm tra chủ đề D lớp 12"@vi ;
+    ex:hasRawText "Câu 1. Giao tiếp qua không gian mạng mang lại những tiện lợi gì? Câu 2. Giao tiếp qua không gian mạng có nhược điểm gì? Về lâu dài có thể gây ra những vấn đề gì? Câu 3. Tính nhân văn thể hiện ở những điều gì? Câu 4. Nêu ví dụ về ứng xử nhân văn trên không gian mạng."@vi ;
+    ex:appearsOnPage ex:g12_page034 ;
+    ex:belongsToLesson ex:g12_topicD_lesson1 ;
+    ex:relatedTo ex:g12_conceptGiaoTiepQuaKhongGianMang, ex:g12_conceptVanDeTiemAnMang,
+                 ex:g12_conceptTinhNhanVanTheGioiAo, ex:g12_conceptUngXuNhanVan .
+
+  ex:g12_topicD_lesson1 ex:hasActivity ex:g12_topicD_l1_openingActivity,
+    ex:g12_topicD_l1_activity1, ex:g12_topicD_l1_activity2,
+    ex:g12_topicD_l1_practice1 ;
+    ex:hasReviewQuestion ex:g12_topicD_l1_appliedTask1, ex:g12_topicD_l1_review1 .
+}

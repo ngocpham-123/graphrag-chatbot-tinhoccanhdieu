@@ -1,0 +1,1275 @@
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+###############################################################################
+# Auto-generated DefinitionText for KnowledgeConcepts (grade 12) that lacked one.
+# Grounded in GraphDB book excerpts (mentionsConcept / lesson paragraphs /
+# figure captions) via gpt-4.1-mini. 254 definitions.
+###############################################################################
+
+INSERT DATA {
+  ex:gendef_g12_conceptAddBlankPage a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Add Blank Page"@vi ;
+    ex:hasDefinitionText "Add Blank Page là thao tác tạo một trang web mới hoàn toàn trống, không có nội dung hoặc mẫu có sẵn, để người dùng tự thiết kế và nhập thông tin theo ý muốn."@vi ;
+    ex:explainsConcept ex:g12_conceptAddBlankPage .
+
+  ex:gendef_g12_conceptAddBlockToPage a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Add Block to Page"@vi ;
+    ex:hasDefinitionText "Add Block to Page là nút lệnh trong phần mềm Mobirise dùng để thêm các khối nội dung mẫu như hình ảnh, video, menu vào trang web bằng cách chọn và kéo thả vào vị trí thích hợp."@vi ;
+    ex:explainsConcept ex:g12_conceptAddBlockToPage .
+
+  ex:gendef_g12_conceptAirDroidPersonal a ex:DefinitionText ;
+    rdfs:label "Định nghĩa AirDroid Personal"@vi ;
+    ex:hasDefinitionText "AirDroid Personal là ứng dụng cho phép kết nối và trao đổi dữ liệu giữa máy tính và điện thoại qua giao diện riêng trên mỗi thiết bị, hỗ trợ chuyển các loại tệp như ảnh, video, nhạc và tin nhắn."@vi ;
+    ex:explainsConcept ex:g12_conceptAirDroidPersonal .
+
+  ex:gendef_g12_conceptAlanTuring a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Alan Turing"@vi ;
+    ex:hasDefinitionText "Alan Turing là nhà khoa học đã đề xuất bài kiểm tra Turing Test để đánh giá khả năng máy tính thể hiện hành vi thông minh."@vi ;
+    ex:explainsConcept ex:g12_conceptAlanTuring .
+
+  ex:gendef_g12_conceptAlphaGo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa AlphaGo"@vi ;
+    ex:hasDefinitionText "AlphaGo là chương trình trí tuệ nhân tạo đã đánh bại nhà vô địch cờ vây, thể hiện thành tựu ấn tượng của AI trong việc chơi cờ."@vi ;
+    ex:explainsConcept ex:g12_conceptAlphaGo .
+
+  ex:gendef_g12_conceptAltText a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Alt text"@vi ;
+    ex:hasDefinitionText "Alt text là văn bản thay thế được sử dụng để mô tả nội dung của hình ảnh trên trang web khi hình ảnh không hiển thị hoặc để hỗ trợ người dùng khiếm thị."@vi ;
+    ex:explainsConcept ex:g12_conceptAltText .
+
+  ex:gendef_g12_conceptAnToanOnDinhMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa An toàn và ổn định của mạng"@vi ;
+    ex:hasDefinitionText "An toàn và ổn định của mạng là trạng thái mạng được quản lí chặt chẽ về kĩ thuật và tài nguyên để tránh các rủi ro như rình rập, quấy rối, mất thông tin cá nhân và mất kết nối."@vi ;
+    ex:explainsConcept ex:g12_conceptAnToanOnDinhMang .
+
+  ex:gendef_g12_conceptAndroid a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Android"@vi ;
+    ex:hasDefinitionText "Android là hệ điều hành được sử dụng trên điện thoại thông minh, cho phép người dùng kết nối và trao đổi dữ liệu qua các kết nối như Wi-Fi."@vi ;
+    ex:explainsConcept ex:g12_conceptAndroid .
+
+  ex:gendef_g12_conceptAnhDaiDien a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ảnh đại diện"@vi ;
+    ex:hasDefinitionText "Ảnh đại diện là hình ảnh dùng để thể hiện hoặc nhận diện một người hoặc một tài khoản trên trang web hoặc mạng xã hội."@vi ;
+    ex:explainsConcept ex:g12_conceptAnhDaiDien .
+
+  ex:gendef_g12_conceptAnhMinhHoa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ảnh minh họa"@vi ;
+    ex:hasDefinitionText "Ảnh minh họa là hình ảnh được sử dụng để làm rõ hoặc bổ sung cho nội dung văn bản, giúp trang web hoặc tài liệu trở nên sinh động và dễ hiểu hơn."@vi ;
+    ex:explainsConcept ex:g12_conceptAnhMinhHoa .
+
+  ex:gendef_g12_conceptArticleBlock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Article block"@vi ;
+    ex:hasDefinitionText "Article block là khối mẫu bài viết được cung cấp sẵn để thêm và chỉnh sửa nội dung bài viết trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptArticleBlock .
+
+  ex:gendef_g12_conceptAspectRatio a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Aspect Ratio"@vi ;
+    ex:hasDefinitionText "Aspect Ratio là tỉ lệ giữa chiều rộng và chiều cao của video hoặc hình ảnh, dùng để điều chỉnh kích thước hiển thị phù hợp trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptAspectRatio .
+
+  ex:gendef_g12_conceptAssetsFolder a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thư mục assets"@vi ;
+    ex:hasDefinitionText "Thư mục assets là nơi lưu trữ các tệp tin như hình ảnh, âm thanh, video và các tài nguyên khác được sử dụng trong dự án lập trình hoặc ứng dụng."@vi ;
+    ex:explainsConcept ex:g12_conceptAssetsFolder .
+
+  ex:gendef_g12_conceptAutoplay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Autoplay"@vi ;
+    ex:hasDefinitionText "Autoplay là tính năng cho phép video tự động phát khi trang web được mở mà không cần người dùng nhấn nút phát."@vi ;
+    ex:explainsConcept ex:g12_conceptAutoplay .
+
+  ex:gendef_g12_conceptBackgroundColorCSS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuộc tính background-color"@vi ;
+    ex:hasDefinitionText "Thuộc tính background-color trong CSS dùng để thiết lập màu nền cho phần tử trên trang web, với giá trị có thể là các tên màu phổ biến như red, green, blue, yellow."@vi ;
+    ex:explainsConcept ex:g12_conceptBackgroundColorCSS .
+
+  ex:gendef_g12_conceptBaiting a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Baiting"@vi ;
+    ex:hasDefinitionText "Baiting là chiêu trò lừa đảo bằng cách mồi nhử người dùng bằng vật phẩm hoặc phần thưởng để dò mật khẩu, lừa tiền, lừa công sức lao động hoặc đánh cắp dữ liệu."@vi ;
+    ex:explainsConcept ex:g12_conceptBaiting .
+
+  ex:gendef_g12_conceptBaoMatDoTinCay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bảo mật và độ tin cậy"@vi ;
+    ex:hasDefinitionText "Bảo mật là khả năng bảo vệ dữ liệu khỏi truy cập trái phép, còn độ tin cậy là khả năng đảm bảo dữ liệu được truyền đúng và ổn định trong quá trình trao đổi thông tin trên mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptBaoMatDoTinCay .
+
+  ex:gendef_g12_conceptBatNatQuaMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bắt nạt qua mạng"@vi ;
+    ex:hasDefinitionText "Bắt nạt qua mạng là hành vi sử dụng không gian mạng để quấy rối, làm tổn thương hoặc gây áp lực cho người khác thông qua các hành động xấu, mạo danh hoặc phát tán nội dung bắt nạt."@vi ;
+    ex:explainsConcept ex:g12_conceptBatNatQuaMang .
+
+  ex:gendef_g12_conceptBatTatThietBi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bật/tắt thiết bị"@vi ;
+    ex:hasDefinitionText "Bật/tắt thiết bị là thao tác điều khiển để thiết bị hoạt động hoặc ngừng hoạt động, thể hiện trạng thái ON (bật) hoặc OFF (tắt)."@vi ;
+    ex:explainsConcept ex:g12_conceptBatTatThietBi .
+
+  ex:gendef_g12_conceptBienGioiThoiGianRiengTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ranh giới thời gian riêng tư bị phá vỡ"@vi ;
+    ex:hasDefinitionText "Ranh giới thời gian riêng tư bị phá vỡ là tình trạng khi người dùng gửi tin nhắn đến người đang ở cùng không gian thay vì trò chuyện trực tiếp, làm mất đi khoảng cách và thời gian riêng tư trong giao tiếp."@vi ;
+    ex:explainsConcept ex:g12_conceptBienGioiThoiGianRiengTu .
+
+  ex:gendef_g12_conceptBlockDisplay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiển thị theo khối"@vi ;
+    ex:hasDefinitionText "Hiển thị theo khối là cách trình bày phần tử HTML trên một dòng mới, chiếm toàn bộ chiều ngang của vùng chứa, khác với hiển thị theo dòng khi phần tử có thể nằm cùng dòng với phần tử khác."@vi ;
+    ex:explainsConcept ex:g12_conceptBlockDisplay .
+
+  ex:gendef_g12_conceptBlockParameters a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Block Parameters"@vi ;
+    ex:hasDefinitionText "Block Parameters là các tham số dùng để điều chỉnh các thuộc tính và hành vi của một khối (block) trong giao diện hoặc chương trình, như kích thước, màu sắc, nội dung và các tính năng liên quan."@vi ;
+    ex:explainsConcept ex:g12_conceptBlockParameters .
+
+  ex:gendef_g12_conceptBluetooth a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bluetooth"@vi ;
+    ex:hasDefinitionText "Bluetooth là công nghệ kết nối không dây giữa các thiết bị gần nhau để truyền dữ liệu mà không cần dây cáp."@vi ;
+    ex:explainsConcept ex:g12_conceptBluetooth .
+
+  ex:gendef_g12_conceptBluetoothPairing a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ghép đôi Bluetooth"@vi ;
+    ex:hasDefinitionText "Ghép đôi Bluetooth là quá trình kết nối hai thiết bị có Bluetooth với nhau bằng cách xác nhận mã ghép đôi để thiết lập liên kết và truyền dữ liệu."@vi ;
+    ex:explainsConcept ex:g12_conceptBluetoothPairing .
+
+  ex:gendef_g12_conceptBoChonPhanTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bộ chọn phần tử"@vi ;
+    ex:hasDefinitionText "Bộ chọn phần tử là phần trong quy tắc CSS dùng để xác định các phần tử HTML cần áp dụng các thuộc tính định dạng."@vi ;
+    ex:explainsConcept ex:g12_conceptBoChonPhanTu .
+
+  ex:gendef_g12_conceptBorderCSS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuộc tính đường viền CSS"@vi ;
+    ex:hasDefinitionText "Thuộc tính đường viền CSS là các thuộc tính như border-style và border-color dùng để định dạng kiểu dáng và màu sắc của đường viền quanh các phần tử trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptBorderCSS .
+
+  ex:gendef_g12_conceptBrowseComputer a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Browse Computer"@vi ;
+    ex:hasDefinitionText "Browse Computer là thao tác duyệt và chọn tệp tin từ máy tính của người dùng để sử dụng hoặc chèn vào ứng dụng hoặc trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptBrowseComputer .
+
+  ex:gendef_g12_conceptCanhBaoAI a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cảnh báo về ứng dụng AI"@vi ;
+    ex:hasDefinitionText "Cảnh báo về ứng dụng AI là những nhắc nhở về các rủi ro như mất việc làm do AI thay thế, lừa đảo qua mạng như deepfake, và nguy cơ rò rỉ thông tin cá nhân gây vi phạm quyền riêng tư và mất an ninh xã hội."@vi ;
+    ex:explainsConcept ex:g12_conceptCanhBaoAI .
+
+  ex:gendef_g12_conceptCaption a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử caption"@vi ;
+    ex:hasDefinitionText "Phần tử caption dùng để bổ sung chú thích cho bảng trong phần tử table."@vi ;
+    ex:explainsConcept ex:g12_conceptCaption .
+
+  ex:gendef_g12_conceptCastToDevice a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cast to Device"@vi ;
+    ex:hasDefinitionText "Cast to Device là chức năng cho phép truyền tệp ảnh, video hoặc âm thanh từ máy tính lên thiết bị khác như ti vi để hiển thị hoặc phát nội dung đó."@vi ;
+    ex:explainsConcept ex:g12_conceptCastToDevice .
+
+  ex:gendef_g12_conceptChatGPT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa ChatGPT"@vi ;
+    ex:hasDefinitionText "ChatGPT là một chatbot sử dụng mô hình AI tạo sinh GPT để giao tiếp bằng ngôn ngữ tự nhiên, có khả năng tạo ra nội dung văn bản theo yêu cầu của người dùng."@vi ;
+    ex:explainsConcept ex:g12_conceptChatGPT .
+
+  ex:gendef_g12_conceptChatTrucTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chat trực tuyến"@vi ;
+    ex:hasDefinitionText "Chat trực tuyến là hình thức giao tiếp qua không gian mạng bằng các phương tiện kỹ thuật số, cho phép trao đổi tin nhắn ngay lập tức giữa người dùng dù ở xa nhau."@vi ;
+    ex:explainsConcept ex:g12_conceptChatTrucTuyen .
+
+  ex:gendef_g12_conceptChatbot a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chatbot"@vi ;
+    ex:hasDefinitionText "Chatbot là chương trình máy tính sử dụng trí tuệ nhân tạo để giao tiếp bằng ngôn ngữ tự nhiên, có thể trả lời câu hỏi, cung cấp thông tin và hỗ trợ người dùng trong nhiều lĩnh vực như dịch vụ khách hàng và giáo dục."@vi ;
+    ex:explainsConcept ex:g12_conceptChatbot .
+
+  ex:gendef_g12_conceptCheckbox a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Checkbox"@vi ;
+    ex:hasDefinitionText "Checkbox là hộp kiểm cho phép người dùng chọn nhiều hoặc tất cả các mục trong danh sách trên biểu mẫu."@vi ;
+    ex:explainsConcept ex:g12_conceptCheckbox .
+
+  ex:gendef_g12_conceptChiaSeDuLieu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chia sẻ dữ liệu"@vi ;
+    ex:hasDefinitionText "Chia sẻ dữ liệu là việc thiết lập quyền truy cập để các máy tính trong cùng mạng có thể xem và sử dụng tài liệu hoặc thư mục được lưu trữ trên một máy tính khác."@vi ;
+    ex:explainsConcept ex:g12_conceptChiaSeDuLieu .
+
+  ex:gendef_g12_conceptChiaSeMayIn a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chia sẻ máy in"@vi ;
+    ex:hasDefinitionText "Chia sẻ máy in là thiết lập cho phép một máy tính kết nối với máy in qua mạng LAN để các máy tính khác trong cùng mạng có thể sử dụng máy in đó để in tài liệu."@vi ;
+    ex:explainsConcept ex:g12_conceptChiaSeMayIn .
+
+  ex:gendef_g12_conceptChinhSuaHTML a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chỉnh sửa HTML"@vi ;
+    ex:hasDefinitionText "Chỉnh sửa HTML là thao tác thay đổi mã nguồn HTML của trang web để sửa nội dung hoặc cấu trúc hiển thị trên trang."@vi ;
+    ex:explainsConcept ex:g12_conceptChinhSuaHTML .
+
+  ex:gendef_g12_conceptChongKeXauViecXau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chống kẻ xấu, việc xấu"@vi ;
+    ex:hasDefinitionText "Chống kẻ xấu, việc xấu là hành động không làm việc xấu và tích cực ngăn chặn, phản đối những hành vi xấu, người xấu trên không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptChongKeXauViecXau .
+
+  ex:gendef_g12_conceptChopTatDen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chế độ chớp tắt đèn"@vi ;
+    ex:hasDefinitionText "Chế độ chớp tắt đèn là chế độ điều khiển đèn thông minh để đèn nhấp nháy theo tốc độ và màu sắc được thiết lập phù hợp với bối cảnh sử dụng."@vi ;
+    ex:explainsConcept ex:g12_conceptChopTatDen .
+
+  ex:gendef_g12_conceptCobot a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Cobot"@vi ;
+    ex:hasDefinitionText "Cobot là robot cộng tác có khả năng hoạt động tự chủ và phối hợp với con người trong quá trình làm việc."@vi ;
+    ex:explainsConcept ex:g12_conceptCobot .
+
+  ex:gendef_g12_conceptColorCSS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuộc tính color"@vi ;
+    ex:hasDefinitionText "Thuộc tính color trong CSS dùng để xác định màu sắc của chữ hiển thị trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptColorCSS .
+
+  ex:gendef_g12_conceptColourMode a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chế độ đèn màu"@vi ;
+    ex:hasDefinitionText "Chế độ đèn màu là chế độ điều khiển đèn thông minh cho phép thay đổi màu sắc ánh sáng bằng cách chọn màu trên vòng tròn màu và điều chỉnh cường độ, độ tươi của ánh sáng."@vi ;
+    ex:explainsConcept ex:g12_conceptColourMode .
+
+  ex:gendef_g12_conceptContactBlock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Contact block"@vi ;
+    ex:hasDefinitionText "Contact block là khối mẫu bài viết được cung cấp sẵn dùng để hiển thị thông tin liên hệ trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptContactBlock .
+
+  ex:gendef_g12_conceptControlPanel a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Control Panel"@vi ;
+    ex:hasDefinitionText "Control Panel là công cụ trên máy tính dùng để truy cập và thay đổi các thiết lập phần cứng và phần mềm, như cài đặt máy in và chia sẻ thiết bị trong mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptControlPanel .
+
+  ex:gendef_g12_conceptCountdown a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Countdown"@vi ;
+    ex:hasDefinitionText "Countdown là chức năng hẹn giờ đếm ngược để thiết lập thời gian tự động bật hoặc tắt thiết bị thông minh."@vi ;
+    ex:explainsConcept ex:g12_conceptCountdown .
+
+  ex:gendef_g12_conceptCreateNewPage a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Create New Page"@vi ;
+    ex:hasDefinitionText "Create New Page là thao tác tạo một trang web mới trong dự án, có thể bắt đầu từ trang trắng hoặc chọn mẫu trang có sẵn."@vi ;
+    ex:explainsConcept ex:g12_conceptCreateNewPage .
+
+  ex:gendef_g12_conceptCreateNewSite a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Create New Site"@vi ;
+    ex:hasDefinitionText "Create New Site là nút lệnh trong phần mềm dùng để tạo một dự án website mới, giúp người dùng bắt đầu xây dựng trang web từ đầu hoặc theo mẫu có sẵn."@vi ;
+    ex:explainsConcept ex:g12_conceptCreateNewSite .
+
+  ex:gendef_g12_conceptDALL_E a ex:DefinitionText ;
+    rdfs:label "Định nghĩa DALL-E"@vi ;
+    ex:hasDefinitionText "DALL-E là một hệ thống AI tạo sinh có khả năng vẽ tranh theo mô tả bằng ngôn ngữ."@vi ;
+    ex:explainsConcept ex:g12_conceptDALL_E .
+
+  ex:gendef_g12_conceptDaoDucPhapLuatVanHoaSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đạo đức, pháp luật và văn hoá trong môi trường số"@vi ;
+    ex:hasDefinitionText "Đạo đức, pháp luật và văn hoá trong môi trường số là những quy tắc và chuẩn mực giúp hướng dẫn hành vi đúng đắn, tôn trọng pháp luật và giữ gìn tính nhân văn khi sử dụng công nghệ và tham gia giao tiếp trong thế giới ảo."@vi ;
+    ex:explainsConcept ex:g12_conceptDaoDucPhapLuatVanHoaSo .
+
+  ex:gendef_g12_conceptDeDoaAnNinhHeThong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đe doạ an ninh hệ thống"@vi ;
+    ex:hasDefinitionText "Đe doạ an ninh hệ thống là hành vi khai thác lỗ hổng và điểm yếu của hệ thống để gây tổn hại hoặc xâm nhập trái phép, làm mất an toàn thông tin và hoạt động của hệ thống."@vi ;
+    ex:explainsConcept ex:g12_conceptDeDoaAnNinhHeThong .
+
+  ex:gendef_g12_conceptDeepfake a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Deepfake"@vi ;
+    ex:hasDefinitionText "Deepfake là công nghệ sử dụng trí tuệ nhân tạo để tạo ra các video hoặc hình ảnh giả mạo, có thể được dùng trong các chiêu trò lừa đảo trên không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptDeepfake .
+
+  ex:gendef_g12_conceptDesktopView a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Desktop View"@vi ;
+    ex:hasDefinitionText "Desktop View là chế độ xem trước trang web trên màn hình máy tính để bàn, giúp người dùng kiểm tra giao diện và bố cục khi hiển thị trên thiết bị có màn hình lớn."@vi ;
+    ex:explainsConcept ex:g12_conceptDesktopView .
+
+  ex:gendef_g12_conceptDevicesAndPrinters a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Devices and Printers"@vi ;
+    ex:hasDefinitionText "Devices and Printers là mục trong Control Panel cho phép người dùng quản lý các thiết bị phần cứng như máy in, bao gồm cài đặt, chia sẻ và kết nối các thiết bị này trên máy tính."@vi ;
+    ex:explainsConcept ex:g12_conceptDevicesAndPrinters .
+
+  ex:gendef_g12_conceptDichVuKhachHangAI a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dịch vụ khách hàng ứng dụng AI"@vi ;
+    ex:hasDefinitionText "Dịch vụ khách hàng ứng dụng AI là việc sử dụng trợ lí ảo và chatbot để trả lời câu hỏi, cung cấp thông tin, hỗ trợ tìm kiếm sản phẩm, đưa ra gợi ý và thực hiện giao dịch cho khách hàng."@vi ;
+    ex:explainsConcept ex:g12_conceptDichVuKhachHangAI .
+
+  ex:gendef_g12_conceptDienThoaiThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điện thoại thông minh"@vi ;
+    ex:hasDefinitionText "Điện thoại thông minh là thiết bị di động có khả năng kết nối Internet và trao đổi dữ liệu với máy tính qua các ứng dụng và mạng không dây như Wi-Fi."@vi ;
+    ex:explainsConcept ex:g12_conceptDienThoaiThongMinh .
+
+  ex:gendef_g12_conceptDieuKhienTuDong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điều khiển tự động"@vi ;
+    ex:hasDefinitionText "Điều khiển tự động là việc sử dụng công nghệ, trong đó có trí tuệ nhân tạo, để giám sát và điều chỉnh quá trình sản xuất hoặc hoạt động của thiết bị mà không cần sự can thiệp trực tiếp của con người."@vi ;
+    ex:explainsConcept ex:g12_conceptDieuKhienTuDong .
+
+  ex:gendef_g12_conceptDieuKhienTuXa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Điều khiển từ xa"@vi ;
+    ex:hasDefinitionText "Điều khiển từ xa là việc sử dụng thiết bị như điện thoại hoặc cảm biến để bật tắt, điều chỉnh hoạt động và đặt lịch trình cho các thiết bị điện trong nhà mà không cần tiếp xúc trực tiếp."@vi ;
+    ex:explainsConcept ex:g12_conceptDieuKhienTuXa .
+
+  ex:gendef_g12_conceptDinhDangChuanHoa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Định dạng và chuẩn hoá"@vi ;
+    ex:hasDefinitionText "Định dạng và chuẩn hoá là các quy tắc quy định cách tổ chức, trình bày dữ liệu và đảm bảo tính thống nhất trong truyền thông và trao đổi thông tin giữa các thiết bị trong mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptDinhDangChuanHoa .
+
+  ex:gendef_g12_conceptDinhTuyenChuyenTiep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Định tuyến và chuyển tiếp"@vi ;
+    ex:hasDefinitionText "Định tuyến là quá trình xác định đường đi tối ưu để gói tin đến địa chỉ đích, còn chuyển tiếp là việc gửi gói tin qua các thiết bị mạng như Router để đi theo đường đã định."@vi ;
+    ex:explainsConcept ex:g12_conceptDinhTuyenChuyenTiep .
+
+  ex:gendef_g12_conceptDisplay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuộc tính display"@vi ;
+    ex:hasDefinitionText "Thuộc tính display trong CSS dùng để xác định cách phần tử HTML được hiển thị trên trang, có thể là hiển thị theo khối (block) hoặc theo dòng (inline)."@vi ;
+    ex:explainsConcept ex:g12_conceptDisplay .
+
+  ex:gendef_g12_conceptDiv a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử div"@vi ;
+    ex:hasDefinitionText "Phần tử div là thẻ HTML dùng để nhóm các phần tử nội dung lại với nhau, thường kết hợp với CSS để chia bố cục trang web thành các khu vực khác nhau như đầu trang, thanh điều hướng, nội dung và chân trang."@vi ;
+    ex:explainsConcept ex:g12_conceptDiv .
+
+  ex:gendef_g12_conceptDoDungThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đồ dùng thông minh"@vi ;
+    ex:hasDefinitionText "Đồ dùng thông minh là các sản phẩm và tiện ích được trang bị công nghệ AI, có khả năng nhận dạng, xử lý thông tin và tương tác như mở khoá bằng vân tay, xác thực khuôn mặt, trợ lí ảo hoặc nhận dạng chữ viết tay."@vi ;
+    ex:explainsConcept ex:g12_conceptDoDungThongMinh .
+
+  ex:gendef_g12_conceptDoSangDen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Độ sáng của đèn"@vi ;
+    ex:hasDefinitionText "Độ sáng của đèn là mức cường độ ánh sáng mà đèn phát ra, có thể được điều chỉnh tăng hoặc giảm để phù hợp với nhu cầu sử dụng."@vi ;
+    ex:explainsConcept ex:g12_conceptDoSangDen .
+
+  ex:gendef_g12_conceptDoTrangDen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Độ trắng của đèn"@vi ;
+    ex:hasDefinitionText "Độ trắng của đèn là mức độ ánh sáng thể hiện màu sắc từ vàng sang trắng, có thể điều chỉnh để tạo ánh sáng trắng phù hợp."@vi ;
+    ex:explainsConcept ex:g12_conceptDoTrangDen .
+
+  ex:gendef_g12_conceptDuAnBaoTuong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dự án trang web báo tường"@vi ;
+    ex:hasDefinitionText "Dự án trang web báo tường là một dự án nhỏ tạo trang web báo tường điện tử của lớp, gồm tệp HTML để tạo nội dung, tệp CSS để định dạng và bài trình chiếu giới thiệu kết quả thực hiện dự án."@vi ;
+    ex:explainsConcept ex:g12_conceptDuAnBaoTuong .
+
+  ex:gendef_g12_conceptDuLieuDiDong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Dữ liệu di động"@vi ;
+    ex:hasDefinitionText "Dữ liệu di động là kết nối Internet trên điện thoại thông minh thông qua mạng di động, cho phép truy cập web và sử dụng các dịch vụ trực tuyến khi không có Wi-Fi."@vi ;
+    ex:explainsConcept ex:g12_conceptDuLieuDiDong .
+
+  ex:gendef_g12_conceptDuaTinChanThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Đưa tin phản ánh chân thực"@vi ;
+    ex:hasDefinitionText "Đưa tin phản ánh chân thực là việc truyền tải thông tin chính xác, đúng sự thật về các sự kiện hoặc tình huống, nhằm góp phần xây dựng môi trường mạng văn hóa và nhân văn."@vi ;
+    ex:explainsConcept ex:g12_conceptDuaTinChanThuc .
+
+  ex:gendef_g12_conceptEditTitle a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Edit Title"@vi ;
+    ex:hasDefinitionText "Edit Title là thao tác đặt hoặc chỉnh sửa tên cho trang web, giúp thể hiện vai trò, vị trí hoặc nội dung của trang đó."@vi ;
+    ex:explainsConcept ex:g12_conceptEditTitle .
+
+  ex:gendef_g12_conceptEm a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử em"@vi ;
+    ex:hasDefinitionText "Phần tử em trong HTML là thẻ dùng để làm nghiêng và làm nổi bật nội dung văn bản."@vi ;
+    ex:explainsConcept ex:g12_conceptEm .
+
+  ex:gendef_g12_conceptEmail a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Email"@vi ;
+    ex:hasDefinitionText "Email là hình thức giao tiếp không đồng bộ qua không gian mạng, cho phép gửi và nhận thư điện tử giữa các cá nhân hoặc tổ chức dù ở khoảng cách xa."@vi ;
+    ex:explainsConcept ex:g12_conceptEmail .
+
+  ex:gendef_g12_conceptExternalCSS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa External CSS"@vi ;
+    ex:hasDefinitionText "External CSS là tệp có phần mở rộng .css chứa các quy tắc định dạng được tham chiếu từ văn bản HTML bằng thẻ link để áp dụng và tái sử dụng định dạng cho nhiều trang web khác nhau."@vi ;
+    ex:explainsConcept ex:g12_conceptExternalCSS .
+
+  ex:gendef_g12_conceptFTP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao thức FTP"@vi ;
+    ex:hasDefinitionText "FTP là giao thức dùng để truyền tải tệp giữa các máy tính qua mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptFTP .
+
+  ex:gendef_g12_conceptFTPServerParameters a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thông số máy chủ FTP"@vi ;
+    ex:hasDefinitionText "Thông số máy chủ FTP là các thiết lập bao gồm giao thức, địa chỉ máy chủ (host), cổng kết nối (port), tên đăng nhập (username), mật khẩu (password) và thư mục gốc dùng để kết nối và tải dữ liệu lên máy chủ FTP."@vi ;
+    ex:explainsConcept ex:g12_conceptFTPServerParameters .
+
+  ex:gendef_g12_conceptFileTransfer a ex:DefinitionText ;
+    rdfs:label "Định nghĩa File Transfer"@vi ;
+    ex:hasDefinitionText "File Transfer là quá trình gửi hoặc nhận tệp tin giữa các thiết bị khác nhau, như từ máy tính sang điện thoại, thông qua các chức năng hoặc phần mềm hỗ trợ chuyển dữ liệu."@vi ;
+    ex:explainsConcept ex:g12_conceptFileTransfer .
+
+  ex:gendef_g12_conceptFontFamilyCSS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuộc tính font-family"@vi ;
+    ex:hasDefinitionText "Thuộc tính font-family dùng để định dạng kiểu phông chữ cho văn bản trong CSS."@vi ;
+    ex:explainsConcept ex:g12_conceptFontFamilyCSS .
+
+  ex:gendef_g12_conceptFontSizeCSS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuộc tính font-size"@vi ;
+    ex:hasDefinitionText "Thuộc tính font-size dùng để định dạng cỡ chữ trong văn bản, giúp điều chỉnh kích thước hiển thị của chữ trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptFontSizeCSS .
+
+  ex:gendef_g12_conceptFooterBlock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Footer block"@vi ;
+    ex:hasDefinitionText "Footer block là khối phần chân trang của website, thường chứa thông tin bổ sung và được chỉnh sửa tương tự như các khối khác trên trang."@vi ;
+    ex:explainsConcept ex:g12_conceptFooterBlock .
+
+  ex:gendef_g12_conceptFormWeb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biểu mẫu trên trang web"@vi ;
+    ex:hasDefinitionText "Biểu mẫu trên trang web là các khối nhập liệu được chèn vào trang web để người dùng điền thông tin và gửi dữ liệu cho người quản trị."@vi ;
+    ex:explainsConcept ex:g12_conceptFormWeb .
+
+  ex:gendef_g12_conceptFreeOnlineLibrary a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Free Online Library"@vi ;
+    ex:hasDefinitionText "Free Online Library là thư viện hình ảnh trực tuyến miễn phí, cho phép người dùng truy cập và sử dụng các hình ảnh có sẵn để thay đổi nội dung trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptFreeOnlineLibrary .
+
+  ex:gendef_g12_conceptGPT a ex:DefinitionText ;
+    rdfs:label "Định nghĩa GPT"@vi ;
+    ex:hasDefinitionText "GPT là mô hình nền tảng trong lĩnh vực AI tạo sinh, có khả năng tạo ra nội dung văn bản dựa trên dữ liệu đã học và yêu cầu của người dùng."@vi ;
+    ex:explainsConcept ex:g12_conceptGPT .
+
+  ex:gendef_g12_conceptGallerySliderBlock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Gallery & Slider block"@vi ;
+    ex:hasDefinitionText "Gallery & Slider block là các khối mẫu được sử dụng để tạo bộ sưu tập hình ảnh và thanh trượt trên trang web, cho phép chỉnh sửa bố cục, định dạng và thay đổi hình ảnh phù hợp."@vi ;
+    ex:explainsConcept ex:g12_conceptGallerySliderBlock .
+
+  ex:gendef_g12_conceptGeneralProblemSolver a ex:DefinitionText ;
+    rdfs:label "Định nghĩa GPS - General Problem Solver"@vi ;
+    ex:hasDefinitionText "GPS (General Problem Solver) là một chương trình giải quyết vấn đề tổng quát do Newell, Simon và Shaw phát triển, có khả năng suy luận và lập kế hoạch nhưng bị hạn chế bởi tri thức lập trình sẵn và không có khả năng học."@vi ;
+    ex:explainsConcept ex:g12_conceptGeneralProblemSolver .
+
+  ex:gendef_g12_conceptGiaTriNhanVan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giá trị nhân văn"@vi ;
+    ex:hasDefinitionText "Giá trị nhân văn là những phẩm chất và hành động thể hiện sự đồng cảm, ủng hộ điều tốt đẹp và phản đối điều tiêu cực, góp phần tạo nên hiệu ứng xã hội tích cực và đạo đức trong ứng xử."@vi ;
+    ex:explainsConcept ex:g12_conceptGiaTriNhanVan .
+
+  ex:gendef_g12_conceptGiaoDucAI a ex:DefinitionText ;
+    rdfs:label "Định nghĩa AI trong giáo dục và đào tạo"@vi ;
+    ex:hasDefinitionText "AI trong giáo dục và đào tạo là việc sử dụng hệ thống thông minh để cá nhân hóa hướng dẫn và khuyến nghị học tập, như chatbot xử lý ngôn ngữ tự nhiên và điều chỉnh nội dung theo trình độ và sở thích của người học."@vi ;
+    ex:explainsConcept ex:g12_conceptGiaoDucAI .
+
+  ex:gendef_g12_conceptGiaoTiepDongBo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao tiếp đồng bộ"@vi ;
+    ex:hasDefinitionText "Giao tiếp đồng bộ là hình thức giao tiếp qua mạng diễn ra trong thời gian thực, khi các bên tham gia cùng lúc và có thể trao đổi thông tin ngay lập tức."@vi ;
+    ex:explainsConcept ex:g12_conceptGiaoTiepDongBo .
+
+  ex:gendef_g12_conceptGiaoTiepKhongDongBo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao tiếp không đồng bộ"@vi ;
+    ex:hasDefinitionText "Giao tiếp không đồng bộ là hình thức trao đổi thông tin qua mạng mà người gửi tin không cần nhận phản hồi ngay lập tức, như gửi email hoặc nhắn tin trên Facebook, Zalo."@vi ;
+    ex:explainsConcept ex:g12_conceptGiaoTiepKhongDongBo .
+
+  ex:gendef_g12_conceptGiaoTiepQuaKhongGianMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao tiếp qua không gian mạng"@vi ;
+    ex:hasDefinitionText "Giao tiếp qua không gian mạng là việc trao đổi thông tin giữa các cá nhân hoặc nhóm thông qua các phương tiện kỹ thuật số như email, mạng xã hội, chat trực tuyến, giúp giữ liên lạc dù ở xa và có thể diễn ra đồng bộ hoặc không đồng bộ."@vi ;
+    ex:explainsConcept ex:g12_conceptGiaoTiepQuaKhongGianMang .
+
+  ex:gendef_g12_conceptGoiTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Gói tin"@vi ;
+    ex:hasDefinitionText "Gói tin là phần dữ liệu được chia nhỏ khi truyền qua mạng máy tính, có chứa thông tin định danh và địa chỉ để được chuyển tiếp đến đúng thiết bị nhận."@vi ;
+    ex:explainsConcept ex:g12_conceptGoiTin .
+
+  ex:gendef_g12_conceptGuiTepDinhKem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Gửi tệp đính kèm"@vi ;
+    ex:hasDefinitionText "Gửi tệp đính kèm là thao tác chọn và gửi các loại tệp như ảnh, video, nhạc hoặc tệp trong thư mục từ thiết bị này sang thiết bị khác qua ứng dụng hoặc phần mềm kết nối."@vi ;
+    ex:explainsConcept ex:g12_conceptGuiTepDinhKem .
+
+  ex:gendef_g12_conceptHTMLFile a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tệp HTML"@vi ;
+    ex:hasDefinitionText "Tệp HTML là tập tin chứa mã HTML dùng để lưu trữ và hiển thị nội dung trang web trên trình duyệt."@vi ;
+    ex:explainsConcept ex:g12_conceptHTMLFile .
+
+  ex:gendef_g12_conceptHTTP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao thức HTTP"@vi ;
+    ex:hasDefinitionText "HTTP là giao thức dùng để truyền tải các trang web trên mạng Internet."@vi ;
+    ex:explainsConcept ex:g12_conceptHTTP .
+
+  ex:gendef_g12_conceptHenGioDemNguoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hẹn giờ đếm ngược"@vi ;
+    ex:hasDefinitionText "Hẹn giờ đếm ngược là chức năng cho phép thiết lập thời gian tính ngược để tự động bật hoặc tắt thiết bị sau khoảng thời gian đã định trước."@vi ;
+    ex:explainsConcept ex:g12_conceptHenGioDemNguoc .
+
+  ex:gendef_g12_conceptHieuLamTinNhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiểu lầm qua tin nhắn"@vi ;
+    ex:hasDefinitionText "Hiểu lầm qua tin nhắn là việc người nhận diễn giải sai ý hoặc ngữ cảnh của tin nhắn văn bản do thiếu các tín hiệu cảm xúc và ngôn ngữ hình thể trong giao tiếp qua không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptHieuLamTinNhan .
+
+  ex:gendef_g12_conceptHieuUngXaHoiTichCuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiệu ứng xã hội tích cực"@vi ;
+    ex:hasDefinitionText "Hiệu ứng xã hội tích cực là kết quả của việc ứng xử nhân văn trên không gian mạng, lan tỏa những giá trị nhân văn và thể hiện sự đồng cảm, ủng hộ việc tốt, đồng thời phản đối việc xấu trong xã hội."@vi ;
+    ex:explainsConcept ex:g12_conceptHieuUngXaHoiTichCuc .
+
+  ex:gendef_g12_conceptHinhAnhNoiBat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hình ảnh nổi bật"@vi ;
+    ex:hasDefinitionText "Hình ảnh nổi bật là hình ảnh quan trọng được sử dụng trên trang web để thu hút sự chú ý và làm nổi bật nội dung."@vi ;
+    ex:explainsConcept ex:g12_conceptHinhAnhNoiBat .
+
+  ex:gendef_g12_conceptHinhAnhTrangWeb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hình ảnh trên trang web"@vi ;
+    ex:hasDefinitionText "Hình ảnh trên trang web là các nội dung đồ họa như ảnh đại diện, ảnh minh họa hoặc hình ảnh nổi bật được sử dụng để làm trang web thu hút và sinh động hơn."@vi ;
+    ex:explainsConcept ex:g12_conceptHinhAnhTrangWeb .
+
+  ex:gendef_g12_conceptHoTroNguoiKhuyetTat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hỗ trợ người khuyết tật giao tiếp"@vi ;
+    ex:hasDefinitionText "Hỗ trợ người khuyết tật giao tiếp là việc sử dụng các phương tiện và công nghệ giúp người khiếm khuyết ngoại hình, khiếm thính hoặc khiếm ngôn dễ dàng trao đổi thông tin mà không cần người hỗ trợ."@vi ;
+    ex:explainsConcept ex:g12_conceptHoTroNguoiKhuyetTat .
+
+  ex:gendef_g12_conceptHopTacNhom a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hợp tác nhóm"@vi ;
+    ex:hasDefinitionText "Hợp tác nhóm là hoạt động làm việc chung trong nhóm để cùng tạo ra sản phẩm, chia sẻ nhiệm vụ và hỗ trợ nhau hoàn thành mục tiêu chung."@vi ;
+    ex:explainsConcept ex:g12_conceptHopTacNhom .
+
+  ex:gendef_g12_conceptHopTrucTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Họp trực tuyến"@vi ;
+    ex:hasDefinitionText "Họp trực tuyến là hình thức giao tiếp qua mạng cho phép nhiều người cùng tham gia cuộc họp cùng lúc mà không bị giới hạn bởi không gian và thời gian."@vi ;
+    ex:explainsConcept ex:g12_conceptHopTrucTuyen .
+
+  ex:gendef_g12_conceptHostID a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Host ID"@vi ;
+    ex:hasDefinitionText "Host ID là phần của địa chỉ IPv4 dùng để xác định thiết bị cụ thể trong mạng mà thiết bị đó đang kết nối."@vi ;
+    ex:explainsConcept ex:g12_conceptHostID .
+
+  ex:gendef_g12_conceptHyperlink a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hyperlink"@vi ;
+    ex:hasDefinitionText "Hyperlink là liên kết trên trang web cho phép người dùng nhấp vào để chuyển đến trang web hoặc nội dung khác."@vi ;
+    ex:explainsConcept ex:g12_conceptHyperlink .
+
+  ex:gendef_g12_conceptIOS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa iOS"@vi ;
+    ex:hasDefinitionText "iOS là hệ điều hành được sử dụng trên điện thoại thông minh của Apple, cho phép kết nối và trao đổi dữ liệu qua các kết nối như Wi-Fi."@vi ;
+    ex:explainsConcept ex:g12_conceptIOS .
+
+  ex:gendef_g12_conceptIPv4 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa IPv4"@vi ;
+    ex:hasDefinitionText "IPv4 là phiên bản địa chỉ IP phổ biến, gồm chuỗi 32 bit nhị phân chia thành bốn cụm 8 bit, thường biểu diễn dưới dạng thập phân và ngăn cách bằng dấu chấm."@vi ;
+    ex:explainsConcept ex:g12_conceptIPv4 .
+
+  ex:gendef_g12_conceptIPv6 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa IPv6"@vi ;
+    ex:hasDefinitionText "IPv6 là phiên bản mới của địa chỉ IP, có độ dài 128 bit và thường được biểu diễn ở dạng thập lục phân, dùng để định danh thiết bị khi kết nối vào mạng máy tính."@vi ;
+    ex:explainsConcept ex:g12_conceptIPv6 .
+
+  ex:gendef_g12_conceptIcon a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Biểu tượng"@vi ;
+    ex:hasDefinitionText "Biểu tượng là hình ảnh hoặc hình vẽ nhỏ được sử dụng trên giao diện để đại diện cho các chức năng, đối tượng hoặc liên kết trong phần mềm hoặc trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptIcon .
+
+  ex:gendef_g12_conceptImageVideoBlock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Image & Video block"@vi ;
+    ex:hasDefinitionText "Image & Video block là khối mẫu dùng để thêm và chỉnh sửa hình ảnh hoặc video trên trang web, giúp bố cục và định dạng nội dung đa phương tiện trở nên dễ dàng hơn."@vi ;
+    ex:explainsConcept ex:g12_conceptImageVideoBlock .
+
+  ex:gendef_g12_conceptInlineDisplay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Hiển thị theo dòng"@vi ;
+    ex:hasDefinitionText "Hiển thị theo dòng là cách trình bày phần tử HTML sao cho nó nằm cùng dòng với các phần tử khác, không xuống dòng mới như phần tử hiển thị theo khối."@vi ;
+    ex:explainsConcept ex:g12_conceptInlineDisplay .
+
+  ex:gendef_g12_conceptInputText a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ô text nhập dữ liệu"@vi ;
+    ex:hasDefinitionText "Ô text nhập dữ liệu là điều khiển nhập xâu kí tự được khai báo bằng phần tử input với thuộc tính type bằng text, dùng để người dùng nhập thông tin như họ tên hoặc địa chỉ email."@vi ;
+    ex:explainsConcept ex:g12_conceptInputText .
+
+  ex:gendef_g12_conceptInternalCSS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Internal CSS"@vi ;
+    ex:hasDefinitionText "Internal CSS là cách khai báo các quy tắc định dạng trong cặp thẻ style đặt trong phần head của trang HTML, dùng để áp dụng kiểu dáng cho các phần tử trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptInternalCSS .
+
+  ex:gendef_g12_conceptKetNoiKhongDay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kết nối không dây"@vi ;
+    ex:hasDefinitionText "Kết nối không dây là phương thức liên kết các thiết bị với nhau mà không cần dùng dây cáp, thường sử dụng các công nghệ như Bluetooth hoặc Wi-Fi để truyền dữ liệu âm thanh, hình ảnh, video giữa các thiết bị."@vi ;
+    ex:explainsConcept ex:g12_conceptKetNoiKhongDay .
+
+  ex:gendef_g12_conceptKetNoiMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kết nối mạng"@vi ;
+    ex:hasDefinitionText "Kết nối mạng là quá trình liên kết các thiết bị với nhau thông qua các thiết bị mạng như Access Point, Switch, Modem và Router để trao đổi dữ liệu."@vi ;
+    ex:explainsConcept ex:g12_conceptKetNoiMang .
+
+  ex:gendef_g12_conceptKetNoiMayTinhAP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kết nối máy tính với Access Point"@vi ;
+    ex:hasDefinitionText "Kết nối máy tính với Access Point là quá trình máy tính sử dụng tên và mật khẩu Wi-Fi để liên kết với điểm truy cập không dây, nhằm truy cập Internet hoặc mạng nội bộ."@vi ;
+    ex:explainsConcept ex:g12_conceptKetNoiMayTinhAP .
+
+  ex:gendef_g12_conceptKetNoiMayTinhSwitch a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kết nối máy tính với Switch"@vi ;
+    ex:hasDefinitionText "Kết nối máy tính với Switch là việc sử dụng dây cáp mạng RJ45 để nối cổng LAN của máy tính với cổng của Switch, nhằm thiết lập liên kết mạng và kiểm tra truy cập Internet."@vi ;
+    ex:explainsConcept ex:g12_conceptKetNoiMayTinhSwitch .
+
+  ex:gendef_g12_conceptKetNoiThietBiSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kết nối thiết bị số"@vi ;
+    ex:hasDefinitionText "Kết nối thiết bị số là quá trình thiết lập liên kết giữa các thiết bị để trao đổi dữ liệu và thực hiện các yêu cầu kết nối."@vi ;
+    ex:explainsConcept ex:g12_conceptKetNoiThietBiSo .
+
+  ex:gendef_g12_conceptKetNoiThietBiThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kết nối thiết bị thông minh vào mạng máy tính"@vi ;
+    ex:hasDefinitionText "Kết nối thiết bị thông minh vào mạng máy tính là quá trình bật tính năng mạng (như Wi-Fi hoặc dữ liệu di động) trên thiết bị, chọn mạng cần kết nối và nhập mật khẩu để thiết bị có thể truy cập Internet hoặc mạng nội bộ."@vi ;
+    ex:explainsConcept ex:g12_conceptKetNoiThietBiThongMinh .
+
+  ex:gendef_g12_conceptKhaNangGiaiQuyetVanDe a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khả năng giải quyết vấn đề"@vi ;
+    ex:hasDefinitionText "Khả năng giải quyết vấn đề là năng lực suy luận, lập kế hoạch và tìm ra cách xử lý các tình huống phức tạp dựa trên tri thức đã tích luỹ."@vi ;
+    ex:explainsConcept ex:g12_conceptKhaNangGiaiQuyetVanDe .
+
+  ex:gendef_g12_conceptKhaNangHieuNgonNgu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khả năng hiểu ngôn ngữ"@vi ;
+    ex:hasDefinitionText "Khả năng hiểu ngôn ngữ là năng lực của máy tính hoặc người máy trong việc nhận biết và xử lí ngôn ngữ tự nhiên để giao tiếp và tương tác với con người."@vi ;
+    ex:explainsConcept ex:g12_conceptKhaNangHieuNgonNgu .
+
+  ex:gendef_g12_conceptKhaNangHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khả năng học"@vi ;
+    ex:hasDefinitionText "Khả năng học là đặc trưng của trí tuệ nhân tạo cho phép máy tính tự rút ra kiến thức và cải thiện hiệu quả hoạt động dựa trên dữ liệu trong quá trình làm việc."@vi ;
+    ex:explainsConcept ex:g12_conceptKhaNangHoc .
+
+  ex:gendef_g12_conceptKhaNangNhanThucMoiTruong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khả năng nhận thức môi trường xung quanh"@vi ;
+    ex:hasDefinitionText "Khả năng nhận thức môi trường xung quanh là năng lực của hệ thống AI trong việc thu thập và xử lý thông tin từ môi trường để đưa ra các phản ứng phù hợp, như xe tự lái nhận biết và chấp hành luật giao thông nhằm tránh va chạm."@vi ;
+    ex:explainsConcept ex:g12_conceptKhaNangNhanThucMoiTruong .
+
+  ex:gendef_g12_conceptKhaNangSuyLuan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khả năng suy luận"@vi ;
+    ex:hasDefinitionText "Khả năng suy luận là năng lực của hệ thống trí tuệ nhân tạo trong việc sử dụng tri thức đã tích lũy để đưa ra kết luận hoặc giải quyết vấn đề."@vi ;
+    ex:explainsConcept ex:g12_conceptKhaNangSuyLuan .
+
+  ex:gendef_g12_conceptKhoiMau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Khối mẫu"@vi ;
+    ex:hasDefinitionText "Khối mẫu là các thành phần trang web được thiết kế sẵn, cho phép người dùng chọn và kéo thả vào vị trí phù hợp để tạo nội dung nhanh chóng và tiện lợi."@vi ;
+    ex:explainsConcept ex:g12_conceptKhoiMau .
+
+  ex:gendef_g12_conceptKhongGianMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Không gian mạng"@vi ;
+    ex:hasDefinitionText "Không gian mạng là phần bổ sung của thế giới thực được tạo ra nhờ các phương tiện kỹ thuật số, đồng thời còn được gọi là thế giới ảo nơi diễn ra các hoạt động và mối quan hệ trên Internet."@vi ;
+    ex:explainsConcept ex:g12_conceptKhongGianMang .
+
+  ex:gendef_g12_conceptKiNangVietKem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Kĩ năng viết kém"@vi ;
+    ex:hasDefinitionText "Kĩ năng viết kém là tình trạng mắc lỗi chính tả, sai ngữ pháp và sử dụng từ viết tắt tùy tiện khi viết, thường do sự dễ dãi trong cách viết tin nhắn."@vi ;
+    ex:explainsConcept ex:g12_conceptKiNangVietKem .
+
+  ex:gendef_g12_conceptLabel a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử label"@vi ;
+    ex:hasDefinitionText "Phần tử label trong HTML dùng để tạo nhãn mô tả cho các điều khiển nhập liệu, giúp người dùng hiểu rõ chức năng của các ô nhập dữ liệu."@vi ;
+    ex:explainsConcept ex:g12_conceptLabel .
+
+  ex:gendef_g12_conceptLamNoiBatVanBan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Làm nổi bật văn bản"@vi ;
+    ex:hasDefinitionText "Làm nổi bật văn bản là thao tác sử dụng các phần tử như strong để in đậm, em để in nghiêng hoặc mark để tô màu nền nhằm thu hút sự chú ý vào nội dung quan trọng trong văn bản."@vi ;
+    ex:explainsConcept ex:g12_conceptLamNoiBatVanBan .
+
+  ex:gendef_g12_conceptLapLich a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lập lịch"@vi ;
+    ex:hasDefinitionText "Lập lịch là thiết lập thời gian và các thao tác tự động để thiết bị thông minh thực hiện theo kịch bản đã định trước."@vi ;
+    ex:explainsConcept ex:g12_conceptLapLich .
+
+  ex:gendef_g12_conceptLienKetTrangWeb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Liên kết trang web"@vi ;
+    ex:hasDefinitionText "Liên kết trang web là đường dẫn trên một trang web giúp người dùng truy cập nhanh đến một hoặc nhiều trang web khác trong cùng dự án hoặc trên Internet."@vi ;
+    ex:explainsConcept ex:g12_conceptLienKetTrangWeb .
+
+  ex:gendef_g12_conceptListBlock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa List block"@vi ;
+    ex:hasDefinitionText "List block là khối mẫu bài viết được sử dụng để hiển thị danh sách các mục trên trang web, giúp tổ chức và trình bày thông tin theo dạng liệt kê."@vi ;
+    ex:explainsConcept ex:g12_conceptListBlock .
+
+  ex:gendef_g12_conceptLocalDriveFolder a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Local drive folder"@vi ;
+    ex:hasDefinitionText "Local drive folder là thư mục trên ổ đĩa cứng của máy tính dùng để lưu trữ các tệp HTML khi xuất bản website dưới dạng tệp cục bộ."@vi ;
+    ex:explainsConcept ex:g12_conceptLocalDriveFolder .
+
+  ex:gendef_g12_conceptLoopVideo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Loop video"@vi ;
+    ex:hasDefinitionText "Loop video là video được phát lặp lại liên tục mà không dừng khi kết thúc."@vi ;
+    ex:explainsConcept ex:g12_conceptLoopVideo .
+
+  ex:gendef_g12_conceptLuaDaoQuaMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lừa đảo qua mạng"@vi ;
+    ex:hasDefinitionText "Lừa đảo qua mạng là các chiêu trò như mồi baiting, hứa hẹn vật phẩm hoặc phần thưởng nhằm dò mật khẩu, lừa tiền, lừa công sức lao động hoặc đánh cắp dữ liệu của người dùng trên Internet."@vi ;
+    ex:explainsConcept ex:g12_conceptLuaDaoQuaMang .
+
+  ex:gendef_g12_conceptLuuTruThongTinMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lưu trữ thông tin trên mạng"@vi ;
+    ex:hasDefinitionText "Lưu trữ thông tin trên mạng là việc giữ lại nội dung trao đổi hoặc dữ liệu trên không gian mạng để có thể tham khảo và sử dụng lại khi cần thiết."@vi ;
+    ex:explainsConcept ex:g12_conceptLuuTruThongTinMang .
+
+  ex:gendef_g12_conceptMYCIN a ex:DefinitionText ;
+    rdfs:label "Định nghĩa MYCIN"@vi ;
+    ex:hasDefinitionText "MYCIN là một hệ chuyên gia trong lĩnh vực y tế, sử dụng các quy tắc IF...THEN... để hỗ trợ xác định một số loại vi khuẩn gây nhiễm trùng."@vi ;
+    ex:explainsConcept ex:g12_conceptMYCIN .
+
+  ex:gendef_g12_conceptMaGhepDoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mã ghép đôi"@vi ;
+    ex:hasDefinitionText "Mã ghép đôi là một dãy số được máy tính hoặc thiết bị Bluetooth hiển thị để xác nhận và kết nối an toàn giữa hai thiết bị với nhau."@vi ;
+    ex:explainsConcept ex:g12_conceptMaGhepDoi .
+
+  ex:gendef_g12_conceptMangMayTinhInternet a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mạng máy tính và Internet"@vi ;
+    ex:hasDefinitionText "Mạng máy tính là hệ thống các thiết bị được kết nối với nhau để chia sẻ dữ liệu và tài nguyên; Internet là mạng toàn cầu kết nối nhiều mạng máy tính trên thế giới, cho phép trao đổi thông tin rộng rãi."@vi ;
+    ex:explainsConcept ex:g12_conceptMangMayTinhInternet .
+
+  ex:gendef_g12_conceptMangXaHoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mạng xã hội"@vi ;
+    ex:hasDefinitionText "Mạng xã hội là các nền tảng kỹ thuật số cho phép người dùng giao tiếp, chia sẻ thông tin và giữ liên lạc với người thân, bạn bè và đồng nghiệp qua không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptMangXaHoi .
+
+  ex:gendef_g12_conceptMark a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử mark"@vi ;
+    ex:hasDefinitionText "Phần tử mark trong HTML dùng để tô màu vàng nền của nội dung cần chú ý, giúp làm nổi bật văn bản."@vi ;
+    ex:explainsConcept ex:g12_conceptMark .
+
+  ex:gendef_g12_conceptMatKetNoiMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mất kết nối mạng"@vi ;
+    ex:hasDefinitionText "Mất kết nối mạng là trạng thái không thể truy cập hoặc sử dụng tài nguyên mạng do bị gián đoạn hoặc ngắt kết nối, gây ảnh hưởng đến an toàn và ổn định của mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptMatKetNoiMang .
+
+  ex:gendef_g12_conceptMatThongTinCaNhan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Lộ hoặc mất thông tin cá nhân"@vi ;
+    ex:hasDefinitionText "Lộ hoặc mất thông tin cá nhân là tình trạng khi dữ liệu riêng tư của người dùng bị tiết lộ hoặc bị đánh cắp, gây nguy cơ về an toàn và quyền riêng tư."@vi ;
+    ex:explainsConcept ex:g12_conceptMatThongTinCaNhan .
+
+  ex:gendef_g12_conceptMatViecLam a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Áp lực mất việc làm do AI"@vi ;
+    ex:hasDefinitionText "Áp lực mất việc làm do AI là tình trạng một số công việc bị thay thế bởi trí tuệ nhân tạo, gây ra nguy cơ mất việc làm cho người lao động."@vi ;
+    ex:explainsConcept ex:g12_conceptMatViecLam .
+
+  ex:gendef_g12_conceptMauSacDen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Màu sắc của đèn"@vi ;
+    ex:hasDefinitionText "Màu sắc của đèn là đặc tính ánh sáng do đèn phát ra, có thể được điều chỉnh theo ý muốn thông qua giao diện điều khiển để thay đổi màu, độ sáng và độ tươi của ánh sáng."@vi ;
+    ex:explainsConcept ex:g12_conceptMauSacDen .
+
+  ex:gendef_g12_conceptMauTrangWeb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mẫu trang web"@vi ;
+    ex:hasDefinitionText "Mẫu trang web là các bố cục và thiết kế có sẵn được cung cấp trong phần mềm tạo website, giúp người dùng dễ dàng tạo trang web mới theo chủ đề hoặc phong cách đã định trước."@vi ;
+    ex:explainsConcept ex:g12_conceptMauTrangWeb .
+
+  ex:gendef_g12_conceptMayTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Máy tính"@vi ;
+    ex:hasDefinitionText "Máy tính là thiết bị điện tử dùng để xử lý, lưu trữ và truyền tải dữ liệu, cho phép kết nối và trao đổi thông tin với các thiết bị khác như ti vi thông minh hoặc điện thoại qua các phương thức không dây như Wi-Fi và Bluetooth."@vi ;
+    ex:explainsConcept ex:g12_conceptMayTinh .
+
+  ex:gendef_g12_conceptMayTinhVaXaHoiTriThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Máy tính và xã hội tri thức"@vi ;
+    ex:hasDefinitionText "Máy tính là thiết bị xử lý thông tin tự động, còn xã hội tri thức là xã hội dựa trên việc tạo lập, chia sẻ và sử dụng tri thức để phát triển và giải quyết các vấn đề."@vi ;
+    ex:explainsConcept ex:g12_conceptMayTinhVaXaHoiTriThuc .
+
+  ex:gendef_g12_conceptMayTinhXaHoiTriThuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Máy tính và xã hội tri thức"@vi ;
+    ex:hasDefinitionText "Máy tính là thiết bị điện tử dùng để xử lý, lưu trữ và truyền tải thông tin; xã hội tri thức là xã hội mà tri thức và thông tin đóng vai trò trung tâm trong phát triển kinh tế, văn hóa và xã hội."@vi ;
+    ex:explainsConcept ex:g12_conceptMayTinhXaHoiTriThuc .
+
+  ex:gendef_g12_conceptMediaImage a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Media Image"@vi ;
+    ex:hasDefinitionText "Media Image là hình ảnh được sử dụng trên trang web để minh họa hoặc trình bày nội dung, có thể được thay đổi hoặc chỉnh sửa trong quá trình thiết kế web."@vi ;
+    ex:explainsConcept ex:g12_conceptMediaImage .
+
+  ex:gendef_g12_conceptMenuItems a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Menu Items"@vi ;
+    ex:hasDefinitionText "Menu Items là các mục nội dung hiển thị trên thanh điều hướng, cho phép người dùng chọn để truy cập các phần khác nhau của trang web hoặc ứng dụng."@vi ;
+    ex:explainsConcept ex:g12_conceptMenuItems .
+
+  ex:gendef_g12_conceptMetaCharset a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thẻ meta charset"@vi ;
+    ex:hasDefinitionText "Thẻ meta charset là phần tử trong thẻ head của văn bản HTML dùng để khai báo bảng mã ký tự cho trang web, giúp trình duyệt hiển thị đúng các ký tự."@vi ;
+    ex:explainsConcept ex:g12_conceptMetaCharset .
+
+  ex:gendef_g12_conceptMidjourney a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Midjourney"@vi ;
+    ex:hasDefinitionText "Midjourney là một công cụ AI tạo sinh giúp máy tính vẽ tranh theo mô tả do người dùng cung cấp."@vi ;
+    ex:explainsConcept ex:g12_conceptMidjourney .
+
+  ex:gendef_g12_conceptMobileView a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Mobile View"@vi ;
+    ex:hasDefinitionText "Mobile View là chế độ xem trước trang web trên thiết bị di động, giúp kiểm tra giao diện và bố cục phù hợp với màn hình nhỏ."@vi ;
+    ex:explainsConcept ex:g12_conceptMobileView .
+
+  ex:gendef_g12_conceptMobirisesite a ex:DefinitionText ;
+    rdfs:label "Định nghĩa *.mobirisesite.com"@vi ;
+    ex:hasDefinitionText "*.mobirisesite.com là tên miền con được sử dụng để xuất bản website trực tuyến thông qua dịch vụ của Mobirise, cho phép người dùng đăng tải trang web lên Internet dưới dạng tên miền phụ của mobirisesite.com."@vi ;
+    ex:explainsConcept ex:g12_conceptMobirisesite .
+
+  ex:gendef_g12_conceptMyDevices a ex:DefinitionText ;
+    rdfs:label "Định nghĩa My devices"@vi ;
+    ex:hasDefinitionText "My devices là danh sách các thiết bị của người dùng được kết nối và quản lý trong ứng dụng, cho phép chọn thiết bị để thực hiện các thao tác như chuyển dữ liệu."@vi ;
+    ex:explainsConcept ex:g12_conceptMyDevices .
+
+  ex:gendef_g12_conceptNetworkAndSharingCenter a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Network and Sharing Center"@vi ;
+    ex:hasDefinitionText "Network and Sharing Center là công cụ trên Windows giúp quản lý kết nối mạng, thiết lập và kiểm tra trạng thái kết nối Internet cũng như chia sẻ tài nguyên giữa các máy tính trong mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptNetworkAndSharingCenter .
+
+  ex:gendef_g12_conceptNetworkID a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Network ID"@vi ;
+    ex:hasDefinitionText "Network ID là phần của địa chỉ IPv4 xác định mạng mà thiết bị đang kết nối."@vi ;
+    ex:explainsConcept ex:g12_conceptNetworkID .
+
+  ex:gendef_g12_conceptNghienInternet a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nghiện Internet"@vi ;
+    ex:hasDefinitionText "Nghiện Internet là tình trạng người dùng dành quá nhiều thời gian trên không gian mạng, ảnh hưởng đến các mối quan hệ và cuộc sống thực, dẫn đến thiếu hiểu biết về các sự kiện xung quanh."@vi ;
+    ex:explainsConcept ex:g12_conceptNghienInternet .
+
+  ex:gendef_g12_conceptNguoiMay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Người máy"@vi ;
+    ex:hasDefinitionText "Người máy là thiết bị được thiết kế và chế tạo để thực hiện các nhiệm vụ tự động hoặc phối hợp với con người, có khả năng suy nghĩ và hành động hợp lí như con người trong một số trường hợp."@vi ;
+    ex:explainsConcept ex:g12_conceptNguoiMay .
+
+  ex:gendef_g12_conceptNguoiMayGrace a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Người máy Grace"@vi ;
+    ex:hasDefinitionText "Người máy Grace là robot được phát triển tại Hồng Kông năm 2021, có khả năng suy nghĩ và hành động như điều dưỡng viên trong chăm sóc người bệnh, đồng thời giao tiếp với bệnh nhân bằng tiếng Trung và tiếng Anh."@vi ;
+    ex:explainsConcept ex:g12_conceptNguoiMayGrace .
+
+  ex:gendef_g12_conceptNguoiMayThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Người máy thông minh"@vi ;
+    ex:hasDefinitionText "Người máy thông minh là thiết bị có khả năng nghe, nhìn, nhận biết môi trường, hiểu ngôn ngữ tự nhiên, học hỏi, giao tiếp đa ngôn ngữ, nhận dạng khuôn mặt và cảm xúc."@vi ;
+    ex:explainsConcept ex:g12_conceptNguoiMayThongMinh .
+
+  ex:gendef_g12_conceptNhanDangKhuonMat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhận dạng khuôn mặt"@vi ;
+    ex:hasDefinitionText "Nhận dạng khuôn mặt là công nghệ sử dụng trí tuệ nhân tạo và thị giác máy tính để phân tích và xác định danh tính hoặc đặc điểm của người dựa trên hình ảnh khuôn mặt."@vi ;
+    ex:explainsConcept ex:g12_conceptNhanDangKhuonMat .
+
+  ex:gendef_g12_conceptNhanDangVanTay a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nhận dạng vân tay"@vi ;
+    ex:hasDefinitionText "Nhận dạng vân tay là công nghệ sử dụng dấu vân tay để xác thực hoặc mở khóa thiết bị thông minh như điện thoại."@vi ;
+    ex:explainsConcept ex:g12_conceptNhanDangVanTay .
+
+  ex:gendef_g12_conceptNutReset a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nút Reset"@vi ;
+    ex:hasDefinitionText "Nút Reset là nút bấm dùng để khôi phục cài đặt ban đầu hoặc thiết lập lại thiết bị khi cần thiết."@vi ;
+    ex:explainsConcept ex:g12_conceptNutReset .
+
+  ex:gendef_g12_conceptOCR a ex:DefinitionText ;
+    rdfs:label "Định nghĩa OCR"@vi ;
+    ex:hasDefinitionText "OCR là công nghệ nhận dạng chữ viết tay và chuyển ảnh chữ thành văn bản."@vi ;
+    ex:explainsConcept ex:g12_conceptOCR .
+
+  ex:gendef_g12_conceptOThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ô nhập thông tin"@vi ;
+    ex:hasDefinitionText "Ô nhập thông tin là phần trong biểu mẫu trên trang web cho phép người dùng nhập dữ liệu như họ tên, email, điện thoại hoặc nội dung lời nhắn để thu nhận và xử lí thông tin."@vi ;
+    ex:explainsConcept ex:g12_conceptOThongTin .
+
+  ex:gendef_g12_conceptPassword a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ô password"@vi ;
+    ex:hasDefinitionText "Ô password là ô nhập liệu dùng để nhập mật khẩu, trong đó các ký tự được hiển thị dưới dạng dấu chấm hoặc dấu sao để bảo mật thông tin."@vi ;
+    ex:explainsConcept ex:g12_conceptPassword .
+
+  ex:gendef_g12_conceptPeopleBlock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa People block"@vi ;
+    ex:hasDefinitionText "People block là khối mẫu bài viết được cung cấp sẵn trong trình soạn thảo, dùng để hiển thị thông tin về con người trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptPeopleBlock .
+
+  ex:gendef_g12_conceptPhanDauTrang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần đầu trang"@vi ;
+    ex:hasDefinitionText "Phần đầu trang là khu vực nằm ở trên cùng của trang web, thường chứa các thông tin giới thiệu hoặc logo và nằm trên thanh điều hướng."@vi ;
+    ex:explainsConcept ex:g12_conceptPhanDauTrang .
+
+  ex:gendef_g12_conceptPhanDoiViecXau a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phản đối việc xấu"@vi ;
+    ex:hasDefinitionText "Phản đối việc xấu là thể hiện sự không đồng tình và phê phán những hành vi tiêu cực, việc làm sai trái nhằm góp phần tạo hiệu ứng xã hội tích cực trên không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptPhanDoiViecXau .
+
+  ex:gendef_g12_conceptPhanNoiDung a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần nội dung"@vi ;
+    ex:hasDefinitionText "Phần nội dung là phần chính của trang web, chứa các thông tin, dữ liệu hoặc bài viết mà người tạo website muốn truyền tải đến người dùng."@vi ;
+    ex:explainsConcept ex:g12_conceptPhanNoiDung .
+
+  ex:gendef_g12_conceptPhePhanCoVanHoa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phê phán có văn hoá và đạo đức"@vi ;
+    ex:hasDefinitionText "Phê phán có văn hoá và đạo đức là việc phát hiện và phản ánh những sự việc tiêu cực một cách lịch sự, tôn trọng và đúng chuẩn mực đạo đức trên không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptPhePhanCoVanHoa .
+
+  ex:gendef_g12_conceptPower a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Power"@vi ;
+    ex:hasDefinitionText "Power là chức năng cho phép bật hoặc tắt thiết bị điện tử, như ổ cắm thông minh, thông qua giao diện điều khiển trên điện thoại."@vi ;
+    ex:explainsConcept ex:g12_conceptPower .
+
+  ex:gendef_g12_conceptPreviewInBrowser a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Preview in Browser"@vi ;
+    ex:hasDefinitionText "Preview in Browser là chức năng cho phép xem trước trang web trên trình duyệt để kiểm tra nội dung và giao diện sau khi chỉnh sửa."@vi ;
+    ex:explainsConcept ex:g12_conceptPreviewInBrowser .
+
+  ex:gendef_g12_conceptPublishWebsite a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xuất bản website"@vi ;
+    ex:hasDefinitionText "Xuất bản website là quá trình đưa trang web đã tạo lên Internet hoặc lưu trữ dưới dạng các tệp trên máy tính, giúp người dùng có thể truy cập và sử dụng trang web đó."@vi ;
+    ex:explainsConcept ex:g12_conceptPublishWebsite .
+
+  ex:gendef_g12_conceptQuanLiLuuLuongMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quản lí lưu lượng mạng"@vi ;
+    ex:hasDefinitionText "Quản lí lưu lượng mạng là quá trình điều khiển và giám sát việc truyền dữ liệu giữa các thiết bị trong mạng để đảm bảo hiệu quả và ổn định của hệ thống."@vi ;
+    ex:explainsConcept ex:g12_conceptQuanLiLuuLuongMang .
+
+  ex:gendef_g12_conceptQuayRoiQuaMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Quấy rối qua mạng"@vi ;
+    ex:hasDefinitionText "Quấy rối qua mạng là hành vi bắt nạt, làm phiền hoặc gây tổn thương người khác trên không gian mạng thông qua các hành động như mạo danh, phát tán nội dung bắt nạt hoặc sử dụng các chiêu trò lừa đảo."@vi ;
+    ex:explainsConcept ex:g12_conceptQuayRoiQuaMang .
+
+  ex:gendef_g12_conceptRadioButton a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Radio button"@vi ;
+    ex:hasDefinitionText "Radio button là điều khiển cho phép người dùng chọn một mục duy nhất trong một danh sách các lựa chọn."@vi ;
+    ex:explainsConcept ex:g12_conceptRadioButton .
+
+  ex:gendef_g12_conceptRangDongSmart a ex:DefinitionText ;
+    rdfs:label "Định nghĩa RangDongSmart"@vi ;
+    ex:hasDefinitionText "RangDongSmart là dòng thiết bị điện thông minh của Rạng Đông, kết nối không dây Wi-Fi để điều khiển từ xa qua Internet, hỗ trợ điều khiển theo kịch bản, đặt lịch và hẹn giờ."@vi ;
+    ex:explainsConcept ex:g12_conceptRangDongSmart .
+
+  ex:gendef_g12_conceptRemoveBlock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Remove Block"@vi ;
+    ex:hasDefinitionText "Remove Block là thao tác xoá bỏ một khối (block) nội dung hoặc thành phần đang được chọn trên trang web hoặc trong phần mềm soạn thảo."@vi ;
+    ex:explainsConcept ex:g12_conceptRemoveBlock .
+
+  ex:gendef_g12_conceptResponsive a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Responsive"@vi ;
+    ex:hasDefinitionText "Responsive là khả năng tự động điều chỉnh giao diện của trang web phù hợp với kích thước màn hình của các thiết bị khác nhau."@vi ;
+    ex:explainsConcept ex:g12_conceptResponsive .
+
+  ex:gendef_g12_conceptRinhRapQuayRoiBatNat a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Rình rập, quấy rối, bắt nạt trên mạng"@vi ;
+    ex:hasDefinitionText "Rình rập, quấy rối, bắt nạt trên mạng là các hành vi gây phiền toái, đe dọa hoặc làm tổn thương người khác qua môi trường mạng, đòi hỏi quản lí chặt chẽ để đảm bảo an toàn và ổn định."@vi ;
+    ex:explainsConcept ex:g12_conceptRinhRapQuayRoiBatNat .
+
+  ex:gendef_g12_conceptSMTP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao thức SMTP"@vi ;
+    ex:hasDefinitionText "SMTP là giao thức dùng để gửi và nhận thư điện tử trong mạng máy tính."@vi ;
+    ex:explainsConcept ex:g12_conceptSMTP .
+
+  ex:gendef_g12_conceptSanPhamNhom a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sản phẩm theo nhóm"@vi ;
+    ex:hasDefinitionText "Sản phẩm theo nhóm là kết quả làm việc chung của một nhóm học sinh, thường là một website được tạo ra để giới thiệu và thuyết minh về một chủ đề nhất định."@vi ;
+    ex:explainsConcept ex:g12_conceptSanPhamNhom .
+
+  ex:gendef_g12_conceptSceneMode a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bối cảnh đèn thông minh"@vi ;
+    ex:hasDefinitionText "Bối cảnh đèn thông minh là các chế độ ánh sáng được thiết lập sẵn hoặc tùy chỉnh trên đèn để phù hợp với các hoạt động khác nhau, như đèn trắng, đèn màu, hoặc các hiệu ứng chuyển màu và nhấp nháy."@vi ;
+    ex:explainsConcept ex:g12_conceptSceneMode .
+
+  ex:gendef_g12_conceptSchedule a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Schedule"@vi ;
+    ex:hasDefinitionText "Schedule là chức năng lập lịch cho thiết bị tự động thực hiện các thao tác theo thời gian và cài đặt đã chọn trước."@vi ;
+    ex:explainsConcept ex:g12_conceptSchedule .
+
+  ex:gendef_g12_conceptSectionHTML a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thẻ section trong HTML"@vi ;
+    ex:hasDefinitionText "Thẻ section trong HTML dùng để phân chia nội dung trang web thành các phần riêng biệt, giúp tổ chức cấu trúc và chỉnh sửa nội dung dễ dàng hơn."@vi ;
+    ex:explainsConcept ex:g12_conceptSectionHTML .
+
+  ex:gendef_g12_conceptSiteLibrary a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Site Library"@vi ;
+    ex:hasDefinitionText "Site Library là thư viện hình ảnh có sẵn trên trang web, cho phép người dùng chọn và chèn hình ảnh vào nội dung mà không cần tải lên từ máy tính."@vi ;
+    ex:explainsConcept ex:g12_conceptSiteLibrary .
+
+  ex:gendef_g12_conceptSitePages a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Site Pages"@vi ;
+    ex:hasDefinitionText "Site Pages là các trang web nằm trong cùng một dự án, cho phép người dùng tạo liên kết nội bộ giữa các trang trong dự án đó."@vi ;
+    ex:explainsConcept ex:g12_conceptSitePages .
+
+  ex:gendef_g12_conceptStrong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử strong"@vi ;
+    ex:hasDefinitionText "Phần tử strong trong HTML dùng để làm nổi bật nội dung văn bản bằng cách in đậm chữ, giúp nhấn mạnh ý nghĩa quan trọng của đoạn văn bản đó."@vi ;
+    ex:explainsConcept ex:g12_conceptStrong .
+
+  ex:gendef_g12_conceptSuDongCam a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sự đồng cảm"@vi ;
+    ex:hasDefinitionText "Sự đồng cảm là khả năng thể hiện thái độ, cảm xúc chia sẻ và thấu hiểu với người khác qua lời nói, biểu tượng hoặc hành động, đặc biệt trong các tình huống như thiên tai, thảm họa hoặc các sự việc tích cực, tiêu cực trên không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptSuDongCam .
+
+  ex:gendef_g12_conceptSublimeText a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Sublime Text"@vi ;
+    ex:hasDefinitionText "Sublime Text là phần mềm soạn thảo văn bản được sử dụng để viết mã HTML và các ngôn ngữ lập trình khác, giúp tạo và chỉnh sửa các tệp tin mã nguồn một cách hiệu quả."@vi ;
+    ex:explainsConcept ex:g12_conceptSublimeText .
+
+  ex:gendef_g12_conceptSubmenu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Danh mục con"@vi ;
+    ex:hasDefinitionText "Danh mục con là mục nằm trong một danh mục lớn hơn, được tạo để tổ chức và phân cấp các nội dung trên thanh điều hướng."@vi ;
+    ex:explainsConcept ex:g12_conceptSubmenu .
+
+  ex:gendef_g12_conceptSubmit a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Nút submit"@vi ;
+    ex:hasDefinitionText "Nút submit là nút lệnh trên biểu mẫu dùng để gửi dữ liệu đã nhập về máy chủ web khi người dùng nhấn vào."@vi ;
+    ex:explainsConcept ex:g12_conceptSubmit .
+
+  ex:gendef_g12_conceptTCPIP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Bộ giao thức TCP/IP"@vi ;
+    ex:hasDefinitionText "Bộ giao thức TCP/IP là tập hợp các giao thức mạng quan trọng, trong đó IP đảm nhiệm định địa chỉ và định tuyến, còn TCP và UDP chịu trách nhiệm vận chuyển dữ liệu giữa các thiết bị trong mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptTCPIP .
+
+  ex:gendef_g12_conceptTaiChinhNganHangAI a ex:DefinitionText ;
+    rdfs:label "Định nghĩa AI trong tài chính ngân hàng"@vi ;
+    ex:hasDefinitionText "AI trong tài chính ngân hàng là công nghệ phân tích hành vi để hiểu và dự đoán hành vi, phát hiện giao dịch đáng ngờ, dấu hiệu lừa đảo và gian lận."@vi ;
+    ex:explainsConcept ex:g12_conceptTaiChinhNganHangAI .
+
+  ex:gendef_g12_conceptTaoTrangWeb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tạo trang web"@vi ;
+    ex:hasDefinitionText "Tạo trang web là quá trình thiết kế và xây dựng các trang thông tin trên Internet để người dùng có thể truy cập và sử dụng."@vi ;
+    ex:explainsConcept ex:g12_conceptTaoTrangWeb .
+
+  ex:gendef_g12_conceptTaoTrangWebBangPhanMem a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tạo trang web bằng phần mềm"@vi ;
+    ex:hasDefinitionText "Tạo trang web bằng phần mềm là sử dụng công cụ trực quan và các thao tác kéo thả đơn giản để thiết kế trang web mà không cần kỹ năng lập trình chuyên nghiệp."@vi ;
+    ex:explainsConcept ex:g12_conceptTaoTrangWebBangPhanMem .
+
+  ex:gendef_g12_conceptTepAmThanh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tệp âm thanh"@vi ;
+    ex:hasDefinitionText "Tệp âm thanh là tập tin chứa dữ liệu âm thanh được lưu trữ trên máy tính và có thể truyền hoặc phát lại trên các thiết bị khác như ti vi thông minh."@vi ;
+    ex:explainsConcept ex:g12_conceptTepAmThanh .
+
+  ex:gendef_g12_conceptTepHinhAnh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tệp hình ảnh"@vi ;
+    ex:hasDefinitionText "Tệp hình ảnh là tập tin chứa dữ liệu ảnh số được lưu trữ trên máy tính hoặc thiết bị điện tử, có thể truyền và hiển thị trên các thiết bị khác như ti vi thông minh."@vi ;
+    ex:explainsConcept ex:g12_conceptTepHinhAnh .
+
+  ex:gendef_g12_conceptTepVideo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tệp video"@vi ;
+    ex:hasDefinitionText "Tệp video là tập tin chứa dữ liệu hình ảnh chuyển động và âm thanh, dùng để lưu trữ và phát lại các đoạn phim trên máy tính hoặc thiết bị khác."@vi ;
+    ex:explainsConcept ex:g12_conceptTepVideo .
+
+  ex:gendef_g12_conceptTextarea a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử textarea"@vi ;
+    ex:hasDefinitionText "Phần tử textarea trong HTML là ô nhập liệu cho phép người dùng nhập nhiều dòng văn bản, thường dùng để ghi ý kiến hoặc nhận xét."@vi ;
+    ex:explainsConcept ex:g12_conceptTextarea .
+
+  ex:gendef_g12_conceptTextblock a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Textblock"@vi ;
+    ex:hasDefinitionText "Textblock là khối nội dung chứa văn bản được chèn vào trang web để hiển thị thông tin dưới dạng chữ viết."@vi ;
+    ex:explainsConcept ex:g12_conceptTextblock .
+
+  ex:gendef_g12_conceptThanhDieuHuongNhieuCap a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thanh điều hướng nhiều cấp"@vi ;
+    ex:hasDefinitionText "Thanh điều hướng nhiều cấp là thanh điều hướng có cấu trúc phân cấp, cho phép hiển thị nhiều nhóm liên kết con khi số lượng liên kết quá nhiều để hiển thị cùng lúc."@vi ;
+    ex:explainsConcept ex:g12_conceptThanhDieuHuongNhieuCap .
+
+  ex:gendef_g12_conceptTheGioiAo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thế giới ảo"@vi ;
+    ex:hasDefinitionText "Thế giới ảo là không gian mạng, một phần bổ sung của thế giới thực được tạo ra nhờ các phương tiện kỹ thuật số, nơi con người giao tiếp và tương tác với nhau."@vi ;
+    ex:explainsConcept ex:g12_conceptTheGioiAo .
+
+  ex:gendef_g12_conceptThemThietBi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thêm thiết bị"@vi ;
+    ex:hasDefinitionText "Thêm thiết bị là thao tác kết nối một thiết bị mới, như ổ cắm hoặc đèn thông minh, vào ứng dụng điều khiển bằng cách chọn thiết bị, nhập thông tin mạng Wi-Fi và hoàn tất quá trình kết nối."@vi ;
+    ex:explainsConcept ex:g12_conceptThemThietBi .
+
+  ex:gendef_g12_conceptThemeWebsite a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Theme của trang web"@vi ;
+    ex:hasDefinitionText "Theme của trang web là chủ đề có sẵn được chọn để tạo giao diện và bố cục cho trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptThemeWebsite .
+
+  ex:gendef_g12_conceptThietBiMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết bị mạng"@vi ;
+    ex:hasDefinitionText "Thiết bị mạng là các thiết bị số trong hệ thống mạng máy tính dùng để kết nối và truyền dữ liệu giữa các thiết bị đầu cuối."@vi ;
+    ex:explainsConcept ex:g12_conceptThietBiMang .
+
+  ex:gendef_g12_conceptThietBiSo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết bị số"@vi ;
+    ex:hasDefinitionText "Thiết bị số là các thiết bị điện tử hoạt động dựa trên xử lý và truyền tải thông tin dưới dạng tín hiệu số, giúp lưu trữ, xử lý và truyền đạt dữ liệu một cách chính xác và hiệu quả."@vi ;
+    ex:explainsConcept ex:g12_conceptThietBiSo .
+
+  ex:gendef_g12_conceptThietBiThongMinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết bị thông minh"@vi ;
+    ex:hasDefinitionText "Thiết bị thông minh là các thiết bị có khả năng kết nối, trao đổi dữ liệu và thực hiện các nhiệm vụ tự động hoặc theo lập trình để hỗ trợ người dùng trong cuộc sống và công việc."@vi ;
+    ex:explainsConcept ex:g12_conceptThietBiThongMinh .
+
+  ex:gendef_g12_conceptThietLapKetNoiMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiết lập kết nối mạng"@vi ;
+    ex:hasDefinitionText "Thiết lập kết nối mạng là quá trình kết nối các thiết bị như máy tính, thiết bị di động với các thiết bị mạng như Access Point, Switch để tạo thành mạng và sử dụng các chức năng chia sẻ tài nguyên."@vi ;
+    ex:explainsConcept ex:g12_conceptThietLapKetNoiMang .
+
+  ex:gendef_g12_conceptThieuNgonNguHinhThe a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thiếu ngôn ngữ hình thể"@vi ;
+    ex:hasDefinitionText "Thiếu ngôn ngữ hình thể là trạng thái khi giao tiếp qua không gian mạng không có các tín hiệu cử chỉ, nét mặt và biểu cảm cơ thể, làm cho tin nhắn văn bản dễ bị hiểu lầm về diễn giải và ngữ cảnh."@vi ;
+    ex:explainsConcept ex:g12_conceptThieuNgonNguHinhThe .
+
+  ex:gendef_g12_conceptThuocTinhCSS a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuộc tính CSS"@vi ;
+    ex:hasDefinitionText "Thuộc tính CSS là các thuộc tính dùng để xác định các đặc điểm về kiểu dáng như màu sắc, cỡ chữ, font chữ, độ đậm và màu nền của các phần tử trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptThuocTinhCSS .
+
+  ex:gendef_g12_conceptThuocTinhHTML a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Thuộc tính HTML"@vi ;
+    ex:hasDefinitionText "Thuộc tính HTML là các thông tin được khai báo trong thẻ mở của phần tử, dưới dạng cặp tên thuộc tính và giá trị, dùng để xác định đặc điểm hoặc hành vi của phần tử đó."@vi ;
+    ex:explainsConcept ex:g12_conceptThuocTinhHTML .
+
+  ex:gendef_g12_conceptTieuChiDanhGiaWebsite a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tiêu chí đánh giá website"@vi ;
+    ex:hasDefinitionText "Tiêu chí đánh giá website là các yếu tố như cấu trúc và bố cục phù hợp, thanh điều hướng và chân trang có liên kết, biểu mẫu liên hệ, nội dung phù hợp, trình bày đa dạng và màu sắc hài hòa để đánh giá chất lượng của website."@vi ;
+    ex:explainsConcept ex:g12_conceptTieuChiDanhGiaWebsite .
+
+  ex:gendef_g12_conceptTimer a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Timer"@vi ;
+    ex:hasDefinitionText "Timer là chức năng cho phép đặt lịch bật hoặc tắt thiết bị tự động theo thời gian đã định trước."@vi ;
+    ex:explainsConcept ex:g12_conceptTimer .
+
+  ex:gendef_g12_conceptTinhNguoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tình người"@vi ;
+    ex:hasDefinitionText "Tình người là sự thể hiện chân thành, đồng cảm, thấu hiểu, độ lượng, vị tha và khoan dung trong cách ứng xử giữa con người với nhau."@vi ;
+    ex:explainsConcept ex:g12_conceptTinhNguoi .
+
+  ex:gendef_g12_conceptTinhNguoiNoiRong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tính người"@vi ;
+    ex:hasDefinitionText "Tính người là những phẩm chất thể hiện sự yêu cái tốt, thích cái đẹp, ghét cái xấu, chống cái ác, ủng hộ công bằng và lẽ phải, cũng như giúp đỡ người yếu trong xã hội."@vi ;
+    ex:explainsConcept ex:g12_conceptTinhNguoiNoiRong .
+
+  ex:gendef_g12_conceptTinhNhanVanTheGioiAo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tính nhân văn trong thế giới ảo"@vi ;
+    ex:hasDefinitionText "Tính nhân văn trong thế giới ảo là nền tảng ứng xử phản ánh văn hóa tốt và nhân cách đẹp, giúp duy trì mối quan hệ tốt đẹp giữa con người với con người và môi trường trong không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptTinhNhanVanTheGioiAo .
+
+  ex:gendef_g12_conceptTinhXaHoiLoaiNguoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Tính xã hội loài người"@vi ;
+    ex:hasDefinitionText "Tính xã hội loài người là mong muốn xã hội thịnh vượng và người người hạnh phúc, thể hiện sự gắn kết và quan tâm lẫn nhau trong cộng đồng."@vi ;
+    ex:explainsConcept ex:g12_conceptTinhXaHoiLoaiNguoi .
+
+  ex:gendef_g12_conceptTitle a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần tử title"@vi ;
+    ex:hasDefinitionText "Phần tử title trong HTML nằm trong phần head và dùng để khai báo tiêu đề của trang web, hiển thị trên thanh tiêu đề hoặc tab của trình duyệt."@vi ;
+    ex:explainsConcept ex:g12_conceptTitle .
+
+  ex:gendef_g12_conceptTrangChiTiet a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trang chi tiết"@vi ;
+    ex:hasDefinitionText "Trang chi tiết là trang web chứa nội dung cụ thể, chi tiết về một chủ đề hoặc mục được trình bày trong website."@vi ;
+    ex:explainsConcept ex:g12_conceptTrangChiTiet .
+
+  ex:gendef_g12_conceptTrangChu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trang chủ"@vi ;
+    ex:hasDefinitionText "Trang chủ là trang web chính đầu tiên của một website, thường chứa các liên kết đến các trang chuyên mục và trang chi tiết khác trong cùng website."@vi ;
+    ex:explainsConcept ex:g12_conceptTrangChu .
+
+  ex:gendef_g12_conceptTrangChuyenMuc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trang chuyên mục"@vi ;
+    ex:hasDefinitionText "Trang chuyên mục là trang web trong một website dùng để trình bày các nội dung được phân loại theo chủ đề hoặc lĩnh vực cụ thể."@vi ;
+    ex:explainsConcept ex:g12_conceptTrangChuyenMuc .
+
+  ex:gendef_g12_conceptTrangWeb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trang web"@vi ;
+    ex:hasDefinitionText "Trang web là một tập hợp các trang được tạo và đặt tên để thể hiện nội dung hoặc vai trò cụ thể, như Trang chủ, Giới thiệu, Hoạt động."@vi ;
+    ex:explainsConcept ex:g12_conceptTrangWeb .
+
+  ex:gendef_g12_conceptTrangWebDong a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trang web động"@vi ;
+    ex:hasDefinitionText "Trang web động là trang web có nội dung thay đổi theo thời gian hoặc theo tương tác của người dùng, không cố định như trang web tĩnh."@vi ;
+    ex:explainsConcept ex:g12_conceptTrangWebDong .
+
+  ex:gendef_g12_conceptTrangWebTinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trang web tĩnh"@vi ;
+    ex:hasDefinitionText "Trang web tĩnh là trang web được tạo bằng HTML với nội dung cố định, không thay đổi khi người dùng truy cập."@vi ;
+    ex:explainsConcept ex:g12_conceptTrangWebTinh .
+
+  ex:gendef_g12_conceptTraoDoiThongTin a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trao đổi thông tin giữa máy tính và điện thoại"@vi ;
+    ex:hasDefinitionText "Trao đổi thông tin giữa máy tính và điện thoại là quá trình kết nối và chuyển dữ liệu giữa hai thiết bị qua các phương tiện như Wi-Fi, Internet, ứng dụng hoặc dịch vụ trực tuyến để gửi và nhận tệp, tin nhắn hoặc thông tin khác."@vi ;
+    ex:explainsConcept ex:g12_conceptTraoDoiThongTin .
+
+  ex:gendef_g12_conceptTriTueConNguoi a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trí tuệ con người"@vi ;
+    ex:hasDefinitionText "Trí tuệ con người là khả năng tư duy, suy luận logic, phân tích, giải quyết vấn đề, học hỏi, sáng tạo và điều chỉnh cảm xúc."@vi ;
+    ex:explainsConcept ex:g12_conceptTriTueConNguoi .
+
+  ex:gendef_g12_conceptTroLiAo a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Trợ lí ảo"@vi ;
+    ex:hasDefinitionText "Trợ lí ảo là ứng dụng trí tuệ nhân tạo giúp hỗ trợ người dùng thực hiện các tác vụ như trả lời câu hỏi, tìm kiếm thông tin và điều khiển thiết bị thông minh qua giọng nói hoặc văn bản."@vi ;
+    ex:explainsConcept ex:g12_conceptTroLiAo .
+
+  ex:gendef_g12_conceptTruyenTep a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Truyền tệp"@vi ;
+    ex:hasDefinitionText "Truyền tệp là quá trình gửi các tệp như ảnh, video, âm thanh từ thiết bị này sang thiết bị khác qua kết nối mạng hoặc không dây để chia sẻ và sử dụng trên thiết bị nhận."@vi ;
+    ex:explainsConcept ex:g12_conceptTruyenTep .
+
+  ex:gendef_g12_conceptTuringTest a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Turing Test"@vi ;
+    ex:hasDefinitionText "Turing Test là bài kiểm tra do Alan Turing đề xuất để đánh giá khả năng máy tính thể hiện hành vi thông minh, trong đó người thẩm vấn không thể phân biệt được câu trả lời của máy tính và con người qua các câu hỏi."@vi ;
+    ex:explainsConcept ex:g12_conceptTuringTest .
+
+  ex:gendef_g12_conceptUAV a ex:DefinitionText ;
+    rdfs:label "Định nghĩa UAV"@vi ;
+    ex:hasDefinitionText "UAV là thiết bị bay không người lái ứng dụng trí tuệ nhân tạo kết hợp cảm biến và thị giác máy tính để tránh va chạm, xác định vị trí, theo dõi mục tiêu và ghi thông tin mặt đất."@vi ;
+    ex:explainsConcept ex:g12_conceptUAV .
+
+  ex:gendef_g12_conceptUDP a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Giao thức UDP"@vi ;
+    ex:hasDefinitionText "UDP là giao thức vận chuyển trong mạng máy tính, dùng để truyền dữ liệu nhanh nhưng không đảm bảo độ tin cậy như TCP."@vi ;
+    ex:explainsConcept ex:g12_conceptUDP .
+
+  ex:gendef_g12_conceptURL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa URL"@vi ;
+    ex:hasDefinitionText "URL là địa chỉ của tài nguyên trên mạng, bao gồm giao thức, tên miền và đường dẫn, dùng để xác định vị trí và truy cập các trang web hoặc tệp tin."@vi ;
+    ex:explainsConcept ex:g12_conceptURL .
+
+  ex:gendef_g12_conceptUngDungDieuKhien a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ứng dụng điều khiển thiết bị thông minh"@vi ;
+    ex:hasDefinitionText "Ứng dụng điều khiển thiết bị thông minh là phần mềm trên điện thoại cho phép người dùng kết nối và điều khiển từ xa các thiết bị điện như ổ cắm hoặc đèn thông minh, hỗ trợ bật tắt, điều chỉnh hoạt động và đặt lịch trình cho thiết bị."@vi ;
+    ex:explainsConcept ex:g12_conceptUngDungDieuKhien .
+
+  ex:gendef_g12_conceptUngDungTinHoc a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ứng dụng tin học"@vi ;
+    ex:hasDefinitionText "Ứng dụng tin học là việc sử dụng các công cụ và kỹ thuật tin học để giải quyết các vấn đề thực tiễn trong nhiều lĩnh vực khác nhau."@vi ;
+    ex:explainsConcept ex:g12_conceptUngDungTinHoc .
+
+  ex:gendef_g12_conceptUngHoViecTot a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ủng hộ việc tốt"@vi ;
+    ex:hasDefinitionText "Ủng hộ việc tốt là bày tỏ thái độ đồng cảm và khích lệ những hành động tích cực, người tốt, việc tốt nhằm lan tỏa giá trị nhân văn trên không gian mạng."@vi ;
+    ex:explainsConcept ex:g12_conceptUngHoViecTot .
+
+  ex:gendef_g12_conceptUngXuNhanVan a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Ứng xử nhân văn"@vi ;
+    ex:hasDefinitionText "Ứng xử nhân văn là cách cư xử thể hiện tình người, sự đồng cảm, khoan dung và công bằng, đồng thời phản đối các hành vi xấu, bắt nạt, quấy rối trên không gian mạng nhằm lan tỏa giá trị tích cực và góp phần xây dựng xã hội tốt đẹp hơn."@vi ;
+    ex:explainsConcept ex:g12_conceptUngXuNhanVan .
+
+  ex:gendef_g12_conceptVanDeTiemAnMang a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Vấn đề tiềm ẩn của giao tiếp qua không gian mạng"@vi ;
+    ex:hasDefinitionText "Vấn đề tiềm ẩn của giao tiếp qua không gian mạng là việc thiếu ngôn ngữ hình thể và tín hiệu cảm xúc, dẫn đến tin nhắn văn bản dễ bị hiểu lầm về diễn giải và ngữ cảnh."@vi ;
+    ex:explainsConcept ex:g12_conceptVanDeTiemAnMang .
+
+  ex:gendef_g12_conceptVanDongUngHoThamHoa a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Vận động ủng hộ đồng bào bị thiên tai, thảm hoạ"@vi ;
+    ex:hasDefinitionText "Vận động ủng hộ đồng bào bị thiên tai, thảm hoạ là tham gia kêu gọi, hỗ trợ và giúp đỡ những người bị thiệt hại do thiên tai, thảm hoạ nhằm thể hiện giá trị nhân văn và tinh thần tương thân tương ái."@vi ;
+    ex:explainsConcept ex:g12_conceptVanDongUngHoThamHoa .
+
+  ex:gendef_g12_conceptViPhamQuyenRiengTu a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Vi phạm quyền riêng tư"@vi ;
+    ex:hasDefinitionText "Vi phạm quyền riêng tư là hành vi làm lộ hoặc sử dụng trái phép thông tin cá nhân, gây mất an toàn và ảnh hưởng đến quyền bảo mật của người dùng."@vi ;
+    ex:explainsConcept ex:g12_conceptViPhamQuyenRiengTu .
+
+  ex:gendef_g12_conceptVideoTrangWeb a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Video trên trang web"@vi ;
+    ex:hasDefinitionText "Video trên trang web là nội dung đa phương tiện được chèn vào trang web nhằm minh họa, giới thiệu sản phẩm, dịch vụ hoặc tin tức, giúp trang web trở nên sinh động và thu hút hơn."@vi ;
+    ex:explainsConcept ex:g12_conceptVideoTrangWeb .
+
+  ex:gendef_g12_conceptVideoURL a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Video URL"@vi ;
+    ex:hasDefinitionText "Video URL là địa chỉ liên kết trực tuyến dùng để chèn hoặc thay đổi video trên trang web."@vi ;
+    ex:explainsConcept ex:g12_conceptVideoURL .
+
+  ex:gendef_g12_conceptVungLamViecChinh a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Vùng làm việc chính"@vi ;
+    ex:hasDefinitionText "Vùng làm việc chính là khu vực trong giao diện phần mềm nơi người dùng thực hiện các thao tác chính để tạo và chỉnh sửa nội dung."@vi ;
+    ex:explainsConcept ex:g12_conceptVungLamViecChinh .
+
+  ex:gendef_g12_conceptWebAddress a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Web Address"@vi ;
+    ex:hasDefinitionText "Web Address là địa chỉ của một trang web dùng để tạo liên kết đến trang đó trên Internet."@vi ;
+    ex:explainsConcept ex:g12_conceptWebAddress .
+
+  ex:gendef_g12_conceptWebPage a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Web page"@vi ;
+    ex:hasDefinitionText "Trang web là một trang thông tin trên Internet được tạo ra bằng phần mềm tạo website, chứa nội dung như văn bản, hình ảnh, video và liên kết, có thể được truy cập qua trình duyệt."@vi ;
+    ex:explainsConcept ex:g12_conceptWebPage .
+
+  ex:gendef_g12_conceptWebsite a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Website"@vi ;
+    ex:hasDefinitionText "Website là tập hợp các trang web được xây dựng bằng HTML, bao gồm trang chủ, trang chuyên mục và trang chi tiết, chứa các nội dung như tiêu đề mục, đoạn văn, bảng biểu, hình ảnh, âm thanh và siêu liên kết."@vi ;
+    ex:explainsConcept ex:g12_conceptWebsite .
+
+  ex:gendef_g12_conceptWebsiteNgoaiTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm tạo website ngoại tuyến"@vi ;
+    ex:hasDefinitionText "Phần mềm tạo website ngoại tuyến là phần mềm cho phép người dùng thiết kế và tạo website trên máy tính mà không cần kết nối Internet, thường hỗ trợ nhiều mẫu trình bày và hoạt động trên các hệ điều hành như Windows, MacOS, Linux."@vi ;
+    ex:explainsConcept ex:g12_conceptWebsiteNgoaiTuyen .
+
+  ex:gendef_g12_conceptWebsiteTrucTuyen a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Phần mềm tạo website trực tuyến"@vi ;
+    ex:hasDefinitionText "Phần mềm tạo website trực tuyến là công cụ cho phép người dùng thiết kế và xây dựng trang web ngay trên trình duyệt mà không cần cài đặt phần mềm riêng, giúp tạo nội dung và bố cục dễ dàng thông qua giao diện trực quan."@vi ;
+    ex:explainsConcept ex:g12_conceptWebsiteTrucTuyen .
+
+  ex:gendef_g12_conceptWhiteMode a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Chế độ đèn trắng"@vi ;
+    ex:hasDefinitionText "Chế độ đèn trắng là chế độ điều khiển đèn thông minh để tạo ánh sáng trắng, cho phép thay đổi mức độ sáng và độ trắng của đèn từ vàng sang trắng."@vi ;
+    ex:explainsConcept ex:g12_conceptWhiteMode .
+
+  ex:gendef_g12_conceptWindows10 a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Windows 10"@vi ;
+    ex:hasDefinitionText "Windows 10 là hệ điều hành trên máy tính được sử dụng để quản lý kết nối mạng, chia sẻ dữ liệu và kết nối với các thiết bị khác như ti vi thông minh hoặc máy in trong môi trường học tập và làm việc."@vi ;
+    ex:explainsConcept ex:g12_conceptWindows10 .
+
+  ex:gendef_g12_conceptXeTuLai a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xe tự lái"@vi ;
+    ex:hasDefinitionText "Xe tự lái là phương tiện sử dụng hệ thống trí tuệ nhân tạo để nhận thức môi trường xung quanh, chấp hành luật giao thông và tránh va chạm mà không cần người điều khiển trực tiếp."@vi ;
+    ex:explainsConcept ex:g12_conceptXeTuLai .
+
+  ex:gendef_g12_conceptXoaBoMacCam a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Xoá bỏ mặc cảm trong giao tiếp"@vi ;
+    ex:hasDefinitionText "Xoá bỏ mặc cảm trong giao tiếp là quá trình giảm bớt rào cản và sự tự ti ban đầu khi giao tiếp, giúp người có khiếm khuyết dễ dàng trao đổi mà không cần sự hỗ trợ."@vi ;
+    ex:explainsConcept ex:g12_conceptXoaBoMacCam .
+
+  ex:gendef_g12_conceptXoxe a ex:DefinitionText ;
+    rdfs:label "Định nghĩa Người máy Xoxe"@vi ;
+    ex:hasDefinitionText "Người máy Xoxe là robot thông minh của công ty AILife có khả năng nghe, nhìn, nhận biết môi trường, hiểu ngôn ngữ tự nhiên, giao tiếp nhiều ngôn ngữ, nhận dạng khuôn mặt và cảm xúc, đồng thời có khả năng học và dự đoán đặc điểm người đối thoại."@vi ;
+    ex:explainsConcept ex:g12_conceptXoxe .
+
+  ex:gendef_g12_conceptYTeAI a ex:DefinitionText ;
+    rdfs:label "Định nghĩa AI trong y tế và chăm sóc sức khoẻ"@vi ;
+    ex:hasDefinitionText "AI trong y tế và chăm sóc sức khoẻ là các hệ thống thông minh hỗ trợ chẩn đoán và phát hiện bệnh chính xác, giúp nâng cao hiệu quả điều trị và chăm sóc bệnh nhân."@vi ;
+    ex:explainsConcept ex:g12_conceptYTeAI .
+};
