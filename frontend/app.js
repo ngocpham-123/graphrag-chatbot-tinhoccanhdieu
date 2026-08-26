@@ -293,7 +293,7 @@ function appendSparqlBadge(query) {
       if (!data.rows || data.rows.length === 0) {
         graphBox.textContent = "Truy vấn không trả về kết quả nào.";
       } else {
-        await renderGraphInto(graphBox, data.columns, data.rows);
+        await renderGraphInto(graphBox, data);
       }
       graphRendered = true;
       btn.textContent = "Ẩn đồ thị";
@@ -479,8 +479,8 @@ sparqlRunBtn.addEventListener("click", async () => {
 
     const data = await res.json();
     console.log("SPARQL response:", data);
-    console.log("Columns:", data.columns, "Rows:", data.rows.length);
-    await renderGraph(data.columns, data.rows);
+    console.log("Form:", data.query_form, "Columns:", data.columns, "Rows:", data.rows.length);
+    await renderGraph(data);
   } catch (err) {
     graphError.textContent = err.message;
     graphError.classList.remove("hidden");
@@ -505,38 +505,144 @@ function isTriplePattern(columns) {
   );
 }
 
+// ── GraphDB-style class palette ──────────────────────────────────
+// GraphDB Workbench colours a node by its rdf:type. These are the classes this
+// textbook ontology actually instantiates, matched to the shades the Workbench
+// visual graph uses for them; any other class falls back to a hash so it still
+// gets a stable, distinct pastel instead of blending into its neighbours.
+const CLASS_COLORS = {
+  KnowledgeConcept: "#7ec5db",
+  DefinitionText: "#f4736f",
+  Lesson: "#8b81c9",
+  Topic: "#c9e265",
+  GradeLevel: "#bda2e3",
+  Textbook: "#6ede8b",
+  Figure: "#f6c46a",
+};
+
+const FALLBACK_CLASS_COLORS = [
+  "#8fd0c4", "#e9a1c8", "#a8c5ea", "#e6cf7e",
+  "#b7d68c", "#d5a9e6", "#8dd6a8", "#eaa98c",
+];
+
+const UNTYPED_COLOR = "#cbd2d9";
+
+// Predicates whose literal object is the node's caption rather than a fact
+// about it — GraphDB shows these as the node's name, not as a separate node.
+const LABEL_PREDICATES = new Set([
+  "http://www.w3.org/2000/01/rdf-schema#label",
+  "http://www.w3.org/2004/02/skos/core#prefLabel",
+]);
+
+function hashColor(name) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+  return FALLBACK_CLASS_COLORS[hash % FALLBACK_CLASS_COLORS.length];
+}
+
+function colorForClass(classUri) {
+  const name = localName(classUri || "");
+  if (!name) return UNTYPED_COLOR;
+  return CLASS_COLORS[name] || hashColor(name);
+}
+
+// rdf:type is the best thing to colour by, but a SELECT projecting only labels
+// ("SELECT ?lessonLabel ?gradeLabel") has no type to offer, so those nodes fall
+// back to a per-column colour assigned at build time — the nearest thing to
+// colouring by class, instead of rendering the whole graph in one grey.
+function nodeBackground(info) {
+  if (info.classUri) return colorForClass(info.classUri);
+  return info.fallbackColor || UNTYPED_COLOR;
+}
+
+// Built as an element, not an HTML string: captions and definition texts are
+// arbitrary book content and must not be interpreted as markup.
+function tooltipElement(lines) {
+  const el = document.createElement("div");
+  el.style.whiteSpace = "pre-line";
+  el.style.maxWidth = "340px";
+  el.textContent = lines.join("\n");
+  return el;
+}
+
 // Build vis-network graph from SPARQL results
 // Build a vis-network graph from SPARQL results into the given container.
-async function renderGraphInto(container, columns, rows) {
+// `data` is the /api/chat/sparql payload: columns, rows, term_types, node_meta.
+async function renderGraphInto(container, data) {
   await loadFigureManifest();
+
+  const columns = data.columns || [];
+  const rows = data.rows || [];
+  const termTypes = data.term_types || [];
+  const nodeMeta = data.node_meta || {};
+  const tripleMode = isTriplePattern(columns);
 
   const nodesMap = new Map(); // id -> { label, type, imageUrl }
   const edges = [];
+  const seenEdges = new Set();
+  const addEdge = (from, to, label) => {
+    const key = `${from}|${to}|${label}`;
+    if (seenEdges.has(key)) return;
+    seenEdges.add(key);
+    edges.push({ from, to, label });
+  };
 
-  if (isTriplePattern(columns)) {
-    for (const row of rows) {
-      const subjectUri = row[0];
-      const predicateUri = row[1];
-      const objectUri = row[2];
-      const predName = localName(predicateUri);
+  if (tripleMode) {
+    // GraphDB Workbench draws only resource-to-resource edges: a node's
+    // rdfs:label becomes its caption and its other literals show on hover,
+    // instead of every literal becoming a node of its own. Mirror that, or the
+    // graph drowns in leaf nodes holding paragraphs of Vietnamese text.
+    const captions = new Map(); // uri -> caption taken from the result itself
+    const literals = new Map(); // uri -> [[predicateCaption, value], ...]
+    const resources = new Set();
 
-      if (!nodesMap.has(subjectUri)) {
-        const subjFigureUrl = figureUrlForValue(subjectUri);
-        nodesMap.set(subjectUri, {
-          label: localName(subjectUri),
-          type: subjFigureUrl ? "image" : "subject",
-          imageUrl: subjFigureUrl,
-        });
+    // term_types is authoritative; the regex only covers a caller that did not
+    // send it, and would otherwise mistake a literal holding a URL for a node.
+    const isUri = (value, kind) =>
+      kind ? kind === "uri" : /^https?:\/\//.test(value || "");
+
+    // A predicate's own rdfs:label is why "belongsToGrade" reads as
+    // "belongs to grade"; the ones the ontology never labelled keep their
+    // local name, exactly as the Workbench shows them.
+    const predicateCaption = (uri) =>
+      (nodeMeta[uri] && nodeMeta[uri].label) || localName(uri);
+
+    for (let i = 0; i < rows.length; i++) {
+      const [subject, predicate, object] = rows[i];
+      const kinds = termTypes[i] || [];
+      if (!subject) continue;
+      resources.add(subject);
+
+      if (!isUri(object, kinds[2])) {
+        if (LABEL_PREDICATES.has(predicate)) {
+          if (!captions.has(subject)) captions.set(subject, object);
+        } else {
+          const list = literals.get(subject) || [];
+          list.push([predicateCaption(predicate), object]);
+          literals.set(subject, list);
+        }
+        continue;
       }
-      const figureUrl = figureUrlForValue(objectUri);
-      if (!nodesMap.has(objectUri)) {
-        nodesMap.set(objectUri, {
-          label: localName(objectUri),
-          type: figureUrl ? "image" : "object",
-          imageUrl: figureUrl,
-        });
-      }
-      edges.push({ from: subjectUri, to: objectUri, label: predName });
+
+      resources.add(object);
+      addEdge(subject, object, predicateCaption(predicate));
+    }
+
+    // Every resource mentioned gets a node, including one that only carried a
+    // label: the Workbench shows those as isolated nodes rather than hiding
+    // them, and silently dropping them would misrepresent the result.
+    for (const uri of resources) {
+      const meta = nodeMeta[uri] || {};
+      const figureUrl = figureUrlForValue(uri);
+      nodesMap.set(uri, {
+        label: captions.get(uri) || meta.label || localName(uri),
+        type: figureUrl ? "image" : "class",
+        imageUrl: figureUrl,
+        classUri: meta.type || "",
+        columnKey: "",
+        literals: literals.get(uri) || [],
+        uri,
+      });
     }
   } else {
     // Star/hierarchy mode. Subjects are keyed by VALUE (not per row) so the
@@ -546,35 +652,61 @@ async function renderGraphInto(container, columns, rows) {
     // renders as one connected graph instead of per-row islands.
     const HIERARCHY = ["lesson", "topic", "grade"];
     const hierRank = (col) => HIERARCHY.findIndex((h) => col.toLowerCase().includes(h));
-    const truncate = (s) => (s.length > 60 ? s.substring(0, 57) + "…" : s);
-    const seenEdges = new Set();
-    const addEdge = (from, to, label) => {
-      const key = `${from}|${to}|${label}`;
-      if (seenEdges.has(key)) return;
-      seenEdges.add(key);
-      edges.push({ from, to, label });
+
+    // Reading term_types keeps localName() away from literals, which it would
+    // otherwise chop at the last slash in a sentence. A projected URI shows its
+    // stored label and carries a class to colour by; a literal is its own
+    // caption and has none, so it is coloured by the column it came from.
+    const isUri = (value, kind) =>
+      kind ? kind === "uri" : /^https?:\/\//.test(value || "");
+    const captionFor = (value, kind) => {
+      if (!isUri(value, kind)) return value;
+      const meta = nodeMeta[value];
+      return (meta && meta.label) || localName(value);
+    };
+    const classFor = (value, kind) => {
+      if (!isUri(value, kind)) return "";
+      const meta = nodeMeta[value];
+      return (meta && meta.type) || "";
+    };
+    // Literal columns have no rdf:type to colour by, so each column takes its
+    // colour from its position in the projection: distinct by construction,
+    // where hashing the column *name* collided and made ?topicLabel and
+    // ?gradeLabel come out the same shade.
+    const columnColor = new Map(
+      columns.map((col, i) => [col, FALLBACK_CLASS_COLORS[i % FALLBACK_CLASS_COLORS.length]])
+    );
+    const makeNode = (value, kind, columnKey) => {
+      const figureUrl = figureUrlForValue(value);
+      return {
+        label: captionFor(value, kind),
+        type: figureUrl ? "image" : "class",
+        imageUrl: figureUrl,
+        classUri: classFor(value, kind),
+        columnKey,
+        fallbackColor: columnColor.get(columnKey),
+        uri: value,
+        literals: [],
+      };
     };
 
     const propertyCols = columns.slice(1);
-    for (const row of rows) {
-      const subjectUri = row[0];
-      const subjectId = `subj_${subjectUri}`;
+    for (let rowIdx = 0; rowIdx < rows.length; rowIdx++) {
+      const row = rows[rowIdx];
+      const kinds = termTypes[rowIdx] || [];
+      const subjectValue = row[0];
+      const subjectId = `subj_${subjectValue}`;
       if (!nodesMap.has(subjectId)) {
-        const subjFigureUrl = figureUrlForValue(subjectUri);
-        nodesMap.set(subjectId, {
-          label: localName(subjectUri),
-          type: subjFigureUrl ? "image" : "subject",
-          imageUrl: subjFigureUrl,
-        });
+        nodesMap.set(subjectId, makeNode(subjectValue, kinds[0], columns[0]));
       }
 
       // Curriculum chain: child level links to the next present parent level.
       const hierCols = propertyCols
-        .map((col, i) => ({ col, value: row[i + 1], rank: hierRank(col) }))
+        .map((col, i) => ({ col, value: row[i + 1], kind: kinds[i + 1], rank: hierRank(col) }))
         .filter((c) => c.rank !== -1 && c.value)
         .sort((a, b) => a.rank - b.rank);
       let parentId = subjectId;
-      for (const { col, value, rank } of hierCols) {
+      for (const { col, value, kind, rank } of hierCols) {
         // Key each level by its ancestors too: "Chủ đề B" of Lớp 10 and the
         // identically-labeled "Chủ đề B" of Lớp 12 must stay separate nodes.
         const ancestors = hierCols
@@ -583,12 +715,7 @@ async function renderGraphInto(container, columns, rows) {
           .join("|");
         const hierId = `hier_${col}_${ancestors}_${value}`;
         if (!nodesMap.has(hierId)) {
-          const figureUrl = figureUrlForValue(value);
-          nodesMap.set(hierId, {
-            label: truncate(localName(value)),
-            type: figureUrl ? "image" : "object",
-            imageUrl: figureUrl,
-          });
+          nodesMap.set(hierId, makeNode(value, kind, col));
         }
         addEdge(parentId, hierId, col.replace(/_?label$/i, ""));
         parentId = hierId;
@@ -600,55 +727,83 @@ async function renderGraphInto(container, columns, rows) {
         const value = row[colIdx + 1];
         if (!value || hierRank(colName) !== -1) continue;
         const valueId = `${subjectId}_${colName}_${value}`;
-        const figureUrl = figureUrlForValue(value);
         if (!nodesMap.has(valueId)) {
-          nodesMap.set(valueId, {
-            label: truncate(localName(value)),
-            type: figureUrl ? "image" : "property",
-            imageUrl: figureUrl,
-          });
+          nodesMap.set(valueId, makeNode(value, kinds[colIdx + 1], colName));
         }
         addEdge(subjectId, valueId, colName);
       }
     }
   }
 
-  const nodeColors = {
-    subject: { background: "#10a37f", border: "#0d8c6d" },
-    object: { background: "#4a90d9", border: "#3a7bc8" },
-    property: { background: "#8b5cf6", border: "#7c3aed" },
-  };
+  // Degree drives hub sizing, and is counted the same way in both modes.
+  const degreeById = new Map();
+  for (const e of edges) {
+    degreeById.set(e.from, (degreeById.get(e.from) || 0) + 1);
+    degreeById.set(e.to, (degreeById.get(e.to) || 0) + 1);
+  }
 
   const nodeEntries = [];
   let nodeId = 0;
   const idLookup = new Map();
-  for (const [uri, info] of nodesMap) {
+  for (const [key, info] of nodesMap) {
     nodeId++;
-    idLookup.set(uri, nodeId);
-    const colors = nodeColors[info.type] || nodeColors.object;
+    idLookup.set(key, nodeId);
     if (info.type === "image" && info.imageUrl) {
       nodeEntries.push({
         id: nodeId, label: info.label, shape: "image", image: info.imageUrl,
         size: 50, borderWidth: 3,
         color: { border: "#10a37f", background: "#1a1a1a" },
         shapeProperties: { useBorderWithImage: true, useImageSize: false },
-        font: { color: "#ececec", size: 12, vadjust: 8 },
+        // The canvas is near-white and an image node's caption is drawn below
+        // the image, on the canvas, so it needs dark text.
+        font: { color: "#1f2933", size: 12, vadjust: 8 },
       });
-    } else {
-      nodeEntries.push({
-        id: nodeId, label: info.label,
-        color: { background: colors.background, border: colors.border },
-        font: { color: "#ececec", size: info.type === "subject" ? 15 : 13 },
-        shape: info.type === "subject" ? "dot" : "box",
-        size: info.type === "subject" ? 22 : 12, borderWidth: 2,
-      });
+      continue;
     }
+    // A filled pastel circle with the caption wrapped inside it, coloured by
+    // rdf:type — the Workbench's node style. "circle" sizes itself to the
+    // caption, so widthConstraint is what wraps a long Vietnamese title
+    // rather than stretching the node across the canvas.
+    const background = nodeBackground(info);
+    const hub = (degreeById.get(key) || 0) >= 4;
+    const tooltip = [info.label];
+    const typeName = localName(info.classUri || "");
+    if (typeName) tooltip.push(typeName);
+    else if (info.columnKey) tooltip.push(`?${info.columnKey}`);
+    if (info.uri && info.uri !== info.label) tooltip.push(info.uri);
+    for (const [name, value] of info.literals) {
+      tooltip.push(`${name}: ${value.length > 200 ? value.slice(0, 197) + "…" : value}`);
+    }
+    // A "circle" grows to fit its caption, so a whole definition text would
+    // either burst the node or wrap into an unreadable tower. Clip the caption
+    // and keep the full value in the tooltip, as the Workbench does.
+    const caption =
+      info.label.length > 38 ? info.label.slice(0, 37) + "…" : info.label;
+    nodeEntries.push({
+      id: nodeId,
+      label: caption,
+      title: tooltipElement(tooltip),
+      shape: "circle",
+      color: {
+        background,
+        border: background,
+        highlight: { background, border: "#52606d" },
+      },
+      font: { color: "#1f2933", size: hub ? 15 : caption.length > 18 ? 11 : 13 },
+      borderWidth: hub ? 2 : 1,
+      widthConstraint: { minimum: hub ? 54 : 38, maximum: 96 },
+      margin: 10,
+    });
   }
 
   const edgeEntries = edges.map((e) => ({
     from: idLookup.get(e.from), to: idLookup.get(e.to), label: e.label,
-    arrows: "to", color: { color: "#666", highlight: "#aaa" },
-    font: { color: "#a0a0a0", size: 11, strokeWidth: 0 },
+    arrows: { to: { scaleFactor: 0.65 } },
+    color: { color: "#c5cbd3", highlight: "#7b8794" },
+    // Captions sit on the line, so they get a halo in the canvas colour to stay
+    // readable where an edge passes underneath them.
+    font: { color: "#c2691d", size: 11, strokeWidth: 4, strokeColor: "#f8fafc" },
+    smooth: { type: "continuous", roundness: 0.12 },
   }));
 
   if (typeof vis === "undefined") {
@@ -662,25 +817,40 @@ async function renderGraphInto(container, columns, rows) {
   const options = {
     physics: {
       solver: "forceAtlas2Based",
-      forceAtlas2Based: { gravitationalConstant: -40, centralGravity: 0.005, springLength: 150, springConstant: 0.04 },
-      stabilization: { iterations: 150 },
+      // Long springs and overlap avoidance: every edge carries a caption
+      // ("belongs to textbook"), and at tighter spacing those captions pile up
+      // on each other and on the nodes.
+      forceAtlas2Based: {
+        gravitationalConstant: -95,
+        centralGravity: 0.008,
+        springLength: 240,
+        springConstant: 0.05,
+        avoidOverlap: 0.7,
+      },
+      stabilization: { iterations: 400 },
     },
     interaction: { hover: true, tooltipDelay: 200, zoomView: true, dragView: true },
     layout: { improvedLayout: true },
   };
   const network = new vis.Network(container, visData, options);
-  network.on("stabilizationIterationsDone", () => network.fit());
+  // Freeze the layout once it settles, then frame it. Fitting while the
+  // simulation is still expanding (long springs plus avoidOverlap keep pushing
+  // nodes apart) leaves half the graph outside the viewport.
+  network.once("stabilizationIterationsDone", () => {
+    network.setOptions({ physics: false });
+    network.fit({ animation: false });
+  });
 }
 
 // Overlay path: validate, show overlay, then render into the overlay container.
-async function renderGraph(columns, rows) {
+async function renderGraph(data) {
   graphError.classList.add("hidden");
-  if (!rows || rows.length === 0) {
+  if (!data.rows || data.rows.length === 0) {
     graphError.textContent = "Truy vấn không trả về kết quả nào.";
     graphError.classList.remove("hidden");
     graphOverlay.classList.remove("hidden");
     return;
   }
   graphOverlay.classList.remove("hidden");
-  setTimeout(() => renderGraphInto(graphContainer, columns, rows), 100);
+  setTimeout(() => renderGraphInto(graphContainer, data), 100);
 }
