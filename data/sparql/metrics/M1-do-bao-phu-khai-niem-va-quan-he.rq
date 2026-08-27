@@ -1,0 +1,39 @@
+# M1 | Độ bao phủ khái niệm và quan hệ (luận văn Mục 4.3.1)
+# Tái lập: 935 khái niệm · 100% có định nghĩa · 928/935 = 99,3% gắn bài học
+#          7 khái niệm chưa neo · 92/98 = 93,9% bài học · 1303/289/134 quan hệ
+
+PREFIX ex:   <http://example.org/tinhoc10-cd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT
+  ?tongKhaiNiem
+  ?coDinhNghia   (ROUND(1000.0 * ?coDinhNghia / ?tongKhaiNiem) / 10 AS ?pctDinhNghia)
+  ?coBaiHoc      (ROUND(1000.0 * ?coBaiHoc    / ?tongKhaiNiem) / 10 AS ?pctBaiHoc)
+  (?tongKhaiNiem - ?coBaiHoc AS ?chuaNeoBaiHoc)
+  ?tongBaiHoc ?baiHocCoKhaiNiem
+  (ROUND(1000.0 * ?baiHocCoKhaiNiem / ?tongBaiHoc) / 10 AS ?pctBaiHocCoKhaiNiem)
+  ?soRelatedTo ?soSubConceptOf ?soPartOf
+WHERE {
+  { SELECT (COUNT(DISTINCT ?c) AS ?tongKhaiNiem) WHERE {
+      ?c a ex:KnowledgeConcept } }
+
+  { SELECT (COUNT(DISTINCT ?c) AS ?coDinhNghia) WHERE {
+      ?c a ex:KnowledgeConcept .
+      ?d ex:explainsConcept ?c ; ex:hasDefinitionText ?t } }
+
+  # "Gắn với bài học" = trực tiếp qua hasConcept HOẶC gián tiếp qua một đoạn văn
+  # mentionsConcept khái niệm đó - đúng như luận văn mô tả.
+  { SELECT (COUNT(DISTINCT ?c) AS ?coBaiHoc) WHERE {
+      ?c a ex:KnowledgeConcept .
+      { ?l ex:hasConcept ?c } UNION { ?u ex:mentionsConcept ?c } } }
+
+  { SELECT (COUNT(DISTINCT ?l) AS ?tongBaiHoc) WHERE {
+      ?l a ex:Lesson } }
+
+  # Chiều ngược lại: bài học có khái niệm gắn TRỰC TIẾP qua hasConcept.
+  { SELECT (COUNT(DISTINCT ?l) AS ?baiHocCoKhaiNiem) WHERE {
+      ?l a ex:Lesson ; ex:hasConcept ?c } }
+
+  { SELECT (COUNT(*) AS ?soRelatedTo)    WHERE { ?s ex:relatedTo    ?o } }
+  { SELECT (COUNT(*) AS ?soSubConceptOf) WHERE { ?s ex:subConceptOf ?o } }
+  { SELECT (COUNT(*) AS ?soPartOf)       WHERE { ?s ex:partOf       ?o } }
+}

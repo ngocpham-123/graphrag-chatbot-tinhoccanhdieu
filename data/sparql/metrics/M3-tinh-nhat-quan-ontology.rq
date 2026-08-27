@@ -1,0 +1,11 @@
+# M3 | Tính nhất quán ontology (luận văn Mục 4.3.1)
+# Tái lập: không có bộ ba rdfs:label nào thiếu thẻ ngôn ngữ (0 / 3.250)
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT
+  ?tongLabel ?thieuTheNgonNgu
+  (ROUND(1000.0 * (?tongLabel - ?thieuTheNgonNgu) / ?tongLabel) / 10 AS ?pctCoTheNgonNgu)
+WHERE {
+  { SELECT (COUNT(*) AS ?tongLabel) WHERE { ?s rdfs:label ?l } }
+  { SELECT (SUM(IF(LANG(?l) = "", 1, 0)) AS ?thieuTheNgonNgu) WHERE { ?s rdfs:label ?l } }
+}

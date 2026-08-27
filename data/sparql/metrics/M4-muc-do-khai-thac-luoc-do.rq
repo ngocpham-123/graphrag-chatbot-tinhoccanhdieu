@@ -1,0 +1,33 @@
+# M4 | Mức độ khai thác lược đồ - Class Richness OntoQA (luận văn Mục 4.3.1)
+# Nguon: data/sparql/metrics/ - moi file la MOT truy van, dan truc tiep vao GraphDB.
+#
+# Truy vấn này tái lập ĐÚNG con số đã in trong luận văn (Mục 4.3.1): 67,4%.
+
+
+PREFIX ex:  <http://example.org/tinhoc10-cd#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?lopKhaiBao ?kieuDangDungCoCaThe ?lopKhaiBaoCoCaThe
+  (ROUND(1000.0 * ?kieuDangDungCoCaThe / ?lopKhaiBao) / 10 AS ?classRichness)
+  (ROUND(1000.0 * ?lopKhaiBaoCoCaThe   / ?lopKhaiBao) / 10 AS ?crChatChe)
+  (?lopKhaiBao - ?kieuDangDungCoCaThe AS ?soLopTrongTheoLuanVan)
+WHERE {
+  # Mẫu số: số lớp được khai báo owl:Class trong không gian tên ex:
+  { SELECT (COUNT(DISTINCT ?c) AS ?lopKhaiBao) WHERE {
+      ?c a owl:Class .
+      FILTER(STRSTARTS(STR(?c), STR(ex:)))
+  } }
+
+  # Tử số như luận văn: mọi giá trị rdf:type ex: đang có cá thể, kể cả lớp
+  # chưa được khai báo owl:Class (ex:Project).
+  { SELECT (COUNT(DISTINCT ?t) AS ?kieuDangDungCoCaThe) WHERE {
+      ?s a ?t .
+      FILTER(STRSTARTS(STR(?t), STR(ex:)))
+  } }
+
+  # Tử số chặt chẽ: chỉ lớp đã khai báo owl:Class và có ít nhất một cá thể.
+  { SELECT (COUNT(DISTINCT ?c) AS ?lopKhaiBaoCoCaThe) WHERE {
+      ?c a owl:Class .
+      FILTER(STRSTARTS(STR(?c), STR(ex:)))
+      FILTER EXISTS { ?s a ?c }
+  } }
+}

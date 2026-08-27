@@ -1,0 +1,54 @@
+# M2 | Chất lượng liên kết tài nguyên đa phương tiện (luận văn Mục 4.3.1)
+# Nguon: data/sparql/metrics/ - moi file la MOT truy van, dan truc tiep vao GraphDB.
+#
+# Truy vấn này tái lập ĐÚNG bốn con số đã in trong luận văn (Mục 4.3.1):
+#   397 hình ảnh · 100% có illustratesConcept · 797 liên kết · 417/935 = 44,6%
+#
+# QUAN TRỌNG - hai phạm vi khác nhau trong cùng một câu:
+#   ?soHinhAnh, ?hinhCoLienKet  lấy trên phạm vi HẸP  : chỉ ex:Figure   (397)
+#   ?tongLienKet, ?soKhaiNiem   lấy trên phạm vi RỘNG : mọi chủ thể của
+#                                illustratesConcept   (453 tài nguyên)
+#
+# Phạm vi rộng gồm 397 ex:Figure + 24 ex:Diagram + 32 ex:Table. Vì vậy 797 liên
+# kết và 417 khái niệm KHÔNG phải chỉ do 397 hình ảnh sinh ra; riêng ex:Figure
+# chỉ cho 710 liên kết phủ 367 khái niệm (39,3%) - xem các cột ?..._chiFigure.
+#
+# Bảng đối chiếu ba phạm vi:
+#   Chỉ ex:Figure                      397 tài nguyên · 710 liên kết · 367 khái niệm
+#   ex:ImageResource (Figure+Diagram)  421 tài nguyên · 746 liên kết · 394 khái niệm
+#   Tất cả (thêm ex:Table)             453 tài nguyên · 797 liên kết · 417 khái niệm
+
+PREFIX ex: <http://example.org/tinhoc10-cd#>
+SELECT
+  # --- phạm vi hẹp: chỉ ex:Figure ---
+  ?soHinhAnh ?hinhCoLienKet
+  (ROUND(1000.0 * ?hinhCoLienKet / ?soHinhAnh) / 10 AS ?pctHinhCoLienKet)
+  # --- phạm vi rộng: mọi chủ thể của illustratesConcept (như luận văn) ---
+  ?tongLienKet ?soKhaiNiemDuocMinhHoa ?tongKhaiNiem
+  (ROUND(1000.0 * ?soKhaiNiemDuocMinhHoa / ?tongKhaiNiem) / 10 AS ?pctKhaiNiemCoHinh)
+  # --- cùng chỉ số nhưng chỉ tính trên ex:Figure, để thấy chênh lệch ---
+  ?tongLienKet_chiFigure ?soKhaiNiem_chiFigure
+  (ROUND(1000.0 * ?soKhaiNiem_chiFigure / ?tongKhaiNiem) / 10 AS ?pctKhaiNiem_chiFigure)
+WHERE {
+  { SELECT (COUNT(DISTINCT ?f) AS ?soHinhAnh) WHERE {
+      ?f a ex:Figure } }
+
+  { SELECT (COUNT(DISTINCT ?f) AS ?hinhCoLienKet) WHERE {
+      ?f a ex:Figure ; ex:illustratesConcept ?c } }
+
+  # Không ràng buộc kiểu chủ thể -> đúng phạm vi đã dùng để ra 797 và 417
+  { SELECT (COUNT(*) AS ?tongLienKet) WHERE {
+      ?m ex:illustratesConcept ?c } }
+
+  { SELECT (COUNT(DISTINCT ?c) AS ?soKhaiNiemDuocMinhHoa) WHERE {
+      ?m ex:illustratesConcept ?c } }
+
+  { SELECT (COUNT(DISTINCT ?c) AS ?tongKhaiNiem) WHERE {
+      ?c a ex:KnowledgeConcept } }
+
+  { SELECT (COUNT(*) AS ?tongLienKet_chiFigure) WHERE {
+      ?f a ex:Figure ; ex:illustratesConcept ?c } }
+
+  { SELECT (COUNT(DISTINCT ?c) AS ?soKhaiNiem_chiFigure) WHERE {
+      ?f a ex:Figure ; ex:illustratesConcept ?c } }
+}
